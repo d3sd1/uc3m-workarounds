@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="GameBoardGUI-javadoc">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/GameBoardGUI.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$PROJECT_DIR$/lib/GameBoardGUI-javadoc.zip!/" />
+    </JAVADOC>
+    <SOURCES />
+  </library>
+</component>
