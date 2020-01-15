@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<!-- Mirrored from php.net/manual/en/language.variables.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Dec 2017 23:08:56 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+  <title>PHP: Variables - Manual </title>
+
+ <link rel="shortcut icon" href="../../favicon.ico">
+ <link rel="search" type="application/opensearchdescription+xml" href="../../phpnetimprovedsearch.html" title="Add PHP.net search">
+ <link rel="alternate" type="application/atom+xml" href="../../releases/feed.php" title="PHP Release feed">
+ <link rel="alternate" type="application/atom+xml" href="../../feed.atom" title="PHP: Hypertext Preprocessor">
+
+ <link rel="canonical" href="language.variables.html">
+ <link rel="shorturl" href="../../variables.html">
+ <link rel="alternate" href="../../variables.html" hreflang="x-default">
+
+ <link rel="contents" href="index-2.html">
+ <link rel="index" href="langref.html">
+ <link rel="prev" href="language.types.type-juggling.html">
+ <link rel="next" href="language.variables.basics.html">
+
+ <link rel="alternate" href="language.variables.html" hreflang="en">
+ <link rel="alternate" href="../pt_BR/language.variables.html" hreflang="pt_BR">
+ <link rel="alternate" href="../zh/language.variables.html" hreflang="zh">
+ <link rel="alternate" href="../fr/language.variables.html" hreflang="fr">
+ <link rel="alternate" href="../de/language.variables.html" hreflang="de">
+ <link rel="alternate" href="../ja/language.variables.html" hreflang="ja">
+ <link rel="alternate" href="../ro/language.variables.html" hreflang="ro">
+ <link rel="alternate" href="../ru/language.variables.html" hreflang="ru">
+ <link rel="alternate" href="../es/language.variables.html" hreflang="es">
+ <link rel="alternate" href="../tr/language.variables.html" hreflang="tr">
+
+<link rel="stylesheet" type="text/css" href="../../cached0152.css?t=1421837618&amp;f=/fonts/Fira/fira.css" media="screen">
+<link rel="stylesheet" type="text/css" href="../../cached15be.css?t=1421837618&amp;f=/fonts/Font-Awesome/css/fontello.css" media="screen">
+<link rel="stylesheet" type="text/css" href="../../cached3c70.css?t=1478800802&amp;f=/styles/theme-base.css" media="screen">
+<link rel="stylesheet" type="text/css" href="../../cached00eb.css?t=1449787206&amp;f=/styles/theme-medium.css" media="screen">
+
+ <!--[if lte IE 7]>
+ <link rel="stylesheet" type="text/css" href="http://php.net/styles/workarounds.ie7.css" media="screen">
+ <![endif]-->
+
+ <!--[if lte IE 8]>
+ <script type="text/javascript">
+  window.brokenIE = true;
+ </script>
+ <![endif]-->
+
+ <!--[if lte IE 9]>
+ <link rel="stylesheet" type="text/css" href="http://php.net/styles/workarounds.ie9.css" media="screen">
+ <![endif]-->
+
+ <!--[if IE]>
+ <script type="text/javascript" src="http://php.net/js/ext/html5.js"></script>
+ <![endif]-->
+
+ <base >
+
+</head>
+<body class="docs ">
+
+<nav id="head-nav" class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <a href="../../index.html" class="brand"><img src="../../images/logos/php-logo.svg" width="48" height="24" alt="php"></a>
+    <div id="mainmenu-toggle-overlay"></div>
+    <input type="checkbox" id="mainmenu-toggle">
+    <ul class="nav">
+      <li class=""><a href="../../downloads.html">Downloads</a></li>
+      <li class="active"><a href="../../docs.html">Documentation</a></li>
+      <li class=""><a href="../../get-involved.html" >Get Involved</a></li>
+      <li class=""><a href="../../support.html">Help</a></li>
+    </ul>
+    <form class="navbar-search" id="topsearch" action="http://php.net/search.php">
+      <input type="hidden" name="show" value="quickref">
+      <input type="search" name="pattern" class="search-query" placeholder="Search" accesskey="s">
+    </form>
+  </div>
+  <div id="flash-message"></div>
+</nav>
+<nav id="trick"><div><dl>
+<dt><a href='getting-started.html'>Getting Started</a></dt>
+	<dd><a href='introduction.html'>Introduction</a></dd>
+	<dd><a href='tutorial.html'>A simple tutorial</a></dd>
+<dt><a href='langref.html'>Language Reference</a></dt>
+	<dd><a href='language.basic-syntax.html'>Basic syntax</a></dd>
+	<dd><a href='language.types.html'>Types</a></dd>
+	<dd><a href='language.variables.html'>Variables</a></dd>
+	<dd><a href='language.constants.html'>Constants</a></dd>
+	<dd><a href='language.expressions.html'>Expressions</a></dd>
+	<dd><a href='language.operators.html'>Operators</a></dd>
+	<dd><a href='language.control-structures.html'>Control Structures</a></dd>
+	<dd><a href='language.functions.html'>Functions</a></dd>
+	<dd><a href='language.oop5.html'>Classes and Objects</a></dd>
+	<dd><a href='language.namespaces.html'>Namespaces</a></dd>
+	<dd><a href='language.errors.html'>Errors</a></dd>
+	<dd><a href='language.exceptions.html'>Exceptions</a></dd>
+	<dd><a href='language.generators.html'>Generators</a></dd>
+	<dd><a href='language.references.html'>References Explained</a></dd>
+	<dd><a href='reserved.variables.html'>Predefined Variables</a></dd>
+	<dd><a href='reserved.exceptions.html'>Predefined Exceptions</a></dd>
+	<dd><a href='reserved.interfaces.html'>Predefined Interfaces and Classes</a></dd>
+	<dd><a href='context.html'>Context options and parameters</a></dd>
+	<dd><a href='wrappers.html'>Supported Protocols and Wrappers</a></dd>
+</dl>
+<dl>
+<dt><a href='security.html'>Security</a></dt>
+	<dd><a href='security.intro.html'>Introduction</a></dd>
+	<dd><a href='security.general.html'>General considerations</a></dd>
+	<dd><a href='security.cgi-bin.html'>Installed as CGI binary</a></dd>
+	<dd><a href='security.apache.html'>Installed as an Apache module</a></dd>
+	<dd><a href='security.sessions.html'>Session Security</a></dd>
+	<dd><a href='security.filesystem.html'>Filesystem Security</a></dd>
+	<dd><a href='security.database.html'>Database Security</a></dd>
+	<dd><a href='security.errors.html'>Error Reporting</a></dd>
+	<dd><a href='security.globals.html'>Using Register Globals</a></dd>
+	<dd><a href='security.variables.html'>User Submitted Data</a></dd>
+	<dd><a href='security.magicquotes.html'>Magic Quotes</a></dd>
+	<dd><a href='security.hiding.html'>Hiding PHP</a></dd>
+	<dd><a href='security.current.html'>Keeping Current</a></dd>
+<dt><a href='features.html'>Features</a></dt>
+	<dd><a href='features.http-auth.html'>HTTP authentication with PHP</a></dd>
+	<dd><a href='features.cookies.html'>Cookies</a></dd>
+	<dd><a href='features.sessions.html'>Sessions</a></dd>
+	<dd><a href='features.xforms.html'>Dealing with XForms</a></dd>
+	<dd><a href='features.file-upload.html'>Handling file uploads</a></dd>
+	<dd><a href='features.remote-files.html'>Using remote files</a></dd>
+	<dd><a href='features.connection-handling.html'>Connection handling</a></dd>
+	<dd><a href='features.persistent-connections.html'>Persistent Database Connections</a></dd>
+	<dd><a href='features.safe-mode.html'>Safe Mode</a></dd>
+	<dd><a href='features.commandline.html'>Command line usage</a></dd>
+	<dd><a href='features.gc.html'>Garbage Collection</a></dd>
+	<dd><a href='features.dtrace.html'>DTrace Dynamic Tracing</a></dd>
+</dl>
+<dl>
+<dt><a href='funcref.html'>Function Reference</a></dt>
+	<dd><a href='refs.basic.php.html'>Affecting PHP's Behaviour</a></dd>
+	<dd><a href='refs.utilspec.audio.html'>Audio Formats Manipulation</a></dd>
+	<dd><a href='refs.remote.auth.html'>Authentication Services</a></dd>
+	<dd><a href='refs.utilspec.cmdline.html'>Command Line Specific Extensions</a></dd>
+	<dd><a href='refs.compression.html'>Compression and Archive Extensions</a></dd>
+	<dd><a href='refs.creditcard.html'>Credit Card Processing</a></dd>
+	<dd><a href='refs.crypto.html'>Cryptography Extensions</a></dd>
+	<dd><a href='refs.database.html'>Database Extensions</a></dd>
+	<dd><a href='refs.calendar.html'>Date and Time Related Extensions</a></dd>
+	<dd><a href='refs.fileprocess.file.html'>File System Related Extensions</a></dd>
+	<dd><a href='refs.international.html'>Human Language and Character Encoding Support</a></dd>
+	<dd><a href='refs.utilspec.image.html'>Image Processing and Generation</a></dd>
+	<dd><a href='refs.remote.mail.html'>Mail Related Extensions</a></dd>
+	<dd><a href='refs.math.html'>Mathematical Extensions</a></dd>
+	<dd><a href='refs.utilspec.nontext.html'>Non-Text MIME Output</a></dd>
+	<dd><a href='refs.fileprocess.process.html'>Process Control Extensions</a></dd>
+	<dd><a href='refs.basic.other.html'>Other Basic Extensions</a></dd>
+	<dd><a href='refs.remote.other.html'>Other Services</a></dd>
+	<dd><a href='refs.search.html'>Search Engine Extensions</a></dd>
+	<dd><a href='refs.utilspec.server.html'>Server Specific Extensions</a></dd>
+	<dd><a href='refs.basic.session.html'>Session Extensions</a></dd>
+	<dd><a href='refs.basic.text.html'>Text Processing</a></dd>
+	<dd><a href='refs.basic.vartype.html'>Variable and Type Related Extensions</a></dd>
+	<dd><a href='refs.webservice.html'>Web Services</a></dd>
+	<dd><a href='refs.utilspec.windows.html'>Windows Only Extensions</a></dd>
+	<dd><a href='refs.xml.html'>XML Manipulation</a></dd>
+	<dd><a href='refs.ui.html'>GUI Extensions</a></dd>
+</dl>
+<dl>
+<dt>Keyboard Shortcuts</dt><dt>?</dt>
+<dd>This help</dd>
+<dt>j</dt>
+<dd>Next menu item</dd>
+<dt>k</dt>
+<dd>Previous menu item</dd>
+<dt>g p</dt>
+<dd>Previous man page</dd>
+<dt>g n</dt>
+<dd>Next man page</dd>
+<dt>G</dt>
+<dd>Scroll to bottom</dd>
+<dt>g g</dt>
+<dd>Scroll to top</dd>
+<dt>g h</dt>
+<dd>Goto homepage</dd>
+<dt>g s</dt>
+<dd>Goto search<br>(current page)</dd>
+<dt>/</dt>
+<dd>Focus search box</dd>
+</dl></div></nav>
+<div id="goto">
+    <div class="search">
+         <div class="text"></div>
+         <div class="results"><ul></ul></div>
+   </div>
+</div>
+
+  <div id="breadcrumbs" class="clearfix">
+    <div id="breadcrumbs-inner">
+          <div class="next">
+        <a href="language.variables.basics.html">
+          Basics &raquo;
+        </a>
+      </div>
+              <div class="prev">
+        <a href="language.types.type-juggling.html">
+          &laquo; Type Juggling        </a>
+      </div>
+          <ul>
+            <li><a href='index-2.html'>PHP Manual</a></li>      <li><a href='langref.html'>Language Reference</a></li>      </ul>
+    </div>
+  </div>
+
+
+
+
+<div id="layout" class="clearfix">
+  <section id="layout-content">
+  <div class="page-tools">
+    <div class="change-language">
+      <form action="http://php.net/manual/change.php" method="get" id="changelang" name="changelang">
+        <fieldset>
+          <label for="changelang-langs">Change language:</label>
+          <select onchange="document.changelang.submit()" name="page" id="changelang-langs">
+            <option value='en/language.variables.php' selected="selected">English</option>
+            <option value='pt_BR/language.variables.html'>Brazilian Portuguese</option>
+            <option value='zh/language.variables.html'>Chinese (Simplified)</option>
+            <option value='fr/language.variables.html'>French</option>
+            <option value='de/language.variables.html'>German</option>
+            <option value='ja/language.variables.html'>Japanese</option>
+            <option value='ro/language.variables.html'>Romanian</option>
+            <option value='ru/language.variables.html'>Russian</option>
+            <option value='es/language.variables.html'>Spanish</option>
+            <option value='tr/language.variables.html'>Turkish</option>
+            <option value="help-translate.html">Other</option>
+          </select>
+        </fieldset>
+      </form>
+    </div>
+    <div class="edit-bug">
+      <a href="https://edit.php.net/?project=PHP&amp;perm=en/language.variables.php">Edit</a>
+      <a href="https://bugs.php.net/report.php?bug_type=Documentation+problem&amp;manpage=language.variables">Report a Bug</a>
+    </div>
+  </div><div id="language.variables" class="chapter">
+  <h1>Variables</h1>
+<h2>Table of Contents</h2><ul class="chunklist chunklist_chapter"><li><a href="language.variables.basics.html">Basics</a></li><li><a href="language.variables.predefined.html">Predefined Variables</a></li><li><a href="language.variables.scope.html">Variable scope</a></li><li><a href="language.variables.variable.html">Variable variables</a></li><li><a href="language.variables.external.html">Variables From External Sources</a></li></ul>
+
+  
+  
+
+  
+
+
+  
+
+  
+
+  
+
+ </div>
+
+<section id="usernotes">
+ <div class="head">
+  <span class="action"><a href="../add-note4113.html?sect=language.variables&amp;redirect=http://php.net/manual/en/language.variables.php"><img src='../../images/notes-add%402x.png' alt='add a note' width='12' height='12'> <small>add a note</small></a></span>
+  <h3 class="title">User Contributed Notes <span class="count">12 notes</span></h3>
+ </div><div id="allnotes">
+  <div class="note" id="73373">  <div class="votes">
+    <div id="Vu73373">
+    <a href="../vote-note093d.html?id=73373&amp;page=language.variables&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd73373">
+    <a href="../vote-note9a7a.html?id=73373&amp;page=language.variables&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V73373" title="50% like this...">
+    2
+    </div>
+  </div>
+  <a href="#73373" class="name">
+  <strong class="user"><em>jsb17 at cornell dot edu</em></strong></a><a class="genanchor" href="#73373"> &para;</a><div class="date" title="2007-02-20 08:48"><strong>10 years ago</strong></div>
+  <div class="text" id="Hcom73373">
+<div class="phpcode"><code><span class="html">
+As an addendum to David's 10-Nov-2005 posting, remember that curly braces literally mean "evaluate what's inside the curly braces" so, you can squeeze the variable variable creation into one line, like this:<br /><br /><span class="default">&lt;?php<br />&nbsp; </span><span class="keyword">${</span><span class="string">"title_default_" </span><span class="keyword">. </span><span class="default">$title</span><span class="keyword">} = </span><span class="string">"selected"</span><span class="keyword">;<br /></span><span class="default">?&gt;<br /></span><br />and then, for example:<br /><br /><span class="default">&lt;?php<br />&nbsp; $title_select </span><span class="keyword">= &lt;&lt;&lt;END<br /></span><span class="string">&nbsp; &nbsp; &lt;select name="title"&gt;<br />&nbsp; &nbsp; &nbsp; &lt;option&gt;Select&lt;/option&gt;<br />&nbsp; &nbsp; &nbsp; &lt;option </span><span class="default">$title_default_Mr</span><span class="string">&nbsp; value="Mr"&gt;Mr&lt;/option&gt;<br />&nbsp; &nbsp; &nbsp; &lt;option </span><span class="default">$title_default_Ms</span><span class="string">&nbsp; value="Ms"&gt;Ms&lt;/option&gt;<br />&nbsp; &nbsp; &nbsp; &lt;option </span><span class="default">$title_default_Mrs</span><span class="string"> value="Mrs"&gt;Mrs&lt;/option&gt;<br />&nbsp; &nbsp; &nbsp; &lt;option </span><span class="default">$title_default_Dr</span><span class="string">&nbsp; value="Dr"&gt;Dr&lt;/option&gt;<br />&nbsp; &nbsp; &lt;/select&gt;<br /></span><span class="keyword">END;<br /></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="52924">  <div class="votes">
+    <div id="Vu52924">
+    <a href="../vote-note0228.html?id=52924&amp;page=language.variables&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd52924">
+    <a href="../vote-noteb94b.html?id=52924&amp;page=language.variables&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V52924" title="46% like this...">
+    -16
+    </div>
+  </div>
+  <a href="#52924" class="name">
+  <strong class="user"><em>josh at PraxisStudios dot com</em></strong></a><a class="genanchor" href="#52924"> &para;</a><div class="date" title="2005-05-17 01:06"><strong>12 years ago</strong></div>
+  <div class="text" id="Hcom52924">
+<div class="phpcode"><code><span class="html">
+As with echo, you can define a variable like this:<br /><br /><span class="default">&lt;?php<br /><br />$text </span><span class="keyword">= &lt;&lt;&lt;END<br /></span><span class="string"><br />&lt;table&gt;<br />&nbsp; &nbsp; &lt;tr&gt;<br />&nbsp; &nbsp; &nbsp; &nbsp; &lt;td&gt;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="default">$outputdata</span><span class="string"><br />&nbsp; &nbsp; &nbsp; &nbsp; &lt;/td&gt;<br />&nbsp; &nbsp;&nbsp; &lt;/tr&gt;<br />&lt;/table&gt;<br /><br /></span><span class="keyword">END;<br /><br /></span><span class="default">?&gt;<br /></span><br />The closing END; must be on a line by itself (no whitespace).<br /><br />[EDIT by danbrown AT php DOT net: This note illustrates HEREDOC syntax.&nbsp; For more information on this and similar features, please read the "Strings" section of the manual here: <a href="language.types.string.html" rel="nofollow" target="_blank">http://www.php.net/manual/en/language.types.string.php</a> ]</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="84581">  <div class="votes">
+    <div id="Vu84581">
+    <a href="../vote-notedeaf.html?id=84581&amp;page=language.variables&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd84581">
+    <a href="../vote-note5c3e.html?id=84581&amp;page=language.variables&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V84581" title="45% like this...">
+    -18
+    </div>
+  </div>
+  <a href="#84581" class="name">
+  <strong class="user"><em>Anonymous</em></strong></a><a class="genanchor" href="#84581"> &para;</a><div class="date" title="2008-07-20 06:25"><strong>9 years ago</strong></div>
+  <div class="text" id="Hcom84581">
+<div class="phpcode"><code><span class="html">
+[EDIT by danbrown AT php DOT net: The function provided by this author will give you all defined variables at runtime.&nbsp; It was originally written by (john DOT t DOT gold AT gmail DOT com), but contained some errors that were corrected in subsequent posts by (ned AT wgtech DOT com) and (taliesin AT gmail DOT com).]<br /><br /><span class="default">&lt;?php<br /><br /></span><span class="keyword">echo </span><span class="string">'&lt;table border=1&gt;&lt;tr&gt; &lt;th&gt;variable&lt;/th&gt; &lt;th&gt;value&lt;/th&gt; &lt;/tr&gt;'</span><span class="keyword">;<br />foreach( </span><span class="default">get_defined_vars</span><span class="keyword">() as </span><span class="default">$key </span><span class="keyword">=&gt; </span><span class="default">$value</span><span class="keyword">) <br />{<br />&nbsp; &nbsp; if (</span><span class="default">is_array </span><span class="keyword">(</span><span class="default">$value</span><span class="keyword">) )<br />&nbsp; &nbsp; {<br />&nbsp; &nbsp; &nbsp; &nbsp; echo </span><span class="string">'&lt;tr&gt;&lt;td&gt;$'</span><span class="keyword">.</span><span class="default">$key </span><span class="keyword">.</span><span class="string">'&lt;/td&gt;&lt;td&gt;'</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; &nbsp; if ( </span><span class="default">sizeof</span><span class="keyword">(</span><span class="default">$value</span><span class="keyword">)&gt;</span><span class="default">0 </span><span class="keyword">)<br />&nbsp; &nbsp; &nbsp; &nbsp; {<br />&nbsp; &nbsp; &nbsp; &nbsp; echo </span><span class="string">'"&lt;table border=1&gt;&lt;tr&gt; &lt;th&gt;key&lt;/th&gt; &lt;th&gt;value&lt;/th&gt; &lt;/tr&gt;'</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; &nbsp; foreach (</span><span class="default">$value </span><span class="keyword">as </span><span class="default">$skey </span><span class="keyword">=&gt; </span><span class="default">$svalue</span><span class="keyword">) <br />&nbsp; &nbsp; &nbsp; &nbsp; {<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; echo </span><span class="string">'&lt;tr&gt;&lt;td&gt;[' </span><span class="keyword">. </span><span class="default">$skey </span><span class="keyword">.</span><span class="string">']&lt;/td&gt;&lt;td&gt;"'</span><span class="keyword">. </span><span class="default">$svalue </span><span class="keyword">.</span><span class="string">'"&lt;/td&gt;&lt;/tr&gt;'</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; &nbsp; }<br />&nbsp; &nbsp; &nbsp; &nbsp; echo </span><span class="string">'&lt;/table&gt;"'</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; &nbsp; }<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; else<br />&nbsp; &nbsp; &nbsp; &nbsp; {<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; echo </span><span class="string">'EMPTY'</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; &nbsp; }<br />&nbsp; &nbsp; &nbsp; &nbsp; echo </span><span class="string">'&lt;/td&gt;&lt;/tr&gt;'</span><span class="keyword">;<br />&nbsp; &nbsp; }<br />&nbsp; &nbsp; else<br />&nbsp; &nbsp; {<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; echo </span><span class="string">'&lt;tr&gt;&lt;td&gt;$' </span><span class="keyword">. </span><span class="default">$key </span><span class="keyword">.</span><span class="string">'&lt;/td&gt;&lt;td&gt;"'</span><span class="keyword">. </span><span class="default">$value </span><span class="keyword">.</span><span class="string">'"&lt;/td&gt;&lt;/tr&gt;'</span><span class="keyword">;<br />&nbsp; &nbsp; }<br />}<br />echo </span><span class="string">'&lt;/table&gt;'</span><span class="keyword">;<br /></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="48798">  <div class="votes">
+    <div id="Vu48798">
+    <a href="../vote-note4e2a.html?id=48798&amp;page=language.variables&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd48798">
+    <a href="../vote-note13fc.html?id=48798&amp;page=language.variables&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V48798" title="43% like this...">
+    -21
+    </div>
+  </div>
+  <a href="#48798" class="name">
+  <strong class="user"><em>Carel Solomon</em></strong></a><a class="genanchor" href="#48798"> &para;</a><div class="date" title="2005-01-07 03:02"><strong>12 years ago</strong></div>
+  <div class="text" id="Hcom48798">
+<div class="phpcode"><code><span class="html">
+You can also construct a variable name by concatenating two different variables, such as:<br /><br /><span class="default">&lt;?php<br /><br />$arg </span><span class="keyword">= </span><span class="string">"foo"</span><span class="keyword">;<br /></span><span class="default">$val </span><span class="keyword">= </span><span class="string">"bar"</span><span class="keyword">;<br /><br /></span><span class="comment">//${$arg$val} = "in valid";&nbsp; &nbsp;&nbsp; // Invalid<br /></span><span class="keyword">${</span><span class="default">$arg </span><span class="keyword">. </span><span class="default">$val</span><span class="keyword">} = </span><span class="string">"working"</span><span class="keyword">;<br /><br />echo </span><span class="default">$foobar</span><span class="keyword">;&nbsp; &nbsp;&nbsp; </span><span class="comment">// "working";<br />//echo $arg$val;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; // Invalid<br />//echo ${$arg$val};&nbsp; &nbsp;&nbsp; // Invalid<br /></span><span class="keyword">echo ${</span><span class="default">$arg </span><span class="keyword">. </span><span class="default">$val</span><span class="keyword">};&nbsp; &nbsp; </span><span class="comment">// "working"<br /><br /></span><span class="default">?&gt;<br /></span><br />Carel</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="99211">  <div class="votes">
+    <div id="Vu99211">
+    <a href="../vote-note66f8.html?id=99211&amp;page=language.variables&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd99211">
+    <a href="../vote-notee901.html?id=99211&amp;page=language.variables&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V99211" title="44% like this...">
+    -28
+    </div>
+  </div>
+  <a href="#99211" class="name">
+  <strong class="user"><em>justgook at gmail dot com</em></strong></a><a class="genanchor" href="#99211"> &para;</a><div class="date" title="2010-08-03 01:38"><strong>7 years ago</strong></div>
+  <div class="text" id="Hcom99211">
+<div class="phpcode"><code><span class="html">
+I found interstate solution to work with arrays<br /><br /><span class="default">&lt;?php<br />$vars</span><span class="keyword">[</span><span class="string">'product'</span><span class="keyword">][</span><span class="string">'price'</span><span class="keyword">]=</span><span class="default">11</span><span class="keyword">;<br /><br /></span><span class="default">$aa</span><span class="keyword">=</span><span class="string">'product'</span><span class="keyword">;<br /></span><span class="default">$bb</span><span class="keyword">=</span><span class="string">'price'</span><span class="keyword">;<br /><br />echo </span><span class="default">$vars</span><span class="keyword">{</span><span class="default">$aa</span><span class="keyword">}{</span><span class="default">$bb</span><span class="keyword">};<br /><br /></span><span class="comment">//prints 11<br /></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="116925">  <div class="votes">
+    <div id="Vu116925">
+    <a href="../vote-note2910.html?id=116925&amp;page=language.variables&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd116925">
+    <a href="../vote-notef334.html?id=116925&amp;page=language.variables&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V116925" title="43% like this...">
+    -29
+    </div>
+  </div>
+  <a href="#116925" class="name">
+  <strong class="user"><em>Kubo2</em></strong></a><a class="genanchor" href="#116925"> &para;</a><div class="date" title="2015-03-22 11:10"><strong>2 years ago</strong></div>
+  <div class="text" id="Hcom116925">
+<div class="phpcode"><code><span class="html">
+Note that if you use runtime variable name recognition in your code, you are able to use any string as a variable name. Consider following code:<br /><br /><span class="default">&lt;?php<br /><br />$varName </span><span class="keyword">= </span><span class="string">'foo with bar'</span><span class="keyword">;<br />${</span><span class="string">'foo with bar'</span><span class="keyword">} = </span><span class="default">42</span><span class="keyword">;<br /><br /></span><span class="comment">// will output int(42)<br /></span><span class="default">var_dump</span><span class="keyword">($</span><span class="default">$varName</span><span class="keyword">);<br /><br /></span><span class="default">?&gt;<br /></span><br />This can be useful for example when accessing a property of an object constructed from JSON:<br /><br /><span class="default">&lt;?php<br /><br />$composerJson </span><span class="keyword">= </span><span class="default">json_decode</span><span class="keyword">(</span><span class="default">file_get_contents</span><span class="keyword">(</span><span class="default">__DIR__ </span><span class="keyword">. </span><span class="string">'/composer.json'</span><span class="keyword">));<br /><br /></span><span class="comment">// would output sth. similar to: object(stdClass)#...<br /></span><span class="default">var_dump</span><span class="keyword">(<br />&nbsp; &nbsp; </span><span class="default">$composerJson</span><span class="keyword">-&gt;{</span><span class="string">'require-dev'</span><span class="keyword">}<br />);<br /><br /></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="59088">  <div class="votes">
+    <div id="Vu59088">
+    <a href="../vote-notee2a8.html?id=59088&amp;page=language.variables&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd59088">
+    <a href="../vote-note538e.html?id=59088&amp;page=language.variables&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V59088" title="42% like this...">
+    -25
+    </div>
+  </div>
+  <a href="#59088" class="name">
+  <strong class="user"><em>Mike at ImmortalSoFar dot com</em></strong></a><a class="genanchor" href="#59088"> &para;</a><div class="date" title="2005-11-25 02:03"><strong>12 years ago</strong></div>
+  <div class="text" id="Hcom59088">
+<div class="phpcode"><code><span class="html">
+References and "return" can be flakey:<br /><br /><span class="default">&lt;?php<br /></span><span class="comment">//&nbsp; This only returns a copy, despite the dereferencing in the function definition<br /></span><span class="keyword">function &amp;</span><span class="default">GetLogin </span><span class="keyword">()<br />{<br />&nbsp; &nbsp; return </span><span class="default">$_SESSION</span><span class="keyword">[</span><span class="string">'Login'</span><span class="keyword">];<br />}<br /><br /></span><span class="comment">//&nbsp; This gives a syntax error<br /></span><span class="keyword">function &amp;</span><span class="default">GetLogin </span><span class="keyword">()<br />{<br />&nbsp; &nbsp; return &amp;</span><span class="default">$_SESSION</span><span class="keyword">[</span><span class="string">'Login'</span><span class="keyword">];<br />}<br /><br /></span><span class="comment">//&nbsp; This works<br /></span><span class="keyword">function &amp;</span><span class="default">GetLogin </span><span class="keyword">()<br />{<br />&nbsp; &nbsp; </span><span class="default">$ret </span><span class="keyword">= &amp;</span><span class="default">$_SESSION</span><span class="keyword">[</span><span class="string">'Login'</span><span class="keyword">];<br />&nbsp; &nbsp; return </span><span class="default">$ret</span><span class="keyword">;<br />}<br /></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="99132">  <div class="votes">
+    <div id="Vu99132">
+    <a href="../vote-notedc22.html?id=99132&amp;page=language.variables&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd99132">
+    <a href="../vote-note9ee4.html?id=99132&amp;page=language.variables&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V99132" title="41% like this...">
+    -28
+    </div>
+  </div>
+  <a href="#99132" class="name">
+  <strong class="user"><em>dimitrov dot adrian at gmail dot com</em></strong></a><a class="genanchor" href="#99132"> &para;</a><div class="date" title="2010-07-29 06:52"><strong>7 years ago</strong></div>
+  <div class="text" id="Hcom99132">
+<div class="phpcode"><code><span class="html">
+This is mine type casting lib, that is very useful for me.<br /><br /><span class="default">&lt;?php <br /><br /></span><span class="keyword">function </span><span class="default">CAST_TO_INT</span><span class="keyword">(</span><span class="default">$var</span><span class="keyword">, </span><span class="default">$min </span><span class="keyword">= </span><span class="default">FALSE</span><span class="keyword">, </span><span class="default">$max </span><span class="keyword">= </span><span class="default">FALSE</span><span class="keyword">)<br />{<br />&nbsp; &nbsp; </span><span class="default">$var </span><span class="keyword">= </span><span class="default">is_int</span><span class="keyword">(</span><span class="default">$var</span><span class="keyword">) ? </span><span class="default">$var </span><span class="keyword">: (int)(</span><span class="default">is_scalar</span><span class="keyword">(</span><span class="default">$var</span><span class="keyword">) ? </span><span class="default">$var </span><span class="keyword">: </span><span class="default">0</span><span class="keyword">);<br />&nbsp; &nbsp; if (</span><span class="default">$min </span><span class="keyword">!== </span><span class="default">FALSE </span><span class="keyword">&amp;&amp; </span><span class="default">$var </span><span class="keyword">&lt; </span><span class="default">$min</span><span class="keyword">)<br />&nbsp; &nbsp; &nbsp; &nbsp; return </span><span class="default">$min</span><span class="keyword">;<br />&nbsp; &nbsp; elseif(</span><span class="default">$max </span><span class="keyword">!== </span><span class="default">FALSE </span><span class="keyword">&amp;&amp; </span><span class="default">$var </span><span class="keyword">&gt; </span><span class="default">$max</span><span class="keyword">)<br />&nbsp; &nbsp; &nbsp; &nbsp; return </span><span class="default">$max</span><span class="keyword">;<br />&nbsp; &nbsp; return </span><span class="default">$var</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; &nbsp; <br />}<br /><br />function </span><span class="default">CAST_TO_FLOAT</span><span class="keyword">(</span><span class="default">$var</span><span class="keyword">, </span><span class="default">$min </span><span class="keyword">= </span><span class="default">FALSE</span><span class="keyword">, </span><span class="default">$max </span><span class="keyword">= </span><span class="default">FALSE</span><span class="keyword">)<br />{<br />&nbsp; &nbsp; </span><span class="default">$var </span><span class="keyword">= </span><span class="default">is_float</span><span class="keyword">(</span><span class="default">$var</span><span class="keyword">) ? </span><span class="default">$var </span><span class="keyword">: (float)(</span><span class="default">is_scalar</span><span class="keyword">(</span><span class="default">$var</span><span class="keyword">) ? </span><span class="default">$var </span><span class="keyword">: </span><span class="default">0</span><span class="keyword">);<br />&nbsp; &nbsp; if (</span><span class="default">$min </span><span class="keyword">!== </span><span class="default">FALSE </span><span class="keyword">&amp;&amp; </span><span class="default">$var </span><span class="keyword">&lt; </span><span class="default">$min</span><span class="keyword">)<br />&nbsp; &nbsp; &nbsp; &nbsp; return </span><span class="default">$min</span><span class="keyword">;<br />&nbsp; &nbsp; elseif(</span><span class="default">$max </span><span class="keyword">!== </span><span class="default">FALSE </span><span class="keyword">&amp;&amp; </span><span class="default">$var </span><span class="keyword">&gt; </span><span class="default">$max</span><span class="keyword">)<br />&nbsp; &nbsp; &nbsp; &nbsp; return </span><span class="default">$max</span><span class="keyword">;<br />&nbsp; &nbsp; return </span><span class="default">$var</span><span class="keyword">;<br />}<br /><br />function </span><span class="default">CAST_TO_BOOL</span><span class="keyword">(</span><span class="default">$var</span><span class="keyword">)<br />{<br />&nbsp; &nbsp; return (bool)(</span><span class="default">is_bool</span><span class="keyword">(</span><span class="default">$var</span><span class="keyword">) ? </span><span class="default">$var </span><span class="keyword">: </span><span class="default">is_scalar</span><span class="keyword">(</span><span class="default">$var</span><span class="keyword">) ? </span><span class="default">$var </span><span class="keyword">: </span><span class="default">FALSE</span><span class="keyword">);<br />}<br /><br />function </span><span class="default">CAST_TO_STRING</span><span class="keyword">(</span><span class="default">$var</span><span class="keyword">, </span><span class="default">$length </span><span class="keyword">= </span><span class="default">FALSE</span><span class="keyword">)<br />{<br />&nbsp; &nbsp; if (</span><span class="default">$length </span><span class="keyword">!== </span><span class="default">FALSE </span><span class="keyword">&amp;&amp; </span><span class="default">is_int</span><span class="keyword">(</span><span class="default">$length</span><span class="keyword">) &amp;&amp; </span><span class="default">$length </span><span class="keyword">&gt; </span><span class="default">0</span><span class="keyword">)<br />&nbsp; &nbsp; &nbsp; &nbsp; return </span><span class="default">substr</span><span class="keyword">(</span><span class="default">trim</span><span class="keyword">(</span><span class="default">is_string</span><span class="keyword">(</span><span class="default">$var</span><span class="keyword">)<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ? </span><span class="default">$var<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="keyword">: (</span><span class="default">is_scalar</span><span class="keyword">(</span><span class="default">$var</span><span class="keyword">) ? </span><span class="default">$var </span><span class="keyword">: </span><span class="string">''</span><span class="keyword">)), </span><span class="default">0</span><span class="keyword">, </span><span class="default">$length</span><span class="keyword">);<br /><br />&nbsp; &nbsp; return </span><span class="default">trim</span><span class="keyword">(<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">is_string</span><span class="keyword">(</span><span class="default">$var</span><span class="keyword">)<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ? </span><span class="default">$var<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="keyword">: (</span><span class="default">is_scalar</span><span class="keyword">(</span><span class="default">$var</span><span class="keyword">) ? </span><span class="default">$var </span><span class="keyword">: </span><span class="string">''</span><span class="keyword">));<br />}<br /><br />function </span><span class="default">CAST_TO_ARRAY</span><span class="keyword">(</span><span class="default">$var</span><span class="keyword">)<br />{<br />&nbsp; &nbsp; return </span><span class="default">is_array</span><span class="keyword">(</span><span class="default">$var</span><span class="keyword">)<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ? </span><span class="default">$var<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="keyword">: </span><span class="default">is_scalar</span><span class="keyword">(</span><span class="default">$var</span><span class="keyword">) &amp;&amp; </span><span class="default">$var<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="keyword">? array(</span><span class="default">$var</span><span class="keyword">)<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; : </span><span class="default">is_object</span><span class="keyword">(</span><span class="default">$var</span><span class="keyword">) ? (array)</span><span class="default">$var </span><span class="keyword">: array();<br />}<br /><br />function </span><span class="default">CAST_TO_OBJECT</span><span class="keyword">(</span><span class="default">$var</span><span class="keyword">)<br />{<br />&nbsp; &nbsp; return </span><span class="default">is_object</span><span class="keyword">(</span><span class="default">$var</span><span class="keyword">)<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ? </span><span class="default">$var<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="keyword">: </span><span class="default">is_scalar</span><span class="keyword">(</span><span class="default">$var</span><span class="keyword">) &amp;&amp; </span><span class="default">$var<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="keyword">? (object)</span><span class="default">$var<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="keyword">: </span><span class="default">is_array</span><span class="keyword">(</span><span class="default">$var</span><span class="keyword">) ? (object)</span><span class="default">$var </span><span class="keyword">: (object)</span><span class="default">NULL</span><span class="keyword">;<br />}<br /><br /></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="56351">  <div class="votes">
+    <div id="Vu56351">
+    <a href="../vote-notef70b.html?id=56351&amp;page=language.variables&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd56351">
+    <a href="../vote-note6409.html?id=56351&amp;page=language.variables&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V56351" title="44% like this...">
+    -33
+    </div>
+  </div>
+  <a href="#56351" class="name">
+  <strong class="user"><em>Chris Hester</em></strong></a><a class="genanchor" href="#56351"> &para;</a><div class="date" title="2005-08-31 05:09"><strong>12 years ago</strong></div>
+  <div class="text" id="Hcom56351">
+<div class="phpcode"><code><span class="html">
+Variables can also be assigned together.<br /><br /><span class="default">&lt;?php<br />$a </span><span class="keyword">= </span><span class="default">$b </span><span class="keyword">= </span><span class="default">$c </span><span class="keyword">= </span><span class="default">1</span><span class="keyword">;<br />echo </span><span class="default">$a</span><span class="keyword">.</span><span class="default">$b</span><span class="keyword">.</span><span class="default">$c</span><span class="keyword">;<br /></span><span class="default">?&gt;<br /></span><br />This outputs 111.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="39194">  <div class="votes">
+    <div id="Vu39194">
+    <a href="../vote-noteff26.html?id=39194&amp;page=language.variables&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd39194">
+    <a href="../vote-noted037.html?id=39194&amp;page=language.variables&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V39194" title="42% like this...">
+    -32
+    </div>
+  </div>
+  <a href="#39194" class="name">
+  <strong class="user"><em>webmaster at daersys dot net</em></strong></a><a class="genanchor" href="#39194"> &para;</a><div class="date" title="2004-01-20 08:15"><strong>13 years ago</strong></div>
+  <div class="text" id="Hcom39194">
+<div class="phpcode"><code><span class="html">
+You don't necessarily have to escape the dollar-sign before a variable if you want to output its name.<br /><br />You can use single quotes instead of double quotes, too.<br /><br />For instance:<br /><br /><span class="default">&lt;?php<br />$var </span><span class="keyword">= </span><span class="string">"test"</span><span class="keyword">;<br /><br />echo </span><span class="string">"</span><span class="default">$var</span><span class="string">"</span><span class="keyword">; </span><span class="comment">// Will output the string "test"<br /><br /></span><span class="keyword">echo </span><span class="string">"\$var"</span><span class="keyword">; </span><span class="comment">// Will output the string "$var"<br /><br /></span><span class="keyword">echo </span><span class="string">'$var'</span><span class="keyword">; </span><span class="comment">// Will do the exact same thing as the previous line<br /></span><span class="default">?&gt;<br /></span><br />Why?<br />Well, the reason for this is that the PHP Parser will not attempt to parse strings encapsulated in single quotes (as opposed to strings within double quotes) and therefore outputs exactly what it's being fed with :)<br /><br />To output the value of a variable within a single-quote-encapsulated string you'll have to use something along the lines of the following code:<br /><br /><span class="default">&lt;?php<br />$var </span><span class="keyword">= </span><span class="string">'test'</span><span class="keyword">;<br /></span><span class="comment">/*<br />Using single quotes here seeing as I don't need the parser to actually parse the content of this variable but merely treat it as an ordinary string<br />*/<br /><br /></span><span class="keyword">echo </span><span class="string">'$var = "' </span><span class="keyword">. </span><span class="default">$var </span><span class="keyword">. </span><span class="string">'"'</span><span class="keyword">;<br /></span><span class="comment">/*<br />Will output:<br />$var = "test"<br />*/<br /></span><span class="default">?&gt;<br /></span><br />HTH<br />- Daerion</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="42653">  <div class="votes">
+    <div id="Vu42653">
+    <a href="../vote-notecb4f.html?id=42653&amp;page=language.variables&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd42653">
+    <a href="../vote-note89b4.html?id=42653&amp;page=language.variables&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V42653" title="42% like this...">
+    -33
+    </div>
+  </div>
+  <a href="#42653" class="name">
+  <strong class="user"><em>raja shahed  at  christine nothdurfter  dot com</em></strong></a><a class="genanchor" href="#42653"> &para;</a><div class="date" title="2004-05-25 10:58"><strong>13 years ago</strong></div>
+  <div class="text" id="Hcom42653">
+<div class="phpcode"><code><span class="html">
+<span class="default">&lt;?php<br />error_reporting</span><span class="keyword">(</span><span class="default">E_ALL</span><span class="keyword">);<br /><br /></span><span class="default">$name </span><span class="keyword">= </span><span class="string">"Christine_Nothdurfter"</span><span class="keyword">;<br /></span><span class="comment">// not Christine Nothdurfter<br />// you are not allowed to leave a space inside a variable name ;)<br /></span><span class="keyword">$</span><span class="default">$name </span><span class="keyword">= </span><span class="string">"'s students of Tyrolean language "</span><span class="keyword">;<br /><br />print </span><span class="string">" </span><span class="default">$name</span><span class="keyword">{$</span><span class="default">$name</span><span class="keyword">}</span><span class="string">&lt;br&gt;"</span><span class="keyword">;<br />print&nbsp; </span><span class="string">"</span><span class="default">$name$Christine_Nothdurfter</span><span class="string">"</span><span class="keyword">;<br /></span><span class="comment">// same<br /></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="58632">  <div class="votes">
+    <div id="Vu58632">
+    <a href="../vote-note1be0.html?id=58632&amp;page=language.variables&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd58632">
+    <a href="../vote-note8400.html?id=58632&amp;page=language.variables&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V58632" title="43% like this...">
+    -48
+    </div>
+  </div>
+  <a href="#58632" class="name">
+  <strong class="user"><em>david at removethisbit dot futuresbright dot com</em></strong></a><a class="genanchor" href="#58632"> &para;</a><div class="date" title="2005-11-10 01:25"><strong>12 years ago</strong></div>
+  <div class="text" id="Hcom58632">
+<div class="phpcode"><code><span class="html">
+When using variable variables this is invalid:<br /><br /><span class="default">&lt;?php<br />$my_variable_</span><span class="keyword">{</span><span class="default">$type</span><span class="keyword">}</span><span class="default">_name </span><span class="keyword">= </span><span class="default">true</span><span class="keyword">;<br /></span><span class="default">?&gt;<br /></span><br />to get around this do something like:<br /><br /><span class="default">&lt;?php<br />$n</span><span class="keyword">=</span><span class="string">"my_variable_</span><span class="keyword">{</span><span class="default">$type</span><span class="keyword">}</span><span class="string">_name"</span><span class="keyword">;<br />${</span><span class="default">$n</span><span class="keyword">} = </span><span class="default">true</span><span class="keyword">;<br /></span><span class="default">?&gt;<br /></span><br />(or $$n - I tend to use curly brackets out of habit as it helps t reduce bugs ...)</span>
+</code></div>
+  </div>
+ </div></div>
+
+ <div class="foot"><a href="../add-note4113.html?sect=language.variables&amp;redirect=http://php.net/manual/en/language.variables.php"><img src='../../images/notes-add%402x.png' alt='add a note' width='12' height='12'> <small>add a note</small></a></div>
+</section>    </section><!-- layout-content -->
+        <aside class='layout-menu'>
+    
+        <ul class='parent-menu-list'>
+                                    <li>
+                <a href="langref.html">Language Reference</a>
+    
+                                    <ul class='child-menu-list'>
+    
+                          
+                        <li class="">
+                            <a href="language.basic-syntax.html" title="Basic syntax">Basic syntax</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="language.types.html" title="Types">Types</a>
+                        </li>
+                          
+                        <li class="current">
+                            <a href="language.variables.html" title="Variables">Variables</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="language.constants.html" title="Constants">Constants</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="language.expressions.html" title="Expressions">Expressions</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="language.operators.html" title="Operators">Operators</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="language.control-structures.html" title="Control Structures">Control Structures</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="language.functions.html" title="Functions">Functions</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="language.oop5.html" title="Classes and Objects">Classes and Objects</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="language.namespaces.html" title="Namespaces">Namespaces</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="language.errors.html" title="Errors">Errors</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="language.exceptions.html" title="Exceptions">Exceptions</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="language.generators.html" title="Generators">Generators</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="language.references.html" title="References Explained">References Explained</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="reserved.variables.html" title="Predefined Variables">Predefined Variables</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="reserved.exceptions.html" title="Predefined Exceptions">Predefined Exceptions</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="reserved.interfaces.html" title="Predefined Interfaces and Classes">Predefined Interfaces and Classes</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="context.html" title="Context options and parameters">Context options and parameters</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="wrappers.html" title="Supported Protocols and Wrappers">Supported Protocols and Wrappers</a>
+                        </li>
+                            
+                    </ul>
+                    
+            </li>
+                        
+                    </ul>
+    </aside>
+
+
+  </div><!-- layout -->
+         
+  <footer>
+    <div class="container footer-content">
+      <div class="row-fluid">
+      <ul class="footmenu">
+        <li><a href="../../copyright.html">Copyright &copy; 2001-2017 The PHP Group</a></li>
+        <li><a href="../../my.html">My PHP.net</a></li>
+        <li><a href="../../contact.html">Contact</a></li>
+        <li><a href="../../sites.html">Other PHP.net sites</a></li>
+        <li><a href="../../mirrors.html">Mirror sites</a></li>
+        <li><a href="../../privacy.html">Privacy policy</a></li>
+      </ul>
+      </div>
+    </div>
+  </footer>
+
+    
+ <!-- External and third party libraries. -->
+ <script type="text/javascript" src="../../../ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" src="../../cachedab96.php?t=1421837618&amp;f=/js/ext/modernizr.js"></script>
+<script type="text/javascript" src="../../cached3567.php?t=1421837618&amp;f=/js/ext/hogan-2.0.0.min.js"></script>
+<script type="text/javascript" src="../../cachede4eb.php?t=1421837618&amp;f=/js/ext/typeahead.min.js"></script>
+<script type="text/javascript" src="../../cached9183.php?t=1421837618&amp;f=/js/ext/mousetrap.min.js"></script>
+<script type="text/javascript" src="../../cachedcba0.php?t=1421837618&amp;f=/js/search.js"></script>
+<script type="text/javascript" src="../../cachedb779.php?t=1500560403&amp;f=/js/common.js"></script>
+
+<a id="toTop" href="javascript:;"><span id="toTopHover"></span><img width="40" height="40" alt="To Top" src="../../images/to-top%402x.png"></a>
+
+</body>
+
+<!-- Mirrored from php.net/manual/en/language.variables.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Dec 2017 23:09:07 GMT -->
+</html>
+

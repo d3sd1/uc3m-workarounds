@@ -1,0 +1,12 @@
+CAJA SEGURIDAD JAVA:
+sigues teniendo cuando hay error que poner dos funciones, con el c:set lo haces en una, o pones una funcion en el kernel que sea error, que resetee y forward. la comprobación de los parametros esta mal, hay un caso en que peta, como haya un parametro que no sea el del nivel da un null pointer. El request y el response no deberían de salir del servlet.
+
+CAJA SEGURIDAD PHP:
+Tienes todo hecho un follón, una redirección a traves del cliente, del index al caja fuerte, el levelmanager por todos los sitios, el getactuallevel con un return vale, no aporta nada, las cosas las haces en el constructor de los niveles directamente....
+
+CRUD JAVA:
+el DBConnection es de Base de datos, no lo saques del DAO, primero se cierra el statement, y luego la conexion, AjaxMaker con todo estatico???, por lo menos un singleton, es un poco burrada, no tienes las querys transaccionales. Para devolver un json, no hace falta hacer un map, se puede mapear solo, como al cargar de base de datos, o la configuración, te quita mucho trabajo. Si metes a la capa de servicios el request lo atas al http, debe de recibir objetos.
+
+CRUD PHP:
+
+un exit() en php?... acaso pones un exit() en java... tienes que replantearte esa estructura en php, es bastante oscura. no pongas el include y pon que las llamadas ajax sean directamente al otro lado.

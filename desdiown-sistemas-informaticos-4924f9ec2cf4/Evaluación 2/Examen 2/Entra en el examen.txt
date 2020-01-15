@@ -1,0 +1,43 @@
+LOS MARCADOS CON * TIENEN MÁS POSIBILIDADES DE ENTRAR
+NO ES TIPO TEST.
+LOS SUBPUNTOS ENRARÁN O NO DEPENDIENDO DEL TEMA A TRATAR.
+APARTADOS PARA PRIMER EXAMEN -> DICHO POR EL PROFE
+===============================================
+DONE -> 1.2.2	Opciones de conexión a red de las m.v.
+DONE -> 2.2	Estructura de un sistema informático (resumido).
+DONE -> 2.2.4	* Sistemas de codificación (ejercicios).
+DONE -> 2.3	Arquitectura de un S.O. ?
+DONE -> 2.4	Funciones de un S.O.
+DONE -> 2.5	Tipos de S.O.
+DONE -> 3.2	* Consideraciones previas a la instalación de S.O.
+DONE -> 3.3	Gestor de arranque (concepto y poco más).
+DONE -> 3.3.2	Estructura del disco duro.
+DONE -> 3.3.2	* Particiones. Tipos.
+DONE -> 3.3.3	Secuencia de arranque.
+DONE -> 3.7.1	Niveles de ejecución.
+DONE -> 4.2	Administración de usuarios locales.
+DONE -> 4.2.1	* Diseño de cuentas de usuario. Límites a los usuarios (enumeración).
+DONE -> 4.3	Usuarios predeterminados
+DONE -> 4.4 	* Seguridad de cuentas de usuario
+DONE -> 4.5	* Seguridad de contraseñas
+DONE -> 4.6	Perfiles locales
+DONE -> 4.7	Gestión centralizada de usuarios
+DONE -> 5.2	Administración de grupos locales
+DONE -> 5.2.1	* Derechos de usuario. Tipos de usuario. Tipos de permisos.
+DONE -> 5.2.2	Concepto de lista de control de acceso
+DONE -> 5.3	Grupos predeterminados (concepto).
+
+================================== -> DICHO EN CLASE
+1. Tipos de particiones
+2. Montar un dispositivo
+3. Desmontar un dispositivo
+4. Capacidad de particiones, tipos de particiones, opciones de particionado, límite de particiones
+5. Las rutas – Rutas básicas de Linux, rutas absolutas y relativas.
+6. Copiar archivos a rutas.
+7. Pasar binario a decimal y viceversa.
+8. Punto 3.2 implantacion_ubu Práctica “Instalación desatendida de ubuntu server”
+9. Particiones GUID completo.
+10. Diseño de cuentas de usuario (4.2.1 implantacion ubu)
+11. Apartado 4.4/4.5 implantacion ubu: Seguridad de cuentas de usuario y seguridad de contraseñas
+12. tipos de usuario y tipos de grupo (5.2.1) ENTRA FIJO
+13. 5.2.1 implantacion ubu tipos de usuario/tipos de permiso

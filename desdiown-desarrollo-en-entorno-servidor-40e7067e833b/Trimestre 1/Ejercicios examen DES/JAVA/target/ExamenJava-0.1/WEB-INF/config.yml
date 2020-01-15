@@ -1,0 +1,10 @@
+#Configuración general
+siteUrl: http://localhost:8000
+loginTimeExpireSeconds: 30000
+descuento: 50
+
+#Base de datos
+driverDB: com.mysql.jdbc.Driver
+urlDB: jdbc:mysql://localhost:3306/examen?useSSL=false
+userDB: root
+passDB:

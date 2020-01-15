@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<!-- Mirrored from php.net/manual/en/control-structures.elseif.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Dec 2017 23:18:10 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+  <title>PHP: elseif/else if - Manual </title>
+
+ <link rel="shortcut icon" href="http://php.net/favicon.ico">
+ <link rel="search" type="application/opensearchdescription+xml" href="http://php.net/phpnetimprovedsearch.src" title="Add PHP.net search">
+ <link rel="alternate" type="application/atom+xml" href="http://php.net/releases/feed.php" title="PHP Release feed">
+ <link rel="alternate" type="application/atom+xml" href="http://php.net/feed.atom" title="PHP: Hypertext Preprocessor">
+
+ <link rel="canonical" href="http://php.net/manual/en/control-structures.elseif.php">
+ <link rel="shorturl" href="http://php.net/elseif">
+ <link rel="alternate" href="http://php.net/elseif" hreflang="x-default">
+
+ <link rel="contents" href="http://php.net/manual/en/index.php">
+ <link rel="index" href="http://php.net/manual/en/language.control-structures.php">
+ <link rel="prev" href="http://php.net/manual/en/control-structures.else.php">
+ <link rel="next" href="http://php.net/manual/en/control-structures.alternative-syntax.php">
+
+ <link rel="alternate" href="http://php.net/manual/en/control-structures.elseif.php" hreflang="en">
+ <link rel="alternate" href="http://php.net/manual/pt_BR/control-structures.elseif.php" hreflang="pt_BR">
+ <link rel="alternate" href="http://php.net/manual/zh/control-structures.elseif.php" hreflang="zh">
+ <link rel="alternate" href="http://php.net/manual/fr/control-structures.elseif.php" hreflang="fr">
+ <link rel="alternate" href="http://php.net/manual/de/control-structures.elseif.php" hreflang="de">
+ <link rel="alternate" href="http://php.net/manual/ja/control-structures.elseif.php" hreflang="ja">
+ <link rel="alternate" href="http://php.net/manual/ro/control-structures.elseif.php" hreflang="ro">
+ <link rel="alternate" href="http://php.net/manual/ru/control-structures.elseif.php" hreflang="ru">
+ <link rel="alternate" href="http://php.net/manual/es/control-structures.elseif.php" hreflang="es">
+ <link rel="alternate" href="http://php.net/manual/tr/control-structures.elseif.php" hreflang="tr">
+
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1421837618&amp;f=/fonts/Fira/fira.css" media="screen">
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1421837618&amp;f=/fonts/Font-Awesome/css/fontello.css" media="screen">
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1478800802&amp;f=/styles/theme-base.css" media="screen">
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1449787206&amp;f=/styles/theme-medium.css" media="screen">
+
+ <!--[if lte IE 7]>
+ <link rel="stylesheet" type="text/css" href="http://php.net/styles/workarounds.ie7.css" media="screen">
+ <![endif]-->
+
+ <!--[if lte IE 8]>
+ <script type="text/javascript">
+  window.brokenIE = true;
+ </script>
+ <![endif]-->
+
+ <!--[if lte IE 9]>
+ <link rel="stylesheet" type="text/css" href="http://php.net/styles/workarounds.ie9.css" media="screen">
+ <![endif]-->
+
+ <!--[if IE]>
+ <script type="text/javascript" src="http://php.net/js/ext/html5.js"></script>
+ <![endif]-->
+
+ <base >
+
+</head>
+<body class="docs ">
+
+<nav id="head-nav" class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <a href="http://php.net/" class="brand"><img src="http://php.net/images/logos/php-logo.svg" width="48" height="24" alt="php"></a>
+    <div id="mainmenu-toggle-overlay"></div>
+    <input type="checkbox" id="mainmenu-toggle">
+    <ul class="nav">
+      <li class=""><a href="http://php.net/downloads">Downloads</a></li>
+      <li class="active"><a href="http://php.net/docs.php">Documentation</a></li>
+      <li class=""><a href="http://php.net/get-involved" >Get Involved</a></li>
+      <li class=""><a href="http://php.net/support">Help</a></li>
+    </ul>
+    <form class="navbar-search" id="topsearch" action="http://php.net/search.php">
+      <input type="hidden" name="show" value="quickref">
+      <input type="search" name="pattern" class="search-query" placeholder="Search" accesskey="s">
+    </form>
+  </div>
+  <div id="flash-message"></div>
+</nav>
+<nav id="trick"><div><dl>
+<dt><a href='http://php.net/manual/en/getting-started.php'>Getting Started</a></dt>
+	<dd><a href='http://php.net/manual/en/introduction.php'>Introduction</a></dd>
+	<dd><a href='http://php.net/manual/en/tutorial.php'>A simple tutorial</a></dd>
+<dt><a href='http://php.net/manual/en/langref.php'>Language Reference</a></dt>
+	<dd><a href='http://php.net/manual/en/language.basic-syntax.php'>Basic syntax</a></dd>
+	<dd><a href='http://php.net/manual/en/language.types.php'>Types</a></dd>
+	<dd><a href='http://php.net/manual/en/language.variables.php'>Variables</a></dd>
+	<dd><a href='http://php.net/manual/en/language.constants.php'>Constants</a></dd>
+	<dd><a href='http://php.net/manual/en/language.expressions.php'>Expressions</a></dd>
+	<dd><a href='http://php.net/manual/en/language.operators.php'>Operators</a></dd>
+	<dd><a href='http://php.net/manual/en/language.control-structures.php'>Control Structures</a></dd>
+	<dd><a href='http://php.net/manual/en/language.functions.php'>Functions</a></dd>
+	<dd><a href='http://php.net/manual/en/language.oop5.php'>Classes and Objects</a></dd>
+	<dd><a href='http://php.net/manual/en/language.namespaces.php'>Namespaces</a></dd>
+	<dd><a href='http://php.net/manual/en/language.errors.php'>Errors</a></dd>
+	<dd><a href='http://php.net/manual/en/language.exceptions.php'>Exceptions</a></dd>
+	<dd><a href='http://php.net/manual/en/language.generators.php'>Generators</a></dd>
+	<dd><a href='http://php.net/manual/en/language.references.php'>References Explained</a></dd>
+	<dd><a href='http://php.net/manual/en/reserved.variables.php'>Predefined Variables</a></dd>
+	<dd><a href='http://php.net/manual/en/reserved.exceptions.php'>Predefined Exceptions</a></dd>
+	<dd><a href='http://php.net/manual/en/reserved.interfaces.php'>Predefined Interfaces and Classes</a></dd>
+	<dd><a href='http://php.net/manual/en/context.php'>Context options and parameters</a></dd>
+	<dd><a href='http://php.net/manual/en/wrappers.php'>Supported Protocols and Wrappers</a></dd>
+</dl>
+<dl>
+<dt><a href='http://php.net/manual/en/security.php'>Security</a></dt>
+	<dd><a href='http://php.net/manual/en/security.intro.php'>Introduction</a></dd>
+	<dd><a href='http://php.net/manual/en/security.general.php'>General considerations</a></dd>
+	<dd><a href='http://php.net/manual/en/security.cgi-bin.php'>Installed as CGI binary</a></dd>
+	<dd><a href='http://php.net/manual/en/security.apache.php'>Installed as an Apache module</a></dd>
+	<dd><a href='http://php.net/manual/en/security.sessions.php'>Session Security</a></dd>
+	<dd><a href='http://php.net/manual/en/security.filesystem.php'>Filesystem Security</a></dd>
+	<dd><a href='http://php.net/manual/en/security.database.php'>Database Security</a></dd>
+	<dd><a href='http://php.net/manual/en/security.errors.php'>Error Reporting</a></dd>
+	<dd><a href='http://php.net/manual/en/security.globals.php'>Using Register Globals</a></dd>
+	<dd><a href='http://php.net/manual/en/security.variables.php'>User Submitted Data</a></dd>
+	<dd><a href='http://php.net/manual/en/security.magicquotes.php'>Magic Quotes</a></dd>
+	<dd><a href='http://php.net/manual/en/security.hiding.php'>Hiding PHP</a></dd>
+	<dd><a href='http://php.net/manual/en/security.current.php'>Keeping Current</a></dd>
+<dt><a href='http://php.net/manual/en/features.php'>Features</a></dt>
+	<dd><a href='http://php.net/manual/en/features.http-auth.php'>HTTP authentication with PHP</a></dd>
+	<dd><a href='http://php.net/manual/en/features.cookies.php'>Cookies</a></dd>
+	<dd><a href='http://php.net/manual/en/features.sessions.php'>Sessions</a></dd>
+	<dd><a href='http://php.net/manual/en/features.xforms.php'>Dealing with XForms</a></dd>
+	<dd><a href='http://php.net/manual/en/features.file-upload.php'>Handling file uploads</a></dd>
+	<dd><a href='http://php.net/manual/en/features.remote-files.php'>Using remote files</a></dd>
+	<dd><a href='http://php.net/manual/en/features.connection-handling.php'>Connection handling</a></dd>
+	<dd><a href='http://php.net/manual/en/features.persistent-connections.php'>Persistent Database Connections</a></dd>
+	<dd><a href='http://php.net/manual/en/features.safe-mode.php'>Safe Mode</a></dd>
+	<dd><a href='http://php.net/manual/en/features.commandline.php'>Command line usage</a></dd>
+	<dd><a href='http://php.net/manual/en/features.gc.php'>Garbage Collection</a></dd>
+	<dd><a href='http://php.net/manual/en/features.dtrace.php'>DTrace Dynamic Tracing</a></dd>
+</dl>
+<dl>
+<dt><a href='http://php.net/manual/en/funcref.php'>Function Reference</a></dt>
+	<dd><a href='http://php.net/manual/en/refs.basic.php.php'>Affecting PHP's Behaviour</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.audio.php'>Audio Formats Manipulation</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.remote.auth.php'>Authentication Services</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.cmdline.php'>Command Line Specific Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.compression.php'>Compression and Archive Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.creditcard.php'>Credit Card Processing</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.crypto.php'>Cryptography Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.database.php'>Database Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.calendar.php'>Date and Time Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.fileprocess.file.php'>File System Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.international.php'>Human Language and Character Encoding Support</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.image.php'>Image Processing and Generation</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.remote.mail.php'>Mail Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.math.php'>Mathematical Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.nontext.php'>Non-Text MIME Output</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.fileprocess.process.php'>Process Control Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.other.php'>Other Basic Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.remote.other.php'>Other Services</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.search.php'>Search Engine Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.server.php'>Server Specific Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.session.php'>Session Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.text.php'>Text Processing</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.vartype.php'>Variable and Type Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.webservice.php'>Web Services</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.windows.php'>Windows Only Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.xml.php'>XML Manipulation</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.ui.php'>GUI Extensions</a></dd>
+</dl>
+<dl>
+<dt>Keyboard Shortcuts</dt><dt>?</dt>
+<dd>This help</dd>
+<dt>j</dt>
+<dd>Next menu item</dd>
+<dt>k</dt>
+<dd>Previous menu item</dd>
+<dt>g p</dt>
+<dd>Previous man page</dd>
+<dt>g n</dt>
+<dd>Next man page</dd>
+<dt>G</dt>
+<dd>Scroll to bottom</dd>
+<dt>g g</dt>
+<dd>Scroll to top</dd>
+<dt>g h</dt>
+<dd>Goto homepage</dd>
+<dt>g s</dt>
+<dd>Goto search<br>(current page)</dd>
+<dt>/</dt>
+<dd>Focus search box</dd>
+</dl></div></nav>
+<div id="goto">
+    <div class="search">
+         <div class="text"></div>
+         <div class="results"><ul></ul></div>
+   </div>
+</div>
+
+  <div id="breadcrumbs" class="clearfix">
+    <div id="breadcrumbs-inner">
+          <div class="next">
+        <a href="http://php.net/manual/en/control-structures.alternative-syntax.php">
+          Alternative syntax for control structures &raquo;
+        </a>
+      </div>
+              <div class="prev">
+        <a href="http://php.net/manual/en/control-structures.else.php">
+          &laquo; else        </a>
+      </div>
+          <ul>
+            <li><a href='http://php.net/manual/en/index.php'>PHP Manual</a></li>      <li><a href='http://php.net/manual/en/langref.php'>Language Reference</a></li>      <li><a href='http://php.net/manual/en/language.control-structures.php'>Control Structures</a></li>      </ul>
+    </div>
+  </div>
+
+
+
+
+<div id="layout" class="clearfix">
+  <section id="layout-content">
+  <div class="page-tools">
+    <div class="change-language">
+      <form action="http://php.net/manual/change.php" method="get" id="changelang" name="changelang">
+        <fieldset>
+          <label for="changelang-langs">Change language:</label>
+          <select onchange="document.changelang.submit()" name="page" id="changelang-langs">
+            <option value='en/control-structures.elseif.php' selected="selected">English</option>
+            <option value='http://php.net/manual/en/pt_BR/control-structures.elseif.php'>Brazilian Portuguese</option>
+            <option value='http://php.net/manual/en/zh/control-structures.elseif.php'>Chinese (Simplified)</option>
+            <option value='http://php.net/manual/en/fr/control-structures.elseif.php'>French</option>
+            <option value='http://php.net/manual/en/de/control-structures.elseif.php'>German</option>
+            <option value='http://php.net/manual/en/ja/control-structures.elseif.php'>Japanese</option>
+            <option value='http://php.net/manual/en/ro/control-structures.elseif.php'>Romanian</option>
+            <option value='http://php.net/manual/en/ru/control-structures.elseif.php'>Russian</option>
+            <option value='http://php.net/manual/en/es/control-structures.elseif.php'>Spanish</option>
+            <option value='http://php.net/manual/en/tr/control-structures.elseif.php'>Turkish</option>
+            <option value="http://php.net/manual/en/help-translate.php">Other</option>
+          </select>
+        </fieldset>
+      </form>
+    </div>
+    <div class="edit-bug">
+      <a href="https://edit.php.net/?project=PHP&amp;perm=en/control-structures.elseif.php">Edit</a>
+      <a href="https://bugs.php.net/report.php?bug_type=Documentation+problem&amp;manpage=control-structures.elseif">Report a Bug</a>
+    </div>
+  </div><div id="control-structures.elseif" class="sect1">
+ <h2 class="title"><em>elseif</em>/<em>else if</em></h2>
+ <p class="verinfo">(PHP 4, PHP 5, PHP 7)</p>
+ <p class="para">
+  <em>elseif</em>, as its name suggests, is a combination
+  of <em>if</em> and <em>else</em>.  Like
+  <em>else</em>, it extends an <em>if</em>
+  statement to execute a different statement in case the original
+  <em>if</em> expression evaluates to
+  <strong><code>FALSE</code></strong>.  However, unlike
+  <em>else</em>, it will execute that alternative
+  expression only if the <em>elseif</em> conditional
+  expression evaluates to <strong><code>TRUE</code></strong>.  For example, the
+  following code would display <span class="computeroutput">a is bigger than
+  b</span>, <span class="computeroutput">a equal to b</span>
+  or <span class="computeroutput">a is smaller than b</span>:
+  <div class="informalexample">
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">if&nbsp;(</span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">&gt;&nbsp;</span><span style="color: #0000BB">$b</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"a&nbsp;is&nbsp;bigger&nbsp;than&nbsp;b"</span><span style="color: #007700">;<br />}&nbsp;elseif&nbsp;(</span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">==&nbsp;</span><span style="color: #0000BB">$b</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"a&nbsp;is&nbsp;equal&nbsp;to&nbsp;b"</span><span style="color: #007700">;<br />}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"a&nbsp;is&nbsp;smaller&nbsp;than&nbsp;b"</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+  </div>
+ </p>
+ <p class="simpara">
+  There may be several <em>elseif</em>s within the same
+  <em>if</em> statement.  The first
+  <em>elseif</em> expression (if any) that evaluates to
+  <strong><code>TRUE</code></strong> would be executed.  In PHP, you can also
+  write &#039;else if&#039; (in two words) and the behavior would be identical
+  to the one of &#039;elseif&#039; (in a single word).  The syntactic meaning
+  is slightly different (if you&#039;re familiar with C, this is the same
+  behavior) but the bottom line is that both would result in exactly
+  the same behavior.
+ </p>
+ <p class="simpara">
+  The <em>elseif</em> statement is only executed if the
+  preceding <em>if</em> expression and any preceding
+  <em>elseif</em> expressions evaluated to
+  <strong><code>FALSE</code></strong>, and the current
+  <em>elseif</em> expression evaluated to
+  <strong><code>TRUE</code></strong>.
+ </p>
+ <blockquote class="note"><p><strong class="note">Note</strong>: 
+  <span class="simpara">
+   Note that <em>elseif</em> and <em>else if</em>
+   will only be considered exactly the same when using curly brackets
+   as in the above example.  When using a colon to define your
+   <em>if</em>/<em>elseif</em> conditions, you must
+   not separate <em>else if</em> into two words, or PHP will
+   fail with a parse error.
+  </span>
+ </p></blockquote>
+ <p class="para">
+  <div class="informalexample">
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #FF8000">/*&nbsp;Incorrect&nbsp;Method:&nbsp;*/<br /></span><span style="color: #007700">if&nbsp;(</span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">&gt;&nbsp;</span><span style="color: #0000BB">$b</span><span style="color: #007700">):<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$a</span><span style="color: #007700">.</span><span style="color: #DD0000">"&nbsp;is&nbsp;greater&nbsp;than&nbsp;"</span><span style="color: #007700">.</span><span style="color: #0000BB">$b</span><span style="color: #007700">;<br />else&nbsp;if&nbsp;(</span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">==&nbsp;</span><span style="color: #0000BB">$b</span><span style="color: #007700">):&nbsp;</span><span style="color: #FF8000">//&nbsp;Will&nbsp;not&nbsp;compile.<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">"The&nbsp;above&nbsp;line&nbsp;causes&nbsp;a&nbsp;parse&nbsp;error."</span><span style="color: #007700">;<br />endif;<br /><br /><br /></span><span style="color: #FF8000">/*&nbsp;Correct&nbsp;Method:&nbsp;*/<br /></span><span style="color: #007700">if&nbsp;(</span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">&gt;&nbsp;</span><span style="color: #0000BB">$b</span><span style="color: #007700">):<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$a</span><span style="color: #007700">.</span><span style="color: #DD0000">"&nbsp;is&nbsp;greater&nbsp;than&nbsp;"</span><span style="color: #007700">.</span><span style="color: #0000BB">$b</span><span style="color: #007700">;<br />elseif&nbsp;(</span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">==&nbsp;</span><span style="color: #0000BB">$b</span><span style="color: #007700">):&nbsp;</span><span style="color: #FF8000">//&nbsp;Note&nbsp;the&nbsp;combination&nbsp;of&nbsp;the&nbsp;words.<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">$a</span><span style="color: #007700">.</span><span style="color: #DD0000">"&nbsp;equals&nbsp;"</span><span style="color: #007700">.</span><span style="color: #0000BB">$b</span><span style="color: #007700">;<br />else:<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$a</span><span style="color: #007700">.</span><span style="color: #DD0000">"&nbsp;is&nbsp;neither&nbsp;greater&nbsp;than&nbsp;or&nbsp;equal&nbsp;to&nbsp;"</span><span style="color: #007700">.</span><span style="color: #0000BB">$b</span><span style="color: #007700">;<br />endif;<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+  </div>
+ </p>
+</div>
+<section id="usernotes">
+ <div class="head">
+  <span class="action"><a href="http://php.net/manual/add-note.php?sect=control-structures.elseif&amp;redirect=http://php.net/manual/en/control-structures.elseif.php"><img src='http://php.net/images/notes-add@2x.png' alt='add a note' width='12' height='12'> <small>add a note</small></a></span>
+  <h3 class="title">User Contributed Notes <span class="count">5 notes</span></h3>
+ </div><div id="allnotes">
+  <div class="note" id="71982">  <div class="votes">
+    <div id="Vu71982">
+    <a href="http://php.net/manual/vote-note.php?id=71982&amp;page=control-structures.elseif&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd71982">
+    <a href="http://php.net/manual/vote-note.php?id=71982&amp;page=control-structures.elseif&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V71982" title="55% like this...">
+    49
+    </div>
+  </div>
+  <a href="#71982" class="name">
+  <strong class="user"><em>Vladimir Kornea</em></strong></a><a class="genanchor" href="#71982"> &para;</a><div class="date" title="2006-12-27 09:59"><strong>10 years ago</strong></div>
+  <div class="text" id="Hcom71982">
+<div class="phpcode"><code><span class="html">
+The parser doesn't handle mixing alternative if syntaxes as reasonably as possible.<br /><br />The following is illegal (as it should be):<br /><br />&lt;?<br />if($a):<br />&nbsp; &nbsp; echo $a;<br />else {<br />&nbsp; &nbsp; echo $c;<br />}<br />?&gt;<br /><br />This is also illegal (as it should be):<br /><br />&lt;?<br />if($a) {<br />&nbsp; &nbsp; echo $a;<br />}<br />else:<br />&nbsp; &nbsp; echo $c;<br />endif;<br />?&gt;<br /><br />But since the two alternative if syntaxes are not interchangeable, it's reasonable to expect that the parser wouldn't try matching else statements using one style to if statement using the alternative style. In other words, one would expect that this would work:<br /><br />&lt;?<br />if($a):<br />&nbsp; &nbsp; echo $a;<br />&nbsp; &nbsp; if($b) {<br />&nbsp; &nbsp; &nbsp; echo $b;<br />&nbsp; &nbsp; }<br />else:<br />&nbsp; &nbsp; echo $c;<br />endif;<br />?&gt;<br /><br />Instead of concluding that the else statement was intended to match the if($b) statement (and erroring out), the parser could match the else statement to the if($a) statement, which shares its syntax.<br /><br />While it's understandable that the PHP developers don't consider this a bug, or don't consider it a bug worth their time, jsimlo was right to point out that mixing alternative if syntaxes might lead to unexpected results.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="115851">  <div class="votes">
+    <div id="Vu115851">
+    <a href="http://php.net/manual/vote-note.php?id=115851&amp;page=control-structures.elseif&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd115851">
+    <a href="http://php.net/manual/vote-note.php?id=115851&amp;page=control-structures.elseif&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V115851" title="53% like this...">
+    22
+    </div>
+  </div>
+  <a href="#115851" class="name">
+  <strong class="user"><em>qualitycoder</em></strong></a><a class="genanchor" href="#115851"> &para;</a><div class="date" title="2014-10-03 02:39"><strong>3 years ago</strong></div>
+  <div class="text" id="Hcom115851">
+<div class="phpcode"><code><span class="html">
+The reason 'else if' (with a space) works with traditional syntax and not colon syntax is because of a technicality.<br /><br /><span class="default">&lt;?php<br />&nbsp; </span><span class="keyword">if(</span><span class="default">$var </span><span class="keyword">== </span><span class="string">'Whatever'</span><span class="keyword">) {<br /><br />&nbsp; } else if(</span><span class="default">$var </span><span class="keyword">== </span><span class="string">'Something Else'</span><span class="keyword">) {<br /><br />&nbsp; } <br /></span><span class="default">?&gt;<br /></span><br />In this instance, the 'else if' is a shorthand/inline else statement (no curly braces) with the if statement as a body. It is the same things as:<br /><br /><span class="default">&lt;?php<br />&nbsp; </span><span class="keyword">if(</span><span class="default">$var </span><span class="keyword">== </span><span class="string">'Whatever'</span><span class="keyword">) {<br /><br />&nbsp; } else {<br />&nbsp; &nbsp; &nbsp; if(</span><span class="default">$var </span><span class="keyword">== </span><span class="string">'Something Else'</span><span class="keyword">) {<br /><br />&nbsp; &nbsp; &nbsp; }<br />&nbsp; }<br /></span><span class="default">?&gt;<br /></span><br />If you were to write this with colon syntax, it would be:<br /><br /><span class="default">&lt;?php<br />&nbsp; </span><span class="keyword">if(</span><span class="default">$var </span><span class="keyword">== </span><span class="string">'Whatever'</span><span class="keyword">):<br /><br />&nbsp; else:<br />&nbsp; &nbsp; &nbsp; if(</span><span class="default">$var </span><span class="keyword">== </span><span class="string">'Something Else'</span><span class="keyword">):<br /><br />&nbsp; &nbsp; &nbsp; endif;<br />&nbsp; endif;<br /></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="119119">  <div class="votes">
+    <div id="Vu119119">
+    <a href="http://php.net/manual/vote-note.php?id=119119&amp;page=control-structures.elseif&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd119119">
+    <a href="http://php.net/manual/vote-note.php?id=119119&amp;page=control-structures.elseif&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V119119" title="41% like this...">
+    -29
+    </div>
+  </div>
+  <a href="#119119" class="name">
+  <strong class="user"><em>Anonymous</em></strong></a><a class="genanchor" href="#119119"> &para;</a><div class="date" title="2016-04-05 01:28"><strong>1 year ago</strong></div>
+  <div class="text" id="Hcom119119">
+<div class="phpcode"><code><span class="html">
+If you find yourself using a lot of "elseif"s like this<br /><br /><span class="default">&lt;?php<br /></span><span class="keyword">if (</span><span class="default">$a </span><span class="keyword">&gt; </span><span class="default">$b</span><span class="keyword">) {<br />&nbsp; &nbsp; echo </span><span class="string">"a is bigger than b"</span><span class="keyword">;<br />} elseif (</span><span class="default">$a </span><span class="keyword">== </span><span class="default">$b</span><span class="keyword">) {<br />&nbsp; &nbsp; echo </span><span class="string">"a is equal to b"</span><span class="keyword">;<br />} elseif (...) {<br />&nbsp; &nbsp; echo </span><span class="string">"..."</span><span class="keyword">;<br />} elseif (...) {<br />&nbsp; &nbsp; echo </span><span class="string">"..."</span><span class="keyword">;<br />} elseif (...) {<br />&nbsp; &nbsp; echo </span><span class="string">""</span><span class="keyword">;<br />} elseif (...) {<br />&nbsp; &nbsp; echo </span><span class="string">""</span><span class="keyword">;<br />} else {<br />&nbsp; &nbsp; echo </span><span class="string">"a is smaller than b"</span><span class="keyword">;<br />}<br /></span><span class="default">?&gt;<br /></span><br />then you should look at using switch instead:<br /><a href="http://php.net/manual/en/control-structures.switch.php" rel="nofollow" target="_blank">http://php.net/manual/en/control-structures.switch.php</a></span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="120392">  <div class="votes">
+    <div id="Vu120392">
+    <a href="http://php.net/manual/vote-note.php?id=120392&amp;page=control-structures.elseif&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd120392">
+    <a href="http://php.net/manual/vote-note.php?id=120392&amp;page=control-structures.elseif&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V120392" title="23% like this...">
+    -50
+    </div>
+  </div>
+  <a href="#120392" class="name">
+  <strong class="user"><em>r</em></strong></a><a class="genanchor" href="#120392"> &para;</a><div class="date" title="2016-12-30 07:46"><strong>11 months ago</strong></div>
+  <div class="text" id="Hcom120392">
+<div class="phpcode"><code><span class="html">
+<span class="default">&lt;?php<br /></span><span class="keyword">if(</span><span class="default">true</span><span class="keyword">) {<br />&nbsp; echo </span><span class="string">'true'</span><span class="keyword">;&nbsp; </span><span class="comment">// show this<br /></span><span class="keyword">} else {<br />&nbsp; echo </span><span class="string">'false'</span><span class="keyword">;<br />}<br /><br />if(</span><span class="default">false</span><span class="keyword">) {<br />&nbsp; echo </span><span class="string">'true'</span><span class="keyword">;<br />} else {<br />&nbsp; echo </span><span class="string">'false'</span><span class="keyword">;&nbsp; </span><span class="comment">// show this<br /></span><span class="keyword">}<br /></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="114710">  <div class="votes">
+    <div id="Vu114710">
+    <a href="http://php.net/manual/vote-note.php?id=114710&amp;page=control-structures.elseif&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd114710">
+    <a href="http://php.net/manual/vote-note.php?id=114710&amp;page=control-structures.elseif&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V114710" title="28% like this...">
+    -120
+    </div>
+  </div>
+  <a href="#114710" class="name">
+  <strong class="user"><em>peter dot mlich at volny dot cz</em></strong></a><a class="genanchor" href="#114710"> &para;</a><div class="date" title="2014-03-27 10:10"><strong>3 years ago</strong></div>
+  <div class="text" id="Hcom114710">
+<div class="phpcode"><code><span class="html">
+To&nbsp; Rudi / 3 years ago<br /><br />Try switch in switch($name) case 'word': break; . --- slow<br />Try if/else and&nbsp; if/elseif in $name='word'. --- in my fast test, place 3<br />Try isset in isset($array[$name]). ---&nbsp; place 1<br />Try in_array in in_array($name,$array). --- slow<br />Try array_key_exists in array_key_exists($name,$array).<br /><br />Try return (end function) in if/elseif with&nbsp; -- place 2<br />if('word'==$name) {<br />&nbsp; $parsed[$name]=$text;<br />&nbsp; return;<br />&nbsp; }&nbsp; <br />elseif('word'==$name) {<br />&nbsp; $parsed[$name]=$text;<br />&nbsp; return;<br /> }&nbsp; <br /><br />PHP 5.35, xml_parse function, i parsed 9.2MB xml file to sql, script in place 1 do it at 11.54s (do more than only condition)</span>
+</code></div>
+  </div>
+ </div></div>
+
+ <div class="foot"><a href="http://php.net/manual/add-note.php?sect=control-structures.elseif&amp;redirect=http://php.net/manual/en/control-structures.elseif.php"><img src='http://php.net/images/notes-add@2x.png' alt='add a note' width='12' height='12'> <small>add a note</small></a></div>
+</section>    </section><!-- layout-content -->
+        <aside class='layout-menu'>
+    
+        <ul class='parent-menu-list'>
+                                    <li>
+                <a href="http://php.net/manual/en/language.control-structures.php">Control Structures</a>
+    
+                                    <ul class='child-menu-list'>
+    
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/control-structures.intro.php" title="Introduction">Introduction</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/control-structures.if.php" title="if">if</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/control-structures.else.php" title="else">else</a>
+                        </li>
+                          
+                        <li class="current">
+                            <a href="http://php.net/manual/en/control-structures.elseif.php" title="elseif/else if">elseif/else if</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/control-structures.alternative-syntax.php" title="Alternative syntax for control structures">Alternative syntax for control structures</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/control-structures.while.php" title="while">while</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/control-structures.do.while.php" title="do-&#8203;while">do-&#8203;while</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/control-structures.for.php" title="for">for</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/control-structures.foreach.php" title="foreach">foreach</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/control-structures.break.php" title="break">break</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/control-structures.continue.php" title="continue">continue</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/control-structures.switch.php" title="switch">switch</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/control-structures.declare.php" title="declare">declare</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/function.return.php" title="return">return</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/function.require.php" title="require">require</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/function.include.php" title="include">include</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/function.require-once.php" title="require_&#8203;once">require_&#8203;once</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/function.include-once.php" title="include_&#8203;once">include_&#8203;once</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/control-structures.goto.php" title="goto">goto</a>
+                        </li>
+                            
+                    </ul>
+                    
+            </li>
+                        
+                    </ul>
+    </aside>
+
+
+  </div><!-- layout -->
+         
+  <footer>
+    <div class="container footer-content">
+      <div class="row-fluid">
+      <ul class="footmenu">
+        <li><a href="http://php.net/copyright.php">Copyright &copy; 2001-2017 The PHP Group</a></li>
+        <li><a href="http://php.net/my.php">My PHP.net</a></li>
+        <li><a href="http://php.net/contact.php">Contact</a></li>
+        <li><a href="http://php.net/sites.php">Other PHP.net sites</a></li>
+        <li><a href="http://php.net/mirrors.php">Mirror sites</a></li>
+        <li><a href="http://php.net/privacy.php">Privacy policy</a></li>
+      </ul>
+      </div>
+    </div>
+  </footer>
+
+    
+ <!-- External and third party libraries. -->
+ <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/modernizr.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/hogan-2.0.0.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/typeahead.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/mousetrap.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/search.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1500560403&amp;f=/js/common.js"></script>
+
+<a id="toTop" href="javascript:;"><span id="toTopHover"></span><img width="40" height="40" alt="To Top" src="http://php.net/images/to-top@2x.png"></a>
+
+</body>
+
+<!-- Mirrored from php.net/manual/en/control-structures.elseif.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Dec 2017 23:18:10 GMT -->
+</html>
+

@@ -1,0 +1,16 @@
+INICIO
+Print "SUPERMERCADO PAGAMENOS";
+INT precio_compra;
+dowhile(num != -1)
+{
+	INT precio_articulo_actual;
+	Print "Introduce el precio.";
+	READ precio_articulo_actual;
+	precio_articulo_actual += precio_compra;
+}
+INT cantidad_pago; 
+Print "¿Pago realizado? Introduce la cantidad (Ha de ser mayor que el precio de los artículos).";
+LEE cantidad_pago;
+
+Print "Cambio a entregar:" + (cantidad_pago - precio_compra);
+FIN

@@ -1,0 +1,17 @@
+INICIO
+INT precio_base = 0.10; //En euros
+INT km;
+Escribe "Introduce el número de kilómetros.";
+LEE km;
+BOOLEAN familia_numerosa;
+Escribe "Pulsa 1 si tienes familia numerosa. 0 Si no lo es.";
+LEE familia_numerosa;
+INT iva = 7;
+INT precio = (km*precio_base);
+Si(km > 1000 || familia_numerosa == true)
+{
+	precio = precio - ((precio*30)/100);
+}
+precio_final = precio + ((precio*iva)/100);
+Escribe "El precio final sería de " + precio_final + " euros con IVA y " + precio + " sin iva.";
+FIN

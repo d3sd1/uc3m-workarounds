@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<!-- Mirrored from php.net/git.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Dec 2017 23:18:08 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+  <title>PHP: Git Access</title>
+
+ <link rel="shortcut icon" href="http://php.net/favicon.ico">
+ <link rel="search" type="application/opensearchdescription+xml" href="http://php.net/phpnetimprovedsearch.src" title="Add PHP.net search">
+ <link rel="alternate" type="application/atom+xml" href="http://php.net/releases/feed.php" title="PHP Release feed">
+ <link rel="alternate" type="application/atom+xml" href="http://php.net/feed.atom" title="PHP: Hypertext Preprocessor">
+
+ <link rel="canonical" href="http://php.net/git.php">
+ <link rel="shorturl" href="http://php.net/git">
+ <link rel="alternate" href="http://php.net/git" hreflang="x-default">
+
+
+
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1421837618&amp;f=/fonts/Fira/fira.css" media="screen">
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1421837618&amp;f=/fonts/Font-Awesome/css/fontello.css" media="screen">
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1478800802&amp;f=/styles/theme-base.css" media="screen">
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1449787206&amp;f=/styles/theme-medium.css" media="screen">
+
+ <!--[if lte IE 7]>
+ <link rel="stylesheet" type="text/css" href="http://php.net/styles/workarounds.ie7.css" media="screen">
+ <![endif]-->
+
+ <!--[if lte IE 8]>
+ <script type="text/javascript">
+  window.brokenIE = true;
+ </script>
+ <![endif]-->
+
+ <!--[if lte IE 9]>
+ <link rel="stylesheet" type="text/css" href="http://php.net/styles/workarounds.ie9.css" media="screen">
+ <![endif]-->
+
+ <!--[if IE]>
+ <script type="text/javascript" src="http://php.net/js/ext/html5.js"></script>
+ <![endif]-->
+
+ <base >
+
+</head>
+<body class="community ">
+
+<nav id="head-nav" class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <a href="http://php.net/" class="brand"><img src="http://php.net/images/logos/php-logo.svg" width="48" height="24" alt="php"></a>
+    <div id="mainmenu-toggle-overlay"></div>
+    <input type="checkbox" id="mainmenu-toggle">
+    <ul class="nav">
+      <li class=""><a href="http://php.net/downloads">Downloads</a></li>
+      <li class=""><a href="http://php.net/docs.php">Documentation</a></li>
+      <li class="active"><a href="http://php.net/get-involved" >Get Involved</a></li>
+      <li class=""><a href="http://php.net/support">Help</a></li>
+    </ul>
+    <form class="navbar-search" id="topsearch" action="http://php.net/search.php">
+      <input type="hidden" name="show" value="quickref">
+      <input type="search" name="pattern" class="search-query" placeholder="Search" accesskey="s">
+    </form>
+  </div>
+  <div id="flash-message"></div>
+</nav>
+<nav id="trick"><div><dl>
+<dt><a href='http://php.net/manual/en/getting-started.php'>Getting Started</a></dt>
+	<dd><a href='http://php.net/manual/en/introduction.php'>Introduction</a></dd>
+	<dd><a href='http://php.net/manual/en/tutorial.php'>A simple tutorial</a></dd>
+<dt><a href='http://php.net/manual/en/langref.php'>Language Reference</a></dt>
+	<dd><a href='http://php.net/manual/en/language.basic-syntax.php'>Basic syntax</a></dd>
+	<dd><a href='http://php.net/manual/en/language.types.php'>Types</a></dd>
+	<dd><a href='http://php.net/manual/en/language.variables.php'>Variables</a></dd>
+	<dd><a href='http://php.net/manual/en/language.constants.php'>Constants</a></dd>
+	<dd><a href='http://php.net/manual/en/language.expressions.php'>Expressions</a></dd>
+	<dd><a href='http://php.net/manual/en/language.operators.php'>Operators</a></dd>
+	<dd><a href='http://php.net/manual/en/language.control-structures.php'>Control Structures</a></dd>
+	<dd><a href='http://php.net/manual/en/language.functions.php'>Functions</a></dd>
+	<dd><a href='http://php.net/manual/en/language.oop5.php'>Classes and Objects</a></dd>
+	<dd><a href='http://php.net/manual/en/language.namespaces.php'>Namespaces</a></dd>
+	<dd><a href='http://php.net/manual/en/language.errors.php'>Errors</a></dd>
+	<dd><a href='http://php.net/manual/en/language.exceptions.php'>Exceptions</a></dd>
+	<dd><a href='http://php.net/manual/en/language.generators.php'>Generators</a></dd>
+	<dd><a href='http://php.net/manual/en/language.references.php'>References Explained</a></dd>
+	<dd><a href='http://php.net/manual/en/reserved.variables.php'>Predefined Variables</a></dd>
+	<dd><a href='http://php.net/manual/en/reserved.exceptions.php'>Predefined Exceptions</a></dd>
+	<dd><a href='http://php.net/manual/en/reserved.interfaces.php'>Predefined Interfaces and Classes</a></dd>
+	<dd><a href='http://php.net/manual/en/context.php'>Context options and parameters</a></dd>
+	<dd><a href='http://php.net/manual/en/wrappers.php'>Supported Protocols and Wrappers</a></dd>
+</dl>
+<dl>
+<dt><a href='http://php.net/manual/en/security.php'>Security</a></dt>
+	<dd><a href='http://php.net/manual/en/security.intro.php'>Introduction</a></dd>
+	<dd><a href='http://php.net/manual/en/security.general.php'>General considerations</a></dd>
+	<dd><a href='http://php.net/manual/en/security.cgi-bin.php'>Installed as CGI binary</a></dd>
+	<dd><a href='http://php.net/manual/en/security.apache.php'>Installed as an Apache module</a></dd>
+	<dd><a href='http://php.net/manual/en/security.sessions.php'>Session Security</a></dd>
+	<dd><a href='http://php.net/manual/en/security.filesystem.php'>Filesystem Security</a></dd>
+	<dd><a href='http://php.net/manual/en/security.database.php'>Database Security</a></dd>
+	<dd><a href='http://php.net/manual/en/security.errors.php'>Error Reporting</a></dd>
+	<dd><a href='http://php.net/manual/en/security.globals.php'>Using Register Globals</a></dd>
+	<dd><a href='http://php.net/manual/en/security.variables.php'>User Submitted Data</a></dd>
+	<dd><a href='http://php.net/manual/en/security.magicquotes.php'>Magic Quotes</a></dd>
+	<dd><a href='http://php.net/manual/en/security.hiding.php'>Hiding PHP</a></dd>
+	<dd><a href='http://php.net/manual/en/security.current.php'>Keeping Current</a></dd>
+<dt><a href='http://php.net/manual/en/features.php'>Features</a></dt>
+	<dd><a href='http://php.net/manual/en/features.http-auth.php'>HTTP authentication with PHP</a></dd>
+	<dd><a href='http://php.net/manual/en/features.cookies.php'>Cookies</a></dd>
+	<dd><a href='http://php.net/manual/en/features.sessions.php'>Sessions</a></dd>
+	<dd><a href='http://php.net/manual/en/features.xforms.php'>Dealing with XForms</a></dd>
+	<dd><a href='http://php.net/manual/en/features.file-upload.php'>Handling file uploads</a></dd>
+	<dd><a href='http://php.net/manual/en/features.remote-files.php'>Using remote files</a></dd>
+	<dd><a href='http://php.net/manual/en/features.connection-handling.php'>Connection handling</a></dd>
+	<dd><a href='http://php.net/manual/en/features.persistent-connections.php'>Persistent Database Connections</a></dd>
+	<dd><a href='http://php.net/manual/en/features.safe-mode.php'>Safe Mode</a></dd>
+	<dd><a href='http://php.net/manual/en/features.commandline.php'>Command line usage</a></dd>
+	<dd><a href='http://php.net/manual/en/features.gc.php'>Garbage Collection</a></dd>
+	<dd><a href='http://php.net/manual/en/features.dtrace.php'>DTrace Dynamic Tracing</a></dd>
+</dl>
+<dl>
+<dt><a href='http://php.net/manual/en/funcref.php'>Function Reference</a></dt>
+	<dd><a href='http://php.net/manual/en/refs.basic.php.php'>Affecting PHP's Behaviour</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.audio.php'>Audio Formats Manipulation</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.remote.auth.php'>Authentication Services</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.cmdline.php'>Command Line Specific Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.compression.php'>Compression and Archive Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.creditcard.php'>Credit Card Processing</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.crypto.php'>Cryptography Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.database.php'>Database Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.calendar.php'>Date and Time Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.fileprocess.file.php'>File System Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.international.php'>Human Language and Character Encoding Support</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.image.php'>Image Processing and Generation</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.remote.mail.php'>Mail Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.math.php'>Mathematical Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.nontext.php'>Non-Text MIME Output</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.fileprocess.process.php'>Process Control Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.other.php'>Other Basic Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.remote.other.php'>Other Services</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.search.php'>Search Engine Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.server.php'>Server Specific Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.session.php'>Session Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.text.php'>Text Processing</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.vartype.php'>Variable and Type Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.webservice.php'>Web Services</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.windows.php'>Windows Only Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.xml.php'>XML Manipulation</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.ui.php'>GUI Extensions</a></dd>
+</dl>
+<dl>
+<dt>Keyboard Shortcuts</dt><dt>?</dt>
+<dd>This help</dd>
+<dt>j</dt>
+<dd>Next menu item</dd>
+<dt>k</dt>
+<dd>Previous menu item</dd>
+<dt>g p</dt>
+<dd>Previous man page</dd>
+<dt>g n</dt>
+<dd>Next man page</dd>
+<dt>G</dt>
+<dd>Scroll to bottom</dd>
+<dt>g g</dt>
+<dd>Scroll to top</dd>
+<dt>g h</dt>
+<dd>Goto homepage</dd>
+<dt>g s</dt>
+<dd>Goto search<br>(current page)</dd>
+<dt>/</dt>
+<dd>Focus search box</dd>
+</dl></div></nav>
+<div id="goto">
+    <div class="search">
+         <div class="text"></div>
+         <div class="results"><ul></ul></div>
+   </div>
+</div>
+
+
+
+
+
+<div id="layout" class="clearfix">
+  <section id="layout-content">
+
+<h1>Git Access</h1>
+
+<p>
+ If you wish to get the latest PHP source tree, you can obtain it through Git.
+ You should be warned that the Git version is a development version, and as
+ such, is often unstable, and may not even compile properly. The advantage of
+ using Git, though, is that you can get the latest fixes and updates, without
+ having to wait for the official releases.
+</p>
+
+<p>
+ PHP uses an advanced configuration system that requires you to have
+ the following tools. re2c is only necessary for developers and can be found
+ <a href="http://re2c.org/">here</a>.
+ All other utilities can be obtained from
+ <a href="ftp://ftp.gnu.org/pub/gnu/">the GNU FTP site</a>.
+</p>
+
+<ul>
+ <li><i>autoconf</i>: 2.59+</li>
+ <li><i>automake</i>: 1.4+</li>
+ <li><i>libtool</i>: 1.4.x+ (except 1.4.2)</li>
+ <li><i>re2c</i>: 0.13.4+</li>
+ <li id="bison"><i>bison</i>:
+  <ul>
+   <li><i>PHP 5.4</i>: 1.28, 1.35, 1.75, 2.0 to 2.6.4</li>
+   <li><i>PHP 5.5 and 5.6</i>: 2.4 to 2.7</li>
+   <li><i>PHP 7</i>: 2.4+</li>
+  </ul>
+ </li>
+</ul>
+
+<p>
+ If you're experiencing problems, see also the section on
+ <a href="#buildconf_fail">buildconf failures</a>.
+</p>
+
+<h2>Steps for using PHP from Git</h2>
+
+<ol>
+ <li>
+  You can retrieve the PHP source code from our
+  <a href="https://github.com/php/php-src.git">GitHub mirror</a> with this
+  command:
+  <br><br>
+  <code>git clone https://github.com/php/php-src.git</code>
+  <br><br>
+
+  Alternatively, you can retrieve the source code from
+  <a href="http://git.php.net/">git.php.net</a> with this command:
+  <br><br>
+  <code>git clone http://git.php.net/repository/php-src.git</code>
+  <br><br>
+
+  You can also download a snapshot from GitHub:<br><br>
+  <ul>
+   <li>Go to the <a href="https://github.com/php/php-src">php-src project page</a>.</li>
+   <li>Select the branch you're interested in from the branch dropdown.</li>
+   <li>Click on the <strong>Download ZIP</strong> button.</li>
+  </ul>
+ </li>
+
+ <li>
+  Make sure you're in the right directory to work on PHP:
+  <br><br>
+  <code>cd php-src</code>
+  <br><br>
+ </li>
+
+ <li>
+  You can then check out the branch you want to build, for example:
+  <br><br>
+  <strong>PHP 5.6</strong>:
+  <code>git checkout PHP-5.6</code>
+  <br>
+  <strong>PHP 7.0</strong>:
+  <code>git checkout PHP-7.0</code>
+  <br>
+  <strong>PHP 7.1</strong>:
+  <code>git checkout PHP-7.1</code>
+  <br>
+  <strong>PHP 7.2</strong>:
+  <code>git checkout PHP-7.2</code>
+  <br>
+  <strong>PHP HEAD</strong>:
+  <code>git checkout master</code>
+  <br><br>
+ </li>
+
+ <li>
+  <div class="tip" style="margin: 10px 0 10px 20px;">
+   <p>Note that certain combinations of autoconf, automake and libtool may not
+   work when used together, particularly with historical versions of PHP. See
+   <a href="#buildconf_fail">below</a> for details.<br>
+   Also, certain versions of autoconf may generate warnings of <code>AC_PROG_CPP
+   called before AC_PROG_CC</code>. These messages can usually be ignored.</p>
+  </div>
+ </li>
+
+ <li>
+  Run <code>./buildconf</code> to generate the configure script. This may take several moments.
+ </li>
+
+ <li>
+  From this point onwards, installation is similar to the installation of one of
+  the official packages with one main difference &ndash; you will need
+  <a href="#bison">a version of bison that is supported for the PHP version you want to build</a>.
+  You may also require re2c if you intend to change any of the scanner and
+  parser files PHP uses.
+ </li>
+</ol>
+
+<p>
+ There are many other things, such as the XML source code
+ for the documentation, available via Git. See
+ <a href="http://git.php.net/">the web-based view of the Git
+ server</a> to see what is available.
+</p>
+
+<p>
+ The PHP Wiki has a useful
+ <a href="https://wiki.php.net/vcs/gitfaq">Git FAQ</a>, which provides useful
+ tips and cheatsheets for using the PHP Git repository, and if you want to
+ become involved in developing PHP, the
+ <a href="https://wiki.php.net/vcs/gitworkflow">Git Workflow</a> page is also
+ likely to be of interest.
+</p>
+
+<h2>PHP manual</h2>
+
+<p>
+ The PHP manual is still currently hosted on SVN, although it will be migrated
+ to Git in the future. To checkout the latest English version of the PHP
+ manual:<br>
+ <code>svn checkout https://svn.php.net/repository/phpdoc/modules/doc-en ./phpdoc-en</code>
+ <br><br>
+ You can also check the <a href="https://wiki.php.net/vcs/svnfaq">SVN FAQ on the wiki</a>.
+</p>
+
+<h2>Historical issues</h2>
+
+<h3 id="buildconf_fail">autoconf, automake and libtool information for PHP 5.3 and below</h3>
+
+<p>
+ There seem to be problems with libtool 1.4.2. It is suggested
+ that you use libtool 1.4, along with autoconf 2.13 and
+ automake 1.4. You should also ensure that autoconf, automake
+ and libtool are installed in the same directory. libtool 1.5
+ will not work.
+</p>
+
+<p>The following combinations are known to work with PHP 5.3 and below:</p>
+<ul>
+ <li>autoconf 2.13, automake 1.4 and libtool 1.4.3</li>
+ <li>autoconf 2.13, automake 1.5 and libtool 1.4.3</li>
+</ul>
+
+<p>
+ If you have multiple versions of autoconf installed on your computer, as is
+ common for many UNIXes, you can set the PHP_AUTOCONF and PHP_AUTOHEADER
+ variables when running buildconf to indicate which versions it should use
+ e.g.:<br>
+ <code>PHP_AUTOCONF=autoconf213 PHP_AUTOHEADER=autoheader213 ./buildconf</code>
+</p>
+
+<h3 id="flex_fail">Zend/zend_language_scanner.c: No such file or directory</h3>
+
+<p>
+ PHP only supports flex 2.5.4, <strong>not</strong> later versions as they broke backwards compatibility.
+ Please note that PHP 5.3 and later do not require flex at all.
+</p>
+
+    </section><!-- layout-content -->
+    
+
+  </div><!-- layout -->
+         
+  <footer>
+    <div class="container footer-content">
+      <div class="row-fluid">
+      <ul class="footmenu">
+        <li><a href="http://php.net/copyright.php">Copyright &copy; 2001-2017 The PHP Group</a></li>
+        <li><a href="http://php.net/my.php">My PHP.net</a></li>
+        <li><a href="http://php.net/contact.php">Contact</a></li>
+        <li><a href="http://php.net/sites.php">Other PHP.net sites</a></li>
+        <li><a href="http://php.net/mirrors.php">Mirror sites</a></li>
+        <li><a href="http://php.net/privacy.php">Privacy policy</a></li>
+      </ul>
+      </div>
+    </div>
+  </footer>
+
+    
+ <!-- External and third party libraries. -->
+ <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/modernizr.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/hogan-2.0.0.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/typeahead.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/mousetrap.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/search.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1500560403&amp;f=/js/common.js"></script>
+
+<a id="toTop" href="javascript:;"><span id="toTopHover"></span><img width="40" height="40" alt="To Top" src="http://php.net/images/to-top@2x.png"></a>
+
+</body>
+
+<!-- Mirrored from php.net/git.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Dec 2017 23:18:08 GMT -->
+</html>
+

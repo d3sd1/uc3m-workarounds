@@ -1,0 +1,18 @@
+http://localhost:8000/cliente/funcionalidad
+Funcionalidades de usuarios
+
+http://localhost:8000/cliente/usuario?name=juan&password=juan
+Funcionalidades que requieren de user y pass en cada llamada (en este caso como juan)
+
+http://localhost:8000/cliente/log
+Para ver el tiempo real por websockets lo que se hace en el servlet Usuario
+
+-----------
+CLIENTE
+-----------
+Configuraciones del api rest en config.yml
+
+----------
+SERVIDOR
+----------
+Configuraciones del api rest en constante (simulando db).

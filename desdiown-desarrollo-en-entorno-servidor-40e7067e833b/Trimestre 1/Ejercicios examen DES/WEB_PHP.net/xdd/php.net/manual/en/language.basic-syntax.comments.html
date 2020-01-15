@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<!-- Mirrored from php.net/manual/en/language.basic-syntax.comments.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Dec 2017 23:18:09 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+  <title>PHP: Comments - Manual </title>
+
+ <link rel="shortcut icon" href="http://php.net/favicon.ico">
+ <link rel="search" type="application/opensearchdescription+xml" href="http://php.net/phpnetimprovedsearch.src" title="Add PHP.net search">
+ <link rel="alternate" type="application/atom+xml" href="http://php.net/releases/feed.php" title="PHP Release feed">
+ <link rel="alternate" type="application/atom+xml" href="http://php.net/feed.atom" title="PHP: Hypertext Preprocessor">
+
+ <link rel="canonical" href="http://php.net/manual/en/language.basic-syntax.comments.php">
+ <link rel="shorturl" href="http://php.net/basic-syntax.comments">
+ <link rel="alternate" href="http://php.net/basic-syntax.comments" hreflang="x-default">
+
+ <link rel="contents" href="http://php.net/manual/en/index.php">
+ <link rel="index" href="http://php.net/manual/en/language.basic-syntax.php">
+ <link rel="prev" href="http://php.net/manual/en/language.basic-syntax.instruction-separation.php">
+ <link rel="next" href="http://php.net/manual/en/language.types.php">
+
+ <link rel="alternate" href="http://php.net/manual/en/language.basic-syntax.comments.php" hreflang="en">
+ <link rel="alternate" href="http://php.net/manual/pt_BR/language.basic-syntax.comments.php" hreflang="pt_BR">
+ <link rel="alternate" href="http://php.net/manual/zh/language.basic-syntax.comments.php" hreflang="zh">
+ <link rel="alternate" href="http://php.net/manual/fr/language.basic-syntax.comments.php" hreflang="fr">
+ <link rel="alternate" href="http://php.net/manual/de/language.basic-syntax.comments.php" hreflang="de">
+ <link rel="alternate" href="http://php.net/manual/ja/language.basic-syntax.comments.php" hreflang="ja">
+ <link rel="alternate" href="http://php.net/manual/ro/language.basic-syntax.comments.php" hreflang="ro">
+ <link rel="alternate" href="http://php.net/manual/ru/language.basic-syntax.comments.php" hreflang="ru">
+ <link rel="alternate" href="http://php.net/manual/es/language.basic-syntax.comments.php" hreflang="es">
+ <link rel="alternate" href="http://php.net/manual/tr/language.basic-syntax.comments.php" hreflang="tr">
+
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1421837618&amp;f=/fonts/Fira/fira.css" media="screen">
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1421837618&amp;f=/fonts/Font-Awesome/css/fontello.css" media="screen">
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1478800802&amp;f=/styles/theme-base.css" media="screen">
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1449787206&amp;f=/styles/theme-medium.css" media="screen">
+
+ <!--[if lte IE 7]>
+ <link rel="stylesheet" type="text/css" href="http://php.net/styles/workarounds.ie7.css" media="screen">
+ <![endif]-->
+
+ <!--[if lte IE 8]>
+ <script type="text/javascript">
+  window.brokenIE = true;
+ </script>
+ <![endif]-->
+
+ <!--[if lte IE 9]>
+ <link rel="stylesheet" type="text/css" href="http://php.net/styles/workarounds.ie9.css" media="screen">
+ <![endif]-->
+
+ <!--[if IE]>
+ <script type="text/javascript" src="http://php.net/js/ext/html5.js"></script>
+ <![endif]-->
+
+ <base >
+
+</head>
+<body class="docs ">
+
+<nav id="head-nav" class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <a href="http://php.net/" class="brand"><img src="http://php.net/images/logos/php-logo.svg" width="48" height="24" alt="php"></a>
+    <div id="mainmenu-toggle-overlay"></div>
+    <input type="checkbox" id="mainmenu-toggle">
+    <ul class="nav">
+      <li class=""><a href="http://php.net/downloads">Downloads</a></li>
+      <li class="active"><a href="http://php.net/docs.php">Documentation</a></li>
+      <li class=""><a href="http://php.net/get-involved" >Get Involved</a></li>
+      <li class=""><a href="http://php.net/support">Help</a></li>
+    </ul>
+    <form class="navbar-search" id="topsearch" action="http://php.net/search.php">
+      <input type="hidden" name="show" value="quickref">
+      <input type="search" name="pattern" class="search-query" placeholder="Search" accesskey="s">
+    </form>
+  </div>
+  <div id="flash-message"></div>
+</nav>
+<nav id="trick"><div><dl>
+<dt><a href='http://php.net/manual/en/getting-started.php'>Getting Started</a></dt>
+	<dd><a href='http://php.net/manual/en/introduction.php'>Introduction</a></dd>
+	<dd><a href='http://php.net/manual/en/tutorial.php'>A simple tutorial</a></dd>
+<dt><a href='http://php.net/manual/en/langref.php'>Language Reference</a></dt>
+	<dd><a href='http://php.net/manual/en/language.basic-syntax.php'>Basic syntax</a></dd>
+	<dd><a href='http://php.net/manual/en/language.types.php'>Types</a></dd>
+	<dd><a href='http://php.net/manual/en/language.variables.php'>Variables</a></dd>
+	<dd><a href='http://php.net/manual/en/language.constants.php'>Constants</a></dd>
+	<dd><a href='http://php.net/manual/en/language.expressions.php'>Expressions</a></dd>
+	<dd><a href='http://php.net/manual/en/language.operators.php'>Operators</a></dd>
+	<dd><a href='http://php.net/manual/en/language.control-structures.php'>Control Structures</a></dd>
+	<dd><a href='http://php.net/manual/en/language.functions.php'>Functions</a></dd>
+	<dd><a href='http://php.net/manual/en/language.oop5.php'>Classes and Objects</a></dd>
+	<dd><a href='http://php.net/manual/en/language.namespaces.php'>Namespaces</a></dd>
+	<dd><a href='http://php.net/manual/en/language.errors.php'>Errors</a></dd>
+	<dd><a href='http://php.net/manual/en/language.exceptions.php'>Exceptions</a></dd>
+	<dd><a href='http://php.net/manual/en/language.generators.php'>Generators</a></dd>
+	<dd><a href='http://php.net/manual/en/language.references.php'>References Explained</a></dd>
+	<dd><a href='http://php.net/manual/en/reserved.variables.php'>Predefined Variables</a></dd>
+	<dd><a href='http://php.net/manual/en/reserved.exceptions.php'>Predefined Exceptions</a></dd>
+	<dd><a href='http://php.net/manual/en/reserved.interfaces.php'>Predefined Interfaces and Classes</a></dd>
+	<dd><a href='http://php.net/manual/en/context.php'>Context options and parameters</a></dd>
+	<dd><a href='http://php.net/manual/en/wrappers.php'>Supported Protocols and Wrappers</a></dd>
+</dl>
+<dl>
+<dt><a href='http://php.net/manual/en/security.php'>Security</a></dt>
+	<dd><a href='http://php.net/manual/en/security.intro.php'>Introduction</a></dd>
+	<dd><a href='http://php.net/manual/en/security.general.php'>General considerations</a></dd>
+	<dd><a href='http://php.net/manual/en/security.cgi-bin.php'>Installed as CGI binary</a></dd>
+	<dd><a href='http://php.net/manual/en/security.apache.php'>Installed as an Apache module</a></dd>
+	<dd><a href='http://php.net/manual/en/security.sessions.php'>Session Security</a></dd>
+	<dd><a href='http://php.net/manual/en/security.filesystem.php'>Filesystem Security</a></dd>
+	<dd><a href='http://php.net/manual/en/security.database.php'>Database Security</a></dd>
+	<dd><a href='http://php.net/manual/en/security.errors.php'>Error Reporting</a></dd>
+	<dd><a href='http://php.net/manual/en/security.globals.php'>Using Register Globals</a></dd>
+	<dd><a href='http://php.net/manual/en/security.variables.php'>User Submitted Data</a></dd>
+	<dd><a href='http://php.net/manual/en/security.magicquotes.php'>Magic Quotes</a></dd>
+	<dd><a href='http://php.net/manual/en/security.hiding.php'>Hiding PHP</a></dd>
+	<dd><a href='http://php.net/manual/en/security.current.php'>Keeping Current</a></dd>
+<dt><a href='http://php.net/manual/en/features.php'>Features</a></dt>
+	<dd><a href='http://php.net/manual/en/features.http-auth.php'>HTTP authentication with PHP</a></dd>
+	<dd><a href='http://php.net/manual/en/features.cookies.php'>Cookies</a></dd>
+	<dd><a href='http://php.net/manual/en/features.sessions.php'>Sessions</a></dd>
+	<dd><a href='http://php.net/manual/en/features.xforms.php'>Dealing with XForms</a></dd>
+	<dd><a href='http://php.net/manual/en/features.file-upload.php'>Handling file uploads</a></dd>
+	<dd><a href='http://php.net/manual/en/features.remote-files.php'>Using remote files</a></dd>
+	<dd><a href='http://php.net/manual/en/features.connection-handling.php'>Connection handling</a></dd>
+	<dd><a href='http://php.net/manual/en/features.persistent-connections.php'>Persistent Database Connections</a></dd>
+	<dd><a href='http://php.net/manual/en/features.safe-mode.php'>Safe Mode</a></dd>
+	<dd><a href='http://php.net/manual/en/features.commandline.php'>Command line usage</a></dd>
+	<dd><a href='http://php.net/manual/en/features.gc.php'>Garbage Collection</a></dd>
+	<dd><a href='http://php.net/manual/en/features.dtrace.php'>DTrace Dynamic Tracing</a></dd>
+</dl>
+<dl>
+<dt><a href='http://php.net/manual/en/funcref.php'>Function Reference</a></dt>
+	<dd><a href='http://php.net/manual/en/refs.basic.php.php'>Affecting PHP's Behaviour</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.audio.php'>Audio Formats Manipulation</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.remote.auth.php'>Authentication Services</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.cmdline.php'>Command Line Specific Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.compression.php'>Compression and Archive Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.creditcard.php'>Credit Card Processing</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.crypto.php'>Cryptography Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.database.php'>Database Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.calendar.php'>Date and Time Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.fileprocess.file.php'>File System Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.international.php'>Human Language and Character Encoding Support</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.image.php'>Image Processing and Generation</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.remote.mail.php'>Mail Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.math.php'>Mathematical Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.nontext.php'>Non-Text MIME Output</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.fileprocess.process.php'>Process Control Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.other.php'>Other Basic Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.remote.other.php'>Other Services</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.search.php'>Search Engine Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.server.php'>Server Specific Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.session.php'>Session Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.text.php'>Text Processing</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.vartype.php'>Variable and Type Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.webservice.php'>Web Services</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.windows.php'>Windows Only Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.xml.php'>XML Manipulation</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.ui.php'>GUI Extensions</a></dd>
+</dl>
+<dl>
+<dt>Keyboard Shortcuts</dt><dt>?</dt>
+<dd>This help</dd>
+<dt>j</dt>
+<dd>Next menu item</dd>
+<dt>k</dt>
+<dd>Previous menu item</dd>
+<dt>g p</dt>
+<dd>Previous man page</dd>
+<dt>g n</dt>
+<dd>Next man page</dd>
+<dt>G</dt>
+<dd>Scroll to bottom</dd>
+<dt>g g</dt>
+<dd>Scroll to top</dd>
+<dt>g h</dt>
+<dd>Goto homepage</dd>
+<dt>g s</dt>
+<dd>Goto search<br>(current page)</dd>
+<dt>/</dt>
+<dd>Focus search box</dd>
+</dl></div></nav>
+<div id="goto">
+    <div class="search">
+         <div class="text"></div>
+         <div class="results"><ul></ul></div>
+   </div>
+</div>
+
+  <div id="breadcrumbs" class="clearfix">
+    <div id="breadcrumbs-inner">
+          <div class="next">
+        <a href="http://php.net/manual/en/language.types.php">
+          Types &raquo;
+        </a>
+      </div>
+              <div class="prev">
+        <a href="http://php.net/manual/en/language.basic-syntax.instruction-separation.php">
+          &laquo; Instruction separation        </a>
+      </div>
+          <ul>
+            <li><a href='http://php.net/manual/en/index.php'>PHP Manual</a></li>      <li><a href='http://php.net/manual/en/langref.php'>Language Reference</a></li>      <li><a href='http://php.net/manual/en/language.basic-syntax.php'>Basic syntax</a></li>      </ul>
+    </div>
+  </div>
+
+
+
+
+<div id="layout" class="clearfix">
+  <section id="layout-content">
+  <div class="page-tools">
+    <div class="change-language">
+      <form action="http://php.net/manual/change.php" method="get" id="changelang" name="changelang">
+        <fieldset>
+          <label for="changelang-langs">Change language:</label>
+          <select onchange="document.changelang.submit()" name="page" id="changelang-langs">
+            <option value='en/language.basic-syntax.comments.php' selected="selected">English</option>
+            <option value='http://php.net/manual/en/pt_BR/language.basic-syntax.comments.php'>Brazilian Portuguese</option>
+            <option value='http://php.net/manual/en/zh/language.basic-syntax.comments.php'>Chinese (Simplified)</option>
+            <option value='http://php.net/manual/en/fr/language.basic-syntax.comments.php'>French</option>
+            <option value='http://php.net/manual/en/de/language.basic-syntax.comments.php'>German</option>
+            <option value='http://php.net/manual/en/ja/language.basic-syntax.comments.php'>Japanese</option>
+            <option value='http://php.net/manual/en/ro/language.basic-syntax.comments.php'>Romanian</option>
+            <option value='http://php.net/manual/en/ru/language.basic-syntax.comments.php'>Russian</option>
+            <option value='http://php.net/manual/en/es/language.basic-syntax.comments.php'>Spanish</option>
+            <option value='http://php.net/manual/en/tr/language.basic-syntax.comments.php'>Turkish</option>
+            <option value="http://php.net/manual/en/help-translate.php">Other</option>
+          </select>
+        </fieldset>
+      </form>
+    </div>
+    <div class="edit-bug">
+      <a href="https://edit.php.net/?project=PHP&amp;perm=en/language.basic-syntax.comments.php">Edit</a>
+      <a href="https://bugs.php.net/report.php?bug_type=Documentation+problem&amp;manpage=language.basic-syntax.comments">Report a Bug</a>
+    </div>
+  </div><div id="language.basic-syntax.comments" class="sect1">
+   <h2 class="title">Comments</h2>
+   <p class="para">
+    PHP supports &#039;C&#039;, &#039;C++&#039; and Unix shell-style (Perl style) comments. For example:
+
+    <div class="informalexample">
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">'This&nbsp;is&nbsp;a&nbsp;test'</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;This&nbsp;is&nbsp;a&nbsp;one-line&nbsp;c++&nbsp;style&nbsp;comment<br />&nbsp;&nbsp;&nbsp;&nbsp;/*&nbsp;This&nbsp;is&nbsp;a&nbsp;multi&nbsp;line&nbsp;comment<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;yet&nbsp;another&nbsp;line&nbsp;of&nbsp;comment&nbsp;*/<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">'This&nbsp;is&nbsp;yet&nbsp;another&nbsp;test'</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'One&nbsp;Final&nbsp;Test'</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">#&nbsp;This&nbsp;is&nbsp;a&nbsp;one-line&nbsp;shell-style&nbsp;comment<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+     </div>
+
+    </div>
+   </p>
+   <p class="simpara">
+    The &quot;one-line&quot; comment styles only comment to the end of
+    the line or the current block of PHP code, whichever comes first.
+    This means that HTML code after <em>// ... ?&gt;</em>
+    or <em># ...  ?&gt;</em> WILL be printed:
+    ?&gt; breaks out of PHP mode and returns to HTML mode, and
+    <em>//</em> or <em>#</em> cannot influence that.
+    If the <a href="http://php.net/manual/en/ini.core.php#ini.asp-tags" class="link">asp_tags</a> configuration directive
+    is enabled, it behaves the same with <em>// %&gt;</em> and
+    <em># %&gt;</em>.
+    However, the <em>&lt;/script&gt;</em> tag doesn&#039;t break out of PHP mode in
+    a one-line comment.
+   </p>
+   <p class="para">
+    <div class="informalexample">
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+&lt;h1&gt;This&nbsp;is&nbsp;an&nbsp;<span style="color: #0000BB">&lt;?php&nbsp;</span><span style="color: #FF8000">#&nbsp;echo&nbsp;'simple';</span><span style="color: #0000BB">?&gt;</span>&nbsp;example&lt;/h1&gt;<br />&lt;p&gt;The&nbsp;header&nbsp;above&nbsp;will&nbsp;say&nbsp;'This&nbsp;is&nbsp;an&nbsp;&nbsp;example'.&lt;/p&gt;</span>
+</code></div>
+     </div>
+
+    </div>
+   </p>
+   <p class="simpara">
+    &#039;C&#039; style comments end at the first <em>*/</em> encountered.
+    Make sure you don&#039;t nest &#039;C&#039; style comments.  It is easy to make this
+    mistake if you are trying to comment out a large block of code.
+   </p>
+   <p class="para">
+    <div class="informalexample">
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />&nbsp;</span><span style="color: #FF8000">/*<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;'This&nbsp;is&nbsp;a&nbsp;test';&nbsp;/*&nbsp;This&nbsp;comment&nbsp;will&nbsp;cause&nbsp;a&nbsp;problem&nbsp;*/<br />&nbsp;</span><span style="color: #007700">*/<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+     </div>
+
+    </div>
+   </p>
+  </div>
+<section id="usernotes">
+ <div class="head">
+  <span class="action"><a href="http://php.net/manual/add-note.php?sect=language.basic-syntax.comments&amp;redirect=http://php.net/manual/en/language.basic-syntax.comments.php"><img src='http://php.net/images/notes-add@2x.png' alt='add a note' width='12' height='12'> <small>add a note</small></a></span>
+  <h3 class="title">User Contributed Notes <span class="count">15 notes</span></h3>
+ </div><div id="allnotes">
+  <div class="note" id="114369">  <div class="votes">
+    <div id="Vu114369">
+    <a href="http://php.net/manual/vote-note.php?id=114369&amp;page=language.basic-syntax.comments&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd114369">
+    <a href="http://php.net/manual/vote-note.php?id=114369&amp;page=language.basic-syntax.comments&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V114369" title="78% like this...">
+    228
+    </div>
+  </div>
+  <a href="#114369" class="name">
+  <strong class="user"><em>J. Prettyman</em></strong></a><a class="genanchor" href="#114369"> &para;</a><div class="date" title="2014-02-13 05:55"><strong>3 years ago</strong></div>
+  <div class="text" id="Hcom114369">
+<div class="phpcode"><code><span class="html">
+Notes can come in all sorts of shapes and sizes. They vary, and their uses are completely up to the person writing the code. However, I try to keep things consistent in my code that way it's easy for the next person to read. So something like this might help...<br /><br /><span class="default">&lt;?php<br /><br /></span><span class="comment">//======================================================================<br />// CATEGORY LARGE FONT<br />//======================================================================<br /><br />//-----------------------------------------------------<br />// Sub-Category Smaller Font<br />//-----------------------------------------------------<br /><br />/* Title Here Notice the First Letters are Capitalized */<br /><br /># Option 1<br /># Option 2<br /># Option 3<br /><br />/*<br /> * This is a detailed explanation<br /> * of something that should require<br /> * several paragraphs of information.<br /> */<br /> <br />// This is a single line quote.<br /></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="52651">  <div class="votes">
+    <div id="Vu52651">
+    <a href="http://php.net/manual/vote-note.php?id=52651&amp;page=language.basic-syntax.comments&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd52651">
+    <a href="http://php.net/manual/vote-note.php?id=52651&amp;page=language.basic-syntax.comments&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V52651" title="72% like this...">
+    212
+    </div>
+  </div>
+  <a href="#52651" class="name">
+  <strong class="user"><em>M Spreij</em></strong></a><a class="genanchor" href="#52651"> &para;</a><div class="date" title="2005-05-08 12:15"><strong>12 years ago</strong></div>
+  <div class="text" id="Hcom52651">
+<div class="phpcode"><code><span class="html">
+A nice way to toggle the commenting of blocks of code can be done by mixing the two comment styles:<br /><span class="default">&lt;?php<br /></span><span class="comment">//*<br /></span><span class="keyword">if (</span><span class="default">$foo</span><span class="keyword">) {<br />&nbsp; echo </span><span class="default">$bar</span><span class="keyword">;<br />}<br /></span><span class="comment">// */<br /></span><span class="default">sort</span><span class="keyword">(</span><span class="default">$morecode</span><span class="keyword">);<br /></span><span class="default">?&gt;<br /></span><br />Now by taking out one / on the first line..<br /><br /><span class="default">&lt;?php<br /></span><span class="comment">/*<br />if ($foo) {<br />&nbsp; echo $bar;<br />}<br />// */<br /></span><span class="default">sort</span><span class="keyword">(</span><span class="default">$morecode</span><span class="keyword">);<br /></span><span class="default">?&gt;<br /></span>..the block is suddenly commented out.<br />This works because a /* .. */ overrides //. You can even "flip" two blocks, like this:<br /><span class="default">&lt;?php<br /></span><span class="comment">//*<br /></span><span class="keyword">if (</span><span class="default">$foo</span><span class="keyword">) {<br />&nbsp; echo </span><span class="default">$bar</span><span class="keyword">;<br />}<br /></span><span class="comment">/*/<br />if ($bar) {<br />&nbsp; echo $foo;<br />}<br />// */<br /></span><span class="default">?&gt;<br /></span>vs<br /><span class="default">&lt;?php<br /></span><span class="comment">/*<br />if ($foo) {<br />&nbsp; echo $bar;<br />}<br />/*/<br /></span><span class="keyword">if (</span><span class="default">$bar</span><span class="keyword">) {<br />&nbsp; echo </span><span class="default">$foo</span><span class="keyword">;<br />}<br /></span><span class="comment">// */<br /></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="113438">  <div class="votes">
+    <div id="Vu113438">
+    <a href="http://php.net/manual/vote-note.php?id=113438&amp;page=language.basic-syntax.comments&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd113438">
+    <a href="http://php.net/manual/vote-note.php?id=113438&amp;page=language.basic-syntax.comments&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V113438" title="67% like this...">
+    81
+    </div>
+  </div>
+  <a href="#113438" class="name">
+  <strong class="user"><em>magnesium dot oxide dot play+php at gmail dot com</em></strong></a><a class="genanchor" href="#113438"> &para;</a><div class="date" title="2013-10-10 10:02"><strong>4 years ago</strong></div>
+  <div class="text" id="Hcom113438">
+<div class="phpcode"><code><span class="html">
+It is worth mentioning that, HTML comments have no meaning in PHP parser. So,<br /><br />&lt;!-- comment<br /><span class="default">&lt;?php </span><span class="keyword">echo </span><span class="default">some_function</span><span class="keyword">(); </span><span class="default">?&gt;<br /></span>--&gt;<br /><br />WILL execute some_function() and echo result inside HTML comment.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="54296">  <div class="votes">
+    <div id="Vu54296">
+    <a href="http://php.net/manual/vote-note.php?id=54296&amp;page=language.basic-syntax.comments&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd54296">
+    <a href="http://php.net/manual/vote-note.php?id=54296&amp;page=language.basic-syntax.comments&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V54296" title="71% like this...">
+    58
+    </div>
+  </div>
+  <a href="#54296" class="name">
+  <strong class="user"><em>hcderaad at wanadoo dot nl</em></strong></a><a class="genanchor" href="#54296"> &para;</a><div class="date" title="2005-06-29 01:51"><strong>12 years ago</strong></div>
+  <div class="text" id="Hcom54296">
+<div class="phpcode"><code><span class="html">
+Comments in PHP can be used for several purposes, a very interesting one being that you can generate API documentation directly from them by using PHPDocumentor (<a href="http://www.phpdoc.org/" rel="nofollow" target="_blank">http://www.phpdoc.org/</a>).<br /><br />Therefor one has to use a JavaDoc-like comment syntax (conforms to the DocBook DTD), example:<br /><span class="default">&lt;?php<br /></span><span class="comment">/**<br />* The second * here opens the DocBook commentblock, which could later on&lt;br&gt;<br />* in your development cycle save you a lot of time by preventing you having to rewrite&lt;br&gt;<br />* major documentation parts to generate some usable form of documentation.<br />*/<br /></span><span class="default">?&gt;<br /></span>Some basic html-like formatting is supported with this (ie &lt;br&gt; tags) to create something of a layout.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="66693">  <div class="votes">
+    <div id="Vu66693">
+    <a href="http://php.net/manual/vote-note.php?id=66693&amp;page=language.basic-syntax.comments&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd66693">
+    <a href="http://php.net/manual/vote-note.php?id=66693&amp;page=language.basic-syntax.comments&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V66693" title="69% like this...">
+    37
+    </div>
+  </div>
+  <a href="#66693" class="name">
+  <strong class="user"><em>J Lee</em></strong></a><a class="genanchor" href="#66693"> &para;</a><div class="date" title="2006-05-25 11:39"><strong>11 years ago</strong></div>
+  <div class="text" id="Hcom66693">
+<div class="phpcode"><code><span class="html">
+MSpreij (8-May-2005) says&nbsp; /* .. */ overrides //&nbsp; <br />Anonymous (26-Jan-2006) says // overrides /* .. */<br /><br />Actually, both are correct. Once a comment is opened, *everything* is ignored until the end of the comment (or the end of the php block) is reached.<br /><br />Thus, if a comment is opened with: <br />&nbsp;&nbsp; //&nbsp; then /* and */ are "overridden" until after end-of-line <br />&nbsp;&nbsp; /*&nbsp; then // is "overridden" until after */</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="77415">  <div class="votes">
+    <div id="Vu77415">
+    <a href="http://php.net/manual/vote-note.php?id=77415&amp;page=language.basic-syntax.comments&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd77415">
+    <a href="http://php.net/manual/vote-note.php?id=77415&amp;page=language.basic-syntax.comments&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V77415" title="65% like this...">
+    27
+    </div>
+  </div>
+  <a href="#77415" class="name">
+  <strong class="user"><em>theblazingangel at aol dot com</em></strong></a><a class="genanchor" href="#77415"> &para;</a><div class="date" title="2007-08-28 03:55"><strong>10 years ago</strong></div>
+  <div class="text" id="Hcom77415">
+<div class="phpcode"><code><span class="html">
+it's perhaps not obvious to some, but the following code will cause a parse error! the ?&gt; in //?&gt; is not treated as commented text, this is a result of having to handle code on one line such as <span class="default">&lt;?php </span><span class="keyword">echo </span><span class="string">'something'</span><span class="keyword">; </span><span class="comment">//comment </span><span class="default">?&gt;<br /></span><br /><span class="default">&lt;?php<br /></span><span class="keyword">if(</span><span class="default">1</span><span class="keyword">==</span><span class="default">1</span><span class="keyword">)<br />{<br />&nbsp; &nbsp; </span><span class="comment">//</span><span class="default">?&gt;<br /></span>}<br />?&gt;<br /><br />i discovered this "anomally" when i commented out a line of code containing a regex which itself contained ?&gt;, with the // style comment.<br />e.g. //preg_match('/^(?&gt;c|b)at$/', 'cat', $matches);<br />will cause an error while commented! using /**/ style comments provides a solution. i don't know about # style comments, i don't ever personally use them.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="48204">  <div class="votes">
+    <div id="Vu48204">
+    <a href="http://php.net/manual/vote-note.php?id=48204&amp;page=language.basic-syntax.comments&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd48204">
+    <a href="http://php.net/manual/vote-note.php?id=48204&amp;page=language.basic-syntax.comments&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V48204" title="64% like this...">
+    34
+    </div>
+  </div>
+  <a href="#48204" class="name">
+  <strong class="user"><em>Steve</em></strong></a><a class="genanchor" href="#48204"> &para;</a><div class="date" title="2004-12-15 04:41"><strong>12 years ago</strong></div>
+  <div class="text" id="Hcom48204">
+<div class="phpcode"><code><span class="html">
+Be careful when commenting out regular expressions.<br /><br />E.g. the following causes a parser error.<br /><br />I do prefer using # as regexp delimiter anyway so it won't hurt me ;-)<br /><br /><span class="default">&lt;?php <br /><br /></span><span class="comment">/*<br /><br /> $f-&gt;setPattern('/^\d.*/</span><span class="string">');<br /><br />*/<br /><br />?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="101424">  <div class="votes">
+    <div id="Vu101424">
+    <a href="http://php.net/manual/vote-note.php?id=101424&amp;page=language.basic-syntax.comments&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd101424">
+    <a href="http://php.net/manual/vote-note.php?id=101424&amp;page=language.basic-syntax.comments&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V101424" title="62% like this...">
+    21
+    </div>
+  </div>
+  <a href="#101424" class="name">
+  <strong class="user"><em>jballard at natoga dot com</em></strong></a><a class="genanchor" href="#101424"> &para;</a><div class="date" title="2010-12-15 02:28"><strong>6 years ago</strong></div>
+  <div class="text" id="Hcom101424">
+<div class="phpcode"><code><span class="html">
+Comments do NOT take up processing power.<br /><br />So, for all the people who argue that comments are undesired because they take up processing power now have no reason to comment ;)<br /><br /><span class="default">&lt;?php<br /><br /></span><span class="comment">// Control<br /></span><span class="keyword">echo </span><span class="default">microtime</span><span class="keyword">(), </span><span class="string">"&lt;br /&gt;"</span><span class="keyword">; </span><span class="comment">// 0.25163600 1292450508<br /></span><span class="keyword">echo </span><span class="default">microtime</span><span class="keyword">(), </span><span class="string">"&lt;br /&gt;"</span><span class="keyword">; </span><span class="comment">// 0.25186000 1292450508<br /><br />// Test<br /></span><span class="keyword">echo </span><span class="default">microtime</span><span class="keyword">(), </span><span class="string">"&lt;br /&gt;"</span><span class="keyword">; </span><span class="comment">// 0.25189700 1292450508<br /># TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST TEST<br /># .. Above comment repeated 18809 times ..<br /></span><span class="keyword">echo </span><span class="default">microtime</span><span class="keyword">(), </span><span class="string">"&lt;br /&gt;"</span><span class="keyword">; </span><span class="comment">// 0.25192100 1292450508<br /><br /></span><span class="default">?&gt;<br /></span><br />They take up about the same amount of time (about meaning on a repeated testing, sometimes the difference between the control and the test was negative and sometimes positive).</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="68128">  <div class="votes">
+    <div id="Vu68128">
+    <a href="http://php.net/manual/vote-note.php?id=68128&amp;page=language.basic-syntax.comments&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd68128">
+    <a href="http://php.net/manual/vote-note.php?id=68128&amp;page=language.basic-syntax.comments&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V68128" title="54% like this...">
+    10
+    </div>
+  </div>
+  <a href="#68128" class="name">
+  <strong class="user"><em>fun at nybbles dot com</em></strong></a><a class="genanchor" href="#68128"> &para;</a><div class="date" title="2006-07-13 10:28"><strong>11 years ago</strong></div>
+  <div class="text" id="Hcom68128">
+<div class="phpcode"><code><span class="html">
+a trick I have used in all languages to temporarily block out large sections (usually for test/debug/new-feature purposes), is to set (or define) a var at the top, and use that to conditionally comment the blocks; an added benefit over if(0) (samuli's comment from nov'05) is that u can have several versions or tests running at once, and u dont require cleanup later if u want to keep the blocks in:&nbsp; just reset the var.<br /><br />personally, I use this more to conditionally include code for new feature testing, than to block it out,,,, but hey, to each their own :)<br /><br />this is also the only safe way I know of to easily nest comments in any language, and great for multi-file use, if the conditional variables are placed in an include :)<br /><br />for example, placed at top of file:<br /><br /><span class="default">&lt;?php $ver3 </span><span class="keyword">= </span><span class="default">TRUE</span><span class="keyword">;&nbsp; <br />&nbsp; &nbsp; &nbsp;&nbsp; </span><span class="default">$debug2 </span><span class="keyword">= </span><span class="default">FALSE</span><span class="keyword">; <br /></span><span class="default">?&gt;</span> <br /><br />and then deeper inside the file: <br /><br /><span class="default">&lt;?php </span><span class="keyword">if (</span><span class="default">$ver3</span><span class="keyword">) {<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; print(</span><span class="string">"This code is included since we are testing version 3"</span><span class="keyword">);<br />&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; }<br /></span><span class="default">?&gt;<br /></span><br /><span class="default">&lt;?php </span><span class="keyword">if (</span><span class="default">$debug2</span><span class="keyword">) {<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; print(</span><span class="string">"This code is 'commented' out"</span><span class="keyword">);<br />&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; }<br /></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="97866">  <div class="votes">
+    <div id="Vu97866">
+    <a href="http://php.net/manual/vote-note.php?id=97866&amp;page=language.basic-syntax.comments&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd97866">
+    <a href="http://php.net/manual/vote-note.php?id=97866&amp;page=language.basic-syntax.comments&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V97866" title="54% like this...">
+    5
+    </div>
+  </div>
+  <a href="#97866" class="name">
+  <strong class="user"><em>Wolfsbay at ya dot ru</em></strong></a><a class="genanchor" href="#97866"> &para;</a><div class="date" title="2010-05-12 02:10"><strong>7 years ago</strong></div>
+  <div class="text" id="Hcom97866">
+<div class="phpcode"><code><span class="html">
+If you are using editor with code highlight, it’s much easier to notice error like /* */ */.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="113425">  <div class="votes">
+    <div id="Vu113425">
+    <a href="http://php.net/manual/vote-note.php?id=113425&amp;page=language.basic-syntax.comments&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd113425">
+    <a href="http://php.net/manual/vote-note.php?id=113425&amp;page=language.basic-syntax.comments&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V113425" title="46% like this...">
+    -5
+    </div>
+  </div>
+  <a href="#113425" class="name">
+  <strong class="user"><em>Anonymous</em></strong></a><a class="genanchor" href="#113425"> &para;</a><div class="date" title="2013-10-09 07:02"><strong>4 years ago</strong></div>
+  <div class="text" id="Hcom113425">
+<div class="phpcode"><code><span class="html">
+The comment priority is depended on the order:<br />1. */<br />2. ?&gt;<br />3. // and #</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="120866">  <div class="votes">
+    <div id="Vu120866">
+    <a href="http://php.net/manual/vote-note.php?id=120866&amp;page=language.basic-syntax.comments&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd120866">
+    <a href="http://php.net/manual/vote-note.php?id=120866&amp;page=language.basic-syntax.comments&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V120866" title="39% like this...">
+    -6
+    </div>
+  </div>
+  <a href="#120866" class="name">
+  <strong class="user"><em>macikos</em></strong></a><a class="genanchor" href="#120866"> &para;</a><div class="date" title="2017-03-24 03:59"><strong>8 months ago</strong></div>
+  <div class="text" id="Hcom120866">
+<div class="phpcode"><code><span class="html">
+Personally I like to use this type of commenting to help identify each part in the code separately.<br /><br /><span class="default">&lt;?php<br /><br />&nbsp; &nbsp; </span><span class="keyword">&lt;!------------------------</span><span class="default">Text1</span><span class="keyword">----------------------</span><span class="default">START</span><span class="keyword">--&gt;<br />&nbsp; &nbsp; echo </span><span class="string">"Some text goes&nbsp; here"</span><span class="keyword">;<br />&nbsp; &nbsp; &lt;!------------------------</span><span class="default">Text1</span><span class="keyword">----------------------</span><span class="default">END</span><span class="keyword">--&gt;<br /><br />&nbsp; &nbsp; &lt;!------------------------</span><span class="default">Text2</span><span class="keyword">----------------------</span><span class="default">START</span><span class="keyword">--&gt;<br />&nbsp; &nbsp; echo </span><span class="string">"Some text goes&nbsp; here"</span><span class="keyword">;<br />&nbsp; &nbsp; &lt;!------------------------</span><span class="default">Text2</span><span class="keyword">----------------------</span><span class="default">END</span><span class="keyword">--&gt;<br /><br /></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="105775">  <div class="votes">
+    <div id="Vu105775">
+    <a href="http://php.net/manual/vote-note.php?id=105775&amp;page=language.basic-syntax.comments&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd105775">
+    <a href="http://php.net/manual/vote-note.php?id=105775&amp;page=language.basic-syntax.comments&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V105775" title="41% like this...">
+    -11
+    </div>
+  </div>
+  <a href="#105775" class="name">
+  <strong class="user"><em>team at researchbib dot com</em></strong></a><a class="genanchor" href="#105775"> &para;</a><div class="date" title="2011-09-13 07:25"><strong>6 years ago</strong></div>
+  <div class="text" id="Hcom105775">
+<div class="phpcode"><code><span class="html">
+when the comment string contains '?&gt;', you should be careful.<br /><br />e.g. output code 1= code 2 is different with code 3<br />1. with //<br /><span class="default">&lt;?php<br /><br /></span><span class="comment">// echo '&lt;?php </span><span class="default">?&gt;</span>';<br /><br />?&gt;<br /><br />2. with #<br /><br /><span class="default">&lt;?php<br /><br /></span><span class="comment">// echo '&lt;?php </span><span class="default">?&gt;</span>';<br /><br />?&gt;<br /><br />3. with /* */<br /><br /><span class="default">&lt;?php<br /><br /></span><span class="comment">/* echo '&lt;?php ?&gt;';*/<br /><br /></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="60960">  <div class="votes">
+    <div id="Vu60960">
+    <a href="http://php.net/manual/vote-note.php?id=60960&amp;page=language.basic-syntax.comments&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd60960">
+    <a href="http://php.net/manual/vote-note.php?id=60960&amp;page=language.basic-syntax.comments&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V60960" title="38% like this...">
+    -18
+    </div>
+  </div>
+  <a href="#60960" class="name"><strong class="user"><em>Anonymous</em></strong></a><a class="genanchor" href="#60960"> &para;</a><div class="date" title="2006-01-21 01:46"><strong>11 years ago</strong></div>
+  <div class="text" id="Hcom60960">
+<div class="phpcode"><code><span class="html">
+M Spreij wrote, 08-May-2005 08:15...<br />A nice way to toggle the commenting of blocks of code can be done by mixing the two comment styles:<br />...<br />This works because a /* .. */ overrides //. <br /><br />The final sentence should be the other way round, i.e.<br /><br />This works because a // overrides /* .. */. <br />(If it didn't the /* .. */ would comment out the code regardless of whether an additional '/' is prefixed to the first line).</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="120869">  <div class="votes">
+    <div id="Vu120869">
+    <a href="http://php.net/manual/vote-note.php?id=120869&amp;page=language.basic-syntax.comments&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd120869">
+    <a href="http://php.net/manual/vote-note.php?id=120869&amp;page=language.basic-syntax.comments&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V120869" title="5% like this...">
+    -46
+    </div>
+  </div>
+  <a href="#120869" class="name">
+  <strong class="user"><em>Anonymous</em></strong></a><a class="genanchor" href="#120869"> &para;</a><div class="date" title="2017-03-25 07:48"><strong>8 months ago</strong></div>
+  <div class="text" id="Hcom120869">
+<div class="phpcode"><code><span class="html">
+He opened in Paris in 1854 in his name named the first suitcase shop., I introduce you to &lt;a href="<a href="http://www.topwatchesuk.co.uk/" rel="nofollow" target="_blank">http://www.topwatchesuk.co.uk</a>" title="replica watches"&gt;replica watches&lt;/a&gt;introduce the color of sweet and sour pork ribs.so that you look at the eyes of the &lt;a href="<a href="http://www.dreamforwatches.org.uk/" rel="nofollow" target="_blank">http://www.dreamforwatches.org.uk</a>" title="rolex replica"&gt;rolex replica&lt;/a&gt;golden light;&nbsp; so that you will be buried after the &lt;a href="<a href="http://www.acornpc.co.uk/" rel="nofollow" target="_blank">http://www.acornpc.co.uk</a>" title="replica watches uk"&gt;replica watches uk&lt;/a&gt;mouth will be saliva;"Louis Vuitton" has become the world's first brand in the field of luggage and leather goods, and become a symbol of high society.</span>
+</code></div>
+  </div>
+ </div></div>
+
+ <div class="foot"><a href="http://php.net/manual/add-note.php?sect=language.basic-syntax.comments&amp;redirect=http://php.net/manual/en/language.basic-syntax.comments.php"><img src='http://php.net/images/notes-add@2x.png' alt='add a note' width='12' height='12'> <small>add a note</small></a></div>
+</section>    </section><!-- layout-content -->
+        <aside class='layout-menu'>
+    
+        <ul class='parent-menu-list'>
+                                    <li>
+                <a href="http://php.net/manual/en/language.basic-syntax.php">Basic syntax</a>
+    
+                                    <ul class='child-menu-list'>
+    
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.basic-syntax.phptags.php" title="PHP tags">PHP tags</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.basic-syntax.phpmode.php" title="Escaping from HTML">Escaping from HTML</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.basic-syntax.instruction-separation.php" title="Instruction separation">Instruction separation</a>
+                        </li>
+                          
+                        <li class="current">
+                            <a href="http://php.net/manual/en/language.basic-syntax.comments.php" title="Comments">Comments</a>
+                        </li>
+                            
+                    </ul>
+                    
+            </li>
+                        
+                    </ul>
+    </aside>
+
+
+  </div><!-- layout -->
+         
+  <footer>
+    <div class="container footer-content">
+      <div class="row-fluid">
+      <ul class="footmenu">
+        <li><a href="http://php.net/copyright.php">Copyright &copy; 2001-2017 The PHP Group</a></li>
+        <li><a href="http://php.net/my.php">My PHP.net</a></li>
+        <li><a href="http://php.net/contact.php">Contact</a></li>
+        <li><a href="http://php.net/sites.php">Other PHP.net sites</a></li>
+        <li><a href="http://php.net/mirrors.php">Mirror sites</a></li>
+        <li><a href="http://php.net/privacy.php">Privacy policy</a></li>
+      </ul>
+      </div>
+    </div>
+  </footer>
+
+    
+ <!-- External and third party libraries. -->
+ <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/modernizr.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/hogan-2.0.0.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/typeahead.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/mousetrap.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/search.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1500560403&amp;f=/js/common.js"></script>
+
+<a id="toTop" href="javascript:;"><span id="toTopHover"></span><img width="40" height="40" alt="To Top" src="http://php.net/images/to-top@2x.png"></a>
+
+</body>
+
+<!-- Mirrored from php.net/manual/en/language.basic-syntax.comments.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Dec 2017 23:18:09 GMT -->
+</html>
+

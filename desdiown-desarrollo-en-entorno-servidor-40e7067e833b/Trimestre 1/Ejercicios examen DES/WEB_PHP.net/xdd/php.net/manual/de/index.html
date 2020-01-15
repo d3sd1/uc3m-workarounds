@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="de">
+
+<!-- Mirrored from php.net/manual/de/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Dec 2017 23:18:08 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+  <title>PHP: PHP-Handbuch - Manual </title>
+
+ <link rel="shortcut icon" href="http://php.net/favicon.ico">
+ <link rel="search" type="application/opensearchdescription+xml" href="http://php.net/phpnetimprovedsearch.src" title="Add PHP.net search">
+ <link rel="alternate" type="application/atom+xml" href="http://php.net/releases/feed.php" title="PHP Release feed">
+ <link rel="alternate" type="application/atom+xml" href="http://php.net/feed.atom" title="PHP: Hypertext Preprocessor">
+
+ <link rel="canonical" href="http://php.net/manual/de/index.php">
+ <link rel="shorturl" href="http://php.net/manual/de/index.php">
+ <link rel="alternate" href="http://php.net/manual/de/index.php" hreflang="x-default">
+
+ <link rel="contents" href="http://php.net/manual/de/index.php">
+ <link rel="index" href="http://php.net/manual/de/">
+ <link rel="prev" href="http://php.net/manual/de/">
+ <link rel="next" href="http://php.net/manual/de/">
+
+ <link rel="alternate" href="http://php.net/manual/en/index.php" hreflang="en">
+ <link rel="alternate" href="http://php.net/manual/pt_BR/index.php" hreflang="pt_BR">
+ <link rel="alternate" href="http://php.net/manual/zh/index.php" hreflang="zh">
+ <link rel="alternate" href="http://php.net/manual/fr/index.php" hreflang="fr">
+ <link rel="alternate" href="http://php.net/manual/de/index.php" hreflang="de">
+ <link rel="alternate" href="http://php.net/manual/ja/index.php" hreflang="ja">
+ <link rel="alternate" href="http://php.net/manual/ro/index.php" hreflang="ro">
+ <link rel="alternate" href="http://php.net/manual/ru/index.php" hreflang="ru">
+ <link rel="alternate" href="http://php.net/manual/es/index.php" hreflang="es">
+ <link rel="alternate" href="http://php.net/manual/tr/index.php" hreflang="tr">
+
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1421837618&amp;f=/fonts/Fira/fira.css" media="screen">
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1421837618&amp;f=/fonts/Font-Awesome/css/fontello.css" media="screen">
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1478800802&amp;f=/styles/theme-base.css" media="screen">
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1449787206&amp;f=/styles/theme-medium.css" media="screen">
+
+ <!--[if lte IE 7]>
+ <link rel="stylesheet" type="text/css" href="http://php.net/styles/workarounds.ie7.css" media="screen">
+ <![endif]-->
+
+ <!--[if lte IE 8]>
+ <script type="text/javascript">
+  window.brokenIE = true;
+ </script>
+ <![endif]-->
+
+ <!--[if lte IE 9]>
+ <link rel="stylesheet" type="text/css" href="http://php.net/styles/workarounds.ie9.css" media="screen">
+ <![endif]-->
+
+ <!--[if IE]>
+ <script type="text/javascript" src="http://php.net/js/ext/html5.js"></script>
+ <![endif]-->
+
+ <base >
+
+</head>
+<body class="docs ">
+
+<nav id="head-nav" class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <a href="http://php.net/" class="brand"><img src="http://php.net/images/logos/php-logo.svg" width="48" height="24" alt="php"></a>
+    <div id="mainmenu-toggle-overlay"></div>
+    <input type="checkbox" id="mainmenu-toggle">
+    <ul class="nav">
+      <li class=""><a href="http://php.net/downloads">Downloads</a></li>
+      <li class="active"><a href="http://php.net/docs.php">Documentation</a></li>
+      <li class=""><a href="http://php.net/get-involved" >Get Involved</a></li>
+      <li class=""><a href="http://php.net/support">Help</a></li>
+    </ul>
+    <form class="navbar-search" id="topsearch" action="http://php.net/search.php">
+      <input type="hidden" name="show" value="quickref">
+      <input type="search" name="pattern" class="search-query" placeholder="Search" accesskey="s">
+    </form>
+  </div>
+  <div id="flash-message"></div>
+</nav>
+<nav id="trick"><div><dl>
+<dt><a href='http://php.net/manual/en/getting-started.php'>Getting Started</a></dt>
+	<dd><a href='http://php.net/manual/en/introduction.php'>Introduction</a></dd>
+	<dd><a href='http://php.net/manual/en/tutorial.php'>A simple tutorial</a></dd>
+<dt><a href='http://php.net/manual/en/langref.php'>Language Reference</a></dt>
+	<dd><a href='http://php.net/manual/en/language.basic-syntax.php'>Basic syntax</a></dd>
+	<dd><a href='http://php.net/manual/en/language.types.php'>Types</a></dd>
+	<dd><a href='http://php.net/manual/en/language.variables.php'>Variables</a></dd>
+	<dd><a href='http://php.net/manual/en/language.constants.php'>Constants</a></dd>
+	<dd><a href='http://php.net/manual/en/language.expressions.php'>Expressions</a></dd>
+	<dd><a href='http://php.net/manual/en/language.operators.php'>Operators</a></dd>
+	<dd><a href='http://php.net/manual/en/language.control-structures.php'>Control Structures</a></dd>
+	<dd><a href='http://php.net/manual/en/language.functions.php'>Functions</a></dd>
+	<dd><a href='http://php.net/manual/en/language.oop5.php'>Classes and Objects</a></dd>
+	<dd><a href='http://php.net/manual/en/language.namespaces.php'>Namespaces</a></dd>
+	<dd><a href='http://php.net/manual/en/language.errors.php'>Errors</a></dd>
+	<dd><a href='http://php.net/manual/en/language.exceptions.php'>Exceptions</a></dd>
+	<dd><a href='http://php.net/manual/en/language.generators.php'>Generators</a></dd>
+	<dd><a href='http://php.net/manual/en/language.references.php'>References Explained</a></dd>
+	<dd><a href='http://php.net/manual/en/reserved.variables.php'>Predefined Variables</a></dd>
+	<dd><a href='http://php.net/manual/en/reserved.exceptions.php'>Predefined Exceptions</a></dd>
+	<dd><a href='http://php.net/manual/en/reserved.interfaces.php'>Predefined Interfaces and Classes</a></dd>
+	<dd><a href='http://php.net/manual/en/context.php'>Context options and parameters</a></dd>
+	<dd><a href='http://php.net/manual/en/wrappers.php'>Supported Protocols and Wrappers</a></dd>
+</dl>
+<dl>
+<dt><a href='http://php.net/manual/en/security.php'>Security</a></dt>
+	<dd><a href='http://php.net/manual/en/security.intro.php'>Introduction</a></dd>
+	<dd><a href='http://php.net/manual/en/security.general.php'>General considerations</a></dd>
+	<dd><a href='http://php.net/manual/en/security.cgi-bin.php'>Installed as CGI binary</a></dd>
+	<dd><a href='http://php.net/manual/en/security.apache.php'>Installed as an Apache module</a></dd>
+	<dd><a href='http://php.net/manual/en/security.sessions.php'>Session Security</a></dd>
+	<dd><a href='http://php.net/manual/en/security.filesystem.php'>Filesystem Security</a></dd>
+	<dd><a href='http://php.net/manual/en/security.database.php'>Database Security</a></dd>
+	<dd><a href='http://php.net/manual/en/security.errors.php'>Error Reporting</a></dd>
+	<dd><a href='http://php.net/manual/en/security.globals.php'>Using Register Globals</a></dd>
+	<dd><a href='http://php.net/manual/en/security.variables.php'>User Submitted Data</a></dd>
+	<dd><a href='http://php.net/manual/en/security.magicquotes.php'>Magic Quotes</a></dd>
+	<dd><a href='http://php.net/manual/en/security.hiding.php'>Hiding PHP</a></dd>
+	<dd><a href='http://php.net/manual/en/security.current.php'>Keeping Current</a></dd>
+<dt><a href='http://php.net/manual/en/features.php'>Features</a></dt>
+	<dd><a href='http://php.net/manual/en/features.http-auth.php'>HTTP authentication with PHP</a></dd>
+	<dd><a href='http://php.net/manual/en/features.cookies.php'>Cookies</a></dd>
+	<dd><a href='http://php.net/manual/en/features.sessions.php'>Sessions</a></dd>
+	<dd><a href='http://php.net/manual/en/features.xforms.php'>Dealing with XForms</a></dd>
+	<dd><a href='http://php.net/manual/en/features.file-upload.php'>Handling file uploads</a></dd>
+	<dd><a href='http://php.net/manual/en/features.remote-files.php'>Using remote files</a></dd>
+	<dd><a href='http://php.net/manual/en/features.connection-handling.php'>Connection handling</a></dd>
+	<dd><a href='http://php.net/manual/en/features.persistent-connections.php'>Persistent Database Connections</a></dd>
+	<dd><a href='http://php.net/manual/en/features.safe-mode.php'>Safe Mode</a></dd>
+	<dd><a href='http://php.net/manual/en/features.commandline.php'>Command line usage</a></dd>
+	<dd><a href='http://php.net/manual/en/features.gc.php'>Garbage Collection</a></dd>
+	<dd><a href='http://php.net/manual/en/features.dtrace.php'>DTrace Dynamic Tracing</a></dd>
+</dl>
+<dl>
+<dt><a href='http://php.net/manual/en/funcref.php'>Function Reference</a></dt>
+	<dd><a href='http://php.net/manual/en/refs.basic.php.php'>Affecting PHP's Behaviour</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.audio.php'>Audio Formats Manipulation</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.remote.auth.php'>Authentication Services</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.cmdline.php'>Command Line Specific Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.compression.php'>Compression and Archive Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.creditcard.php'>Credit Card Processing</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.crypto.php'>Cryptography Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.database.php'>Database Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.calendar.php'>Date and Time Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.fileprocess.file.php'>File System Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.international.php'>Human Language and Character Encoding Support</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.image.php'>Image Processing and Generation</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.remote.mail.php'>Mail Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.math.php'>Mathematical Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.nontext.php'>Non-Text MIME Output</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.fileprocess.process.php'>Process Control Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.other.php'>Other Basic Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.remote.other.php'>Other Services</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.search.php'>Search Engine Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.server.php'>Server Specific Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.session.php'>Session Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.text.php'>Text Processing</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.vartype.php'>Variable and Type Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.webservice.php'>Web Services</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.windows.php'>Windows Only Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.xml.php'>XML Manipulation</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.ui.php'>GUI Extensions</a></dd>
+</dl>
+<dl>
+<dt>Keyboard Shortcuts</dt><dt>?</dt>
+<dd>This help</dd>
+<dt>j</dt>
+<dd>Next menu item</dd>
+<dt>k</dt>
+<dd>Previous menu item</dd>
+<dt>g p</dt>
+<dd>Previous man page</dd>
+<dt>g n</dt>
+<dd>Next man page</dd>
+<dt>G</dt>
+<dd>Scroll to bottom</dd>
+<dt>g g</dt>
+<dd>Scroll to top</dd>
+<dt>g h</dt>
+<dd>Goto homepage</dd>
+<dt>g s</dt>
+<dd>Goto search<br>(current page)</dd>
+<dt>/</dt>
+<dd>Focus search box</dd>
+</dl></div></nav>
+<div id="goto">
+    <div class="search">
+         <div class="text"></div>
+         <div class="results"><ul></ul></div>
+   </div>
+</div>
+
+
+
+
+
+<div id="layout" class="clearfix">
+  <section id="layout-content">
+  <div class="page-tools">
+    <div class="change-language">
+      <form action="http://php.net/manual/change.php" method="get" id="changelang" name="changelang">
+        <fieldset>
+          <label for="changelang-langs">Change language:</label>
+          <select onchange="document.changelang.submit()" name="page" id="changelang-langs">
+            <option value='http://php.net/manual/de/en/index.php'>English</option>
+            <option value='http://php.net/manual/de/pt_BR/index.php'>Brazilian Portuguese</option>
+            <option value='http://php.net/manual/de/zh/index.php'>Chinese (Simplified)</option>
+            <option value='http://php.net/manual/de/fr/index.php'>French</option>
+            <option value='de/index.php' selected="selected">German</option>
+            <option value='http://php.net/manual/de/ja/index.php'>Japanese</option>
+            <option value='http://php.net/manual/de/ro/index.php'>Romanian</option>
+            <option value='http://php.net/manual/de/ru/index.php'>Russian</option>
+            <option value='http://php.net/manual/de/es/index.php'>Spanish</option>
+            <option value='http://php.net/manual/de/tr/index.php'>Turkish</option>
+            <option value="http://php.net/manual/de/help-translate.php">Other</option>
+          </select>
+        </fieldset>
+      </form>
+    </div>
+    <div class="edit-bug">
+      <a href="https://edit.php.net/?project=PHP&amp;perm=de/index.php">Edit</a>
+      <a href="https://bugs.php.net/report.php?bug_type=Documentation+problem&amp;manpage=index">Report a Bug</a>
+    </div>
+  </div><div id="index" class="set">
+ <h1 class="title">PHP-Handbuch</h1>
+ 
+
+
+
+<div class="info">
+ <div class="authorgroup" id="authors">
+
+   <div class="author vcard"><strong class="by">von</strong>:<br />
+   <span class="personname fn">
+     <span class="firstname given-name">Mehdi</span>  <span class="surname family-name">Achour</span>  
+   </span>
+   </div>
+
+   
+   <div class="author vcard">
+   <span class="personname fn">
+     <span class="firstname given-name">Friedhelm</span>  <span class="surname family-name">Betz</span>  
+   </span>
+   </div>
+
+
+   <div class="author vcard">
+   <span class="personname fn">
+     <span class="firstname given-name">Antony</span>  <span class="surname family-name">Dovgal</span>  
+   </span>
+   </div>
+
+   
+   <div class="author vcard">
+   <span class="personname fn">
+     <span class="firstname given-name">Nuno</span>  <span class="surname family-name">Lopes</span>  
+   </span>
+   </div>
+
+
+   <div class="author vcard">
+   <span class="personname fn">
+     <span class="firstname given-name">Hannes</span>  <span class="surname family-name">Magnusson</span>  
+   </span>
+   </div>
+
+
+   <div class="author vcard">
+   <span class="personname fn">
+     <span class="firstname given-name">Georg</span>  <span class="surname family-name">Richter</span>  
+   </span>
+   </div>
+
+
+   <div class="author vcard">
+   <span class="personname fn">
+     <span class="firstname given-name">Damien</span>  <span class="surname family-name">Seguy</span>  
+   </span>
+   </div>
+
+
+   <div class="author vcard">
+   <span class="personname fn">
+     <span class="firstname given-name">Jakub</span>  <span class="surname family-name">Vrana</span>  
+   </span>
+   </div>
+
+
+   
+   <div class="othercredit">
+    <span class="personname fn">
+      <span class="othername">
+     <a href="http://php.net/manual/de/preface.php#contributors" class="link">Und etliche andere</a>
+     </span> 
+    </span>
+   </div>
+
+  </div>
+ <div class="pubdate">2017-12-13</div>
+ 
+  <div class="authorgroup" id="editors">
+   <div class="editor vcard"><strong class="editedby">Herausgegeben von</strong>: 
+   <span class="personname fn">
+     <span class="firstname given-name">Peter</span>  <span class="surname family-name">Cowburn</span>  
+   </span>
+   </div>
+
+  </div>
+ 
+ <div class="authorgroup" id="translators">
+  <div class="othercredit">
+   <span class="personname fn">Bei der Übersetzung wirkten mit:</span>
+  </div>
+  <div class="othercredit">
+   <span class="personname fn">Oliver Albers</span>
+  </div>
+  <div class="othercredit">
+   <span class="personname fn">Florian Anderiasch</span>
+  </div>
+  <div class="othercredit">
+   <span class="personname fn">Christoph Michael Becker</span>
+  </div>
+  <div class="othercredit">
+   <span class="personname fn">Arne Blankerts</span>
+  </div>
+  <div class="othercredit">
+   <span class="personname fn">Cornelia Boenigk</span>
+  </div>
+  <div class="othercredit">
+   <span class="personname fn">Patrick Eigensatz</span>
+  </div>
+  <div class="othercredit">
+   <span class="personname fn">Hartmut Holzgraefe</span>
+  </div>
+  <div class="othercredit">
+   <span class="personname fn">Daniel Jänecke</span>
+  </div>
+  <div class="othercredit">
+   <span class="personname fn">Carola Köhntopp</span>
+  </div>
+  <div class="othercredit">
+   <span class="personname fn">Hakan Kücükyilmaz</span>
+  </div>
+  <div class="othercredit">
+   <span class="personname fn">Raphael Michel</span>
+  </div>
+  <div class="othercredit">
+   <span class="personname fn">Sebastian Nohn</span>
+  </div>
+  <div class="othercredit">
+   <span class="personname fn">Karl Pflästerer</span>
+  </div>
+  <div class="othercredit">
+   <span class="personname fn">Nikita Popov</span>
+  </div>
+  <div class="othercredit">
+   <span class="personname fn">Dirk Randhahn</span>
+  </div>
+  <div class="othercredit">
+   <span class="personname fn">Thorsten Rinne</span>
+  </div>
+  <div class="othercredit">
+   <span class="personname fn">Martin Samesch</span>
+  </div>
+  <div class="othercredit">
+   <span class="personname fn">Mark Wiesemann</span>
+  </div>
+  <div class="othercredit">
+   <span class="personname fn">Tim Hollmann</span>
+  </div>
+ </div>
+ 
+ <div class="copyright">&copy; 
+  <span class="year">1997-2017</span>
+  <span class="holder">PHP-Dokumentationsgruppe</span>
+ </div>
+ 
+ 
+ 
+</div>
+
+
+
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+<ul class="chunklist chunklist_set"><li><a href="http://php.net/manual/de/copyright.php">Copyright</a></li><li><a href="http://php.net/manual/de/manual.php">PHP-Handbuch</a><ul class="chunklist chunklist_set chunklist_children"><li><a href="http://php.net/manual/de/preface.php">Vorwort</a></li></ul></li><li><a href="http://php.net/manual/de/getting-started.php">Einf&uuml;hrung</a><ul class="chunklist chunklist_set chunklist_children"><li><a href="http://php.net/manual/de/introduction.php">Einf&uuml;hrung</a></li><li><a href="http://php.net/manual/de/tutorial.php">Ein kleines Tutorial</a></li></ul></li><li><a href="http://php.net/manual/de/install.php">Installation und Konfiguration</a><ul class="chunklist chunklist_set chunklist_children"><li><a href="http://php.net/manual/de/install.general.php">Generelle &Uuml;berlegungen</a></li><li><a href="http://php.net/manual/de/install.unix.php">Installation auf Unix-Systemen</a></li><li><a href="http://php.net/manual/de/install.macosx.php">Installation unter Mac OS X</a></li><li><a href="http://php.net/manual/de/install.windows.php">Installation on Windows systems</a></li><li><a href="http://php.net/manual/de/install.cloud.php">Installation auf Cloud Computing Platformen</a></li><li><a href="http://php.net/manual/de/install.fpm.php">FastCGI Process Manager (FPM)</a></li><li><a href="http://php.net/manual/de/install.pecl.php">Installation of PECL extensions</a></li><li><a href="http://php.net/manual/de/install.problems.php">Probleme bei der Installation?</a></li><li><a href="http://php.net/manual/de/configuration.php">Laufzeiteinstellungen</a></li></ul></li><li><a href="http://php.net/manual/de/langref.php">Sprachreferenz</a><ul class="chunklist chunklist_set chunklist_children"><li><a href="http://php.net/manual/de/language.basic-syntax.php">Grundlagen der Syntax</a></li><li><a href="http://php.net/manual/de/language.types.php">Typen</a></li><li><a href="http://php.net/manual/de/language.variables.php">Variablen</a></li><li><a href="http://php.net/manual/de/language.constants.php">Konstanten</a></li><li><a href="http://php.net/manual/de/language.expressions.php">Ausdr&uuml;cke</a></li><li><a href="http://php.net/manual/de/language.operators.php">Operatoren</a></li><li><a href="http://php.net/manual/de/language.control-structures.php">Kontrollstrukturen</a></li><li><a href="http://php.net/manual/de/language.functions.php">Funktionen</a></li><li><a href="http://php.net/manual/de/language.oop5.php">Klassen und Objekte</a></li><li><a href="http://php.net/manual/de/language.namespaces.php">Namespaces</a></li><li><a href="http://php.net/manual/de/language.errors.php">Fehler</a></li><li><a href="http://php.net/manual/de/language.exceptions.php">Ausnahmebehandlung (Exception-Handling)</a></li><li><a href="http://php.net/manual/de/language.generators.php">Generatoren</a></li><li><a href="http://php.net/manual/de/language.references.php">Referenzen in PHP</a></li><li><a href="http://php.net/manual/de/reserved.variables.php">Vordefinierte Variablen</a></li><li><a href="http://php.net/manual/de/reserved.exceptions.php">Vordefinierte Exceptions</a></li><li><a href="http://php.net/manual/de/reserved.interfaces.php">Vordefinierte Interfaces und Klassen</a></li><li><a href="http://php.net/manual/de/context.php">Kontextoptionen und -parameter</a></li><li><a href="http://php.net/manual/de/wrappers.php">Unterst&uuml;tzte Protokolle und Wrapper</a></li></ul></li><li><a href="http://php.net/manual/de/security.php">Sicherheit</a><ul class="chunklist chunklist_set chunklist_children"><li><a href="http://php.net/manual/de/security.intro.php">Einf&uuml;hrung</a></li><li><a href="http://php.net/manual/de/security.general.php">Allgemeine &Uuml;berlegungen</a></li><li><a href="http://php.net/manual/de/security.cgi-bin.php">Installiert als CGI-Version</a></li><li><a href="http://php.net/manual/de/security.apache.php">Verwendung als Apache-Modul</a></li><li><a href="http://php.net/manual/de/security.sessions.php">Session Sicherheit</a></li><li><a href="http://php.net/manual/de/security.filesystem.php">Dateisystem - Sicherheit</a></li><li><a href="http://php.net/manual/de/security.database.php">Datenbank - Sicherheit</a></li><li><a href="http://php.net/manual/de/security.errors.php">Fehlerbehandlung</a></li><li><a href="http://php.net/manual/de/security.globals.php">Using Register Globals</a></li><li><a href="http://php.net/manual/de/security.variables.php">Vom Nutzer &uuml;bermittelte Daten</a></li><li><a href="http://php.net/manual/de/security.magicquotes.php">Magic Quotes</a></li><li><a href="http://php.net/manual/de/security.hiding.php">PHP verstecken</a></li><li><a href="http://php.net/manual/de/security.current.php">Aktuell bleiben</a></li></ul></li><li><a href="http://php.net/manual/de/features.php">Features</a><ul class="chunklist chunklist_set chunklist_children"><li><a href="http://php.net/manual/de/features.http-auth.php">HTTP-Authentifizierung mit PHP</a></li><li><a href="http://php.net/manual/de/features.cookies.php">Cookies</a></li><li><a href="http://php.net/manual/de/features.sessions.php">Sessions</a></li><li><a href="http://php.net/manual/de/features.xforms.php">Mit XForms umgehen</a></li><li><a href="http://php.net/manual/de/features.file-upload.php">Steuerung von Dateiuploads</a></li><li><a href="http://php.net/manual/de/features.remote-files.php">Zugriff auf entfernte Dateien</a></li><li><a href="http://php.net/manual/de/features.connection-handling.php">Verbindungssteuerung</a></li><li><a href="http://php.net/manual/de/features.persistent-connections.php">Persistente Datenbankverbindungen</a></li><li><a href="http://php.net/manual/de/features.safe-mode.php">Safe Mode</a></li><li><a href="http://php.net/manual/de/features.commandline.php">Nutzung auf der Kommandzeile</a> — Nutzung von PHP auf der Kommandozeile</li><li><a href="http://php.net/manual/de/features.gc.php">Garbage Collection</a></li><li><a href="http://php.net/manual/de/features.dtrace.php">DTrace Dynamic Tracing</a></li></ul></li><li><a href="http://php.net/manual/de/funcref.php">Funktionsreferenz</a><ul class="chunklist chunklist_set chunklist_children"><li><a href="http://php.net/manual/de/refs.basic.php.php">Das Verhalten von PHP beeinflussen</a></li><li><a href="http://php.net/manual/de/refs.utilspec.audio.php">Manipulation von Audioformaten</a></li><li><a href="http://php.net/manual/de/refs.remote.auth.php">Authentifizierungsdienste</a></li><li><a href="http://php.net/manual/de/refs.utilspec.cmdline.php">Eingabezeilenspezifische Erweiterungen</a></li><li><a href="http://php.net/manual/de/refs.compression.php">Erweiterungen zur Datenkompression und Archivierung</a></li><li><a href="http://php.net/manual/de/refs.creditcard.php">Kreditkartendaten-Verarbeitung</a></li><li><a href="http://php.net/manual/de/refs.crypto.php">Kryptografische Erweiterungen</a></li><li><a href="http://php.net/manual/de/refs.database.php">Datenbankerweiterungen</a></li><li><a href="http://php.net/manual/de/refs.calendar.php">Datums- und zeitrelevante Erweiterungen</a></li><li><a href="http://php.net/manual/de/refs.fileprocess.file.php">Dateisystemrelevante Erweiterungen</a></li><li><a href="http://php.net/manual/de/refs.international.php">Unterst&uuml;tzung menschlicher Sprache und Zeichenkodierung</a></li><li><a href="http://php.net/manual/de/refs.utilspec.image.php">Bildverarbeitung und -generierung</a></li><li><a href="http://php.net/manual/de/refs.remote.mail.php">E-Mail-relevante Erweiterungen</a></li><li><a href="http://php.net/manual/de/refs.math.php">Mathematische Erweiterungen</a></li><li><a href="http://php.net/manual/de/refs.utilspec.nontext.php">Non-Text MIME-Ausgaben</a></li><li><a href="http://php.net/manual/de/refs.fileprocess.process.php">Erweiterungen zur Prozesskontrolle</a></li><li><a href="http://php.net/manual/de/refs.basic.other.php">Sonstige Grunderweiterungen</a></li><li><a href="http://php.net/manual/de/refs.remote.other.php">Sonstige Dienste</a></li><li><a href="http://php.net/manual/de/refs.search.php">Suchmaschinenerweiterungen</a></li><li><a href="http://php.net/manual/de/refs.utilspec.server.php">Serverspezifische Erweiterungen</a></li><li><a href="http://php.net/manual/de/refs.basic.session.php">Session-Erweiterungen</a></li><li><a href="http://php.net/manual/de/refs.basic.text.php">Textverarbeitung</a></li><li><a href="http://php.net/manual/de/refs.basic.vartype.php">Variablen- und typbezogene Erweiterungen</a></li><li><a href="http://php.net/manual/de/refs.webservice.php">Web Services</a></li><li><a href="http://php.net/manual/de/refs.utilspec.windows.php">Windowsbasierte Erweiterungen</a></li><li><a href="http://php.net/manual/de/refs.xml.php">XML-Manipulation</a></li><li><a href="http://php.net/manual/de/refs.ui.php">GUI Erweiterungen</a></li></ul></li><li><a href="http://php.net/manual/de/internals2.php">PHP im Kern: Das Entwicklerhandbuch f&uuml;r die Zend Engine</a><ul class="chunklist chunklist_set chunklist_children"><li><a href="http://php.net/manual/de/internals2.preface.php">Preface</a></li><li><a href="http://php.net/manual/de/internals2.memory.php">Memory management</a></li><li><a href="http://php.net/manual/de/internals2.variables.php">Working with Variables</a></li><li><a href="http://php.net/manual/de/internals2.funcs.php">Writing Functions</a></li><li><a href="http://php.net/manual/de/internals2.classes.php">Writing Classes</a></li><li><a href="http://php.net/manual/de/internals2.resources.php">Working with Resources</a></li><li><a href="http://php.net/manual/de/internals2.ini.php">Working with INI settings</a></li><li><a href="http://php.net/manual/de/internals2.streams.php">Working with streams</a></li><li><a href="http://php.net/manual/de/internals2.counter.php">The &quot;counter&quot; Extension - A Continuing Example</a></li><li><a href="http://php.net/manual/de/internals2.buildsys.php">The PHP 5 build system</a></li><li><a href="http://php.net/manual/de/internals2.structure.php">Extension structure</a></li><li><a href="http://php.net/manual/de/internals2.pdo.php">PDO Driver How-To</a></li><li><a href="http://php.net/manual/de/internals2.faq.php">Extension FAQs</a></li><li><a href="http://php.net/manual/de/internals2.apiref.php">Zend Engine 2 API reference</a></li><li><a href="http://php.net/manual/de/internals2.opcodes.php">Zend Engine 2 Opcodes</a></li><li><a href="http://php.net/manual/de/internals2.ze1.php">Zend Engine 1</a></li></ul></li><li><a href="http://php.net/manual/de/faq.php">FAQ</a> — FAQ: Frequently Asked Questions<ul class="chunklist chunklist_set chunklist_children"><li><a href="http://php.net/manual/de/faq.general.php">Allgemeine Informationen</a></li><li><a href="http://php.net/manual/de/faq.mailinglist.php">Mailing-Listen</a></li><li><a href="http://php.net/manual/de/faq.obtaining.php">PHP beziehen</a></li><li><a href="http://php.net/manual/de/faq.databases.php">PHP und Datenbanken</a></li><li><a href="http://php.net/manual/de/faq.installation.php">Installation</a></li><li><a href="http://php.net/manual/de/faq.build.php">Probleme bei der Kompilierung</a></li><li><a href="http://php.net/manual/de/faq.using.php">PHP benutzen</a></li><li><a href="http://php.net/manual/de/faq.passwords.php">Password Hashing</a> — Sicheres Password Hashing</li><li><a href="http://php.net/manual/de/faq.html.php">PHP und HTML</a></li><li><a href="http://php.net/manual/de/faq.com.php">PHP und COM</a></li><li><a href="http://php.net/manual/de/faq.misc.php">Verschiedene Fragen</a></li></ul></li><li><a href="http://php.net/manual/de/appendices.php">Appendices</a><ul class="chunklist chunklist_set chunklist_children"><li><a href="http://php.net/manual/de/history.php">Die Geschichte von PHP und verwandten Projekten</a></li><li><a href="http://php.net/manual/de/migration72.php">Migrating from PHP 7.1.x to PHP 7.2.x</a></li><li><a href="http://php.net/manual/de/migration71.php">Migration von PHP 7.0.x nach PHP 7.1.x</a></li><li><a href="http://php.net/manual/de/migration70.php">Migration von PHP 5.6.x nach PHP 7.0.x</a></li><li><a href="http://php.net/manual/de/migration56.php">Migration von PHP 5.5.x auf PHP 5.6.x</a></li><li><a href="http://php.net/manual/de/migration55.php">Migrating from PHP 5.4.x to PHP 5.5.x</a></li><li><a href="http://php.net/manual/de/migration54.php">Migration von PHP 5.3.x auf PHP 5.4.x</a></li><li><a href="http://php.net/manual/de/migration53.php">Migrating from PHP 5.2.x to PHP 5.3.x</a></li><li><a href="http://php.net/manual/de/migration52.php">Migrating from PHP 5.1.x to PHP 5.2.x</a></li><li><a href="http://php.net/manual/de/migration51.php">Migrating from PHP 5.0.x to PHP 5.1.x</a></li><li><a href="http://php.net/manual/de/migration5.php">Migrating from PHP 4 to PHP 5.0.x</a></li><li><a href="http://php.net/manual/de/debugger.php">PHP Debugging</a></li><li><a href="http://php.net/manual/de/configure.php">Configure options</a></li><li><a href="http://php.net/manual/de/ini.php">php.ini Richtlinien</a></li><li><a href="http://php.net/manual/de/extensions.php">Extension-Liste/-Kategorisierung</a></li><li><a href="http://php.net/manual/de/aliases.php">Liste der Funktions-Aliase</a></li><li><a href="http://php.net/manual/de/reserved.php">Liste der reservierten W&ouml;rter</a></li><li><a href="http://php.net/manual/de/resource.php">Liste der Ressource-Typen</a></li><li><a href="http://php.net/manual/de/filters.php">List of Available Filters</a></li><li><a href="http://php.net/manual/de/transports.php">Liste der unterst&uuml;tzten Socket-Transporter</a></li><li><a href="http://php.net/manual/de/types.comparisons.php">Tabelle zu Typenvergleichen in PHP</a></li><li><a href="http://php.net/manual/de/tokens.php">Liste der Parsertoken</a></li><li><a href="http://php.net/manual/de/userlandnaming.php">Userland Naming Guide</a></li><li><a href="http://php.net/manual/de/about.php">&Uuml;ber das Handbuch</a></li><li><a href="http://php.net/manual/de/cc.license.php">Creative Commons Attribution 3.0</a></li><li><a href="http://php.net/manual/de/indexes.php">Verzeichnis der Inhaltsverzeichnisse</a></li><li><a href="http://php.net/manual/de/doc.changelog.php">Changelog</a></li></ul></li></ul></div>
+<section id="usernotes">
+ <div class="head">
+  <span class="action"><a href="http://php.net/manual/add-note.php?sect=index&amp;redirect=http://php.net/manual/de/index.php"><img src='http://php.net/images/notes-add@2x.png' alt='add a note' width='12' height='12'> <small>add a note</small></a></span>
+  <h3 class="title">User Contributed Notes </h3>
+ </div>
+ <div class="note">There are no user contributed notes for this page.</div></section>    </section><!-- layout-content -->
+    
+
+  </div><!-- layout -->
+         
+  <footer>
+    <div class="container footer-content">
+      <div class="row-fluid">
+      <ul class="footmenu">
+        <li><a href="http://php.net/copyright.php">Copyright &copy; 2001-2017 The PHP Group</a></li>
+        <li><a href="http://php.net/my.php">My PHP.net</a></li>
+        <li><a href="http://php.net/contact.php">Contact</a></li>
+        <li><a href="http://php.net/sites.php">Other PHP.net sites</a></li>
+        <li><a href="http://php.net/mirrors.php">Mirror sites</a></li>
+        <li><a href="http://php.net/privacy.php">Privacy policy</a></li>
+      </ul>
+      </div>
+    </div>
+  </footer>
+
+    
+ <!-- External and third party libraries. -->
+ <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/modernizr.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/hogan-2.0.0.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/typeahead.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/mousetrap.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/search.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1500560403&amp;f=/js/common.js"></script>
+
+<a id="toTop" href="javascript:;"><span id="toTopHover"></span><img width="40" height="40" alt="To Top" src="http://php.net/images/to-top@2x.png"></a>
+
+</body>
+
+<!-- Mirrored from php.net/manual/de/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Dec 2017 23:18:08 GMT -->
+</html>
+

@@ -1,0 +1,28 @@
+* {
+	box-sizing: border-box;
+}
+.variante {
+	background-color: black;
+	width: 100%;
+	height: 100vh;
+	text-align: center;
+	color: white
+}
+@media screen and (max-width: 768px) {
+    .variante {
+		background-color: blue;
+		color: black
+	}
+}
+@media screen and (min-width: 768px) and (max-width: 992px) {
+    .variante {
+		background-color: yellow;
+		color: blue
+	}
+}
+@media screen and (min-width: 992px) and (max-width: 1200px) {
+    .variante {
+		background-color: green;
+		color: yellow
+	}
+}

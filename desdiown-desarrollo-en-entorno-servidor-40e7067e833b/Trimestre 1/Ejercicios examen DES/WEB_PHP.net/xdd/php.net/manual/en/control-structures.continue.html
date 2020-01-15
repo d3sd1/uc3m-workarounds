@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<!-- Mirrored from php.net/manual/en/control-structures.continue.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Dec 2017 23:18:10 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+  <title>PHP: continue - Manual </title>
+
+ <link rel="shortcut icon" href="http://php.net/favicon.ico">
+ <link rel="search" type="application/opensearchdescription+xml" href="http://php.net/phpnetimprovedsearch.src" title="Add PHP.net search">
+ <link rel="alternate" type="application/atom+xml" href="http://php.net/releases/feed.php" title="PHP Release feed">
+ <link rel="alternate" type="application/atom+xml" href="http://php.net/feed.atom" title="PHP: Hypertext Preprocessor">
+
+ <link rel="canonical" href="http://php.net/manual/en/control-structures.continue.php">
+ <link rel="shorturl" href="http://php.net/continue">
+ <link rel="alternate" href="http://php.net/continue" hreflang="x-default">
+
+ <link rel="contents" href="http://php.net/manual/en/index.php">
+ <link rel="index" href="http://php.net/manual/en/language.control-structures.php">
+ <link rel="prev" href="http://php.net/manual/en/control-structures.break.php">
+ <link rel="next" href="http://php.net/manual/en/control-structures.switch.php">
+
+ <link rel="alternate" href="http://php.net/manual/en/control-structures.continue.php" hreflang="en">
+ <link rel="alternate" href="http://php.net/manual/pt_BR/control-structures.continue.php" hreflang="pt_BR">
+ <link rel="alternate" href="http://php.net/manual/zh/control-structures.continue.php" hreflang="zh">
+ <link rel="alternate" href="http://php.net/manual/fr/control-structures.continue.php" hreflang="fr">
+ <link rel="alternate" href="http://php.net/manual/de/control-structures.continue.php" hreflang="de">
+ <link rel="alternate" href="http://php.net/manual/ja/control-structures.continue.php" hreflang="ja">
+ <link rel="alternate" href="http://php.net/manual/ro/control-structures.continue.php" hreflang="ro">
+ <link rel="alternate" href="http://php.net/manual/ru/control-structures.continue.php" hreflang="ru">
+ <link rel="alternate" href="http://php.net/manual/es/control-structures.continue.php" hreflang="es">
+ <link rel="alternate" href="http://php.net/manual/tr/control-structures.continue.php" hreflang="tr">
+
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1421837618&amp;f=/fonts/Fira/fira.css" media="screen">
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1421837618&amp;f=/fonts/Font-Awesome/css/fontello.css" media="screen">
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1478800802&amp;f=/styles/theme-base.css" media="screen">
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1449787206&amp;f=/styles/theme-medium.css" media="screen">
+
+ <!--[if lte IE 7]>
+ <link rel="stylesheet" type="text/css" href="http://php.net/styles/workarounds.ie7.css" media="screen">
+ <![endif]-->
+
+ <!--[if lte IE 8]>
+ <script type="text/javascript">
+  window.brokenIE = true;
+ </script>
+ <![endif]-->
+
+ <!--[if lte IE 9]>
+ <link rel="stylesheet" type="text/css" href="http://php.net/styles/workarounds.ie9.css" media="screen">
+ <![endif]-->
+
+ <!--[if IE]>
+ <script type="text/javascript" src="http://php.net/js/ext/html5.js"></script>
+ <![endif]-->
+
+ <base >
+
+</head>
+<body class="docs ">
+
+<nav id="head-nav" class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <a href="http://php.net/" class="brand"><img src="http://php.net/images/logos/php-logo.svg" width="48" height="24" alt="php"></a>
+    <div id="mainmenu-toggle-overlay"></div>
+    <input type="checkbox" id="mainmenu-toggle">
+    <ul class="nav">
+      <li class=""><a href="http://php.net/downloads">Downloads</a></li>
+      <li class="active"><a href="http://php.net/docs.php">Documentation</a></li>
+      <li class=""><a href="http://php.net/get-involved" >Get Involved</a></li>
+      <li class=""><a href="http://php.net/support">Help</a></li>
+    </ul>
+    <form class="navbar-search" id="topsearch" action="http://php.net/search.php">
+      <input type="hidden" name="show" value="quickref">
+      <input type="search" name="pattern" class="search-query" placeholder="Search" accesskey="s">
+    </form>
+  </div>
+  <div id="flash-message"></div>
+</nav>
+<nav id="trick"><div><dl>
+<dt><a href='http://php.net/manual/en/getting-started.php'>Getting Started</a></dt>
+	<dd><a href='http://php.net/manual/en/introduction.php'>Introduction</a></dd>
+	<dd><a href='http://php.net/manual/en/tutorial.php'>A simple tutorial</a></dd>
+<dt><a href='http://php.net/manual/en/langref.php'>Language Reference</a></dt>
+	<dd><a href='http://php.net/manual/en/language.basic-syntax.php'>Basic syntax</a></dd>
+	<dd><a href='http://php.net/manual/en/language.types.php'>Types</a></dd>
+	<dd><a href='http://php.net/manual/en/language.variables.php'>Variables</a></dd>
+	<dd><a href='http://php.net/manual/en/language.constants.php'>Constants</a></dd>
+	<dd><a href='http://php.net/manual/en/language.expressions.php'>Expressions</a></dd>
+	<dd><a href='http://php.net/manual/en/language.operators.php'>Operators</a></dd>
+	<dd><a href='http://php.net/manual/en/language.control-structures.php'>Control Structures</a></dd>
+	<dd><a href='http://php.net/manual/en/language.functions.php'>Functions</a></dd>
+	<dd><a href='http://php.net/manual/en/language.oop5.php'>Classes and Objects</a></dd>
+	<dd><a href='http://php.net/manual/en/language.namespaces.php'>Namespaces</a></dd>
+	<dd><a href='http://php.net/manual/en/language.errors.php'>Errors</a></dd>
+	<dd><a href='http://php.net/manual/en/language.exceptions.php'>Exceptions</a></dd>
+	<dd><a href='http://php.net/manual/en/language.generators.php'>Generators</a></dd>
+	<dd><a href='http://php.net/manual/en/language.references.php'>References Explained</a></dd>
+	<dd><a href='http://php.net/manual/en/reserved.variables.php'>Predefined Variables</a></dd>
+	<dd><a href='http://php.net/manual/en/reserved.exceptions.php'>Predefined Exceptions</a></dd>
+	<dd><a href='http://php.net/manual/en/reserved.interfaces.php'>Predefined Interfaces and Classes</a></dd>
+	<dd><a href='http://php.net/manual/en/context.php'>Context options and parameters</a></dd>
+	<dd><a href='http://php.net/manual/en/wrappers.php'>Supported Protocols and Wrappers</a></dd>
+</dl>
+<dl>
+<dt><a href='http://php.net/manual/en/security.php'>Security</a></dt>
+	<dd><a href='http://php.net/manual/en/security.intro.php'>Introduction</a></dd>
+	<dd><a href='http://php.net/manual/en/security.general.php'>General considerations</a></dd>
+	<dd><a href='http://php.net/manual/en/security.cgi-bin.php'>Installed as CGI binary</a></dd>
+	<dd><a href='http://php.net/manual/en/security.apache.php'>Installed as an Apache module</a></dd>
+	<dd><a href='http://php.net/manual/en/security.sessions.php'>Session Security</a></dd>
+	<dd><a href='http://php.net/manual/en/security.filesystem.php'>Filesystem Security</a></dd>
+	<dd><a href='http://php.net/manual/en/security.database.php'>Database Security</a></dd>
+	<dd><a href='http://php.net/manual/en/security.errors.php'>Error Reporting</a></dd>
+	<dd><a href='http://php.net/manual/en/security.globals.php'>Using Register Globals</a></dd>
+	<dd><a href='http://php.net/manual/en/security.variables.php'>User Submitted Data</a></dd>
+	<dd><a href='http://php.net/manual/en/security.magicquotes.php'>Magic Quotes</a></dd>
+	<dd><a href='http://php.net/manual/en/security.hiding.php'>Hiding PHP</a></dd>
+	<dd><a href='http://php.net/manual/en/security.current.php'>Keeping Current</a></dd>
+<dt><a href='http://php.net/manual/en/features.php'>Features</a></dt>
+	<dd><a href='http://php.net/manual/en/features.http-auth.php'>HTTP authentication with PHP</a></dd>
+	<dd><a href='http://php.net/manual/en/features.cookies.php'>Cookies</a></dd>
+	<dd><a href='http://php.net/manual/en/features.sessions.php'>Sessions</a></dd>
+	<dd><a href='http://php.net/manual/en/features.xforms.php'>Dealing with XForms</a></dd>
+	<dd><a href='http://php.net/manual/en/features.file-upload.php'>Handling file uploads</a></dd>
+	<dd><a href='http://php.net/manual/en/features.remote-files.php'>Using remote files</a></dd>
+	<dd><a href='http://php.net/manual/en/features.connection-handling.php'>Connection handling</a></dd>
+	<dd><a href='http://php.net/manual/en/features.persistent-connections.php'>Persistent Database Connections</a></dd>
+	<dd><a href='http://php.net/manual/en/features.safe-mode.php'>Safe Mode</a></dd>
+	<dd><a href='http://php.net/manual/en/features.commandline.php'>Command line usage</a></dd>
+	<dd><a href='http://php.net/manual/en/features.gc.php'>Garbage Collection</a></dd>
+	<dd><a href='http://php.net/manual/en/features.dtrace.php'>DTrace Dynamic Tracing</a></dd>
+</dl>
+<dl>
+<dt><a href='http://php.net/manual/en/funcref.php'>Function Reference</a></dt>
+	<dd><a href='http://php.net/manual/en/refs.basic.php.php'>Affecting PHP's Behaviour</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.audio.php'>Audio Formats Manipulation</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.remote.auth.php'>Authentication Services</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.cmdline.php'>Command Line Specific Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.compression.php'>Compression and Archive Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.creditcard.php'>Credit Card Processing</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.crypto.php'>Cryptography Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.database.php'>Database Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.calendar.php'>Date and Time Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.fileprocess.file.php'>File System Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.international.php'>Human Language and Character Encoding Support</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.image.php'>Image Processing and Generation</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.remote.mail.php'>Mail Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.math.php'>Mathematical Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.nontext.php'>Non-Text MIME Output</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.fileprocess.process.php'>Process Control Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.other.php'>Other Basic Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.remote.other.php'>Other Services</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.search.php'>Search Engine Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.server.php'>Server Specific Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.session.php'>Session Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.text.php'>Text Processing</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.vartype.php'>Variable and Type Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.webservice.php'>Web Services</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.windows.php'>Windows Only Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.xml.php'>XML Manipulation</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.ui.php'>GUI Extensions</a></dd>
+</dl>
+<dl>
+<dt>Keyboard Shortcuts</dt><dt>?</dt>
+<dd>This help</dd>
+<dt>j</dt>
+<dd>Next menu item</dd>
+<dt>k</dt>
+<dd>Previous menu item</dd>
+<dt>g p</dt>
+<dd>Previous man page</dd>
+<dt>g n</dt>
+<dd>Next man page</dd>
+<dt>G</dt>
+<dd>Scroll to bottom</dd>
+<dt>g g</dt>
+<dd>Scroll to top</dd>
+<dt>g h</dt>
+<dd>Goto homepage</dd>
+<dt>g s</dt>
+<dd>Goto search<br>(current page)</dd>
+<dt>/</dt>
+<dd>Focus search box</dd>
+</dl></div></nav>
+<div id="goto">
+    <div class="search">
+         <div class="text"></div>
+         <div class="results"><ul></ul></div>
+   </div>
+</div>
+
+  <div id="breadcrumbs" class="clearfix">
+    <div id="breadcrumbs-inner">
+          <div class="next">
+        <a href="http://php.net/manual/en/control-structures.switch.php">
+          switch &raquo;
+        </a>
+      </div>
+              <div class="prev">
+        <a href="http://php.net/manual/en/control-structures.break.php">
+          &laquo; break        </a>
+      </div>
+          <ul>
+            <li><a href='http://php.net/manual/en/index.php'>PHP Manual</a></li>      <li><a href='http://php.net/manual/en/langref.php'>Language Reference</a></li>      <li><a href='http://php.net/manual/en/language.control-structures.php'>Control Structures</a></li>      </ul>
+    </div>
+  </div>
+
+
+
+
+<div id="layout" class="clearfix">
+  <section id="layout-content">
+  <div class="page-tools">
+    <div class="change-language">
+      <form action="http://php.net/manual/change.php" method="get" id="changelang" name="changelang">
+        <fieldset>
+          <label for="changelang-langs">Change language:</label>
+          <select onchange="document.changelang.submit()" name="page" id="changelang-langs">
+            <option value='en/control-structures.continue.php' selected="selected">English</option>
+            <option value='http://php.net/manual/en/pt_BR/control-structures.continue.php'>Brazilian Portuguese</option>
+            <option value='http://php.net/manual/en/zh/control-structures.continue.php'>Chinese (Simplified)</option>
+            <option value='http://php.net/manual/en/fr/control-structures.continue.php'>French</option>
+            <option value='http://php.net/manual/en/de/control-structures.continue.php'>German</option>
+            <option value='http://php.net/manual/en/ja/control-structures.continue.php'>Japanese</option>
+            <option value='http://php.net/manual/en/ro/control-structures.continue.php'>Romanian</option>
+            <option value='http://php.net/manual/en/ru/control-structures.continue.php'>Russian</option>
+            <option value='http://php.net/manual/en/es/control-structures.continue.php'>Spanish</option>
+            <option value='http://php.net/manual/en/tr/control-structures.continue.php'>Turkish</option>
+            <option value="http://php.net/manual/en/help-translate.php">Other</option>
+          </select>
+        </fieldset>
+      </form>
+    </div>
+    <div class="edit-bug">
+      <a href="https://edit.php.net/?project=PHP&amp;perm=en/control-structures.continue.php">Edit</a>
+      <a href="https://bugs.php.net/report.php?bug_type=Documentation+problem&amp;manpage=control-structures.continue">Report a Bug</a>
+    </div>
+  </div><div id="control-structures.continue" class="sect1">
+ <h2 class="title"><em>continue</em></h2>
+ <p class="verinfo">(PHP 4, PHP 5, PHP 7)</p>
+ <p class="simpara">
+  <em>continue</em> is used within looping structures to
+  skip the rest of the current loop iteration and continue execution
+  at the condition evaluation and then the beginning of the next iteration.
+ </p>
+ <blockquote class="note"><p><strong class="note">Note</strong>: 
+  <span class="simpara">
+   In PHP the
+   <a href="http://php.net/manual/en/control-structures.switch.php" class="link">switch</a> statement is
+   considered a looping structure for the purposes of
+   <em>continue</em>. <em>continue</em> behaves like
+   <em>break</em> (when no arguments are passed). If a
+   <em>switch</em> is inside a loop,
+   <em>continue 2</em> will continue with the next iteration
+   of the outer loop.
+  </span>
+ </p></blockquote>
+ <p class="simpara">
+  <em>continue</em> accepts an optional numeric argument
+  which tells it how many levels of enclosing loops it should skip
+  to the end of. The default value is <em>1</em>, thus skipping
+  to the end of the current loop.
+ </p>
+ <p class="para">
+  <div class="informalexample">
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">while&nbsp;(list(</span><span style="color: #0000BB">$key</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$value</span><span style="color: #007700">)&nbsp;=&nbsp;</span><span style="color: #0000BB">each</span><span style="color: #007700">(</span><span style="color: #0000BB">$arr</span><span style="color: #007700">))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(!(</span><span style="color: #0000BB">$key&nbsp;</span><span style="color: #007700">%&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">))&nbsp;{&nbsp;</span><span style="color: #FF8000">//&nbsp;skip&nbsp;even&nbsp;members<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">continue;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">do_something_odd</span><span style="color: #007700">(</span><span style="color: #0000BB">$value</span><span style="color: #007700">);<br />}<br /><br /></span><span style="color: #0000BB">$i&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">;<br />while&nbsp;(</span><span style="color: #0000BB">$i</span><span style="color: #007700">++&nbsp;&lt;&nbsp;</span><span style="color: #0000BB">5</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Outer&lt;br&nbsp;/&gt;\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;while&nbsp;(</span><span style="color: #0000BB">1</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Middle&lt;br&nbsp;/&gt;\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while&nbsp;(</span><span style="color: #0000BB">1</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Inner&lt;br&nbsp;/&gt;\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;continue&nbsp;</span><span style="color: #0000BB">3</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"This&nbsp;never&nbsp;gets&nbsp;output.&lt;br&nbsp;/&gt;\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Neither&nbsp;does&nbsp;this.&lt;br&nbsp;/&gt;\n"</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+  </div>
+ </p>
+ <p class="para">
+  Omitting the semicolon after <em>continue</em> can lead to
+  confusion. Here&#039;s an example of what you shouldn&#039;t do.
+ </p>
+ <p class="para">
+  <div class="informalexample">
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">for&nbsp;(</span><span style="color: #0000BB">$i&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">;&nbsp;</span><span style="color: #0000BB">$i&nbsp;</span><span style="color: #007700">&lt;&nbsp;</span><span style="color: #0000BB">5</span><span style="color: #007700">;&nbsp;++</span><span style="color: #0000BB">$i</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(</span><span style="color: #0000BB">$i&nbsp;</span><span style="color: #007700">==&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">)<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;continue<br />&nbsp;&nbsp;&nbsp;&nbsp;print&nbsp;</span><span style="color: #DD0000">"</span><span style="color: #0000BB">$i</span><span style="color: #DD0000">\n"</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+   <p class="para">
+    One can expect the result to be:
+   </p>
+   <div class="example-contents screen">
+<div class="cdata"><pre>
+0
+1
+3
+4
+</pre></div>
+   </div>
+   <p class="para">
+    but, in PHP versions below 5.4.0, this script will output:
+   </p>
+   <div class="example-contents screen">
+<div class="cdata"><pre>
+2
+</pre></div>
+   </div>
+   <p class="para">
+    because the entire <em>continue print &quot;$i\n&quot;;</em> is evaluated
+    as a single expression, and so <span class="function"><a href="http://php.net/manual/en/function.print.php" class="function">print</a></span> is called only
+    when <em>$i == 2</em> is true. (The return value of
+    <em>print</em> is passed to <em>continue</em> as the
+    numeric argument.)
+   </p>
+   <blockquote class="note"><p><strong class="note">Note</strong>: 
+    <p class="para">
+     As of PHP 5.4.0, the above example will raise an
+     <strong><code>E_COMPILE_ERROR</code></strong> error.
+    </p>
+   </p></blockquote>
+  </div>
+ </p>
+ <p class="para">
+  <table class="doctable table">
+   <caption><strong>Changelog for <em>continue</em></strong></caption>
+   
+    <thead>
+     <tr>
+      <th>Version</th>
+      <th>Description</th>
+     </tr>
+
+    </thead>
+
+    <tbody class="tbody">
+     <tr>
+      <td>5.4.0</td>
+      <td>
+       <em>continue 0;</em> is no longer valid. In previous versions it was interpreted
+       the same as <em>continue 1;</em>.
+      </td>
+     </tr>
+
+     <tr>
+      <td>5.4.0</td>
+      <td>
+       Removed the ability to pass in variables (e.g., <em>$num = 2; continue $num;</em>)
+       as the numerical argument.
+      </td>
+     </tr>
+
+    </tbody>
+   
+  </table>
+
+ </p>
+</div>
+<section id="usernotes">
+ <div class="head">
+  <span class="action"><a href="http://php.net/manual/add-note.php?sect=control-structures.continue&amp;redirect=http://php.net/manual/en/control-structures.continue.php"><img src='http://php.net/images/notes-add@2x.png' alt='add a note' width='12' height='12'> <small>add a note</small></a></span>
+  <h3 class="title">User Contributed Notes <span class="count">17 notes</span></h3>
+ </div><div id="allnotes">
+  <div class="note" id="96945">  <div class="votes">
+    <div id="Vu96945">
+    <a href="http://php.net/manual/vote-note.php?id=96945&amp;page=control-structures.continue&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd96945">
+    <a href="http://php.net/manual/vote-note.php?id=96945&amp;page=control-structures.continue&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V96945" title="76% like this...">
+    70
+    </div>
+  </div>
+  <a href="#96945" class="name">
+  <strong class="user"><em>jaimthorn at yahoo dot com</em></strong></a><a class="genanchor" href="#96945"> &para;</a><div class="date" title="2010-03-24 06:36"><strong>7 years ago</strong></div>
+  <div class="text" id="Hcom96945">
+<div class="phpcode"><code><span class="html">
+The remark "in PHP the switch statement is considered a looping structure for the purposes of continue" near the top of this page threw me off, so I experimented a little using the following code to figure out what the exact semantics of continue inside a switch is:<br /><br /><span class="default">&lt;?php<br /><br />&nbsp; &nbsp; </span><span class="keyword">for( </span><span class="default">$i </span><span class="keyword">= </span><span class="default">0</span><span class="keyword">; </span><span class="default">$i </span><span class="keyword">&lt; </span><span class="default">3</span><span class="keyword">; ++ </span><span class="default">$i </span><span class="keyword">)<br />&nbsp; &nbsp; {<br />&nbsp; &nbsp; &nbsp; &nbsp; echo </span><span class="string">' ['</span><span class="keyword">, </span><span class="default">$i</span><span class="keyword">, </span><span class="string">'] '</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; &nbsp; switch( </span><span class="default">$i </span><span class="keyword">)<br />&nbsp; &nbsp; &nbsp; &nbsp; {<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; case </span><span class="default">0</span><span class="keyword">: echo </span><span class="string">'zero'</span><span class="keyword">; break;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; case </span><span class="default">1</span><span class="keyword">: echo </span><span class="string">'one' </span><span class="keyword">; </span><span class="default">XXXX</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; case </span><span class="default">2</span><span class="keyword">: echo </span><span class="string">'two' </span><span class="keyword">; break;<br />&nbsp; &nbsp; &nbsp; &nbsp; }<br />&nbsp; &nbsp; &nbsp; &nbsp; echo </span><span class="string">' &lt;' </span><span class="keyword">, </span><span class="default">$i</span><span class="keyword">, </span><span class="string">'&gt; '</span><span class="keyword">;<br />&nbsp; &nbsp; }<br /><br /></span><span class="default">?&gt;<br /></span><br />For XXXX I filled in<br /><br />- continue 1<br />- continue 2<br />- break 1<br />- break 2<br /><br />and observed the different results.&nbsp; This made me come up with the following one-liner that describes the difference between break and continue:<br /><br />continue resumes execution just before the closing curly bracket ( } ), and break resumes execution just after the closing curly bracket.<br /><br />Corollary: since a switch is not (really) a looping structure, resuming execution just before a switch's closing curly bracket has the same effect as using a break statement.&nbsp; In the case of (for, while, do-while) loops, resuming execution just prior their closing curly brackets means that a new iteration is started --which is of course very unlike the behavior of a break statement.<br /><br />In the one-liner above I ignored the existence of parameters to break/continue, but the one-liner is also valid when parameters are supplied.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="90323">  <div class="votes">
+    <div id="Vu90323">
+    <a href="http://php.net/manual/vote-note.php?id=90323&amp;page=control-structures.continue&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd90323">
+    <a href="http://php.net/manual/vote-note.php?id=90323&amp;page=control-structures.continue&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V90323" title="62% like this...">
+    17
+    </div>
+  </div>
+  <a href="#90323" class="name">
+  <strong class="user"><em>Nikolay Ermolenko</em></strong></a><a class="genanchor" href="#90323"> &para;</a><div class="date" title="2009-04-16 05:58"><strong>8 years ago</strong></div>
+  <div class="text" id="Hcom90323">
+<div class="phpcode"><code><span class="html">
+Using continue and break:<br /><br /><span class="default">&lt;?php<br />$stack </span><span class="keyword">= array(</span><span class="string">'first'</span><span class="keyword">, </span><span class="string">'second'</span><span class="keyword">, </span><span class="string">'third'</span><span class="keyword">, </span><span class="string">'fourth'</span><span class="keyword">, </span><span class="string">'fifth'</span><span class="keyword">);<br /><br />foreach(</span><span class="default">$stack </span><span class="keyword">AS </span><span class="default">$v</span><span class="keyword">){<br />&nbsp; &nbsp; if(</span><span class="default">$v </span><span class="keyword">== </span><span class="string">'second'</span><span class="keyword">)continue;<br />&nbsp; &nbsp; if(</span><span class="default">$v </span><span class="keyword">== </span><span class="string">'fourth'</span><span class="keyword">)break;<br />&nbsp; &nbsp; echo </span><span class="default">$v</span><span class="keyword">.</span><span class="string">'&lt;br&gt;'</span><span class="keyword">;<br />}<br /></span><span class="comment">/*<br /><br />first<br />third<br /><br />*/<br /><br /></span><span class="default">$stack2 </span><span class="keyword">= array(</span><span class="string">'one'</span><span class="keyword">=&gt;</span><span class="string">'first'</span><span class="keyword">, </span><span class="string">'two'</span><span class="keyword">=&gt;</span><span class="string">'second'</span><span class="keyword">, </span><span class="string">'three'</span><span class="keyword">=&gt;</span><span class="string">'third'</span><span class="keyword">, </span><span class="string">'four'</span><span class="keyword">=&gt;</span><span class="string">'fourth'</span><span class="keyword">, </span><span class="string">'five'</span><span class="keyword">=&gt;</span><span class="string">'fifth'</span><span class="keyword">);<br />foreach(</span><span class="default">$stack2 </span><span class="keyword">AS </span><span class="default">$k</span><span class="keyword">=&gt;</span><span class="default">$v</span><span class="keyword">){<br />&nbsp; &nbsp; if(</span><span class="default">$v </span><span class="keyword">== </span><span class="string">'second'</span><span class="keyword">)continue;<br />&nbsp; &nbsp; if(</span><span class="default">$k </span><span class="keyword">== </span><span class="string">'three'</span><span class="keyword">)continue;<br />&nbsp; &nbsp; if(</span><span class="default">$v </span><span class="keyword">== </span><span class="string">'fifth'</span><span class="keyword">)break;<br />&nbsp; &nbsp; echo </span><span class="default">$k</span><span class="keyword">.</span><span class="string">' ::: '</span><span class="keyword">.</span><span class="default">$v</span><span class="keyword">.</span><span class="string">'&lt;br&gt;'</span><span class="keyword">;<br />}<br /></span><span class="comment">/*<br /><br />one ::: first<br />four ::: fourth<br /><br />*/<br /><br /></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="49028">  <div class="votes">
+    <div id="Vu49028">
+    <a href="http://php.net/manual/vote-note.php?id=49028&amp;page=control-structures.continue&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd49028">
+    <a href="http://php.net/manual/vote-note.php?id=49028&amp;page=control-structures.continue&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V49028" title="62% like this...">
+    10
+    </div>
+  </div>
+  <a href="#49028" class="name">
+  <strong class="user"><em>greg AT laundrymat.tv</em></strong></a><a class="genanchor" href="#49028"> &para;</a><div class="date" title="2005-01-14 08:58"><strong>12 years ago</strong></div>
+  <div class="text" id="Hcom49028">
+<div class="phpcode"><code><span class="html">
+You using continue in a file included in a loop will produce an error.&nbsp; For example:<br /><br />//page1.php<br />for($x=0;$x&lt;10;$x++)<br />&nbsp;&nbsp; {<br />&nbsp; &nbsp; include('page2.php');&nbsp; &nbsp; <br />}<br /><br />//page2.php<br /><br />if($x==5)<br />&nbsp; &nbsp; continue;<br />else <br />&nbsp;&nbsp; print $x;<br /><br />it should print<br /><br />"012346789" no five, but it produces an error:<br /><br />Cannot break/continue 1 level in etc.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="102657">  <div class="votes">
+    <div id="Vu102657">
+    <a href="http://php.net/manual/vote-note.php?id=102657&amp;page=control-structures.continue&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd102657">
+    <a href="http://php.net/manual/vote-note.php?id=102657&amp;page=control-structures.continue&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V102657" title="55% like this...">
+    13
+    </div>
+  </div>
+  <a href="#102657" class="name">
+  <strong class="user"><em>rjsteinert.com</em></strong></a><a class="genanchor" href="#102657"> &para;</a><div class="date" title="2011-02-26 09:22"><strong>6 years ago</strong></div>
+  <div class="text" id="Hcom102657">
+<div class="phpcode"><code><span class="html">
+The most basic example that print "13", skipping over 2.<br /><br /><span class="default">&lt;?php<br />$arr </span><span class="keyword">= array(</span><span class="default">1</span><span class="keyword">, </span><span class="default">2</span><span class="keyword">, </span><span class="default">3</span><span class="keyword">);<br />foreach(</span><span class="default">$arr </span><span class="keyword">as </span><span class="default">$number</span><span class="keyword">) {<br />&nbsp; if(</span><span class="default">$number </span><span class="keyword">== </span><span class="default">2</span><span class="keyword">) {<br />&nbsp; &nbsp; continue;<br />&nbsp; }<br />&nbsp; print </span><span class="default">$number</span><span class="keyword">;<br />}<br /></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="110900">  <div class="votes">
+    <div id="Vu110900">
+    <a href="http://php.net/manual/vote-note.php?id=110900&amp;page=control-structures.continue&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd110900">
+    <a href="http://php.net/manual/vote-note.php?id=110900&amp;page=control-structures.continue&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V110900" title="58% like this...">
+    6
+    </div>
+  </div>
+  <a href="#110900" class="name">
+  <strong class="user"><em>Koen</em></strong></a><a class="genanchor" href="#110900"> &para;</a><div class="date" title="2012-12-21 12:26"><strong>4 years ago</strong></div>
+  <div class="text" id="Hcom110900">
+<div class="phpcode"><code><span class="html">
+If you use a incrementing value in your loop, be sure to increment it before calling continue; or you might get an infinite loop.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="80075">  <div class="votes">
+    <div id="Vu80075">
+    <a href="http://php.net/manual/vote-note.php?id=80075&amp;page=control-structures.continue&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd80075">
+    <a href="http://php.net/manual/vote-note.php?id=80075&amp;page=control-structures.continue&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V80075" title="56% like this...">
+    4
+    </div>
+  </div>
+  <a href="#80075" class="name">
+  <strong class="user"><em>Geekman</em></strong></a><a class="genanchor" href="#80075"> &para;</a><div class="date" title="2007-12-27 05:01"><strong>9 years ago</strong></div>
+  <div class="text" id="Hcom80075">
+<div class="phpcode"><code><span class="html">
+For clarification, here are some examples of continue used in a while/do-while loop, showing that it has no effect on the conditional evaluation element.<br /><br /><span class="default">&lt;?php<br /></span><span class="comment">// Outputs "1 ".<br /></span><span class="default">$i </span><span class="keyword">= </span><span class="default">0</span><span class="keyword">;<br />while (</span><span class="default">$i </span><span class="keyword">== </span><span class="default">0</span><span class="keyword">) {<br />&nbsp; &nbsp; </span><span class="default">$i</span><span class="keyword">++;<br />&nbsp; &nbsp; echo </span><span class="string">"</span><span class="default">$i</span><span class="string"> "</span><span class="keyword">;<br />&nbsp; &nbsp; if (</span><span class="default">$i </span><span class="keyword">== </span><span class="default">1</span><span class="keyword">) continue;<br />}<br /><br /></span><span class="comment">// Outputs "1 2 ".<br /></span><span class="default">$i </span><span class="keyword">= </span><span class="default">0</span><span class="keyword">;<br />do {<br />&nbsp; &nbsp; </span><span class="default">$i</span><span class="keyword">++;<br />&nbsp; &nbsp; echo </span><span class="string">"</span><span class="default">$i</span><span class="string"> "</span><span class="keyword">;<br />&nbsp; &nbsp; if (</span><span class="default">$i </span><span class="keyword">== </span><span class="default">2</span><span class="keyword">) continue;<br />} while (</span><span class="default">$i </span><span class="keyword">== </span><span class="default">1</span><span class="keyword">);<br /></span><span class="default">?&gt;<br /></span><br />Both code snippets would behave exactly the same without continue.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="42282">  <div class="votes">
+    <div id="Vu42282">
+    <a href="http://php.net/manual/vote-note.php?id=42282&amp;page=control-structures.continue&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd42282">
+    <a href="http://php.net/manual/vote-note.php?id=42282&amp;page=control-structures.continue&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V42282" title="56% like this...">
+    5
+    </div>
+  </div>
+  <a href="#42282" class="name">
+  <strong class="user"><em>www.derosetechnologies.com</em></strong></a><a class="genanchor" href="#42282"> &para;</a><div class="date" title="2004-05-10 08:58"><strong>13 years ago</strong></div>
+  <div class="text" id="Hcom42282">
+<div class="phpcode"><code><span class="html">
+In the same way that one can append a number to the end of a break statement to indicate the "loop" level upon which one wishes to 'break' , one can append a number to the end of a 'continue' statement to acheive the same goal. Here's a quick example:<br /><br />&lt;?<br />&nbsp; &nbsp; for ($i = 0;$i&lt;3;$i++) {<br />&nbsp; &nbsp; &nbsp; &nbsp; echo "Start Of I loop\n";<br />&nbsp; &nbsp; &nbsp; &nbsp; for ($j=0;;$j++) {<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ($j &gt;= 2) continue 2; // This "continue" applies to the "$i" loop <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; echo "I : $i J : $j"."\n";<br />&nbsp; &nbsp; &nbsp; &nbsp; }<br />&nbsp; &nbsp; &nbsp; &nbsp; echo "End\n";<br />&nbsp; &nbsp; }<br />?&gt;<br /><br />The output here is:<br />Start Of I loop<br />I : 0 J : 0<br />I : 0 J : 1<br />Start Of I loop<br />I : 1 J : 0<br />I : 1 J : 1<br />Start Of I loop<br />I : 2 J : 0<br />I : 2 J : 1<br /><br />For more information, see the php manual's entry for the 'break' statement.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="104015">  <div class="votes">
+    <div id="Vu104015">
+    <a href="http://php.net/manual/vote-note.php?id=104015&amp;page=control-structures.continue&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd104015">
+    <a href="http://php.net/manual/vote-note.php?id=104015&amp;page=control-structures.continue&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V104015" title="48% like this...">
+    -1
+    </div>
+  </div>
+  <a href="#104015" class="name">
+  <strong class="user"><em>skippychalmers at gmail dot com</em></strong></a><a class="genanchor" href="#104015"> &para;</a><div class="date" title="2011-05-17 05:56"><strong>6 years ago</strong></div>
+  <div class="text" id="Hcom104015">
+<div class="phpcode"><code><span class="html">
+To state the obvious, it should be noted, that the optional param defaults to 1 (effectively).</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="105057">  <div class="votes">
+    <div id="Vu105057">
+    <a href="http://php.net/manual/vote-note.php?id=105057&amp;page=control-structures.continue&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd105057">
+    <a href="http://php.net/manual/vote-note.php?id=105057&amp;page=control-structures.continue&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V105057" title="44% like this...">
+    -4
+    </div>
+  </div>
+  <a href="#105057" class="name">
+  <strong class="user"><em>Anonymous</em></strong></a><a class="genanchor" href="#105057"> &para;</a><div class="date" title="2011-07-25 09:22"><strong>6 years ago</strong></div>
+  <div class="text" id="Hcom105057">
+<div class="phpcode"><code><span class="html">
+<span class="default">&lt;?php<br /></span><span class="keyword">function </span><span class="default">print_primes_between</span><span class="keyword">(</span><span class="default">$x</span><span class="keyword">,</span><span class="default">$y</span><span class="keyword">)<br />{<br />&nbsp; &nbsp; for(</span><span class="default">$i</span><span class="keyword">=</span><span class="default">$x</span><span class="keyword">;</span><span class="default">$i</span><span class="keyword">&lt;=</span><span class="default">$y</span><span class="keyword">;</span><span class="default">$i</span><span class="keyword">++) <br />&nbsp;&nbsp; {<br />&nbsp; &nbsp; &nbsp; &nbsp; for(</span><span class="default">$j</span><span class="keyword">= </span><span class="default">2</span><span class="keyword">; </span><span class="default">$j </span><span class="keyword">&lt; </span><span class="default">$i</span><span class="keyword">; </span><span class="default">$j</span><span class="keyword">++)&nbsp; if(</span><span class="default">$i</span><span class="keyword">%</span><span class="default">$j</span><span class="keyword">==</span><span class="default">0</span><span class="keyword">) continue </span><span class="default">2</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; &nbsp; echo </span><span class="default">$i</span><span class="keyword">.</span><span class="string">","</span><span class="keyword">;<br />&nbsp;&nbsp; }<br />}<br /></span><span class="default">?&gt;<br /></span><br />This function, using continue syntax, is to print prime numbers between given numbers, x and y.<br />For example, print_primes_between(10,20) will output:<br /><br />11,13,17,19,23,29,</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="108913">  <div class="votes">
+    <div id="Vu108913">
+    <a href="http://php.net/manual/vote-note.php?id=108913&amp;page=control-structures.continue&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd108913">
+    <a href="http://php.net/manual/vote-note.php?id=108913&amp;page=control-structures.continue&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V108913" title="42% like this...">
+    -4
+    </div>
+  </div>
+  <a href="#108913" class="name">
+  <strong class="user"><em>maik penz</em></strong></a><a class="genanchor" href="#108913"> &para;</a><div class="date" title="2012-06-04 09:12"><strong>5 years ago</strong></div>
+  <div class="text" id="Hcom108913">
+<div class="phpcode"><code><span class="html">
+Please note that with PHP 5.4 continue 0; will fail with<br /><br />PHP Fatal error:&nbsp; 'continue' operator accepts only positive numbers<br /><br />(same is true for break).</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="85684">  <div class="votes">
+    <div id="Vu85684">
+    <a href="http://php.net/manual/vote-note.php?id=85684&amp;page=control-structures.continue&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd85684">
+    <a href="http://php.net/manual/vote-note.php?id=85684&amp;page=control-structures.continue&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V85684" title="40% like this...">
+    -5
+    </div>
+  </div>
+  <a href="#85684" class="name">
+  <strong class="user"><em>Anonymous</em></strong></a><a class="genanchor" href="#85684"> &para;</a><div class="date" title="2008-09-11 10:04"><strong>9 years ago</strong></div>
+  <div class="text" id="Hcom85684">
+<div class="phpcode"><code><span class="html">
+The continue keyword can skip division by zero:<br /><span class="default">&lt;?php<br />$i </span><span class="keyword">= </span><span class="default">100</span><span class="keyword">;<br />while (</span><span class="default">$i </span><span class="keyword">&gt; -</span><span class="default">100</span><span class="keyword">)<br />{<br />&nbsp; &nbsp; </span><span class="default">$i</span><span class="keyword">--;<br />&nbsp; &nbsp; if (</span><span class="default">$i </span><span class="keyword">== </span><span class="default">0</span><span class="keyword">)<br />&nbsp; &nbsp; {<br />&nbsp; &nbsp; &nbsp; &nbsp; continue;<br />&nbsp; &nbsp; }<br />&nbsp; &nbsp; echo (</span><span class="default">200 </span><span class="keyword">/ </span><span class="default">$i</span><span class="keyword">) . </span><span class="string">"&lt;br /&gt;"</span><span class="keyword">;<br />}<br /></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="60080">  <div class="votes">
+    <div id="Vu60080">
+    <a href="http://php.net/manual/vote-note.php?id=60080&amp;page=control-structures.continue&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd60080">
+    <a href="http://php.net/manual/vote-note.php?id=60080&amp;page=control-structures.continue&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V60080" title="36% like this...">
+    -5
+    </div>
+  </div>
+  <a href="#60080" class="name">
+  <strong class="user"><em>net_navard at yahoo dot com</em></strong></a><a class="genanchor" href="#60080"> &para;</a><div class="date" title="2005-12-25 09:01"><strong>11 years ago</strong></div>
+  <div class="text" id="Hcom60080">
+<div class="phpcode"><code><span class="html">
+Hello firends<br /><br />It is said in manually:<br />continue also accepts an optional numeric argument which tells it how many levels of enclosing loops it should .<br /><br />In order to understand better this,An example for that:<br /><span class="default">&lt;?php<br /><br /></span><span class="comment">/*continue also accepts an optional numeric argument which <br />&nbsp; &nbsp; tells it how many levels of enclosing loops it should skip.*/<br /><br /></span><span class="keyword">for(</span><span class="default">$k</span><span class="keyword">=</span><span class="default">0</span><span class="keyword">;</span><span class="default">$k</span><span class="keyword">&lt;</span><span class="default">2</span><span class="keyword">;</span><span class="default">$k</span><span class="keyword">++)<br />{</span><span class="comment">//First loop<br /><br />&nbsp; &nbsp; <br />&nbsp; &nbsp; </span><span class="keyword">for(</span><span class="default">$j</span><span class="keyword">=</span><span class="default">0</span><span class="keyword">;</span><span class="default">$j</span><span class="keyword">&lt;</span><span class="default">2</span><span class="keyword">;</span><span class="default">$j</span><span class="keyword">++)<br />&nbsp; &nbsp; {</span><span class="comment">//Second loop<br /><br />&nbsp; &nbsp; &nbsp; </span><span class="keyword">for(</span><span class="default">$i</span><span class="keyword">=</span><span class="default">0</span><span class="keyword">;</span><span class="default">$i</span><span class="keyword">&lt;</span><span class="default">4</span><span class="keyword">;</span><span class="default">$i</span><span class="keyword">++)<br />&nbsp; &nbsp; &nbsp; {</span><span class="comment">//Third loop<br />&nbsp; &nbsp; </span><span class="keyword">if(</span><span class="default">$i</span><span class="keyword">&gt;</span><span class="default">2</span><span class="keyword">)<br />&nbsp; &nbsp; continue </span><span class="default">2</span><span class="keyword">;</span><span class="comment">// If $i &gt;2 ,Then it skips to the Second loop(level 2),And starts the next step,<br />&nbsp; &nbsp; </span><span class="keyword">echo </span><span class="string">"</span><span class="default">$i</span><span class="string">\n"</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp;&nbsp; }<br /><br />&nbsp; &nbsp; }<br /><br />}<br /><br /></span><span class="default">?&gt;<br /></span><br />Merry's christmas :)<br />&nbsp; &nbsp; <br />With regards,Hossein</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="49456">  <div class="votes">
+    <div id="Vu49456">
+    <a href="http://php.net/manual/vote-note.php?id=49456&amp;page=control-structures.continue&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd49456">
+    <a href="http://php.net/manual/vote-note.php?id=49456&amp;page=control-structures.continue&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V49456" title="36% like this...">
+    -5
+    </div>
+  </div>
+  <a href="#49456" class="name">
+  <strong class="user"><em>dedlfix gives me a hint</em></strong></a><a class="genanchor" href="#49456"> &para;</a><div class="date" title="2005-01-28 06:47"><strong>12 years ago</strong></div>
+  <div class="text" id="Hcom49456">
+<div class="phpcode"><code><span class="html">
+a possible solution for <br />greg AT laundrymat.tv<br /><br />I've got the same problem as Greg<br />and now it works very fine by using<br />return() instead of continue.<br /><br />It seems, that you have to use return()<br />if you have a file included and<br />you want to continue with the next loop</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="71892">  <div class="votes">
+    <div id="Vu71892">
+    <a href="http://php.net/manual/vote-note.php?id=71892&amp;page=control-structures.continue&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd71892">
+    <a href="http://php.net/manual/vote-note.php?id=71892&amp;page=control-structures.continue&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V71892" title="35% like this...">
+    -5
+    </div>
+  </div>
+  <a href="#71892" class="name">
+  <strong class="user"><em>tufan dot oezduman at gmail dot com</em></strong></a><a class="genanchor" href="#71892"> &para;</a><div class="date" title="2006-12-21 04:28"><strong>10 years ago</strong></div>
+  <div class="text" id="Hcom71892">
+<div class="phpcode"><code><span class="html">
+a possible explanation for the behavior of continue in included scripts mentioned by greg and dedlfix above may be the following line of the "return" documentation: "If the current script file was include()ed or require()ed, then control is passed back to the calling file." <br />The example of greg produces an error since page2.php does not contain any loop-operations. <br /><br />So the only way to give the control back to the loop-operation&nbsp; in page1.php would be a return.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="114625">  <div class="votes">
+    <div id="Vu114625">
+    <a href="http://php.net/manual/vote-note.php?id=114625&amp;page=control-structures.continue&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd114625">
+    <a href="http://php.net/manual/vote-note.php?id=114625&amp;page=control-structures.continue&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V114625" title="28% like this...">
+    -9
+    </div>
+  </div>
+  <a href="#114625" class="name">
+  <strong class="user"><em>John</em></strong></a><a class="genanchor" href="#114625"> &para;</a><div class="date" title="2014-03-13 02:49"><strong>3 years ago</strong></div>
+  <div class="text" id="Hcom114625">
+<div class="phpcode"><code><span class="html">
+<span class="default">&lt;?php<br /><br /></span><span class="keyword">echo</span><span class="string">"\n"</span><span class="keyword">;<br />echo</span><span class="string">"\n"</span><span class="keyword">;<br /><br />&nbsp; &nbsp; for ( </span><span class="default">$i </span><span class="keyword">= </span><span class="default">0</span><span class="keyword">; </span><span class="default">$i </span><span class="keyword">&lt; </span><span class="default">5</span><span class="keyword">; </span><span class="default">$i</span><span class="keyword">++ ) {<br /><br />&nbsp; &nbsp; &nbsp; &nbsp; switch (</span><span class="default">$i</span><span class="keyword">)<br />&nbsp; &nbsp; &nbsp; &nbsp; {<br /><br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; case </span><span class="default">0</span><span class="keyword">:<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; echo </span><span class="default">$i </span><span class="keyword">. </span><span class="string">"b"</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; continue;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; echo </span><span class="default">$i </span><span class="keyword">. </span><span class="string">"a"</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; case </span><span class="default">1</span><span class="keyword">:&nbsp; &nbsp; <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; echo </span><span class="default">$i </span><span class="keyword">. </span><span class="string">"b"</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; continue </span><span class="default">2</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; echo </span><span class="default">$i </span><span class="keyword">. </span><span class="string">"a"</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; case </span><span class="default">2</span><span class="keyword">:&nbsp; &nbsp; <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; echo </span><span class="default">$i </span><span class="keyword">. </span><span class="string">"b"</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; break;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; echo </span><span class="default">$i </span><span class="keyword">. </span><span class="string">"a"</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; case </span><span class="default">3</span><span class="keyword">:<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; echo </span><span class="default">$i </span><span class="keyword">. </span><span class="string">"b"</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; break </span><span class="default">2</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; echo </span><span class="default">$i </span><span class="keyword">. </span><span class="string">"a"</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; case </span><span class="default">4</span><span class="keyword">:<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; echo </span><span class="default">$i</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br />&nbsp; &nbsp; &nbsp; &nbsp; }<br /><br />&nbsp; &nbsp; &nbsp; &nbsp; echo </span><span class="default">9</span><span class="keyword">;<br /><br />&nbsp; &nbsp; }<br /><br />echo</span><span class="string">"\n"</span><span class="keyword">;<br />echo</span><span class="string">"\n"</span><span class="keyword">;<br /><br /></span><span class="default">?&gt;<br /></span><br />This results in: 0b91b2b93b<br /><br />It goes to show that in a switch statement break and continue are the same. But in loops break stops the loop completely and continue just stops executing the current iterations code and moves onto the next loop iteration.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="68193">  <div class="votes">
+    <div id="Vu68193">
+    <a href="http://php.net/manual/vote-note.php?id=68193&amp;page=control-structures.continue&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd68193">
+    <a href="http://php.net/manual/vote-note.php?id=68193&amp;page=control-structures.continue&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V68193" title="24% like this...">
+    -15
+    </div>
+  </div>
+  <a href="#68193" class="name">
+  <strong class="user"><em>szrrya at yahoo dot com</em></strong></a><a class="genanchor" href="#68193"> &para;</a><div class="date" title="2006-07-17 02:18"><strong>11 years ago</strong></div>
+  <div class="text" id="Hcom68193">
+<div class="phpcode"><code><span class="html">
+Documentation states:<br /><br />"continue is used within looping structures to skip the rest of the current loop iteration"<br /><br />Current functionality treats switch structures as looping in regards to continue.&nbsp; It has the same effect as break.<br /><br />The following code is an example:<br /><br /><span class="default">&lt;?php<br /></span><span class="keyword">for (</span><span class="default">$i1 </span><span class="keyword">= </span><span class="default">0</span><span class="keyword">; </span><span class="default">$i1 </span><span class="keyword">&lt; </span><span class="default">2</span><span class="keyword">; </span><span class="default">$i1</span><span class="keyword">++) {<br />&nbsp; </span><span class="comment">// Loop 1.<br />&nbsp; </span><span class="keyword">for (</span><span class="default">$i2 </span><span class="keyword">= </span><span class="default">0</span><span class="keyword">; </span><span class="default">$i2 </span><span class="keyword">&lt; </span><span class="default">2</span><span class="keyword">; </span><span class="default">$i2</span><span class="keyword">++) {<br />&nbsp; &nbsp; </span><span class="comment">// Loop 2.<br />&nbsp; &nbsp; </span><span class="keyword">switch (</span><span class="default">$i2 </span><span class="keyword">% </span><span class="default">2</span><span class="keyword">) {<br />&nbsp; &nbsp; &nbsp; case </span><span class="default">0</span><span class="keyword">:<br />&nbsp; &nbsp; &nbsp; &nbsp; continue;<br />&nbsp; &nbsp; &nbsp; &nbsp; break;<br />&nbsp; &nbsp; }<br />&nbsp; &nbsp; print </span><span class="string">'[' </span><span class="keyword">. </span><span class="default">$i2 </span><span class="keyword">. </span><span class="string">']&lt;br&gt;'</span><span class="keyword">;<br />&nbsp; }<br />&nbsp; print </span><span class="default">$i1 </span><span class="keyword">. </span><span class="string">'&lt;br&gt;'</span><span class="keyword">;<br />}<br /></span><span class="default">?&gt;<br /></span><br />This outputs the following:<br />[0]<br />[1]<br />0<br />[0]<br />[1]<br />1<br /><br />Switch is documented as a block of if...elseif... statements, so you might expect the following output:<br />[1]<br />0<br />[1]<br />1<br /><br />This output requires you to either change the switch to an if or use the numerical argument and treat the switch as one loop.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="62070">  <div class="votes">
+    <div id="Vu62070">
+    <a href="http://php.net/manual/vote-note.php?id=62070&amp;page=control-structures.continue&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd62070">
+    <a href="http://php.net/manual/vote-note.php?id=62070&amp;page=control-structures.continue&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V62070" title="16% like this...">
+    -16
+    </div>
+  </div>
+  <a href="#62070" class="name">
+  <strong class="user"><em>Rene</em></strong></a><a class="genanchor" href="#62070"> &para;</a><div class="date" title="2006-02-18 12:24"><strong>11 years ago</strong></div>
+  <div class="text" id="Hcom62070">
+<div class="phpcode"><code><span class="html">
+(only) the reason that is given on the "Continue with missing semikolon" example is wrong.<br /><br />the script will output "2" because the missing semikolon causes that the "print"-call is executed only if the "if" statement is true. It has nothing to to with "what" the "print"-call would return or not return, but the returning value can cause to skip to the end of higher level Loops if any call is used that will return a bigger number than 1.<br /><br /><span class="default">&lt;?php<br /></span><span class="keyword">continue print </span><span class="string">"</span><span class="default">$i</span><span class="string">\n"</span><span class="keyword">;<br /></span><span class="default">?&gt;<br /></span><br />because of the optional argument, the script will not run into a "unexpected T_PRINT" error. It will not run into an error, too, if the call after continue does return anything but a number.<br /><br />i suggest to change it from:<br />because the return value of the print() call is int(1), and it will look like the optional numeric argument mentioned above.<br /><br />to<br />because the print() call will look like the optional numeric argument mentioned above.</span>
+</code></div>
+  </div>
+ </div></div>
+
+ <div class="foot"><a href="http://php.net/manual/add-note.php?sect=control-structures.continue&amp;redirect=http://php.net/manual/en/control-structures.continue.php"><img src='http://php.net/images/notes-add@2x.png' alt='add a note' width='12' height='12'> <small>add a note</small></a></div>
+</section>    </section><!-- layout-content -->
+        <aside class='layout-menu'>
+    
+        <ul class='parent-menu-list'>
+                                    <li>
+                <a href="http://php.net/manual/en/language.control-structures.php">Control Structures</a>
+    
+                                    <ul class='child-menu-list'>
+    
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/control-structures.intro.php" title="Introduction">Introduction</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/control-structures.if.php" title="if">if</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/control-structures.else.php" title="else">else</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/control-structures.elseif.php" title="elseif/else if">elseif/else if</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/control-structures.alternative-syntax.php" title="Alternative syntax for control structures">Alternative syntax for control structures</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/control-structures.while.php" title="while">while</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/control-structures.do.while.php" title="do-&#8203;while">do-&#8203;while</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/control-structures.for.php" title="for">for</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/control-structures.foreach.php" title="foreach">foreach</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/control-structures.break.php" title="break">break</a>
+                        </li>
+                          
+                        <li class="current">
+                            <a href="http://php.net/manual/en/control-structures.continue.php" title="continue">continue</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/control-structures.switch.php" title="switch">switch</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/control-structures.declare.php" title="declare">declare</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/function.return.php" title="return">return</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/function.require.php" title="require">require</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/function.include.php" title="include">include</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/function.require-once.php" title="require_&#8203;once">require_&#8203;once</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/function.include-once.php" title="include_&#8203;once">include_&#8203;once</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/control-structures.goto.php" title="goto">goto</a>
+                        </li>
+                            
+                    </ul>
+                    
+            </li>
+                        
+                    </ul>
+    </aside>
+
+
+  </div><!-- layout -->
+         
+  <footer>
+    <div class="container footer-content">
+      <div class="row-fluid">
+      <ul class="footmenu">
+        <li><a href="http://php.net/copyright.php">Copyright &copy; 2001-2017 The PHP Group</a></li>
+        <li><a href="http://php.net/my.php">My PHP.net</a></li>
+        <li><a href="http://php.net/contact.php">Contact</a></li>
+        <li><a href="http://php.net/sites.php">Other PHP.net sites</a></li>
+        <li><a href="http://php.net/mirrors.php">Mirror sites</a></li>
+        <li><a href="http://php.net/privacy.php">Privacy policy</a></li>
+      </ul>
+      </div>
+    </div>
+  </footer>
+
+    
+ <!-- External and third party libraries. -->
+ <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/modernizr.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/hogan-2.0.0.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/typeahead.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/mousetrap.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/search.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1500560403&amp;f=/js/common.js"></script>
+
+<a id="toTop" href="javascript:;"><span id="toTopHover"></span><img width="40" height="40" alt="To Top" src="http://php.net/images/to-top@2x.png"></a>
+
+</body>
+
+<!-- Mirrored from php.net/manual/en/control-structures.continue.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Dec 2017 23:18:10 GMT -->
+</html>
+

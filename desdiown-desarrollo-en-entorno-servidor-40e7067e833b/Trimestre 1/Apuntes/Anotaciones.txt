@@ -1,0 +1,2 @@
+- Al poner un servlet con el nombre de un fichero existente: tiene preferencia el nombre del fichero sobre el servlet.
+- Shortcut formatear código: alt + shift + f

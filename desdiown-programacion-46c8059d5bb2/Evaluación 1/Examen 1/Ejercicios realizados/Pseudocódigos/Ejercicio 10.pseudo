@@ -1,0 +1,8 @@
+INICIO
+INT num_inicio = 50;
+INT num_final = 1;
+while(num_final < 50)
+{
+	Escribe num_inicio + ", " + num_inicio;
+}
+FIN

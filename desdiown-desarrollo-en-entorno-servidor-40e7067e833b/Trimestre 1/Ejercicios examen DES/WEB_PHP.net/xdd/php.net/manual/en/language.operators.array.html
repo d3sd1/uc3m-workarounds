@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<!-- Mirrored from php.net/manual/en/language.operators.array.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Dec 2017 23:18:10 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+  <title>PHP: Array Operators - Manual </title>
+
+ <link rel="shortcut icon" href="http://php.net/favicon.ico">
+ <link rel="search" type="application/opensearchdescription+xml" href="http://php.net/phpnetimprovedsearch.src" title="Add PHP.net search">
+ <link rel="alternate" type="application/atom+xml" href="http://php.net/releases/feed.php" title="PHP Release feed">
+ <link rel="alternate" type="application/atom+xml" href="http://php.net/feed.atom" title="PHP: Hypertext Preprocessor">
+
+ <link rel="canonical" href="http://php.net/manual/en/language.operators.array.php">
+ <link rel="shorturl" href="http://php.net/operators.array">
+ <link rel="alternate" href="http://php.net/operators.array" hreflang="x-default">
+
+ <link rel="contents" href="http://php.net/manual/en/index.php">
+ <link rel="index" href="http://php.net/manual/en/language.operators.php">
+ <link rel="prev" href="http://php.net/manual/en/language.operators.string.php">
+ <link rel="next" href="http://php.net/manual/en/language.operators.type.php">
+
+ <link rel="alternate" href="http://php.net/manual/en/language.operators.array.php" hreflang="en">
+ <link rel="alternate" href="http://php.net/manual/pt_BR/language.operators.array.php" hreflang="pt_BR">
+ <link rel="alternate" href="http://php.net/manual/zh/language.operators.array.php" hreflang="zh">
+ <link rel="alternate" href="http://php.net/manual/fr/language.operators.array.php" hreflang="fr">
+ <link rel="alternate" href="http://php.net/manual/de/language.operators.array.php" hreflang="de">
+ <link rel="alternate" href="http://php.net/manual/ja/language.operators.array.php" hreflang="ja">
+ <link rel="alternate" href="http://php.net/manual/ro/language.operators.array.php" hreflang="ro">
+ <link rel="alternate" href="http://php.net/manual/ru/language.operators.array.php" hreflang="ru">
+ <link rel="alternate" href="http://php.net/manual/es/language.operators.array.php" hreflang="es">
+ <link rel="alternate" href="http://php.net/manual/tr/language.operators.array.php" hreflang="tr">
+
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1421837618&amp;f=/fonts/Fira/fira.css" media="screen">
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1421837618&amp;f=/fonts/Font-Awesome/css/fontello.css" media="screen">
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1478800802&amp;f=/styles/theme-base.css" media="screen">
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1449787206&amp;f=/styles/theme-medium.css" media="screen">
+
+ <!--[if lte IE 7]>
+ <link rel="stylesheet" type="text/css" href="http://php.net/styles/workarounds.ie7.css" media="screen">
+ <![endif]-->
+
+ <!--[if lte IE 8]>
+ <script type="text/javascript">
+  window.brokenIE = true;
+ </script>
+ <![endif]-->
+
+ <!--[if lte IE 9]>
+ <link rel="stylesheet" type="text/css" href="http://php.net/styles/workarounds.ie9.css" media="screen">
+ <![endif]-->
+
+ <!--[if IE]>
+ <script type="text/javascript" src="http://php.net/js/ext/html5.js"></script>
+ <![endif]-->
+
+ <base >
+
+</head>
+<body class="docs ">
+
+<nav id="head-nav" class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <a href="http://php.net/" class="brand"><img src="http://php.net/images/logos/php-logo.svg" width="48" height="24" alt="php"></a>
+    <div id="mainmenu-toggle-overlay"></div>
+    <input type="checkbox" id="mainmenu-toggle">
+    <ul class="nav">
+      <li class=""><a href="http://php.net/downloads">Downloads</a></li>
+      <li class="active"><a href="http://php.net/docs.php">Documentation</a></li>
+      <li class=""><a href="http://php.net/get-involved" >Get Involved</a></li>
+      <li class=""><a href="http://php.net/support">Help</a></li>
+    </ul>
+    <form class="navbar-search" id="topsearch" action="http://php.net/search.php">
+      <input type="hidden" name="show" value="quickref">
+      <input type="search" name="pattern" class="search-query" placeholder="Search" accesskey="s">
+    </form>
+  </div>
+  <div id="flash-message"></div>
+</nav>
+<nav id="trick"><div><dl>
+<dt><a href='http://php.net/manual/en/getting-started.php'>Getting Started</a></dt>
+	<dd><a href='http://php.net/manual/en/introduction.php'>Introduction</a></dd>
+	<dd><a href='http://php.net/manual/en/tutorial.php'>A simple tutorial</a></dd>
+<dt><a href='http://php.net/manual/en/langref.php'>Language Reference</a></dt>
+	<dd><a href='http://php.net/manual/en/language.basic-syntax.php'>Basic syntax</a></dd>
+	<dd><a href='http://php.net/manual/en/language.types.php'>Types</a></dd>
+	<dd><a href='http://php.net/manual/en/language.variables.php'>Variables</a></dd>
+	<dd><a href='http://php.net/manual/en/language.constants.php'>Constants</a></dd>
+	<dd><a href='http://php.net/manual/en/language.expressions.php'>Expressions</a></dd>
+	<dd><a href='http://php.net/manual/en/language.operators.php'>Operators</a></dd>
+	<dd><a href='http://php.net/manual/en/language.control-structures.php'>Control Structures</a></dd>
+	<dd><a href='http://php.net/manual/en/language.functions.php'>Functions</a></dd>
+	<dd><a href='http://php.net/manual/en/language.oop5.php'>Classes and Objects</a></dd>
+	<dd><a href='http://php.net/manual/en/language.namespaces.php'>Namespaces</a></dd>
+	<dd><a href='http://php.net/manual/en/language.errors.php'>Errors</a></dd>
+	<dd><a href='http://php.net/manual/en/language.exceptions.php'>Exceptions</a></dd>
+	<dd><a href='http://php.net/manual/en/language.generators.php'>Generators</a></dd>
+	<dd><a href='http://php.net/manual/en/language.references.php'>References Explained</a></dd>
+	<dd><a href='http://php.net/manual/en/reserved.variables.php'>Predefined Variables</a></dd>
+	<dd><a href='http://php.net/manual/en/reserved.exceptions.php'>Predefined Exceptions</a></dd>
+	<dd><a href='http://php.net/manual/en/reserved.interfaces.php'>Predefined Interfaces and Classes</a></dd>
+	<dd><a href='http://php.net/manual/en/context.php'>Context options and parameters</a></dd>
+	<dd><a href='http://php.net/manual/en/wrappers.php'>Supported Protocols and Wrappers</a></dd>
+</dl>
+<dl>
+<dt><a href='http://php.net/manual/en/security.php'>Security</a></dt>
+	<dd><a href='http://php.net/manual/en/security.intro.php'>Introduction</a></dd>
+	<dd><a href='http://php.net/manual/en/security.general.php'>General considerations</a></dd>
+	<dd><a href='http://php.net/manual/en/security.cgi-bin.php'>Installed as CGI binary</a></dd>
+	<dd><a href='http://php.net/manual/en/security.apache.php'>Installed as an Apache module</a></dd>
+	<dd><a href='http://php.net/manual/en/security.sessions.php'>Session Security</a></dd>
+	<dd><a href='http://php.net/manual/en/security.filesystem.php'>Filesystem Security</a></dd>
+	<dd><a href='http://php.net/manual/en/security.database.php'>Database Security</a></dd>
+	<dd><a href='http://php.net/manual/en/security.errors.php'>Error Reporting</a></dd>
+	<dd><a href='http://php.net/manual/en/security.globals.php'>Using Register Globals</a></dd>
+	<dd><a href='http://php.net/manual/en/security.variables.php'>User Submitted Data</a></dd>
+	<dd><a href='http://php.net/manual/en/security.magicquotes.php'>Magic Quotes</a></dd>
+	<dd><a href='http://php.net/manual/en/security.hiding.php'>Hiding PHP</a></dd>
+	<dd><a href='http://php.net/manual/en/security.current.php'>Keeping Current</a></dd>
+<dt><a href='http://php.net/manual/en/features.php'>Features</a></dt>
+	<dd><a href='http://php.net/manual/en/features.http-auth.php'>HTTP authentication with PHP</a></dd>
+	<dd><a href='http://php.net/manual/en/features.cookies.php'>Cookies</a></dd>
+	<dd><a href='http://php.net/manual/en/features.sessions.php'>Sessions</a></dd>
+	<dd><a href='http://php.net/manual/en/features.xforms.php'>Dealing with XForms</a></dd>
+	<dd><a href='http://php.net/manual/en/features.file-upload.php'>Handling file uploads</a></dd>
+	<dd><a href='http://php.net/manual/en/features.remote-files.php'>Using remote files</a></dd>
+	<dd><a href='http://php.net/manual/en/features.connection-handling.php'>Connection handling</a></dd>
+	<dd><a href='http://php.net/manual/en/features.persistent-connections.php'>Persistent Database Connections</a></dd>
+	<dd><a href='http://php.net/manual/en/features.safe-mode.php'>Safe Mode</a></dd>
+	<dd><a href='http://php.net/manual/en/features.commandline.php'>Command line usage</a></dd>
+	<dd><a href='http://php.net/manual/en/features.gc.php'>Garbage Collection</a></dd>
+	<dd><a href='http://php.net/manual/en/features.dtrace.php'>DTrace Dynamic Tracing</a></dd>
+</dl>
+<dl>
+<dt><a href='http://php.net/manual/en/funcref.php'>Function Reference</a></dt>
+	<dd><a href='http://php.net/manual/en/refs.basic.php.php'>Affecting PHP's Behaviour</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.audio.php'>Audio Formats Manipulation</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.remote.auth.php'>Authentication Services</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.cmdline.php'>Command Line Specific Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.compression.php'>Compression and Archive Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.creditcard.php'>Credit Card Processing</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.crypto.php'>Cryptography Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.database.php'>Database Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.calendar.php'>Date and Time Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.fileprocess.file.php'>File System Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.international.php'>Human Language and Character Encoding Support</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.image.php'>Image Processing and Generation</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.remote.mail.php'>Mail Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.math.php'>Mathematical Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.nontext.php'>Non-Text MIME Output</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.fileprocess.process.php'>Process Control Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.other.php'>Other Basic Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.remote.other.php'>Other Services</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.search.php'>Search Engine Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.server.php'>Server Specific Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.session.php'>Session Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.text.php'>Text Processing</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.vartype.php'>Variable and Type Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.webservice.php'>Web Services</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.windows.php'>Windows Only Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.xml.php'>XML Manipulation</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.ui.php'>GUI Extensions</a></dd>
+</dl>
+<dl>
+<dt>Keyboard Shortcuts</dt><dt>?</dt>
+<dd>This help</dd>
+<dt>j</dt>
+<dd>Next menu item</dd>
+<dt>k</dt>
+<dd>Previous menu item</dd>
+<dt>g p</dt>
+<dd>Previous man page</dd>
+<dt>g n</dt>
+<dd>Next man page</dd>
+<dt>G</dt>
+<dd>Scroll to bottom</dd>
+<dt>g g</dt>
+<dd>Scroll to top</dd>
+<dt>g h</dt>
+<dd>Goto homepage</dd>
+<dt>g s</dt>
+<dd>Goto search<br>(current page)</dd>
+<dt>/</dt>
+<dd>Focus search box</dd>
+</dl></div></nav>
+<div id="goto">
+    <div class="search">
+         <div class="text"></div>
+         <div class="results"><ul></ul></div>
+   </div>
+</div>
+
+  <div id="breadcrumbs" class="clearfix">
+    <div id="breadcrumbs-inner">
+          <div class="next">
+        <a href="http://php.net/manual/en/language.operators.type.php">
+          Type Operators &raquo;
+        </a>
+      </div>
+              <div class="prev">
+        <a href="http://php.net/manual/en/language.operators.string.php">
+          &laquo; String Operators        </a>
+      </div>
+          <ul>
+            <li><a href='http://php.net/manual/en/index.php'>PHP Manual</a></li>      <li><a href='http://php.net/manual/en/langref.php'>Language Reference</a></li>      <li><a href='http://php.net/manual/en/language.operators.php'>Operators</a></li>      </ul>
+    </div>
+  </div>
+
+
+
+
+<div id="layout" class="clearfix">
+  <section id="layout-content">
+  <div class="page-tools">
+    <div class="change-language">
+      <form action="http://php.net/manual/change.php" method="get" id="changelang" name="changelang">
+        <fieldset>
+          <label for="changelang-langs">Change language:</label>
+          <select onchange="document.changelang.submit()" name="page" id="changelang-langs">
+            <option value='en/language.operators.array.php' selected="selected">English</option>
+            <option value='http://php.net/manual/en/pt_BR/language.operators.array.php'>Brazilian Portuguese</option>
+            <option value='http://php.net/manual/en/zh/language.operators.array.php'>Chinese (Simplified)</option>
+            <option value='http://php.net/manual/en/fr/language.operators.array.php'>French</option>
+            <option value='http://php.net/manual/en/de/language.operators.array.php'>German</option>
+            <option value='http://php.net/manual/en/ja/language.operators.array.php'>Japanese</option>
+            <option value='http://php.net/manual/en/ro/language.operators.array.php'>Romanian</option>
+            <option value='http://php.net/manual/en/ru/language.operators.array.php'>Russian</option>
+            <option value='http://php.net/manual/en/es/language.operators.array.php'>Spanish</option>
+            <option value='http://php.net/manual/en/tr/language.operators.array.php'>Turkish</option>
+            <option value="http://php.net/manual/en/help-translate.php">Other</option>
+          </select>
+        </fieldset>
+      </form>
+    </div>
+    <div class="edit-bug">
+      <a href="https://edit.php.net/?project=PHP&amp;perm=en/language.operators.array.php">Edit</a>
+      <a href="https://bugs.php.net/report.php?bug_type=Documentation+problem&amp;manpage=language.operators.array">Report a Bug</a>
+    </div>
+  </div><div id="language.operators.array" class="sect1">
+   <h2 class="title">Array Operators</h2>
+   <table class="doctable table">
+    <caption><strong>Array Operators</strong></caption>
+    
+     <thead>
+      <tr>
+       <th>Example</th>
+       <th>Name</th>
+       <th>Result</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>$a + $b</td>
+       <td>Union</td>
+       <td>Union of <var class="varname"><var class="varname">$a</var></var> and <var class="varname"><var class="varname">$b</var></var>.</td>
+      </tr>
+
+      <tr>
+       <td>$a == $b</td>
+       <td>Equality</td>
+       <td><strong><code>TRUE</code></strong> if <var class="varname"><var class="varname">$a</var></var> and <var class="varname"><var class="varname">$b</var></var> have the same key/value pairs.</td>
+      </tr>
+
+      <tr>
+       <td>$a === $b</td>
+       <td>Identity</td>
+       <td><strong><code>TRUE</code></strong> if <var class="varname"><var class="varname">$a</var></var> and <var class="varname"><var class="varname">$b</var></var> have the same key/value pairs in the same
+        order and of the same types.</td>
+      </tr>
+
+      <tr>
+       <td>$a != $b</td>
+       <td>Inequality</td>
+       <td><strong><code>TRUE</code></strong> if <var class="varname"><var class="varname">$a</var></var> is not equal to <var class="varname"><var class="varname">$b</var></var>.</td>
+      </tr>
+
+      <tr>
+       <td>$a &lt;&gt; $b</td>
+       <td>Inequality</td>
+       <td><strong><code>TRUE</code></strong> if <var class="varname"><var class="varname">$a</var></var> is not equal to <var class="varname"><var class="varname">$b</var></var>.</td>
+      </tr>
+
+      <tr>
+       <td>$a !== $b</td>
+       <td>Non-identity</td>
+       <td><strong><code>TRUE</code></strong> if <var class="varname"><var class="varname">$a</var></var> is not identical to <var class="varname"><var class="varname">$b</var></var>.</td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+   <p class="para">
+    The <em>+</em> operator returns the right-hand array appended
+    to the left-hand array; for keys that exist in both arrays, the elements
+    from the left-hand array will be used, and the matching elements from the
+    right-hand array will be ignored.
+   </p>
+   <p class="para">
+    <div class="informalexample">
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$a&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">"a"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"apple"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"b"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"banana"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$b&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">"a"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"pear"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"b"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"strawberry"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"c"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"cherry"</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$c&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">+&nbsp;</span><span style="color: #0000BB">$b</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;Union&nbsp;of&nbsp;$a&nbsp;and&nbsp;$b<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">"Union&nbsp;of&nbsp;\$a&nbsp;and&nbsp;\$b:&nbsp;\n"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$c</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$c&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$b&nbsp;</span><span style="color: #007700">+&nbsp;</span><span style="color: #0000BB">$a</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;Union&nbsp;of&nbsp;$b&nbsp;and&nbsp;$a<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">"Union&nbsp;of&nbsp;\$b&nbsp;and&nbsp;\$a:&nbsp;\n"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$c</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">+=&nbsp;</span><span style="color: #0000BB">$b</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;Union&nbsp;of&nbsp;$a&nbsp;+=&nbsp;$b&nbsp;is&nbsp;$a&nbsp;and&nbsp;$b<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">"Union&nbsp;of&nbsp;\$a&nbsp;+=&nbsp;\$b:&nbsp;\n"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$a</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+     </div>
+
+    </div>
+    When executed, this script will print the following:
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+Union of $a and $b:
+array(3) {
+  [&quot;a&quot;]=&gt;
+  string(5) &quot;apple&quot;
+  [&quot;b&quot;]=&gt;
+  string(6) &quot;banana&quot;
+  [&quot;c&quot;]=&gt;
+  string(6) &quot;cherry&quot;
+}
+Union of $b and $a:
+array(3) {
+  [&quot;a&quot;]=&gt;
+  string(4) &quot;pear&quot;
+  [&quot;b&quot;]=&gt;
+  string(10) &quot;strawberry&quot;
+  [&quot;c&quot;]=&gt;
+  string(6) &quot;cherry&quot;
+}
+Union of $a += $b:
+array(3) {
+  &#039;a&#039; =&gt;
+  string(5) &quot;apple&quot;
+  &#039;b&#039; =&gt;
+  string(6) &quot;banana&quot;
+  &#039;c&#039; =&gt;
+  string(6) &quot;cherry&quot;
+}
+</pre></div>
+    </div>
+   </p>
+   <p class="para">
+    Elements of arrays are equal for the comparison if they have the
+    same key and value.
+   </p>
+   <p class="para">
+    <div class="example" id="example-109">
+     <p><strong>Example #1 Comparing arrays</strong></p>
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$a&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">"apple"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"banana"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$b&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #0000BB">1&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"banana"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"0"&nbsp;</span><span style="color: #007700">=&gt;&nbsp;</span><span style="color: #DD0000">"apple"</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">==&nbsp;</span><span style="color: #0000BB">$b</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;bool(true)<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">===&nbsp;</span><span style="color: #0000BB">$b</span><span style="color: #007700">);&nbsp;</span><span style="color: #FF8000">//&nbsp;bool(false)<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+     </div>
+
+    </div>
+   </p>
+   <p class="para">
+    See also the manual sections on the
+    <a href="http://php.net/manual/en/language.types.array.php" class="link">Array type</a> and
+    <a href="http://php.net/manual/en/ref.array.php" class="link">Array functions</a>.
+   </p>
+  </div>
+<section id="usernotes">
+ <div class="head">
+  <span class="action"><a href="http://php.net/manual/add-note.php?sect=language.operators.array&amp;redirect=http://php.net/manual/en/language.operators.array.php"><img src='http://php.net/images/notes-add@2x.png' alt='add a note' width='12' height='12'> <small>add a note</small></a></span>
+  <h3 class="title">User Contributed Notes <span class="count">13 notes</span></h3>
+ </div><div id="allnotes">
+  <div class="note" id="86379">  <div class="votes">
+    <div id="Vu86379">
+    <a href="http://php.net/manual/vote-note.php?id=86379&amp;page=language.operators.array&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd86379">
+    <a href="http://php.net/manual/vote-note.php?id=86379&amp;page=language.operators.array&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V86379" title="82% like this...">
+    142
+    </div>
+  </div>
+  <a href="#86379" class="name">
+  <strong class="user"><em>cb at netalyst dot com</em></strong></a><a class="genanchor" href="#86379"> &para;</a><div class="date" title="2008-10-15 11:39"><strong>9 years ago</strong></div>
+  <div class="text" id="Hcom86379">
+<div class="phpcode"><code><span class="html">
+The union operator did not behave as I thought it would on first glance. It implements a union (of sorts) based on the keys of the array, not on the values.<br /><br />For instance:<br /><span class="default">&lt;?php<br />$a </span><span class="keyword">= array(</span><span class="string">'one'</span><span class="keyword">,</span><span class="string">'two'</span><span class="keyword">);<br /></span><span class="default">$b</span><span class="keyword">=array(</span><span class="string">'three'</span><span class="keyword">,</span><span class="string">'four'</span><span class="keyword">,</span><span class="string">'five'</span><span class="keyword">);<br /><br /></span><span class="comment">//not a union of arrays' values<br /></span><span class="keyword">echo </span><span class="string">'$a + $b : '</span><span class="keyword">;<br /></span><span class="default">print_r </span><span class="keyword">(</span><span class="default">$a </span><span class="keyword">+ </span><span class="default">$b</span><span class="keyword">);<br /><br /></span><span class="comment">//a union of arrays' values<br /></span><span class="keyword">echo </span><span class="string">"array_unique(array_merge(</span><span class="default">$a</span><span class="string">,</span><span class="default">$b</span><span class="string">)):"</span><span class="keyword">;<br /></span><span class="comment">// cribbed from <a href="http://oreilly.com/catalog/progphp/chapter/ch05.html" rel="nofollow" target="_blank">http://oreilly.com/catalog/progphp/chapter/ch05.html</a><br /></span><span class="default">print_r </span><span class="keyword">(</span><span class="default">array_unique</span><span class="keyword">(</span><span class="default">array_merge</span><span class="keyword">(</span><span class="default">$a</span><span class="keyword">,</span><span class="default">$b</span><span class="keyword">)));<br /></span><span class="default">?&gt;<br /></span><br />//output<br /><br />$a + $b : Array<br />(<br />&nbsp; &nbsp; [0] =&gt; one<br />&nbsp; &nbsp; [1] =&gt; two<br />&nbsp; &nbsp; [2] =&gt; five<br />)<br />array_unique(array_merge(Array,Array)):Array<br />(<br />&nbsp; &nbsp; [0] =&gt; one<br />&nbsp; &nbsp; [1] =&gt; two<br />&nbsp; &nbsp; [2] =&gt; three<br />&nbsp; &nbsp; [3] =&gt; four<br />&nbsp; &nbsp; [4] =&gt; five<br />)</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="74635">  <div class="votes">
+    <div id="Vu74635">
+    <a href="http://php.net/manual/vote-note.php?id=74635&amp;page=language.operators.array&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd74635">
+    <a href="http://php.net/manual/vote-note.php?id=74635&amp;page=language.operators.array&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V74635" title="64% like this...">
+    20
+    </div>
+  </div>
+  <a href="#74635" class="name">
+  <strong class="user"><em>Q1712 at online dot ms</em></strong></a><a class="genanchor" href="#74635"> &para;</a><div class="date" title="2007-04-20 05:54"><strong>10 years ago</strong></div>
+  <div class="text" id="Hcom74635">
+<div class="phpcode"><code><span class="html">
+The example may get u into thinking that the identical operator returns true because the key of apple is a string but that is not the case, cause if a string array key is the standart representation of a integer it's gets a numeral key automaticly. <br /><br />The identical operator just requires that the keys are in the same order in both arrays:<br /><br /><span class="default">&lt;?php<br />$a </span><span class="keyword">= array (</span><span class="default">0 </span><span class="keyword">=&gt; </span><span class="string">"apple"</span><span class="keyword">, </span><span class="default">1 </span><span class="keyword">=&gt; </span><span class="string">"banana"</span><span class="keyword">);<br /></span><span class="default">$b </span><span class="keyword">= array (</span><span class="default">1 </span><span class="keyword">=&gt; </span><span class="string">"banana"</span><span class="keyword">, </span><span class="default">0 </span><span class="keyword">=&gt; </span><span class="string">"apple"</span><span class="keyword">);<br /><br /></span><span class="default">var_dump</span><span class="keyword">(</span><span class="default">$a </span><span class="keyword">=== </span><span class="default">$b</span><span class="keyword">); </span><span class="comment">// prints bool(false) as well<br /><br /></span><span class="default">$b </span><span class="keyword">= array (</span><span class="string">"0" </span><span class="keyword">=&gt; </span><span class="string">"apple"</span><span class="keyword">, </span><span class="string">"1" </span><span class="keyword">=&gt; </span><span class="string">"banana"</span><span class="keyword">);<br /><br /></span><span class="default">var_dump</span><span class="keyword">(</span><span class="default">$a </span><span class="keyword">=== </span><span class="default">$b</span><span class="keyword">); </span><span class="comment">// prints bool(true)<br /></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="41811">  <div class="votes">
+    <div id="Vu41811">
+    <a href="http://php.net/manual/vote-note.php?id=41811&amp;page=language.operators.array&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd41811">
+    <a href="http://php.net/manual/vote-note.php?id=41811&amp;page=language.operators.array&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V41811" title="62% like this...">
+    12
+    </div>
+  </div>
+  <a href="#41811" class="name">
+  <strong class="user"><em>dfranklin at fen dot com</em></strong></a><a class="genanchor" href="#41811"> &para;</a><div class="date" title="2004-04-22 01:40"><strong>13 years ago</strong></div>
+  <div class="text" id="Hcom41811">
+<div class="phpcode"><code><span class="html">
+Note that + will not renumber numeric array keys.&nbsp; If you have two numeric arrays, and their indices overlap, + will use the first array's values for each numeric key, adding the 2nd array's values only where the first doesn't already have a value for that index.&nbsp; Example:<br /><br />$a = array('red', 'orange');<br />$b = array('yellow', 'green', 'blue');<br />$both = $a + $b;<br />var_dump($both);<br /><br />Produces the output:<br /><br />array(3) { [0]=&gt;&nbsp; string(3) "red" [1]=&gt;&nbsp; string(6) "orange" [2]=&gt;&nbsp; string(4) "blue" }<br /><br />To get a 5-element array, use array_merge.<br /><br />&nbsp; &nbsp; Dan</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="107784">  <div class="votes">
+    <div id="Vu107784">
+    <a href="http://php.net/manual/vote-note.php?id=107784&amp;page=language.operators.array&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd107784">
+    <a href="http://php.net/manual/vote-note.php?id=107784&amp;page=language.operators.array&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V107784" title="56% like this...">
+    8
+    </div>
+  </div>
+  <a href="#107784" class="name">
+  <strong class="user"><em>Dan Patrick</em></strong></a><a class="genanchor" href="#107784"> &para;</a><div class="date" title="2012-03-04 06:39"><strong>5 years ago</strong></div>
+  <div class="text" id="Hcom107784">
+<div class="phpcode"><code><span class="html">
+It should be mentioned that the array union operator functions almost identically to array_replace with the exception that precedence of arguments is reversed.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="84024">  <div class="votes">
+    <div id="Vu84024">
+    <a href="http://php.net/manual/vote-note.php?id=84024&amp;page=language.operators.array&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd84024">
+    <a href="http://php.net/manual/vote-note.php?id=84024&amp;page=language.operators.array&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V84024" title="52% like this...">
+    2
+    </div>
+  </div>
+  <a href="#84024" class="name">
+  <strong class="user"><em>csaba at alum dot mit dot edu</em></strong></a><a class="genanchor" href="#84024"> &para;</a><div class="date" title="2008-06-24 08:54"><strong>9 years ago</strong></div>
+  <div class="text" id="Hcom84024">
+<div class="phpcode"><code><span class="html">
+Simple array arithmetic:<br />A more compact way of adding or subtracting the elements at identical keys...<br /><br /><span class="default">&lt;?php<br /></span><span class="keyword">function </span><span class="default">array_add</span><span class="keyword">(</span><span class="default">$a1</span><span class="keyword">, </span><span class="default">$a2</span><span class="keyword">) {&nbsp; </span><span class="comment">// ...<br />&nbsp; // adds the values at identical keys together<br />&nbsp; </span><span class="default">$aRes </span><span class="keyword">= </span><span class="default">$a1</span><span class="keyword">;<br />&nbsp; foreach (</span><span class="default">array_slice</span><span class="keyword">(</span><span class="default">func_get_args</span><span class="keyword">(), </span><span class="default">1</span><span class="keyword">) as </span><span class="default">$aRay</span><span class="keyword">) {<br />&nbsp; &nbsp; foreach (</span><span class="default">array_intersect_key</span><span class="keyword">(</span><span class="default">$aRay</span><span class="keyword">, </span><span class="default">$aRes</span><span class="keyword">) as </span><span class="default">$key </span><span class="keyword">=&gt; </span><span class="default">$val</span><span class="keyword">) </span><span class="default">$aRes</span><span class="keyword">[</span><span class="default">$key</span><span class="keyword">] += </span><span class="default">$val</span><span class="keyword">;<br />&nbsp; &nbsp; </span><span class="default">$aRes </span><span class="keyword">+= </span><span class="default">$aRay</span><span class="keyword">; }<br />&nbsp; return </span><span class="default">$aRes</span><span class="keyword">; }<br /><br />function </span><span class="default">array_subtract</span><span class="keyword">(</span><span class="default">$a1</span><span class="keyword">, </span><span class="default">$a2</span><span class="keyword">) {&nbsp; </span><span class="comment">// ...<br />&nbsp; // adds the values at identical keys together<br />&nbsp; </span><span class="default">$aRes </span><span class="keyword">= </span><span class="default">$a1</span><span class="keyword">;<br />&nbsp; foreach (</span><span class="default">array_slice</span><span class="keyword">(</span><span class="default">func_get_args</span><span class="keyword">(), </span><span class="default">1</span><span class="keyword">) as </span><span class="default">$aRay</span><span class="keyword">) {<br />&nbsp; &nbsp; foreach (</span><span class="default">array_intersect_key</span><span class="keyword">(</span><span class="default">$aRay</span><span class="keyword">, </span><span class="default">$aRes</span><span class="keyword">) as </span><span class="default">$key </span><span class="keyword">=&gt; </span><span class="default">$val</span><span class="keyword">) </span><span class="default">$aRes</span><span class="keyword">[</span><span class="default">$key</span><span class="keyword">] -= </span><span class="default">$val</span><span class="keyword">;<br />&nbsp; &nbsp; foreach (</span><span class="default">array_diff_key</span><span class="keyword">(</span><span class="default">$aRay</span><span class="keyword">, </span><span class="default">$aRes</span><span class="keyword">) as </span><span class="default">$key </span><span class="keyword">=&gt; </span><span class="default">$val</span><span class="keyword">) </span><span class="default">$aRes</span><span class="keyword">[</span><span class="default">$key</span><span class="keyword">] = -</span><span class="default">$val</span><span class="keyword">; }<br />&nbsp; return </span><span class="default">$aRes</span><span class="keyword">; }<br /><br /></span><span class="default">Example</span><span class="keyword">:<br /></span><span class="default">$a1 </span><span class="keyword">= array(</span><span class="default">9</span><span class="keyword">, </span><span class="default">8</span><span class="keyword">, </span><span class="default">7</span><span class="keyword">);<br /></span><span class="default">$a2 </span><span class="keyword">= array(</span><span class="default">1</span><span class="keyword">=&gt;</span><span class="default">7</span><span class="keyword">, </span><span class="default">6</span><span class="keyword">, </span><span class="default">5</span><span class="keyword">);<br /></span><span class="default">$a3 </span><span class="keyword">= array(</span><span class="default">2</span><span class="keyword">=&gt;</span><span class="default">5</span><span class="keyword">, </span><span class="default">4</span><span class="keyword">, </span><span class="default">3</span><span class="keyword">);<br /><br /></span><span class="default">$aSum </span><span class="keyword">= </span><span class="default">array_add</span><span class="keyword">(</span><span class="default">$a1</span><span class="keyword">, </span><span class="default">$a2</span><span class="keyword">, </span><span class="default">$a3</span><span class="keyword">);<br /></span><span class="default">$aDiff </span><span class="keyword">= </span><span class="default">array_subtract</span><span class="keyword">(</span><span class="default">$a1</span><span class="keyword">, </span><span class="default">$a2</span><span class="keyword">, </span><span class="default">$a3</span><span class="keyword">);<br /><br /></span><span class="comment">// $aSum&nbsp; =&gt; [9, 15, 18, 9, 3]<br />// $aDiff =&gt; [9, 1, -4, -9, -3]<br /></span><span class="default">?&gt;<br /></span><br />To make a similar function, array_concatenate(), change only the first of the two '+=' in array_add() to '.='<br />Csaba Gabor from Vienna</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="121730">  <div class="votes">
+    <div id="Vu121730">
+    <a href="http://php.net/manual/vote-note.php?id=121730&amp;page=language.operators.array&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd121730">
+    <a href="http://php.net/manual/vote-note.php?id=121730&amp;page=language.operators.array&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V121730" title="0% like this...">
+    -1
+    </div>
+  </div>
+  <a href="#121730" class="name">
+  <strong class="user"><em>drone dot ah at gmail dot com</em></strong></a><a class="genanchor" href="#121730"> &para;</a><div class="date" title="2017-10-06 09:51"><strong>2 months ago</strong></div>
+  <div class="text" id="Hcom121730">
+<div class="phpcode"><code><span class="html">
+The note about array comparison by Q1712 is not entirely accurate. <br /><br />"The identical operator just requires that the keys are in the same order in both arrays:"<br /><br />This may have been the case in past (I cannot verify it). It requires that the keys are in the same order AND that the values match<br /><br />To extend that example<br /><br /><span class="default">&lt;?php<br /><br />&nbsp; $a </span><span class="keyword">= array (</span><span class="default">0 </span><span class="keyword">=&gt; </span><span class="string">"apple"</span><span class="keyword">, </span><span class="default">1 </span><span class="keyword">=&gt; </span><span class="string">"banana"</span><span class="keyword">);<br />&nbsp; </span><span class="default">$b </span><span class="keyword">= array (</span><span class="default">1 </span><span class="keyword">=&gt; </span><span class="string">"banana"</span><span class="keyword">, </span><span class="default">0 </span><span class="keyword">=&gt; </span><span class="string">"apple"</span><span class="keyword">);<br /><br />&nbsp; </span><span class="default">var_dump</span><span class="keyword">(</span><span class="default">$a </span><span class="keyword">=== </span><span class="default">$b</span><span class="keyword">); </span><span class="comment">// prints bool(false) as well<br /><br />&nbsp; </span><span class="default">$b </span><span class="keyword">= array (</span><span class="string">"0" </span><span class="keyword">=&gt; </span><span class="string">"apple"</span><span class="keyword">, </span><span class="string">"1" </span><span class="keyword">=&gt; </span><span class="string">"banana"</span><span class="keyword">);<br /><br />&nbsp; </span><span class="default">var_dump</span><span class="keyword">(</span><span class="default">$a </span><span class="keyword">=== </span><span class="default">$b</span><span class="keyword">); </span><span class="comment">// prints bool(true)<br /><br />&nbsp; </span><span class="default">$b </span><span class="keyword">= array (</span><span class="string">"0" </span><span class="keyword">=&gt; </span><span class="string">"apple-1"</span><span class="keyword">, </span><span class="string">"1" </span><span class="keyword">=&gt; </span><span class="string">"banana-1"</span><span class="keyword">);<br /><br />&nbsp; </span><span class="default">var_dump</span><span class="keyword">(</span><span class="default">$a </span><span class="keyword">=== </span><span class="default">$b</span><span class="keyword">); </span><span class="comment">// prints bool(false)<br /><br /></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="121665">  <div class="votes">
+    <div id="Vu121665">
+    <a href="http://php.net/manual/vote-note.php?id=121665&amp;page=language.operators.array&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd121665">
+    <a href="http://php.net/manual/vote-note.php?id=121665&amp;page=language.operators.array&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V121665" title="0% like this...">
+    -1
+    </div>
+  </div>
+  <a href="#121665" class="name">
+  <strong class="user"><em>xtpeqii at Hotmail dot com</em></strong></a><a class="genanchor" href="#121665"> &para;</a><div class="date" title="2017-09-21 08:02"><strong>2 months ago</strong></div>
+  <div class="text" id="Hcom121665">
+<div class="phpcode"><code><span class="html">
+$a=[ 3, 2, 1];<br />$b=[ 6, 5, 4];<br />var_dump( $a + $b );<br /><br />output:<br />array(3) {<br />&nbsp; [0]=&gt;<br />&nbsp; int(3)<br />&nbsp; [1]=&gt;<br />&nbsp; int(2)<br />&nbsp; [2]=&gt;<br />&nbsp; int(1)<br />}<br /><br />The reason for the above output is that EVERY array in PHP is an associative one.&nbsp; <br />Since the 3 elements in $b have the same keys( or numeric indices ) as those in $a, those elements in $b are ignored by the union operator.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="27536">  <div class="votes">
+    <div id="Vu27536">
+    <a href="http://php.net/manual/vote-note.php?id=27536&amp;page=language.operators.array&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd27536">
+    <a href="http://php.net/manual/vote-note.php?id=27536&amp;page=language.operators.array&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V27536" title="50% like this...">
+    1
+    </div>
+  </div>
+  <a href="#27536" class="name">
+  <strong class="user"><em>amirlaher AT yahoo DOT co SPOT uk</em></strong></a><a class="genanchor" href="#27536"> &para;</a><div class="date" title="2002-12-09 10:41"><strong>15 years ago</strong></div>
+  <div class="text" id="Hcom27536">
+<div class="phpcode"><code><span class="html">
+[]= could be considered an Array Operator (in the same way that .= is a String Operator). <br />[]= pushes an element onto the end of an array, similar to array_push:<br />&lt;? <br />&nbsp; $array= array(0=&gt;"Amir",1=&gt;"needs");<br />&nbsp; $array[]= "job";<br />&nbsp; print_r($array);<br />?&gt;<br />Prints: Array ( [0] =&gt; Amir [1] =&gt; needs [2] =&gt; job )</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="56040">  <div class="votes">
+    <div id="Vu56040">
+    <a href="http://php.net/manual/vote-note.php?id=56040&amp;page=language.operators.array&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd56040">
+    <a href="http://php.net/manual/vote-note.php?id=56040&amp;page=language.operators.array&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V56040" title="43% like this...">
+    -6
+    </div>
+  </div>
+  <a href="#56040" class="name">
+  <strong class="user"><em>kit dot lester at lycos dot co dot uk</em></strong></a><a class="genanchor" href="#56040"> &para;</a><div class="date" title="2005-08-21 09:01"><strong>12 years ago</strong></div>
+  <div class="text" id="Hcom56040">
+<div class="phpcode"><code><span class="html">
+When comparing arrays that have (some or all) element-values that are themselves array, then in PHP5 it seems that == and === are applied recursively - that is<br /> * two arrays satisfy == if they have the same keys, and the values at each key satisfy == for whatever they happen to be (which might be arrays);<br /> * two arrays satisfy === if they have the same keys, and the values at each key satisfy === for whatever (etc.).<br /><br />Which explains what happens if we compare two arrays of arrays of arrays of...<br /><br />Likewise, the corresponding inversions for != &lt;&gt; and !==.<br /><br />I've tested this to array-of-array-of-array, which seems fairly convincing. I've not tried it in PHP4 or earlier.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="60865">  <div class="votes">
+    <div id="Vu60865">
+    <a href="http://php.net/manual/vote-note.php?id=60865&amp;page=language.operators.array&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd60865">
+    <a href="http://php.net/manual/vote-note.php?id=60865&amp;page=language.operators.array&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V60865" title="36% like this...">
+    -13
+    </div>
+  </div>
+  <a href="#60865" class="name">
+  <strong class="user"><em>puneet singh @ value-one dot com</em></strong></a><a class="genanchor" href="#60865"> &para;</a><div class="date" title="2006-01-18 10:42"><strong>11 years ago</strong></div>
+  <div class="text" id="Hcom60865">
+<div class="phpcode"><code><span class="html">
+hi&nbsp; just see one more example of union....<br /><br /><span class="default">&lt;?php<br />$a </span><span class="keyword">= array(</span><span class="default">1</span><span class="keyword">,</span><span class="default">2</span><span class="keyword">,</span><span class="default">3</span><span class="keyword">);<br /></span><span class="default">$b </span><span class="keyword">= array(</span><span class="default">1</span><span class="keyword">,</span><span class="default">7</span><span class="keyword">,</span><span class="default">8</span><span class="keyword">,</span><span class="default">9</span><span class="keyword">,</span><span class="default">10</span><span class="keyword">);<br /></span><span class="default">$c </span><span class="keyword">= </span><span class="default">$a </span><span class="keyword">+ </span><span class="default">$b</span><span class="keyword">; </span><span class="comment">// Union of $a and $b<br /></span><span class="keyword">echo </span><span class="string">"Union of \$a and \$b: \n"</span><span class="keyword">;<br /></span><span class="comment">//echo $c<br /></span><span class="default">print_r</span><span class="keyword">(</span><span class="default">$c</span><span class="keyword">);<br /></span><span class="default">?&gt;</span> <br />//output<br />Union of $a and $b: Array ( [0] =&gt; 1 [1] =&gt; 2 [2] =&gt; 3 [3] =&gt; 9 [4] =&gt; 10 )</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="111806">  <div class="votes">
+    <div id="Vu111806">
+    <a href="http://php.net/manual/vote-note.php?id=111806&amp;page=language.operators.array&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd111806">
+    <a href="http://php.net/manual/vote-note.php?id=111806&amp;page=language.operators.array&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V111806" title="34% like this...">
+    -16
+    </div>
+  </div>
+  <a href="#111806" class="name">
+  <strong class="user"><em>sd6733531 at gmail dot com</em></strong></a><a class="genanchor" href="#111806"> &para;</a><div class="date" title="2013-03-30 07:18"><strong>4 years ago</strong></div>
+  <div class="text" id="Hcom111806">
+<div class="phpcode"><code><span class="html">
+Look out use + with array combine.<br /><br />$arr = array(1, 2, 3);<br />$int=345;<br />$arr=$arr+$int;<br /><br />Of couse,use + to combine array is easy and readable.<br />But if one of the variable is not array type(like above code) ,that would make a PHP Fatal Error:<br />PHP Fatal error:&nbsp; Unsupported operand types<br />Maybe should do check before.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="56039">  <div class="votes">
+    <div id="Vu56039">
+    <a href="http://php.net/manual/vote-note.php?id=56039&amp;page=language.operators.array&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd56039">
+    <a href="http://php.net/manual/vote-note.php?id=56039&amp;page=language.operators.array&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V56039" title="31% like this...">
+    -12
+    </div>
+  </div>
+  <a href="#56039" class="name">
+  <strong class="user"><em>kit dot lester at lycos dot co dot uk</em></strong></a><a class="genanchor" href="#56039"> &para;</a><div class="date" title="2005-08-21 08:44"><strong>12 years ago</strong></div>
+  <div class="text" id="Hcom56039">
+<div class="phpcode"><code><span class="html">
+This manual page doesn't mention &lt; &amp; co for arrays, but example 15-2 in <br />&nbsp; &nbsp; <a href="http://www.php.net/manual/en/language.operators.comparison.php" rel="nofollow" target="_blank">http://www.php.net/manual/en/language.operators.comparison.php</a><br />goes to some lengths to explain how they work.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="114243">  <div class="votes">
+    <div id="Vu114243">
+    <a href="http://php.net/manual/vote-note.php?id=114243&amp;page=language.operators.array&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd114243">
+    <a href="http://php.net/manual/vote-note.php?id=114243&amp;page=language.operators.array&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V114243" title="19% like this...">
+    -32
+    </div>
+  </div>
+  <a href="#114243" class="name">
+  <strong class="user"><em>Anonymous</em></strong></a><a class="genanchor" href="#114243"> &para;</a><div class="date" title="2014-01-29 12:23"><strong>3 years ago</strong></div>
+  <div class="text" id="Hcom114243">
+<div class="phpcode"><code><span class="html">
+The manual say ...<br /><br />"The + operator appends the right elements in the array from left, whereas duplicated keys are NOT overwritten"<br /><br />but ..<br /><br />$a = array("a" =&gt; 'A', "b" =&gt; 'B');<br />$b = array("a" =&gt; 'A', "b" =&gt; 'B', "c" =&gt; 'C');<br /><br />$c = $a + $b // or $b + a&nbsp; is&nbsp; the same output; <br /><br />echo '&lt;pre&gt;';<br /><br />print_r($c);<br /><br />echo '&lt;pre&gt;';<br /><br />//Output&nbsp;&nbsp; for&nbsp; $a + b&nbsp; or&nbsp; $b + a<br />Array (<br />&nbsp; &nbsp; [a] =&gt; A<br />&nbsp; &nbsp; [b] =&gt; B<br />&nbsp; &nbsp; [c] =&gt; C<br />)</span>
+</code></div>
+  </div>
+ </div></div>
+
+ <div class="foot"><a href="http://php.net/manual/add-note.php?sect=language.operators.array&amp;redirect=http://php.net/manual/en/language.operators.array.php"><img src='http://php.net/images/notes-add@2x.png' alt='add a note' width='12' height='12'> <small>add a note</small></a></div>
+</section>    </section><!-- layout-content -->
+        <aside class='layout-menu'>
+    
+        <ul class='parent-menu-list'>
+                                    <li>
+                <a href="http://php.net/manual/en/language.operators.php">Operators</a>
+    
+                                    <ul class='child-menu-list'>
+    
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.operators.precedence.php" title="Operator Precedence">Operator Precedence</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.operators.arithmetic.php" title="Arithmetic Operators">Arithmetic Operators</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.operators.assignment.php" title="Assignment Operators">Assignment Operators</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.operators.bitwise.php" title="Bitwise Operators">Bitwise Operators</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.operators.comparison.php" title="Comparison Operators">Comparison Operators</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.operators.errorcontrol.php" title="Error Control Operators">Error Control Operators</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.operators.execution.php" title="Execution Operators">Execution Operators</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.operators.increment.php" title="Incrementing/Decrementing Operators">Incrementing/Decrementing Operators</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.operators.logical.php" title="Logical Operators">Logical Operators</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.operators.string.php" title="String Operators">String Operators</a>
+                        </li>
+                          
+                        <li class="current">
+                            <a href="http://php.net/manual/en/language.operators.array.php" title="Array Operators">Array Operators</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.operators.type.php" title="Type Operators">Type Operators</a>
+                        </li>
+                            
+                    </ul>
+                    
+            </li>
+                        
+                    </ul>
+    </aside>
+
+
+  </div><!-- layout -->
+         
+  <footer>
+    <div class="container footer-content">
+      <div class="row-fluid">
+      <ul class="footmenu">
+        <li><a href="http://php.net/copyright.php">Copyright &copy; 2001-2017 The PHP Group</a></li>
+        <li><a href="http://php.net/my.php">My PHP.net</a></li>
+        <li><a href="http://php.net/contact.php">Contact</a></li>
+        <li><a href="http://php.net/sites.php">Other PHP.net sites</a></li>
+        <li><a href="http://php.net/mirrors.php">Mirror sites</a></li>
+        <li><a href="http://php.net/privacy.php">Privacy policy</a></li>
+      </ul>
+      </div>
+    </div>
+  </footer>
+
+    
+ <!-- External and third party libraries. -->
+ <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/modernizr.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/hogan-2.0.0.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/typeahead.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/mousetrap.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/search.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1500560403&amp;f=/js/common.js"></script>
+
+<a id="toTop" href="javascript:;"><span id="toTopHover"></span><img width="40" height="40" alt="To Top" src="http://php.net/images/to-top@2x.png"></a>
+
+</body>
+
+<!-- Mirrored from php.net/manual/en/language.operators.array.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Dec 2017 23:18:10 GMT -->
+</html>
+

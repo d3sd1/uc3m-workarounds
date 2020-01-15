@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<!-- Mirrored from php.net/index.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Dec 2017 23:04:38 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+  <title>PHP: Hypertext Preprocessor</title>
+
+ <link rel="shortcut icon" href="favicon.ico">
+ <link rel="search" type="application/opensearchdescription+xml" href="phpnetimprovedsearch.html" title="Add PHP.net search">
+ <link rel="alternate" type="application/atom+xml" href="releases/feed.php" title="PHP Release feed">
+ <link rel="alternate" type="application/atom+xml" href="feed.atom" title="PHP: Hypertext Preprocessor">
+
+ <link rel="canonical" href="index-2.html">
+ <link rel="shorturl" href="index-2.html">
+ <link rel="alternate" href="index-2.html" hreflang="x-default">
+
+
+
+<link rel="stylesheet" type="text/css" href="cached0152.css?t=1421837618&amp;f=/fonts/Fira/fira.css" media="screen">
+<link rel="stylesheet" type="text/css" href="cached15be.css?t=1421837618&amp;f=/fonts/Font-Awesome/css/fontello.css" media="screen">
+<link rel="stylesheet" type="text/css" href="cached3c70.css?t=1478800802&amp;f=/styles/theme-base.css" media="screen">
+<link rel="stylesheet" type="text/css" href="cached00eb.css?t=1449787206&amp;f=/styles/theme-medium.css" media="screen">
+<link rel="stylesheet" type="text/css" href="cached5bd9.css?t=1429259403&amp;f=/styles/home.css" media="screen">
+
+ <!--[if lte IE 7]>
+ <link rel="stylesheet" type="text/css" href="http://php.net/styles/workarounds.ie7.css" media="screen">
+ <![endif]-->
+
+ <!--[if lte IE 8]>
+ <script type="text/javascript">
+  window.brokenIE = true;
+ </script>
+ <![endif]-->
+
+ <!--[if lte IE 9]>
+ <link rel="stylesheet" type="text/css" href="http://php.net/styles/workarounds.ie9.css" media="screen">
+ <![endif]-->
+
+ <!--[if IE]>
+ <script type="text/javascript" src="http://php.net/js/ext/html5.js"></script>
+ <![endif]-->
+
+ <base >
+
+</head>
+<body class="home ">
+
+<nav id="head-nav" class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <a href="index.html" class="brand"><img src="images/logos/php-logo.svg" width="48" height="24" alt="php"></a>
+    <div id="mainmenu-toggle-overlay"></div>
+    <input type="checkbox" id="mainmenu-toggle">
+    <ul class="nav">
+      <li class=""><a href="downloads.html">Downloads</a></li>
+      <li class=""><a href="docs.html">Documentation</a></li>
+      <li class=""><a href="get-involved.html" >Get Involved</a></li>
+      <li class=""><a href="support.html">Help</a></li>
+    </ul>
+    <form class="navbar-search" id="topsearch" action="http://php.net/search.php">
+      <input type="hidden" name="show" value="quickref">
+      <input type="search" name="pattern" class="search-query" placeholder="Search" accesskey="s">
+    </form>
+  </div>
+  <div id="flash-message"></div>
+</nav>
+<nav id="trick"><div><dl>
+<dt><a href='manual/en/getting-started.html'>Getting Started</a></dt>
+	<dd><a href='manual/en/introduction.html'>Introduction</a></dd>
+	<dd><a href='manual/en/tutorial.html'>A simple tutorial</a></dd>
+<dt><a href='manual/en/langref.html'>Language Reference</a></dt>
+	<dd><a href='manual/en/language.basic-syntax.html'>Basic syntax</a></dd>
+	<dd><a href='manual/en/language.types.html'>Types</a></dd>
+	<dd><a href='manual/en/language.variables.html'>Variables</a></dd>
+	<dd><a href='manual/en/language.constants.html'>Constants</a></dd>
+	<dd><a href='manual/en/language.expressions.html'>Expressions</a></dd>
+	<dd><a href='manual/en/language.operators.html'>Operators</a></dd>
+	<dd><a href='manual/en/language.control-structures.html'>Control Structures</a></dd>
+	<dd><a href='manual/en/language.functions.html'>Functions</a></dd>
+	<dd><a href='manual/en/language.oop5.html'>Classes and Objects</a></dd>
+	<dd><a href='manual/en/language.namespaces.html'>Namespaces</a></dd>
+	<dd><a href='manual/en/language.errors.html'>Errors</a></dd>
+	<dd><a href='manual/en/language.exceptions.html'>Exceptions</a></dd>
+	<dd><a href='manual/en/language.generators.html'>Generators</a></dd>
+	<dd><a href='manual/en/language.references.html'>References Explained</a></dd>
+	<dd><a href='manual/en/reserved.variables.html'>Predefined Variables</a></dd>
+	<dd><a href='manual/en/reserved.exceptions.html'>Predefined Exceptions</a></dd>
+	<dd><a href='manual/en/reserved.interfaces.html'>Predefined Interfaces and Classes</a></dd>
+	<dd><a href='manual/en/context.html'>Context options and parameters</a></dd>
+	<dd><a href='manual/en/wrappers.html'>Supported Protocols and Wrappers</a></dd>
+</dl>
+<dl>
+<dt><a href='manual/en/security.html'>Security</a></dt>
+	<dd><a href='manual/en/security.intro.html'>Introduction</a></dd>
+	<dd><a href='manual/en/security.general.html'>General considerations</a></dd>
+	<dd><a href='manual/en/security.cgi-bin.html'>Installed as CGI binary</a></dd>
+	<dd><a href='manual/en/security.apache.html'>Installed as an Apache module</a></dd>
+	<dd><a href='manual/en/security.sessions.html'>Session Security</a></dd>
+	<dd><a href='manual/en/security.filesystem.html'>Filesystem Security</a></dd>
+	<dd><a href='manual/en/security.database.html'>Database Security</a></dd>
+	<dd><a href='manual/en/security.errors.html'>Error Reporting</a></dd>
+	<dd><a href='manual/en/security.globals.html'>Using Register Globals</a></dd>
+	<dd><a href='manual/en/security.variables.html'>User Submitted Data</a></dd>
+	<dd><a href='manual/en/security.magicquotes.html'>Magic Quotes</a></dd>
+	<dd><a href='manual/en/security.hiding.html'>Hiding PHP</a></dd>
+	<dd><a href='manual/en/security.current.html'>Keeping Current</a></dd>
+<dt><a href='manual/en/features.html'>Features</a></dt>
+	<dd><a href='manual/en/features.http-auth.html'>HTTP authentication with PHP</a></dd>
+	<dd><a href='manual/en/features.cookies.html'>Cookies</a></dd>
+	<dd><a href='manual/en/features.sessions.html'>Sessions</a></dd>
+	<dd><a href='manual/en/features.xforms.html'>Dealing with XForms</a></dd>
+	<dd><a href='manual/en/features.file-upload.html'>Handling file uploads</a></dd>
+	<dd><a href='manual/en/features.remote-files.html'>Using remote files</a></dd>
+	<dd><a href='manual/en/features.connection-handling.html'>Connection handling</a></dd>
+	<dd><a href='manual/en/features.persistent-connections.html'>Persistent Database Connections</a></dd>
+	<dd><a href='manual/en/features.safe-mode.html'>Safe Mode</a></dd>
+	<dd><a href='manual/en/features.commandline.html'>Command line usage</a></dd>
+	<dd><a href='manual/en/features.gc.html'>Garbage Collection</a></dd>
+	<dd><a href='manual/en/features.dtrace.html'>DTrace Dynamic Tracing</a></dd>
+</dl>
+<dl>
+<dt><a href='manual/en/funcref.html'>Function Reference</a></dt>
+	<dd><a href='manual/en/refs.basic.php.html'>Affecting PHP's Behaviour</a></dd>
+	<dd><a href='manual/en/refs.utilspec.audio.html'>Audio Formats Manipulation</a></dd>
+	<dd><a href='manual/en/refs.remote.auth.html'>Authentication Services</a></dd>
+	<dd><a href='manual/en/refs.utilspec.cmdline.html'>Command Line Specific Extensions</a></dd>
+	<dd><a href='manual/en/refs.compression.html'>Compression and Archive Extensions</a></dd>
+	<dd><a href='manual/en/refs.creditcard.html'>Credit Card Processing</a></dd>
+	<dd><a href='manual/en/refs.crypto.html'>Cryptography Extensions</a></dd>
+	<dd><a href='manual/en/refs.database.html'>Database Extensions</a></dd>
+	<dd><a href='manual/en/refs.calendar.html'>Date and Time Related Extensions</a></dd>
+	<dd><a href='manual/en/refs.fileprocess.file.html'>File System Related Extensions</a></dd>
+	<dd><a href='manual/en/refs.international.html'>Human Language and Character Encoding Support</a></dd>
+	<dd><a href='manual/en/refs.utilspec.image.html'>Image Processing and Generation</a></dd>
+	<dd><a href='manual/en/refs.remote.mail.html'>Mail Related Extensions</a></dd>
+	<dd><a href='manual/en/refs.math.html'>Mathematical Extensions</a></dd>
+	<dd><a href='manual/en/refs.utilspec.nontext.html'>Non-Text MIME Output</a></dd>
+	<dd><a href='manual/en/refs.fileprocess.process.html'>Process Control Extensions</a></dd>
+	<dd><a href='manual/en/refs.basic.other.html'>Other Basic Extensions</a></dd>
+	<dd><a href='manual/en/refs.remote.other.html'>Other Services</a></dd>
+	<dd><a href='manual/en/refs.search.html'>Search Engine Extensions</a></dd>
+	<dd><a href='manual/en/refs.utilspec.server.html'>Server Specific Extensions</a></dd>
+	<dd><a href='manual/en/refs.basic.session.html'>Session Extensions</a></dd>
+	<dd><a href='manual/en/refs.basic.text.html'>Text Processing</a></dd>
+	<dd><a href='manual/en/refs.basic.vartype.html'>Variable and Type Related Extensions</a></dd>
+	<dd><a href='manual/en/refs.webservice.html'>Web Services</a></dd>
+	<dd><a href='manual/en/refs.utilspec.windows.html'>Windows Only Extensions</a></dd>
+	<dd><a href='manual/en/refs.xml.html'>XML Manipulation</a></dd>
+	<dd><a href='manual/en/refs.ui.html'>GUI Extensions</a></dd>
+</dl>
+<dl>
+<dt>Keyboard Shortcuts</dt><dt>?</dt>
+<dd>This help</dd>
+<dt>j</dt>
+<dd>Next menu item</dd>
+<dt>k</dt>
+<dd>Previous menu item</dd>
+<dt>g p</dt>
+<dd>Previous man page</dd>
+<dt>g n</dt>
+<dd>Next man page</dd>
+<dt>G</dt>
+<dd>Scroll to bottom</dd>
+<dt>g g</dt>
+<dd>Scroll to top</dd>
+<dt>g h</dt>
+<dd>Goto homepage</dd>
+<dt>g s</dt>
+<dd>Goto search<br>(current page)</dd>
+<dt>/</dt>
+<dd>Focus search box</dd>
+</dl></div></nav>
+<div id="goto">
+    <div class="search">
+         <div class="text"></div>
+         <div class="results"><ul></ul></div>
+   </div>
+</div>
+
+
+
+<div id="intro" class="clearfix">
+  <div class="container">
+      <div class="row clearfix">
+    <div class="blurb">
+      <p>PHP is a popular general-purpose scripting language that is especially suited to web development.</p>
+      <p>Fast, flexible and pragmatic, PHP powers everything from your blog to the most popular websites in the world.</p>
+    </div>
+    <div class="download">
+      <h3>Download</h3><ul>
+
+            <li><a class='download-link' href='downloads.html#v5.6.32'>5.6.32</a><span class='dot'>&middot;</span><a class='notes' href='ChangeLog-5.html#5.6.32'>Release Notes</a><span class='dot'>&middot;</span><a class='notes' href='migration56.html'>Upgrading</a></li>
+
+            <li><a class='download-link' href='downloads.html#v7.0.26'>7.0.26</a><span class='dot'>&middot;</span><a class='notes' href='ChangeLog-7.html#7.0.26'>Release Notes</a><span class='dot'>&middot;</span><a class='notes' href='migration70.html'>Upgrading</a></li>
+
+            <li><a class='download-link' href='downloads.html#v7.1.12'>7.1.12</a><span class='dot'>&middot;</span><a class='notes' href='ChangeLog-7.html#7.1.12'>Release Notes</a><span class='dot'>&middot;</span><a class='notes' href='migration71.html'>Upgrading</a></li>
+
+            <li><a class='download-link' href='downloads.html#v7.2.0'>7.2.0</a><span class='dot'>&middot;</span><a class='notes' href='ChangeLog-7.html#7.2.0'>Release Notes</a><span class='dot'>&middot;</span><a class='notes' href='migration72.html'>Upgrading</a></li>
+</ul>
+    </div>
+  </div>  </div>
+</div>
+
+
+<div id="layout" class="clearfix">
+  <section id="layout-content">
+<div class='home-content'><article class="newsentry">
+  <header class="title">
+    <time datetime="2017-11-30T10:04:21+00:00">30 Nov 2017</time>
+    <h2 class="newstitle">
+      <a href="archive/2017.html#id2017-11-30-1" id="id2017-11-30-1">PHP 7.2.0 Released</a>
+    </h2>
+  </header>
+  <div class="newscontent">
+    <div>
+
+	<p>The PHP development team announces the immediate availability of PHP 7.2.0.
+	This release marks the second feature update to the PHP 7 series.</p>
+
+	<p>PHP 7.2.0 comes with numerous improvements and new features such as</p>
+
+	<ul>
+	<li><a href="https://wiki.php.net/rfc/convert_numeric_keys_in_object_array_casts">Convert numeric keys in object/array casts</a></li>
+	<li><a href="https://wiki.php.net/rfc/counting_non_countables">Counting of non-countable objects</a></li>
+	<li><a href="https://wiki.php.net/rfc/object-typehint">Object typehint</a></li>
+	<li><a href="https://wiki.php.net/rfc/hash-context.as-resource">HashContext as Object</a></li>
+	<li><a href="https://wiki.php.net/rfc/argon2_password_hash">Argon2 in password hash</a></li>
+	<li><a href="https://wiki.php.net/rfc/improved-tls-constants">Improve TLS constants to sane values</a></li>
+	<li><a href="https://wiki.php.net/rfc/mcrypt-viking-funeral">Mcrypt extension removed</a></li>
+	<li><a href="https://wiki.php.net/rfc/libsodium">New sodium extension</a></li>
+	</ul>
+
+	<p>For source downloads of PHP 7.2.0 please visit our <a href="http://www.php.net/downloads">downloads</a> page
+	Windows binaries can be found on the <a href="http://windows.php.net/download">PHP for Windows</a> site.
+	The list of changes is recorded in the <a href="ChangeLog-7.html#7.2.0">ChangeLog</a>.</p>
+
+	<p>The <a href="manual/en/migration72.html">migration guide</a> is available in the PHP Manual.
+	Please consult it for the detailed list of new features and backward incompatible changes.</p>
+
+	<p>Many thanks to all the contributors and supporters!</p>
+    </div>
+  
+  </div>
+</article><article class="newsentry">
+  <header class="title">
+    <time datetime="2017-11-24T06:02:50+00:00">24 Nov 2017</time>
+    <h2 class="newstitle">
+      <a href="archive/2017.html#id2017-11-24-1" id="id2017-11-24-1">PHP 7.1.12 Released</a>
+    </h2>
+  </header>
+  <div class="newscontent">
+    <div>
+       <p>The PHP development team announces the immediate availability of PHP
+       7.1.12. This is a bugfix release, with several bug fixes included.
+     
+       All PHP 7.1 users are encouraged to upgrade to this version.
+       </p>
+     
+       <p>For source downloads of PHP 7.1.12 please visit our <a href="downloads.html">downloads page</a>,
+       Windows source and binaries can be found on <a href="http://windows.php.net/download/">windows.php.net/download/</a>.
+       The list of changes is recorded in the <a href="ChangeLog-7.html#7.1.12">ChangeLog</a>.
+       </p>
+    </div>
+  
+  </div>
+</article><article class="newsentry">
+  <header class="title">
+    <time datetime="2017-11-23T13:00:00+01:00">23 Nov 2017</time>
+    <h2 class="newstitle">
+      <a href="archive/2017.html#id2017-11-23-2" id="id2017-11-23-2">PHP 7.0.26 Released</a>
+    </h2>
+  </header>
+  <div class="newscontent">
+    <div xmlns="http://www.w3.org/2099/xhtml">
+      <p>The PHP development team announces the immediate availability of PHP
+      7.0.26. Several bugs have been fixed.
+     
+      All PHP 7.0 users are encouraged to upgrade to this version.
+      </p>
+     
+      <p>For source downloads of PHP 7.0.26 please visit our <a href="downloads.html">downloads page</a>,
+      Windows source and binaries can be found on <a href="http://windows.php.net/download/">windows.php.net/download/</a>.
+      The list of changes is recorded in the <a href="ChangeLog-7.html#7.0.26">ChangeLog</a>.
+      </p>
+    </div>
+  
+  </div>
+</article><article class="newsentry">
+  <header class="title">
+    <time datetime="2017-11-09T13:57:49+00:00">09 Nov 2017</time>
+    <h2 class="newstitle">
+      <a href="archive/2017.html#id2017-11-09-1" id="id2017-11-09-1">PHP 7.2.0RC6 Released</a>
+    </h2>
+  </header>
+  <div class="newscontent">
+    <div>
+     <p>
+     The PHP development team announces the immediate availability of PHP 7.2.0 RC6.
+     This release is the sixth Release Candidate for 7.2.0.
+     Barring any surprises, <b>we expect this to be the FINAL release candidate</b>,
+     with Nov 30th's GA release being not-substantially different.
+     All users of PHP are encouraged to test this version carefully, and report any bugs
+     and incompatibilities in the <a href="https://bugs.php.net/">bug tracking system</a>.
+     </p>
+
+     <p><strong>THIS IS A DEVELOPMENT PREVIEW - DO NOT USE IT IN PRODUCTION!</strong></p>
+
+     <p>
+     For more information on the new features and other changes, you can read the
+     <a href="https://github.com/php/php-src/blob/php-7.2.0RC6/NEWS">NEWS</a> file,
+     or the <a href="https://github.com/php/php-src/blob/php-7.2.0RC6/UPGRADING">UPGRADING</a>
+     file for a complete list of upgrading notes. These files can also be found in the release archive.
+     </p>
+
+     <p>
+     For source downloads of PHP 7.2.0 Release Candidate 6 please visit the
+     <a href="https://downloads.php.net/~pollita/">download</a> page,
+     Windows sources and binaries can be found at
+     <a href="http://windows.php.net/qa/">windows.php.net/qa/</a>.
+     </p>
+
+     <p>Thank you for helping us make PHP better.</p>
+    </div>
+  
+  </div>
+</article><article class="newsentry">
+  <header class="title">
+    <time datetime="2017-10-27T05:52:49+00:00">27 Oct 2017</time>
+    <h2 class="newstitle">
+      <a href="archive/2017.html#id2017-10-27-1" id="id2017-10-27-1">PHP 7.1.11 Released</a>
+    </h2>
+  </header>
+  <div class="newscontent">
+    <div>
+       <p>The PHP development team announces the immediate availability of PHP
+       7.1.11. This is a bugfix release, with several bug fixes included.
+     
+       All PHP 7.1 users are encouraged to upgrade to this version.
+       </p>
+     
+       <p>For source downloads of PHP 7.1.11 please visit our <a href="downloads.html">downloads page</a>,
+       Windows source and binaries can be found on <a href="http://windows.php.net/download/">windows.php.net/download/</a>.
+       The list of changes is recorded in the <a href="ChangeLog-7.html#7.1.11">ChangeLog</a>.
+       </p>
+    </div>
+  
+  </div>
+</article><article class="newsentry">
+  <header class="title">
+    <time datetime="2017-10-26T13:32:22-07:00">26 Oct 2017</time>
+    <h2 class="newstitle">
+      <a href="archive/2017.html#id2017-10-26-3" id="id2017-10-26-3">PHP 5.6.32 Released</a>
+    </h2>
+  </header>
+  <div class="newscontent">
+    <div>
+     <p>The PHP development team announces the immediate availability of PHP
+     5.6.32. This is a security release. Several security bugs were fixed in
+     this release.
+
+     All PHP 5.6 users are encouraged to upgrade to this version.</p>
+
+     <p>For source downloads of PHP 5.6.32 please visit our <a href="downloads.html">downloads page</a>,
+     Windows source and binaries can be found on <a href="http://windows.php.net/download/">windows.php.net/download/</a>.
+     The list of changes is recorded in the <a href="ChangeLog-5.html#5.6.32">ChangeLog</a>.
+     </p>
+    </div>
+  
+  </div>
+</article><article class="newsentry">
+  <header class="title">
+    <time datetime="2017-10-12T11:46:49+02:00">12 Oct 2017</time>
+    <h2 class="newstitle">
+      <a href="archive/2017.html#id2017-10-12-1" id="id2017-10-12-1">PHP 7.2.0 Release Candidate 4 Released</a>
+    </h2>
+  </header>
+  <div class="newscontent">
+    <div>
+     <p>
+     The PHP development team announces the immediate availability of PHP 7.2.0 RC4.
+     This release is the fourth Release Candidate for 7.2.0.
+     All users of PHP are encouraged to test this version carefully, and report any bugs
+     and incompatibilities in the <a href="https://bugs.php.net/">bug tracking system</a>.
+     </p>
+     
+     <p><strong>THIS IS A DEVELOPMENT PREVIEW - DO NOT USE IT IN PRODUCTION!</strong></p>
+     
+     <p>
+     For more information on the new features and other changes, you can read the
+     <a href="https://github.com/php/php-src/blob/php-7.2.0RC4/NEWS">NEWS</a> file,
+     or the <a href="https://github.com/php/php-src/blob/php-7.2.0RC4/UPGRADING">UPGRADING</a>
+     file for a complete list of upgrading notes. These files can also be found in the release archive.
+     </p>
+     
+     <p>
+     For source downloads of PHP 7.2.0 Release Candidate 4 please visit the
+     <a href="https://downloads.php.net/~remi/">download</a> page,
+     Windows sources and binaries can be found at
+     <a href="http://windows.php.net/qa/">windows.php.net/qa/</a>.
+     </p>
+     
+     <p>
+     The next Release Candidate will be announced on the 26th of October.
+     You can also read the full list of planned releases on
+     <a href="https://wiki.php.net/todo/php72">our wiki</a>.
+     </p>
+     
+     <p>Thank you for helping us make PHP better.</p>
+    </div>
+  
+  </div>
+</article><article class="newsentry">
+  <header class="title">
+    <time datetime="2017-09-28T12:58:56+02:00">28 Sep 2017</time>
+    <h2 class="newstitle">
+      <a href="archive/2017.html#id2017-09-28-2" id="id2017-09-28-2">PHP 7.2.0 Release Candidate 3 Released</a>
+    </h2>
+  </header>
+  <div class="newscontent">
+    <div>
+     <p>
+     The PHP development team announces the immediate availability of PHP 7.2.0 RC3.
+     This release is the third Release Candidate for 7.2.0.
+     All users of PHP are encouraged to test this version carefully, and report any bugs
+     and incompatibilities in the <a href="https://bugs.php.net/">bug tracking system</a>.
+     </p>
+     
+     <p><strong>THIS IS A DEVELOPMENT PREVIEW - DO NOT USE IT IN PRODUCTION!</strong></p>
+     
+     <p>
+     For more information on the new features and other changes, you can read the
+     <a href="https://github.com/php/php-src/blob/php-7.2.0RC3/NEWS">NEWS</a> file,
+     or the <a href="https://github.com/php/php-src/blob/php-7.2.0RC3/UPGRADING">UPGRADING</a>
+     file for a complete list of upgrading notes. These files can also be found in the release archive.
+     </p>
+     
+     <p>
+     For source downloads of PHP 7.2.0 Release Candidate 3 please visit the
+     <a href="https://downloads.php.net/~remi/">download</a> page,
+     Windows sources and binaries can be found at
+     <a href="http://windows.php.net/qa/">windows.php.net/qa/</a>.
+     </p>
+     
+     <p>
+     The next Release Candidate will be announced on the 12th of October.
+     You can also read the full list of planned releases on
+     <a href="https://wiki.php.net/todo/php72">our wiki</a>.
+     </p>
+     
+     <p>Thank you for helping us make PHP better.</p>
+    </div>
+  
+  </div>
+</article><article class="newsentry">
+  <header class="title">
+    <time datetime="2017-08-31T10:53:58+02:00">31 Aug 2017</time>
+    <h2 class="newstitle">
+      <a href="archive/2017.html#id2017-08-31-1" id="id2017-08-31-1">PHP 7.2.0 Release Candidate 1 Released</a>
+    </h2>
+  </header>
+  <div class="newscontent">
+    <div>
+      <p>
+      The PHP development team announces the immediate availability of PHP 7.2.0 Release
+      Candidate 1. This release is the first Release Candidate for 7.2.0.
+      All users of PHP are encouraged to test this version carefully, and report any bugs
+      and incompatibilities in the <a href="https://bugs.php.net/">bug tracking system</a>.
+      </p>
+
+      <p><strong>THIS IS A DEVELOPMENT PREVIEW - DO NOT USE IT IN PRODUCTION!</strong></p>
+
+      <p>
+      For more information on the new features and other changes, you can read the
+      <a href="https://github.com/php/php-src/blob/php-7.2.0RC1/NEWS">NEWS</a> file,
+      or the <a href="https://github.com/php/php-src/blob/php-7.2.0RC1/UPGRADING">UPGRADING</a>
+      file for a complete list of upgrading notes. These files can also be found in the release archive.
+      </p>
+
+      <p>
+      For source downloads of PHP 7.2.0 Release Candidate 1 please visit the
+      <a href="https://downloads.php.net/~remi/">download</a> page,
+      Windows sources and binaries can be found at
+      <a href="http://windows.php.net/qa/">windows.php.net/qa/</a>.
+      </p>
+
+      <p>
+      The second Release Candidate will be released on the 14th of September.
+      You can also read the full list of planned releases on
+      <a href="https://wiki.php.net/todo/php72">our wiki</a>.
+      </p>
+
+      <p>Thank you for helping us make PHP better.</p>
+    </div>
+  
+  </div>
+</article><article class="newsentry">
+  <header class="title">
+    <time datetime="2017-08-17T10:17:44+02:00">17 Aug 2017</time>
+    <h2 class="newstitle">
+      <a href="archive/2017.html#id2017-08-17-1" id="id2017-08-17-1">PHP 7.2.0 Beta 3 Released</a>
+    </h2>
+  </header>
+  <div class="newscontent">
+    <div>
+      <p>
+      The PHP development team announces the immediate availability of PHP 7.2.0 Beta 3.
+      This release is the third and final beta for 7.2.0. All users of PHP are encouraged
+      to test this version carefully, and report any bugs and incompatibilities in the
+      <a href="https://bugs.php.net/">bug tracking system</a>.
+      </p>
+
+      <p><strong>THIS IS A DEVELOPMENT PREVIEW - DO NOT USE IT IN PRODUCTION!</strong></p>
+
+      <p>
+      For more information on the new features and other changes, you can read the
+      <a href="https://github.com/php/php-src/blob/php-7.2.0beta3/NEWS">NEWS</a> file,
+      or the <a href="https://github.com/php/php-src/blob/php-7.2.0beta3/UPGRADING">UPGRADING</a>
+      file for a complete list of upgrading notes. These files can also be found in the release archive.
+      </p>
+
+      <p>
+      For source downloads of PHP 7.2.0 Beta 3 please visit the
+      <a href="https://downloads.php.net/~remi/">download</a> page,
+      Windows sources and binaries can be found at
+      <a href="http://windows.php.net/qa/">windows.php.net/qa/</a>.
+      </p>
+
+      <p>
+      The first Release Candidate will be released on the 31th of August.
+      You can also read the full list of planned releases on
+      <a href="https://wiki.php.net/todo/php72">our wiki</a>.
+      </p>
+
+      <p>Thank you for helping us make PHP better.</p>
+    </div>
+  
+  </div>
+</article><article class="newsentry">
+  <header class="title">
+    <time datetime="2017-07-06T12:25:08+02:00">06 Jul 2017</time>
+    <h2 class="newstitle">
+      <a href="archive/2017.html#id2017-07-06-2" id="id2017-07-06-2">PHP 7.2.0 Alpha 3 Released</a>
+    </h2>
+  </header>
+  <div class="newscontent">
+    <div>
+     <p>The PHP development team announces the immediate availability of PHP 7.2.0 Alpha 3.
+     This release contains fixes and improvements relative to Alpha 2.
+     All users of PHP are encouraged to test this version carefully,
+     and report any bugs and incompatibilities in the
+     <a href="https://bugs.php.net/">bug tracking system</a>.</p>
+
+     <p><strong>THIS IS A DEVELOPMENT PREVIEW - DO NOT USE IT IN PRODUCTION!</strong></p>
+
+     <p>For information on new features and other changes, you can read the
+     <a href="https://github.com/php/php-src/blob/php-7.2.0alpha3/NEWS">NEWS</a> file,
+     or the <a href="https://github.com/php/php-src/blob/php-7.2.0alpha3/UPGRADING">UPGRADING</a> file
+     for a complete list of upgrading notes. These files can also be found in the release archive.</p>
+
+     <p>For source downloads of PHP 7.2.0 Alpha 3 please visit the <a href="https://downloads.php.net/~remi/">download</a> page,
+     Windows sources and binaries can be found on <a href="http://windows.php.net/qa/">windows.php.net/qa/</a>.</p>
+
+     <p>The first beta will be released on the 20th of July. You can also read the full list of planned releases on our
+     <a href="https://wiki.php.net/todo/php72#timetable">wiki</a>.</p>
+
+     <p>Thank you for helping us make PHP better.</p>
+    </div>
+  
+  </div>
+</article><p class="archive"><a href="archive/index.html">Older News Entries</a></p></div>    </section><!-- layout-content -->
+    
+<aside class="tips">
+    <div class="inner">
+<div class="panel">  <a href="http://www.php.net/conferences/" class="headline" title="Conferences calling for papers">Conferences calling for papers</a><div class="body"><ul><li><a href='conferences/index.html#id2017-11-20-1' title='php[tek] 2018'>php[tek] 2018</a></li></ul></div></div><div class="panel">  <a href="http://www.php.net/conferences/" class="headline" title="Upcoming conferences">Upcoming conferences</a><div class="body"><ul><li><a href='conferences/index.html#id2017-11-08-1' title='SunshinePHP 2018 Conference'>SunshinePHP 2018 Conference</a></li></ul></div></div>
+    <p class='panel'><a href='cal.html'>User Group Events</a></p>
+    <p class='panel'><a href='thanks.html'>Special Thanks</a></p>
+    <p class='panel social-media'>
+      <span class='headline'>Social media</span>
+      <div class='body'>
+        <ul>
+          <li>
+            <a href="https://twitter.com/official_php">
+              <i class="icon-twitter"></i>
+              @official_php
+            </a>
+          </li>
+        </ul>
+      </div>
+    </p>
+</div>
+</aside>
+
+  </div><!-- layout -->
+         
+  <footer>
+    <div class="container footer-content">
+      <div class="row-fluid">
+      <ul class="footmenu">
+        <li><a href="copyright.html">Copyright &copy; 2001-2017 The PHP Group</a></li>
+        <li><a href="my.html">My PHP.net</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="sites.html">Other PHP.net sites</a></li>
+        <li><a href="mirrors.html">Mirror sites</a></li>
+        <li><a href="privacy.html">Privacy policy</a></li>
+      </ul>
+      </div>
+    </div>
+  </footer>
+
+    <div class='elephpants'><div class=images></div></div>
+ <!-- External and third party libraries. -->
+ <script type="text/javascript" src="../ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" src="cachedab96.php?t=1421837618&amp;f=/js/ext/modernizr.js"></script>
+<script type="text/javascript" src="cached3567.php?t=1421837618&amp;f=/js/ext/hogan-2.0.0.min.js"></script>
+<script type="text/javascript" src="cachede4eb.php?t=1421837618&amp;f=/js/ext/typeahead.min.js"></script>
+<script type="text/javascript" src="cached9183.php?t=1421837618&amp;f=/js/ext/mousetrap.min.js"></script>
+<script type="text/javascript" src="cachedcba0.php?t=1421837618&amp;f=/js/search.js"></script>
+<script type="text/javascript" src="cachedb779.php?t=1500560403&amp;f=/js/common.js"></script>
+
+<a id="toTop" href="javascript:;"><span id="toTopHover"></span><img width="40" height="40" alt="To Top" src="images/to-top%402x.png"></a>
+
+</body>
+
+<!-- Mirrored from php.net/index.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Dec 2017 23:04:38 GMT -->
+</html>
+

@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<!-- Mirrored from php.net/manual/en/control-structures.declare.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Dec 2017 23:18:10 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+  <title>PHP: declare - Manual </title>
+
+ <link rel="shortcut icon" href="http://php.net/favicon.ico">
+ <link rel="search" type="application/opensearchdescription+xml" href="http://php.net/phpnetimprovedsearch.src" title="Add PHP.net search">
+ <link rel="alternate" type="application/atom+xml" href="http://php.net/releases/feed.php" title="PHP Release feed">
+ <link rel="alternate" type="application/atom+xml" href="http://php.net/feed.atom" title="PHP: Hypertext Preprocessor">
+
+ <link rel="canonical" href="http://php.net/manual/en/control-structures.declare.php">
+ <link rel="shorturl" href="http://php.net/declare">
+ <link rel="alternate" href="http://php.net/declare" hreflang="x-default">
+
+ <link rel="contents" href="http://php.net/manual/en/index.php">
+ <link rel="index" href="http://php.net/manual/en/language.control-structures.php">
+ <link rel="prev" href="http://php.net/manual/en/control-structures.switch.php">
+ <link rel="next" href="http://php.net/manual/en/function.return.php">
+
+ <link rel="alternate" href="http://php.net/manual/en/control-structures.declare.php" hreflang="en">
+ <link rel="alternate" href="http://php.net/manual/pt_BR/control-structures.declare.php" hreflang="pt_BR">
+ <link rel="alternate" href="http://php.net/manual/zh/control-structures.declare.php" hreflang="zh">
+ <link rel="alternate" href="http://php.net/manual/fr/control-structures.declare.php" hreflang="fr">
+ <link rel="alternate" href="http://php.net/manual/de/control-structures.declare.php" hreflang="de">
+ <link rel="alternate" href="http://php.net/manual/ja/control-structures.declare.php" hreflang="ja">
+ <link rel="alternate" href="http://php.net/manual/ro/control-structures.declare.php" hreflang="ro">
+ <link rel="alternate" href="http://php.net/manual/ru/control-structures.declare.php" hreflang="ru">
+ <link rel="alternate" href="http://php.net/manual/es/control-structures.declare.php" hreflang="es">
+ <link rel="alternate" href="http://php.net/manual/tr/control-structures.declare.php" hreflang="tr">
+
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1421837618&amp;f=/fonts/Fira/fira.css" media="screen">
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1421837618&amp;f=/fonts/Font-Awesome/css/fontello.css" media="screen">
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1478800802&amp;f=/styles/theme-base.css" media="screen">
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1449787206&amp;f=/styles/theme-medium.css" media="screen">
+
+ <!--[if lte IE 7]>
+ <link rel="stylesheet" type="text/css" href="http://php.net/styles/workarounds.ie7.css" media="screen">
+ <![endif]-->
+
+ <!--[if lte IE 8]>
+ <script type="text/javascript">
+  window.brokenIE = true;
+ </script>
+ <![endif]-->
+
+ <!--[if lte IE 9]>
+ <link rel="stylesheet" type="text/css" href="http://php.net/styles/workarounds.ie9.css" media="screen">
+ <![endif]-->
+
+ <!--[if IE]>
+ <script type="text/javascript" src="http://php.net/js/ext/html5.js"></script>
+ <![endif]-->
+
+ <base >
+
+</head>
+<body class="docs ">
+
+<nav id="head-nav" class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <a href="http://php.net/" class="brand"><img src="http://php.net/images/logos/php-logo.svg" width="48" height="24" alt="php"></a>
+    <div id="mainmenu-toggle-overlay"></div>
+    <input type="checkbox" id="mainmenu-toggle">
+    <ul class="nav">
+      <li class=""><a href="http://php.net/downloads">Downloads</a></li>
+      <li class="active"><a href="http://php.net/docs.php">Documentation</a></li>
+      <li class=""><a href="http://php.net/get-involved" >Get Involved</a></li>
+      <li class=""><a href="http://php.net/support">Help</a></li>
+    </ul>
+    <form class="navbar-search" id="topsearch" action="http://php.net/search.php">
+      <input type="hidden" name="show" value="quickref">
+      <input type="search" name="pattern" class="search-query" placeholder="Search" accesskey="s">
+    </form>
+  </div>
+  <div id="flash-message"></div>
+</nav>
+<nav id="trick"><div><dl>
+<dt><a href='http://php.net/manual/en/getting-started.php'>Getting Started</a></dt>
+	<dd><a href='http://php.net/manual/en/introduction.php'>Introduction</a></dd>
+	<dd><a href='http://php.net/manual/en/tutorial.php'>A simple tutorial</a></dd>
+<dt><a href='http://php.net/manual/en/langref.php'>Language Reference</a></dt>
+	<dd><a href='http://php.net/manual/en/language.basic-syntax.php'>Basic syntax</a></dd>
+	<dd><a href='http://php.net/manual/en/language.types.php'>Types</a></dd>
+	<dd><a href='http://php.net/manual/en/language.variables.php'>Variables</a></dd>
+	<dd><a href='http://php.net/manual/en/language.constants.php'>Constants</a></dd>
+	<dd><a href='http://php.net/manual/en/language.expressions.php'>Expressions</a></dd>
+	<dd><a href='http://php.net/manual/en/language.operators.php'>Operators</a></dd>
+	<dd><a href='http://php.net/manual/en/language.control-structures.php'>Control Structures</a></dd>
+	<dd><a href='http://php.net/manual/en/language.functions.php'>Functions</a></dd>
+	<dd><a href='http://php.net/manual/en/language.oop5.php'>Classes and Objects</a></dd>
+	<dd><a href='http://php.net/manual/en/language.namespaces.php'>Namespaces</a></dd>
+	<dd><a href='http://php.net/manual/en/language.errors.php'>Errors</a></dd>
+	<dd><a href='http://php.net/manual/en/language.exceptions.php'>Exceptions</a></dd>
+	<dd><a href='http://php.net/manual/en/language.generators.php'>Generators</a></dd>
+	<dd><a href='http://php.net/manual/en/language.references.php'>References Explained</a></dd>
+	<dd><a href='http://php.net/manual/en/reserved.variables.php'>Predefined Variables</a></dd>
+	<dd><a href='http://php.net/manual/en/reserved.exceptions.php'>Predefined Exceptions</a></dd>
+	<dd><a href='http://php.net/manual/en/reserved.interfaces.php'>Predefined Interfaces and Classes</a></dd>
+	<dd><a href='http://php.net/manual/en/context.php'>Context options and parameters</a></dd>
+	<dd><a href='http://php.net/manual/en/wrappers.php'>Supported Protocols and Wrappers</a></dd>
+</dl>
+<dl>
+<dt><a href='http://php.net/manual/en/security.php'>Security</a></dt>
+	<dd><a href='http://php.net/manual/en/security.intro.php'>Introduction</a></dd>
+	<dd><a href='http://php.net/manual/en/security.general.php'>General considerations</a></dd>
+	<dd><a href='http://php.net/manual/en/security.cgi-bin.php'>Installed as CGI binary</a></dd>
+	<dd><a href='http://php.net/manual/en/security.apache.php'>Installed as an Apache module</a></dd>
+	<dd><a href='http://php.net/manual/en/security.sessions.php'>Session Security</a></dd>
+	<dd><a href='http://php.net/manual/en/security.filesystem.php'>Filesystem Security</a></dd>
+	<dd><a href='http://php.net/manual/en/security.database.php'>Database Security</a></dd>
+	<dd><a href='http://php.net/manual/en/security.errors.php'>Error Reporting</a></dd>
+	<dd><a href='http://php.net/manual/en/security.globals.php'>Using Register Globals</a></dd>
+	<dd><a href='http://php.net/manual/en/security.variables.php'>User Submitted Data</a></dd>
+	<dd><a href='http://php.net/manual/en/security.magicquotes.php'>Magic Quotes</a></dd>
+	<dd><a href='http://php.net/manual/en/security.hiding.php'>Hiding PHP</a></dd>
+	<dd><a href='http://php.net/manual/en/security.current.php'>Keeping Current</a></dd>
+<dt><a href='http://php.net/manual/en/features.php'>Features</a></dt>
+	<dd><a href='http://php.net/manual/en/features.http-auth.php'>HTTP authentication with PHP</a></dd>
+	<dd><a href='http://php.net/manual/en/features.cookies.php'>Cookies</a></dd>
+	<dd><a href='http://php.net/manual/en/features.sessions.php'>Sessions</a></dd>
+	<dd><a href='http://php.net/manual/en/features.xforms.php'>Dealing with XForms</a></dd>
+	<dd><a href='http://php.net/manual/en/features.file-upload.php'>Handling file uploads</a></dd>
+	<dd><a href='http://php.net/manual/en/features.remote-files.php'>Using remote files</a></dd>
+	<dd><a href='http://php.net/manual/en/features.connection-handling.php'>Connection handling</a></dd>
+	<dd><a href='http://php.net/manual/en/features.persistent-connections.php'>Persistent Database Connections</a></dd>
+	<dd><a href='http://php.net/manual/en/features.safe-mode.php'>Safe Mode</a></dd>
+	<dd><a href='http://php.net/manual/en/features.commandline.php'>Command line usage</a></dd>
+	<dd><a href='http://php.net/manual/en/features.gc.php'>Garbage Collection</a></dd>
+	<dd><a href='http://php.net/manual/en/features.dtrace.php'>DTrace Dynamic Tracing</a></dd>
+</dl>
+<dl>
+<dt><a href='http://php.net/manual/en/funcref.php'>Function Reference</a></dt>
+	<dd><a href='http://php.net/manual/en/refs.basic.php.php'>Affecting PHP's Behaviour</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.audio.php'>Audio Formats Manipulation</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.remote.auth.php'>Authentication Services</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.cmdline.php'>Command Line Specific Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.compression.php'>Compression and Archive Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.creditcard.php'>Credit Card Processing</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.crypto.php'>Cryptography Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.database.php'>Database Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.calendar.php'>Date and Time Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.fileprocess.file.php'>File System Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.international.php'>Human Language and Character Encoding Support</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.image.php'>Image Processing and Generation</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.remote.mail.php'>Mail Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.math.php'>Mathematical Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.nontext.php'>Non-Text MIME Output</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.fileprocess.process.php'>Process Control Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.other.php'>Other Basic Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.remote.other.php'>Other Services</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.search.php'>Search Engine Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.server.php'>Server Specific Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.session.php'>Session Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.text.php'>Text Processing</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.vartype.php'>Variable and Type Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.webservice.php'>Web Services</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.windows.php'>Windows Only Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.xml.php'>XML Manipulation</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.ui.php'>GUI Extensions</a></dd>
+</dl>
+<dl>
+<dt>Keyboard Shortcuts</dt><dt>?</dt>
+<dd>This help</dd>
+<dt>j</dt>
+<dd>Next menu item</dd>
+<dt>k</dt>
+<dd>Previous menu item</dd>
+<dt>g p</dt>
+<dd>Previous man page</dd>
+<dt>g n</dt>
+<dd>Next man page</dd>
+<dt>G</dt>
+<dd>Scroll to bottom</dd>
+<dt>g g</dt>
+<dd>Scroll to top</dd>
+<dt>g h</dt>
+<dd>Goto homepage</dd>
+<dt>g s</dt>
+<dd>Goto search<br>(current page)</dd>
+<dt>/</dt>
+<dd>Focus search box</dd>
+</dl></div></nav>
+<div id="goto">
+    <div class="search">
+         <div class="text"></div>
+         <div class="results"><ul></ul></div>
+   </div>
+</div>
+
+  <div id="breadcrumbs" class="clearfix">
+    <div id="breadcrumbs-inner">
+          <div class="next">
+        <a href="http://php.net/manual/en/function.return.php">
+          return &raquo;
+        </a>
+      </div>
+              <div class="prev">
+        <a href="http://php.net/manual/en/control-structures.switch.php">
+          &laquo; switch        </a>
+      </div>
+          <ul>
+            <li><a href='http://php.net/manual/en/index.php'>PHP Manual</a></li>      <li><a href='http://php.net/manual/en/langref.php'>Language Reference</a></li>      <li><a href='http://php.net/manual/en/language.control-structures.php'>Control Structures</a></li>      </ul>
+    </div>
+  </div>
+
+
+
+
+<div id="layout" class="clearfix">
+  <section id="layout-content">
+  <div class="page-tools">
+    <div class="change-language">
+      <form action="http://php.net/manual/change.php" method="get" id="changelang" name="changelang">
+        <fieldset>
+          <label for="changelang-langs">Change language:</label>
+          <select onchange="document.changelang.submit()" name="page" id="changelang-langs">
+            <option value='en/control-structures.declare.php' selected="selected">English</option>
+            <option value='http://php.net/manual/en/pt_BR/control-structures.declare.php'>Brazilian Portuguese</option>
+            <option value='http://php.net/manual/en/zh/control-structures.declare.php'>Chinese (Simplified)</option>
+            <option value='http://php.net/manual/en/fr/control-structures.declare.php'>French</option>
+            <option value='http://php.net/manual/en/de/control-structures.declare.php'>German</option>
+            <option value='http://php.net/manual/en/ja/control-structures.declare.php'>Japanese</option>
+            <option value='http://php.net/manual/en/ro/control-structures.declare.php'>Romanian</option>
+            <option value='http://php.net/manual/en/ru/control-structures.declare.php'>Russian</option>
+            <option value='http://php.net/manual/en/es/control-structures.declare.php'>Spanish</option>
+            <option value='http://php.net/manual/en/tr/control-structures.declare.php'>Turkish</option>
+            <option value="http://php.net/manual/en/help-translate.php">Other</option>
+          </select>
+        </fieldset>
+      </form>
+    </div>
+    <div class="edit-bug">
+      <a href="https://edit.php.net/?project=PHP&amp;perm=en/control-structures.declare.php">Edit</a>
+      <a href="https://bugs.php.net/report.php?bug_type=Documentation+problem&amp;manpage=control-structures.declare">Report a Bug</a>
+    </div>
+  </div><div id="control-structures.declare" class="sect1">
+ <h2 class="title"><em>declare</em></h2>
+ <p class="verinfo">(PHP 4, PHP 5, PHP 7)</p>
+ <p class="para">
+  The <em>declare</em> construct is used to
+  set execution directives for a block of code.
+  The syntax of <em>declare</em> is similar to
+  the syntax of other flow control constructs:
+  <div class="informalexample">
+   <div class="example-contents">
+<div class="cdata"><pre>
+declare (directive)
+    statement
+</pre></div>
+   </div>
+
+  </div>
+ </p>
+
+ <p class="para">
+  The <em>directive</em> section allows the
+  behavior of the <em>declare</em> block to
+  be set.
+  Currently only three directives are recognized: the
+  <em>ticks</em> directive (See below for more
+  information on the
+  <a href="http://php.net/manual/en/control-structures.declare.php#control-structures.declare.ticks" class="link">ticks</a>
+  directive), the <em>encoding</em> directive (See below for more
+  information on the
+  <a href="http://php.net/manual/en/control-structures.declare.php#control-structures.declare.encoding" class="link">encoding</a>
+  directive) and the <em>strict_types</em> directive (See for more
+  information the
+  <a href="http://php.net/manual/en/functions.arguments.php#functions.arguments.type-declaration.strict" class="link">strict</a>
+  section on the Function arguments page)
+ </p>
+ <p class="para">
+  <table class="doctable informaltable">
+       
+        <thead>
+         <tr>
+          <th>Version</th>
+          <th>Description</th>
+         </tr>
+
+        </thead>
+
+        <tbody class="tbody">
+         <tr>
+          <td>5.3.0</td>
+          <td>Added <em>encoding</em> directive</td>
+         </tr>
+
+         <tr>
+          <td>7.0.0</td>
+          <td>Added <em>strict_types</em> directive</td>
+         </tr>
+
+        </tbody>
+       
+      </table>
+
+ </p>
+ <p class="para">
+  As directives are handled as the file is being compiled, only literals may
+  be given as directive values. Variables and constants cannot be used. To
+  illustrate:
+  <div class="informalexample">
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;This&nbsp;is&nbsp;valid:<br /></span><span style="color: #007700">declare(</span><span style="color: #0000BB">ticks</span><span style="color: #007700">=</span><span style="color: #0000BB">1</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;This&nbsp;is&nbsp;invalid:<br /></span><span style="color: #007700">const&nbsp;</span><span style="color: #0000BB">TICK_VALUE&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">;<br />declare(</span><span style="color: #0000BB">ticks</span><span style="color: #007700">=</span><span style="color: #0000BB">TICK_VALUE</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+  </div>
+ </p>
+ <p class="para">
+  The <em>statement</em> part of the
+  <em>declare</em> block will be executed - how
+  it is executed and what side effects occur during execution
+  may depend on the directive set in the
+  <em>directive</em> block.
+ </p>
+ <p class="para">
+  The <em>declare</em> construct can also be used in the global
+  scope, affecting all code following it (however if the file with
+  <em>declare</em> was included then it does not affect the parent
+  file).
+  <div class="informalexample">
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;these&nbsp;are&nbsp;the&nbsp;same:<br /><br />//&nbsp;you&nbsp;can&nbsp;use&nbsp;this:<br /></span><span style="color: #007700">declare(</span><span style="color: #0000BB">ticks</span><span style="color: #007700">=</span><span style="color: #0000BB">1</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;entire&nbsp;script&nbsp;here<br /></span><span style="color: #007700">}<br /><br /></span><span style="color: #FF8000">//&nbsp;or&nbsp;you&nbsp;can&nbsp;use&nbsp;this:<br /></span><span style="color: #007700">declare(</span><span style="color: #0000BB">ticks</span><span style="color: #007700">=</span><span style="color: #0000BB">1</span><span style="color: #007700">);<br /></span><span style="color: #FF8000">//&nbsp;entire&nbsp;script&nbsp;here<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+  </div>
+ </p>
+
+ <div class="sect2" id="control-structures.declare.ticks">
+  <h3 class="title">Ticks</h3>
+  <p class="para">A tick is an event that occurs for every
+  <var class="varname"><var class="varname">N</var></var> low-level tickable statements executed
+  by the parser within the <em>declare</em> block.
+  The value for <var class="varname"><var class="varname">N</var></var> is specified
+  using <code class="code">ticks=<var class="varname"><var class="varname">N</var></var></code>
+  within the <em>declare</em> block&#039;s
+  <em>directive</em> section.
+ </p>
+ <p class="para">
+  Not all statements are tickable. Typically, condition
+  expressions and argument expressions are not tickable.
+ </p>
+ <p class="para">
+  The event(s) that occur on each tick are specified using the
+  <span class="function"><a href="http://php.net/manual/en/function.register-tick-function.php" class="function">register_tick_function()</a></span>. See the example
+  below for more details. Note that more than one event can occur
+  for each tick.
+ </p>
+ <p class="para">
+  <div class="example" id="example-119">
+   <p><strong>Example #1 Tick usage example</strong></p>
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #007700">declare(</span><span style="color: #0000BB">ticks</span><span style="color: #007700">=</span><span style="color: #0000BB">1</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;A&nbsp;function&nbsp;called&nbsp;on&nbsp;each&nbsp;tick&nbsp;event<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">tick_handler</span><span style="color: #007700">()<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"tick_handler()&nbsp;called\n"</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #0000BB">register_tick_function</span><span style="color: #007700">(</span><span style="color: #DD0000">'tick_handler'</span><span style="color: #007700">);<br /><br /></span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">;<br /><br />if&nbsp;(</span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">&gt;&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">+=&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;print(</span><span style="color: #0000BB">$a</span><span style="color: #007700">);<br />}<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+  </div>
+ </p>
+ <p class="para">
+  <div class="example" id="example-120">
+   <p><strong>Example #2 Ticks usage example</strong></p>
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">tick_handler</span><span style="color: #007700">()<br />{<br />&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"tick_handler()&nbsp;called\n"</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">tick_handler</span><span style="color: #007700">();<br /><br />if&nbsp;(</span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">&gt;&nbsp;</span><span style="color: #0000BB">0</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">+=&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">tick_handler</span><span style="color: #007700">();<br />&nbsp;&nbsp;&nbsp;&nbsp;print(</span><span style="color: #0000BB">$a</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">tick_handler</span><span style="color: #007700">();<br />}<br /></span><span style="color: #0000BB">tick_handler</span><span style="color: #007700">();<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+  </div>
+ </p>
+ <p class="simpara">
+  See also <span class="function"><a href="http://php.net/manual/en/function.register-tick-function.php" class="function">register_tick_function()</a></span> and
+  <span class="function"><a href="http://php.net/manual/en/function.unregister-tick-function.php" class="function">unregister_tick_function()</a></span>.
+ </p>
+ </div>
+ <div class="sect2" id="control-structures.declare.encoding">
+  <h3 class="title">Encoding</h3>
+  <p class="para">
+    A script&#039;s encoding can be specified per-script using the <em>encoding</em> directive.
+  <div class="example" id="example-121">
+   <p><strong>Example #3 Declaring an encoding for the script.</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">declare(</span><span style="color: #0000BB">encoding</span><span style="color: #007700">=</span><span style="color: #DD0000">'ISO-8859-1'</span><span style="color: #007700">);<br /></span><span style="color: #FF8000">//&nbsp;code&nbsp;here<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+
+  <div class="caution"><strong class="caution">Caution</strong>
+   <p class="simpara">
+    When combined with namespaces, the only legal syntax for declare
+    is <em>declare(encoding=&#039;...&#039;);</em> where <em>...</em>
+    is the encoding value.  <em>declare(encoding=&#039;...&#039;) {}</em>
+    will result in a parse error when combined with namespaces.
+   </p>
+  </div>
+  <p class="para">
+   The encoding declare value is ignored in PHP 5.3 unless php is compiled with
+   <em>--enable-zend-multibyte</em>.
+  </p>
+  <p class="para">
+   Note that PHP does not expose whether <em>--enable-zend-multibyte</em> was
+   used to compile PHP other than by <span class="function"><a href="http://php.net/manual/en/function.phpinfo.php" class="function">phpinfo()</a></span>.
+  </p>
+  <p class="para">
+   See also <a href="http://php.net/manual/en/ini.core.php#ini.zend.script-encoding" class="link">zend.script_encoding</a>.
+  </p>
+ </div>
+</div>
+<section id="usernotes">
+ <div class="head">
+  <span class="action"><a href="http://php.net/manual/add-note.php?sect=control-structures.declare&amp;redirect=http://php.net/manual/en/control-structures.declare.php"><img src='http://php.net/images/notes-add@2x.png' alt='add a note' width='12' height='12'> <small>add a note</small></a></span>
+  <h3 class="title">User Contributed Notes <span class="count">19 notes</span></h3>
+ </div><div id="allnotes">
+  <div class="note" id="100137">  <div class="votes">
+    <div id="Vu100137">
+    <a href="http://php.net/manual/vote-note.php?id=100137&amp;page=control-structures.declare&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd100137">
+    <a href="http://php.net/manual/vote-note.php?id=100137&amp;page=control-structures.declare&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V100137" title="73% like this...">
+    29
+    </div>
+  </div>
+  <a href="#100137" class="name">
+  <strong class="user"><em>Anonymous</em></strong></a><a class="genanchor" href="#100137"> &para;</a><div class="date" title="2010-09-27 02:10"><strong>7 years ago</strong></div>
+  <div class="text" id="Hcom100137">
+<div class="phpcode"><code><span class="html">
+It's amazing how many people didn't grasp the concept here. Note the wording in the documentation. It states that the tick handler is called every n native execution cycles. That means native instructions, not including system calls (i'm guessing). This can give you a very good idea if you need to optimize a particular part of your script, since you can measure quite effectively how many native instructions are in your actual code.<br /><br />A good profiler would take that into account, and force you, the developer, to include calls to the profiler as you're entering and leaving every function. That way you'd be able to keep an eye on how many cycles it took each function to complete. Independent of time.<br /><br />That is extremely powerful, and not to be underestimated. A good solution would allow aggregate stats, so the total time in a function would be counted, including inside called functions.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="112939">  <div class="votes">
+    <div id="Vu112939">
+    <a href="http://php.net/manual/vote-note.php?id=112939&amp;page=control-structures.declare&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd112939">
+    <a href="http://php.net/manual/vote-note.php?id=112939&amp;page=control-structures.declare&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V112939" title="69% like this...">
+    19
+    </div>
+  </div>
+  <a href="#112939" class="name">
+  <strong class="user"><em>sawyerrken at gmail dot com</em></strong></a><a class="genanchor" href="#112939"> &para;</a><div class="date" title="2013-08-09 06:31"><strong>4 years ago</strong></div>
+  <div class="text" id="Hcom112939">
+<div class="phpcode"><code><span class="html">
+In the following example:<br /><br /><span class="default">&lt;?php<br /></span><span class="keyword">function </span><span class="default">handler</span><span class="keyword">(){<br />&nbsp; &nbsp; print </span><span class="string">"hello &lt;br /&gt;"</span><span class="keyword">;<br />}<br /><br /></span><span class="default">register_tick_function</span><span class="keyword">(</span><span class="string">"handler"</span><span class="keyword">);<br /><br />declare(</span><span class="default">ticks </span><span class="keyword">= </span><span class="default">1</span><span class="keyword">){<br />&nbsp; &nbsp; </span><span class="default">$b </span><span class="keyword">= </span><span class="default">2</span><span class="keyword">;<br />} </span><span class="comment">//closing curly bracket tickable<br /></span><span class="default">?&gt;<br /></span><br />"Hello" will be displayed twice because the closing curly bracket is also tickable. <br /><br />One may wonder why the opening curly bracket is not tickable if the closing is tickable. This is because the instruction for PHP to start ticking is given by the opening curly bracket so the ticking starts immediately after it.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="117039">  <div class="votes">
+    <div id="Vu117039">
+    <a href="http://php.net/manual/vote-note.php?id=117039&amp;page=control-structures.declare&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd117039">
+    <a href="http://php.net/manual/vote-note.php?id=117039&amp;page=control-structures.declare&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V117039" title="71% like this...">
+    12
+    </div>
+  </div>
+  <a href="#117039" class="name">
+  <strong class="user"><em>Kubo2</em></strong></a><a class="genanchor" href="#117039"> &para;</a><div class="date" title="2015-04-06 05:13"><strong>2 years ago</strong></div>
+  <div class="text" id="Hcom117039">
+<div class="phpcode"><code><span class="html">
+Note that in PHP 7 <span class="default">&lt;?php </span><span class="keyword">declare(</span><span class="default">encoding</span><span class="keyword">=</span><span class="string">'...'</span><span class="keyword">); </span><span class="default">?&gt;</span> throws an E_WARNING if Zend Multibyte is turned off.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="113482">  <div class="votes">
+    <div id="Vu113482">
+    <a href="http://php.net/manual/vote-note.php?id=113482&amp;page=control-structures.declare&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd113482">
+    <a href="http://php.net/manual/vote-note.php?id=113482&amp;page=control-structures.declare&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V113482" title="61% like this...">
+    4
+    </div>
+  </div>
+  <a href="#113482" class="name">
+  <strong class="user"><em>php dot net at e-z dot name</em></strong></a><a class="genanchor" href="#113482"> &para;</a><div class="date" title="2013-10-17 06:34"><strong>4 years ago</strong></div>
+  <div class="text" id="Hcom113482">
+<div class="phpcode"><code><span class="html">
+you can register multiple tick functions:<br /><br /><span class="default">&lt;?PHP<br /></span><span class="keyword">function </span><span class="default">a</span><span class="keyword">() { echo </span><span class="string">"a\n"</span><span class="keyword">; }<br />function </span><span class="default">b</span><span class="keyword">() { echo </span><span class="string">"b\n"</span><span class="keyword">; }<br /><br /></span><span class="default">register_tick_function</span><span class="keyword">(</span><span class="string">'a'</span><span class="keyword">);<br /></span><span class="default">register_tick_function</span><span class="keyword">(</span><span class="string">'b'</span><span class="keyword">);<br /></span><span class="default">register_tick_function</span><span class="keyword">(</span><span class="string">'b'</span><span class="keyword">);<br /></span><span class="default">register_tick_function</span><span class="keyword">(</span><span class="string">'b'</span><span class="keyword">);<br /><br /></span><span class="default">?&gt;<br /></span><br />will output on every tick:<br />a<br />b<br />b<br />b</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="88929">  <div class="votes">
+    <div id="Vu88929">
+    <a href="http://php.net/manual/vote-note.php?id=88929&amp;page=control-structures.declare&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd88929">
+    <a href="http://php.net/manual/vote-note.php?id=88929&amp;page=control-structures.declare&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V88929" title="56% like this...">
+    4
+    </div>
+  </div>
+  <a href="#88929" class="name">
+  <strong class="user"><em>markandrewslade at dontspamemeat dot gmail</em></strong></a><a class="genanchor" href="#88929"> &para;</a><div class="date" title="2009-02-13 09:06"><strong>8 years ago</strong></div>
+  <div class="text" id="Hcom88929">
+<div class="phpcode"><code><span class="html">
+Note that the two methods for calling declare are not identical.<br /><br />Method 1:<br /><br /><span class="default">&lt;?php<br /></span><span class="comment">// Print "tick" with a timestamp and optional suffix.<br /></span><span class="keyword">function </span><span class="default">do_tick</span><span class="keyword">(</span><span class="default">$str </span><span class="keyword">= </span><span class="string">''</span><span class="keyword">) {<br />&nbsp; &nbsp; list(</span><span class="default">$sec</span><span class="keyword">, </span><span class="default">$usec</span><span class="keyword">) = </span><span class="default">explode</span><span class="keyword">(</span><span class="string">' '</span><span class="keyword">, </span><span class="default">microtime</span><span class="keyword">());<br />&nbsp; &nbsp; </span><span class="default">printf</span><span class="keyword">(</span><span class="string">"[%.4f] Tick.%s\n"</span><span class="keyword">, </span><span class="default">$sec </span><span class="keyword">+ </span><span class="default">$usec</span><span class="keyword">, </span><span class="default">$str</span><span class="keyword">);<br />}<br /></span><span class="default">register_tick_function</span><span class="keyword">(</span><span class="string">'do_tick'</span><span class="keyword">);<br /><br /></span><span class="comment">// Tick once before declaring so we have a point of reference.<br /></span><span class="default">do_tick</span><span class="keyword">(</span><span class="string">'--start--'</span><span class="keyword">);<br /><br /></span><span class="comment">// Method 1<br /></span><span class="keyword">declare(</span><span class="default">ticks</span><span class="keyword">=</span><span class="default">1</span><span class="keyword">);<br />while(</span><span class="default">1</span><span class="keyword">) </span><span class="default">sleep</span><span class="keyword">(</span><span class="default">1</span><span class="keyword">);<br /><br /></span><span class="comment">/* Output:<br />[1234544435.7160] Tick.--start--<br />[1234544435.7161] Tick.<br />[1234544435.7162] Tick.<br />[1234544436.7163] Tick.<br />[1234544437.7166] Tick.<br />*/<br /><br /></span><span class="default">?&gt;<br /></span><br />Method 2:<br /><span class="default">&lt;?php<br /></span><span class="comment">// Print "tick" with a timestamp and optional suffix.<br /></span><span class="keyword">function </span><span class="default">do_tick</span><span class="keyword">(</span><span class="default">$str </span><span class="keyword">= </span><span class="string">''</span><span class="keyword">) {<br />&nbsp; &nbsp; list(</span><span class="default">$sec</span><span class="keyword">, </span><span class="default">$usec</span><span class="keyword">) = </span><span class="default">explode</span><span class="keyword">(</span><span class="string">' '</span><span class="keyword">, </span><span class="default">microtime</span><span class="keyword">());<br />&nbsp; &nbsp; </span><span class="default">printf</span><span class="keyword">(</span><span class="string">"[%.4f] Tick.%s\n"</span><span class="keyword">, </span><span class="default">$sec </span><span class="keyword">+ </span><span class="default">$usec</span><span class="keyword">, </span><span class="default">$str</span><span class="keyword">);<br />}<br /></span><span class="default">register_tick_function</span><span class="keyword">(</span><span class="string">'do_tick'</span><span class="keyword">);<br /><br /></span><span class="comment">// Tick once before declaring so we have a point of reference.<br /></span><span class="default">do_tick</span><span class="keyword">(</span><span class="string">'--start--'</span><span class="keyword">);<br /><br /></span><span class="comment">// Method 2<br /></span><span class="keyword">declare(</span><span class="default">ticks</span><span class="keyword">=</span><span class="default">1</span><span class="keyword">) {<br />&nbsp; &nbsp; while(</span><span class="default">1</span><span class="keyword">) </span><span class="default">sleep</span><span class="keyword">(</span><span class="default">1</span><span class="keyword">);<br />}<br /><br /></span><span class="comment">/* Output: <br />[1234544471.6486] Tick.--start--<br />[1234544472.6489] Tick.<br />[1234544473.6490] Tick.<br />[1234544474.6492] Tick.<br />[1234544475.6493] Tick.<br />*/<br /></span><span class="default">?&gt;<br /></span><br />Notice that when using {} after declare, do_tick wasn't auto-called until about 1 second after we entered the declare {} block.&nbsp; However when not using the {}, do_tick was auto-called not once but twice immediately after calling declare();.<br /><br />I'm assuming this is due to how PHP handles ticking internally.&nbsp; That is, declare() without the {} seems to trigger more low-level instructions which in turn fires tick a few times (if ticks=1) in the act of declaring.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="33788">  <div class="votes">
+    <div id="Vu33788">
+    <a href="http://php.net/manual/vote-note.php?id=33788&amp;page=control-structures.declare&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd33788">
+    <a href="http://php.net/manual/vote-note.php?id=33788&amp;page=control-structures.declare&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V33788" title="56% like this...">
+    3
+    </div>
+  </div>
+  <a href="#33788" class="name">
+  <strong class="user"><em>fok at nho dot com dot br</em></strong></a><a class="genanchor" href="#33788"> &para;</a><div class="date" title="2003-07-07 06:45"><strong>14 years ago</strong></div>
+  <div class="text" id="Hcom33788">
+<div class="phpcode"><code><span class="html">
+This is a very simple example using ticks to execute a external script to show rx/tx data from the server<br /><br /><span class="default">&lt;?php<br /><br /></span><span class="keyword">function </span><span class="default">traf</span><span class="keyword">(){<br />&nbsp; </span><span class="default">passthru</span><span class="keyword">( </span><span class="string">'./traf.sh' </span><span class="keyword">);<br />&nbsp; echo </span><span class="string">"&lt;br /&gt;\n"</span><span class="keyword">;<br />&nbsp; </span><span class="default">flush</span><span class="keyword">(); </span><span class="comment">// keeps it flowing to the browser...<br />&nbsp; </span><span class="default">sleep</span><span class="keyword">( </span><span class="default">1 </span><span class="keyword">);<br />}<br /><br /></span><span class="default">register_tick_function</span><span class="keyword">( </span><span class="string">"traf" </span><span class="keyword">);<br /><br />declare( </span><span class="default">ticks</span><span class="keyword">=</span><span class="default">1 </span><span class="keyword">){<br />&nbsp; while( </span><span class="default">true </span><span class="keyword">){}&nbsp;&nbsp; </span><span class="comment">// to keep it running...<br /></span><span class="keyword">}<br /><br /></span><span class="default">?&gt;<br /></span><br />contents of traf.sh:<br /># Shows TX/RX for eth0 over 1sec<br />#!/bin/bash<br /><br />TX1=`cat /proc/net/dev | grep "eth0" | cut -d: -f2 | awk '{print $9}'`<br />RX1=`cat /proc/net/dev | grep "eth0" | cut -d: -f2 | awk '{print $1}'`<br />sleep 1<br />TX2=`cat /proc/net/dev | grep "eth0" | cut -d: -f2 | awk '{print $9}'`<br />RX2=`cat /proc/net/dev | grep "eth0" | cut -d: -f2 | awk '{print $1}'`<br /><br />echo -e "TX: $[ $TX2 - $TX1 ] bytes/s \t RX: $[ $RX2 - $RX1 ] bytes/s"<br />#--= the end. =--</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="121736">  <div class="votes">
+    <div id="Vu121736">
+    <a href="http://php.net/manual/vote-note.php?id=121736&amp;page=control-structures.declare&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd121736">
+    <a href="http://php.net/manual/vote-note.php?id=121736&amp;page=control-structures.declare&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V121736" title="100% like this...">
+    1
+    </div>
+  </div>
+  <a href="#121736" class="name">
+  <strong class="user"><em>calimero dot NOSPAM at NOSPAM dot creatixnet dot com</em></strong></a><a class="genanchor" href="#121736"> &para;</a><div class="date" title="2017-10-07 03:29"><strong>2 months ago</strong></div>
+  <div class="text" id="Hcom121736">
+<div class="phpcode"><code><span class="html">
+As the date of this comment, this page doesn't include a link or any ref to the strict typing feature (which is also built upon the declare construct), which can be found at the page below :<br /><br /><a href="http://php.net/manual/en/functions.arguments.php#functions.arguments.type-declaration.strict" rel="nofollow" target="_blank">http://php.net/manual/en/functions.arguments.php#functions.arguments.type-declaration.strict</a><br /><br />Already reported it as a bug, but thought having the link here might be of some use to those like me expecting to find it there.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="121570">  <div class="votes">
+    <div id="Vu121570">
+    <a href="http://php.net/manual/vote-note.php?id=121570&amp;page=control-structures.declare&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd121570">
+    <a href="http://php.net/manual/vote-note.php?id=121570&amp;page=control-structures.declare&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V121570" title="no votes...">
+    0
+    </div>
+  </div>
+  <a href="#121570" class="name">
+  <strong class="user"><em>ja2016 at wir dot pl</em></strong></a><a class="genanchor" href="#121570"> &para;</a><div class="date" title="2017-08-27 04:38"><strong>3 months ago</strong></div>
+  <div class="text" id="Hcom121570">
+<div class="phpcode"><code><span class="html">
+Don't use uft-8 encoding with BOM. Then fatal error occurs ALWAYS. Substitute it with utf-8 without BOM.<br /><br />---<br /><br />*BOM*<br /><span class="default">&lt;?php <br /></span><span class="keyword">declare(</span><span class="default">strict_types</span><span class="keyword">=</span><span class="default">1</span><span class="keyword">);<br /></span><span class="comment">//Fatal error: strict_types declaration must be the very first statement in the script</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="121465">  <div class="votes">
+    <div id="Vu121465">
+    <a href="http://php.net/manual/vote-note.php?id=121465&amp;page=control-structures.declare&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd121465">
+    <a href="http://php.net/manual/vote-note.php?id=121465&amp;page=control-structures.declare&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V121465" title="no votes...">
+    0
+    </div>
+  </div>
+  <a href="#121465" class="name">
+  <strong class="user"><em>wapmorgan at gmail dot com</em></strong></a><a class="genanchor" href="#121465"> &para;</a><div class="date" title="2017-08-01 08:49"><strong>4 months ago</strong></div>
+  <div class="text" id="Hcom121465">
+<div class="phpcode"><code><span class="html">
+If you fork'ed (with pcntl_fork) after you've used `declare`, you need to do it again in child thread.<br /><br />declare(ticks=1);<br />$pid = pcntl_fork();<br />if ($pid === 0) {<br />&nbsp; &nbsp; declare(ticks=1);<br />} else {<br />&nbsp; &nbsp; // code ..<br />}</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="114418">  <div class="votes">
+    <div id="Vu114418">
+    <a href="http://php.net/manual/vote-note.php?id=114418&amp;page=control-structures.declare&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd114418">
+    <a href="http://php.net/manual/vote-note.php?id=114418&amp;page=control-structures.declare&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V114418" title="46% like this...">
+    -1
+    </div>
+  </div>
+  <a href="#114418" class="name">
+  <strong class="user"><em>php at niekbosch dot nl</em></strong></a><a class="genanchor" href="#114418"> &para;</a><div class="date" title="2014-02-18 04:17"><strong>3 years ago</strong></div>
+  <div class="text" id="Hcom114418">
+<div class="phpcode"><code><span class="html">
+Basically 'declare( encoding = .... );' overrides the zend.script_encoding configuration option (as set in php.ini). However, keep in mind that:<br /><br />* the file encoding must be compatible (at least in the ASCII range of characters) to the zend.script_encoding setting. If you set 'zend.script_encoding' to UTF-8 and save the file in UTF-16, PHP will not be able to interpret the file, let alone the declare statement. As long as you use ASCII compatible encodings (i.e. ISO-8859-1(5), UTF-8 etc) for both the file encoding as the zend.script_encoding, you should be fine. (However, I have not experimented with adding non-ascii characters in comments above the declare statement).<br /><br />* PHP string literals are converted from your source code encoding (either set with the declare statement or else according to zend.script_encoding) to the mbstring.internal_encoding as set in your php.ini (even if you change the setting using mb_internal_encoding). As an example:<br /><br />php.ini:<br />mbstring.internal_encoding = UTF-8<br /><br />test.php:<br /><span class="default">&lt;?php<br /></span><span class="keyword">declare(</span><span class="default">encoding </span><span class="keyword">= </span><span class="string">'ISO-8859-15'</span><span class="keyword">);<br /></span><span class="default">mb_internal_encoding</span><span class="keyword">( </span><span class="string">'ISO-8859-15' </span><span class="keyword">);<br />echo </span><span class="string">'aäaß' </span><span class="keyword">. </span><span class="string">"\n"</span><span class="keyword">;<br /></span><span class="default">?&gt;<br /></span><br />This will still output the string UTF-8 encoded; in a terminal/browser with encoding 'ISO-8859-15' the string will look (something) like this: aÃ€aÃ</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="66812">  <div class="votes">
+    <div id="Vu66812">
+    <a href="http://php.net/manual/vote-note.php?id=66812&amp;page=control-structures.declare&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd66812">
+    <a href="http://php.net/manual/vote-note.php?id=66812&amp;page=control-structures.declare&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V66812" title="47% like this...">
+    -1
+    </div>
+  </div>
+  <a href="#66812" class="name">
+  <strong class="user"><em>aeolianmeson at NOSPAM dot blitzeclipse dot com</em></strong></a><a class="genanchor" href="#66812"> &para;</a><div class="date" title="2006-05-30 12:06"><strong>11 years ago</strong></div>
+  <div class="text" id="Hcom66812">
+<div class="phpcode"><code><span class="html">
+The scope of the declare() call if used without a block is a little unpredictable, in my experience. It appears that if placed in a method or function, it may not apply to the calls that ensue, like the following:<br /><br /><span class="default">&lt;?php<br /></span><span class="keyword">function </span><span class="default">a</span><span class="keyword">()<br />{<br />&nbsp;&nbsp; declare(</span><span class="default">ticks</span><span class="keyword">=</span><span class="default">2</span><span class="keyword">);<br />&nbsp;&nbsp; </span><span class="default">b</span><span class="keyword">();<br />}<br /><br />function </span><span class="default">b</span><span class="keyword">()<br />{<br />&nbsp;&nbsp; </span><span class="comment">// The declare may not apply here, sometimes.<br /></span><span class="keyword">}<br /></span><span class="default">?&gt;<br /></span><br />So, if all of a sudden the signals are getting ignored, check this. At the risk of losing the ability to make a mathematical science out of placing a number of activities at varying durations of ticks like many people have chosen to do, I've found it simple to just put this at the top of the code, and just make it global.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="120628">  <div class="votes">
+    <div id="Vu120628">
+    <a href="http://php.net/manual/vote-note.php?id=120628&amp;page=control-structures.declare&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd120628">
+    <a href="http://php.net/manual/vote-note.php?id=120628&amp;page=control-structures.declare&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V120628" title="40% like this...">
+    -1
+    </div>
+  </div>
+  <a href="#120628" class="name">
+  <strong class="user"><em>Ionut</em></strong></a><a class="genanchor" href="#120628"> &para;</a><div class="date" title="2017-02-10 06:36"><strong>10 months ago</strong></div>
+  <div class="text" id="Hcom120628">
+<div class="phpcode"><code><span class="html">
+I haven't found this written in the doc: when using declare in the global context, it has to be the first statement in the script, before any other output.<br /><br />This works:<br /><br /><span class="default">&lt;?php<br /></span><span class="keyword">declare(</span><span class="default">strict_types</span><span class="keyword">=</span><span class="default">1</span><span class="keyword">);<br />function </span><span class="default">sum</span><span class="keyword">(</span><span class="default">int $a</span><span class="keyword">, </span><span class="default">int $b</span><span class="keyword">): </span><span class="default">int </span><span class="keyword">{<br />&nbsp; &nbsp; return </span><span class="default">5.78</span><span class="keyword">;<br />}<br /></span><span class="comment"># ... but fails when calling the function<br /></span><span class="default">?&gt;<br /></span><br />This doesn't work:<br /><br />&lt;html&gt;<br />&lt;body&gt;<br /><span class="default">&lt;?php<br /></span><span class="keyword">declare(</span><span class="default">strict_types</span><span class="keyword">=</span><span class="default">1</span><span class="keyword">);<br />function </span><span class="default">sum</span><span class="keyword">(</span><span class="default">int $a</span><span class="keyword">, </span><span class="default">int $b</span><span class="keyword">): </span><span class="default">int </span><span class="keyword">{<br />&nbsp; &nbsp; return </span><span class="default">5.78</span><span class="keyword">;<br />}<br /></span><span class="comment"># PHP Fatal error:&nbsp; strict_types declaration must be the very first statement in the script [...]<br /></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="119117">  <div class="votes">
+    <div id="Vu119117">
+    <a href="http://php.net/manual/vote-note.php?id=119117&amp;page=control-structures.declare&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd119117">
+    <a href="http://php.net/manual/vote-note.php?id=119117&amp;page=control-structures.declare&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V119117" title="40% like this...">
+    -1
+    </div>
+  </div>
+  <a href="#119117" class="name">
+  <strong class="user"><em>SteAp</em></strong></a><a class="genanchor" href="#119117"> &para;</a><div class="date" title="2016-04-05 09:19"><strong>1 year ago</strong></div>
+  <div class="text" id="Hcom119117">
+<div class="phpcode"><code><span class="html">
+This helper class traces executed statements. Calls it like so:<br /><br />&nbsp; &nbsp; &nbsp;&nbsp; CStatementTracer::getInstance()-&gt;enableTrace( 'START' );<br /><br />Source Code<br /><br /><span class="default">&lt;?php <br /><br /> </span><span class="keyword">declare(</span><span class="default">ticks</span><span class="keyword">=</span><span class="default">1</span><span class="keyword">);<br /><br />class </span><span class="default">CStatementTracer </span><span class="keyword">{<br />&nbsp; &nbsp; <br />&nbsp; &nbsp; static private<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$_instance</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; &nbsp; <br />&nbsp; &nbsp; static </span><span class="default">$lastMessage</span><span class="keyword">;<br />&nbsp; &nbsp; <br />&nbsp; &nbsp; static </span><span class="default">$skipFunctionNames</span><span class="keyword">;<br />&nbsp; &nbsp; <br />&nbsp; &nbsp; protected function </span><span class="default">__construct</span><span class="keyword">( ) {<br /><br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">self</span><span class="keyword">::</span><span class="default">$skipFunctionNames </span><span class="keyword">= array(<br />&nbsp; &nbsp; &nbsp; &nbsp; );<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br />&nbsp; &nbsp; } </span><span class="comment">// CStatData<br /><br />&nbsp; &nbsp; &nbsp; &nbsp; /**<br />&nbsp; &nbsp;&nbsp; * Liefert die Instanz zurück<br />&nbsp; &nbsp;&nbsp; *<br />&nbsp; &nbsp;&nbsp; * @return unknown<br />&nbsp; &nbsp;&nbsp; */<br />&nbsp; &nbsp; </span><span class="keyword">static public function </span><span class="default">getInstance</span><span class="keyword">() {<br />&nbsp; &nbsp; &nbsp; &nbsp; <br />&nbsp; &nbsp; &nbsp;&nbsp; if ( </span><span class="default">self</span><span class="keyword">::</span><span class="default">$_instance </span><span class="keyword">=== </span><span class="default">null </span><span class="keyword">) {<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">self</span><span class="keyword">::</span><span class="default">$_instance </span><span class="keyword">= new </span><span class="default">CStatementTracer</span><span class="keyword">();<br />&nbsp; &nbsp; &nbsp; &nbsp; }<br />&nbsp; &nbsp; &nbsp; &nbsp; return </span><span class="default">self</span><span class="keyword">::</span><span class="default">$_instance</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; &nbsp; <br />&nbsp; &nbsp; }<br />&nbsp; &nbsp; <br />&nbsp; &nbsp; public function </span><span class="default">addToSkipFunctionNames</span><span class="keyword">( </span><span class="default">$aName </span><span class="keyword">) {<br />&nbsp; &nbsp; &nbsp; &nbsp; <br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">self</span><span class="keyword">::</span><span class="default">$skipFunctionNames</span><span class="keyword">[] = </span><span class="default">$aName</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; &nbsp; <br />&nbsp; &nbsp; }<br />&nbsp; &nbsp; <br />&nbsp; &nbsp; public function </span><span class="default">enableTrace</span><span class="keyword">() {<br />&nbsp; &nbsp; &nbsp; &nbsp; <br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$this</span><span class="keyword">-&gt;</span><span class="default">writeMessage</span><span class="keyword">( </span><span class="string">'*************** START&nbsp; ********************' </span><span class="keyword">);<br />&nbsp; &nbsp; &nbsp; &nbsp; <br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">register_tick_function</span><span class="keyword">( array( </span><span class="default">$this</span><span class="keyword">, </span><span class="string">'traceCallback' </span><span class="keyword">) );<br /><br />&nbsp; &nbsp; }<br />&nbsp; &nbsp; <br />&nbsp; &nbsp; public function </span><span class="default">disableTrace</span><span class="keyword">() {<br /><br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$this</span><span class="keyword">-&gt;</span><span class="default">writeMessage</span><span class="keyword">( </span><span class="string">'STOP - ' </span><span class="keyword">);<br />&nbsp; &nbsp; &nbsp; &nbsp; <br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">unregister_tick_function</span><span class="keyword">( array( </span><span class="default">$this</span><span class="keyword">, </span><span class="string">'traceCallback' </span><span class="keyword">) );<br />&nbsp; &nbsp; &nbsp; &nbsp; <br />&nbsp; &nbsp; &nbsp; &nbsp; <br />&nbsp; &nbsp; }<br /><br />&nbsp; &nbsp; public function </span><span class="default">traceCallback</span><span class="keyword">( ) {<br />&nbsp; &nbsp; &nbsp; &nbsp; <br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$trace </span><span class="keyword">= </span><span class="default">debug_backtrace</span><span class="keyword">();<br />&nbsp; &nbsp; &nbsp; &nbsp; <br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$latestCall </span><span class="keyword">= </span><span class="default">$trace</span><span class="keyword">[ </span><span class="default">1 </span><span class="keyword">];<br />&nbsp; &nbsp; &nbsp; &nbsp; <br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$shortenedArgs </span><span class="keyword">= array();<br />&nbsp; &nbsp; &nbsp; &nbsp; foreach( </span><span class="default">$latestCall</span><span class="keyword">[</span><span class="string">'args'</span><span class="keyword">] as </span><span class="default">$noUseKey </span><span class="keyword">=&gt; </span><span class="default">$someArg </span><span class="keyword">) {<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ( </span><span class="default">is_object</span><span class="keyword">( </span><span class="default">$someArg </span><span class="keyword">) ) {<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$someArg </span><span class="keyword">= </span><span class="default">get_class</span><span class="keyword">( </span><span class="default">$someArg </span><span class="keyword">) . </span><span class="string">'{}'</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; } elseif ( </span><span class="default">is_array</span><span class="keyword">( </span><span class="default">$someArg </span><span class="keyword">) ) {<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$someArg </span><span class="keyword">= </span><span class="default">print_r</span><span class="keyword">( </span><span class="default">$someArg</span><span class="keyword">, </span><span class="default">TRUE </span><span class="keyword">);<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; } elseif ( </span><span class="default">is_string</span><span class="keyword">( </span><span class="default">$someArg </span><span class="keyword">)) {<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$someArg </span><span class="keyword">= </span><span class="string">'"' </span><span class="keyword">. </span><span class="default">$someArg </span><span class="keyword">. </span><span class="string">'"'</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$someArg </span><span class="keyword">= </span><span class="default">str_replace</span><span class="keyword">( </span><span class="string">"\n"</span><span class="keyword">, </span><span class="string">' '</span><span class="keyword">, </span><span class="default">$someArg </span><span class="keyword">);<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$someArg </span><span class="keyword">= </span><span class="default">str_replace</span><span class="keyword">( </span><span class="string">"\r"</span><span class="keyword">, </span><span class="string">' '</span><span class="keyword">, </span><span class="default">$someArg </span><span class="keyword">);<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$someArg </span><span class="keyword">= </span><span class="default">str_replace</span><span class="keyword">( </span><span class="string">"&nbsp; &nbsp; "</span><span class="keyword">, </span><span class="string">' '</span><span class="keyword">, </span><span class="default">$someArg </span><span class="keyword">);<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$someArg </span><span class="keyword">= </span><span class="default">str_replace</span><span class="keyword">( </span><span class="string">"&nbsp;&nbsp; "</span><span class="keyword">, </span><span class="string">' '</span><span class="keyword">, </span><span class="default">$someArg </span><span class="keyword">);<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$someArg </span><span class="keyword">= </span><span class="default">str_replace</span><span class="keyword">( </span><span class="string">"&nbsp; "</span><span class="keyword">, </span><span class="string">' '</span><span class="keyword">, </span><span class="default">$someArg </span><span class="keyword">);<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ( </span><span class="default">80 </span><span class="keyword">&lt; </span><span class="default">strlen</span><span class="keyword">( </span><span class="default">$someArg </span><span class="keyword">) ) {<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$someArg </span><span class="keyword">= </span><span class="default">substr</span><span class="keyword">( </span><span class="default">$someArg</span><span class="keyword">, </span><span class="default">0</span><span class="keyword">, </span><span class="default">15 </span><span class="keyword">) . </span><span class="string">'...' </span><span class="keyword">. </span><span class="default">substr</span><span class="keyword">( </span><span class="default">$someArg</span><span class="keyword">, -</span><span class="default">15 </span><span class="keyword">);<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; } <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$shortenedArgs</span><span class="keyword">[] = </span><span class="default">$someArg</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br />&nbsp; &nbsp; &nbsp; &nbsp; } <br /><br />&nbsp; &nbsp; &nbsp; &nbsp; if ( isset( </span><span class="default">$latestCall</span><span class="keyword">[</span><span class="string">'file'</span><span class="keyword">] )) {<br /><br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$file </span><span class="keyword">= </span><span class="default">explode</span><span class="keyword">( </span><span class="string">'\\'</span><span class="keyword">, </span><span class="default">$latestCall</span><span class="keyword">[ </span><span class="string">'file' </span><span class="keyword">] );<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$file </span><span class="keyword">= </span><span class="default">$file</span><span class="keyword">[ </span><span class="default">count</span><span class="keyword">( </span><span class="default">$file </span><span class="keyword">) - </span><span class="default">1 </span><span class="keyword">];<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ( </span><span class="string">'' </span><span class="keyword">== </span><span class="default">$file </span><span class="keyword">) {<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$file </span><span class="keyword">= </span><span class="string">'{}'</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$file </span><span class="keyword">.= </span><span class="string">'/' </span><span class="keyword">. </span><span class="default">$latestCall</span><span class="keyword">[ </span><span class="string">'line' </span><span class="keyword">];<br /><br />&nbsp; &nbsp; &nbsp; &nbsp; } else {<br /><br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$file </span><span class="keyword">= </span><span class="string">'[NpFile]'</span><span class="keyword">;<br /><br />&nbsp; &nbsp; &nbsp; &nbsp; }<br />&nbsp; &nbsp; &nbsp; &nbsp; <br />&nbsp; &nbsp; &nbsp; &nbsp; if (&nbsp; ( </span><span class="default">True </span><span class="keyword">=== </span><span class="default">in_array</span><span class="keyword">( </span><span class="default">$latestCall</span><span class="keyword">[</span><span class="string">'function'</span><span class="keyword">], </span><span class="default">self</span><span class="keyword">::</span><span class="default">$skipFunctionNames </span><span class="keyword">) )<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; ) {<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return;<br />&nbsp; &nbsp; &nbsp; &nbsp; }<br />&nbsp; &nbsp; &nbsp; &nbsp; <br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$args </span><span class="keyword">= </span><span class="default">implode</span><span class="keyword">( </span><span class="string">', '</span><span class="keyword">, </span><span class="default">$shortenedArgs </span><span class="keyword">);<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$newInfo </span><span class="keyword">= </span><span class="default">$file </span><span class="keyword">. </span><span class="string">': ' </span><span class="keyword">. </span><span class="default">$latestCall</span><span class="keyword">[</span><span class="string">'function'</span><span class="keyword">] . </span><span class="string">'( ' </span><span class="keyword">. </span><span class="default">$args </span><span class="keyword">. </span><span class="string">' )'</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; &nbsp; <br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$newInfo </span><span class="keyword">= </span><span class="default">str_pad</span><span class="keyword">( </span><span class="string">''</span><span class="keyword">, </span><span class="default">2 </span><span class="keyword">* </span><span class="default">count</span><span class="keyword">( </span><span class="default">$trace </span><span class="keyword">) ) . </span><span class="default">$newInfo</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; &nbsp; <br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$this</span><span class="keyword">-&gt;</span><span class="default">writeMessage</span><span class="keyword">( </span><span class="default">$newInfo </span><span class="keyword">);<br />&nbsp; &nbsp; }<br /><br />&nbsp; &nbsp; <br />&nbsp; &nbsp; public function </span><span class="default">writeMessage</span><span class="keyword">( </span><span class="default">$someData </span><span class="keyword">) {<br />&nbsp; &nbsp; &nbsp; &nbsp; <br />&nbsp; &nbsp; &nbsp; &nbsp; if ( </span><span class="default">self</span><span class="keyword">::</span><span class="default">$lastMessage </span><span class="keyword">== </span><span class="default">$someData </span><span class="keyword">) {<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return;<br />&nbsp; &nbsp; &nbsp; &nbsp; }<br />&nbsp; &nbsp; &nbsp; &nbsp; <br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">self</span><span class="keyword">::</span><span class="default">$lastMessage </span><span class="keyword">= </span><span class="default">$someData</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; &nbsp; <br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$logfilePath </span><span class="keyword">= </span><span class="default">dirname</span><span class="keyword">( </span><span class="default">__FILE__ </span><span class="keyword">) . </span><span class="string">'/../statementTracer.log'</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; &nbsp; <br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$fp </span><span class="keyword">= </span><span class="default">fopen</span><span class="keyword">( </span><span class="default">$logfilePath</span><span class="keyword">, </span><span class="string">'a+' </span><span class="keyword">);<br />&nbsp; &nbsp; &nbsp; &nbsp; <br />&nbsp; &nbsp; &nbsp; &nbsp; if ( </span><span class="default">is_array</span><span class="keyword">( </span><span class="default">$someData </span><span class="keyword">) ) {<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">fwrite</span><span class="keyword">( </span><span class="default">$fp</span><span class="keyword">,&nbsp; </span><span class="default">print_r</span><span class="keyword">( </span><span class="default">$someData</span><span class="keyword">, </span><span class="default">TRUE </span><span class="keyword">)&nbsp; . </span><span class="string">"\n" </span><span class="keyword">);<br />&nbsp; &nbsp; &nbsp; &nbsp; } else {<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">fwrite</span><span class="keyword">( </span><span class="default">$fp</span><span class="keyword">,&nbsp; </span><span class="default">$someData&nbsp; </span><span class="keyword">. </span><span class="string">"\n" </span><span class="keyword">);<br />&nbsp; &nbsp; &nbsp; &nbsp; }<br />&nbsp; &nbsp; &nbsp; &nbsp; <br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">fclose</span><span class="keyword">( </span><span class="default">$fp </span><span class="keyword">);<br />&nbsp; &nbsp; }&nbsp;&nbsp; <br />&nbsp; &nbsp;&nbsp; <br />&nbsp; &nbsp; <br />} </span><span class="comment">// CStatementTracer</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="80284">  <div class="votes">
+    <div id="Vu80284">
+    <a href="http://php.net/manual/vote-note.php?id=80284&amp;page=control-structures.declare&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd80284">
+    <a href="http://php.net/manual/vote-note.php?id=80284&amp;page=control-structures.declare&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V80284" title="42% like this...">
+    -4
+    </div>
+  </div>
+  <a href="#80284" class="name">
+  <strong class="user"><em>zabmilenko at charter dot net</em></strong></a><a class="genanchor" href="#80284"> &para;</a><div class="date" title="2008-01-08 01:49"><strong>9 years ago</strong></div>
+  <div class="text" id="Hcom80284">
+<div class="phpcode"><code><span class="html">
+If you misspell the directive, you won't get any error or warning.&nbsp; The declare block will simply act as a nest for statements:<br /><br /><span class="default">&lt;?php<br /></span><span class="keyword">declare(</span><span class="default">tocks</span><span class="keyword">=</span><span class="string">"four hundred"</span><span class="keyword">)<br />{<br />&nbsp; &nbsp; </span><span class="comment">// Has no affect on code and produces<br />&nbsp; &nbsp; // no error or warning.<br /></span><span class="keyword">}<br /></span><span class="default">?&gt;<br /></span><br />Tested in php 5.2.5 on XPsp2</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="117210">  <div class="votes">
+    <div id="Vu117210">
+    <a href="http://php.net/manual/vote-note.php?id=117210&amp;page=control-structures.declare&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd117210">
+    <a href="http://php.net/manual/vote-note.php?id=117210&amp;page=control-structures.declare&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V117210" title="25% like this...">
+    -4
+    </div>
+  </div>
+  <a href="#117210" class="name">
+  <strong class="user"><em>danekilian at wp dot pl</em></strong></a><a class="genanchor" href="#117210"> &para;</a><div class="date" title="2015-05-02 04:13"><strong>2 years ago</strong></div>
+  <div class="text" id="Hcom117210">
+<div class="phpcode"><code><span class="html">
+We can specify different encoding to different blocks:<br /><br />declare(encoding=ENCODING_VALUE) {<br />&nbsp; &nbsp; //for a block<br />}<br /><br />found this here:<br /><a href="http://code2care.org/tutorials/php/PHP-Declare-ticks-and-tick-functions-Statements-Tutorial.php" rel="nofollow" target="_blank">http://code2care.org/tutorials/php/PHP-Declare-ticks-and-tick-functions-Statements-Tutorial.php</a></span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="85290">  <div class="votes">
+    <div id="Vu85290">
+    <a href="http://php.net/manual/vote-note.php?id=85290&amp;page=control-structures.declare&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd85290">
+    <a href="http://php.net/manual/vote-note.php?id=85290&amp;page=control-structures.declare&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V85290" title="29% like this...">
+    -7
+    </div>
+  </div>
+  <a href="#85290" class="name">
+  <strong class="user"><em>anotheruser at example dot com</em></strong></a><a class="genanchor" href="#85290"> &para;</a><div class="date" title="2008-08-23 04:50"><strong>9 years ago</strong></div>
+  <div class="text" id="Hcom85290">
+<div class="phpcode"><code><span class="html">
+Code evaluation script which uses debug_backtrace() to get execution time in ns, relative current line number, function, file, and calling function info on each tick, and shove it all in $script_stats array.&nbsp; See debug_backtrace manual to customize what info is collected.<br /><br />Warning: this will exhaust allowed memory very easily, so adjust tick counter according to the size of your code.&nbsp; Also, array_key_exists checking on debug_backtrace arrays is removed here only to keep this example simple, but should be added to avoid a large number of resulting PHP Notice errors.<br /><br /><span class="default">&lt;?php<br /><br />$script_stats </span><span class="keyword">= array();<br /></span><span class="default">$time </span><span class="keyword">= </span><span class="default">microtime</span><span class="keyword">(</span><span class="default">true</span><span class="keyword">);<br /><br />function </span><span class="default">track_stats</span><span class="keyword">(){<br />&nbsp; &nbsp; global </span><span class="default">$script_stats</span><span class="keyword">,</span><span class="default">$time</span><span class="keyword">;<br />&nbsp; &nbsp; </span><span class="default">$trace </span><span class="keyword">= </span><span class="default">debug_backtrace</span><span class="keyword">();<br />&nbsp; &nbsp; </span><span class="default">$exe_time </span><span class="keyword">= (</span><span class="default">microtime</span><span class="keyword">(</span><span class="default">true</span><span class="keyword">) - </span><span class="default">$time</span><span class="keyword">) * </span><span class="default">1000</span><span class="keyword">;<br />&nbsp; &nbsp; </span><span class="default">$func_args </span><span class="keyword">= </span><span class="default">implode</span><span class="keyword">(</span><span class="string">", "</span><span class="keyword">,</span><span class="default">$trace</span><span class="keyword">[</span><span class="default">1</span><span class="keyword">][</span><span class="string">"args"</span><span class="keyword">]);<br />&nbsp; &nbsp; </span><span class="default">$script_stats</span><span class="keyword">[] = array(<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="string">"current_time" </span><span class="keyword">=&gt; </span><span class="default">microtime</span><span class="keyword">(</span><span class="default">true</span><span class="keyword">),<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="string">"memory" </span><span class="keyword">=&gt; </span><span class="default">memory_get_usage</span><span class="keyword">(</span><span class="default">true</span><span class="keyword">),<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="string">"file" </span><span class="keyword">=&gt; </span><span class="default">$trace</span><span class="keyword">[</span><span class="default">1</span><span class="keyword">][</span><span class="string">"file"</span><span class="keyword">].</span><span class="string">': '</span><span class="keyword">.</span><span class="default">$trace</span><span class="keyword">[</span><span class="default">1</span><span class="keyword">][</span><span class="string">"line"</span><span class="keyword">],<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="string">"function" </span><span class="keyword">=&gt; </span><span class="default">$trace</span><span class="keyword">[</span><span class="default">1</span><span class="keyword">][</span><span class="string">"function"</span><span class="keyword">].</span><span class="string">'('</span><span class="keyword">.</span><span class="default">$func_args</span><span class="keyword">.</span><span class="string">')'</span><span class="keyword">,<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="string">"called_by" </span><span class="keyword">=&gt; </span><span class="default">$trace</span><span class="keyword">[</span><span class="default">2</span><span class="keyword">][</span><span class="string">"function"</span><span class="keyword">].</span><span class="string">' in '</span><span class="keyword">.</span><span class="default">$trace</span><span class="keyword">[</span><span class="default">2</span><span class="keyword">][</span><span class="string">"file"</span><span class="keyword">].</span><span class="string">': '</span><span class="keyword">.</span><span class="default">$trace</span><span class="keyword">[</span><span class="default">2</span><span class="keyword">][</span><span class="string">"line"</span><span class="keyword">],<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="string">"ns" </span><span class="keyword">=&gt; </span><span class="default">$exe_time<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="keyword">);<br />&nbsp; &nbsp; </span><span class="default">$time </span><span class="keyword">= </span><span class="default">microtime</span><span class="keyword">(</span><span class="default">true</span><span class="keyword">);<br />&nbsp; &nbsp; }<br /><br />declare(</span><span class="default">ticks </span><span class="keyword">= </span><span class="default">1</span><span class="keyword">);<br /></span><span class="default">register_tick_function</span><span class="keyword">(</span><span class="string">"track_stats"</span><span class="keyword">);<br /><br /></span><span class="comment">// the rest of your project code<br /><br />// output $script_stats into a html table or something<br /><br /></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="29085">  <div class="votes">
+    <div id="Vu29085">
+    <a href="http://php.net/manual/vote-note.php?id=29085&amp;page=control-structures.declare&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd29085">
+    <a href="http://php.net/manual/vote-note.php?id=29085&amp;page=control-structures.declare&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V29085" title="20% like this...">
+    -6
+    </div>
+  </div>
+  <a href="#29085" class="name">
+  <strong class="user"><em>daniel@swn</em></strong></a><a class="genanchor" href="#29085"> &para;</a><div class="date" title="2003-02-01 11:56"><strong>14 years ago</strong></div>
+  <div class="text" id="Hcom29085">
+<div class="phpcode"><code><span class="html">
+<span class="default">&lt;?php<br />ob_end_clean</span><span class="keyword">();<br /></span><span class="default">ob_implicit_flush</span><span class="keyword">(</span><span class="default">1</span><span class="keyword">);<br /><br />function </span><span class="default">a</span><span class="keyword">() {<br /> for(</span><span class="default">$i</span><span class="keyword">=</span><span class="default">0</span><span class="keyword">;</span><span class="default">$i</span><span class="keyword">&lt;=</span><span class="default">100000</span><span class="keyword">;</span><span class="default">$i</span><span class="keyword">++) { }<br /> echo </span><span class="string">"function a() "</span><span class="keyword">;<br />}<br />function </span><span class="default">b</span><span class="keyword">() {<br /> for(</span><span class="default">$i</span><span class="keyword">=</span><span class="default">0</span><span class="keyword">;</span><span class="default">$i</span><span class="keyword">&lt;=</span><span class="default">100000</span><span class="keyword">;</span><span class="default">$i</span><span class="keyword">++) { }<br /> echo </span><span class="string">"function b() "</span><span class="keyword">;<br />}<br /><br /></span><span class="default">register_tick_function </span><span class="keyword">(</span><span class="string">"a"</span><span class="keyword">);<br /></span><span class="default">register_tick_function </span><span class="keyword">(</span><span class="string">"b"</span><span class="keyword">);<br /><br />declare (</span><span class="default">ticks</span><span class="keyword">=</span><span class="default">4</span><span class="keyword">)<br />{<br />&nbsp; &nbsp; while(</span><span class="default">true</span><span class="keyword">)<br />&nbsp; &nbsp; {<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">sleep</span><span class="keyword">(</span><span class="default">1</span><span class="keyword">);<br />&nbsp; &nbsp; &nbsp; &nbsp; echo </span><span class="string">"\n&lt;br&gt;&lt;b&gt;"</span><span class="keyword">.</span><span class="default">time</span><span class="keyword">().</span><span class="string">"&lt;/b&gt;&lt;br&gt;\n"</span><span class="keyword">;;<br />&nbsp; &nbsp; }<br />}<br /></span><span class="default">?&gt;<br /></span>You will see that a() and b() are slowing down this process. They are in fact not executed every second as expected. So this function is not a real alternative for multithreading using some slow functions..there is no difference to this way: while (true) { a(); b(); sleep(1); }</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="50447">  <div class="votes">
+    <div id="Vu50447">
+    <a href="http://php.net/manual/vote-note.php?id=50447&amp;page=control-structures.declare&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd50447">
+    <a href="http://php.net/manual/vote-note.php?id=50447&amp;page=control-structures.declare&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V50447" title="18% like this...">
+    -7
+    </div>
+  </div>
+  <a href="#50447" class="name">
+  <strong class="user"><em>chris-at-free-source.com</em></strong></a><a class="genanchor" href="#50447"> &para;</a><div class="date" title="2005-02-28 12:16"><strong>12 years ago</strong></div>
+  <div class="text" id="Hcom50447">
+<div class="phpcode"><code><span class="html">
+Also note that PHP is run in a single thread and so everything it does will be one line of code at a time.&nbsp; I'm not aware of any true threading support in PHP, the closest you can get is to fork.<br /><br />so, declare tick doens't "multi-thread" at all, it is simply is a way to automaticaly call a function every n-lines of code.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="20012">  <div class="votes">
+    <div id="Vu20012">
+    <a href="http://php.net/manual/vote-note.php?id=20012&amp;page=control-structures.declare&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd20012">
+    <a href="http://php.net/manual/vote-note.php?id=20012&amp;page=control-structures.declare&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V20012" title="18% like this...">
+    -7
+    </div>
+  </div>
+  <a href="#20012" class="name">
+  <strong class="user"><em>rob_spamsux at rauchmedien dot ihatespam dot com</em></strong></a><a class="genanchor" href="#20012"> &para;</a><div class="date" title="2002-03-19 02:45"><strong>15 years ago</strong></div>
+  <div class="text" id="Hcom20012">
+<div class="phpcode"><code><span class="html">
+Correction to above note:<br /><br />Apparently, the end brace '}' at the end of the statement causes a tick.<br /><br />So using<br /><br />------------<br />declare (ticks=1) echo "1 tick after this prints";<br />------------<br /><br />gives the expected behavior of causing 1 tick.<br /><br />Note: the tick is issued after the statement executes.<br /><br />Also, after playing around with this, I found that it is not really the multi-tasking I had expected. It behaves the same as simply calling the functions. I.e. each function must finish before passing the baton to the next function. They do not run in parallel.<br /><br />It also seems that they always run in the order in which they were registered.<br /><br />So,<br /><br /><span class="default">&lt;?php<br /></span><span class="keyword">------------<br /></span><span class="comment"># register tick functions<br /></span><span class="default">register_tick_function </span><span class="keyword">(</span><span class="string">"a"</span><span class="keyword">);<br /></span><span class="default">register_tick_function </span><span class="keyword">(</span><span class="string">"b"</span><span class="keyword">);<br /><br /></span><span class="comment"># make the tick functions run<br /></span><span class="keyword">declare (</span><span class="default">ticks</span><span class="keyword">=</span><span class="default">1</span><span class="keyword">);<br /></span><span class="default">?&gt;<br /></span>------------<br /><br />is equivalent to<br /><br />------------<br />a();<br />b();<br />------------<br /><br />It is simply a convenient way to have functions called periodically while some other code is being executed. I.e. you could use it to periodically check the status of something and then exit the script or do something else based on the status.</span>
+</code></div>
+  </div>
+ </div></div>
+
+ <div class="foot"><a href="http://php.net/manual/add-note.php?sect=control-structures.declare&amp;redirect=http://php.net/manual/en/control-structures.declare.php"><img src='http://php.net/images/notes-add@2x.png' alt='add a note' width='12' height='12'> <small>add a note</small></a></div>
+</section>    </section><!-- layout-content -->
+        <aside class='layout-menu'>
+    
+        <ul class='parent-menu-list'>
+                                    <li>
+                <a href="http://php.net/manual/en/language.control-structures.php">Control Structures</a>
+    
+                                    <ul class='child-menu-list'>
+    
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/control-structures.intro.php" title="Introduction">Introduction</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/control-structures.if.php" title="if">if</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/control-structures.else.php" title="else">else</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/control-structures.elseif.php" title="elseif/else if">elseif/else if</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/control-structures.alternative-syntax.php" title="Alternative syntax for control structures">Alternative syntax for control structures</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/control-structures.while.php" title="while">while</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/control-structures.do.while.php" title="do-&#8203;while">do-&#8203;while</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/control-structures.for.php" title="for">for</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/control-structures.foreach.php" title="foreach">foreach</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/control-structures.break.php" title="break">break</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/control-structures.continue.php" title="continue">continue</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/control-structures.switch.php" title="switch">switch</a>
+                        </li>
+                          
+                        <li class="current">
+                            <a href="http://php.net/manual/en/control-structures.declare.php" title="declare">declare</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/function.return.php" title="return">return</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/function.require.php" title="require">require</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/function.include.php" title="include">include</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/function.require-once.php" title="require_&#8203;once">require_&#8203;once</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/function.include-once.php" title="include_&#8203;once">include_&#8203;once</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/control-structures.goto.php" title="goto">goto</a>
+                        </li>
+                            
+                    </ul>
+                    
+            </li>
+                        
+                    </ul>
+    </aside>
+
+
+  </div><!-- layout -->
+         
+  <footer>
+    <div class="container footer-content">
+      <div class="row-fluid">
+      <ul class="footmenu">
+        <li><a href="http://php.net/copyright.php">Copyright &copy; 2001-2017 The PHP Group</a></li>
+        <li><a href="http://php.net/my.php">My PHP.net</a></li>
+        <li><a href="http://php.net/contact.php">Contact</a></li>
+        <li><a href="http://php.net/sites.php">Other PHP.net sites</a></li>
+        <li><a href="http://php.net/mirrors.php">Mirror sites</a></li>
+        <li><a href="http://php.net/privacy.php">Privacy policy</a></li>
+      </ul>
+      </div>
+    </div>
+  </footer>
+
+    
+ <!-- External and third party libraries. -->
+ <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/modernizr.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/hogan-2.0.0.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/typeahead.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/mousetrap.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/search.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1500560403&amp;f=/js/common.js"></script>
+
+<a id="toTop" href="javascript:;"><span id="toTopHover"></span><img width="40" height="40" alt="To Top" src="http://php.net/images/to-top@2x.png"></a>
+
+</body>
+
+<!-- Mirrored from php.net/manual/en/control-structures.declare.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Dec 2017 23:18:10 GMT -->
+</html>
+

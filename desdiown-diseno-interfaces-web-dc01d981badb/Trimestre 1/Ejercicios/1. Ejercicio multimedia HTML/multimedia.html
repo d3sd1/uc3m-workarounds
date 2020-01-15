@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="author" content="Andrei García Cuadra">
+		<meta name="keywords" content="html, andrei, trabajos">
+		<meta name="description" content="Esto es un trabajo realizado por Andrei García Cuadra">
+		<meta charset="utf-8">
+		<title>Título de la página</title>
+		<style>
+			body {
+				margin: 0
+			}
+			.items {
+				overflow:hidden
+			}
+			img,iframe,audio,video {
+				width: 100%;
+				height: 50vh
+			}
+			.item {
+				float:left;
+				width: 50%;
+				height: 50vh
+			}
+			audio {
+				background-image: url(assets/poster.png);
+				background-repeat: no-repeat;
+				background-size: cover
+			}
+		</style>
+	</head>
+	<body>
+		<div class="items">
+			<div class="item"><img src="assets/foto.jpg"/></div>
+			<div class="item"><iframe src="assets/Calendario.html"> </iframe></div>
+			<div class="item"><audio controls autoplay><source src="assets/cancion.mp3" autoplay="true" type="audio/mpeg"></audio></div>
+			<div class="item"><video autoplay controls poster="assets/poster.png"><source src="assets/video.mp4" type="video/mp4"></video></div>
+		</div>
+	</body>
+</html>

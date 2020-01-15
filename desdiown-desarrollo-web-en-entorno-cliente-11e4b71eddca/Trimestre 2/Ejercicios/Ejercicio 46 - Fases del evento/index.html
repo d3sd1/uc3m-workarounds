@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>DOM</title>
+		<style>
+			table {
+				border: 1px solid black;
+			}
+		</style>
+		<script>
+			function mostrarInfoEvento(evento){
+				var mensaje = 'currentTarget:' + evento.currentTarget.nodeName;
+				mensaje += ' - target:'+evento.target.nodeName;
+				mensaje += ' - eventPhase:'+evento.eventPhase;
+				mensaje += ' - timestamp:'+evento.timeStamp;
+				mensaje += ' - type:'+evento.type;
+				console.log(mensaje);
+				if(evento.currentTarget.nodeName.toUpperCase() == 'TABLE' && evento.eventPhase == 3){
+					evento.stopPropagation();
+				}
+			}
+			function asignarEventos(evento){
+				if(document.readyState == 'complete'){
+					console.log('asignarEventos ejecutado en fase ' + evento.eventPhase);
+					document.body.addEventListener('click',mostrarInfoEvento,true);
+					document.body.addEventListener('click',mostrarInfoEvento,false);
+					var tabla = document.getElementById('tabla');
+					tabla.addEventListener('click',mostrarInfoEvento,true);
+					tabla.addEventListener('click',mostrarInfoEvento,false);
+					tabla.querySelector('tr').onclick = mostrarInfoEvento;
+				}
+			}
+			document.addEventListener('readystatechange',asignarEventos,false);			
+		</script>
+	</head>
+	<body>
+		<table id='tabla'>
+			<tr>
+				<td onclick='mostrarInfoEvento(event);'>Celda</td>
+			</tr>
+		</table>
+	</body>
+</html>

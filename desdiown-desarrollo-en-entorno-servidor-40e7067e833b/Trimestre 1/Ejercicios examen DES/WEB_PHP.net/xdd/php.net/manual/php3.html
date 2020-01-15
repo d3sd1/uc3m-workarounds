@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<!-- Mirrored from php.net/manual/php3.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Dec 2017 23:18:08 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+  <title>PHP: PHP Version 3 Documentation</title>
+
+ <link rel="shortcut icon" href="http://php.net/favicon.ico">
+ <link rel="search" type="application/opensearchdescription+xml" href="http://php.net/phpnetimprovedsearch.src" title="Add PHP.net search">
+ <link rel="alternate" type="application/atom+xml" href="http://php.net/releases/feed.php" title="PHP Release feed">
+ <link rel="alternate" type="application/atom+xml" href="http://php.net/feed.atom" title="PHP: Hypertext Preprocessor">
+
+ <link rel="canonical" href="http://php.net/manual/php3.php">
+ <link rel="shorturl" href="http://php.net/manual/php3.php">
+ <link rel="alternate" href="http://php.net/manual/php3.php" hreflang="x-default">
+
+
+
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1421837618&amp;f=/fonts/Fira/fira.css" media="screen">
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1421837618&amp;f=/fonts/Font-Awesome/css/fontello.css" media="screen">
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1478800802&amp;f=/styles/theme-base.css" media="screen">
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1449787206&amp;f=/styles/theme-medium.css" media="screen">
+
+ <!--[if lte IE 7]>
+ <link rel="stylesheet" type="text/css" href="http://php.net/styles/workarounds.ie7.css" media="screen">
+ <![endif]-->
+
+ <!--[if lte IE 8]>
+ <script type="text/javascript">
+  window.brokenIE = true;
+ </script>
+ <![endif]-->
+
+ <!--[if lte IE 9]>
+ <link rel="stylesheet" type="text/css" href="http://php.net/styles/workarounds.ie9.css" media="screen">
+ <![endif]-->
+
+ <!--[if IE]>
+ <script type="text/javascript" src="http://php.net/js/ext/html5.js"></script>
+ <![endif]-->
+
+ <base >
+
+</head>
+<body class=" ">
+
+<nav id="head-nav" class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <a href="http://php.net/" class="brand"><img src="http://php.net/images/logos/php-logo.svg" width="48" height="24" alt="php"></a>
+    <div id="mainmenu-toggle-overlay"></div>
+    <input type="checkbox" id="mainmenu-toggle">
+    <ul class="nav">
+      <li class=""><a href="http://php.net/downloads">Downloads</a></li>
+      <li class=""><a href="http://php.net/docs.php">Documentation</a></li>
+      <li class=""><a href="http://php.net/get-involved" >Get Involved</a></li>
+      <li class=""><a href="http://php.net/support">Help</a></li>
+    </ul>
+    <form class="navbar-search" id="topsearch" action="http://php.net/search.php">
+      <input type="hidden" name="show" value="quickref">
+      <input type="search" name="pattern" class="search-query" placeholder="Search" accesskey="s">
+    </form>
+  </div>
+  <div id="flash-message"></div>
+</nav>
+<nav id="trick"><div><dl>
+<dt><a href='http://php.net/manual/en/getting-started.php'>Getting Started</a></dt>
+	<dd><a href='http://php.net/manual/en/introduction.php'>Introduction</a></dd>
+	<dd><a href='http://php.net/manual/en/tutorial.php'>A simple tutorial</a></dd>
+<dt><a href='http://php.net/manual/en/langref.php'>Language Reference</a></dt>
+	<dd><a href='http://php.net/manual/en/language.basic-syntax.php'>Basic syntax</a></dd>
+	<dd><a href='http://php.net/manual/en/language.types.php'>Types</a></dd>
+	<dd><a href='http://php.net/manual/en/language.variables.php'>Variables</a></dd>
+	<dd><a href='http://php.net/manual/en/language.constants.php'>Constants</a></dd>
+	<dd><a href='http://php.net/manual/en/language.expressions.php'>Expressions</a></dd>
+	<dd><a href='http://php.net/manual/en/language.operators.php'>Operators</a></dd>
+	<dd><a href='http://php.net/manual/en/language.control-structures.php'>Control Structures</a></dd>
+	<dd><a href='http://php.net/manual/en/language.functions.php'>Functions</a></dd>
+	<dd><a href='http://php.net/manual/en/language.oop5.php'>Classes and Objects</a></dd>
+	<dd><a href='http://php.net/manual/en/language.namespaces.php'>Namespaces</a></dd>
+	<dd><a href='http://php.net/manual/en/language.errors.php'>Errors</a></dd>
+	<dd><a href='http://php.net/manual/en/language.exceptions.php'>Exceptions</a></dd>
+	<dd><a href='http://php.net/manual/en/language.generators.php'>Generators</a></dd>
+	<dd><a href='http://php.net/manual/en/language.references.php'>References Explained</a></dd>
+	<dd><a href='http://php.net/manual/en/reserved.variables.php'>Predefined Variables</a></dd>
+	<dd><a href='http://php.net/manual/en/reserved.exceptions.php'>Predefined Exceptions</a></dd>
+	<dd><a href='http://php.net/manual/en/reserved.interfaces.php'>Predefined Interfaces and Classes</a></dd>
+	<dd><a href='http://php.net/manual/en/context.php'>Context options and parameters</a></dd>
+	<dd><a href='http://php.net/manual/en/wrappers.php'>Supported Protocols and Wrappers</a></dd>
+</dl>
+<dl>
+<dt><a href='http://php.net/manual/en/security.php'>Security</a></dt>
+	<dd><a href='http://php.net/manual/en/security.intro.php'>Introduction</a></dd>
+	<dd><a href='http://php.net/manual/en/security.general.php'>General considerations</a></dd>
+	<dd><a href='http://php.net/manual/en/security.cgi-bin.php'>Installed as CGI binary</a></dd>
+	<dd><a href='http://php.net/manual/en/security.apache.php'>Installed as an Apache module</a></dd>
+	<dd><a href='http://php.net/manual/en/security.sessions.php'>Session Security</a></dd>
+	<dd><a href='http://php.net/manual/en/security.filesystem.php'>Filesystem Security</a></dd>
+	<dd><a href='http://php.net/manual/en/security.database.php'>Database Security</a></dd>
+	<dd><a href='http://php.net/manual/en/security.errors.php'>Error Reporting</a></dd>
+	<dd><a href='http://php.net/manual/en/security.globals.php'>Using Register Globals</a></dd>
+	<dd><a href='http://php.net/manual/en/security.variables.php'>User Submitted Data</a></dd>
+	<dd><a href='http://php.net/manual/en/security.magicquotes.php'>Magic Quotes</a></dd>
+	<dd><a href='http://php.net/manual/en/security.hiding.php'>Hiding PHP</a></dd>
+	<dd><a href='http://php.net/manual/en/security.current.php'>Keeping Current</a></dd>
+<dt><a href='http://php.net/manual/en/features.php'>Features</a></dt>
+	<dd><a href='http://php.net/manual/en/features.http-auth.php'>HTTP authentication with PHP</a></dd>
+	<dd><a href='http://php.net/manual/en/features.cookies.php'>Cookies</a></dd>
+	<dd><a href='http://php.net/manual/en/features.sessions.php'>Sessions</a></dd>
+	<dd><a href='http://php.net/manual/en/features.xforms.php'>Dealing with XForms</a></dd>
+	<dd><a href='http://php.net/manual/en/features.file-upload.php'>Handling file uploads</a></dd>
+	<dd><a href='http://php.net/manual/en/features.remote-files.php'>Using remote files</a></dd>
+	<dd><a href='http://php.net/manual/en/features.connection-handling.php'>Connection handling</a></dd>
+	<dd><a href='http://php.net/manual/en/features.persistent-connections.php'>Persistent Database Connections</a></dd>
+	<dd><a href='http://php.net/manual/en/features.safe-mode.php'>Safe Mode</a></dd>
+	<dd><a href='http://php.net/manual/en/features.commandline.php'>Command line usage</a></dd>
+	<dd><a href='http://php.net/manual/en/features.gc.php'>Garbage Collection</a></dd>
+	<dd><a href='http://php.net/manual/en/features.dtrace.php'>DTrace Dynamic Tracing</a></dd>
+</dl>
+<dl>
+<dt><a href='http://php.net/manual/en/funcref.php'>Function Reference</a></dt>
+	<dd><a href='http://php.net/manual/en/refs.basic.php.php'>Affecting PHP's Behaviour</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.audio.php'>Audio Formats Manipulation</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.remote.auth.php'>Authentication Services</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.cmdline.php'>Command Line Specific Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.compression.php'>Compression and Archive Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.creditcard.php'>Credit Card Processing</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.crypto.php'>Cryptography Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.database.php'>Database Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.calendar.php'>Date and Time Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.fileprocess.file.php'>File System Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.international.php'>Human Language and Character Encoding Support</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.image.php'>Image Processing and Generation</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.remote.mail.php'>Mail Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.math.php'>Mathematical Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.nontext.php'>Non-Text MIME Output</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.fileprocess.process.php'>Process Control Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.other.php'>Other Basic Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.remote.other.php'>Other Services</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.search.php'>Search Engine Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.server.php'>Server Specific Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.session.php'>Session Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.text.php'>Text Processing</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.vartype.php'>Variable and Type Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.webservice.php'>Web Services</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.windows.php'>Windows Only Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.xml.php'>XML Manipulation</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.ui.php'>GUI Extensions</a></dd>
+</dl>
+<dl>
+<dt>Keyboard Shortcuts</dt><dt>?</dt>
+<dd>This help</dd>
+<dt>j</dt>
+<dd>Next menu item</dd>
+<dt>k</dt>
+<dd>Previous menu item</dd>
+<dt>g p</dt>
+<dd>Previous man page</dd>
+<dt>g n</dt>
+<dd>Next man page</dd>
+<dt>G</dt>
+<dd>Scroll to bottom</dd>
+<dt>g g</dt>
+<dd>Scroll to top</dd>
+<dt>g h</dt>
+<dd>Goto homepage</dd>
+<dt>g s</dt>
+<dd>Goto search<br>(current page)</dd>
+<dt>/</dt>
+<dd>Focus search box</dd>
+</dl></div></nav>
+<div id="goto">
+    <div class="search">
+         <div class="text"></div>
+         <div class="results"><ul></ul></div>
+   </div>
+</div>
+
+
+
+
+
+<div id="layout" class="clearfix">
+  <section id="layout-content">
+
+<h1 style="text-align: center;">PHP Version 3</h1>
+
+<h1>Table of Contents</h1>
+
+<ol>
+  <li><a href="#introduction">Introduction</a></li>
+  <li><a href="#directives">Configuration Directives</a></li>
+  <li><a href="#changed_behaviour">Changed behaviour</a></li>
+  <li><a href="#misc">Miscellaneous</a></li>
+  <li><a href="#migration">Migration</a></li>
+  <li><a href="#debugger">Debugger</a></li>
+  <li><a href="#internals">Internals</a></li>
+</ol>
+<hr>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>
+ The PHP 3 documentation was removed from the PHP Manual and placed here for
+ historical purposes. An attempt was made to preserve all of the text although
+ it's highly likely that some is missing. The last PHP 3 release (3.0.18) was
+ made on October 20, 2000.
+</p>
+
+<p>
+ See the <a href="http://museum.php.net/">PHP Museum</a> for downloads, and
+ also read the <a href="http://php.net/history">history</a> for further
+ information about PHP 3.
+</p>
+
+<h2 id="directives">Configuration Directives</h2>
+
+<p>
+ Most directives are prepended with php3_ instead of php_. These differences
+ are not mentioned in this document.
+</p>
+
+<dl>
+ <dt><span class="big">Changed</span></dt>
+ <dd>
+  <p>
+   FTP configure option changed from <em>--with-ftp</em> to <em>--enable-ftp</em>
+  </p>
+ </dd>
+ <dd>
+  <p>
+   The value of E_ALL is 63.
+  </p>
+ </dd>
+ <dd>
+  <p>
+   The <em>asp_tags</em> directive was added in PHP 3.0.4.
+  </p>
+ </dd>
+ <dd>
+  <p>
+   The E_* constants have no meaning in <em>php3.ini</em>, but numeric values do.
+  </p>
+ </dd>
+</dl>
+
+<dl>
+ <dt><span class="big">Removed</span></dt>
+ <dd>
+  <p>
+   <em>--with-imsp[=DIR]</em> includes IMSP support (DIR is IMSP's include dir and libimsp.a dir).
+  </p>
+ </dd>
+ <dd>
+  <p>
+   <em>--with-mck[=DIR]</em> includes Cybercash MCK support. DIR is the cybercash mck build directory, 
+   defaults to /usr/src/mck-3.2.0.3-linux
+  </p>
+ </dd>
+ <dd>
+  <p>
+   <em>--with-mod-dav=DIR</em> includes DAV support through Apache's mod_dav, DIR is mod_dav's 
+   installation directory (Apache module version only).
+  </p>
+ </dd>
+ <dd>
+  <p>
+   If the <em>sybase.compatability_mode</em> directive is on, this will cause
+   PHP to automatically assign types to results according to their Sybase
+   type, instead of treating them all as strings.
+  </p>
+ </dd>
+</dl>
+
+<h2 id="changed_bahaviour">Changed Behaviour</h2>
+
+<dl>
+ <dt><span class="big">Return values</span></dt>
+ <dd>
+  <p>
+   unset() returns 1.
+  </p>
+ </dd>
+ <dd>
+  <p>
+   Multiple calls to setcookie() in the same script will be performed 
+   in reverse order. And put the insert before the delete when trying 
+   to delete one cookie before inserting another.
+  </p>
+ </dd>
+ <dd>
+  <p>
+   eval() does not return a value.
+  </p>
+ </dd>
+</dl>
+
+<dl>
+ <dt><span class="big">Function parameters</span></dt>
+ <dd>
+  <p>
+   gettype() has a 'user function' return value.
+  </p>
+ </dd>
+ <dd>
+  <p>
+   htmlspecialchars() added the second parameter in PHP 3.0.17.
+  </p>
+ </dd>
+ <dd>
+  <p>
+   error_log()'s second parameter, message, goes through the debugger.
+  </p>
+ </dd>
+ <dd>
+  <p>
+   empty() considers "0" as non-empty, a value that for example may come from an HTML form.
+  </p>
+ </dd>
+</dl>
+
+<dl>
+ <dt><span class="big">Other</span></dt>
+ <dd>
+  <p>
+   Variables are always assigned by value, as there are no references.
+  </p>
+ </dd>
+ <dd>
+  <p>
+   Using arrays within HTML forms is limited to single dimensional arrays.
+  </p>
+ </dd>
+ <dd>
+  <p>
+   When escaping characters in single quoted strings, an E_NOTICE level error is generated.
+  </p>
+ </dd>
+ <dd>
+  <p>
+   Objects lose their class association throughout the process of serialization and unserialization.
+  </p>
+ </dd>
+ <dd>
+  <p>
+   Functions must be defined before use. In other words, top to bottom.
+  </p>
+ </dd>
+ <dd>
+  <p>
+   Variable number of arguments are not supported.
+  </p>
+ </dd>
+ <dd>
+  <p>
+   Return may only be used within function blocks.
+  </p>
+ </dd>
+</dl>
+
+<h2 id="miscellaneous">Miscellaneous</h2>
+
+<dl>
+ <dd>
+  <p>
+   The PCRE modifier is not available.
+  </p>
+ </dd>
+ <dd>
+  <p>
+   is_uploaded_file() exists as of PHP 3.0.16.
+  </p>
+ </dd>
+ <dd>
+  <p>
+   BC Math is enabled by default, --disable-bcmath disables it.
+  </p>
+ </dd>
+ <dd>
+  <p>
+   The behaviour of register_globals is always on, because the directive does not exist.
+  </p>
+ </dd>
+ <dd>
+  <p>
+   The short_tags() function may be used to enable short tags (&lt;?).
+  </p>
+ </dd>
+ <dd>
+  <p>
+   The CGI build has a 'make bench' tool for benchmarking the build. It will likely take
+   over 30 seconds to run so be sure to allow the appropriate time limit.
+  </p>
+ </dd>
+ <dd>
+  <p>
+   SAPI support is not available.
+  </p>
+ </dd>
+ <dd>
+  <p>
+   The HTTP PUT method is allowed for saving files, which are handled similarly to POST method
+   file saves. <em>$PHP_PUT_FILENAME</em> holds the location of the temporary file created, which 
+   must be moved during the request else it will be deleted.
+  </p>
+ </dd>
+ <dd>
+  <p>
+   ODBC is enabled by default, to disable use <em>--disable-unified-odbc</em>
+  </p>
+ </dd>
+ <dd>
+  <p>
+   GD is enabled by default, to disable use <em>--without-gd</em>
+  </p>
+ </dd>
+ <dd>
+  <p>
+   Installing PHP 3 in Apache:
+  </p>
+  <pre>
+   AddModule mod_php3.c
+   LoadModule php3_module modules/libphp3.so
+   AddType application/x-httpd-php3 .php3
+  </pre>
+ </dd>
+ <dd>
+  <p>
+   The SESAM extension is specific to PHP 3 and was removed.
+  </p>
+ </dd>
+</dl>
+
+<h2 id="migration">Migration</h2>
+
+<p>
+ There are a few migration specific documents involving PHP 3 but due to
+ their size and structure they were not added to this document.
+</p>
+
+<h2 id="debugger">Debugger</h2>
+
+<p>
+ Information related to the debugger that comes standard with PHP 3 was
+ not added to this document.
+</p>
+
+<h2 id="internals">Internals</h2>
+
+<p>
+ Information related to the internal workings of PHP 3 that is commonly used
+ to create extensions was not added to this document.
+</p>
+
+    </section><!-- layout-content -->
+    
+
+  </div><!-- layout -->
+         
+  <footer>
+    <div class="container footer-content">
+      <div class="row-fluid">
+      <ul class="footmenu">
+        <li><a href="http://php.net/copyright.php">Copyright &copy; 2001-2017 The PHP Group</a></li>
+        <li><a href="http://php.net/my.php">My PHP.net</a></li>
+        <li><a href="http://php.net/contact.php">Contact</a></li>
+        <li><a href="http://php.net/sites.php">Other PHP.net sites</a></li>
+        <li><a href="http://php.net/mirrors.php">Mirror sites</a></li>
+        <li><a href="http://php.net/privacy.php">Privacy policy</a></li>
+      </ul>
+      </div>
+    </div>
+  </footer>
+
+    
+ <!-- External and third party libraries. -->
+ <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/modernizr.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/hogan-2.0.0.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/typeahead.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/mousetrap.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/search.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1500560403&amp;f=/js/common.js"></script>
+
+<a id="toTop" href="javascript:;"><span id="toTopHover"></span><img width="40" height="40" alt="To Top" src="http://php.net/images/to-top@2x.png"></a>
+
+</body>
+
+<!-- Mirrored from php.net/manual/php3.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Dec 2017 23:18:08 GMT -->
+</html>
+

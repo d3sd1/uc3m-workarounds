@@ -1,0 +1,96 @@
+Duración de la exposición: 385M - 6H 30M suponiendo que no haya dudas. Prpopuesta: Empezar lunes, ya que así no hay fin de semana de por medio, y no se les olvida todo.
+Preparar exposición con pinceladas y trabajo con documentación de angular5.
+------
+HECHO 20M - Preparación de la clase
+------
+HECHO 5M - 0. Transferir los archivos requeridos de la exposición.
+HECHO 5M - 1. Exponer como plantear dudas sugerencias o comentarios durante la exposición
+HECHO 1M - 2. Plantear que todos usemos Windows 10 + Netbeans para evitar problemas y retrasos. No se dará soporte a otras combinaciones.
+HECHO 9M - 3. Conceptos básicos previos
+		- JSON -> explicación, ejemplo de json minimizada, ejemplo de json visualmente bonito)
+		- concepto de librería
+		- concepto de carga síncrona/asíncrona
+		- concepto de ES 5/6/7
+------
+HECHO 30M - POWERPOINT
+------
+HECHO 20M - 1. Qué es Angular
+		- Versiones: AngularJS, Angular2, Angular4, Angular5
+		- Creado por Google
+		- Es un framework de JavaScript.
+		- Tiene soporte para la mayoría de los navegadores y para aplicaciones de móviles.
+		- Estructura de un proyecto de angular (expicación de el modelo lógico: API Rest, app de móvil, aplicación de angular5... con esquema).
+HECHO 10M - 2. Ventajas de usar Angular2+
+		- Velocidad de ejecución.
+		- Menor carga de red: Los archivos CSS/JS sólo se cargan la primera vez que entramos a la página.
+		- Páginas dinámicas, más fluidas y sin transiciones desagradables. (¿Nunca has cargado una página y se te ha quedado en blanco unos segundos hasta que carga?)
+		- Código ordenado: Se acabó el código spaghetti de JS.
+		- Patrón MV*  
+		- Repositorio GIT enganchado directamente al proyecto: cuando se compila, se suben los cambios automáticamente.
+		- Permite controlar las versiones de las dependencias (por ejemplo, jQuery) con NPM.
+		- Facilidad de propagación entre entornos de producción y de pruebas.
+		- Última versión: errores corregidos y mejoras respecto a las versiones anteriores.
+		- El código se autooptimiza al compilar, ya que genera unos ficheros especiales y automáticamente los engancha al proyecto.
+		- Lenguaje de programación interno: typescript
+		- explicar por donde ocurre el flujo desde el momento de la peticion hasta que se llega al componente
+------
+335M - PDF
+------
+HECHO 20M - 1. Control de versiones: NPM
+		- Explicación
+		- Explicar dependencia de Node.js
+		- Instalar node.js en netbeans
+		- Puesta a punto en netbeans
+HECHO 30M - 2. Creando un proyecto en angular
+		- Comandos básicos de angular cli (por CMD y por netbeans, configurándolos en el tsconfig)
+		- Visualizar estructura y jerarquia de archivos mas importantes del proyecto
+		- ejecutar run & build de npm
+		- comprobar que el proyecto se autocompila. de no ser asi, revisar variable autocompile en tsconfig.
+HECHO 40M - 3. Las bases de Angular2+
+		- Fichero de configuración (tsconfig.json). Agregar autcompile.
+			- instalar plugin para netbeans
+			- establecer autocompile en el proyecto
+			- agregar soporte npm al proyecto
+			- tipos de datos en typescript
+		- Angular CLI: concepto + instalación
+HECHO 60M - 4. Explicación de la terminología de angular
+		- componentes
+		- plantillas
+		- servicios
+			- crear servicio para el coche
+		- modelos
+			- crear clase coche
+		- modulos
+		- anotaciones
+30M - HECHO 5. Componentes
+	HECHO - Creando un atributo: numero
+	HECHO - Modificando anotación: diferencias entre template y templateurl
+	HECHO - Creando un método en el componente: setNumero() -> pone el numero a 0
+	HECHO - Creando método en el componente: setNumeroFinal() -> tras 5s de espera pone el numero a 5. notar que al cambiar el número, automáticamente se cambia en la plantilla.
+	HECHO - inyectar el servicio de coche en el componente y llamar a su metodo getMatricula() desde el componente a  un console.log
+30M - 6. Plantillas
+	HECHO - Modificando la plantilla base
+	HECHO - Agregando una variable a la plantilla (heredada del atributo del componente). Exlicar que se actualiza a tiempo real
+	HECHO - coger método del componente
+	HECHO - Operadores y comparadores de la plantilla:
+		- ngif
+		- ngfor
+	HECHO - eventos
+		- (click)
+		- [...]
+	HECHO - incluir css/js global desde el fichero tsconfig
+	HECHO - incluyendo un estilo desde el componente. aclarar que no se puede cargar javascript desde aqui.
+	
+	HECHO - BIS: SERVICIOS!! -> servicio que devuelva las coordenadas para el componente
+120M - 7. Módulos
+	HECHO - Creando un módulo básico
+	HECHO - Agregar el módulo básico para que cargue al inicio de la aplicación
+	HECHO - Crear router
+		HECHO - generar rutas básicas con explicación
+HECHO - 10M - 8. Compilando el proyecto y visualizándolo en apache (u otro servidor web)
+HECHO - 5M - 9. Cómo pasar el proyecto de un equipo a otro
+	- explicar las carpetas a excluir de la copia (node_modules, dist, e2e)
+	- cada vez que se pase de un equipo a otro ejecutar npm install para sincronizar las dependencias
+HECHO - 10M - 10. Valoración de la exposición
+	- solicitar votos y rellenar la encuesta. decir que sean sinceros, que las respuestas son anonimas, pero que se requiere sinceridad.
+	- https://www.survio.com/survey/d/Y9G4O4P3N1V2W9M9Q

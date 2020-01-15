@@ -1,0 +1,13 @@
+ideas login/register/forgotpass:
+- al clickar el formulario que el fondo se vuelva negro para centrarse solo en el form
+- que al enviar salga una animacion de cargando
+- cambiar cursor y ponerlos personalizados para que quede guay
+- agitar boxes y ponerlos en rojo si la conexion falla. si es satisfactoria, mostrar un check de que todo ha ido bien o algo por el estilo.
+- poner el menu arriba y aplicar las ideas en la hoja de papel.
+- que al conectar como alumno el fondo sea correspondiente a su modulo/tal. si es de la eso poner imagen del otro edificio, si es de daw, la clase de daw... etc
+-  seguir hoja de calculo de valoracion
+- que en la pag principal pregunta si quiere acceso privado (invtranet) o puclico (web del ies).
+- SOLO DISEÑAR PAGINA PRINCIPAL. EL MENU NO TIENE QUE LLEVAR A NINGUN SITIO!! PONERLE HREF #
+- en principio esta nota es la del trimestre de diw. si sigue faltando la gente se puede hacer examen (se habla el lunes)
+- principios de accesibilidad para la web!
+- HACER MAPA DEL SITIO TAMBIEN,una pagina dedicado a ello, que en una estructura de arbol, te muestre los menus disponibles

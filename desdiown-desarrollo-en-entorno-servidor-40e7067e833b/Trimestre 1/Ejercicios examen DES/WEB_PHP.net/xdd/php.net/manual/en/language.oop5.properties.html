@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<!-- Mirrored from php.net/manual/en/language.oop5.properties.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Dec 2017 23:18:11 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+  <title>PHP: Properties - Manual </title>
+
+ <link rel="shortcut icon" href="http://php.net/favicon.ico">
+ <link rel="search" type="application/opensearchdescription+xml" href="http://php.net/phpnetimprovedsearch.src" title="Add PHP.net search">
+ <link rel="alternate" type="application/atom+xml" href="http://php.net/releases/feed.php" title="PHP Release feed">
+ <link rel="alternate" type="application/atom+xml" href="http://php.net/feed.atom" title="PHP: Hypertext Preprocessor">
+
+ <link rel="canonical" href="http://php.net/manual/en/language.oop5.properties.php">
+ <link rel="shorturl" href="http://php.net/oop5.properties">
+ <link rel="alternate" href="http://php.net/oop5.properties" hreflang="x-default">
+
+ <link rel="contents" href="http://php.net/manual/en/index.php">
+ <link rel="index" href="http://php.net/manual/en/language.oop5.php">
+ <link rel="prev" href="http://php.net/manual/en/language.oop5.basic.php">
+ <link rel="next" href="http://php.net/manual/en/language.oop5.constants.php">
+
+ <link rel="alternate" href="http://php.net/manual/en/language.oop5.properties.php" hreflang="en">
+ <link rel="alternate" href="http://php.net/manual/pt_BR/language.oop5.properties.php" hreflang="pt_BR">
+ <link rel="alternate" href="http://php.net/manual/zh/language.oop5.properties.php" hreflang="zh">
+ <link rel="alternate" href="http://php.net/manual/fr/language.oop5.properties.php" hreflang="fr">
+ <link rel="alternate" href="http://php.net/manual/de/language.oop5.properties.php" hreflang="de">
+ <link rel="alternate" href="http://php.net/manual/ja/language.oop5.properties.php" hreflang="ja">
+ <link rel="alternate" href="http://php.net/manual/ro/language.oop5.properties.php" hreflang="ro">
+ <link rel="alternate" href="http://php.net/manual/ru/language.oop5.properties.php" hreflang="ru">
+ <link rel="alternate" href="http://php.net/manual/es/language.oop5.properties.php" hreflang="es">
+ <link rel="alternate" href="http://php.net/manual/tr/language.oop5.properties.php" hreflang="tr">
+
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1421837618&amp;f=/fonts/Fira/fira.css" media="screen">
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1421837618&amp;f=/fonts/Font-Awesome/css/fontello.css" media="screen">
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1478800802&amp;f=/styles/theme-base.css" media="screen">
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1449787206&amp;f=/styles/theme-medium.css" media="screen">
+
+ <!--[if lte IE 7]>
+ <link rel="stylesheet" type="text/css" href="http://php.net/styles/workarounds.ie7.css" media="screen">
+ <![endif]-->
+
+ <!--[if lte IE 8]>
+ <script type="text/javascript">
+  window.brokenIE = true;
+ </script>
+ <![endif]-->
+
+ <!--[if lte IE 9]>
+ <link rel="stylesheet" type="text/css" href="http://php.net/styles/workarounds.ie9.css" media="screen">
+ <![endif]-->
+
+ <!--[if IE]>
+ <script type="text/javascript" src="http://php.net/js/ext/html5.js"></script>
+ <![endif]-->
+
+ <base >
+
+</head>
+<body class="docs ">
+
+<nav id="head-nav" class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <a href="http://php.net/" class="brand"><img src="http://php.net/images/logos/php-logo.svg" width="48" height="24" alt="php"></a>
+    <div id="mainmenu-toggle-overlay"></div>
+    <input type="checkbox" id="mainmenu-toggle">
+    <ul class="nav">
+      <li class=""><a href="http://php.net/downloads">Downloads</a></li>
+      <li class="active"><a href="http://php.net/docs.php">Documentation</a></li>
+      <li class=""><a href="http://php.net/get-involved" >Get Involved</a></li>
+      <li class=""><a href="http://php.net/support">Help</a></li>
+    </ul>
+    <form class="navbar-search" id="topsearch" action="http://php.net/search.php">
+      <input type="hidden" name="show" value="quickref">
+      <input type="search" name="pattern" class="search-query" placeholder="Search" accesskey="s">
+    </form>
+  </div>
+  <div id="flash-message"></div>
+</nav>
+<nav id="trick"><div><dl>
+<dt><a href='http://php.net/manual/en/getting-started.php'>Getting Started</a></dt>
+	<dd><a href='http://php.net/manual/en/introduction.php'>Introduction</a></dd>
+	<dd><a href='http://php.net/manual/en/tutorial.php'>A simple tutorial</a></dd>
+<dt><a href='http://php.net/manual/en/langref.php'>Language Reference</a></dt>
+	<dd><a href='http://php.net/manual/en/language.basic-syntax.php'>Basic syntax</a></dd>
+	<dd><a href='http://php.net/manual/en/language.types.php'>Types</a></dd>
+	<dd><a href='http://php.net/manual/en/language.variables.php'>Variables</a></dd>
+	<dd><a href='http://php.net/manual/en/language.constants.php'>Constants</a></dd>
+	<dd><a href='http://php.net/manual/en/language.expressions.php'>Expressions</a></dd>
+	<dd><a href='http://php.net/manual/en/language.operators.php'>Operators</a></dd>
+	<dd><a href='http://php.net/manual/en/language.control-structures.php'>Control Structures</a></dd>
+	<dd><a href='http://php.net/manual/en/language.functions.php'>Functions</a></dd>
+	<dd><a href='http://php.net/manual/en/language.oop5.php'>Classes and Objects</a></dd>
+	<dd><a href='http://php.net/manual/en/language.namespaces.php'>Namespaces</a></dd>
+	<dd><a href='http://php.net/manual/en/language.errors.php'>Errors</a></dd>
+	<dd><a href='http://php.net/manual/en/language.exceptions.php'>Exceptions</a></dd>
+	<dd><a href='http://php.net/manual/en/language.generators.php'>Generators</a></dd>
+	<dd><a href='http://php.net/manual/en/language.references.php'>References Explained</a></dd>
+	<dd><a href='http://php.net/manual/en/reserved.variables.php'>Predefined Variables</a></dd>
+	<dd><a href='http://php.net/manual/en/reserved.exceptions.php'>Predefined Exceptions</a></dd>
+	<dd><a href='http://php.net/manual/en/reserved.interfaces.php'>Predefined Interfaces and Classes</a></dd>
+	<dd><a href='http://php.net/manual/en/context.php'>Context options and parameters</a></dd>
+	<dd><a href='http://php.net/manual/en/wrappers.php'>Supported Protocols and Wrappers</a></dd>
+</dl>
+<dl>
+<dt><a href='http://php.net/manual/en/security.php'>Security</a></dt>
+	<dd><a href='http://php.net/manual/en/security.intro.php'>Introduction</a></dd>
+	<dd><a href='http://php.net/manual/en/security.general.php'>General considerations</a></dd>
+	<dd><a href='http://php.net/manual/en/security.cgi-bin.php'>Installed as CGI binary</a></dd>
+	<dd><a href='http://php.net/manual/en/security.apache.php'>Installed as an Apache module</a></dd>
+	<dd><a href='http://php.net/manual/en/security.sessions.php'>Session Security</a></dd>
+	<dd><a href='http://php.net/manual/en/security.filesystem.php'>Filesystem Security</a></dd>
+	<dd><a href='http://php.net/manual/en/security.database.php'>Database Security</a></dd>
+	<dd><a href='http://php.net/manual/en/security.errors.php'>Error Reporting</a></dd>
+	<dd><a href='http://php.net/manual/en/security.globals.php'>Using Register Globals</a></dd>
+	<dd><a href='http://php.net/manual/en/security.variables.php'>User Submitted Data</a></dd>
+	<dd><a href='http://php.net/manual/en/security.magicquotes.php'>Magic Quotes</a></dd>
+	<dd><a href='http://php.net/manual/en/security.hiding.php'>Hiding PHP</a></dd>
+	<dd><a href='http://php.net/manual/en/security.current.php'>Keeping Current</a></dd>
+<dt><a href='http://php.net/manual/en/features.php'>Features</a></dt>
+	<dd><a href='http://php.net/manual/en/features.http-auth.php'>HTTP authentication with PHP</a></dd>
+	<dd><a href='http://php.net/manual/en/features.cookies.php'>Cookies</a></dd>
+	<dd><a href='http://php.net/manual/en/features.sessions.php'>Sessions</a></dd>
+	<dd><a href='http://php.net/manual/en/features.xforms.php'>Dealing with XForms</a></dd>
+	<dd><a href='http://php.net/manual/en/features.file-upload.php'>Handling file uploads</a></dd>
+	<dd><a href='http://php.net/manual/en/features.remote-files.php'>Using remote files</a></dd>
+	<dd><a href='http://php.net/manual/en/features.connection-handling.php'>Connection handling</a></dd>
+	<dd><a href='http://php.net/manual/en/features.persistent-connections.php'>Persistent Database Connections</a></dd>
+	<dd><a href='http://php.net/manual/en/features.safe-mode.php'>Safe Mode</a></dd>
+	<dd><a href='http://php.net/manual/en/features.commandline.php'>Command line usage</a></dd>
+	<dd><a href='http://php.net/manual/en/features.gc.php'>Garbage Collection</a></dd>
+	<dd><a href='http://php.net/manual/en/features.dtrace.php'>DTrace Dynamic Tracing</a></dd>
+</dl>
+<dl>
+<dt><a href='http://php.net/manual/en/funcref.php'>Function Reference</a></dt>
+	<dd><a href='http://php.net/manual/en/refs.basic.php.php'>Affecting PHP's Behaviour</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.audio.php'>Audio Formats Manipulation</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.remote.auth.php'>Authentication Services</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.cmdline.php'>Command Line Specific Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.compression.php'>Compression and Archive Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.creditcard.php'>Credit Card Processing</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.crypto.php'>Cryptography Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.database.php'>Database Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.calendar.php'>Date and Time Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.fileprocess.file.php'>File System Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.international.php'>Human Language and Character Encoding Support</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.image.php'>Image Processing and Generation</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.remote.mail.php'>Mail Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.math.php'>Mathematical Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.nontext.php'>Non-Text MIME Output</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.fileprocess.process.php'>Process Control Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.other.php'>Other Basic Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.remote.other.php'>Other Services</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.search.php'>Search Engine Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.server.php'>Server Specific Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.session.php'>Session Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.text.php'>Text Processing</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.vartype.php'>Variable and Type Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.webservice.php'>Web Services</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.windows.php'>Windows Only Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.xml.php'>XML Manipulation</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.ui.php'>GUI Extensions</a></dd>
+</dl>
+<dl>
+<dt>Keyboard Shortcuts</dt><dt>?</dt>
+<dd>This help</dd>
+<dt>j</dt>
+<dd>Next menu item</dd>
+<dt>k</dt>
+<dd>Previous menu item</dd>
+<dt>g p</dt>
+<dd>Previous man page</dd>
+<dt>g n</dt>
+<dd>Next man page</dd>
+<dt>G</dt>
+<dd>Scroll to bottom</dd>
+<dt>g g</dt>
+<dd>Scroll to top</dd>
+<dt>g h</dt>
+<dd>Goto homepage</dd>
+<dt>g s</dt>
+<dd>Goto search<br>(current page)</dd>
+<dt>/</dt>
+<dd>Focus search box</dd>
+</dl></div></nav>
+<div id="goto">
+    <div class="search">
+         <div class="text"></div>
+         <div class="results"><ul></ul></div>
+   </div>
+</div>
+
+  <div id="breadcrumbs" class="clearfix">
+    <div id="breadcrumbs-inner">
+          <div class="next">
+        <a href="http://php.net/manual/en/language.oop5.constants.php">
+          Class Constants &raquo;
+        </a>
+      </div>
+              <div class="prev">
+        <a href="http://php.net/manual/en/language.oop5.basic.php">
+          &laquo; The Basics        </a>
+      </div>
+          <ul>
+            <li><a href='http://php.net/manual/en/index.php'>PHP Manual</a></li>      <li><a href='http://php.net/manual/en/langref.php'>Language Reference</a></li>      <li><a href='http://php.net/manual/en/language.oop5.php'>Classes and Objects</a></li>      </ul>
+    </div>
+  </div>
+
+
+
+
+<div id="layout" class="clearfix">
+  <section id="layout-content">
+  <div class="page-tools">
+    <div class="change-language">
+      <form action="http://php.net/manual/change.php" method="get" id="changelang" name="changelang">
+        <fieldset>
+          <label for="changelang-langs">Change language:</label>
+          <select onchange="document.changelang.submit()" name="page" id="changelang-langs">
+            <option value='en/language.oop5.properties.php' selected="selected">English</option>
+            <option value='http://php.net/manual/en/pt_BR/language.oop5.properties.php'>Brazilian Portuguese</option>
+            <option value='http://php.net/manual/en/zh/language.oop5.properties.php'>Chinese (Simplified)</option>
+            <option value='http://php.net/manual/en/fr/language.oop5.properties.php'>French</option>
+            <option value='http://php.net/manual/en/de/language.oop5.properties.php'>German</option>
+            <option value='http://php.net/manual/en/ja/language.oop5.properties.php'>Japanese</option>
+            <option value='http://php.net/manual/en/ro/language.oop5.properties.php'>Romanian</option>
+            <option value='http://php.net/manual/en/ru/language.oop5.properties.php'>Russian</option>
+            <option value='http://php.net/manual/en/es/language.oop5.properties.php'>Spanish</option>
+            <option value='http://php.net/manual/en/tr/language.oop5.properties.php'>Turkish</option>
+            <option value="http://php.net/manual/en/help-translate.php">Other</option>
+          </select>
+        </fieldset>
+      </form>
+    </div>
+    <div class="edit-bug">
+      <a href="https://edit.php.net/?project=PHP&amp;perm=en/language.oop5.properties.php">Edit</a>
+      <a href="https://bugs.php.net/report.php?bug_type=Documentation+problem&amp;manpage=language.oop5.properties">Report a Bug</a>
+    </div>
+  </div><div id="language.oop5.properties" class="sect1">
+  <h2 class="title">Properties</h2>
+
+  <p class="para">
+   Class member variables are called &quot;properties&quot;. You may also see
+   them referred to using other terms such as &quot;attributes&quot; or
+   &quot;fields&quot;, but for the purposes of this reference we will use
+   &quot;properties&quot;. They are defined by using one of the
+   keywords <em>public</em>, <em>protected</em>,
+   or <em>private</em>, followed by a normal variable
+   declaration. This declaration may include an initialization, but
+   this initialization must be a constant value--that is, it must be
+   able to be evaluated at compile time and must not depend on
+   run-time information in order to be evaluated.
+  </p>
+  <p class="para">
+   See <a href="http://php.net/manual/en/language.oop5.visibility.php" class="xref">Visibility</a> for more
+   information on the meanings
+   of <em>public</em>, <em>protected</em>,
+   and <em>private</em>.
+  </p>
+  <blockquote class="note"><p><strong class="note">Note</strong>: 
+   <p class="para">
+    In order to maintain backward compatibility with PHP 4, PHP 5 will
+    still accept the use of the keyword <em>var</em> in
+    property declarations instead of (or in addition
+    to) <em>public</em>, <em>protected</em>,
+    or <em>private</em>. However, <em>var</em> is
+    no longer required. In versions of PHP from 5.0 to 5.1.3, the use
+    of <em>var</em> was considered deprecated and would
+    issue an <strong><code>E_STRICT</code></strong> warning, but since PHP
+    5.1.3 it is no longer deprecated and does not issue the warning.
+   </p>
+   <p class="para">
+    If you declare a property using <em>var</em> instead of
+    one of <em>public</em>, <em>protected</em>,
+    or <em>private</em>, then PHP 5 will treat the property
+    as if it had been declared as <em>public</em>.
+   </p>
+  </p></blockquote>
+  <p class="para">
+   Within class methods non-static properties may be accessed by using 
+   <em>-&gt;</em> (Object Operator): <var class="varname"><var class="varname">$this->property</var></var> 
+   (where <em>property</em> is the name of the property). 
+   Static properties are accessed by using the <em>::</em> (Double Colon):
+   <var class="varname"><var class="varname">self::$property</var></var>. See <a href="http://php.net/manual/en/language.oop5.static.php" class="link">Static Keyword</a> 
+   for more information on the difference between static and non-static properties.
+  </p>
+  <p class="para">
+   The pseudo-variable <var class="varname"><var class="varname">$this</var></var> is available inside
+   any class method when that method is called from within an object
+   context. <var class="varname"><var class="varname">$this</var></var> is a reference to the calling
+   object (usually the object to which the method belongs, but
+   possibly another object, if the method is called
+   <a href="http://php.net/manual/en/language.oop5.static.php" class="link">statically</a> from the context
+   of a secondary object).
+  </p>
+
+  <p class="para">
+   <div class="example" id="example-180">
+    <p><strong>Example #1 property declarations</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">SimpleClass<br /></span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;valid&nbsp;as&nbsp;of&nbsp;PHP&nbsp;5.6.0:<br />&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">public&nbsp;</span><span style="color: #0000BB">$var1&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'hello&nbsp;'&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">'world'</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;valid&nbsp;as&nbsp;of&nbsp;PHP&nbsp;5.3.0:<br />&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">public&nbsp;</span><span style="color: #0000BB">$var2&nbsp;</span><span style="color: #007700">=&nbsp;&lt;&lt;&lt;EOD<br /></span><span style="color: #DD0000">hello&nbsp;world<br /></span><span style="color: #007700">EOD;<br />&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;valid&nbsp;as&nbsp;of&nbsp;PHP&nbsp;5.6.0:<br />&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">public&nbsp;</span><span style="color: #0000BB">$var3&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">+</span><span style="color: #0000BB">2</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;invalid&nbsp;property&nbsp;declarations:<br />&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">public&nbsp;</span><span style="color: #0000BB">$var4&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">self</span><span style="color: #007700">::</span><span style="color: #0000BB">myStaticMethod</span><span style="color: #007700">();<br />&nbsp;&nbsp;&nbsp;public&nbsp;</span><span style="color: #0000BB">$var5&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$myVar</span><span style="color: #007700">;<br /><br />&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;valid&nbsp;property&nbsp;declarations:<br />&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">public&nbsp;</span><span style="color: #0000BB">$var6&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">myConstant</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;public&nbsp;</span><span style="color: #0000BB">$var7&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #0000BB">true</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">false</span><span style="color: #007700">);<br /><br />&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;valid&nbsp;as&nbsp;of&nbsp;PHP&nbsp;5.3.0:<br />&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">public&nbsp;</span><span style="color: #0000BB">$var8&nbsp;</span><span style="color: #007700">=&nbsp;&lt;&lt;&lt;'EOD'<br /></span><span style="color: #DD0000">hello&nbsp;world<br /></span><span style="color: #007700">EOD;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+   
+   </div>
+  </p>
+
+  <blockquote class="note"><p><strong class="note">Note</strong>: 
+   <p class="para">
+    There are some nice functions to handle classes and objects. You
+    might want to take a look at
+    the <a href="http://php.net/manual/en/ref.classobj.php" class="link">Class/Object Functions</a>.
+   </p>
+  </p></blockquote>
+
+  <p class="para">
+   As of PHP 5.3.0
+   <a href="http://php.net/manual/en/language.types.string.php#language.types.string.syntax.heredoc" class="link">heredocs</a> and 
+   <a href="http://php.net/manual/en/language.types.string.php#language.types.string.syntax.nowdoc" class="link">nowdocs</a>
+   can be used in any static data context, including property
+   declarations.
+   <div class="example" id="example-181">
+    <p><strong>Example #2 Example of using a nowdoc to initialize a property</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">foo&nbsp;</span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;As&nbsp;of&nbsp;PHP&nbsp;5.3.0<br />&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">public&nbsp;</span><span style="color: #0000BB">$bar&nbsp;</span><span style="color: #007700">=&nbsp;&lt;&lt;&lt;'EOT'<br /></span><span style="color: #DD0000">bar<br /></span><span style="color: #007700">EOT;<br />&nbsp;&nbsp;&nbsp;public&nbsp;</span><span style="color: #0000BB">$baz&nbsp;</span><span style="color: #007700">=&nbsp;&lt;&lt;&lt;EOT<br /></span><span style="color: #DD0000">baz<br /></span><span style="color: #007700">EOT;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+   </div>
+  </p>
+  <blockquote class="note"><p><strong class="note">Note</strong>: 
+   <p class="para">
+    Nowdoc and Heredoc support was added in PHP 5.3.0.
+   </p>
+  </p></blockquote>
+ </div>
+<section id="usernotes">
+ <div class="head">
+  <span class="action"><a href="http://php.net/manual/add-note.php?sect=language.oop5.properties&amp;redirect=http://php.net/manual/en/language.oop5.properties.php"><img src='http://php.net/images/notes-add@2x.png' alt='add a note' width='12' height='12'> <small>add a note</small></a></span>
+  <h3 class="title">User Contributed Notes <span class="count">9 notes</span></h3>
+ </div><div id="allnotes">
+  <div class="note" id="108320">  <div class="votes">
+    <div id="Vu108320">
+    <a href="http://php.net/manual/vote-note.php?id=108320&amp;page=language.oop5.properties&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd108320">
+    <a href="http://php.net/manual/vote-note.php?id=108320&amp;page=language.oop5.properties&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V108320" title="67% like this...">
+    222
+    </div>
+  </div>
+  <a href="#108320" class="name">
+  <strong class="user"><em>Anonymous</em></strong></a><a class="genanchor" href="#108320"> &para;</a><div class="date" title="2012-04-17 09:16"><strong>5 years ago</strong></div>
+  <div class="text" id="Hcom108320">
+<div class="phpcode"><code><span class="html">
+In case this saves anyone any time, I spent ages working out why the following didn't work:<br /><br />class MyClass<br />{<br />&nbsp; &nbsp; private $foo = FALSE;<br /><br />&nbsp; &nbsp; public function __construct()<br />&nbsp; &nbsp; {<br />&nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;$foo = TRUE;<br /><br />&nbsp; &nbsp; &nbsp; &nbsp; echo($this-&gt;$foo);<br />&nbsp; &nbsp; }<br />}<br /><br />$bar = new MyClass();<br /><br />giving "Fatal error: Cannot access empty property in ...test_class.php on line 8"<br /><br />The subtle change of removing the $ before accesses of $foo fixes this:<br /><br />class MyClass<br />{<br />&nbsp; &nbsp; private $foo = FALSE;<br /><br />&nbsp; &nbsp; public function __construct()<br />&nbsp; &nbsp; {<br />&nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;foo = TRUE;<br /><br />&nbsp; &nbsp; &nbsp; &nbsp; echo($this-&gt;foo);<br />&nbsp; &nbsp; }<br />}<br /><br />$bar = new MyClass();<br /><br />I guess because it's treating $foo like a variable in the first example, so trying to call $this-&gt;FALSE (or something along those lines) which makes no sense. It's obvious once you've realised, but there aren't any examples of accessing on this page that show that.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="117617">  <div class="votes">
+    <div id="Vu117617">
+    <a href="http://php.net/manual/vote-note.php?id=117617&amp;page=language.oop5.properties&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd117617">
+    <a href="http://php.net/manual/vote-note.php?id=117617&amp;page=language.oop5.properties&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V117617" title="74% like this...">
+    43
+    </div>
+  </div>
+  <a href="#117617" class="name">
+  <strong class="user"><em>anca at techliminal dot com</em></strong></a><a class="genanchor" href="#117617"> &para;</a><div class="date" title="2015-07-08 11:08"><strong>2 years ago</strong></div>
+  <div class="text" id="Hcom117617">
+<div class="phpcode"><code><span class="html">
+You can access property names with dashes in them (for example, because you converted an XML file to an object) in the following way:<br /><br /><span class="default">&lt;?php<br />$ref </span><span class="keyword">= new </span><span class="default">StdClass</span><span class="keyword">();<br /></span><span class="default">$ref</span><span class="keyword">-&gt;{</span><span class="string">'ref-type'</span><span class="keyword">} = </span><span class="string">'Journal Article'</span><span class="keyword">;<br /></span><span class="default">var_dump</span><span class="keyword">(</span><span class="default">$ref</span><span class="keyword">);<br /></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="102880">  <div class="votes">
+    <div id="Vu102880">
+    <a href="http://php.net/manual/vote-note.php?id=102880&amp;page=language.oop5.properties&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd102880">
+    <a href="http://php.net/manual/vote-note.php?id=102880&amp;page=language.oop5.properties&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V102880" title="65% like this...">
+    48
+    </div>
+  </div>
+  <a href="#102880" class="name">
+  <strong class="user"><em>Anonymous</em></strong></a><a class="genanchor" href="#102880"> &para;</a><div class="date" title="2011-03-11 03:18"><strong>6 years ago</strong></div>
+  <div class="text" id="Hcom102880">
+<div class="phpcode"><code><span class="html">
+$this can be cast to array.&nbsp; But when doing so, it prefixes the property names/new array keys with certain data depending on the property classification.&nbsp; Public property names are not changed.&nbsp; Protected properties are prefixed with a space-padded '*'.&nbsp; Private properties are prefixed with the space-padded class name...<br /><br /><span class="default">&lt;?php<br /><br /></span><span class="keyword">class </span><span class="default">test<br /></span><span class="keyword">{<br />&nbsp; &nbsp; public </span><span class="default">$var1 </span><span class="keyword">= </span><span class="default">1</span><span class="keyword">;<br />&nbsp; &nbsp; protected </span><span class="default">$var2 </span><span class="keyword">= </span><span class="default">2</span><span class="keyword">;<br />&nbsp; &nbsp; private </span><span class="default">$var3 </span><span class="keyword">= </span><span class="default">3</span><span class="keyword">;<br />&nbsp; &nbsp; static </span><span class="default">$var4 </span><span class="keyword">= </span><span class="default">4</span><span class="keyword">;<br />&nbsp; &nbsp; <br />&nbsp; &nbsp; public function </span><span class="default">toArray</span><span class="keyword">()<br />&nbsp; &nbsp; {<br />&nbsp; &nbsp; &nbsp; &nbsp; return (array) </span><span class="default">$this</span><span class="keyword">;<br />&nbsp; &nbsp; }<br />}<br /><br /></span><span class="default">$t </span><span class="keyword">= new </span><span class="default">test</span><span class="keyword">;<br /></span><span class="default">print_r</span><span class="keyword">(</span><span class="default">$t</span><span class="keyword">-&gt;</span><span class="default">toArray</span><span class="keyword">());<br /><br /></span><span class="comment">/* outputs:<br /><br />Array<br />(<br />&nbsp; &nbsp; [var1] =&gt; 1<br />&nbsp; &nbsp; [ * var2] =&gt; 2<br />&nbsp; &nbsp; [ test var3] =&gt; 3<br />)<br /><br />*/<br /></span><span class="default">?&gt;<br /></span><br />This is documented behavior when converting any object to an array (see &lt;/language.types.array.php#language.types.array.casting&gt; PHP manual page).&nbsp; All properties regardless of visibility will be shown when casting an object to array (with exceptions of a few built-in objects).<br /><br />To get an array with all property names unaltered, use the 'get_object_vars($this)' function in any method within class scope to retrieve an array of all properties regardless of external visibility, or 'get_object_vars($object)' outside class scope to retrieve an array of only public properties (see: &lt;/function.get-object-vars.php&gt; PHP manual page).</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="114797">  <div class="votes">
+    <div id="Vu114797">
+    <a href="http://php.net/manual/vote-note.php?id=114797&amp;page=language.oop5.properties&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd114797">
+    <a href="http://php.net/manual/vote-note.php?id=114797&amp;page=language.oop5.properties&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V114797" title="66% like this...">
+    16
+    </div>
+  </div>
+  <a href="#114797" class="name">
+  <strong class="user"><em>php at webflips dot net</em></strong></a><a class="genanchor" href="#114797"> &para;</a><div class="date" title="2014-04-08 05:15"><strong>3 years ago</strong></div>
+  <div class="text" id="Hcom114797">
+<div class="phpcode"><code><span class="html">
+Heredoc IS valid as of PHP 5.3 and this is documented in the manual at <a href="http://php.net/manual/en/language.types.string.php#language.types.string.syntax.heredoc" rel="nofollow" target="_blank">http://php.net/manual/en/language.types.string.php#language.types.string.syntax.heredoc</a><br /><br />Only heredocs containing variables are invalid because then it becomes dynamic.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="98267">  <div class="votes">
+    <div id="Vu98267">
+    <a href="http://php.net/manual/vote-note.php?id=98267&amp;page=language.oop5.properties&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd98267">
+    <a href="http://php.net/manual/vote-note.php?id=98267&amp;page=language.oop5.properties&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V98267" title="60% like this...">
+    25
+    </div>
+  </div>
+  <a href="#98267" class="name">
+  <strong class="user"><em>zzzzBov</em></strong></a><a class="genanchor" href="#98267"> &para;</a><div class="date" title="2010-06-04 09:21"><strong>7 years ago</strong></div>
+  <div class="text" id="Hcom98267">
+<div class="phpcode"><code><span class="html">
+Do not confuse php's version of properties with properties in other languages (C++ for example).&nbsp; In php, properties are the same as attributes, simple variables without functionality.&nbsp; They should be called attributes, not properties.<br /><br />Properties have implicit accessor and mutator functionality.&nbsp; I've created an abstract class that allows implicit property functionality.<br /><br /><span class="default">&lt;?php<br /><br /></span><span class="keyword">abstract class </span><span class="default">PropertyObject<br /></span><span class="keyword">{<br />&nbsp; public function </span><span class="default">__get</span><span class="keyword">(</span><span class="default">$name</span><span class="keyword">)<br />&nbsp; {<br />&nbsp; &nbsp; if (</span><span class="default">method_exists</span><span class="keyword">(</span><span class="default">$this</span><span class="keyword">, (</span><span class="default">$method </span><span class="keyword">= </span><span class="string">'get_'</span><span class="keyword">.</span><span class="default">$name</span><span class="keyword">)))<br />&nbsp; &nbsp; {<br />&nbsp; &nbsp; &nbsp; return </span><span class="default">$this</span><span class="keyword">-&gt;</span><span class="default">$method</span><span class="keyword">();<br />&nbsp; &nbsp; }<br />&nbsp; &nbsp; else return;<br />&nbsp; }<br />&nbsp; <br />&nbsp; public function </span><span class="default">__isset</span><span class="keyword">(</span><span class="default">$name</span><span class="keyword">)<br />&nbsp; {<br />&nbsp; &nbsp; if (</span><span class="default">method_exists</span><span class="keyword">(</span><span class="default">$this</span><span class="keyword">, (</span><span class="default">$method </span><span class="keyword">= </span><span class="string">'isset_'</span><span class="keyword">.</span><span class="default">$name</span><span class="keyword">)))<br />&nbsp; &nbsp; {<br />&nbsp; &nbsp; &nbsp; return </span><span class="default">$this</span><span class="keyword">-&gt;</span><span class="default">$method</span><span class="keyword">();<br />&nbsp; &nbsp; }<br />&nbsp; &nbsp; else return;<br />&nbsp; }<br />&nbsp; <br />&nbsp; public function </span><span class="default">__set</span><span class="keyword">(</span><span class="default">$name</span><span class="keyword">, </span><span class="default">$value</span><span class="keyword">)<br />&nbsp; {<br />&nbsp; &nbsp; if (</span><span class="default">method_exists</span><span class="keyword">(</span><span class="default">$this</span><span class="keyword">, (</span><span class="default">$method </span><span class="keyword">= </span><span class="string">'set_'</span><span class="keyword">.</span><span class="default">$name</span><span class="keyword">)))<br />&nbsp; &nbsp; {<br />&nbsp; &nbsp; &nbsp; </span><span class="default">$this</span><span class="keyword">-&gt;</span><span class="default">$method</span><span class="keyword">(</span><span class="default">$value</span><span class="keyword">);<br />&nbsp; &nbsp; }<br />&nbsp; }<br />&nbsp; <br />&nbsp; public function </span><span class="default">__unset</span><span class="keyword">(</span><span class="default">$name</span><span class="keyword">)<br />&nbsp; {<br />&nbsp; &nbsp; if (</span><span class="default">method_exists</span><span class="keyword">(</span><span class="default">$this</span><span class="keyword">, (</span><span class="default">$method </span><span class="keyword">= </span><span class="string">'unset_'</span><span class="keyword">.</span><span class="default">$name</span><span class="keyword">)))<br />&nbsp; &nbsp; {<br />&nbsp; &nbsp; &nbsp; </span><span class="default">$this</span><span class="keyword">-&gt;</span><span class="default">$method</span><span class="keyword">();<br />&nbsp; &nbsp; }<br />&nbsp; }<br />}<br /><br /></span><span class="default">?&gt;<br /></span><br />after extending this class, you can create accessors and mutators that will be called automagically, using php's magic methods, when the corresponding property is accessed.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="120587">  <div class="votes">
+    <div id="Vu120587">
+    <a href="http://php.net/manual/vote-note.php?id=120587&amp;page=language.oop5.properties&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd120587">
+    <a href="http://php.net/manual/vote-note.php?id=120587&amp;page=language.oop5.properties&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V120587" title="60% like this...">
+    2
+    </div>
+  </div>
+  <a href="#120587" class="name">
+  <strong class="user"><em>Markus Zeller</em></strong></a><a class="genanchor" href="#120587"> &para;</a><div class="date" title="2017-02-03 06:53"><strong>10 months ago</strong></div>
+  <div class="text" id="Hcom120587">
+<div class="phpcode"><code><span class="html">
+Accessing a property without any value initialized will give NULL.<br /><br />class foo<br />{<br />&nbsp; private $bar;<br /><br />&nbsp; public __construct()<br />&nbsp; {<br />&nbsp; &nbsp; &nbsp; var_dump($this-&gt;bar); // null<br />&nbsp; }<br />}</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="114401">  <div class="votes">
+    <div id="Vu114401">
+    <a href="http://php.net/manual/vote-note.php?id=114401&amp;page=language.oop5.properties&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd114401">
+    <a href="http://php.net/manual/vote-note.php?id=114401&amp;page=language.oop5.properties&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V114401" title="51% like this...">
+    2
+    </div>
+  </div>
+  <a href="#114401" class="name">
+  <strong class="user"><em>Ashley Dambra</em></strong></a><a class="genanchor" href="#114401"> &para;</a><div class="date" title="2014-02-16 10:29"><strong>3 years ago</strong></div>
+  <div class="text" id="Hcom114401">
+<div class="phpcode"><code><span class="html">
+Updated method objectThis() to transtypage class array properties or array to stdClass.<br /><br />Hope it help you.<br /><br />public function objectThis($array = null) {<br />&nbsp; &nbsp; if (!$array) {<br />&nbsp; &nbsp; &nbsp; &nbsp; foreach ($this as $property_name =&gt; $property_values) {<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (is_array($property_values) &amp;&amp; !empty($property_values)) {<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;{$property_name} = $this-&gt;objectThis($property_values);<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; } else if (is_array($property_values) &amp;&amp; empty($property_values)) {<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;{$property_name} = new stdClass();<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />&nbsp; &nbsp; &nbsp; &nbsp; }<br />&nbsp; &nbsp; } else {<br />&nbsp; &nbsp; &nbsp; &nbsp; $object = new stdClass();<br />&nbsp; &nbsp; &nbsp; &nbsp; foreach ($array as $index =&gt; $values) {<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (is_array($values) &amp;&amp; empty($values)) {<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $object-&gt;{$index} = new stdClass();<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; } else if (is_array($values)) {<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $object-&gt;{$index} = $this-&gt;objectThis($values);<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; } else {<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $object-&gt;{$index} = $values;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />&nbsp; &nbsp; &nbsp; &nbsp; }<br />&nbsp; &nbsp; &nbsp; &nbsp; return $object;<br />&nbsp; &nbsp; }<br />}</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="114400">  <div class="votes">
+    <div id="Vu114400">
+    <a href="http://php.net/manual/vote-note.php?id=114400&amp;page=language.oop5.properties&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd114400">
+    <a href="http://php.net/manual/vote-note.php?id=114400&amp;page=language.oop5.properties&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V114400" title="41% like this...">
+    -7
+    </div>
+  </div>
+  <a href="#114400" class="name">
+  <strong class="user"><em>AshleyDambra at live dot com</em></strong></a><a class="genanchor" href="#114400"> &para;</a><div class="date" title="2014-02-16 10:08"><strong>3 years ago</strong></div>
+  <div class="text" id="Hcom114400">
+<div class="phpcode"><code><span class="html">
+Add this method to you class in order to 'transtypage' all the array properties into stdClass();<br /><br />Hope it help you.<br /><br />public function objectThis($object = null) {<br />&nbsp; &nbsp; if (!$object) {<br />&nbsp; &nbsp; &nbsp; &nbsp; foreach ($this as $property_name =&gt; $property_values) {<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (is_array($property_values)) {<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;{$property_name} = $this-&gt;objectThis($property_values);<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />&nbsp; &nbsp; &nbsp; &nbsp; }<br />&nbsp; &nbsp; } else {<br />&nbsp; &nbsp; &nbsp; &nbsp; $object2 = new stdClass();<br />&nbsp; &nbsp; &nbsp; &nbsp; foreach ($object as $index =&gt; $values) {<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (is_array($values)) {<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $object2-&gt;{$index} = $this-&gt;objectThis($values);<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; } else {<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $object2-&gt;{$index} = $values;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />&nbsp; &nbsp; &nbsp; &nbsp; }<br />&nbsp; &nbsp; &nbsp; &nbsp; return $object2;<br />&nbsp; &nbsp; }<br />}</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="116344">  <div class="votes">
+    <div id="Vu116344">
+    <a href="http://php.net/manual/vote-note.php?id=116344&amp;page=language.oop5.properties&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd116344">
+    <a href="http://php.net/manual/vote-note.php?id=116344&amp;page=language.oop5.properties&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V116344" title="32% like this...">
+    -20
+    </div>
+  </div>
+  <a href="#116344" class="name">
+  <strong class="user"><em>Anonymous</em></strong></a><a class="genanchor" href="#116344"> &para;</a><div class="date" title="2014-12-16 09:35"><strong>2 years ago</strong></div>
+  <div class="text" id="Hcom116344">
+<div class="phpcode"><code><span class="html">
+In case this saves anyone any time, I spent ages working out why the following didn't work:<br /><br />class MyClass<br />{<br />&nbsp; &nbsp; private $foo = FALSE;<br /><br />&nbsp; &nbsp; public function __construct()<br />&nbsp; &nbsp; {<br />&nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;$foo = TRUE;<br /><br />&nbsp; &nbsp; &nbsp; &nbsp; echo($this-&gt;$foo);<br />&nbsp; &nbsp; }<br />}<br /><br />$bar = new MyClass();<br /><br />giving "Fatal error: Cannot access empty property in ...test_class.php on line 8"<br /><br />The subtle change of removing the $ before accesses of $foo fixes this:<br /><br />class MyClass<br />{<br />&nbsp; &nbsp; private $foo = FALSE;<br /><br />&nbsp; &nbsp; public function __construct()<br />&nbsp; &nbsp; {<br />&nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;foo = TRUE;<br /><br />&nbsp; &nbsp; &nbsp; &nbsp; echo($this-&gt;foo);<br />&nbsp; &nbsp; }<br />}<br /><br />$bar = new MyClass();<br /><br />I guess because it's treating $foo like a variable in the first example, so trying to call $this-&gt;FALSE (or something along those lines) which makes no sense. It's obvious once you've realised, but there aren't any examples of accessing on this page that show that.<br /><br />[Editor's note: Removed copy of note by zzzzBov]</span>
+</code></div>
+  </div>
+ </div></div>
+
+ <div class="foot"><a href="http://php.net/manual/add-note.php?sect=language.oop5.properties&amp;redirect=http://php.net/manual/en/language.oop5.properties.php"><img src='http://php.net/images/notes-add@2x.png' alt='add a note' width='12' height='12'> <small>add a note</small></a></div>
+</section>    </section><!-- layout-content -->
+        <aside class='layout-menu'>
+    
+        <ul class='parent-menu-list'>
+                                    <li>
+                <a href="http://php.net/manual/en/language.oop5.php">Classes and Objects</a>
+    
+                                    <ul class='child-menu-list'>
+    
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/oop5.intro.php" title="Introduction">Introduction</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.oop5.basic.php" title="The Basics">The Basics</a>
+                        </li>
+                          
+                        <li class="current">
+                            <a href="http://php.net/manual/en/language.oop5.properties.php" title="Properties">Properties</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.oop5.constants.php" title="Class Constants">Class Constants</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.oop5.autoload.php" title="Autoloading Classes">Autoloading Classes</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.oop5.decon.php" title="Constructors and Destructors">Constructors and Destructors</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.oop5.visibility.php" title="Visibility">Visibility</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.oop5.inheritance.php" title="Object Inheritance">Object Inheritance</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.oop5.paamayim-nekudotayim.php" title="Scope Resolution Operator (::)">Scope Resolution Operator (::)</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.oop5.static.php" title="Static Keyword">Static Keyword</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.oop5.abstract.php" title="Class Abstraction">Class Abstraction</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.oop5.interfaces.php" title="Object Interfaces">Object Interfaces</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.oop5.traits.php" title="Traits">Traits</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.oop5.anonymous.php" title="Anonymous classes">Anonymous classes</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.oop5.overloading.php" title="Overloading">Overloading</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.oop5.iterations.php" title="Object Iteration">Object Iteration</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.oop5.magic.php" title="Magic Methods">Magic Methods</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.oop5.final.php" title="Final Keyword">Final Keyword</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.oop5.cloning.php" title="Object Cloning">Object Cloning</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.oop5.object-comparison.php" title="Comparing Objects">Comparing Objects</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.oop5.typehinting.php" title="Type Hinting">Type Hinting</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.oop5.late-static-bindings.php" title="Late Static Bindings">Late Static Bindings</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.oop5.references.php" title="Objects and references">Objects and references</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.oop5.serialization.php" title="Object Serialization">Object Serialization</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.oop5.changelog.php" title="OOP Changelog">OOP Changelog</a>
+                        </li>
+                            
+                    </ul>
+                    
+            </li>
+                        
+                    </ul>
+    </aside>
+
+
+  </div><!-- layout -->
+         
+  <footer>
+    <div class="container footer-content">
+      <div class="row-fluid">
+      <ul class="footmenu">
+        <li><a href="http://php.net/copyright.php">Copyright &copy; 2001-2017 The PHP Group</a></li>
+        <li><a href="http://php.net/my.php">My PHP.net</a></li>
+        <li><a href="http://php.net/contact.php">Contact</a></li>
+        <li><a href="http://php.net/sites.php">Other PHP.net sites</a></li>
+        <li><a href="http://php.net/mirrors.php">Mirror sites</a></li>
+        <li><a href="http://php.net/privacy.php">Privacy policy</a></li>
+      </ul>
+      </div>
+    </div>
+  </footer>
+
+    
+ <!-- External and third party libraries. -->
+ <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/modernizr.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/hogan-2.0.0.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/typeahead.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/mousetrap.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/search.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1500560403&amp;f=/js/common.js"></script>
+
+<a id="toTop" href="javascript:;"><span id="toTopHover"></span><img width="40" height="40" alt="To Top" src="http://php.net/images/to-top@2x.png"></a>
+
+</body>
+
+<!-- Mirrored from php.net/manual/en/language.oop5.properties.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Dec 2017 23:18:11 GMT -->
+</html>
+

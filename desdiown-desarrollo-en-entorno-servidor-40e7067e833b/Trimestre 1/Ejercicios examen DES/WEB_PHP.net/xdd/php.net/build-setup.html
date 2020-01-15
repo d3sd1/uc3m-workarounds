@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<!-- Mirrored from php.net/build-setup.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Dec 2017 23:18:08 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+  <title>PHP: Operating System Preparation</title>
+
+ <link rel="shortcut icon" href="http://php.net/favicon.ico">
+ <link rel="search" type="application/opensearchdescription+xml" href="http://php.net/phpnetimprovedsearch.src" title="Add PHP.net search">
+ <link rel="alternate" type="application/atom+xml" href="http://php.net/releases/feed.php" title="PHP Release feed">
+ <link rel="alternate" type="application/atom+xml" href="http://php.net/feed.atom" title="PHP: Hypertext Preprocessor">
+
+ <link rel="canonical" href="http://php.net/get-involved.php">
+ <link rel="shorturl" href="http://php.net/get-involved">
+ <link rel="alternate" href="http://php.net/get-involved" hreflang="x-default">
+
+
+
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1421837618&amp;f=/fonts/Fira/fira.css" media="screen">
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1421837618&amp;f=/fonts/Font-Awesome/css/fontello.css" media="screen">
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1478800802&amp;f=/styles/theme-base.css" media="screen">
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1449787206&amp;f=/styles/theme-medium.css" media="screen">
+
+ <!--[if lte IE 7]>
+ <link rel="stylesheet" type="text/css" href="http://php.net/styles/workarounds.ie7.css" media="screen">
+ <![endif]-->
+
+ <!--[if lte IE 8]>
+ <script type="text/javascript">
+  window.brokenIE = true;
+ </script>
+ <![endif]-->
+
+ <!--[if lte IE 9]>
+ <link rel="stylesheet" type="text/css" href="http://php.net/styles/workarounds.ie9.css" media="screen">
+ <![endif]-->
+
+ <!--[if IE]>
+ <script type="text/javascript" src="http://php.net/js/ext/html5.js"></script>
+ <![endif]-->
+
+ <base >
+
+</head>
+<body class="community ">
+
+<nav id="head-nav" class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <a href="http://php.net/" class="brand"><img src="http://php.net/images/logos/php-logo.svg" width="48" height="24" alt="php"></a>
+    <div id="mainmenu-toggle-overlay"></div>
+    <input type="checkbox" id="mainmenu-toggle">
+    <ul class="nav">
+      <li class=""><a href="http://php.net/downloads">Downloads</a></li>
+      <li class=""><a href="http://php.net/docs.php">Documentation</a></li>
+      <li class="active"><a href="http://php.net/get-involved" >Get Involved</a></li>
+      <li class=""><a href="http://php.net/support">Help</a></li>
+    </ul>
+    <form class="navbar-search" id="topsearch" action="http://php.net/search.php">
+      <input type="hidden" name="show" value="quickref">
+      <input type="search" name="pattern" class="search-query" placeholder="Search" accesskey="s">
+    </form>
+  </div>
+  <div id="flash-message"></div>
+</nav>
+<nav id="trick"><div><dl>
+<dt><a href='http://php.net/manual/en/getting-started.php'>Getting Started</a></dt>
+	<dd><a href='http://php.net/manual/en/introduction.php'>Introduction</a></dd>
+	<dd><a href='http://php.net/manual/en/tutorial.php'>A simple tutorial</a></dd>
+<dt><a href='http://php.net/manual/en/langref.php'>Language Reference</a></dt>
+	<dd><a href='http://php.net/manual/en/language.basic-syntax.php'>Basic syntax</a></dd>
+	<dd><a href='http://php.net/manual/en/language.types.php'>Types</a></dd>
+	<dd><a href='http://php.net/manual/en/language.variables.php'>Variables</a></dd>
+	<dd><a href='http://php.net/manual/en/language.constants.php'>Constants</a></dd>
+	<dd><a href='http://php.net/manual/en/language.expressions.php'>Expressions</a></dd>
+	<dd><a href='http://php.net/manual/en/language.operators.php'>Operators</a></dd>
+	<dd><a href='http://php.net/manual/en/language.control-structures.php'>Control Structures</a></dd>
+	<dd><a href='http://php.net/manual/en/language.functions.php'>Functions</a></dd>
+	<dd><a href='http://php.net/manual/en/language.oop5.php'>Classes and Objects</a></dd>
+	<dd><a href='http://php.net/manual/en/language.namespaces.php'>Namespaces</a></dd>
+	<dd><a href='http://php.net/manual/en/language.errors.php'>Errors</a></dd>
+	<dd><a href='http://php.net/manual/en/language.exceptions.php'>Exceptions</a></dd>
+	<dd><a href='http://php.net/manual/en/language.generators.php'>Generators</a></dd>
+	<dd><a href='http://php.net/manual/en/language.references.php'>References Explained</a></dd>
+	<dd><a href='http://php.net/manual/en/reserved.variables.php'>Predefined Variables</a></dd>
+	<dd><a href='http://php.net/manual/en/reserved.exceptions.php'>Predefined Exceptions</a></dd>
+	<dd><a href='http://php.net/manual/en/reserved.interfaces.php'>Predefined Interfaces and Classes</a></dd>
+	<dd><a href='http://php.net/manual/en/context.php'>Context options and parameters</a></dd>
+	<dd><a href='http://php.net/manual/en/wrappers.php'>Supported Protocols and Wrappers</a></dd>
+</dl>
+<dl>
+<dt><a href='http://php.net/manual/en/security.php'>Security</a></dt>
+	<dd><a href='http://php.net/manual/en/security.intro.php'>Introduction</a></dd>
+	<dd><a href='http://php.net/manual/en/security.general.php'>General considerations</a></dd>
+	<dd><a href='http://php.net/manual/en/security.cgi-bin.php'>Installed as CGI binary</a></dd>
+	<dd><a href='http://php.net/manual/en/security.apache.php'>Installed as an Apache module</a></dd>
+	<dd><a href='http://php.net/manual/en/security.sessions.php'>Session Security</a></dd>
+	<dd><a href='http://php.net/manual/en/security.filesystem.php'>Filesystem Security</a></dd>
+	<dd><a href='http://php.net/manual/en/security.database.php'>Database Security</a></dd>
+	<dd><a href='http://php.net/manual/en/security.errors.php'>Error Reporting</a></dd>
+	<dd><a href='http://php.net/manual/en/security.globals.php'>Using Register Globals</a></dd>
+	<dd><a href='http://php.net/manual/en/security.variables.php'>User Submitted Data</a></dd>
+	<dd><a href='http://php.net/manual/en/security.magicquotes.php'>Magic Quotes</a></dd>
+	<dd><a href='http://php.net/manual/en/security.hiding.php'>Hiding PHP</a></dd>
+	<dd><a href='http://php.net/manual/en/security.current.php'>Keeping Current</a></dd>
+<dt><a href='http://php.net/manual/en/features.php'>Features</a></dt>
+	<dd><a href='http://php.net/manual/en/features.http-auth.php'>HTTP authentication with PHP</a></dd>
+	<dd><a href='http://php.net/manual/en/features.cookies.php'>Cookies</a></dd>
+	<dd><a href='http://php.net/manual/en/features.sessions.php'>Sessions</a></dd>
+	<dd><a href='http://php.net/manual/en/features.xforms.php'>Dealing with XForms</a></dd>
+	<dd><a href='http://php.net/manual/en/features.file-upload.php'>Handling file uploads</a></dd>
+	<dd><a href='http://php.net/manual/en/features.remote-files.php'>Using remote files</a></dd>
+	<dd><a href='http://php.net/manual/en/features.connection-handling.php'>Connection handling</a></dd>
+	<dd><a href='http://php.net/manual/en/features.persistent-connections.php'>Persistent Database Connections</a></dd>
+	<dd><a href='http://php.net/manual/en/features.safe-mode.php'>Safe Mode</a></dd>
+	<dd><a href='http://php.net/manual/en/features.commandline.php'>Command line usage</a></dd>
+	<dd><a href='http://php.net/manual/en/features.gc.php'>Garbage Collection</a></dd>
+	<dd><a href='http://php.net/manual/en/features.dtrace.php'>DTrace Dynamic Tracing</a></dd>
+</dl>
+<dl>
+<dt><a href='http://php.net/manual/en/funcref.php'>Function Reference</a></dt>
+	<dd><a href='http://php.net/manual/en/refs.basic.php.php'>Affecting PHP's Behaviour</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.audio.php'>Audio Formats Manipulation</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.remote.auth.php'>Authentication Services</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.cmdline.php'>Command Line Specific Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.compression.php'>Compression and Archive Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.creditcard.php'>Credit Card Processing</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.crypto.php'>Cryptography Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.database.php'>Database Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.calendar.php'>Date and Time Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.fileprocess.file.php'>File System Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.international.php'>Human Language and Character Encoding Support</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.image.php'>Image Processing and Generation</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.remote.mail.php'>Mail Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.math.php'>Mathematical Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.nontext.php'>Non-Text MIME Output</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.fileprocess.process.php'>Process Control Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.other.php'>Other Basic Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.remote.other.php'>Other Services</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.search.php'>Search Engine Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.server.php'>Server Specific Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.session.php'>Session Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.text.php'>Text Processing</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.vartype.php'>Variable and Type Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.webservice.php'>Web Services</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.windows.php'>Windows Only Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.xml.php'>XML Manipulation</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.ui.php'>GUI Extensions</a></dd>
+</dl>
+<dl>
+<dt>Keyboard Shortcuts</dt><dt>?</dt>
+<dd>This help</dd>
+<dt>j</dt>
+<dd>Next menu item</dd>
+<dt>k</dt>
+<dd>Previous menu item</dd>
+<dt>g p</dt>
+<dd>Previous man page</dd>
+<dt>g n</dt>
+<dd>Next man page</dd>
+<dt>G</dt>
+<dd>Scroll to bottom</dd>
+<dt>g g</dt>
+<dd>Scroll to top</dd>
+<dt>g h</dt>
+<dd>Goto homepage</dd>
+<dt>g s</dt>
+<dd>Goto search<br>(current page)</dd>
+<dt>/</dt>
+<dd>Focus search box</dd>
+</dl></div></nav>
+<div id="goto">
+    <div class="search">
+         <div class="text"></div>
+         <div class="results"><ul></ul></div>
+   </div>
+</div>
+
+
+
+
+
+<div id="layout" class="clearfix">
+  <section id="layout-content">
+<h2 id="os-prep" class="content-header">Operating System Preparation</h2>
+<div class="content-box">
+<p>
+    Improving PHP requires a working build environment to test changes, the following section deals with setting up a working build environment.
+</p>
+<p>
+    Your build environment should have an appropriate toolchain that includes a working C compiler, 
+        for those not working in Microsoft Windows, you will need a working, compatible autotools installation, and at the very least a shared copy of zlib.
+</p>
+<p>
+    For most *nix like operating systems, some external dependencies may be required to bring a build to completion; 
+        if a build fails because of missing headers or libraries, issuing a variant of the following command should resolve those dependencies, allowing the build to continue:
+    <ul>
+        <li><pre class="small">[sudo] yum|apt-get|ports install package[-dev[el]]</pre></li>
+    </ul>
+</p>
+<p>
+    For those working in <i>Ubuntu Linux</i>, you can run the following command to automate the installation of dependencies:
+    <ul>
+        <li><pre class="small">sudo apt-get build-dep php5</pre></li>
+    </ul>
+    If the compilation of <i>an extension</i> should fail because of missing dependencies, <i>Ubuntu Linux</i> can attempt to automate the resolution of those dependencies by issuing:
+    <ul>
+        <li><pre class="small">sudo apt-get build-dep php5-<i>extname</i></pre></li>
+    </ul>
+</p>
+<p>
+    The following table shows what is required for Microsoft Windows users to build PHP:
+</p>
+<table>
+<tr>
+    <th>PHP</th>
+    <th>Visual C++</th>
+    <th>MS SDK</th>
+    <th>DEPS</th>
+    <th>PHP SDK</th>
+</tr>
+<tr>
+    <td align="center">5.3</td>
+    <td align="center">Visual Studio 2008</td>
+    <td align="center">6.1</td>
+    <td align="center"><a href="http://windows.php.net/downloads/php-sdk/deps-5.3-vc9-x86.7z">x86</a></td>
+    <td align="center"><a href="http://windows.php.net/downloads/php-sdk/php-sdk-binary-tools-20110512.zip">here</a></td>
+</tr>
+<tr>
+    <td align="center">5.4</td>
+    <td align="center">Visual Studio 2008</td>
+    <td align="center">6.1</td>
+    <td align="center"><a href="http://windows.php.net/downloads/php-sdk/deps-5.4-vc9-x86.7z">x86</a></td>
+    <td align="center"><a href="http://windows.php.net/downloads/php-sdk/php-sdk-binary-tools-20110915.zip">here</a></td>
+</tr>
+<tr>
+    <td align="center">5.5</td>
+    <td align="center">Visual Studio 2008</td>
+    <td align="center">6.1</td>
+    <td align="center"><a href="http://windows.php.net/downloads/php-sdk/deps-5.5-vc9-x86.7z">x86</a></td>
+    <td align="center"><a href="http://windows.php.net/downloads/php-sdk/php-sdk-binary-tools-20110915.zip">here</a></td>
+</tr>
+<tr>
+    <td align="center">5.5</td>
+    <td align="center">Visual Studio 2012</td>
+    <td align="center">N/A</td>
+    <td align="center">
+        <a href="http://windows.php.net/downloads/php-sdk/deps-5.5-vc11-x86.7z">x86</a>,
+        <a href="http://windows.php.net/downloads/php-sdk/deps-5.5-vc11-x64.7z">x64</a>
+    </td>
+    <td align="center"><a href="http://windows.php.net/downloads/php-sdk/php-sdk-binary-tools-20110915.zip">here</a></td>
+</tr>
+</table>
+<p><b>Note:</b>&nbsp;If a Windows SDK is required, it is advised to install the SDK <i>before</i> Visual Studio.</p>
+</div>
+
+<h2 id="workspace-prep" class="content-header">Workspace Preparation</h2>
+<div class="content-box">
+<p>
+    Windows users should now download and unzip the PHP SDK to their workspace and execute the following commands in an appropriate Visual Studio Console:
+</p>
+<p>
+    Visual Studio 2008:
+    <ul>
+        <li><pre>setenv /xp /Release /x86</pre></li>
+    </ul>
+    Visual Studio 2008 and 2012:
+    <ul>
+        <li><pre class="small">cd C:\path-to-workspace</pre></li>
+        <li><pre class="small">bin\phpsdk_setvars.bat</pre></li>
+        <li><pre class="small">bin\phpsdk_buildtree.bat phpdev</pre></li>
+    </ul>
+    Windows should now change to the directory C:\path-to-workspace\phpdev\<i>VCXX</i>\<i>XARCH</i>, and consider it the root of the workspace for the current build.
+</p>
+<p>
+    The next step for everyone is to obtain the versioned PHP sources via git:
+    <ul>
+        <li><pre class="small">git clone -b BRANCH https://github.com/php/php-src .</pre></li>
+    </ul>
+    BRANCH should be replaced with an appropriate branch name, for example <i>PHP-5.5</i>.
+</p>
+<p>
+    At this point you have a working build environment and the vanilla sources for your chosen branch of PHP, it is a good idea, before you change anything at all, to create a new branch and switch to it, in preparation for your awesome changes to come:
+    <ul>
+        <li><pre class="small">git checkout -b my-awesome-changes</pre></li>
+    </ul>
+</p>
+</div>
+
+
+<h2 id="build-dev" class="content-header">Building Your Development PHP</h2>
+<div class="content-box">
+<p>
+    All operating systems now converge on (near as makes no difference) the same solutions for the rest of the build process:
+    <ul class="listed">
+        <li><pre class="small">buildconf: generates the configure script for PHP</pre></li>
+        <li><pre class="small">configure: configures the build of PHP and creates Makefile</pre></li>
+        <li><pre class="small">make: builds PHP</pre></li>
+        <li><pre class="small">make test: runs testsuite</pre></li>
+        <li><pre class="small">make install: installs PHP</pre></li>
+    </ul>
+</p>
+<p>
+    For Microsoft Windows operating systems, those commands looks like this:
+    <ul class="listed">
+        <li><pre class="small">buildconf</pre></li>
+        <li><pre class="small">configure --with-prefix=C:\my-awesome-php</pre></li>
+        <li><pre class="small">nmake</pre></li>
+        <li><pre class="small">nmake test</pre></li>
+        <li><pre class="small">nmake install</pre></li>
+    </ul>
+</p>
+<p>
+    While for the rest of us, those commands look like this:
+    <ul class="listed">
+        <li><pre class="small">./buildconf</pre></li>
+        <li><pre class="small">./configure --prefix=/opt/my-awesome-php</pre></li>
+        <li><pre class="small">make</pre></li>
+        <li><pre class="small">make test</pre></li>
+        <li><pre class="small">make install</pre></li>
+    </ul>
+</p>
+<p>
+    The <i>configure</i> script has the ability to customize almost every aspect of PHP, to elicit help at the console pass <i>--help</i>
+ as the only argument to <i>configure</i></p>
+<p>
+    When <i>configure</i> executes, it saves the options passed in to a re-usable <i>config.nice</i> which executes <i>configure</i> when invoked.
+</p>
+<p>
+    Upon successful completion of a build, it is recommended to run the test suite, this will help you to identify regression problems in your work, 
+        running the test suite can take a while; go out for a run, or a burger.
+</p>
+<p>
+    It is also possible to run a set (directory) of tests in the following way:
+    <ul>
+        <li><pre class="small">[n]make test TESTS=sapi/cli</pre></li>
+    </ul>
+</p>
+</div>
+    </section><!-- layout-content -->
+    
+<aside class="tips">
+    <div class="inner">
+<div class="panel">
+  <div class="body">
+    <p>
+      This page is intended to help setup a development environment for PHP, if mistakes are found
+      please <a href="http://bugs.php.net/">report</a> them.
+    </p>
+  </div>
+</div>
+</div>
+</aside>
+
+  </div><!-- layout -->
+         
+  <footer>
+    <div class="container footer-content">
+      <div class="row-fluid">
+      <ul class="footmenu">
+        <li><a href="http://php.net/copyright.php">Copyright &copy; 2001-2017 The PHP Group</a></li>
+        <li><a href="http://php.net/my.php">My PHP.net</a></li>
+        <li><a href="http://php.net/contact.php">Contact</a></li>
+        <li><a href="http://php.net/sites.php">Other PHP.net sites</a></li>
+        <li><a href="http://php.net/mirrors.php">Mirror sites</a></li>
+        <li><a href="http://php.net/privacy.php">Privacy policy</a></li>
+      </ul>
+      </div>
+    </div>
+  </footer>
+
+    
+ <!-- External and third party libraries. -->
+ <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/modernizr.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/hogan-2.0.0.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/typeahead.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/mousetrap.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/search.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1500560403&amp;f=/js/common.js"></script>
+
+<a id="toTop" href="javascript:;"><span id="toTopHover"></span><img width="40" height="40" alt="To Top" src="http://php.net/images/to-top@2x.png"></a>
+
+</body>
+
+<!-- Mirrored from php.net/build-setup.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Dec 2017 23:18:08 GMT -->
+</html>
+

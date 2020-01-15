@@ -1,0 +1,27 @@
+INICIO
+INT num_alumnos = 0;
+INT nota_total = 0;
+INT num_aprobados = 0;
+INT num_suspensos = 0;
+hacer mientras(nota > -1 && nota < 10)
+{
+	INT nota;
+	Escribe "Escribe la nota del alumno. Un número negativo o mayor que 10 mostrará los resultados.";
+	Lee nota;
+	nota_total += nota;
+	Si(nota >= 5)
+	{
+		num_aprobados++;
+	}
+	Sino(nota < 5)
+	{
+		num_suspensos++;
+	}
+	num_alumnos++;
+}
+Si(nota < -1 && nota > 10)
+{
+	INT nota_media = (nota_total/num_alumnos);
+	Escribe "El número de aprobados es de: " + num_aprobados + ", por tanto el número de suspensos es de: " + num_suspensos + ". La nota media es de: " + nota_media;
+}
+FIN

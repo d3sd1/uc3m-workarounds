@@ -1,0 +1,14 @@
+ls
+cp
+mkdir
+chown
+chmod
+locate
+update
+cp
+mv
+rm
+cd
+rmdir
+find
+cat

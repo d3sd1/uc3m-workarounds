@@ -1,0 +1,5 @@
+/* Google maps styling */
+#map {
+    height: 100vh;
+    margin: 0.5em
+}

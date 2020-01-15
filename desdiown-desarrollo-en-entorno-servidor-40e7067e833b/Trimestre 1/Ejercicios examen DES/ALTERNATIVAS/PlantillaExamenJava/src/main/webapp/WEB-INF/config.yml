@@ -1,0 +1,15 @@
+#Configuración general
+siteUrl: http://localhost:8000
+
+#Base de datos
+driverDB: com.mysql.jdbc.Driver
+urlDB: jdbc:mysql://localhost:3306/baselocal?useSSL=false
+userDB: root
+passDB: admin
+
+#Email
+mailFrom: alumno1@iesquevedo.es
+mailFromName: IES Tierno Galván
+smtpServer: smtp.gmail.com
+smtpPort: 587
+mailPass: alumnodam2

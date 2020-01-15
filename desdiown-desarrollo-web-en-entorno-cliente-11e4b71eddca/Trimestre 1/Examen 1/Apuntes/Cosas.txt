@@ -1,0 +1,41 @@
+- Diferencias entre:
+miventana.abrir() -> ejecuta la funcion
+miventana.abrir -> muestra el codigo de la funcion
+----------------------------------------------
+- Para copiar un objeto:
+var miobj2 = obj; -> MAL, copiaria la referencia de memoria.
+var miobj2 = new objeto(obj1.valor1,obj1.valor2); -> SE COPIARIAN LOS VALORES EN UN NUEVO OBJETO, Y NO LA REFERENCIA DE MEMORIA.
+-------------------------------------------
+- Para declarar un objeto propio:
+var obj = new objecto(valor1,valor2[...]); -> MODO DE CONSTRUCTOR
+var person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"}; -> MODO LITERAL
+---
+var obj = new Object() -> crea una referencia de memoria para el objeto.
+obj1.nombre = "nombre"...
+------------------------------------------
+- Para declarar objetos (2):
+var x1 = new Object();    // se utiliza
+var x2 = new String();    // NO SE UTILIZA
+var x3 = new Number();    // NO SE UTILIZA
+var x4 = new Boolean();   // NO SE UTILIZA
+var x5 = new Array();     // se utiliza
+var x6 = new RegExp();    // se utiliza
+var x7 = new Function();  // NO SE UTILIZA
+var x8 = new Date();      // se utiliza
+--------------------------------------
+- PARA DECLARAR ARRAY:
+var meses = new array(); -> declara solo el array
+var meses = new array("lol","lol2"); -> declara el array con los valores
+-----------------------------------
+- ForEach in javascript:
+se llama for in:
+for(var elemento in array)
+{
+
+}
+---------------------------------
+- para borrar un elemento de un objeto o array:
+delete loquesea.clave;
+----------------------------
+- para ordenar comparar el primer numero con todos los demas y si existe uno menor se pone delante y asi sucesivamente.
+- primero con segundo segundo con tercero etc. si ha habido algun cambio se repite la operacion, se pregunta si hay cambios y si los hay se vuelve a repetir, si no no se repite (butbuja)

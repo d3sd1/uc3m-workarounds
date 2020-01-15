@@ -1,0 +1,18 @@
+INICIO
+INT num1, num2;
+Escribe "Escribe un número"; 
+LEE num1;
+Escribe "Escribe otro número";
+LEE num2;
+Si(num1 > 0 && num2 > 0)
+{
+	Si((num1 % 2) == 0 && (num2 % 2) == 0)
+	{
+		Escribe "Ambos números son pares";
+	}
+	Sino((num1 % 2) != 0 && (num2 % 2) != 0)
+	{
+		Escribe "Ambos números son impares";
+	}
+}
+FIN

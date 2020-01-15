@@ -1,0 +1,18 @@
+INICIO
+INT num_introducido;
+Escribe "Introduce un número";
+LEE num_introducido;
+Si(num_introducido == 0)
+{
+	Escribe "Introduce un número distinto a 0";
+	LEE num_introducido;
+}
+mientras(num_introducido != 0)
+{
+	Escribe "El doble de " + num_introducido + " es " + num_introducido*2;
+	
+	Escribe "Introduce un número (0 para terminar)";
+	LEE num_introducido;
+}
+Escribe "Adiós";
+FIN

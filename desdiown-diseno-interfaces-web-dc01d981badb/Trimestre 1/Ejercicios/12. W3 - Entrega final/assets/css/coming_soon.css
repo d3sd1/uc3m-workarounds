@@ -1,0 +1,43 @@
+/* Define page as 100%, because it has not so much content */
+body, html {
+    height: 100%;
+    height: 100%
+}
+/* Background image */
+.bg-img {
+    width: 100%;
+    height: 100%;
+    background: url("../images/backgrounds/8.jpg") center center no-repeat;
+    background-size: cover
+}
+/* Background sun effect */
+.bg-img:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(to bottom right, #002f4b, #dc4225);
+    opacity: 0.6
+}
+/* Line between title and content */
+hr.line {
+    margin:auto;
+    width:70%
+}
+/* Top logo */
+img.logo {
+    width: 4em
+}
+.text-big {
+    font-size: 1em
+}
+@media (min-width: 768px) {
+    .text-big {
+        font-size: 3em
+    }
+    img.logo {
+        width: 10em
+    }
+}

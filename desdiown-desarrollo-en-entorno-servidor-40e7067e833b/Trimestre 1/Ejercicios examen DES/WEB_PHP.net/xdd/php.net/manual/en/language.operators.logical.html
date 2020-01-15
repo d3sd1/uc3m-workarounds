@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<!-- Mirrored from php.net/manual/en/language.operators.logical.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Dec 2017 23:18:10 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+  <title>PHP: Logical Operators - Manual </title>
+
+ <link rel="shortcut icon" href="http://php.net/favicon.ico">
+ <link rel="search" type="application/opensearchdescription+xml" href="http://php.net/phpnetimprovedsearch.src" title="Add PHP.net search">
+ <link rel="alternate" type="application/atom+xml" href="http://php.net/releases/feed.php" title="PHP Release feed">
+ <link rel="alternate" type="application/atom+xml" href="http://php.net/feed.atom" title="PHP: Hypertext Preprocessor">
+
+ <link rel="canonical" href="http://php.net/manual/en/language.operators.logical.php">
+ <link rel="shorturl" href="http://php.net/operators.logical">
+ <link rel="alternate" href="http://php.net/operators.logical" hreflang="x-default">
+
+ <link rel="contents" href="http://php.net/manual/en/index.php">
+ <link rel="index" href="http://php.net/manual/en/language.operators.php">
+ <link rel="prev" href="http://php.net/manual/en/language.operators.increment.php">
+ <link rel="next" href="http://php.net/manual/en/language.operators.string.php">
+
+ <link rel="alternate" href="http://php.net/manual/en/language.operators.logical.php" hreflang="en">
+ <link rel="alternate" href="http://php.net/manual/pt_BR/language.operators.logical.php" hreflang="pt_BR">
+ <link rel="alternate" href="http://php.net/manual/zh/language.operators.logical.php" hreflang="zh">
+ <link rel="alternate" href="http://php.net/manual/fr/language.operators.logical.php" hreflang="fr">
+ <link rel="alternate" href="http://php.net/manual/de/language.operators.logical.php" hreflang="de">
+ <link rel="alternate" href="http://php.net/manual/ja/language.operators.logical.php" hreflang="ja">
+ <link rel="alternate" href="http://php.net/manual/ro/language.operators.logical.php" hreflang="ro">
+ <link rel="alternate" href="http://php.net/manual/ru/language.operators.logical.php" hreflang="ru">
+ <link rel="alternate" href="http://php.net/manual/es/language.operators.logical.php" hreflang="es">
+ <link rel="alternate" href="http://php.net/manual/tr/language.operators.logical.php" hreflang="tr">
+
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1421837618&amp;f=/fonts/Fira/fira.css" media="screen">
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1421837618&amp;f=/fonts/Font-Awesome/css/fontello.css" media="screen">
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1478800802&amp;f=/styles/theme-base.css" media="screen">
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1449787206&amp;f=/styles/theme-medium.css" media="screen">
+
+ <!--[if lte IE 7]>
+ <link rel="stylesheet" type="text/css" href="http://php.net/styles/workarounds.ie7.css" media="screen">
+ <![endif]-->
+
+ <!--[if lte IE 8]>
+ <script type="text/javascript">
+  window.brokenIE = true;
+ </script>
+ <![endif]-->
+
+ <!--[if lte IE 9]>
+ <link rel="stylesheet" type="text/css" href="http://php.net/styles/workarounds.ie9.css" media="screen">
+ <![endif]-->
+
+ <!--[if IE]>
+ <script type="text/javascript" src="http://php.net/js/ext/html5.js"></script>
+ <![endif]-->
+
+ <base >
+
+</head>
+<body class="docs ">
+
+<nav id="head-nav" class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <a href="http://php.net/" class="brand"><img src="http://php.net/images/logos/php-logo.svg" width="48" height="24" alt="php"></a>
+    <div id="mainmenu-toggle-overlay"></div>
+    <input type="checkbox" id="mainmenu-toggle">
+    <ul class="nav">
+      <li class=""><a href="http://php.net/downloads">Downloads</a></li>
+      <li class="active"><a href="http://php.net/docs.php">Documentation</a></li>
+      <li class=""><a href="http://php.net/get-involved" >Get Involved</a></li>
+      <li class=""><a href="http://php.net/support">Help</a></li>
+    </ul>
+    <form class="navbar-search" id="topsearch" action="http://php.net/search.php">
+      <input type="hidden" name="show" value="quickref">
+      <input type="search" name="pattern" class="search-query" placeholder="Search" accesskey="s">
+    </form>
+  </div>
+  <div id="flash-message"></div>
+</nav>
+<nav id="trick"><div><dl>
+<dt><a href='http://php.net/manual/en/getting-started.php'>Getting Started</a></dt>
+	<dd><a href='http://php.net/manual/en/introduction.php'>Introduction</a></dd>
+	<dd><a href='http://php.net/manual/en/tutorial.php'>A simple tutorial</a></dd>
+<dt><a href='http://php.net/manual/en/langref.php'>Language Reference</a></dt>
+	<dd><a href='http://php.net/manual/en/language.basic-syntax.php'>Basic syntax</a></dd>
+	<dd><a href='http://php.net/manual/en/language.types.php'>Types</a></dd>
+	<dd><a href='http://php.net/manual/en/language.variables.php'>Variables</a></dd>
+	<dd><a href='http://php.net/manual/en/language.constants.php'>Constants</a></dd>
+	<dd><a href='http://php.net/manual/en/language.expressions.php'>Expressions</a></dd>
+	<dd><a href='http://php.net/manual/en/language.operators.php'>Operators</a></dd>
+	<dd><a href='http://php.net/manual/en/language.control-structures.php'>Control Structures</a></dd>
+	<dd><a href='http://php.net/manual/en/language.functions.php'>Functions</a></dd>
+	<dd><a href='http://php.net/manual/en/language.oop5.php'>Classes and Objects</a></dd>
+	<dd><a href='http://php.net/manual/en/language.namespaces.php'>Namespaces</a></dd>
+	<dd><a href='http://php.net/manual/en/language.errors.php'>Errors</a></dd>
+	<dd><a href='http://php.net/manual/en/language.exceptions.php'>Exceptions</a></dd>
+	<dd><a href='http://php.net/manual/en/language.generators.php'>Generators</a></dd>
+	<dd><a href='http://php.net/manual/en/language.references.php'>References Explained</a></dd>
+	<dd><a href='http://php.net/manual/en/reserved.variables.php'>Predefined Variables</a></dd>
+	<dd><a href='http://php.net/manual/en/reserved.exceptions.php'>Predefined Exceptions</a></dd>
+	<dd><a href='http://php.net/manual/en/reserved.interfaces.php'>Predefined Interfaces and Classes</a></dd>
+	<dd><a href='http://php.net/manual/en/context.php'>Context options and parameters</a></dd>
+	<dd><a href='http://php.net/manual/en/wrappers.php'>Supported Protocols and Wrappers</a></dd>
+</dl>
+<dl>
+<dt><a href='http://php.net/manual/en/security.php'>Security</a></dt>
+	<dd><a href='http://php.net/manual/en/security.intro.php'>Introduction</a></dd>
+	<dd><a href='http://php.net/manual/en/security.general.php'>General considerations</a></dd>
+	<dd><a href='http://php.net/manual/en/security.cgi-bin.php'>Installed as CGI binary</a></dd>
+	<dd><a href='http://php.net/manual/en/security.apache.php'>Installed as an Apache module</a></dd>
+	<dd><a href='http://php.net/manual/en/security.sessions.php'>Session Security</a></dd>
+	<dd><a href='http://php.net/manual/en/security.filesystem.php'>Filesystem Security</a></dd>
+	<dd><a href='http://php.net/manual/en/security.database.php'>Database Security</a></dd>
+	<dd><a href='http://php.net/manual/en/security.errors.php'>Error Reporting</a></dd>
+	<dd><a href='http://php.net/manual/en/security.globals.php'>Using Register Globals</a></dd>
+	<dd><a href='http://php.net/manual/en/security.variables.php'>User Submitted Data</a></dd>
+	<dd><a href='http://php.net/manual/en/security.magicquotes.php'>Magic Quotes</a></dd>
+	<dd><a href='http://php.net/manual/en/security.hiding.php'>Hiding PHP</a></dd>
+	<dd><a href='http://php.net/manual/en/security.current.php'>Keeping Current</a></dd>
+<dt><a href='http://php.net/manual/en/features.php'>Features</a></dt>
+	<dd><a href='http://php.net/manual/en/features.http-auth.php'>HTTP authentication with PHP</a></dd>
+	<dd><a href='http://php.net/manual/en/features.cookies.php'>Cookies</a></dd>
+	<dd><a href='http://php.net/manual/en/features.sessions.php'>Sessions</a></dd>
+	<dd><a href='http://php.net/manual/en/features.xforms.php'>Dealing with XForms</a></dd>
+	<dd><a href='http://php.net/manual/en/features.file-upload.php'>Handling file uploads</a></dd>
+	<dd><a href='http://php.net/manual/en/features.remote-files.php'>Using remote files</a></dd>
+	<dd><a href='http://php.net/manual/en/features.connection-handling.php'>Connection handling</a></dd>
+	<dd><a href='http://php.net/manual/en/features.persistent-connections.php'>Persistent Database Connections</a></dd>
+	<dd><a href='http://php.net/manual/en/features.safe-mode.php'>Safe Mode</a></dd>
+	<dd><a href='http://php.net/manual/en/features.commandline.php'>Command line usage</a></dd>
+	<dd><a href='http://php.net/manual/en/features.gc.php'>Garbage Collection</a></dd>
+	<dd><a href='http://php.net/manual/en/features.dtrace.php'>DTrace Dynamic Tracing</a></dd>
+</dl>
+<dl>
+<dt><a href='http://php.net/manual/en/funcref.php'>Function Reference</a></dt>
+	<dd><a href='http://php.net/manual/en/refs.basic.php.php'>Affecting PHP's Behaviour</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.audio.php'>Audio Formats Manipulation</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.remote.auth.php'>Authentication Services</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.cmdline.php'>Command Line Specific Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.compression.php'>Compression and Archive Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.creditcard.php'>Credit Card Processing</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.crypto.php'>Cryptography Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.database.php'>Database Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.calendar.php'>Date and Time Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.fileprocess.file.php'>File System Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.international.php'>Human Language and Character Encoding Support</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.image.php'>Image Processing and Generation</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.remote.mail.php'>Mail Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.math.php'>Mathematical Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.nontext.php'>Non-Text MIME Output</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.fileprocess.process.php'>Process Control Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.other.php'>Other Basic Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.remote.other.php'>Other Services</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.search.php'>Search Engine Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.server.php'>Server Specific Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.session.php'>Session Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.text.php'>Text Processing</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.vartype.php'>Variable and Type Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.webservice.php'>Web Services</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.windows.php'>Windows Only Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.xml.php'>XML Manipulation</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.ui.php'>GUI Extensions</a></dd>
+</dl>
+<dl>
+<dt>Keyboard Shortcuts</dt><dt>?</dt>
+<dd>This help</dd>
+<dt>j</dt>
+<dd>Next menu item</dd>
+<dt>k</dt>
+<dd>Previous menu item</dd>
+<dt>g p</dt>
+<dd>Previous man page</dd>
+<dt>g n</dt>
+<dd>Next man page</dd>
+<dt>G</dt>
+<dd>Scroll to bottom</dd>
+<dt>g g</dt>
+<dd>Scroll to top</dd>
+<dt>g h</dt>
+<dd>Goto homepage</dd>
+<dt>g s</dt>
+<dd>Goto search<br>(current page)</dd>
+<dt>/</dt>
+<dd>Focus search box</dd>
+</dl></div></nav>
+<div id="goto">
+    <div class="search">
+         <div class="text"></div>
+         <div class="results"><ul></ul></div>
+   </div>
+</div>
+
+  <div id="breadcrumbs" class="clearfix">
+    <div id="breadcrumbs-inner">
+          <div class="next">
+        <a href="http://php.net/manual/en/language.operators.string.php">
+          String Operators &raquo;
+        </a>
+      </div>
+              <div class="prev">
+        <a href="http://php.net/manual/en/language.operators.increment.php">
+          &laquo; Incrementing/Decrementing Operators        </a>
+      </div>
+          <ul>
+            <li><a href='http://php.net/manual/en/index.php'>PHP Manual</a></li>      <li><a href='http://php.net/manual/en/langref.php'>Language Reference</a></li>      <li><a href='http://php.net/manual/en/language.operators.php'>Operators</a></li>      </ul>
+    </div>
+  </div>
+
+
+
+
+<div id="layout" class="clearfix">
+  <section id="layout-content">
+  <div class="page-tools">
+    <div class="change-language">
+      <form action="http://php.net/manual/change.php" method="get" id="changelang" name="changelang">
+        <fieldset>
+          <label for="changelang-langs">Change language:</label>
+          <select onchange="document.changelang.submit()" name="page" id="changelang-langs">
+            <option value='en/language.operators.logical.php' selected="selected">English</option>
+            <option value='http://php.net/manual/en/pt_BR/language.operators.logical.php'>Brazilian Portuguese</option>
+            <option value='http://php.net/manual/en/zh/language.operators.logical.php'>Chinese (Simplified)</option>
+            <option value='http://php.net/manual/en/fr/language.operators.logical.php'>French</option>
+            <option value='http://php.net/manual/en/de/language.operators.logical.php'>German</option>
+            <option value='http://php.net/manual/en/ja/language.operators.logical.php'>Japanese</option>
+            <option value='http://php.net/manual/en/ro/language.operators.logical.php'>Romanian</option>
+            <option value='http://php.net/manual/en/ru/language.operators.logical.php'>Russian</option>
+            <option value='http://php.net/manual/en/es/language.operators.logical.php'>Spanish</option>
+            <option value='http://php.net/manual/en/tr/language.operators.logical.php'>Turkish</option>
+            <option value="http://php.net/manual/en/help-translate.php">Other</option>
+          </select>
+        </fieldset>
+      </form>
+    </div>
+    <div class="edit-bug">
+      <a href="https://edit.php.net/?project=PHP&amp;perm=en/language.operators.logical.php">Edit</a>
+      <a href="https://bugs.php.net/report.php?bug_type=Documentation+problem&amp;manpage=language.operators.logical">Report a Bug</a>
+    </div>
+  </div><div id="language.operators.logical" class="sect1">
+   <h2 class="title">Logical Operators</h2>
+
+   <table class="doctable table">
+    <caption><strong>Logical Operators</strong></caption>
+    
+     <thead>
+      <tr>
+       <th>Example</th>
+       <th>Name</th>
+       <th>Result</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>$a and $b</td>
+       <td>And</td>
+       <td><strong><code>TRUE</code></strong> if both <var class="varname"><var class="varname">$a</var></var> and <var class="varname"><var class="varname">$b</var></var> are <strong><code>TRUE</code></strong>.</td>
+      </tr>
+
+      <tr>
+       <td>$a or $b</td>
+       <td>Or</td>
+       <td><strong><code>TRUE</code></strong> if either <var class="varname"><var class="varname">$a</var></var> or <var class="varname"><var class="varname">$b</var></var> is <strong><code>TRUE</code></strong>.</td>
+      </tr>
+
+      <tr>
+       <td>$a xor $b</td>
+       <td>Xor</td>
+       <td><strong><code>TRUE</code></strong> if either <var class="varname"><var class="varname">$a</var></var> or <var class="varname"><var class="varname">$b</var></var> is <strong><code>TRUE</code></strong>, but not both.</td>
+      </tr>
+
+      <tr>
+       <td>! $a</td>
+       <td>Not</td>
+       <td><strong><code>TRUE</code></strong> if <var class="varname"><var class="varname">$a</var></var> is not <strong><code>TRUE</code></strong>.</td>
+      </tr>
+
+      <tr>
+       <td>$a &amp;&amp; $b</td>
+       <td>And</td>
+       <td><strong><code>TRUE</code></strong> if both <var class="varname"><var class="varname">$a</var></var> and <var class="varname"><var class="varname">$b</var></var> are <strong><code>TRUE</code></strong>.</td>
+      </tr>
+
+      <tr>
+       <td>$a || $b</td>
+       <td>Or</td>
+       <td><strong><code>TRUE</code></strong> if either <var class="varname"><var class="varname">$a</var></var> or <var class="varname"><var class="varname">$b</var></var> is <strong><code>TRUE</code></strong>.</td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+   <p class="simpara">
+    The reason for the two different variations of &quot;and&quot; and &quot;or&quot;
+    operators is that they operate at different precedences. (See
+    <a href="http://php.net/manual/en/language.operators.precedence.php" class="link">Operator
+    Precedence</a>.)
+   </p>
+   <div class="example" id="example-108">
+    <p><strong>Example #1 Logical operators illustrated</strong></p>
+    <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br /></span><span style="color: #FF8000">//&nbsp;--------------------<br />//&nbsp;foo()&nbsp;will&nbsp;never&nbsp;get&nbsp;called&nbsp;as&nbsp;those&nbsp;operators&nbsp;are&nbsp;short-circuit<br /><br /></span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">=&nbsp;(</span><span style="color: #0000BB">false&nbsp;</span><span style="color: #007700">&amp;&amp;&nbsp;</span><span style="color: #0000BB">foo</span><span style="color: #007700">());<br /></span><span style="color: #0000BB">$b&nbsp;</span><span style="color: #007700">=&nbsp;(</span><span style="color: #0000BB">true&nbsp;&nbsp;</span><span style="color: #007700">||&nbsp;</span><span style="color: #0000BB">foo</span><span style="color: #007700">());<br /></span><span style="color: #0000BB">$c&nbsp;</span><span style="color: #007700">=&nbsp;(</span><span style="color: #0000BB">false&nbsp;</span><span style="color: #007700">and&nbsp;</span><span style="color: #0000BB">foo</span><span style="color: #007700">());<br /></span><span style="color: #0000BB">$d&nbsp;</span><span style="color: #007700">=&nbsp;(</span><span style="color: #0000BB">true&nbsp;&nbsp;</span><span style="color: #007700">or&nbsp;&nbsp;</span><span style="color: #0000BB">foo</span><span style="color: #007700">());<br /><br /></span><span style="color: #FF8000">//&nbsp;--------------------<br />//&nbsp;"||"&nbsp;has&nbsp;a&nbsp;greater&nbsp;precedence&nbsp;than&nbsp;"or"<br /><br />//&nbsp;The&nbsp;result&nbsp;of&nbsp;the&nbsp;expression&nbsp;(false&nbsp;||&nbsp;true)&nbsp;is&nbsp;assigned&nbsp;to&nbsp;$e<br />//&nbsp;Acts&nbsp;like:&nbsp;($e&nbsp;=&nbsp;(false&nbsp;||&nbsp;true))<br /></span><span style="color: #0000BB">$e&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">false&nbsp;</span><span style="color: #007700">||&nbsp;</span><span style="color: #0000BB">true</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;The&nbsp;constant&nbsp;false&nbsp;is&nbsp;assigned&nbsp;to&nbsp;$f&nbsp;before&nbsp;the&nbsp;"or"&nbsp;operation&nbsp;occurs<br />//&nbsp;Acts&nbsp;like:&nbsp;(($f&nbsp;=&nbsp;false)&nbsp;or&nbsp;true)<br /></span><span style="color: #0000BB">$f&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">false&nbsp;</span><span style="color: #007700">or&nbsp;</span><span style="color: #0000BB">true</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$e</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$f</span><span style="color: #007700">);<br /><br /></span><span style="color: #FF8000">//&nbsp;--------------------<br />//&nbsp;"&amp;&amp;"&nbsp;has&nbsp;a&nbsp;greater&nbsp;precedence&nbsp;than&nbsp;"and"<br /><br />//&nbsp;The&nbsp;result&nbsp;of&nbsp;the&nbsp;expression&nbsp;(true&nbsp;&amp;&amp;&nbsp;false)&nbsp;is&nbsp;assigned&nbsp;to&nbsp;$g<br />//&nbsp;Acts&nbsp;like:&nbsp;($g&nbsp;=&nbsp;(true&nbsp;&amp;&amp;&nbsp;false))<br /></span><span style="color: #0000BB">$g&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">true&nbsp;</span><span style="color: #007700">&amp;&amp;&nbsp;</span><span style="color: #0000BB">false</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;The&nbsp;constant&nbsp;true&nbsp;is&nbsp;assigned&nbsp;to&nbsp;$h&nbsp;before&nbsp;the&nbsp;"and"&nbsp;operation&nbsp;occurs<br />//&nbsp;Acts&nbsp;like:&nbsp;(($h&nbsp;=&nbsp;true)&nbsp;and&nbsp;false)<br /></span><span style="color: #0000BB">$h&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">true&nbsp;</span><span style="color: #007700">and&nbsp;</span><span style="color: #0000BB">false</span><span style="color: #007700">;<br /><br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">$g</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$h</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+    </div>
+
+    <div class="example-contents"><p>The above example will output
+something similar to:</p></div>
+    <div class="example-contents screen">
+<div class="cdata"><pre>
+bool(true)
+bool(false)
+bool(false)
+bool(true)
+</pre></div>
+    </div>
+   </div>
+  </div>
+<section id="usernotes">
+ <div class="head">
+  <span class="action"><a href="http://php.net/manual/add-note.php?sect=language.operators.logical&amp;redirect=http://php.net/manual/en/language.operators.logical.php"><img src='http://php.net/images/notes-add@2x.png' alt='add a note' width='12' height='12'> <small>add a note</small></a></span>
+  <h3 class="title">User Contributed Notes <span class="count">21 notes</span></h3>
+ </div><div id="allnotes">
+  <div class="note" id="77411">  <div class="votes">
+    <div id="Vu77411">
+    <a href="http://php.net/manual/vote-note.php?id=77411&amp;page=language.operators.logical&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd77411">
+    <a href="http://php.net/manual/vote-note.php?id=77411&amp;page=language.operators.logical&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V77411" title="75% like this...">
+    181
+    </div>
+  </div>
+  <a href="#77411" class="name">
+  <strong class="user"><em>Lawrence</em></strong></a><a class="genanchor" href="#77411"> &para;</a><div class="date" title="2007-08-28 12:04"><strong>10 years ago</strong></div>
+  <div class="text" id="Hcom77411">
+<div class="phpcode"><code><span class="html">
+Note that PHP's boolean operators *always* return a boolean value... as opposed to other languages that return the value of the last evaluated expression.<br /><br />For example:<br /><br />$a = 0 || 'avacado';<br />print "A: $a\n";<br /><br />will print:<br /><br />A: 1<br /><br />in PHP -- as opposed to printing "A: avacado" as it would in a language like Perl or JavaScript.<br /><br />This means you can't use the '||' operator to set a default value:<br /><br />$a = $fruit || 'apple';<br /><br />instead, you have to use the '?:' operator:<br /><br />$a = ($fruit ? $fruit : 'apple');</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="120961">  <div class="votes">
+    <div id="Vu120961">
+    <a href="http://php.net/manual/vote-note.php?id=120961&amp;page=language.operators.logical&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd120961">
+    <a href="http://php.net/manual/vote-note.php?id=120961&amp;page=language.operators.logical&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V120961" title="72% like this...">
+    8
+    </div>
+  </div>
+  <a href="#120961" class="name">
+  <strong class="user"><em>dumitru at floringabriel dot com</em></strong></a><a class="genanchor" href="#120961"> &para;</a><div class="date" title="2017-04-10 10:54"><strong>8 months ago</strong></div>
+  <div class="text" id="Hcom120961">
+<div class="phpcode"><code><span class="html">
+In addition to what Lawrence said about assigning a default value, one can now use the Null Coalescing Operator (PHP 7). Hence when we want to assign a default value we can write:<br /><br />$a = ($fruit ?? 'apple'); <br />//assigns the $fruit variable content to $a if the $fruit variable exists or has a value that is not NULL, or assigns the value 'apple' to $a if the $fruit variable doesn't exists or it contains the NULL value</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="80005">  <div class="votes">
+    <div id="Vu80005">
+    <a href="http://php.net/manual/vote-note.php?id=80005&amp;page=language.operators.logical&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd80005">
+    <a href="http://php.net/manual/vote-note.php?id=80005&amp;page=language.operators.logical&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V80005" title="64% like this...">
+    46
+    </div>
+  </div>
+  <a href="#80005" class="name">
+  <strong class="user"><em>pepesantillan at gmail dot com</em></strong></a><a class="genanchor" href="#80005"> &para;</a><div class="date" title="2007-12-23 03:23"><strong>9 years ago</strong></div>
+  <div class="text" id="Hcom80005">
+<div class="phpcode"><code><span class="html">
+worth reading for people learning about php and programming: (adding extras <span class="default">&lt;?php ?&gt;</span> to get highlighted code)<br /><br />about the following example in this page manual: <br />Example#1 Logical operators illustrated<br /><br />...<br /><span class="default">&lt;?php<br /></span><span class="comment">// "||" has a greater precedence than "or"<br /></span><span class="default">$e </span><span class="keyword">= </span><span class="default">false </span><span class="keyword">|| </span><span class="default">true</span><span class="keyword">; </span><span class="comment">// $e will be assigned to (false || true) which is true<br /></span><span class="default">$f </span><span class="keyword">= </span><span class="default">false </span><span class="keyword">or </span><span class="default">true</span><span class="keyword">; </span><span class="comment">// $f will be assigned to false<br /></span><span class="default">var_dump</span><span class="keyword">(</span><span class="default">$e</span><span class="keyword">, </span><span class="default">$f</span><span class="keyword">);<br /><br /></span><span class="comment">// "&amp;&amp;" has a greater precedence than "and"<br /></span><span class="default">$g </span><span class="keyword">= </span><span class="default">true </span><span class="keyword">&amp;&amp; </span><span class="default">false</span><span class="keyword">; </span><span class="comment">// $g will be assigned to (true &amp;&amp; false) which is false<br /></span><span class="default">$h </span><span class="keyword">= </span><span class="default">true </span><span class="keyword">and </span><span class="default">false</span><span class="keyword">; </span><span class="comment">// $h will be assigned to true<br /></span><span class="default">var_dump</span><span class="keyword">(</span><span class="default">$g</span><span class="keyword">, </span><span class="default">$h</span><span class="keyword">); <br /></span><span class="default">?&gt;<br /></span>_______________________________________________end of my quote...<br /><br />If necessary, I wanted to give further explanation on this and say that when we write:<br />$f = false or true; // $f will be assigned to false<br />the explanation: <br /><br />"||" has a greater precedence than "or" <br /><br />its true. But a more acurate one would be<br /><br />"||" has greater precedence than "or" and than "=", whereas "or" doesnt have greater precedence than "=", so<br /><br /><span class="default">&lt;?php<br />$f </span><span class="keyword">= </span><span class="default">false </span><span class="keyword">or </span><span class="default">true</span><span class="keyword">;<br /><br /></span><span class="comment">//is like writting<br /><br /></span><span class="keyword">(</span><span class="default">$f </span><span class="keyword">= </span><span class="default">false </span><span class="keyword">) or </span><span class="default">true</span><span class="keyword">;<br /><br /></span><span class="comment">//and<br /><br /></span><span class="default">$e </span><span class="keyword">= </span><span class="default">false </span><span class="keyword">|| </span><span class="default">true</span><span class="keyword">;<br /><br /></span><span class="default">is the same </span><span class="keyword">as<br /><br /></span><span class="default">$e </span><span class="keyword">= (</span><span class="default">false </span><span class="keyword">|| </span><span class="default">true</span><span class="keyword">);<br /><br /></span><span class="default">?&gt;</span> <br /><br />same goes for "&amp;&amp;" and "AND". <br /><br />If you find it hard to remember operators precedence you can always use parenthesys - "(" and ")". And even if you get to learn it remember that being a good programmer is not showing you can do code with fewer words. The point of being a good programmer is writting code that is easy to understand (comment your code when necessary!), easy to maintain and with high efficiency, among other things.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="90386">  <div class="votes">
+    <div id="Vu90386">
+    <a href="http://php.net/manual/vote-note.php?id=90386&amp;page=language.operators.logical&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd90386">
+    <a href="http://php.net/manual/vote-note.php?id=90386&amp;page=language.operators.logical&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V90386" title="63% like this...">
+    15
+    </div>
+  </div>
+  <a href="#90386" class="name">
+  <strong class="user"><em>momrom at freenet dot de</em></strong></a><a class="genanchor" href="#90386"> &para;</a><div class="date" title="2009-04-19 08:32"><strong>8 years ago</strong></div>
+  <div class="text" id="Hcom90386">
+<div class="phpcode"><code><span class="html">
+Evaluation of logical expressions is stopped as soon as the result is known.<br />If you don't want this, you can replace the and-operator by min() and the or-operator by max().<br /><br /><span class="default">&lt;?php<br /></span><span class="keyword">function </span><span class="default">a</span><span class="keyword">(</span><span class="default">$x</span><span class="keyword">) { echo </span><span class="string">'Expression '</span><span class="keyword">; return </span><span class="default">$x</span><span class="keyword">; }<br />function </span><span class="default">b</span><span class="keyword">(</span><span class="default">$x</span><span class="keyword">) { echo </span><span class="string">'is '</span><span class="keyword">; return </span><span class="default">$x</span><span class="keyword">; }<br />function </span><span class="default">c</span><span class="keyword">(</span><span class="default">$x</span><span class="keyword">) { echo </span><span class="default">$x </span><span class="keyword">? </span><span class="string">'true.' </span><span class="keyword">: </span><span class="string">'false.' </span><span class="keyword">;}<br /><br /></span><span class="default">c</span><span class="keyword">( </span><span class="default">a</span><span class="keyword">( </span><span class="default">false </span><span class="keyword">) and </span><span class="default">b</span><span class="keyword">( </span><span class="default">true </span><span class="keyword">) ); </span><span class="comment">// Output: Expression false.<br /></span><span class="default">c</span><span class="keyword">( </span><span class="default">min</span><span class="keyword">( </span><span class="default">a</span><span class="keyword">( </span><span class="default">false </span><span class="keyword">), </span><span class="default">b</span><span class="keyword">( </span><span class="default">true </span><span class="keyword">) ) ); </span><span class="comment">// Output: Expression is false.<br /><br /></span><span class="default">c</span><span class="keyword">( </span><span class="default">a</span><span class="keyword">( </span><span class="default">true </span><span class="keyword">) or </span><span class="default">b</span><span class="keyword">( </span><span class="default">true </span><span class="keyword">) ); </span><span class="comment">// Output: Expression true.<br /></span><span class="default">c</span><span class="keyword">( </span><span class="default">max</span><span class="keyword">( </span><span class="default">a</span><span class="keyword">( </span><span class="default">true </span><span class="keyword">), </span><span class="default">b</span><span class="keyword">( </span><span class="default">true </span><span class="keyword">) ) ); </span><span class="comment">// Output: Expression is true.<br /></span><span class="default">?&gt;<br /></span><br />This way, values aren't automaticaly converted to boolean like it would be done when using and or or. Therefore, if you aren't sure the values are already boolean, you have to convert them 'by hand':<br /><br /><span class="default">&lt;?php<br />c</span><span class="keyword">( </span><span class="default">min</span><span class="keyword">( (bool) </span><span class="default">a</span><span class="keyword">( </span><span class="default">false </span><span class="keyword">), (bool) </span><span class="default">b</span><span class="keyword">( </span><span class="default">true </span><span class="keyword">) ) );<br /></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="110785">  <div class="votes">
+    <div id="Vu110785">
+    <a href="http://php.net/manual/vote-note.php?id=110785&amp;page=language.operators.logical&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd110785">
+    <a href="http://php.net/manual/vote-note.php?id=110785&amp;page=language.operators.logical&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V110785" title="59% like this...">
+    15
+    </div>
+  </div>
+  <a href="#110785" class="name">
+  <strong class="user"><em>phpnet at zc dot webhop dot net</em></strong></a><a class="genanchor" href="#110785"> &para;</a><div class="date" title="2012-12-07 03:07"><strong>5 years ago</strong></div>
+  <div class="text" id="Hcom110785">
+<div class="phpcode"><code><span class="html">
+This works similar to javascripts short-curcuit assignments and setting defaults. (e.g.&nbsp; var a = getParm() || 'a default';)<br /><br /><span class="default">&lt;?php<br /><br /></span><span class="keyword">(</span><span class="default">$a </span><span class="keyword">= </span><span class="default">$_GET</span><span class="keyword">[</span><span class="string">'var'</span><span class="keyword">]) || (</span><span class="default">$a </span><span class="keyword">= </span><span class="string">'a default'</span><span class="keyword">);<br /><br /></span><span class="default">?&gt;<br /></span><br />$a gets assigned $_GET['var'] if there's anything in it or it will fallback to 'a default'<br />Parentheses are required, otherwise you'll end up with $a being a boolean.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="120433">  <div class="votes">
+    <div id="Vu120433">
+    <a href="http://php.net/manual/vote-note.php?id=120433&amp;page=language.operators.logical&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd120433">
+    <a href="http://php.net/manual/vote-note.php?id=120433&amp;page=language.operators.logical&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V120433" title="60% like this...">
+    1
+    </div>
+  </div>
+  <a href="#120433" class="name">
+  <strong class="user"><em>thisleenobleNOSPAMPLEASE at mac dot com</em></strong></a><a class="genanchor" href="#120433"> &para;</a><div class="date" title="2017-01-09 11:05"><strong>11 months ago</strong></div>
+  <div class="text" id="Hcom120433">
+<div class="phpcode"><code><span class="html">
+In order to kind of emulate the way javascript assigns the first non-false value in an expression such as this:<br /><br />var v = a || b || c || d;<br /><br />I wrote a little helper method that I put in a function dump library (here presented as a bare function):<br /><br /><span class="default">&lt;?php<br /></span><span class="keyword">function </span><span class="default">either</span><span class="keyword">(</span><span class="default">$a</span><span class="keyword">, </span><span class="default">$b</span><span class="keyword">){<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$val </span><span class="keyword">= </span><span class="default">$a </span><span class="keyword">? </span><span class="default">$a </span><span class="keyword">: </span><span class="default">$b</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="comment">/*<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; Yes, I know the fixed parameters in the function <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; are redundant since I could just use func_get_args, <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; but in most instances I'll be using this a replacement <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; for the ternary operator and only passing two values. <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; I don't want to invoke the additional process below <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; unless I REALLY have to. <br />&nbsp; &nbsp; &nbsp; &nbsp; */<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$args </span><span class="keyword">= </span><span class="default">func_get_args</span><span class="keyword">();<br />&nbsp; &nbsp; &nbsp; &nbsp; if(</span><span class="default">$val </span><span class="keyword">=== </span><span class="default">false </span><span class="keyword">&amp;&amp; </span><span class="default">count</span><span class="keyword">(</span><span class="default">$args</span><span class="keyword">) &gt; </span><span class="default">2</span><span class="keyword">){<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$args </span><span class="keyword">= </span><span class="default">array_slice</span><span class="keyword">(</span><span class="default">$args</span><span class="keyword">, </span><span class="default">2</span><span class="keyword">);<br /><br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; foreach(</span><span class="default">$args </span><span class="keyword">as </span><span class="default">$arg</span><span class="keyword">){<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if(</span><span class="default">$arg </span><span class="keyword">!== </span><span class="default">false</span><span class="keyword">){<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$val </span><span class="keyword">= </span><span class="default">$arg</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; break;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />&nbsp; &nbsp; &nbsp; &nbsp; }<br />&nbsp; &nbsp; &nbsp; &nbsp; return </span><span class="default">$val</span><span class="keyword">;<br />&nbsp; &nbsp; }<br /></span><span class="default">?&gt;<br /></span><br />Now instead of:<br /><br />$v = $a ? $a : $b;<br /><br />I write:<br /><br />$v = either($a, $b);<br /><br />but more importantly, instead of writing:<br /><br />$v = $a ? $a : ($b ? $b : $c);<br /><br />I write:<br /><br />$v = either($a, $b, $c);<br /><br />or indeed:<br /><br />$v = either($a, $b, $c, $d, $e, $f, $g, $h);</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="115208">  <div class="votes">
+    <div id="Vu115208">
+    <a href="http://php.net/manual/vote-note.php?id=115208&amp;page=language.operators.logical&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd115208">
+    <a href="http://php.net/manual/vote-note.php?id=115208&amp;page=language.operators.logical&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V115208" title="55% like this...">
+    5
+    </div>
+  </div>
+  <a href="#115208" class="name">
+  <strong class="user"><em>anatoliy at ukhvanovy dot name</em></strong></a><a class="genanchor" href="#115208"> &para;</a><div class="date" title="2014-06-12 01:41"><strong>3 years ago</strong></div>
+  <div class="text" id="Hcom115208">
+<div class="phpcode"><code><span class="html">
+If you want to use the '||' operator to set a default value, like this:<br /><br /><span class="default">&lt;?php<br />$a </span><span class="keyword">= </span><span class="default">$fruit </span><span class="keyword">|| </span><span class="string">'apple'</span><span class="keyword">; </span><span class="comment">//if $fruit evaluates to FALSE, then $a will be set to TRUE (because (bool)'apple' == TRUE)<br /></span><span class="default">?&gt;<br /></span><br />instead, you have to use the '?:' operator:<br /><br /><span class="default">&lt;?php<br />$a </span><span class="keyword">= (</span><span class="default">$fruit </span><span class="keyword">? </span><span class="default">$fruit </span><span class="keyword">: </span><span class="string">'apple'</span><span class="keyword">);</span><span class="comment">//if $fruit evaluates to FALSE, then $a will be set to 'apple'<br /></span><span class="default">?&gt;<br /></span><br />But $fruit will be evaluated twice, which is not desirable. For example fruit() will be called twice:<br /><span class="default">&lt;?php<br /></span><span class="keyword">function </span><span class="default">fruit</span><span class="keyword">(</span><span class="default">$confirm</span><span class="keyword">) {<br />&nbsp; &nbsp; if(</span><span class="default">$confirm</span><span class="keyword">)<br />&nbsp; &nbsp; &nbsp; &nbsp; return </span><span class="string">'banana'</span><span class="keyword">;<br />}<br /></span><span class="default">$a </span><span class="keyword">= (</span><span class="default">fruit</span><span class="keyword">(</span><span class="default">1</span><span class="keyword">) ? </span><span class="default">fruit</span><span class="keyword">(</span><span class="default">1</span><span class="keyword">) : </span><span class="string">'apple'</span><span class="keyword">);</span><span class="comment">//fruit() will be called twice!<br /></span><span class="default">?&gt;<br /></span><br />But since «since PHP 5.3, it is possible to leave out the middle part of the ternary operator» (<a href="http://www.php.net/manual/en/language.operators.comparison.php#language.operators.comparison.ternary" rel="nofollow" target="_blank">http://www.php.net/manual/en/language.operators.comparison.php#language.operators.comparison.ternary</a>), now you can code like this:<br /><br /><span class="default">&lt;?php<br />$a </span><span class="keyword">= (</span><span class="default">$fruit </span><span class="keyword">? : </span><span class="string">'apple'</span><span class="keyword">); </span><span class="comment">//this will evaluate $fruit only once, and if it evaluates to FALSE, then $a will be set to 'apple'<br /></span><span class="default">?&gt;<br /></span><br />But remember that a non-empty string '0' evaluates to FALSE!<br /><br /><span class="default">&lt;?php<br />$fruit </span><span class="keyword">= </span><span class="string">'1'</span><span class="keyword">;<br /></span><span class="default">$a </span><span class="keyword">= (</span><span class="default">$fruit </span><span class="keyword">? : </span><span class="string">'apple'</span><span class="keyword">); </span><span class="comment">//this line will set $a to '1'<br /></span><span class="default">$fruit </span><span class="keyword">= </span><span class="string">'0'</span><span class="keyword">;<br /></span><span class="default">$a </span><span class="keyword">= (</span><span class="default">$fruit </span><span class="keyword">? : </span><span class="string">'apple'</span><span class="keyword">); </span><span class="comment">//this line will set $a to 'apple', not '0'!<br /></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="77061">  <div class="votes">
+    <div id="Vu77061">
+    <a href="http://php.net/manual/vote-note.php?id=77061&amp;page=language.operators.logical&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd77061">
+    <a href="http://php.net/manual/vote-note.php?id=77061&amp;page=language.operators.logical&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V77061" title="55% like this...">
+    7
+    </div>
+  </div>
+  <a href="#77061" class="name">
+  <strong class="user"><em>Andrew</em></strong></a><a class="genanchor" href="#77061"> &para;</a><div class="date" title="2007-08-13 08:49"><strong>10 years ago</strong></div>
+  <div class="text" id="Hcom77061">
+<div class="phpcode"><code><span class="html">
+&gt; <span class="default">&lt;?php<br /></span><span class="keyword">&gt; </span><span class="default">your_function</span><span class="keyword">() or return </span><span class="string">"whatever"</span><span class="keyword">;<br />&gt; </span><span class="default">?&gt;<br /></span><br />doesn't work because return is not an expression, it's a statement. if return was a function it'd work fine. :/</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="112752">  <div class="votes">
+    <div id="Vu112752">
+    <a href="http://php.net/manual/vote-note.php?id=112752&amp;page=language.operators.logical&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd112752">
+    <a href="http://php.net/manual/vote-note.php?id=112752&amp;page=language.operators.logical&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V112752" title="53% like this...">
+    3
+    </div>
+  </div>
+  <a href="#112752" class="name">
+  <strong class="user"><em>brian at zickzickzick dot com</em></strong></a><a class="genanchor" href="#112752"> &para;</a><div class="date" title="2013-07-19 03:23"><strong>4 years ago</strong></div>
+  <div class="text" id="Hcom112752">
+<div class="phpcode"><code><span class="html">
+This has been mentioned before, but just in case you missed it:<br /><br /><span class="default">&lt;?php <br />&nbsp; &nbsp; </span><span class="comment">// Defaults --<br /><br />&nbsp; &nbsp; //If you're trying to gat 'Jack' from:<br />&nbsp; &nbsp; </span><span class="default">$jack </span><span class="keyword">= </span><span class="default">false </span><span class="keyword">or </span><span class="string">'Jack'</span><span class="keyword">; <br /><br />&nbsp; &nbsp; </span><span class="comment">// Try:<br />&nbsp; &nbsp; </span><span class="default">$jack </span><span class="keyword">= </span><span class="default">false </span><span class="keyword">or </span><span class="default">$jack </span><span class="keyword">= </span><span class="string">'Jack'</span><span class="keyword">;<br /><br />&nbsp; &nbsp; </span><span class="comment">//The other option is:<br />&nbsp; &nbsp; </span><span class="default">$jack </span><span class="keyword">= </span><span class="default">false </span><span class="keyword">? </span><span class="default">false </span><span class="keyword">: </span><span class="string">'Jack'</span><span class="keyword">; <br /></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="78166">  <div class="votes">
+    <div id="Vu78166">
+    <a href="http://php.net/manual/vote-note.php?id=78166&amp;page=language.operators.logical&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd78166">
+    <a href="http://php.net/manual/vote-note.php?id=78166&amp;page=language.operators.logical&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V78166" title="50% like this...">
+    1
+    </div>
+  </div>
+  <a href="#78166" class="name">
+  <strong class="user"><em>peter dot kutak at NOSPAM dot gmail dot com</em></strong></a><a class="genanchor" href="#78166"> &para;</a><div class="date" title="2007-10-01 12:36"><strong>10 years ago</strong></div>
+  <div class="text" id="Hcom78166">
+<div class="phpcode"><code><span class="html">
+$test = true and false;&nbsp; &nbsp;&nbsp; ---&gt; $test === true<br />$test = (true and false);&nbsp; ---&gt; $test === false<br />$test = true &amp;&amp; false;&nbsp; &nbsp; &nbsp; ---&gt; $test === false<br /><br />NOTE: this is due to the first line actually being<br /><br />($test = true) and false;<br /><br />due to "&amp;&amp;" having a higher precedence than "=" while "and" has a lower one</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="114866">  <div class="votes">
+    <div id="Vu114866">
+    <a href="http://php.net/manual/vote-note.php?id=114866&amp;page=language.operators.logical&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd114866">
+    <a href="http://php.net/manual/vote-note.php?id=114866&amp;page=language.operators.logical&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V114866" title="48% like this...">
+    -1
+    </div>
+  </div>
+  <a href="#114866" class="name">
+  <strong class="user"><em>void at informance dot info</em></strong></a><a class="genanchor" href="#114866"> &para;</a><div class="date" title="2014-04-16 10:53"><strong>3 years ago</strong></div>
+  <div class="text" id="Hcom114866">
+<div class="phpcode"><code><span class="html">
+To assign default value in variable assignation, the simpliest solution to me is:<br /><br /><span class="default">&lt;?php<br />$v </span><span class="keyword">= </span><span class="default">my_function</span><span class="keyword">() or </span><span class="default">$v </span><span class="keyword">= </span><span class="string">"default"</span><span class="keyword">;<br /></span><span class="default">?&gt;<br /></span><br />It works because, first, $v is assigned the return value from my_function(), then this value is evaluated as a part of a logical operation:<br />* if the left side is false, null, 0, or an empty string, the right side must be evaluated and, again, because 'or' has low precedence, $v is assigned the string "default"<br />* if the left side is none of the previously mentioned values, the logical operation ends and $v keeps the return value from my_function()<br /><br />This is almost the same as the solution from [phpnet at zc dot webhop dot net], except that his solution (parenthesis and double pipe) doesn't take advantage of the "or" low precedence.<br /><br />NOTE: "" (the empty string) is evaluated as a FALSE logical operand, so make sure that the empty string is not an acceptable value from my_function(). If you need to consider the empty string as an acceptable return value, you must go the classical "if" way.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="117218">  <div class="votes">
+    <div id="Vu117218">
+    <a href="http://php.net/manual/vote-note.php?id=117218&amp;page=language.operators.logical&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd117218">
+    <a href="http://php.net/manual/vote-note.php?id=117218&amp;page=language.operators.logical&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V117218" title="41% like this...">
+    -6
+    </div>
+  </div>
+  <a href="#117218" class="name">
+  <strong class="user"><em>4077</em></strong></a><a class="genanchor" href="#117218"> &para;</a><div class="date" title="2015-05-04 06:20"><strong>2 years ago</strong></div>
+  <div class="text" id="Hcom117218">
+<div class="phpcode"><code><span class="html">
+Assign a value to a variable if it isn't defined<br /><br /><span class="default">&lt;?php<br /><br /></span><span class="keyword">isset(</span><span class="default">$x</span><span class="keyword">) || </span><span class="default">$x </span><span class="keyword">= </span><span class="default">123</span><span class="keyword">;<br /><br />print </span><span class="default">$x</span><span class="keyword">; </span><span class="comment">// 123<br /><br /></span><span class="default">?&gt;<br /></span><br />instead of:<br /><span class="default">&lt;?php<br /><br /></span><span class="keyword">if ( !isset(</span><span class="default">$x</span><span class="keyword">)) {<br />&nbsp; &nbsp; </span><span class="default">$x </span><span class="keyword">= </span><span class="default">123</span><span class="keyword">;<br />}<br /><br /></span><span class="comment">// or<br /><br /></span><span class="default">$x </span><span class="keyword">= isset(</span><span class="default">$x</span><span class="keyword">) ? </span><span class="default">$x </span><span class="keyword">: </span><span class="default">123</span><span class="keyword">;<br /><br /></span><span class="comment">// or<br /><br /></span><span class="default">$x </span><span class="keyword">= isset(</span><span class="default">$x</span><span class="keyword">) ?: </span><span class="default">123</span><span class="keyword">;<br /></span><span class="default">?&gt;<br /></span><br />editor's note: In PHP 7 you could use the coalesce operator and do:<br /><span class="default">&lt;?php<br />$x </span><span class="keyword">= </span><span class="default">$x </span><span class="keyword">?? </span><span class="default">123</span><span class="keyword">;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="116785">  <div class="votes">
+    <div id="Vu116785">
+    <a href="http://php.net/manual/vote-note.php?id=116785&amp;page=language.operators.logical&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd116785">
+    <a href="http://php.net/manual/vote-note.php?id=116785&amp;page=language.operators.logical&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V116785" title="40% like this...">
+    -5
+    </div>
+  </div>
+  <a href="#116785" class="name">
+  <strong class="user"><em>samantha at adrichem dot nu</em></strong></a><a class="genanchor" href="#116785"> &para;</a><div class="date" title="2015-02-27 03:28"><strong>2 years ago</strong></div>
+  <div class="text" id="Hcom116785">
+<div class="phpcode"><code><span class="html">
+<span class="default">&lt;?php<br />&nbsp; &nbsp; $res </span><span class="keyword">|= </span><span class="default">true</span><span class="keyword">;<br />&nbsp; &nbsp; </span><span class="default">var_dump</span><span class="keyword">(</span><span class="default">$res</span><span class="keyword">);<br /></span><span class="default">?&gt;<br /></span><br />does not/no longer returns a boolean (php 5.6) instead it returns int 0 or 1</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="118447">  <div class="votes">
+    <div id="Vu118447">
+    <a href="http://php.net/manual/vote-note.php?id=118447&amp;page=language.operators.logical&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd118447">
+    <a href="http://php.net/manual/vote-note.php?id=118447&amp;page=language.operators.logical&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V118447" title="40% like this...">
+    -6
+    </div>
+  </div>
+  <a href="#118447" class="name">
+  <strong class="user"><em>drevilkuko at gmail dot com</em></strong></a><a class="genanchor" href="#118447"> &para;</a><div class="date" title="2015-12-07 05:29"><strong>2 years ago</strong></div>
+  <div class="text" id="Hcom118447">
+<div class="phpcode"><code><span class="html">
+using NULL coalesce operator:<br /><br /><span class="default">&lt;?php<br />$nc </span><span class="keyword">= </span><span class="default">true </span><span class="keyword">== </span><span class="default">false </span><span class="keyword">?? </span><span class="string">'no'</span><span class="keyword">;<br /></span><span class="default">var_dump</span><span class="keyword">(</span><span class="default">$nc</span><span class="keyword">); </span><span class="comment">// false<br /><br /></span><span class="default">$nc </span><span class="keyword">= </span><span class="default">null </span><span class="keyword">?? </span><span class="string">'yes'</span><span class="keyword">;<br /></span><span class="default">var_dump</span><span class="keyword">(</span><span class="default">$nc</span><span class="keyword">); </span><span class="comment">// yes<br /><br /></span><span class="default">$username </span><span class="keyword">= </span><span class="default">null </span><span class="keyword">== </span><span class="default">false </span><span class="keyword">?? </span><span class="string">'no'</span><span class="keyword">;<br /></span><span class="default">var_dump</span><span class="keyword">(</span><span class="default">$nc</span><span class="keyword">); </span><span class="comment">// true<br /><br /></span><span class="default">$nc </span><span class="keyword">= </span><span class="default">$_GET</span><span class="keyword">[</span><span class="string">'something'</span><span class="keyword">] ?? </span><span class="string">'default'</span><span class="keyword">;<br /></span><span class="default">var_dump</span><span class="keyword">(</span><span class="default">$nc</span><span class="keyword">); </span><span class="comment">// default<br /><br /></span><span class="default">$nc </span><span class="keyword">= !isset(</span><span class="default">$_GET</span><span class="keyword">[</span><span class="string">'something'</span><span class="keyword">]) ?? </span><span class="string">'wtf'</span><span class="keyword">;<br /></span><span class="default">var_dump</span><span class="keyword">(</span><span class="default">$nc</span><span class="keyword">); </span><span class="comment">// true<br /><br /></span><span class="default">$nc </span><span class="keyword">= isset(</span><span class="default">$_GET</span><span class="keyword">[</span><span class="string">'something'</span><span class="keyword">]) ?? </span><span class="string">'wtf'</span><span class="keyword">;<br /></span><span class="default">var_dump</span><span class="keyword">(</span><span class="default">$nc</span><span class="keyword">); </span><span class="comment">// false<br /><br /></span><span class="default">$_POST</span><span class="keyword">[</span><span class="string">'second'</span><span class="keyword">] = </span><span class="string">'chain'</span><span class="keyword">;<br /></span><span class="default">$nc </span><span class="keyword">= </span><span class="default">$_GET</span><span class="keyword">[</span><span class="string">'first'</span><span class="keyword">] ?? </span><span class="default">$_POST</span><span class="keyword">[</span><span class="string">'second'</span><span class="keyword">] ?? </span><span class="default">$_REQUEST</span><span class="keyword">[</span><span class="string">'third'</span><span class="keyword">] ?? </span><span class="string">'wtf'</span><span class="keyword">;<br /></span><span class="default">var_dump</span><span class="keyword">(</span><span class="default">$nc</span><span class="keyword">); </span><span class="comment">// chain<br /></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="119385">  <div class="votes">
+    <div id="Vu119385">
+    <a href="http://php.net/manual/vote-note.php?id=119385&amp;page=language.operators.logical&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd119385">
+    <a href="http://php.net/manual/vote-note.php?id=119385&amp;page=language.operators.logical&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V119385" title="38% like this...">
+    -3
+    </div>
+  </div>
+  <a href="#119385" class="name">
+  <strong class="user"><em>moschris at gmail dot com</em></strong></a><a class="genanchor" href="#119385"> &para;</a><div class="date" title="2016-05-24 05:31"><strong>1 year ago</strong></div>
+  <div class="text" id="Hcom119385">
+<div class="phpcode"><code><span class="html">
+Unlike C++ and related languages, side effects in the left operand may NOT be used in the right operand.<br /><br />e.g. if ($a=1 &amp;&amp; $a&gt;0)<br />will produce an unassigned error if $a has not previously been assigned a value.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="120540">  <div class="votes">
+    <div id="Vu120540">
+    <a href="http://php.net/manual/vote-note.php?id=120540&amp;page=language.operators.logical&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd120540">
+    <a href="http://php.net/manual/vote-note.php?id=120540&amp;page=language.operators.logical&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V120540" title="33% like this...">
+    -1
+    </div>
+  </div>
+  <a href="#120540" class="name">
+  <strong class="user"><em>vasko at tsintsev dot com</em></strong></a><a class="genanchor" href="#120540"> &para;</a><div class="date" title="2017-01-26 05:01"><strong>10 months ago</strong></div>
+  <div class="text" id="Hcom120540">
+<div class="phpcode"><code><span class="html">
+Here is something useful for OR ( or any other ) bitwise comparison: <br /><br />$a = 0;<br />$b = 1; <br /><br />printf('$a = %1$04b | $b = %2$04b ...&nbsp; PROCESSED is: %3$s ( %3$04b )', $a, $b, ($a | $b));</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="114966">  <div class="votes">
+    <div id="Vu114966">
+    <a href="http://php.net/manual/vote-note.php?id=114966&amp;page=language.operators.logical&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd114966">
+    <a href="http://php.net/manual/vote-note.php?id=114966&amp;page=language.operators.logical&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V114966" title="34% like this...">
+    -14
+    </div>
+  </div>
+  <a href="#114966" class="name">
+  <strong class="user"><em>tekreme73 at hotmail dot fr</em></strong></a><a class="genanchor" href="#114966"> &para;</a><div class="date" title="2014-05-07 03:08"><strong>3 years ago</strong></div>
+  <div class="text" id="Hcom114966">
+<div class="phpcode"><code><span class="html">
+// Operators &amp;= and |= work as well<br /><br />// "a &amp;= b"&nbsp; &lt;=&gt;&nbsp; "a = a &amp;&amp; b" &lt;=&gt; "a = a AND b"<br />// "a |= b"&nbsp; &lt;=&gt;&nbsp; "a = a || b" &lt;=&gt; "a = a OR b"<br /><br />$res = true;<br />var_dump($res);<br /><br />$res &amp;= false;<br />var_dump($res);<br /><br />$res |= true;<br />var_dump($res);<br /><br />// This code will display :<br />bool(true)<br />bool(false)<br />bool(true)</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="110829">  <div class="votes">
+    <div id="Vu110829">
+    <a href="http://php.net/manual/vote-note.php?id=110829&amp;page=language.operators.logical&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd110829">
+    <a href="http://php.net/manual/vote-note.php?id=110829&amp;page=language.operators.logical&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V110829" title="31% like this...">
+    -15
+    </div>
+  </div>
+  <a href="#110829" class="name">
+  <strong class="user"><em>dartello at gmail dot com</em></strong></a><a class="genanchor" href="#110829"> &para;</a><div class="date" title="2012-12-12 02:35"><strong>5 years ago</strong></div>
+  <div class="text" id="Hcom110829">
+<div class="phpcode"><code><span class="html">
+Unlike in C/C++ the invertor (Not) in PHP assumes a string:<br /><br /><span class="default">&lt;?php<br />$a </span><span class="keyword">= </span><span class="default">1</span><span class="keyword">;<br /><br /></span><span class="default">$t </span><span class="keyword">= !</span><span class="default">$a</span><span class="keyword">;<br /></span><span class="default">var_dump</span><span class="keyword">(</span><span class="default">$t</span><span class="keyword">);<br /></span><span class="default">?&gt;<br /></span><br />The above example will output:<br /> string(0) =&gt; ""<br /><br />To approach the C/C++ handling, this can be solved as follows:<br /><br /><span class="default">&lt;?php<br />$a </span><span class="keyword">= </span><span class="default">1</span><span class="keyword">;<br /><br />(int) </span><span class="default">$t </span><span class="keyword">= !</span><span class="default">$a</span><span class="keyword">;<br /></span><span class="default">var_dump</span><span class="keyword">(</span><span class="default">$t</span><span class="keyword">);<br /><br />(bool) </span><span class="default">$u </span><span class="keyword">= !</span><span class="default">a</span><span class="keyword">;<br /></span><span class="default">var_dump</span><span class="keyword">(</span><span class="default">$u</span><span class="keyword">);<br /></span><span class="default">?&gt;<br /></span><br />The above example will output:<br />int(0)<br />bool(false)</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="116102">  <div class="votes">
+    <div id="Vu116102">
+    <a href="http://php.net/manual/vote-note.php?id=116102&amp;page=language.operators.logical&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd116102">
+    <a href="http://php.net/manual/vote-note.php?id=116102&amp;page=language.operators.logical&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V116102" title="29% like this...">
+    -13
+    </div>
+  </div>
+  <a href="#116102" class="name">
+  <strong class="user"><em>Jake</em></strong></a><a class="genanchor" href="#116102"> &para;</a><div class="date" title="2014-11-10 03:13"><strong>3 years ago</strong></div>
+  <div class="text" id="Hcom116102">
+<div class="phpcode"><code><span class="html">
+A gotcha for C/C++ programmers here...<br /><br />The &amp;&amp; and || operators behave as expected.&nbsp; PHP also has a Boolean 'xor' operator which would fulfill many dreams.<br /><br />But you may find it not working as expected, as it has *lower* precedence than assignment.&nbsp; (Both languages ought to have ^^ as Boolean XOR; that's another story.)</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="116979">  <div class="votes">
+    <div id="Vu116979">
+    <a href="http://php.net/manual/vote-note.php?id=116979&amp;page=language.operators.logical&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd116979">
+    <a href="http://php.net/manual/vote-note.php?id=116979&amp;page=language.operators.logical&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V116979" title="26% like this...">
+    -12
+    </div>
+  </div>
+  <a href="#116979" class="name">
+  <strong class="user"><em>Anonymous</em></strong></a><a class="genanchor" href="#116979"> &para;</a><div class="date" title="2015-03-30 01:05"><strong>2 years ago</strong></div>
+  <div class="text" id="Hcom116979">
+<div class="phpcode"><code><span class="html">
+you can also use the operator "xor" using "^"</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="79281">  <div class="votes">
+    <div id="Vu79281">
+    <a href="http://php.net/manual/vote-note.php?id=79281&amp;page=language.operators.logical&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd79281">
+    <a href="http://php.net/manual/vote-note.php?id=79281&amp;page=language.operators.logical&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V79281" title="24% like this...">
+    -27
+    </div>
+  </div>
+  <a href="#79281" class="name">
+  <strong class="user"><em>paranoiq at centrum dot cz</em></strong></a><a class="genanchor" href="#79281"> &para;</a><div class="date" title="2007-11-19 08:00"><strong>10 years ago</strong></div>
+  <div class="text" id="Hcom79281">
+<div class="phpcode"><code><span class="html">
+and, or and xor can be used as conditional constructs:<br /><br /><span class="default">&lt;?php<br /></span><span class="comment">// do_that() is executed only if do_this() returns false<br /></span><span class="keyword">if(</span><span class="default">$something</span><span class="keyword">) </span><span class="default">do_this</span><span class="keyword">() or </span><span class="default">do_that</span><span class="keyword">();<br /></span><span class="comment">// $b is assigned to $b, do_that() is executed if $b is false<br /></span><span class="keyword">if(</span><span class="default">$something</span><span class="keyword">) </span><span class="default">$a </span><span class="keyword">= </span><span class="default">$b </span><span class="keyword">or </span><span class="default">do_that</span><span class="keyword">();<br /><br /></span><span class="comment">// do_that() is executed only if do_this() returns true<br /></span><span class="keyword">if(</span><span class="default">$something</span><span class="keyword">) </span><span class="default">do_this</span><span class="keyword">() and </span><span class="default">do_that</span><span class="keyword">();<br /></span><span class="comment">// $b is assigned to $b, do_that() is executed if $b is true<br /></span><span class="keyword">if(</span><span class="default">$something</span><span class="keyword">) </span><span class="default">$a </span><span class="keyword">= </span><span class="default">$b </span><span class="keyword">and </span><span class="default">do_that</span><span class="keyword">();<br /><br /></span><span class="comment">// both do_that() and do_this() are executed..<br /></span><span class="keyword">if(</span><span class="default">$something</span><span class="keyword">) </span><span class="default">do_this</span><span class="keyword">() xor </span><span class="default">do_that</span><span class="keyword">();<br /></span><span class="comment">// .. so the behaviour is same as:<br /></span><span class="keyword">if(</span><span class="default">$something</span><span class="keyword">) {<br />&nbsp; &nbsp; </span><span class="default">do_this</span><span class="keyword">();<br />&nbsp; &nbsp; </span><span class="default">do_that</span><span class="keyword">();<br />}<br /></span><span class="default">?&gt;<br /></span><br />for understanding what happens if $b is NULL or do_this() returns NULL, read the avbentem's comment on NULL type. generaly speaking, NULL is threated like false in most cases.</span>
+</code></div>
+  </div>
+ </div></div>
+
+ <div class="foot"><a href="http://php.net/manual/add-note.php?sect=language.operators.logical&amp;redirect=http://php.net/manual/en/language.operators.logical.php"><img src='http://php.net/images/notes-add@2x.png' alt='add a note' width='12' height='12'> <small>add a note</small></a></div>
+</section>    </section><!-- layout-content -->
+        <aside class='layout-menu'>
+    
+        <ul class='parent-menu-list'>
+                                    <li>
+                <a href="http://php.net/manual/en/language.operators.php">Operators</a>
+    
+                                    <ul class='child-menu-list'>
+    
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.operators.precedence.php" title="Operator Precedence">Operator Precedence</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.operators.arithmetic.php" title="Arithmetic Operators">Arithmetic Operators</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.operators.assignment.php" title="Assignment Operators">Assignment Operators</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.operators.bitwise.php" title="Bitwise Operators">Bitwise Operators</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.operators.comparison.php" title="Comparison Operators">Comparison Operators</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.operators.errorcontrol.php" title="Error Control Operators">Error Control Operators</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.operators.execution.php" title="Execution Operators">Execution Operators</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.operators.increment.php" title="Incrementing/Decrementing Operators">Incrementing/Decrementing Operators</a>
+                        </li>
+                          
+                        <li class="current">
+                            <a href="http://php.net/manual/en/language.operators.logical.php" title="Logical Operators">Logical Operators</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.operators.string.php" title="String Operators">String Operators</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.operators.array.php" title="Array Operators">Array Operators</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.operators.type.php" title="Type Operators">Type Operators</a>
+                        </li>
+                            
+                    </ul>
+                    
+            </li>
+                        
+                    </ul>
+    </aside>
+
+
+  </div><!-- layout -->
+         
+  <footer>
+    <div class="container footer-content">
+      <div class="row-fluid">
+      <ul class="footmenu">
+        <li><a href="http://php.net/copyright.php">Copyright &copy; 2001-2017 The PHP Group</a></li>
+        <li><a href="http://php.net/my.php">My PHP.net</a></li>
+        <li><a href="http://php.net/contact.php">Contact</a></li>
+        <li><a href="http://php.net/sites.php">Other PHP.net sites</a></li>
+        <li><a href="http://php.net/mirrors.php">Mirror sites</a></li>
+        <li><a href="http://php.net/privacy.php">Privacy policy</a></li>
+      </ul>
+      </div>
+    </div>
+  </footer>
+
+    
+ <!-- External and third party libraries. -->
+ <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/modernizr.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/hogan-2.0.0.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/typeahead.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/mousetrap.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/search.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1500560403&amp;f=/js/common.js"></script>
+
+<a id="toTop" href="javascript:;"><span id="toTopHover"></span><img width="40" height="40" alt="To Top" src="http://php.net/images/to-top@2x.png"></a>
+
+</body>
+
+<!-- Mirrored from php.net/manual/en/language.operators.logical.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Dec 2017 23:18:10 GMT -->
+</html>
+

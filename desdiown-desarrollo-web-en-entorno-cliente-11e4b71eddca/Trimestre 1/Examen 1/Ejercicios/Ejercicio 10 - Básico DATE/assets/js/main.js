@@ -1,0 +1,3 @@
+var dianacimiento = new Date(1997,10,21), dias = ["Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado"], meses = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
+document.write("Día total: " + dianacimiento + "<br>");
+document.write("Es " + dias[dianacimiento.getDay()] + ", " + dianacimiento.getDate() + " de " + meses[dianacimiento.getMonth()] + " de " + dianacimiento.getFullYear());

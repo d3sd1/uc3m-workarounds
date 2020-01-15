@@ -1,0 +1,4 @@
+cookies
+objeto form javascript
+manejar html desde javascript (el tema entero)
+DOM

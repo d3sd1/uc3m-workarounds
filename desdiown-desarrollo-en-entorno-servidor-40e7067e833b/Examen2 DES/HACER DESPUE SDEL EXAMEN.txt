@@ -1,0 +1,9 @@
+- Quitar sout y console.log
+- Revisar que se cumpla el enunciado
+- Revisar el funcionamiento
+- Eliminar unused imports
+- Limpiar POM
+- Hacer clean n build y ver que compila bien
+- Eliminar target
+- Ver posibles optimizaciones
+- Comprimir en ZIP y revisar que se sube todo

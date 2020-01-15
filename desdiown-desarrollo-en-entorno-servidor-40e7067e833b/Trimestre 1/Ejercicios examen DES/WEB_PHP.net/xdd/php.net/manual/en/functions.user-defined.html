@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<!-- Mirrored from php.net/manual/en/functions.user-defined.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Dec 2017 23:18:11 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+  <title>PHP: User-defined functions - Manual </title>
+
+ <link rel="shortcut icon" href="http://php.net/favicon.ico">
+ <link rel="search" type="application/opensearchdescription+xml" href="http://php.net/phpnetimprovedsearch.src" title="Add PHP.net search">
+ <link rel="alternate" type="application/atom+xml" href="http://php.net/releases/feed.php" title="PHP Release feed">
+ <link rel="alternate" type="application/atom+xml" href="http://php.net/feed.atom" title="PHP: Hypertext Preprocessor">
+
+ <link rel="canonical" href="http://php.net/manual/en/functions.user-defined.php">
+ <link rel="shorturl" href="http://php.net/manual/en/functions.user-defined.php">
+ <link rel="alternate" href="http://php.net/manual/en/functions.user-defined.php" hreflang="x-default">
+
+ <link rel="contents" href="http://php.net/manual/en/index.php">
+ <link rel="index" href="http://php.net/manual/en/language.functions.php">
+ <link rel="prev" href="http://php.net/manual/en/language.functions.php">
+ <link rel="next" href="http://php.net/manual/en/functions.arguments.php">
+
+ <link rel="alternate" href="http://php.net/manual/en/functions.user-defined.php" hreflang="en">
+ <link rel="alternate" href="http://php.net/manual/pt_BR/functions.user-defined.php" hreflang="pt_BR">
+ <link rel="alternate" href="http://php.net/manual/zh/functions.user-defined.php" hreflang="zh">
+ <link rel="alternate" href="http://php.net/manual/fr/functions.user-defined.php" hreflang="fr">
+ <link rel="alternate" href="http://php.net/manual/de/functions.user-defined.php" hreflang="de">
+ <link rel="alternate" href="http://php.net/manual/ja/functions.user-defined.php" hreflang="ja">
+ <link rel="alternate" href="http://php.net/manual/ro/functions.user-defined.php" hreflang="ro">
+ <link rel="alternate" href="http://php.net/manual/ru/functions.user-defined.php" hreflang="ru">
+ <link rel="alternate" href="http://php.net/manual/es/functions.user-defined.php" hreflang="es">
+ <link rel="alternate" href="http://php.net/manual/tr/functions.user-defined.php" hreflang="tr">
+
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1421837618&amp;f=/fonts/Fira/fira.css" media="screen">
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1421837618&amp;f=/fonts/Font-Awesome/css/fontello.css" media="screen">
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1478800802&amp;f=/styles/theme-base.css" media="screen">
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1449787206&amp;f=/styles/theme-medium.css" media="screen">
+
+ <!--[if lte IE 7]>
+ <link rel="stylesheet" type="text/css" href="http://php.net/styles/workarounds.ie7.css" media="screen">
+ <![endif]-->
+
+ <!--[if lte IE 8]>
+ <script type="text/javascript">
+  window.brokenIE = true;
+ </script>
+ <![endif]-->
+
+ <!--[if lte IE 9]>
+ <link rel="stylesheet" type="text/css" href="http://php.net/styles/workarounds.ie9.css" media="screen">
+ <![endif]-->
+
+ <!--[if IE]>
+ <script type="text/javascript" src="http://php.net/js/ext/html5.js"></script>
+ <![endif]-->
+
+ <base >
+
+</head>
+<body class="docs ">
+
+<nav id="head-nav" class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <a href="http://php.net/" class="brand"><img src="http://php.net/images/logos/php-logo.svg" width="48" height="24" alt="php"></a>
+    <div id="mainmenu-toggle-overlay"></div>
+    <input type="checkbox" id="mainmenu-toggle">
+    <ul class="nav">
+      <li class=""><a href="http://php.net/downloads">Downloads</a></li>
+      <li class="active"><a href="http://php.net/docs.php">Documentation</a></li>
+      <li class=""><a href="http://php.net/get-involved" >Get Involved</a></li>
+      <li class=""><a href="http://php.net/support">Help</a></li>
+    </ul>
+    <form class="navbar-search" id="topsearch" action="http://php.net/search.php">
+      <input type="hidden" name="show" value="quickref">
+      <input type="search" name="pattern" class="search-query" placeholder="Search" accesskey="s">
+    </form>
+  </div>
+  <div id="flash-message"></div>
+</nav>
+<nav id="trick"><div><dl>
+<dt><a href='http://php.net/manual/en/getting-started.php'>Getting Started</a></dt>
+	<dd><a href='http://php.net/manual/en/introduction.php'>Introduction</a></dd>
+	<dd><a href='http://php.net/manual/en/tutorial.php'>A simple tutorial</a></dd>
+<dt><a href='http://php.net/manual/en/langref.php'>Language Reference</a></dt>
+	<dd><a href='http://php.net/manual/en/language.basic-syntax.php'>Basic syntax</a></dd>
+	<dd><a href='http://php.net/manual/en/language.types.php'>Types</a></dd>
+	<dd><a href='http://php.net/manual/en/language.variables.php'>Variables</a></dd>
+	<dd><a href='http://php.net/manual/en/language.constants.php'>Constants</a></dd>
+	<dd><a href='http://php.net/manual/en/language.expressions.php'>Expressions</a></dd>
+	<dd><a href='http://php.net/manual/en/language.operators.php'>Operators</a></dd>
+	<dd><a href='http://php.net/manual/en/language.control-structures.php'>Control Structures</a></dd>
+	<dd><a href='http://php.net/manual/en/language.functions.php'>Functions</a></dd>
+	<dd><a href='http://php.net/manual/en/language.oop5.php'>Classes and Objects</a></dd>
+	<dd><a href='http://php.net/manual/en/language.namespaces.php'>Namespaces</a></dd>
+	<dd><a href='http://php.net/manual/en/language.errors.php'>Errors</a></dd>
+	<dd><a href='http://php.net/manual/en/language.exceptions.php'>Exceptions</a></dd>
+	<dd><a href='http://php.net/manual/en/language.generators.php'>Generators</a></dd>
+	<dd><a href='http://php.net/manual/en/language.references.php'>References Explained</a></dd>
+	<dd><a href='http://php.net/manual/en/reserved.variables.php'>Predefined Variables</a></dd>
+	<dd><a href='http://php.net/manual/en/reserved.exceptions.php'>Predefined Exceptions</a></dd>
+	<dd><a href='http://php.net/manual/en/reserved.interfaces.php'>Predefined Interfaces and Classes</a></dd>
+	<dd><a href='http://php.net/manual/en/context.php'>Context options and parameters</a></dd>
+	<dd><a href='http://php.net/manual/en/wrappers.php'>Supported Protocols and Wrappers</a></dd>
+</dl>
+<dl>
+<dt><a href='http://php.net/manual/en/security.php'>Security</a></dt>
+	<dd><a href='http://php.net/manual/en/security.intro.php'>Introduction</a></dd>
+	<dd><a href='http://php.net/manual/en/security.general.php'>General considerations</a></dd>
+	<dd><a href='http://php.net/manual/en/security.cgi-bin.php'>Installed as CGI binary</a></dd>
+	<dd><a href='http://php.net/manual/en/security.apache.php'>Installed as an Apache module</a></dd>
+	<dd><a href='http://php.net/manual/en/security.sessions.php'>Session Security</a></dd>
+	<dd><a href='http://php.net/manual/en/security.filesystem.php'>Filesystem Security</a></dd>
+	<dd><a href='http://php.net/manual/en/security.database.php'>Database Security</a></dd>
+	<dd><a href='http://php.net/manual/en/security.errors.php'>Error Reporting</a></dd>
+	<dd><a href='http://php.net/manual/en/security.globals.php'>Using Register Globals</a></dd>
+	<dd><a href='http://php.net/manual/en/security.variables.php'>User Submitted Data</a></dd>
+	<dd><a href='http://php.net/manual/en/security.magicquotes.php'>Magic Quotes</a></dd>
+	<dd><a href='http://php.net/manual/en/security.hiding.php'>Hiding PHP</a></dd>
+	<dd><a href='http://php.net/manual/en/security.current.php'>Keeping Current</a></dd>
+<dt><a href='http://php.net/manual/en/features.php'>Features</a></dt>
+	<dd><a href='http://php.net/manual/en/features.http-auth.php'>HTTP authentication with PHP</a></dd>
+	<dd><a href='http://php.net/manual/en/features.cookies.php'>Cookies</a></dd>
+	<dd><a href='http://php.net/manual/en/features.sessions.php'>Sessions</a></dd>
+	<dd><a href='http://php.net/manual/en/features.xforms.php'>Dealing with XForms</a></dd>
+	<dd><a href='http://php.net/manual/en/features.file-upload.php'>Handling file uploads</a></dd>
+	<dd><a href='http://php.net/manual/en/features.remote-files.php'>Using remote files</a></dd>
+	<dd><a href='http://php.net/manual/en/features.connection-handling.php'>Connection handling</a></dd>
+	<dd><a href='http://php.net/manual/en/features.persistent-connections.php'>Persistent Database Connections</a></dd>
+	<dd><a href='http://php.net/manual/en/features.safe-mode.php'>Safe Mode</a></dd>
+	<dd><a href='http://php.net/manual/en/features.commandline.php'>Command line usage</a></dd>
+	<dd><a href='http://php.net/manual/en/features.gc.php'>Garbage Collection</a></dd>
+	<dd><a href='http://php.net/manual/en/features.dtrace.php'>DTrace Dynamic Tracing</a></dd>
+</dl>
+<dl>
+<dt><a href='http://php.net/manual/en/funcref.php'>Function Reference</a></dt>
+	<dd><a href='http://php.net/manual/en/refs.basic.php.php'>Affecting PHP's Behaviour</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.audio.php'>Audio Formats Manipulation</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.remote.auth.php'>Authentication Services</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.cmdline.php'>Command Line Specific Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.compression.php'>Compression and Archive Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.creditcard.php'>Credit Card Processing</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.crypto.php'>Cryptography Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.database.php'>Database Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.calendar.php'>Date and Time Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.fileprocess.file.php'>File System Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.international.php'>Human Language and Character Encoding Support</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.image.php'>Image Processing and Generation</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.remote.mail.php'>Mail Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.math.php'>Mathematical Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.nontext.php'>Non-Text MIME Output</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.fileprocess.process.php'>Process Control Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.other.php'>Other Basic Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.remote.other.php'>Other Services</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.search.php'>Search Engine Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.server.php'>Server Specific Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.session.php'>Session Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.text.php'>Text Processing</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.vartype.php'>Variable and Type Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.webservice.php'>Web Services</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.windows.php'>Windows Only Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.xml.php'>XML Manipulation</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.ui.php'>GUI Extensions</a></dd>
+</dl>
+<dl>
+<dt>Keyboard Shortcuts</dt><dt>?</dt>
+<dd>This help</dd>
+<dt>j</dt>
+<dd>Next menu item</dd>
+<dt>k</dt>
+<dd>Previous menu item</dd>
+<dt>g p</dt>
+<dd>Previous man page</dd>
+<dt>g n</dt>
+<dd>Next man page</dd>
+<dt>G</dt>
+<dd>Scroll to bottom</dd>
+<dt>g g</dt>
+<dd>Scroll to top</dd>
+<dt>g h</dt>
+<dd>Goto homepage</dd>
+<dt>g s</dt>
+<dd>Goto search<br>(current page)</dd>
+<dt>/</dt>
+<dd>Focus search box</dd>
+</dl></div></nav>
+<div id="goto">
+    <div class="search">
+         <div class="text"></div>
+         <div class="results"><ul></ul></div>
+   </div>
+</div>
+
+  <div id="breadcrumbs" class="clearfix">
+    <div id="breadcrumbs-inner">
+          <div class="next">
+        <a href="http://php.net/manual/en/functions.arguments.php">
+          Function arguments &raquo;
+        </a>
+      </div>
+              <div class="prev">
+        <a href="http://php.net/manual/en/language.functions.php">
+          &laquo; Functions        </a>
+      </div>
+          <ul>
+            <li><a href='http://php.net/manual/en/index.php'>PHP Manual</a></li>      <li><a href='http://php.net/manual/en/langref.php'>Language Reference</a></li>      <li><a href='http://php.net/manual/en/language.functions.php'>Functions</a></li>      </ul>
+    </div>
+  </div>
+
+
+
+
+<div id="layout" class="clearfix">
+  <section id="layout-content">
+  <div class="page-tools">
+    <div class="change-language">
+      <form action="http://php.net/manual/change.php" method="get" id="changelang" name="changelang">
+        <fieldset>
+          <label for="changelang-langs">Change language:</label>
+          <select onchange="document.changelang.submit()" name="page" id="changelang-langs">
+            <option value='en/functions.user-defined.php' selected="selected">English</option>
+            <option value='http://php.net/manual/en/pt_BR/functions.user-defined.php'>Brazilian Portuguese</option>
+            <option value='http://php.net/manual/en/zh/functions.user-defined.php'>Chinese (Simplified)</option>
+            <option value='http://php.net/manual/en/fr/functions.user-defined.php'>French</option>
+            <option value='http://php.net/manual/en/de/functions.user-defined.php'>German</option>
+            <option value='http://php.net/manual/en/ja/functions.user-defined.php'>Japanese</option>
+            <option value='http://php.net/manual/en/ro/functions.user-defined.php'>Romanian</option>
+            <option value='http://php.net/manual/en/ru/functions.user-defined.php'>Russian</option>
+            <option value='http://php.net/manual/en/es/functions.user-defined.php'>Spanish</option>
+            <option value='http://php.net/manual/en/tr/functions.user-defined.php'>Turkish</option>
+            <option value="http://php.net/manual/en/help-translate.php">Other</option>
+          </select>
+        </fieldset>
+      </form>
+    </div>
+    <div class="edit-bug">
+      <a href="https://edit.php.net/?project=PHP&amp;perm=en/functions.user-defined.php">Edit</a>
+      <a href="https://bugs.php.net/report.php?bug_type=Documentation+problem&amp;manpage=functions.user-defined">Report a Bug</a>
+    </div>
+  </div><div id="functions.user-defined" class="sect1">
+   <h2 class="title">User-defined functions</h2>
+ 
+   <p class="para">
+    A function may be defined using syntax such as the following:
+   </p>
+   <p class="para">
+    <div class="example" id="example-132">
+     <p><strong>Example #1 Pseudo code to demonstrate function uses</strong></p>
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">foo</span><span style="color: #007700">(</span><span style="color: #0000BB">$arg_1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$arg_2</span><span style="color: #007700">,&nbsp;</span><span style="color: #FF8000">/*&nbsp;...,&nbsp;*/&nbsp;</span><span style="color: #0000BB">$arg_n</span><span style="color: #007700">)<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"Example&nbsp;function.\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">$retval</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+     </div>
+
+    </div>
+   </p>
+   
+   <p class="simpara">
+    Any valid PHP code may appear inside a function, even other
+    functions and <a href="http://php.net/manual/en/language.oop5.basic.php#language.oop5.basic.class" class="link">class</a>
+    definitions.
+   </p>
+   <p class="para">
+    Function names follow the same rules as other labels in PHP. A
+    valid function name starts with a letter or underscore, followed
+    by any number of letters, numbers, or underscores. As a regular
+    expression, it would be expressed thus:
+    <em>[a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]*</em>.
+   </p>
+   <div class="tip"><strong class="tip">Tip</strong><p class="simpara">See also the
+<a href="http://php.net/manual/en/userlandnaming.php" class="xref">Userland Naming Guide</a>.</p></div>
+   <p class="simpara">
+    Functions need not be defined before they are referenced,
+    <em class="emphasis">except</em> when a function is conditionally defined as
+    shown in the two examples below.
+   </p>
+   <p class="para">
+    When a function is defined in a conditional manner such as the two
+    examples shown. Its definition must be processed <em class="emphasis">prior</em>
+    to being called.
+   </p>
+   <p class="para">
+    <div class="example" id="example-133">
+     <p><strong>Example #2 Conditional functions</strong></p>
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /><br />$makefoo&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">true</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">/*&nbsp;We&nbsp;can't&nbsp;call&nbsp;foo()&nbsp;from&nbsp;here&nbsp;<br />&nbsp;&nbsp;&nbsp;since&nbsp;it&nbsp;doesn't&nbsp;exist&nbsp;yet,<br />&nbsp;&nbsp;&nbsp;but&nbsp;we&nbsp;can&nbsp;call&nbsp;bar()&nbsp;*/<br /><br /></span><span style="color: #0000BB">bar</span><span style="color: #007700">();<br /><br />if&nbsp;(</span><span style="color: #0000BB">$makefoo</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;function&nbsp;</span><span style="color: #0000BB">foo</span><span style="color: #007700">()<br />&nbsp;&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"I&nbsp;don't&nbsp;exist&nbsp;until&nbsp;program&nbsp;execution&nbsp;reaches&nbsp;me.\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;}<br />}<br /><br /></span><span style="color: #FF8000">/*&nbsp;Now&nbsp;we&nbsp;can&nbsp;safely&nbsp;call&nbsp;foo()<br />&nbsp;&nbsp;&nbsp;since&nbsp;$makefoo&nbsp;evaluated&nbsp;to&nbsp;true&nbsp;*/<br /><br /></span><span style="color: #007700">if&nbsp;(</span><span style="color: #0000BB">$makefoo</span><span style="color: #007700">)&nbsp;</span><span style="color: #0000BB">foo</span><span style="color: #007700">();<br /><br />function&nbsp;</span><span style="color: #0000BB">bar</span><span style="color: #007700">()&nbsp;<br />{<br />&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"I&nbsp;exist&nbsp;immediately&nbsp;upon&nbsp;program&nbsp;start.\n"</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+     </div>
+
+    </div>
+   </p>
+   <p class="para">
+    <div class="example" id="example-134">
+     <p><strong>Example #3 Functions within functions</strong></p>
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">foo</span><span style="color: #007700">()&nbsp;<br />{<br />&nbsp;&nbsp;function&nbsp;</span><span style="color: #0000BB">bar</span><span style="color: #007700">()&nbsp;<br />&nbsp;&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"I&nbsp;don't&nbsp;exist&nbsp;until&nbsp;foo()&nbsp;is&nbsp;called.\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;}<br />}<br /><br /></span><span style="color: #FF8000">/*&nbsp;We&nbsp;can't&nbsp;call&nbsp;bar()&nbsp;yet<br />&nbsp;&nbsp;&nbsp;since&nbsp;it&nbsp;doesn't&nbsp;exist.&nbsp;*/<br /><br /></span><span style="color: #0000BB">foo</span><span style="color: #007700">();<br /><br /></span><span style="color: #FF8000">/*&nbsp;Now&nbsp;we&nbsp;can&nbsp;call&nbsp;bar(),<br />&nbsp;&nbsp;&nbsp;foo()'s&nbsp;processing&nbsp;has<br />&nbsp;&nbsp;&nbsp;made&nbsp;it&nbsp;accessible.&nbsp;*/<br /><br /></span><span style="color: #0000BB">bar</span><span style="color: #007700">();<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+     </div>
+
+    </div>
+   </p>
+   <p class="para">
+    All functions and classes in PHP have the global scope - they can be
+    called outside a function even if they were defined inside and vice versa.
+   </p>
+   <p class="simpara">
+    PHP does not support function overloading, nor is it possible to
+    undefine or redefine previously-declared functions.
+   </p>
+   <blockquote class="note"><p><strong class="note">Note</strong>: 
+    <span class="simpara">
+     Function names are case-insensitive, though it is usually good form
+     to call functions as they appear in their declaration.
+    </span>
+   </p></blockquote>   
+   <p class="simpara">
+    Both <a href="http://php.net/manual/en/functions.arguments.php#functions.variable-arg-list" class="link">variable number of
+    arguments</a> and <a href="http://php.net/manual/en/functions.arguments.php#functions.arguments.default" class="link">default
+    arguments</a> are supported in functions. See also the function
+    references for
+    <span class="function"><a href="http://php.net/manual/en/function.func-num-args.php" class="function">func_num_args()</a></span>,
+    <span class="function"><a href="http://php.net/manual/en/function.func-get-arg.php" class="function">func_get_arg()</a></span>, and
+    <span class="function"><a href="http://php.net/manual/en/function.func-get-args.php" class="function">func_get_args()</a></span> for more information.
+   </p>
+   
+   <p class="para">
+    It is possible to call recursive functions in PHP.
+    <div class="example" id="example-135">
+     <p><strong>Example #4 Recursive functions</strong></p>
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">recursion</span><span style="color: #007700">(</span><span style="color: #0000BB">$a</span><span style="color: #007700">)<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(</span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">&lt;&nbsp;</span><span style="color: #0000BB">20</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"</span><span style="color: #0000BB">$a</span><span style="color: #DD0000">\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">recursion</span><span style="color: #007700">(</span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">+&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+     </div>
+
+    </div>
+   <blockquote class="note"><p><strong class="note">Note</strong>: 
+    <span class="simpara">
+     Recursive function/method calls with over 100-200 recursion levels can
+     smash the stack and cause a termination of the current script. Especially,
+     infinite recursion is considered a programming error.
+    </span>
+   </p></blockquote>
+   </p>
+
+  </div>
+<section id="usernotes">
+ <div class="head">
+  <span class="action"><a href="http://php.net/manual/add-note.php?sect=functions.user-defined&amp;redirect=http://php.net/manual/en/functions.user-defined.php"><img src='http://php.net/images/notes-add@2x.png' alt='add a note' width='12' height='12'> <small>add a note</small></a></span>
+  <h3 class="title">User Contributed Notes <span class="count">10 notes</span></h3>
+ </div><div id="allnotes">
+  <div class="note" id="118365">  <div class="votes">
+    <div id="Vu118365">
+    <a href="http://php.net/manual/vote-note.php?id=118365&amp;page=functions.user-defined&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd118365">
+    <a href="http://php.net/manual/vote-note.php?id=118365&amp;page=functions.user-defined&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V118365" title="50% like this...">
+    1
+    </div>
+  </div>
+  <a href="#118365" class="name">
+  <strong class="user"><em>Muneeb Aslam</em></strong></a><a class="genanchor" href="#118365"> &para;</a><div class="date" title="2015-11-23 03:09"><strong>2 years ago</strong></div>
+  <div class="text" id="Hcom118365">
+<div class="phpcode"><code><span class="html">
+following is a function that can be used to convert numeric date to alphabetic date, e-g from 2015-11-16 to 16 Nov, 2015.<br /><br />1. Function takes 3 parameters, numeric date, locale and length of month<br />2. Function currently supports EN and ES month names.<br />3. Function can be calles as <span class="default">&lt;?php convertDate</span><span class="keyword">(</span><span class="string">"2015-11-16"</span><span class="keyword">,</span><span class="string">"en"</span><span class="keyword">,</span><span class="string">"full"</span><span class="keyword">); </span><span class="default">?&gt;<br /></span><br /><span class="default">&lt;?php<br /><br />&nbsp; &nbsp; </span><span class="keyword">function </span><span class="default">convertDate</span><span class="keyword">(</span><span class="default">$date</span><span class="keyword">,</span><span class="default">$locale</span><span class="keyword">,</span><span class="default">$length</span><span class="keyword">){<br />&nbsp; &nbsp; &nbsp; &nbsp; <br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$monthNames </span><span class="keyword">= array(<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="string">"en" </span><span class="keyword">=&gt; array(<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="string">"full" </span><span class="keyword">=&gt; array(</span><span class="default">1</span><span class="keyword">=&gt;</span><span class="string">'January'</span><span class="keyword">,</span><span class="string">'February'</span><span class="keyword">,</span><span class="string">'March'</span><span class="keyword">,</span><span class="string">'April'</span><span class="keyword">,</span><span class="string">'May'</span><span class="keyword">,<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="string">'June'</span><span class="keyword">,</span><span class="string">'July'</span><span class="keyword">,</span><span class="string">'August'</span><span class="keyword">,</span><span class="string">'September'</span><span class="keyword">,</span><span class="string">'October'</span><span class="keyword">,</span><span class="string">'November'</span><span class="keyword">,</span><span class="string">'December'</span><span class="keyword">),<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="string">"short" </span><span class="keyword">=&gt; array(</span><span class="default">1</span><span class="keyword">=&gt;</span><span class="string">'Jan'</span><span class="keyword">,</span><span class="string">'Feb'</span><span class="keyword">,</span><span class="string">'Mar'</span><span class="keyword">,</span><span class="string">'Apr'</span><span class="keyword">,</span><span class="string">'May'</span><span class="keyword">,</span><span class="string">'Jun'</span><span class="keyword">,<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="string">'Jul'</span><span class="keyword">,</span><span class="string">'Aug'</span><span class="keyword">,</span><span class="string">'Sep'</span><span class="keyword">,</span><span class="string">'Oct'</span><span class="keyword">,</span><span class="string">'Nov'</span><span class="keyword">,</span><span class="string">'Dec'</span><span class="keyword">)<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ),<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="string">"es" </span><span class="keyword">=&gt; array(<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="string">"full" </span><span class="keyword">=&gt; array(</span><span class="default">1</span><span class="keyword">=&gt;</span><span class="string">'Enero'</span><span class="keyword">,</span><span class="string">'Febrero'</span><span class="keyword">,</span><span class="string">'Marzo'</span><span class="keyword">,</span><span class="string">'Abril'</span><span class="keyword">,</span><span class="string">'Mayo'</span><span class="keyword">,<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="string">'Junio'</span><span class="keyword">,</span><span class="string">'Julio'</span><span class="keyword">,</span><span class="string">'Agosto'</span><span class="keyword">,</span><span class="string">'Septiembre'</span><span class="keyword">,</span><span class="string">'Octubre'</span><span class="keyword">,</span><span class="string">'Noviembre'</span><span class="keyword">,</span><span class="string">'Deciembre'</span><span class="keyword">),<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="string">"short" </span><span class="keyword">=&gt; array(</span><span class="default">1</span><span class="keyword">=&gt;</span><span class="string">'Ene'</span><span class="keyword">,</span><span class="string">'Feb'</span><span class="keyword">,</span><span class="string">'Mar'</span><span class="keyword">,</span><span class="string">'Abr'</span><span class="keyword">,</span><span class="string">'May'</span><span class="keyword">,</span><span class="string">'Jun'</span><span class="keyword">,<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="string">'Jul'</span><span class="keyword">,</span><span class="string">'Ago'</span><span class="keyword">,</span><span class="string">'Sep'</span><span class="keyword">,</span><span class="string">'Oct'</span><span class="keyword">,</span><span class="string">'Nov'</span><span class="keyword">,</span><span class="string">'Dec'</span><span class="keyword">)<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ),<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; );<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$exploded </span><span class="keyword">= </span><span class="default">explode</span><span class="keyword">(</span><span class="string">"-"</span><span class="keyword">,</span><span class="default">$date</span><span class="keyword">);<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$year </span><span class="keyword">= </span><span class="default">$exploded</span><span class="keyword">[</span><span class="default">0</span><span class="keyword">];<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$month </span><span class="keyword">= </span><span class="default">$exploded</span><span class="keyword">[</span><span class="default">1</span><span class="keyword">];<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$day </span><span class="keyword">= </span><span class="default">$exploded</span><span class="keyword">[</span><span class="default">2</span><span class="keyword">];<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$month </span><span class="keyword">= </span><span class="default">$monthNames</span><span class="keyword">[</span><span class="default">$locale</span><span class="keyword">][</span><span class="default">$length</span><span class="keyword">][</span><span class="default">$month</span><span class="keyword">];<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$date </span><span class="keyword">= </span><span class="default">$day </span><span class="keyword">. </span><span class="string">" " </span><span class="keyword">. </span><span class="default">$month </span><span class="keyword">. </span><span class="string">", " </span><span class="keyword">. </span><span class="default">$year</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; return </span><span class="default">$date</span><span class="keyword">;<br />&nbsp; &nbsp; }<br /><br /></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="119094">  <div class="votes">
+    <div id="Vu119094">
+    <a href="http://php.net/manual/vote-note.php?id=119094&amp;page=functions.user-defined&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd119094">
+    <a href="http://php.net/manual/vote-note.php?id=119094&amp;page=functions.user-defined&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V119094" title="48% like this...">
+    -4
+    </div>
+  </div>
+  <a href="#119094" class="name">
+  <strong class="user"><em>ayyappan dot ashok at gmail dot com</em></strong></a><a class="genanchor" href="#119094"> &para;</a><div class="date" title="2016-03-31 01:00"><strong>1 year ago</strong></div>
+  <div class="text" id="Hcom119094">
+<div class="phpcode"><code><span class="html">
+Type Checking in PHP 7 <br /><br />case A: //Using return<br />-------------------------<br />function welcome($name):string <br />{<br />&nbsp;&nbsp; return $name;<br />}<br />echo welcome(100); <br /><br />Results :&nbsp; 100<br /><br />case B: //Using echo<br />-------------------------<br />function welcome($name):string <br />{<br />&nbsp; &nbsp; echo $name;<br />}<br />welcome("100");<br /><br />Results : Fatal error&lt;/b&gt;:&nbsp; Uncaught TypeError<br /><br />function welcome(string $name) <br />{<br />&nbsp; &nbsp; echo $name;<br />}<br />welcome(100);<br /><br />Results :&nbsp; 100<br /><br />case C: // Using strict_types<br />--------------------------------<br />declare(strict_types=1);<br /><br />function welcome($name):string <br />{<br />&nbsp; &nbsp; return $name;<br />}<br />echo welcome(90.99);<br /><br />Results : Fatal error&lt;/b&gt;:&nbsp; Uncaught TypeError<br /><br />case D: // Using strict_types<br />--------------------------------<br />//declare(strict_types=1);&nbsp;&nbsp; On comment to strict_types<br /><br />function welcome($name):string <br />{<br />&nbsp; &nbsp; return $name;<br />}<br />echo welcome(90.99);<br /><br />Results :&nbsp; 90.99<br /><br />Note: <br />Behaviour of echo and return on welcome function show in different reflection. Representation of function type checking can be in either type as follows<br /><br />function welcome(string $name){ }<br />or<br />function welcome($name):string{ }<br /><br />Executed on PHP Version : 7.0.3</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="119089">  <div class="votes">
+    <div id="Vu119089">
+    <a href="http://php.net/manual/vote-note.php?id=119089&amp;page=functions.user-defined&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd119089">
+    <a href="http://php.net/manual/vote-note.php?id=119089&amp;page=functions.user-defined&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V119089" title="45% like this...">
+    -3
+    </div>
+  </div>
+  <a href="#119089" class="name">
+  <strong class="user"><em>ayyappan dot ashok at gmail dot com</em></strong></a><a class="genanchor" href="#119089"> &para;</a><div class="date" title="2016-03-31 06:22"><strong>1 year ago</strong></div>
+  <div class="text" id="Hcom119089">
+<div class="phpcode"><code><span class="html">
+For a good note, we can pass function as argument to function.<br /><br />Take a look at the code. Passing function as argument can be achieved by Closure class ( A class to represent anonymous function).<br /><br />function math(Closure $type, $first, $second) {<br />&nbsp; &nbsp; // Execute the closure with parameters<br />&nbsp; &nbsp; return $type($first, $second);<br />}<br /><br />// Create an addition closure.<br />$addition = function ($first, $second) {<br />&nbsp; &nbsp; // Add the values.<br />&nbsp; &nbsp; return $first + $second;<br />};<br /><br />// Create an subtraction closure.<br />$subtraction = function ($first, $second) {<br />&nbsp; &nbsp; // Subtract the values.<br />&nbsp; &nbsp; return $first - $second;<br />};<br /><br />// Execute math function.<br />Note :anonymous&nbsp; function is passed as an argument to function math.<br />echo math($addition, 2, 2); <br />echo PHP_EOL; // New line!<br />echo math($subtraction, 5, 3);<br /><br />Courtesy : PHP Panda. Inspired from PHP panda.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="118279">  <div class="votes">
+    <div id="Vu118279">
+    <a href="http://php.net/manual/vote-note.php?id=118279&amp;page=functions.user-defined&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd118279">
+    <a href="http://php.net/manual/vote-note.php?id=118279&amp;page=functions.user-defined&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V118279" title="44% like this...">
+    -4
+    </div>
+  </div>
+  <a href="#118279" class="name">
+  <strong class="user"><em>ohcc at 163 dot com</em></strong></a><a class="genanchor" href="#118279"> &para;</a><div class="date" title="2015-11-07 03:52"><strong>2 years ago</strong></div>
+  <div class="text" id="Hcom118279">
+<div class="phpcode"><code><span class="html">
+As of PHP 7.0, you can restrain type of return value of user defined functions.<br /><br />Syntax is : function FunctionName ($arg1, $arg2, ...)&nbsp; : TYPE { ... }<br /><br />TYPE is a string representing the type of return value, TYPE can be a class name or a php variable type, such as array/string/bool/int/float. <br /><br />When TYPE is one of the following value, it also stands for a classname<br /><br />str/boolean/integer/real/double/resource/object/scalar<br /><br />However,in my opion, boolean/bool, integer/int ... should have the same meaning, but at least in PHP7, they stand for different meanings respectively. This may be fixed in later versions of PHP.<br /><br /><span class="default">&lt;?php<br />&nbsp; &nbsp; </span><span class="keyword">function </span><span class="default">wxc </span><span class="keyword">(</span><span class="default">$var</span><span class="keyword">) : </span><span class="default">string </span><span class="keyword">{<br />&nbsp; &nbsp; &nbsp; &nbsp; return </span><span class="default">$var</span><span class="keyword">;<br />&nbsp; &nbsp; }<br /></span><span class="default">?&gt;<br /></span><br />this function must return a string, if it return something else when called, a "Fatal error: Uncaught TypeError" error will be triggered.<br /><br />code above is supported only in PHP 7+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="114906">  <div class="votes">
+    <div id="Vu114906">
+    <a href="http://php.net/manual/vote-note.php?id=114906&amp;page=functions.user-defined&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd114906">
+    <a href="http://php.net/manual/vote-note.php?id=114906&amp;page=functions.user-defined&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V114906" title="48% like this...">
+    -6
+    </div>
+  </div>
+  <a href="#114906" class="name">
+  <strong class="user"><em>aydinantmen [at] hotmail [dot] com</em></strong></a><a class="genanchor" href="#114906"> &para;</a><div class="date" title="2014-04-23 05:17"><strong>3 years ago</strong></div>
+  <div class="text" id="Hcom114906">
+<div class="phpcode"><code><span class="html">
+I want to use multidimentional arrays in a callback function what accepts second parameter.<br /><br />Solution:<br /><br /><span class="default">&lt;?php<br /><br />$arr1 </span><span class="keyword">= array(</span><span class="string">"a" </span><span class="keyword">=&gt; </span><span class="string">"b"</span><span class="keyword">, </span><span class="string">"c"</span><span class="keyword">, </span><span class="string">"d's"</span><span class="keyword">, </span><span class="string">"e" </span><span class="keyword">=&gt; array(</span><span class="string">"f's"</span><span class="keyword">, </span><span class="string">"g" </span><span class="keyword">=&gt; array(</span><span class="string">"h's"</span><span class="keyword">, </span><span class="string">"i" </span><span class="keyword">=&gt; </span><span class="string">"j's"</span><span class="keyword">)));<br /></span><span class="default">$arr2 </span><span class="keyword">= </span><span class="default">mdarr_parameter</span><span class="keyword">(</span><span class="default">$arr1</span><span class="keyword">);<br /></span><span class="default">$arr3 </span><span class="keyword">= </span><span class="default">mdarr_parameter</span><span class="keyword">(</span><span class="default">$arr2</span><span class="keyword">, </span><span class="default">true</span><span class="keyword">);<br /><br />function </span><span class="default">mdarr_parameter</span><span class="keyword">(</span><span class="default">$needle</span><span class="keyword">, </span><span class="default">$job</span><span class="keyword">=</span><span class="default">false</span><span class="keyword">) {<br />&nbsp; &nbsp; if (</span><span class="default">is_array</span><span class="keyword">(</span><span class="default">$needle</span><span class="keyword">)) {<br />&nbsp; &nbsp; &nbsp; &nbsp; foreach(</span><span class="default">$needle </span><span class="keyword">as </span><span class="default">$name </span><span class="keyword">=&gt; </span><span class="default">$value</span><span class="keyword">) {<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$needle</span><span class="keyword">[</span><span class="default">$name</span><span class="keyword">] = </span><span class="default">mdarr_parameter</span><span class="keyword">(</span><span class="default">$value</span><span class="keyword">, </span><span class="default">$job</span><span class="keyword">);<br />&nbsp; &nbsp; &nbsp; &nbsp; }<br />&nbsp; &nbsp; } else {<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="comment">// Now you do anything you want...<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="keyword">if (</span><span class="default">$job </span><span class="keyword">=== </span><span class="default">true</span><span class="keyword">) {<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$needle </span><span class="keyword">= </span><span class="default">stripslashes</span><span class="keyword">(</span><span class="default">$needle</span><span class="keyword">);<br />&nbsp; &nbsp; &nbsp; &nbsp; } else {<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$needle </span><span class="keyword">= </span><span class="default">addslashes</span><span class="keyword">(</span><span class="default">$needle</span><span class="keyword">);<br />&nbsp; &nbsp; &nbsp; &nbsp; }<br />&nbsp; &nbsp; }<br />&nbsp; &nbsp; return </span><span class="default">$needle</span><span class="keyword">;<br />}<br /><br /></span><span class="default">print_r</span><span class="keyword">(</span><span class="default">$arr2</span><span class="keyword">);<br /></span><span class="default">print_r</span><span class="keyword">(</span><span class="default">$arr3</span><span class="keyword">);<br /><br /></span><span class="comment">/**<br /> Outputs:<br /><br />Array<br />(<br />&nbsp; &nbsp; [a] =&gt; b<br />&nbsp; &nbsp; [0] =&gt; c<br />&nbsp; &nbsp; [1] =&gt; d\'s<br />&nbsp; &nbsp; [e] =&gt; Array<br />&nbsp; &nbsp; &nbsp; &nbsp; (<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [0] =&gt; f\'s<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [g] =&gt; Array<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [0] =&gt; h\'s<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [i] =&gt; j\'s<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; )<br /><br />&nbsp; &nbsp; &nbsp; &nbsp; )<br /><br />)<br />Array<br />(<br />&nbsp; &nbsp; [a] =&gt; b<br />&nbsp; &nbsp; [0] =&gt; c<br />&nbsp; &nbsp; [1] =&gt; d's<br />&nbsp; &nbsp; [e] =&gt; Array<br />&nbsp; &nbsp; &nbsp; &nbsp; (<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [0] =&gt; f's<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [g] =&gt; Array<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [0] =&gt; h's<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [i] =&gt; j's<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; )<br /><br />&nbsp; &nbsp; &nbsp; &nbsp; )<br /><br />)<br />**/<br /><br /></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="119088">  <div class="votes">
+    <div id="Vu119088">
+    <a href="http://php.net/manual/vote-note.php?id=119088&amp;page=functions.user-defined&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd119088">
+    <a href="http://php.net/manual/vote-note.php?id=119088&amp;page=functions.user-defined&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V119088" title="42% like this...">
+    -6
+    </div>
+  </div>
+  <a href="#119088" class="name">
+  <strong class="user"><em>ayyappan dot ashok at gmail dot com</em></strong></a><a class="genanchor" href="#119088"> &para;</a><div class="date" title="2016-03-31 05:40"><strong>1 year ago</strong></div>
+  <div class="text" id="Hcom119088">
+<div class="phpcode"><code><span class="html">
+As posted by ohcc at 163 dot com<br /><br />&nbsp; &nbsp; function wxc ($var) : string <br />&nbsp; &nbsp; {<br />&nbsp; &nbsp; &nbsp; &nbsp; return $var;<br />&nbsp; &nbsp; }<br /> <br />&nbsp; this function must return a string, if it return something else when&nbsp; <br />&nbsp; called, a "Fatal error: Uncaught TypeError" error will be triggered.<br /><br />&nbsp; But when executed by passing various datatypes, it doesn't throw error&nbsp;&nbsp; <br />&nbsp; other than array and object.<br /><br />&nbsp; Please look over the code<br /><br />&nbsp; function abc($var) :string { return $var;}<br />&nbsp; echo abc(true);&nbsp; &nbsp; // Results 1<br />&nbsp; <br />&nbsp; function abc($var) :string { return $var;}<br />&nbsp; echo abc(88.99);&nbsp; // Results 88.99 <br /><br />&nbsp; function abc($var) :string { return $var;}<br />&nbsp; echo abc(array());<br />&nbsp; <br />&nbsp; //Results <br />&nbsp; Fatal error : Uncaught TypeError: Return value of abc() must be of the&nbsp;&nbsp; <br />&nbsp; type string<br /><br />&nbsp; Note :<br />&nbsp; Even though function is forced to return only string, it still considers the&nbsp;&nbsp; <br />&nbsp; other datatype arguments as string.<br />&nbsp; <br />&nbsp; echo gettype(abc(99.88));&nbsp; // Returns string.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="116892">  <div class="votes">
+    <div id="Vu116892">
+    <a href="http://php.net/manual/vote-note.php?id=116892&amp;page=functions.user-defined&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd116892">
+    <a href="http://php.net/manual/vote-note.php?id=116892&amp;page=functions.user-defined&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V116892" title="46% like this...">
+    -8
+    </div>
+  </div>
+  <a href="#116892" class="name">
+  <strong class="user"><em>N Atanackovic</em></strong></a><a class="genanchor" href="#116892"> &para;</a><div class="date" title="2015-03-16 05:31"><strong>2 years ago</strong></div>
+  <div class="text" id="Hcom116892">
+<div class="phpcode"><code><span class="html">
+You can also call function from itself.&nbsp; For example, I want to reach the deepest value in multidimensional array and I call function from inside the very same function. In this example function behave as some meta-loop.<br />&nbsp; &nbsp; <br /><span class="default">&lt;?php <br /><br />$arr1</span><span class="keyword">=array(</span><span class="string">'a'</span><span class="keyword">=&gt;array(</span><span class="string">'e'</span><span class="keyword">=&gt;array(</span><span class="string">'f'</span><span class="keyword">=&gt;array(</span><span class="string">'g'</span><span class="keyword">=&gt;</span><span class="string">'h'</span><span class="keyword">, </span><span class="string">'n' </span><span class="keyword">)),</span><span class="string">'b'</span><span class="keyword">,</span><span class="string">'c'</span><span class="keyword">));<br /></span><span class="default">$arr2</span><span class="keyword">=array(</span><span class="string">'a'</span><span class="keyword">=&gt;array(</span><span class="string">'e'</span><span class="keyword">=&gt;array(</span><span class="string">'f'</span><span class="keyword">=&gt;array(</span><span class="string">'g'</span><span class="keyword">=&gt;array(</span><span class="string">'l'</span><span class="keyword">=&gt;array(</span><span class="string">'m'</span><span class="keyword">=&gt;</span><span class="string">'w'</span><span class="keyword">,</span><span class="string">'q'</span><span class="keyword">)), </span><span class="string">'n' </span><span class="keyword">)),</span><span class="string">'b'</span><span class="keyword">,</span><span class="string">'c'</span><span class="keyword">));<br /><br />function </span><span class="default">Deep</span><span class="keyword">(</span><span class="default">$array</span><span class="keyword">){<br />&nbsp; &nbsp; foreach(</span><span class="default">$array </span><span class="keyword">as </span><span class="default">$key</span><span class="keyword">){<br />&nbsp; &nbsp; &nbsp; &nbsp; if(</span><span class="default">is_array</span><span class="keyword">(</span><span class="default">$key</span><span class="keyword">)){<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; return </span><span class="default">Deep</span><span class="keyword">(</span><span class="default">$key</span><span class="keyword">);</span><span class="comment">//calling the function inside the function<br /></span><span class="keyword">}else {<br />echo </span><span class="default">$key</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; &nbsp; }<br />&nbsp; &nbsp; }<br />}<br /><br />echo </span><span class="default">Deep</span><span class="keyword">(</span><span class="default">$arr1</span><span class="keyword">); </span><span class="comment">//outputs: hn<br /></span><span class="keyword">echo </span><span class="default">Deep</span><span class="keyword">(</span><span class="default">$arr2</span><span class="keyword">); </span><span class="comment">//outputs: wq<br /><br /></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="115737">  <div class="votes">
+    <div id="Vu115737">
+    <a href="http://php.net/manual/vote-note.php?id=115737&amp;page=functions.user-defined&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd115737">
+    <a href="http://php.net/manual/vote-note.php?id=115737&amp;page=functions.user-defined&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V115737" title="46% like this...">
+    -9
+    </div>
+  </div>
+  <a href="#115737" class="name">
+  <strong class="user"><em>php at xenhideout dot nl</em></strong></a><a class="genanchor" href="#115737"> &para;</a><div class="date" title="2014-09-15 05:59"><strong>3 years ago</strong></div>
+  <div class="text" id="Hcom115737">
+<div class="phpcode"><code><span class="html">
+Please be advised that the code block defining the function, within the function_exists() call, has to be executed for the function to get defined, whereas this is not the case for regular, unenclosed functions.<br /><br />Meaning, if you write code like this:<br /><br /><span class="default">&lt;?php<br /><br />do_function</span><span class="keyword">();<br /><br />if (!</span><span class="default">function_exists</span><span class="keyword">(</span><span class="string">'my_undefined'</span><span class="keyword">)) {<br />&nbsp; &nbsp; function </span><span class="default">my_undefined</span><span class="keyword">() {<br />&nbsp; &nbsp; }<br />}<br /><br />function </span><span class="default">do_function</span><span class="keyword">() {<br />&nbsp; &nbsp; </span><span class="default">my_undefined</span><span class="keyword">();<br />}<br /></span><span class="default">?&gt;<br /></span><br />..Then my_undefined will not be defined before the code in do_function calls it. Some people put their function sections below the regular executing code of the script. Making any of it 'pluggable' can then cause problems.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="119090">  <div class="votes">
+    <div id="Vu119090">
+    <a href="http://php.net/manual/vote-note.php?id=119090&amp;page=functions.user-defined&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd119090">
+    <a href="http://php.net/manual/vote-note.php?id=119090&amp;page=functions.user-defined&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V119090" title="37% like this...">
+    -8
+    </div>
+  </div>
+  <a href="#119090" class="name">
+  <strong class="user"><em>ayyappan dot ashok at gmail dot com</em></strong></a><a class="genanchor" href="#119090"> &para;</a><div class="date" title="2016-03-31 06:45"><strong>1 year ago</strong></div>
+  <div class="text" id="Hcom119090">
+<div class="phpcode"><code><span class="html">
+//Calling function with in a function or inner function<br /><br />function add($a,$b){<br />&nbsp; &nbsp; return $a+$b;<br />}<br /><br />function sub($a,$b){<br />&nbsp; &nbsp; return $a-$b;<br />}<br /><br />function math($first, $second) {<br />&nbsp; &nbsp; $res =&nbsp; add($first, $second)/sub($first, $second);<br />&nbsp; &nbsp; return (int)$res;<br />}<br />echo math(200,100);&nbsp; //Results&nbsp; 3</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="118566">  <div class="votes">
+    <div id="Vu118566">
+    <a href="http://php.net/manual/vote-note.php?id=118566&amp;page=functions.user-defined&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd118566">
+    <a href="http://php.net/manual/vote-note.php?id=118566&amp;page=functions.user-defined&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V118566" title="34% like this...">
+    -18
+    </div>
+  </div>
+  <a href="#118566" class="name">
+  <strong class="user"><em>info at namasteui dot com</em></strong></a><a class="genanchor" href="#118566"> &para;</a><div class="date" title="2015-12-29 06:23"><strong>1 year ago</strong></div>
+  <div class="text" id="Hcom118566">
+<div class="phpcode"><code><span class="html">
+Functions that are written by the user are User defined functions.<br /><br />function function name [(argument1, argument 2, ...argument n)] <br />{any PHP code }<br /><br />For example,<br /><br /><span class="default">&lt;?php<br /></span><span class="keyword">function </span><span class="default">hello</span><span class="keyword">()<br />{<br />print(</span><span class="string">"Hello!"</span><span class="keyword">);<br />}<br /></span><span class="default">hello</span><span class="keyword">();<br /></span><span class="default">?&gt;<br /></span><br />Using the function hello() anywhere in the PHP code will display the word "Hello".</span>
+</code></div>
+  </div>
+ </div></div>
+
+ <div class="foot"><a href="http://php.net/manual/add-note.php?sect=functions.user-defined&amp;redirect=http://php.net/manual/en/functions.user-defined.php"><img src='http://php.net/images/notes-add@2x.png' alt='add a note' width='12' height='12'> <small>add a note</small></a></div>
+</section>    </section><!-- layout-content -->
+        <aside class='layout-menu'>
+    
+        <ul class='parent-menu-list'>
+                                    <li>
+                <a href="http://php.net/manual/en/language.functions.php">Functions</a>
+    
+                                    <ul class='child-menu-list'>
+    
+                          
+                        <li class="current">
+                            <a href="http://php.net/manual/en/functions.user-defined.php" title="User-&#8203;defined functions">User-&#8203;defined functions</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/functions.arguments.php" title="Function arguments">Function arguments</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/functions.returning-values.php" title="Returning values">Returning values</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/functions.variable-functions.php" title="Variable functions">Variable functions</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/functions.internal.php" title="Internal (built-&#8203;in) functions">Internal (built-&#8203;in) functions</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/functions.anonymous.php" title="Anonymous functions">Anonymous functions</a>
+                        </li>
+                            
+                    </ul>
+                    
+            </li>
+                        
+                    </ul>
+    </aside>
+
+
+  </div><!-- layout -->
+         
+  <footer>
+    <div class="container footer-content">
+      <div class="row-fluid">
+      <ul class="footmenu">
+        <li><a href="http://php.net/copyright.php">Copyright &copy; 2001-2017 The PHP Group</a></li>
+        <li><a href="http://php.net/my.php">My PHP.net</a></li>
+        <li><a href="http://php.net/contact.php">Contact</a></li>
+        <li><a href="http://php.net/sites.php">Other PHP.net sites</a></li>
+        <li><a href="http://php.net/mirrors.php">Mirror sites</a></li>
+        <li><a href="http://php.net/privacy.php">Privacy policy</a></li>
+      </ul>
+      </div>
+    </div>
+  </footer>
+
+    
+ <!-- External and third party libraries. -->
+ <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/modernizr.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/hogan-2.0.0.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/typeahead.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/mousetrap.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/search.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1500560403&amp;f=/js/common.js"></script>
+
+<a id="toTop" href="javascript:;"><span id="toTopHover"></span><img width="40" height="40" alt="To Top" src="http://php.net/images/to-top@2x.png"></a>
+
+</body>
+
+<!-- Mirrored from php.net/manual/en/functions.user-defined.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Dec 2017 23:18:11 GMT -->
+</html>
+

@@ -1,0 +1,17 @@
+INICIO
+INT numeros_cantidad = 0;
+INT suma_numeros = 0;
+hacer mientras(ultimo_numero > 0)
+{
+	INT ultimo_numero;
+	Escribe "Introduce un número. Si el número es negativo o 0, se calculará la media de los anteriores";
+	Lee ultimo_numero;
+	suma_numeros += ultimo_numero;
+	numeros_cantidad++;
+}
+Si(ultimo_numero <= 0)
+{
+	INT media_aritmetica = numeros_cantidad/suma_numeros;
+	Escribe "La media aritmética de los números introducidos es: " + media_aritmetica;
+}
+FIN

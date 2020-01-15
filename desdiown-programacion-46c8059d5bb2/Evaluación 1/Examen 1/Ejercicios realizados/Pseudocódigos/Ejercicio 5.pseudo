@@ -1,0 +1,26 @@
+INICIO
+INT num_introducido, num_adivinar = 18, num_bucle;
+Escribe "Introduce un número";
+LEE num_introducido;
+Si(num_introducido < 1)
+{
+	Escribe "Introduce un número mayor que 1";
+	LEE num_introducido;
+}
+Sino(num_introducido > 50)
+{
+	Escribe "Introduce un número menor que 50";
+	LEE num_introducido;
+}
+para(num_intentos = 1;num_intentos <= 5;num_intentos++)
+{
+	Si(num_introducido == num_adivinar)
+	{
+		Escribe "¡ENHORABUENA! LO HAS ADIVINADO.";
+	}
+	Sino
+	{
+		Escribe "Número incorrecto. Intento número " + num_intento;
+	}
+}
+FIN

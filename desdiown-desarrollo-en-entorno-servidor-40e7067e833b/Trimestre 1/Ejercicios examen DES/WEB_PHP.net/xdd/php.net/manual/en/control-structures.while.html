@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<!-- Mirrored from php.net/manual/en/control-structures.while.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Dec 2017 23:18:10 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+  <title>PHP: while - Manual </title>
+
+ <link rel="shortcut icon" href="http://php.net/favicon.ico">
+ <link rel="search" type="application/opensearchdescription+xml" href="http://php.net/phpnetimprovedsearch.src" title="Add PHP.net search">
+ <link rel="alternate" type="application/atom+xml" href="http://php.net/releases/feed.php" title="PHP Release feed">
+ <link rel="alternate" type="application/atom+xml" href="http://php.net/feed.atom" title="PHP: Hypertext Preprocessor">
+
+ <link rel="canonical" href="http://php.net/manual/en/control-structures.while.php">
+ <link rel="shorturl" href="http://php.net/while">
+ <link rel="alternate" href="http://php.net/while" hreflang="x-default">
+
+ <link rel="contents" href="http://php.net/manual/en/index.php">
+ <link rel="index" href="http://php.net/manual/en/language.control-structures.php">
+ <link rel="prev" href="http://php.net/manual/en/control-structures.alternative-syntax.php">
+ <link rel="next" href="http://php.net/manual/en/control-structures.do.while.php">
+
+ <link rel="alternate" href="http://php.net/manual/en/control-structures.while.php" hreflang="en">
+ <link rel="alternate" href="http://php.net/manual/pt_BR/control-structures.while.php" hreflang="pt_BR">
+ <link rel="alternate" href="http://php.net/manual/zh/control-structures.while.php" hreflang="zh">
+ <link rel="alternate" href="http://php.net/manual/fr/control-structures.while.php" hreflang="fr">
+ <link rel="alternate" href="http://php.net/manual/de/control-structures.while.php" hreflang="de">
+ <link rel="alternate" href="http://php.net/manual/ja/control-structures.while.php" hreflang="ja">
+ <link rel="alternate" href="http://php.net/manual/ro/control-structures.while.php" hreflang="ro">
+ <link rel="alternate" href="http://php.net/manual/ru/control-structures.while.php" hreflang="ru">
+ <link rel="alternate" href="http://php.net/manual/es/control-structures.while.php" hreflang="es">
+ <link rel="alternate" href="http://php.net/manual/tr/control-structures.while.php" hreflang="tr">
+
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1421837618&amp;f=/fonts/Fira/fira.css" media="screen">
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1421837618&amp;f=/fonts/Font-Awesome/css/fontello.css" media="screen">
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1478800802&amp;f=/styles/theme-base.css" media="screen">
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1449787206&amp;f=/styles/theme-medium.css" media="screen">
+
+ <!--[if lte IE 7]>
+ <link rel="stylesheet" type="text/css" href="http://php.net/styles/workarounds.ie7.css" media="screen">
+ <![endif]-->
+
+ <!--[if lte IE 8]>
+ <script type="text/javascript">
+  window.brokenIE = true;
+ </script>
+ <![endif]-->
+
+ <!--[if lte IE 9]>
+ <link rel="stylesheet" type="text/css" href="http://php.net/styles/workarounds.ie9.css" media="screen">
+ <![endif]-->
+
+ <!--[if IE]>
+ <script type="text/javascript" src="http://php.net/js/ext/html5.js"></script>
+ <![endif]-->
+
+ <base >
+
+</head>
+<body class="docs ">
+
+<nav id="head-nav" class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <a href="http://php.net/" class="brand"><img src="http://php.net/images/logos/php-logo.svg" width="48" height="24" alt="php"></a>
+    <div id="mainmenu-toggle-overlay"></div>
+    <input type="checkbox" id="mainmenu-toggle">
+    <ul class="nav">
+      <li class=""><a href="http://php.net/downloads">Downloads</a></li>
+      <li class="active"><a href="http://php.net/docs.php">Documentation</a></li>
+      <li class=""><a href="http://php.net/get-involved" >Get Involved</a></li>
+      <li class=""><a href="http://php.net/support">Help</a></li>
+    </ul>
+    <form class="navbar-search" id="topsearch" action="http://php.net/search.php">
+      <input type="hidden" name="show" value="quickref">
+      <input type="search" name="pattern" class="search-query" placeholder="Search" accesskey="s">
+    </form>
+  </div>
+  <div id="flash-message"></div>
+</nav>
+<nav id="trick"><div><dl>
+<dt><a href='http://php.net/manual/en/getting-started.php'>Getting Started</a></dt>
+	<dd><a href='http://php.net/manual/en/introduction.php'>Introduction</a></dd>
+	<dd><a href='http://php.net/manual/en/tutorial.php'>A simple tutorial</a></dd>
+<dt><a href='http://php.net/manual/en/langref.php'>Language Reference</a></dt>
+	<dd><a href='http://php.net/manual/en/language.basic-syntax.php'>Basic syntax</a></dd>
+	<dd><a href='http://php.net/manual/en/language.types.php'>Types</a></dd>
+	<dd><a href='http://php.net/manual/en/language.variables.php'>Variables</a></dd>
+	<dd><a href='http://php.net/manual/en/language.constants.php'>Constants</a></dd>
+	<dd><a href='http://php.net/manual/en/language.expressions.php'>Expressions</a></dd>
+	<dd><a href='http://php.net/manual/en/language.operators.php'>Operators</a></dd>
+	<dd><a href='http://php.net/manual/en/language.control-structures.php'>Control Structures</a></dd>
+	<dd><a href='http://php.net/manual/en/language.functions.php'>Functions</a></dd>
+	<dd><a href='http://php.net/manual/en/language.oop5.php'>Classes and Objects</a></dd>
+	<dd><a href='http://php.net/manual/en/language.namespaces.php'>Namespaces</a></dd>
+	<dd><a href='http://php.net/manual/en/language.errors.php'>Errors</a></dd>
+	<dd><a href='http://php.net/manual/en/language.exceptions.php'>Exceptions</a></dd>
+	<dd><a href='http://php.net/manual/en/language.generators.php'>Generators</a></dd>
+	<dd><a href='http://php.net/manual/en/language.references.php'>References Explained</a></dd>
+	<dd><a href='http://php.net/manual/en/reserved.variables.php'>Predefined Variables</a></dd>
+	<dd><a href='http://php.net/manual/en/reserved.exceptions.php'>Predefined Exceptions</a></dd>
+	<dd><a href='http://php.net/manual/en/reserved.interfaces.php'>Predefined Interfaces and Classes</a></dd>
+	<dd><a href='http://php.net/manual/en/context.php'>Context options and parameters</a></dd>
+	<dd><a href='http://php.net/manual/en/wrappers.php'>Supported Protocols and Wrappers</a></dd>
+</dl>
+<dl>
+<dt><a href='http://php.net/manual/en/security.php'>Security</a></dt>
+	<dd><a href='http://php.net/manual/en/security.intro.php'>Introduction</a></dd>
+	<dd><a href='http://php.net/manual/en/security.general.php'>General considerations</a></dd>
+	<dd><a href='http://php.net/manual/en/security.cgi-bin.php'>Installed as CGI binary</a></dd>
+	<dd><a href='http://php.net/manual/en/security.apache.php'>Installed as an Apache module</a></dd>
+	<dd><a href='http://php.net/manual/en/security.sessions.php'>Session Security</a></dd>
+	<dd><a href='http://php.net/manual/en/security.filesystem.php'>Filesystem Security</a></dd>
+	<dd><a href='http://php.net/manual/en/security.database.php'>Database Security</a></dd>
+	<dd><a href='http://php.net/manual/en/security.errors.php'>Error Reporting</a></dd>
+	<dd><a href='http://php.net/manual/en/security.globals.php'>Using Register Globals</a></dd>
+	<dd><a href='http://php.net/manual/en/security.variables.php'>User Submitted Data</a></dd>
+	<dd><a href='http://php.net/manual/en/security.magicquotes.php'>Magic Quotes</a></dd>
+	<dd><a href='http://php.net/manual/en/security.hiding.php'>Hiding PHP</a></dd>
+	<dd><a href='http://php.net/manual/en/security.current.php'>Keeping Current</a></dd>
+<dt><a href='http://php.net/manual/en/features.php'>Features</a></dt>
+	<dd><a href='http://php.net/manual/en/features.http-auth.php'>HTTP authentication with PHP</a></dd>
+	<dd><a href='http://php.net/manual/en/features.cookies.php'>Cookies</a></dd>
+	<dd><a href='http://php.net/manual/en/features.sessions.php'>Sessions</a></dd>
+	<dd><a href='http://php.net/manual/en/features.xforms.php'>Dealing with XForms</a></dd>
+	<dd><a href='http://php.net/manual/en/features.file-upload.php'>Handling file uploads</a></dd>
+	<dd><a href='http://php.net/manual/en/features.remote-files.php'>Using remote files</a></dd>
+	<dd><a href='http://php.net/manual/en/features.connection-handling.php'>Connection handling</a></dd>
+	<dd><a href='http://php.net/manual/en/features.persistent-connections.php'>Persistent Database Connections</a></dd>
+	<dd><a href='http://php.net/manual/en/features.safe-mode.php'>Safe Mode</a></dd>
+	<dd><a href='http://php.net/manual/en/features.commandline.php'>Command line usage</a></dd>
+	<dd><a href='http://php.net/manual/en/features.gc.php'>Garbage Collection</a></dd>
+	<dd><a href='http://php.net/manual/en/features.dtrace.php'>DTrace Dynamic Tracing</a></dd>
+</dl>
+<dl>
+<dt><a href='http://php.net/manual/en/funcref.php'>Function Reference</a></dt>
+	<dd><a href='http://php.net/manual/en/refs.basic.php.php'>Affecting PHP's Behaviour</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.audio.php'>Audio Formats Manipulation</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.remote.auth.php'>Authentication Services</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.cmdline.php'>Command Line Specific Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.compression.php'>Compression and Archive Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.creditcard.php'>Credit Card Processing</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.crypto.php'>Cryptography Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.database.php'>Database Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.calendar.php'>Date and Time Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.fileprocess.file.php'>File System Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.international.php'>Human Language and Character Encoding Support</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.image.php'>Image Processing and Generation</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.remote.mail.php'>Mail Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.math.php'>Mathematical Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.nontext.php'>Non-Text MIME Output</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.fileprocess.process.php'>Process Control Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.other.php'>Other Basic Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.remote.other.php'>Other Services</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.search.php'>Search Engine Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.server.php'>Server Specific Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.session.php'>Session Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.text.php'>Text Processing</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.vartype.php'>Variable and Type Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.webservice.php'>Web Services</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.windows.php'>Windows Only Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.xml.php'>XML Manipulation</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.ui.php'>GUI Extensions</a></dd>
+</dl>
+<dl>
+<dt>Keyboard Shortcuts</dt><dt>?</dt>
+<dd>This help</dd>
+<dt>j</dt>
+<dd>Next menu item</dd>
+<dt>k</dt>
+<dd>Previous menu item</dd>
+<dt>g p</dt>
+<dd>Previous man page</dd>
+<dt>g n</dt>
+<dd>Next man page</dd>
+<dt>G</dt>
+<dd>Scroll to bottom</dd>
+<dt>g g</dt>
+<dd>Scroll to top</dd>
+<dt>g h</dt>
+<dd>Goto homepage</dd>
+<dt>g s</dt>
+<dd>Goto search<br>(current page)</dd>
+<dt>/</dt>
+<dd>Focus search box</dd>
+</dl></div></nav>
+<div id="goto">
+    <div class="search">
+         <div class="text"></div>
+         <div class="results"><ul></ul></div>
+   </div>
+</div>
+
+  <div id="breadcrumbs" class="clearfix">
+    <div id="breadcrumbs-inner">
+          <div class="next">
+        <a href="http://php.net/manual/en/control-structures.do.while.php">
+          do-while &raquo;
+        </a>
+      </div>
+              <div class="prev">
+        <a href="http://php.net/manual/en/control-structures.alternative-syntax.php">
+          &laquo; Alternative syntax for control structures        </a>
+      </div>
+          <ul>
+            <li><a href='http://php.net/manual/en/index.php'>PHP Manual</a></li>      <li><a href='http://php.net/manual/en/langref.php'>Language Reference</a></li>      <li><a href='http://php.net/manual/en/language.control-structures.php'>Control Structures</a></li>      </ul>
+    </div>
+  </div>
+
+
+
+
+<div id="layout" class="clearfix">
+  <section id="layout-content">
+  <div class="page-tools">
+    <div class="change-language">
+      <form action="http://php.net/manual/change.php" method="get" id="changelang" name="changelang">
+        <fieldset>
+          <label for="changelang-langs">Change language:</label>
+          <select onchange="document.changelang.submit()" name="page" id="changelang-langs">
+            <option value='en/control-structures.while.php' selected="selected">English</option>
+            <option value='http://php.net/manual/en/pt_BR/control-structures.while.php'>Brazilian Portuguese</option>
+            <option value='http://php.net/manual/en/zh/control-structures.while.php'>Chinese (Simplified)</option>
+            <option value='http://php.net/manual/en/fr/control-structures.while.php'>French</option>
+            <option value='http://php.net/manual/en/de/control-structures.while.php'>German</option>
+            <option value='http://php.net/manual/en/ja/control-structures.while.php'>Japanese</option>
+            <option value='http://php.net/manual/en/ro/control-structures.while.php'>Romanian</option>
+            <option value='http://php.net/manual/en/ru/control-structures.while.php'>Russian</option>
+            <option value='http://php.net/manual/en/es/control-structures.while.php'>Spanish</option>
+            <option value='http://php.net/manual/en/tr/control-structures.while.php'>Turkish</option>
+            <option value="http://php.net/manual/en/help-translate.php">Other</option>
+          </select>
+        </fieldset>
+      </form>
+    </div>
+    <div class="edit-bug">
+      <a href="https://edit.php.net/?project=PHP&amp;perm=en/control-structures.while.php">Edit</a>
+      <a href="https://bugs.php.net/report.php?bug_type=Documentation+problem&amp;manpage=control-structures.while">Report a Bug</a>
+    </div>
+  </div><div id="control-structures.while" class="sect1">
+ <h2 class="title"><em>while</em></h2>
+ <p class="verinfo">(PHP 4, PHP 5, PHP 7)</p>
+ <p class="para">
+  <em>while</em> loops are the simplest type of loop in
+  PHP.  They behave just like their C counterparts.  The basic form
+  of a <em>while</em> statement is:
+  <div class="informalexample">
+   <div class="example-contents">
+<div class="cdata"><pre>
+while (expr)
+    statement
+</pre></div>
+   </div>
+
+  </div>
+ </p>
+ <p class="simpara">
+  The meaning of a <em>while</em> statement is simple.  It
+  tells PHP to execute the nested statement(s) repeatedly, as long
+  as the <em>while</em> expression evaluates to
+  <strong><code>TRUE</code></strong>.  The value of the expression is checked
+  each time at the beginning of the loop, so even if this value
+  changes during the execution of the nested statement(s), execution
+  will not stop until the end of the iteration (each time PHP runs
+  the statements in the loop is one iteration).  Sometimes, if the
+  <em>while</em> expression evaluates to
+  <strong><code>FALSE</code></strong> from the very beginning, the nested
+  statement(s) won&#039;t even be run once.
+ </p>
+ <p class="para">
+  Like with the <em>if</em> statement, you can group
+  multiple statements within the same <em>while</em> loop
+  by surrounding a group of statements with curly braces, or by
+  using the alternate syntax:
+  <div class="informalexample">
+   <div class="example-contents">
+<div class="cdata"><pre>
+while (expr):
+    statement
+    ...
+endwhile;
+</pre></div>
+   </div>
+
+  </div>
+ </p>
+ <p class="para">
+  The following examples are identical, and both print the numbers
+  1 through 10:
+  <div class="informalexample">
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">/*&nbsp;example&nbsp;1&nbsp;*/<br /><br /></span><span style="color: #0000BB">$i&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">;<br />while&nbsp;(</span><span style="color: #0000BB">$i&nbsp;</span><span style="color: #007700">&lt;=&nbsp;</span><span style="color: #0000BB">10</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$i</span><span style="color: #007700">++;&nbsp;&nbsp;</span><span style="color: #FF8000">/*&nbsp;the&nbsp;printed&nbsp;value&nbsp;would&nbsp;be<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$i&nbsp;before&nbsp;the&nbsp;increment<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(post-increment)&nbsp;*/<br /></span><span style="color: #007700">}<br /><br /></span><span style="color: #FF8000">/*&nbsp;example&nbsp;2&nbsp;*/<br /><br /></span><span style="color: #0000BB">$i&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">;<br />while&nbsp;(</span><span style="color: #0000BB">$i&nbsp;</span><span style="color: #007700">&lt;=&nbsp;</span><span style="color: #0000BB">10</span><span style="color: #007700">):<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$i</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$i</span><span style="color: #007700">++;<br />endwhile;<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+  </div>
+ </p>
+</div>
+<section id="usernotes">
+ <div class="head">
+  <span class="action"><a href="http://php.net/manual/add-note.php?sect=control-structures.while&amp;redirect=http://php.net/manual/en/control-structures.while.php"><img src='http://php.net/images/notes-add@2x.png' alt='add a note' width='12' height='12'> <small>add a note</small></a></span>
+  <h3 class="title">User Contributed Notes <span class="count">19 notes</span></h3>
+ </div><div id="allnotes">
+  <div class="note" id="93919">  <div class="votes">
+    <div id="Vu93919">
+    <a href="http://php.net/manual/vote-note.php?id=93919&amp;page=control-structures.while&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd93919">
+    <a href="http://php.net/manual/vote-note.php?id=93919&amp;page=control-structures.while&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V93919" title="51% like this...">
+    5
+    </div>
+  </div>
+  <a href="#93919" class="name">
+  <strong class="user"><em>scott at mstech dot com</em></strong></a><a class="genanchor" href="#93919"> &para;</a><div class="date" title="2009-10-06 02:48"><strong>8 years ago</strong></div>
+  <div class="text" id="Hcom93919">
+<div class="phpcode"><code><span class="html">
+Just a note about using the continue statement to forego the remainder of a loop - be SURE you're not issuing the continue statement from within a SWITCH case - doing so will not continue the while loop, but rather the switch statement itself.<br /><br />While that may seem obvious to some, it took a little bit of testing for me, so hopefully this helps someone else.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="121944">  <div class="votes">
+    <div id="Vu121944">
+    <a href="http://php.net/manual/vote-note.php?id=121944&amp;page=control-structures.while&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd121944">
+    <a href="http://php.net/manual/vote-note.php?id=121944&amp;page=control-structures.while&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V121944" title="100% like this...">
+    1
+    </div>
+  </div>
+  <a href="#121944" class="name">
+  <strong class="user"><em>nickleus at gmail dot com</em></strong></a><a class="genanchor" href="#121944"> &para;</a><div class="date" title="2017-11-29 03:34"><strong>15 days ago</strong></div>
+  <div class="text" id="Hcom121944">
+<div class="phpcode"><code><span class="html">
+<span class="default">&lt;?php<br />$i </span><span class="keyword">= -</span><span class="default">1</span><span class="keyword">;<br />while (</span><span class="default">$i</span><span class="keyword">) {<br />&nbsp; &nbsp; echo </span><span class="default">$i</span><span class="keyword">++;<br />}<br /></span><span class="default">?&gt;<br /></span>outputs&nbsp; "-1" then stops because "0" (zero) gets evaluated as FALSE.<br /><br />this demonstrates why it's important for a PDO statement fetch-ing a column value inside a while-loop to test explicitly for FALSE.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="19408">  <div class="votes">
+    <div id="Vu19408">
+    <a href="http://php.net/manual/vote-note.php?id=19408&amp;page=control-structures.while&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd19408">
+    <a href="http://php.net/manual/vote-note.php?id=19408&amp;page=control-structures.while&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V19408" title="50% like this...">
+    0
+    </div>
+  </div>
+  <a href="#19408" class="name">
+  <strong class="user"><em>chayes at antenna dot nl</em></strong></a><a class="genanchor" href="#19408"> &para;</a><div class="date" title="2002-02-26 02:42"><strong>15 years ago</strong></div>
+  <div class="text" id="Hcom19408">
+<div class="phpcode"><code><span class="html">
+At the end of the while (list / each) loop the array pointer will be at the end. <br />This means the second while loop on that array will be skipped!<br /><br />You can put the array pointer back with the reset($myArray) function.<br /><br />example: <br /><br /><span class="default">&lt;?php<br />$myArray</span><span class="keyword">=array(</span><span class="string">'aa'</span><span class="keyword">,</span><span class="string">'bb'</span><span class="keyword">,</span><span class="string">'cc'</span><span class="keyword">,</span><span class="string">'dd'</span><span class="keyword">);<br /> while (list (</span><span class="default">$key</span><span class="keyword">, </span><span class="default">$val</span><span class="keyword">) = </span><span class="default">each </span><span class="keyword">(</span><span class="default">$myArray</span><span class="keyword">) ) echo </span><span class="default">$val</span><span class="keyword">; <br /></span><span class="default">reset</span><span class="keyword">(</span><span class="default">$myArray</span><span class="keyword">);<br /> while (list (</span><span class="default">$key</span><span class="keyword">, </span><span class="default">$val</span><span class="keyword">) = </span><span class="default">each </span><span class="keyword">(</span><span class="default">$myArray</span><span class="keyword">) ) echo </span><span class="default">$val</span><span class="keyword">;<br /></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="119261">  <div class="votes">
+    <div id="Vu119261">
+    <a href="http://php.net/manual/vote-note.php?id=119261&amp;page=control-structures.while&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd119261">
+    <a href="http://php.net/manual/vote-note.php?id=119261&amp;page=control-structures.while&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V119261" title="44% like this...">
+    -10
+    </div>
+  </div>
+  <a href="#119261" class="name">
+  <strong class="user"><em>synnus at gmail dot com</em></strong></a><a class="genanchor" href="#119261"> &para;</a><div class="date" title="2016-04-28 05:35"><strong>1 year ago</strong></div>
+  <div class="text" id="Hcom119261">
+<div class="phpcode"><code><span class="html">
+<span class="default">&lt;?php <br /><br /></span><span class="comment">// test While Vs For php 5.6.17<br /><br /></span><span class="default">$t1 </span><span class="keyword">= </span><span class="default">microtime</span><span class="keyword">(</span><span class="default">true</span><span class="keyword">);<br /></span><span class="default">$a</span><span class="keyword">=</span><span class="default">0</span><span class="keyword">;<br />while(</span><span class="default">$a</span><span class="keyword">++ &lt;= </span><span class="default">1000000000</span><span class="keyword">);<br /></span><span class="default">$t2 </span><span class="keyword">= </span><span class="default">microtime</span><span class="keyword">(</span><span class="default">true</span><span class="keyword">);<br /></span><span class="default">$x1 </span><span class="keyword">= </span><span class="default">$t2 </span><span class="keyword">- </span><span class="default">$t1</span><span class="keyword">;<br />echo </span><span class="default">PHP_EOL</span><span class="keyword">,</span><span class="string">' &gt; while($a++ &lt;= 100000000); : ' </span><span class="keyword">,</span><span class="default">$x1</span><span class="keyword">, </span><span class="string">'s'</span><span class="keyword">, </span><span class="default">PHP_EOL</span><span class="keyword">;<br /><br /></span><span class="default">$t3 </span><span class="keyword">= </span><span class="default">microtime</span><span class="keyword">(</span><span class="default">true</span><span class="keyword">);<br />for(</span><span class="default">$a</span><span class="keyword">=</span><span class="default">0</span><span class="keyword">;</span><span class="default">$a </span><span class="keyword">&lt;= </span><span class="default">1000000000</span><span class="keyword">;</span><span class="default">$a</span><span class="keyword">++);<br /></span><span class="default">$t4 </span><span class="keyword">= </span><span class="default">microtime</span><span class="keyword">(</span><span class="default">true</span><span class="keyword">);<br /></span><span class="default">$x2 </span><span class="keyword">= </span><span class="default">$t4 </span><span class="keyword">- </span><span class="default">$t3</span><span class="keyword">;<br />echo </span><span class="default">PHP_EOL</span><span class="keyword">,</span><span class="string">'&gt; for($a=0;$a &lt;= 100000000;$a++); : ' </span><span class="keyword">,</span><span class="default">$x2</span><span class="keyword">, </span><span class="string">'s'</span><span class="keyword">, </span><span class="default">PHP_EOL</span><span class="keyword">;<br /><br /></span><span class="default">$t5 </span><span class="keyword">= </span><span class="default">microtime</span><span class="keyword">(</span><span class="default">true</span><span class="keyword">);<br /></span><span class="default">$a</span><span class="keyword">=</span><span class="default">0</span><span class="keyword">; for(;</span><span class="default">$a</span><span class="keyword">++ &lt;= </span><span class="default">1000000000</span><span class="keyword">;);<br /></span><span class="default">$t6 </span><span class="keyword">= </span><span class="default">microtime</span><span class="keyword">(</span><span class="default">true</span><span class="keyword">);<br /></span><span class="default">$x3 </span><span class="keyword">= </span><span class="default">$t6 </span><span class="keyword">- </span><span class="default">$t5</span><span class="keyword">;<br />echo </span><span class="default">PHP_EOL</span><span class="keyword">,</span><span class="string">' &gt; $a=0; for(;$a++ &lt;= 100000000;); : ' </span><span class="keyword">, </span><span class="default">$x3</span><span class="keyword">, </span><span class="string">'s'</span><span class="keyword">, </span><span class="default">PHP_EOL</span><span class="keyword">;<br /><br /></span><span class="comment">//&gt; while($a++ &lt;= 100000000);&nbsp;&nbsp; = 18.509671926498s<br />//<br />//&gt; for($a=0;$a &lt;= 100000000;$a++);&nbsp; =&nbsp; 25.450572013855s<br />//<br />//&gt; $a=0; for(;$a++ &lt;= 100000000;);&nbsp; =&nbsp; 22.614907979965s<br /><br />// ===================<br /><br />//&gt; while($a++ != 100000000); : 18.204656839371s<br />//<br />//&gt; for($a=0;$a != 100000000;$a++); : 25.025605201721s<br />//<br />//&gt; $a=0; for(;$a++ != 100000000;); : 22.340576887131s<br /><br />// ===================<br /><br />//&gt; while($a++ &lt; 100000000); : 18.383454084396s<br />//<br />//&gt; for($a=0;$a &lt; 100000000;$a++); : 25.290743112564s<br />//<br />//&gt; $a=0; for(;$a++ &lt; 100000000;); : 23.28609919548s<br /><br /></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="118103">  <div class="votes">
+    <div id="Vu118103">
+    <a href="http://php.net/manual/vote-note.php?id=118103&amp;page=control-structures.while&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd118103">
+    <a href="http://php.net/manual/vote-note.php?id=118103&amp;page=control-structures.while&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V118103" title="44% like this...">
+    -13
+    </div>
+  </div>
+  <a href="#118103" class="name">
+  <strong class="user"><em>er dot sarimkhan786 at gmail dot com</em></strong></a><a class="genanchor" href="#118103"> &para;</a><div class="date" title="2015-10-05 08:34"><strong>2 years ago</strong></div>
+  <div class="text" id="Hcom118103">
+<div class="phpcode"><code><span class="html">
+simple pyramid pattern program using while loop<br /><span class="default">&lt;?php <br />$i</span><span class="keyword">=</span><span class="default">1</span><span class="keyword">;<br />while(</span><span class="default">$i</span><span class="keyword">&lt;=</span><span class="default">5</span><span class="keyword">)<br />{<br />&nbsp; &nbsp; </span><span class="default">$j</span><span class="keyword">=</span><span class="default">1</span><span class="keyword">;<br />&nbsp; &nbsp; while(</span><span class="default">$j</span><span class="keyword">&lt;=</span><span class="default">$i</span><span class="keyword">)<br />&nbsp; &nbsp; {<br />&nbsp; &nbsp; &nbsp; echo</span><span class="string">"*&amp;nbsp&amp;nbsp"</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; </span><span class="default">$j</span><span class="keyword">++;&nbsp; &nbsp; &nbsp; <br />&nbsp; &nbsp; }<br />&nbsp; &nbsp; echo</span><span class="string">"&lt;br&gt;"</span><span class="keyword">;<br />&nbsp; &nbsp; </span><span class="default">$i</span><span class="keyword">++;<br />}<br /></span><span class="default">?&gt;<br /></span>// or alternatively you can use:<br /><span class="default">&lt;?php<br />$i</span><span class="keyword">=</span><span class="default">1</span><span class="keyword">;<br />while(</span><span class="default">$i</span><span class="keyword">&lt;=</span><span class="default">5</span><span class="keyword">):<br /><br />&nbsp; &nbsp; </span><span class="default">$j</span><span class="keyword">=</span><span class="default">1</span><span class="keyword">;<br />&nbsp; &nbsp; while(</span><span class="default">$j</span><span class="keyword">&lt;=</span><span class="default">$i</span><span class="keyword">):<br />&nbsp; &nbsp; &nbsp; echo</span><span class="string">"*&amp;nbsp&amp;nbsp"</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; </span><span class="default">$j</span><span class="keyword">++;&nbsp; &nbsp; &nbsp; <br />&nbsp; &nbsp; endwhile;<br />&nbsp; &nbsp; <br />&nbsp; &nbsp; echo</span><span class="string">"&lt;br&gt;"</span><span class="keyword">;<br />&nbsp; &nbsp; </span><span class="default">$i</span><span class="keyword">++;<br />endwhile;<br /></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="109801">  <div class="votes">
+    <div id="Vu109801">
+    <a href="http://php.net/manual/vote-note.php?id=109801&amp;page=control-structures.while&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd109801">
+    <a href="http://php.net/manual/vote-note.php?id=109801&amp;page=control-structures.while&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V109801" title="42% like this...">
+    -14
+    </div>
+  </div>
+  <a href="#109801" class="name">
+  <strong class="user"><em>qeremy [atta] gmail [dotta] com</em></strong></a><a class="genanchor" href="#109801"> &para;</a><div class="date" title="2012-08-22 08:45"><strong>5 years ago</strong></div>
+  <div class="text" id="Hcom109801">
+<div class="phpcode"><code><span class="html">
+Instead of this usage;<br /><br /><span class="default">&lt;?php<br />$arr </span><span class="keyword">= array(</span><span class="string">"orange"</span><span class="keyword">, </span><span class="string">"banana"</span><span class="keyword">, </span><span class="string">"apple"</span><span class="keyword">, </span><span class="string">"raspberry"</span><span class="keyword">);<br /><br /></span><span class="default">$i </span><span class="keyword">= </span><span class="default">0</span><span class="keyword">;<br />while (</span><span class="default">$i </span><span class="keyword">&lt; </span><span class="default">count</span><span class="keyword">(</span><span class="default">$arr</span><span class="keyword">)) {<br />&nbsp;&nbsp; </span><span class="default">$a </span><span class="keyword">= </span><span class="default">$arr</span><span class="keyword">[</span><span class="default">$i</span><span class="keyword">];<br />&nbsp;&nbsp; echo </span><span class="default">$a </span><span class="keyword">.</span><span class="string">"\n"</span><span class="keyword">;<br />&nbsp;&nbsp; </span><span class="default">$i</span><span class="keyword">++;<br />}<br /></span><span class="comment">// or<br /></span><span class="default">$i </span><span class="keyword">= </span><span class="default">0</span><span class="keyword">;<br /></span><span class="default">$c </span><span class="keyword">= </span><span class="default">count</span><span class="keyword">(</span><span class="default">$arr</span><span class="keyword">);<br />while (</span><span class="default">$i </span><span class="keyword">&lt; </span><span class="default">$c</span><span class="keyword">) {<br />&nbsp;&nbsp; </span><span class="default">$a </span><span class="keyword">= </span><span class="default">$arr</span><span class="keyword">[</span><span class="default">$i</span><span class="keyword">];<br />&nbsp;&nbsp; echo </span><span class="default">$a </span><span class="keyword">.</span><span class="string">"\n"</span><span class="keyword">;<br />&nbsp;&nbsp; </span><span class="default">$i</span><span class="keyword">++;<br />}<br /></span><span class="default">?&gt;<br /></span><br />This could be more efficient;<br /><br /><span class="default">&lt;?php<br /></span><span class="keyword">while (</span><span class="default">$a </span><span class="keyword">= </span><span class="default">$arr</span><span class="keyword">[</span><span class="default">1 </span><span class="keyword">* </span><span class="default">$i</span><span class="keyword">++]) echo </span><span class="default">$a </span><span class="keyword">.</span><span class="string">"\n"</span><span class="keyword">;<br /></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="116266">  <div class="votes">
+    <div id="Vu116266">
+    <a href="http://php.net/manual/vote-note.php?id=116266&amp;page=control-structures.while&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd116266">
+    <a href="http://php.net/manual/vote-note.php?id=116266&amp;page=control-structures.while&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V116266" title="35% like this...">
+    -18
+    </div>
+  </div>
+  <a href="#116266" class="name">
+  <strong class="user"><em>avenidagez at foro5 dot com</em></strong></a><a class="genanchor" href="#116266"> &para;</a><div class="date" title="2014-12-03 07:55"><strong>3 years ago</strong></div>
+  <div class="text" id="Hcom116266">
+<div class="phpcode"><code><span class="html">
+Is strange that the manual states...<br /> "Sometimes, if the while expression evaluates to FALSE from the very beginning, the nested statement(s) won't even be run once. "<br /><br />Because it can't be SOMETIMES<br /><br />If it behaves that way, then it is a bug, because it ALWAYS must not run the nested statement(s) even once if the WHILE expression evaluates to FALSE from the very beginning.<br /><br />Another way to exit the while loop is by using the BREAK statement.. see it in the manual.<br /><br />And if expression evaluates to NULL is the same as FALSE<br />while (expression evals to NULL){ }</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="117156">  <div class="votes">
+    <div id="Vu117156">
+    <a href="http://php.net/manual/vote-note.php?id=117156&amp;page=control-structures.while&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd117156">
+    <a href="http://php.net/manual/vote-note.php?id=117156&amp;page=control-structures.while&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V117156" title="38% like this...">
+    -22
+    </div>
+  </div>
+  <a href="#117156" class="name">
+  <strong class="user"><em>Anonymous</em></strong></a><a class="genanchor" href="#117156"> &para;</a><div class="date" title="2015-04-23 05:56"><strong>2 years ago</strong></div>
+  <div class="text" id="Hcom117156">
+<div class="phpcode"><code><span class="html">
+A cool way to keep evaluating something until it fails a test.<br /><br /><span class="default">&lt;?php<br /></span><span class="keyword">while (</span><span class="default">true</span><span class="keyword">) {<br />&nbsp; if (</span><span class="string">'test'</span><span class="keyword">) { </span><span class="comment">// is initial condition true<br />&nbsp; &nbsp; // do something that also changes initial condition<br />&nbsp; </span><span class="keyword">} else { </span><span class="comment">// condition failed<br />&nbsp; &nbsp; </span><span class="keyword">break; </span><span class="comment">// leave loop<br />&nbsp; </span><span class="keyword">}<br />}<br /></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="50204">  <div class="votes">
+    <div id="Vu50204">
+    <a href="http://php.net/manual/vote-note.php?id=50204&amp;page=control-structures.while&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd50204">
+    <a href="http://php.net/manual/vote-note.php?id=50204&amp;page=control-structures.while&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V50204" title="31% like this...">
+    -16
+    </div>
+  </div>
+  <a href="#50204" class="name">
+  <strong class="user"><em>Ilene Jones</em></strong></a><a class="genanchor" href="#50204"> &para;</a><div class="date" title="2005-02-21 01:12"><strong>12 years ago</strong></div>
+  <div class="text" id="Hcom50204">
+<div class="phpcode"><code><span class="html">
+For Perl programmers, break is similar to last<br /><br />while (1) {<br />&nbsp;&nbsp; while(cond) {<br />&nbsp; &nbsp; &nbsp;&nbsp; if (error) {<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; break 2; // in perl this could have been last;<br />&nbsp; &nbsp; &nbsp;&nbsp; }<br />&nbsp;&nbsp; }<br />}</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="47889">  <div class="votes">
+    <div id="Vu47889">
+    <a href="http://php.net/manual/vote-note.php?id=47889&amp;page=control-structures.while&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd47889">
+    <a href="http://php.net/manual/vote-note.php?id=47889&amp;page=control-structures.while&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V47889" title="35% like this...">
+    -19
+    </div>
+  </div>
+  <a href="#47889" class="name">
+  <strong class="user"><em>corychristison[AT]NSPAMlavacube[dot]com</em></strong></a><a class="genanchor" href="#47889"> &para;</a><div class="date" title="2004-12-03 03:08"><strong>13 years ago</strong></div>
+  <div class="text" id="Hcom47889">
+<div class="phpcode"><code><span class="html">
+While can do wonders if you need something to queue writing to a file while something else has access to it.<br /><br />Here is my simple example:<br /><br /><span class="default">&lt;?php<br /><br />&nbsp; </span><span class="keyword">function </span><span class="default">write </span><span class="keyword">(</span><span class="default">$data</span><span class="keyword">, </span><span class="default">$file</span><span class="keyword">, </span><span class="default">$write_mode</span><span class="keyword">=</span><span class="string">"w"</span><span class="keyword">) {<br />&nbsp; &nbsp; </span><span class="default">$lock </span><span class="keyword">= </span><span class="default">$file </span><span class="keyword">. </span><span class="string">".lock"</span><span class="keyword">;<br />&nbsp; &nbsp;&nbsp; </span><span class="comment">// run the write fix, to stop any clashes that may occur<br />&nbsp; &nbsp; </span><span class="default">write_fix</span><span class="keyword">(</span><span class="default">$lock</span><span class="keyword">);<br />&nbsp; &nbsp;&nbsp; </span><span class="comment">// create a new lock file after write_fix() for this writing session<br />&nbsp; &nbsp; </span><span class="default">touch</span><span class="keyword">( </span><span class="default">$lock </span><span class="keyword">);<br />&nbsp; &nbsp;&nbsp; </span><span class="comment">// write to your file<br />&nbsp; &nbsp; </span><span class="default">$open </span><span class="keyword">= </span><span class="default">fopen</span><span class="keyword">(</span><span class="default">$file</span><span class="keyword">, </span><span class="default">$write_mode</span><span class="keyword">);<br />&nbsp; &nbsp; </span><span class="default">fwrite</span><span class="keyword">(</span><span class="default">$open</span><span class="keyword">, </span><span class="default">$data</span><span class="keyword">);<br />&nbsp; &nbsp; </span><span class="default">fclose</span><span class="keyword">(</span><span class="default">$open</span><span class="keyword">);<br />&nbsp; &nbsp;&nbsp; </span><span class="comment">// kill your current lock<br />&nbsp; &nbsp; </span><span class="default">unlink</span><span class="keyword">(</span><span class="default">$lock</span><span class="keyword">);<br />&nbsp; }<br /><br />&nbsp; function </span><span class="default">write_fix </span><span class="keyword">(</span><span class="default">$lock_file</span><span class="keyword">) {<br />&nbsp; &nbsp; while( </span><span class="default">file_exists</span><span class="keyword">(</span><span class="default">$lock_file</span><span class="keyword">){<br />&nbsp; &nbsp; &nbsp; </span><span class="comment">// do something in here?<br />&nbsp; &nbsp; &nbsp; // maybe sleep for a few microseconds<br />&nbsp; &nbsp; &nbsp; // to maintain stability, if this is going to <br />&nbsp; &nbsp; &nbsp; // take a while ?? [just a suggestion]<br />&nbsp; &nbsp; </span><span class="keyword">}<br />&nbsp; }<br /><br /></span><span class="default">?&gt;<br /></span><br />This method is not recommended for use with programs that will be needing a good few seconds to write to a file, as the while function will eat up alot of process cycles.&nbsp; However, this method does work, and is easy to implement.&nbsp; It also groups the writing functions into one easy to use function, making life easier. :-)</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="120736">  <div class="votes">
+    <div id="Vu120736">
+    <a href="http://php.net/manual/vote-note.php?id=120736&amp;page=control-structures.while&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd120736">
+    <a href="http://php.net/manual/vote-note.php?id=120736&amp;page=control-structures.while&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V120736" title="21% like this...">
+    -11
+    </div>
+  </div>
+  <a href="#120736" class="name">
+  <strong class="user"><em>Niton</em></strong></a><a class="genanchor" href="#120736"> &para;</a><div class="date" title="2017-03-04 02:26"><strong>9 months ago</strong></div>
+  <div class="text" id="Hcom120736">
+<div class="phpcode"><code><span class="html">
+@stuart.<br />You need to use reset($two), because your array index already left the last element and you need to reset it. Outer while iterates again but inner while executes nothing.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="50900">  <div class="votes">
+    <div id="Vu50900">
+    <a href="http://php.net/manual/vote-note.php?id=50900&amp;page=control-structures.while&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd50900">
+    <a href="http://php.net/manual/vote-note.php?id=50900&amp;page=control-structures.while&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V50900" title="37% like this...">
+    -21
+    </div>
+  </div>
+  <a href="#50900" class="name"><strong class="user"><em>Anonymous</em></strong></a><a class="genanchor" href="#50900"> &para;</a><div class="date" title="2005-03-13 09:54"><strong>12 years ago</strong></div>
+  <div class="text" id="Hcom50900">
+<div class="phpcode"><code><span class="html">
+virtualjosh at yahoo dot com (Hosh) wrote on: 16-Aug-2003 12:52<br /><br />The speedtest is interesting. But the seemingly fastest way contains a pitfall for beginners who just use it because it is fast and fast is cool ;)<br /><br />Walking through an array with next() will cut of the first entry, as this is the way next() works ;)<br /><br />If you really need to do it this way, make sure your array contains an empty entry at the beginning. Another way would be to use<br /><br /><span class="default">&lt;?php<br /></span><span class="keyword">while (</span><span class="default">$this </span><span class="keyword">= </span><span class="default">current</span><span class="keyword">(</span><span class="default">$array</span><span class="keyword">) ){<br />&nbsp; &nbsp; </span><span class="default">do_something</span><span class="keyword">(</span><span class="default">$this</span><span class="keyword">);<br />&nbsp; &nbsp; </span><span class="default">next</span><span class="keyword">(</span><span class="default">$array</span><span class="keyword">);<br />}<br /></span><span class="default">?&gt;<br /></span><br />There is an impact on speed for sure but I did not test it. I would advise to stick with conventional methods because current(),next() in while loops is too error prone for me.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="84023">  <div class="votes">
+    <div id="Vu84023">
+    <a href="http://php.net/manual/vote-note.php?id=84023&amp;page=control-structures.while&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd84023">
+    <a href="http://php.net/manual/vote-note.php?id=84023&amp;page=control-structures.while&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V84023" title="35% like this...">
+    -21
+    </div>
+  </div>
+  <a href="#84023" class="name">
+  <strong class="user"><em>s dot seitz at netz-haut dot de</em></strong></a><a class="genanchor" href="#84023"> &para;</a><div class="date" title="2008-06-24 08:21"><strong>9 years ago</strong></div>
+  <div class="text" id="Hcom84023">
+<div class="phpcode"><code><span class="html">
+Due to the fact that php only interprets the necessary elements to get a result, I found it convenient to concatenate different sql queries into one statement:<br /><br /><span class="default">&lt;?php<br /><br />$q1 </span><span class="keyword">= </span><span class="string">'some query on a set of tables'</span><span class="keyword">;<br /></span><span class="default">$q2 </span><span class="keyword">= </span><span class="string">'similar query on a another set of tables'</span><span class="keyword">;<br /><br />if ( (</span><span class="default">$r1</span><span class="keyword">=</span><span class="default">mysql_query</span><span class="keyword">(</span><span class="default">$q1</span><span class="keyword">)) &amp;&amp; (</span><span class="default">$r2</span><span class="keyword">=</span><span class="default">mysql_query</span><span class="keyword">(</span><span class="default">$q2</span><span class="keyword">)) ) {<br /><br />&nbsp; &nbsp;&nbsp; while ((</span><span class="default">$row</span><span class="keyword">=</span><span class="default">mysql_fetch_assoc</span><span class="keyword">(</span><span class="default">$r1</span><span class="keyword">))||(</span><span class="default">$row</span><span class="keyword">=</span><span class="default">mysql_fetch_assoc</span><span class="keyword">(</span><span class="default">$r2</span><span class="keyword">))) {<br /><br />&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="comment">/* do something with $row coming from $r1 and $r2 */<br /><br />&nbsp; &nbsp; &nbsp; </span><span class="keyword">}<br />&nbsp;&nbsp; }<br /><br /></span><span class="default">?&gt;<br /></span><br />[EDIT BY danbrown AT php DOT net: Contains a bugfix supplied by "Ira" on 14-AUG-09 to address an extra '(' in the leading `if` statement.]</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="35022">  <div class="votes">
+    <div id="Vu35022">
+    <a href="http://php.net/manual/vote-note.php?id=35022&amp;page=control-structures.while&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd35022">
+    <a href="http://php.net/manual/vote-note.php?id=35022&amp;page=control-structures.while&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V35022" title="36% like this...">
+    -21
+    </div>
+  </div>
+  <a href="#35022" class="name">
+  <strong class="user"><em>virtualjosh at yahoo dot com (Hosh)</em></strong></a><a class="genanchor" href="#35022"> &para;</a><div class="date" title="2003-08-15 03:52"><strong>14 years ago</strong></div>
+  <div class="text" id="Hcom35022">
+<div class="phpcode"><code><span class="html">
+I made a test traversing an array (simple, but long, numeric array with numeric keys). My test had a cycle per method, and multiplied each array element by 100.. These were my results:<br /><br />******************************************************<br />30870 Element Array Traversing<br /><br />[test_time] [BEGINS/RESETS @ time_start = 1060977996.689]<br />0.2373 seg later -&gt; while (list ($key, $val) = each ($array)) ENDS<br /><br />[test_time] [BEGINS/RESETS @ time_start = 1060977996.9414] <br />0.1916 seg later -&gt; while (list ($key,) = each ($array))&nbsp; ENDS<br /><br />[test_time] [BEGINS/RESETS @ time_start = 1060977997.1513]<br />0.1714 seg later -&gt; foreach ($array AS $key=&gt;$value) ENDS<br /><br />[test_time] [BEGINS/RESETS @ time_start = 1060977997.3378]<br />0.0255 seg later -&gt; while ($next = next($array)) ENDS<br /><br />[test_time] [BEGINS/RESETS @ time_start = 1060977997.3771]<br />0.1735 seg later -&gt; foreach ($array AS $value) ENDS<br />**************************************************************<br /><br />foreach is fatser than a while (list&nbsp; - each), true. <br />However, a while(next) was faster than foreach.<br /><br />These were the winning codes:<br /><br />$array = $save;<br />test_time("",1);<br />foreach ($array AS $key=&gt;$value)<br />&nbsp; &nbsp; $array[$key] = $array[$key] * 100;<br />test_time("foreach (\$array AS \$key=&gt;\$value)");<br /><br />$array = $save;<br />test_time("",1);<br />reset($array);<br />while ($next = next($array))<br />{&nbsp; &nbsp; $key = key($array);<br />&nbsp; &nbsp; $array[$key] = $array[$key] * 100;<br />}&nbsp; &nbsp; &nbsp; &nbsp; <br />test_time("while (\$next = next(\$array))");<br />*********************************************************<br />The improvement seems huge, but it isnt that dramatic in real practice. Results varied... I have a very long bidimensional array, and saw no more than a 2 sec diference, but on 140+ second scripts.&nbsp; Notice though that you lose control of the $key&nbsp; value (unless you have numeric keys, which I tend to avoid), but it is not always necessary.&nbsp; <br /><br />I generally stick to foreach. However, this time, I was getting Allowed Memory Size Exceeded errors with Apache. Remember foreach copies the original array, so this now makes two huge 2D arrays in memory and alot of work for Apache. If you are getting this error, check your loops. Dont use the whole array on a foreach. Instead get the keys and acces the cells directlly. Also, try and use unset and Referencing on the huge arrays.<br /><br />Working on your array and loops is a much better workaround than saving to temporary tables and unsetting (much slower).</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="52741">  <div class="votes">
+    <div id="Vu52741">
+    <a href="http://php.net/manual/vote-note.php?id=52741&amp;page=control-structures.while&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd52741">
+    <a href="http://php.net/manual/vote-note.php?id=52741&amp;page=control-structures.while&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V52741" title="34% like this...">
+    -26
+    </div>
+  </div>
+  <a href="#52741" class="name">
+  <strong class="user"><em>chris mushy</em></strong></a><a class="genanchor" href="#52741"> &para;</a><div class="date" title="2005-05-11 06:43"><strong>12 years ago</strong></div>
+  <div class="text" id="Hcom52741">
+<div class="phpcode"><code><span class="html">
+Just a note to stuart - the reason for this behaviour is because using the while(value = each(array)) construct increments the internal counter of the array as its looped through. Therefore if you intend to repeat the loop, you need to reset the counter. eg:<br /><br />$one = array("10", "20", "30", "40");<br />$two = array("a", "b", "c", "d");<br /><br />$i=0;<br />while($i &lt; count($one)) {<br />&nbsp;&nbsp; reset($two);<br />&nbsp;&nbsp; while($a = each($two)) {<br />&nbsp; &nbsp; &nbsp;&nbsp; echo $a[1]." - ".$one[$i].", "; <br />&nbsp;&nbsp; }<br />&nbsp;&nbsp; $i++;<br />&nbsp;&nbsp; <br />}<br /><br />This produces:<br /><br />a - 10, b - 10, c - 10, d - 10, a - 20, b - 20, c - 20, d - 20, a - 30, b - 30, c - 30, d - 30, a - 40, b - 40, c - 40, d - 40,</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="33900">  <div class="votes">
+    <div id="Vu33900">
+    <a href="http://php.net/manual/vote-note.php?id=33900&amp;page=control-structures.while&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd33900">
+    <a href="http://php.net/manual/vote-note.php?id=33900&amp;page=control-structures.while&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V33900" title="30% like this...">
+    -24
+    </div>
+  </div>
+  <a href="#33900" class="name">
+  <strong class="user"><em>Merve</em></strong></a><a class="genanchor" href="#33900"> &para;</a><div class="date" title="2003-07-10 09:49"><strong>14 years ago</strong></div>
+  <div class="text" id="Hcom33900">
+<div class="phpcode"><code><span class="html">
+This is an easy way for all you calculator creators to make it do factorials. The code is this:<br /><br /><span class="default">&lt;?php<br />$c </span><span class="keyword">= (</span><span class="default">$a</span><span class="keyword">-</span><span class="default">1</span><span class="keyword">);<br /></span><span class="default">$d </span><span class="keyword">= </span><span class="default">$a</span><span class="keyword">;<br />while (</span><span class="default">$c</span><span class="keyword">&gt;=</span><span class="default">1</span><span class="keyword">)<br />{<br /></span><span class="default">$a </span><span class="keyword">= (</span><span class="default">$a</span><span class="keyword">*</span><span class="default">$c</span><span class="keyword">);<br /></span><span class="default">$c</span><span class="keyword">--;<br />}<br />print (</span><span class="string">" </span><span class="default">$d</span><span class="string">! = </span><span class="default">$a</span><span class="string">"</span><span class="keyword">);<br /></span><span class="default">?&gt;<br /></span><br />$a changes, and so does c, so we have to make a new variable, $d, for the end statement.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="73449">  <div class="votes">
+    <div id="Vu73449">
+    <a href="http://php.net/manual/vote-note.php?id=73449&amp;page=control-structures.while&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd73449">
+    <a href="http://php.net/manual/vote-note.php?id=73449&amp;page=control-structures.while&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V73449" title="28% like this...">
+    -23
+    </div>
+  </div>
+  <a href="#73449" class="name">
+  <strong class="user"><em>dominik at deobald dot org</em></strong></a><a class="genanchor" href="#73449"> &para;</a><div class="date" title="2007-02-23 08:50"><strong>10 years ago</strong></div>
+  <div class="text" id="Hcom73449">
+<div class="phpcode"><code><span class="html">
+@stuart:<br /><br />There's nothing strange or unexpected about your loop's behaviour.<br /><br />&gt; So in effect the main while loop is only doing one iteration... and not 4 as expected....<br /><br />That's the wrong conclusion. The outer "while" does all four iterations. However the "inner" loop does nothing for the second, third and fourth run.<br /><br />&gt; I think it would be good to have an explaination of this strange behaviour. <br /><br />Here it is:<br /><br /><span class="default">&lt;?PHP<br />$i</span><span class="keyword">=</span><span class="default">0</span><span class="keyword">;<br />while(</span><span class="default">$i </span><span class="keyword">&lt; </span><span class="default">count</span><span class="keyword">(</span><span class="default">$one</span><span class="keyword">)) {<br />&nbsp;&nbsp; <br />&nbsp;&nbsp; while(</span><span class="default">$a </span><span class="keyword">= </span><span class="default">each</span><span class="keyword">(</span><span class="default">$two</span><span class="keyword">)) {<br />&nbsp; &nbsp; &nbsp;&nbsp; echo </span><span class="default">$a</span><span class="keyword">[</span><span class="default">1</span><span class="keyword">].</span><span class="string">" - "</span><span class="keyword">.</span><span class="default">$one</span><span class="keyword">[</span><span class="default">$i</span><span class="keyword">].</span><span class="string">", "</span><span class="keyword">; <br />&nbsp;&nbsp; }<br />&nbsp;&nbsp; </span><span class="default">$i</span><span class="keyword">++;<br />&nbsp;&nbsp; <br />}<br /></span><span class="default">?&gt;<br /></span><br />The "problem" is your use of "each", which reached the last item after the first iteration of the outer loop. After that, when you come back to the second iteration with the outer loop, "each" still is at the end of the array $two.<br /><br />If you add a reset($two) in front of the inner "while", you'll get the result you expect.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="96591">  <div class="votes">
+    <div id="Vu96591">
+    <a href="http://php.net/manual/vote-note.php?id=96591&amp;page=control-structures.while&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd96591">
+    <a href="http://php.net/manual/vote-note.php?id=96591&amp;page=control-structures.while&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V96591" title="31% like this...">
+    -26
+    </div>
+  </div>
+  <a href="#96591" class="name">
+  <strong class="user"><em>ravenswd at gmail dot com</em></strong></a><a class="genanchor" href="#96591"> &para;</a><div class="date" title="2010-03-06 07:34"><strong>7 years ago</strong></div>
+  <div class="text" id="Hcom96591">
+<div class="phpcode"><code><span class="html">
+I find it often clearer to set a simple flag ($finished) to false at the start of the loop, and have the program set it to true when it's finished doing whatever it's trying to do. Then the code is more self-documenting: WHILE NOT FINISHED keep going through the loop. FINISHED EQUALS TRUE when you're done. Here's an example. This is the code I use to generate a random filename and ensure that there is not already an existing file with the same name. I've added very verbose comments to it to make it clear how it works:<br /><br /><span class="default">&lt;?php<br />$finaldir </span><span class="keyword">= </span><span class="string">'download'</span><span class="keyword">;<br /><br /></span><span class="default">$finished </span><span class="keyword">= </span><span class="default">false</span><span class="keyword">;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="comment">// we're not finished yet (we just started)<br /></span><span class="keyword">while ( ! </span><span class="default">$finished </span><span class="keyword">):&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="comment">// while not finished<br />&nbsp; </span><span class="default">$rn </span><span class="keyword">= </span><span class="default">rand</span><span class="keyword">();&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="comment">// random number<br />&nbsp; </span><span class="default">$outfile </span><span class="keyword">= </span><span class="default">$finaldir</span><span class="keyword">.</span><span class="string">'/'</span><span class="keyword">.</span><span class="default">$rn</span><span class="keyword">.</span><span class="string">'.gif'</span><span class="keyword">;&nbsp;&nbsp; </span><span class="comment">// output file name<br />&nbsp; </span><span class="keyword">if ( ! </span><span class="default">file_exists</span><span class="keyword">(</span><span class="default">$outfile</span><span class="keyword">) ):&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="comment">// if file DOES NOT exist...<br />&nbsp; &nbsp; </span><span class="default">$finished </span><span class="keyword">= </span><span class="default">true</span><span class="keyword">;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="comment">// ...we are finished<br />&nbsp; </span><span class="keyword">endif;<br />endwhile;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="comment">// (if not finished, re-start WHILE loop)<br /></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="52733">  <div class="votes">
+    <div id="Vu52733">
+    <a href="http://php.net/manual/vote-note.php?id=52733&amp;page=control-structures.while&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd52733">
+    <a href="http://php.net/manual/vote-note.php?id=52733&amp;page=control-structures.while&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V52733" title="29% like this...">
+    -25
+    </div>
+  </div>
+  <a href="#52733" class="name">
+  <strong class="user"><em>stuart</em></strong></a><a class="genanchor" href="#52733"> &para;</a><div class="date" title="2005-05-11 02:06"><strong>12 years ago</strong></div>
+  <div class="text" id="Hcom52733">
+<div class="phpcode"><code><span class="html">
+A note to anyone nesting a while loop inside a while loop....<br /><br />Consider the example below:<br /><br />$one = array("10", "20", "30", "40");<br />$two = array("a", "b", "c", "d");<br /><br />$i=0;<br />while($i &lt; count($one)) {<br />&nbsp; &nbsp; <br />&nbsp; &nbsp; while($a = each($two)) {<br />&nbsp; &nbsp; &nbsp; &nbsp; echo $a[1]." - ".$one[$i].", "; <br />&nbsp; &nbsp; }<br />&nbsp; &nbsp; $i++;<br />&nbsp; &nbsp; <br />}<br /><br />This will return the following:<br />a - 10, b - 10, c - 10, d - 10<br /><br />So in effect the main while loop is only doing one iteration... and not 4 as expected....<br /><br />Now the example below works as expected..<br />$i=0;<br />while($i &lt; count($one)) {<br />&nbsp; &nbsp; <br />&nbsp; &nbsp; foreach($two as $a) {<br />&nbsp; &nbsp; &nbsp; &nbsp; echo $a." - ".$one[$i]."\n"; <br />&nbsp; &nbsp; }<br />&nbsp; &nbsp; $i++;<br />&nbsp; &nbsp; <br />}<br /><br />by returning:<br />a - 10, b - 10, c - 10, d - 10, a - 20, b - 20, c - 20, d - 20, a - 30, b - 30, c - 30, d - 30, a - 40, b - 40, c - 40, d - 40<br /><br />So there is clearly a difference on how while statements work in comparison to other looping structures.<br /><br />I think it would be good to have an explaination of this strange behaviour.</span>
+</code></div>
+  </div>
+ </div></div>
+
+ <div class="foot"><a href="http://php.net/manual/add-note.php?sect=control-structures.while&amp;redirect=http://php.net/manual/en/control-structures.while.php"><img src='http://php.net/images/notes-add@2x.png' alt='add a note' width='12' height='12'> <small>add a note</small></a></div>
+</section>    </section><!-- layout-content -->
+        <aside class='layout-menu'>
+    
+        <ul class='parent-menu-list'>
+                                    <li>
+                <a href="http://php.net/manual/en/language.control-structures.php">Control Structures</a>
+    
+                                    <ul class='child-menu-list'>
+    
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/control-structures.intro.php" title="Introduction">Introduction</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/control-structures.if.php" title="if">if</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/control-structures.else.php" title="else">else</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/control-structures.elseif.php" title="elseif/else if">elseif/else if</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/control-structures.alternative-syntax.php" title="Alternative syntax for control structures">Alternative syntax for control structures</a>
+                        </li>
+                          
+                        <li class="current">
+                            <a href="http://php.net/manual/en/control-structures.while.php" title="while">while</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/control-structures.do.while.php" title="do-&#8203;while">do-&#8203;while</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/control-structures.for.php" title="for">for</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/control-structures.foreach.php" title="foreach">foreach</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/control-structures.break.php" title="break">break</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/control-structures.continue.php" title="continue">continue</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/control-structures.switch.php" title="switch">switch</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/control-structures.declare.php" title="declare">declare</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/function.return.php" title="return">return</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/function.require.php" title="require">require</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/function.include.php" title="include">include</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/function.require-once.php" title="require_&#8203;once">require_&#8203;once</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/function.include-once.php" title="include_&#8203;once">include_&#8203;once</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/control-structures.goto.php" title="goto">goto</a>
+                        </li>
+                            
+                    </ul>
+                    
+            </li>
+                        
+                    </ul>
+    </aside>
+
+
+  </div><!-- layout -->
+         
+  <footer>
+    <div class="container footer-content">
+      <div class="row-fluid">
+      <ul class="footmenu">
+        <li><a href="http://php.net/copyright.php">Copyright &copy; 2001-2017 The PHP Group</a></li>
+        <li><a href="http://php.net/my.php">My PHP.net</a></li>
+        <li><a href="http://php.net/contact.php">Contact</a></li>
+        <li><a href="http://php.net/sites.php">Other PHP.net sites</a></li>
+        <li><a href="http://php.net/mirrors.php">Mirror sites</a></li>
+        <li><a href="http://php.net/privacy.php">Privacy policy</a></li>
+      </ul>
+      </div>
+    </div>
+  </footer>
+
+    
+ <!-- External and third party libraries. -->
+ <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/modernizr.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/hogan-2.0.0.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/typeahead.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/mousetrap.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/search.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1500560403&amp;f=/js/common.js"></script>
+
+<a id="toTop" href="javascript:;"><span id="toTopHover"></span><img width="40" height="40" alt="To Top" src="http://php.net/images/to-top@2x.png"></a>
+
+</body>
+
+<!-- Mirrored from php.net/manual/en/control-structures.while.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Dec 2017 23:18:10 GMT -->
+</html>
+

@@ -1,0 +1,90 @@
+Examen 1 eva
+
+Login de dos pasos.
+ Paso 1: aplicación en php(2,5Pto). Tenemos una pagina que recibe el login y el password, password libre sin hashear ni nada.  En el servidor cuando llegan los datos se insertan en la tabla login_php junto con el now del momento. En caso de existir el nombre, solo se hace un update del fecha_login, en la tabla de USERS tb se pone el activo a 1.
+
+Paso 2:(3,5 Pto) desde una aplicación en java, se tendrá una llamada que recibe nombre y contraseña. Para que el usuario se loguee,  primero tiene que ir a la tabla login_php comprobar el usuario y la contraseña y ver que no han pasado más de 30 segundos desde que llamo al php. Si ha pasado mas de 30 segundos pondrá el activo a 0. Una vez comprobado, comprobará con el mismo login si estaba activo( lo pone la llamada de php). Si el usuario no existía en la tabla de USERS, en ese momento se dará de alta, con activo 1. y se podrá loguear. La contraseña en USERS irá sin hashear.
+
+Paso 3. CRUD DE COCHES.(4Pto)
+Una vez hecho el login hay que hacer el mantenimiento de una tabla de coches.
+El cliente tendrá una pantalla para dar de alta (1,5), actualizar(0,75) y borrar(0,75), y una tabla con todos los coches.(1 Pto)
+Los datos de los coches están en dos tablas.
+Tabla examen, coche, comprado y un id.
+Tabla examen1, fecha compra fecha actual, descuento, el descuento es fijo y viene del yaml, es un número.
+la tabla examen1 tiene el id que es pk de la tabla examen.
+
+Todo lo que sea necesario hacerlo transaccional hay que hacerlo.
+
+
+ /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `EXAMEN`
+--
+
+DROP TABLE IF EXISTS `EXAMEN`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `EXAMEN` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `COCHE` varchar(245) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `COMPRADO` tinyint(4) DEFAULT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+DROP TABLE IF EXISTS `EXAMEN1`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `EXAMEN1` (
+  `ID_EXAMEN` int(11) NOT NULL,
+  `FECHA_COMPRA` datetime DEFAULT NULL,
+  `KM` int(11) DEFAULT NULL,
+  `DESCUENTO` int(11) DEFAULT NULL,
+  PRIMARY KEY (`ID_EXAMEN`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+DROP TABLE IF EXISTS `LOGIN_PHP`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `LOGIN_PHP` (
+  `NOMBRE` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `PASSWORD` varchar(200) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `FECHA_LOGIN` datetime DEFAULT NULL,
+  PRIMARY KEY (`NOMBRE`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+DROP TABLE IF EXISTS `USERS`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `USERS` (
+  `ID` int(10) unsigned zerofill NOT NULL AUTO_INCREMENT,
+  `NOMBRE` varchar(250) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `PASSWORD` varchar(250) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `ACTIVO` tinyint(4) NOT NULL DEFAULT '0',
+  `CODIGO_ACTIVACION` varchar(250) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `FECHA_ACTIVACION` datetime(6) NOT NULL,
+  `EMAIL` varchar(250) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`ID`),
+  UNIQUE KEY `CODIGO_ACTIVACION_UNIQUE` (`CODIGO_ACTIVACION`)
+) ENGINE=InnoDB AUTO_INCREMENT=227 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+/*!40101 SET character_set_client = @saved_cs_client */;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;

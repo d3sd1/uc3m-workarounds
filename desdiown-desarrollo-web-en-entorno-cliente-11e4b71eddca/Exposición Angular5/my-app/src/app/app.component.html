@@ -1,0 +1,18 @@
+<div>
+    <div>
+        Mensaje inicial:
+    </div>
+    <div>
+        {{ title }}
+    </div>
+</div>
+<div>
+    <div>
+        Contador:
+        <input type="button" value="Incrementar" (click)="setMiNumero()"/>
+    </div>
+    <div>
+        {{ miNumero }}
+    </div>
+</div>
+<div *ngIf="miNumero > 3">LA VARIABLE ES MAYOR QUE 3!</div>

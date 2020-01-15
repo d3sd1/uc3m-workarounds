@@ -1,0 +1,8 @@
+- Crear un objeto con javascript con los atributos que el dice. con mayusculas y minusculas respetadas, tal y como salga en el enunciado.
+- si dice que muestra poner document.write
+- si dice que retorna poner return.
+- poner tipo de dato en el nombre de la variable en el examen
+- ejercicio 10: un contador que se base en la hora del sistema y no en un contador simple, ya que si no se ejecuta algun intervalo puede presrentar errores
+- formula para generar numero aleatorio en un rango: NUM_MIN + Math.Floor(Math.random()*(DISTANCIA+1)); //mathfloor para enteros. DISTANCIA = num_mayor - num_menor. NUM_MIN = num_menor
+- formula radianes = grados / 60
+- calcular seno de algo, JAVASCRIPT USA RADIANES NO GRADOS. para usar la funcion hay que convertir de radianes a grados: angle * (Math.PI / 180);

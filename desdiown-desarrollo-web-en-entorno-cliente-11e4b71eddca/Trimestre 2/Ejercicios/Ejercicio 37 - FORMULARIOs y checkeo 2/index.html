@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="author" content="Andrei García Cuadra">
+		<meta name="keywords" content="html, andrei, trabajos">
+		<meta name="description" content="Esto es un trabajo realizado por Andrei García Cuadra">
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Potencia</title>
+		<script>
+			window.onload = function(){
+				updateFormFields();
+			};
+			function parseForm(formdata)
+			{
+				var dni = formdata.dni,
+				name = formdata.nombre,
+				age = formdata.age,
+				sex = formdata.sex,
+				hobbies_sports = formdata.hobbies_sports,
+				hobbies_films = formdata.hobbies_films,
+				hobbies_books = formdata.hobbies_books;
+				
+				setCookie("name",name.value);
+				setCookie("dni",dni.value);
+				setCookie("age",age.value);
+				setCookie("sex",sex.value);
+				setCookie("hobbies_sports",hobbies_sports.checked);
+				setCookie("hobbies_films",hobbies_films.checked);
+				setCookie("hobbies_books",hobbies_books.checked);
+				if(checkDNI(dni.value)) /* CHECK DNI */
+				{
+					if(/\S/.test(name.value)) /* CHECK NAME */
+					{
+						var agefield = document.getElementsByName("age"),
+							errorOnAge = true;
+						for(var i = 0; i < agefield.length; i++)
+						{
+							if(agefield[i].checked)
+							{
+								errorOnAge = false;
+								break;
+							}
+						}
+						if(!errorOnAge) /* CHECK IF THERE IS NO CHECKED AGE */
+						{
+							var sexfield = document.getElementsByName("sex"),
+							errorOnSex = true;
+							for(var i = 0; i < sexfield.length; i++)
+							{
+								if(sexfield[i].checked)
+								{
+									errorOnSex = false;
+									break;
+								}
+							}
+							if(!errorOnSex)
+							{
+								var hoobiesCount = 0;
+								(hobbies_sports.checked ? hoobiesCount++:"");
+								(hobbies_films.checked ? hoobiesCount++:"");
+								(hobbies_books.checked ? hoobiesCount++:"");
+								if(hoobiesCount <= 2 && hoobiesCount >= 1)
+								{
+									return true;
+								}
+								else
+								{
+									alert("Debes seleccionar una o dos aficiones.");
+									return false;
+								}
+							}
+							else
+							{
+								alert("Debes seleccionar un sexo");
+								return false;
+							}
+						}
+						else
+						{
+							alert("Debes seleccionar una edad");
+							return false;
+						}
+					}
+					else
+					{
+						alert("Nombre incorrecto: solo tiene espacios en blanco");
+						name.focus();
+						return false;
+					}
+				}
+				else
+				{
+					alert("DNI incorrecto");
+					dni.focus();
+					return false;
+				}
+			}
+			function checkDNI(dni)
+			{
+				var pattern = /[0-9]{8}[A-Z]/g;
+				if(pattern.test(dni))
+				{
+					return true; //es valido
+				}
+				else
+				{
+					return false;
+				}
+			}
+			function setCookie(cname, cvalue) {
+				var date = new Date();
+				date.setTime(date.getTime() + 3600);
+				document.cookie = cname + "=" + cvalue + ";expires=" + date.toUTCString();
+			}
+			function getCookie(cname) {
+				var name = cname + "=",
+				decodedCookie = decodeURIComponent(document.cookie),
+				ca = decodedCookie.split(';');
+				for(var i = 0; i <ca.length; i++) {
+					var c = ca[i];
+					while (c.charAt(0) == ' ') {
+						c = c.substring(1);
+					}
+					if (c.indexOf(name) == 0) {
+						return c.substring(name.length, c.length);
+					}
+				}
+				return "";
+			}
+			function updateFormFields()
+			{
+				if(getCookie("name") != "")
+				{
+					document.getElementsByName("nombre")[0].value = getCookie("name");
+				}
+				if(getCookie("dni") != "")
+				{
+					document.getElementsByName("dni")[0].value = getCookie("dni");
+				}
+				if(getCookie("sex") != "")
+				{
+					var sexfield = document.getElementsByName("sex");
+					for(var i = 0; i < sexfield.length; i++)
+					{
+						if(sexfield[i].value == getCookie("sex"))
+						{
+							sexfield[i].checked = true;
+							break;
+						}
+					}
+				}
+				if(getCookie("age") != "")
+				{
+					var agefield = document.getElementsByName("age");
+					for(var i = 0; i < agefield.length; i++)
+					{
+						if(agefield[i].value == getCookie("age"))
+						{
+							agefield[i].checked = true;
+							break;
+						}
+					}
+				}
+				if(getCookie("hobbies_sports") == "true")
+				{
+					document.getElementsByName("hobbies_sports")[0].checked = true;
+				}
+				else
+				{
+					document.getElementsByName("hobbies_sports")[0].checked = false;
+				}
+				if(getCookie("hobbies_films") == "true")
+				{
+					document.getElementsByName("hobbies_films")[0].checked = true;
+				}
+				else
+				{
+					document.getElementsByName("hobbies_films")[0].checked = false;
+				}
+				if(getCookie("hobbies_books") == "true")
+				{
+					document.getElementsByName("hobbies_books")[0].checked = true;
+				}
+				else
+				{
+					document.getElementsByName("hobbies_books")[0].checked = false;
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<form id="formulariochulo" onsubmit="javascript:return parseForm(this);">
+			<input name="dni" type="text" value="nnnnnnnnX" />
+			<input name="nombre" type="text" value="Introduce un nombre" />
+			<br>
+			Sexo: 
+				<input type="radio" name="sex" value="M" checked> Hombre
+				<input type="radio" name="sex" value="F"> Mujer
+			<br>
+			Edad: 
+				<input type="radio" name="age" value="cat1" checked> Menor de 21 años<br>
+				<input type="radio" name="age" value="cat2"> De 21 a 40 años<br>
+				<input type="radio" name="age" value="cat3"> De 41 a 60 años<br>
+				<input type="radio" name="age" value="cat4"> Mayor de 60 años<br>
+			Aficiones:<br>
+				<input type="checkbox" name="hobbies_sports" value="true"> Deportes<br>
+				<input type="checkbox" name="hobbies_films" value="true"> Cine<br>
+				<input type="checkbox" name="hobbies_books" value="true"> Lectura<br>
+			<input type="submit" value="Enviar"/>
+			
+		</form>
+	</body>
+</html>

@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<!-- Mirrored from php.net/manual/en/language.basic-syntax.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Dec 2017 23:08:44 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+  <title>PHP: Basic syntax - Manual </title>
+
+ <link rel="shortcut icon" href="../../favicon.ico">
+ <link rel="search" type="application/opensearchdescription+xml" href="../../phpnetimprovedsearch.html" title="Add PHP.net search">
+ <link rel="alternate" type="application/atom+xml" href="../../releases/feed.php" title="PHP Release feed">
+ <link rel="alternate" type="application/atom+xml" href="../../feed.atom" title="PHP: Hypertext Preprocessor">
+
+ <link rel="canonical" href="language.basic-syntax.html">
+ <link rel="shorturl" href="../../basic-syntax.html">
+ <link rel="alternate" href="../../basic-syntax.html" hreflang="x-default">
+
+ <link rel="contents" href="index-2.html">
+ <link rel="index" href="langref.html">
+ <link rel="prev" href="langref.html">
+ <link rel="next" href="language.basic-syntax.phptags.html">
+
+ <link rel="alternate" href="language.basic-syntax.html" hreflang="en">
+ <link rel="alternate" href="../pt_BR/language.basic-syntax.html" hreflang="pt_BR">
+ <link rel="alternate" href="../zh/language.basic-syntax.html" hreflang="zh">
+ <link rel="alternate" href="../fr/language.basic-syntax.html" hreflang="fr">
+ <link rel="alternate" href="../de/language.basic-syntax.html" hreflang="de">
+ <link rel="alternate" href="../ja/language.basic-syntax.html" hreflang="ja">
+ <link rel="alternate" href="../ro/language.basic-syntax.html" hreflang="ro">
+ <link rel="alternate" href="../ru/language.basic-syntax.html" hreflang="ru">
+ <link rel="alternate" href="../es/language.basic-syntax.html" hreflang="es">
+ <link rel="alternate" href="../tr/language.basic-syntax.html" hreflang="tr">
+
+<link rel="stylesheet" type="text/css" href="../../cached0152.css?t=1421837618&amp;f=/fonts/Fira/fira.css" media="screen">
+<link rel="stylesheet" type="text/css" href="../../cached15be.css?t=1421837618&amp;f=/fonts/Font-Awesome/css/fontello.css" media="screen">
+<link rel="stylesheet" type="text/css" href="../../cached3c70.css?t=1478800802&amp;f=/styles/theme-base.css" media="screen">
+<link rel="stylesheet" type="text/css" href="../../cached00eb.css?t=1449787206&amp;f=/styles/theme-medium.css" media="screen">
+
+ <!--[if lte IE 7]>
+ <link rel="stylesheet" type="text/css" href="http://php.net/styles/workarounds.ie7.css" media="screen">
+ <![endif]-->
+
+ <!--[if lte IE 8]>
+ <script type="text/javascript">
+  window.brokenIE = true;
+ </script>
+ <![endif]-->
+
+ <!--[if lte IE 9]>
+ <link rel="stylesheet" type="text/css" href="http://php.net/styles/workarounds.ie9.css" media="screen">
+ <![endif]-->
+
+ <!--[if IE]>
+ <script type="text/javascript" src="http://php.net/js/ext/html5.js"></script>
+ <![endif]-->
+
+ <base >
+
+</head>
+<body class="docs ">
+
+<nav id="head-nav" class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <a href="../../index.html" class="brand"><img src="../../images/logos/php-logo.svg" width="48" height="24" alt="php"></a>
+    <div id="mainmenu-toggle-overlay"></div>
+    <input type="checkbox" id="mainmenu-toggle">
+    <ul class="nav">
+      <li class=""><a href="../../downloads.html">Downloads</a></li>
+      <li class="active"><a href="../../docs.html">Documentation</a></li>
+      <li class=""><a href="../../get-involved.html" >Get Involved</a></li>
+      <li class=""><a href="../../support.html">Help</a></li>
+    </ul>
+    <form class="navbar-search" id="topsearch" action="http://php.net/search.php">
+      <input type="hidden" name="show" value="quickref">
+      <input type="search" name="pattern" class="search-query" placeholder="Search" accesskey="s">
+    </form>
+  </div>
+  <div id="flash-message"></div>
+</nav>
+<nav id="trick"><div><dl>
+<dt><a href='getting-started.html'>Getting Started</a></dt>
+	<dd><a href='introduction.html'>Introduction</a></dd>
+	<dd><a href='tutorial.html'>A simple tutorial</a></dd>
+<dt><a href='langref.html'>Language Reference</a></dt>
+	<dd><a href='language.basic-syntax.html'>Basic syntax</a></dd>
+	<dd><a href='language.types.html'>Types</a></dd>
+	<dd><a href='language.variables.html'>Variables</a></dd>
+	<dd><a href='language.constants.html'>Constants</a></dd>
+	<dd><a href='language.expressions.html'>Expressions</a></dd>
+	<dd><a href='language.operators.html'>Operators</a></dd>
+	<dd><a href='language.control-structures.html'>Control Structures</a></dd>
+	<dd><a href='language.functions.html'>Functions</a></dd>
+	<dd><a href='language.oop5.html'>Classes and Objects</a></dd>
+	<dd><a href='language.namespaces.html'>Namespaces</a></dd>
+	<dd><a href='language.errors.html'>Errors</a></dd>
+	<dd><a href='language.exceptions.html'>Exceptions</a></dd>
+	<dd><a href='language.generators.html'>Generators</a></dd>
+	<dd><a href='language.references.html'>References Explained</a></dd>
+	<dd><a href='reserved.variables.html'>Predefined Variables</a></dd>
+	<dd><a href='reserved.exceptions.html'>Predefined Exceptions</a></dd>
+	<dd><a href='reserved.interfaces.html'>Predefined Interfaces and Classes</a></dd>
+	<dd><a href='context.html'>Context options and parameters</a></dd>
+	<dd><a href='wrappers.html'>Supported Protocols and Wrappers</a></dd>
+</dl>
+<dl>
+<dt><a href='security.html'>Security</a></dt>
+	<dd><a href='security.intro.html'>Introduction</a></dd>
+	<dd><a href='security.general.html'>General considerations</a></dd>
+	<dd><a href='security.cgi-bin.html'>Installed as CGI binary</a></dd>
+	<dd><a href='security.apache.html'>Installed as an Apache module</a></dd>
+	<dd><a href='security.sessions.html'>Session Security</a></dd>
+	<dd><a href='security.filesystem.html'>Filesystem Security</a></dd>
+	<dd><a href='security.database.html'>Database Security</a></dd>
+	<dd><a href='security.errors.html'>Error Reporting</a></dd>
+	<dd><a href='security.globals.html'>Using Register Globals</a></dd>
+	<dd><a href='security.variables.html'>User Submitted Data</a></dd>
+	<dd><a href='security.magicquotes.html'>Magic Quotes</a></dd>
+	<dd><a href='security.hiding.html'>Hiding PHP</a></dd>
+	<dd><a href='security.current.html'>Keeping Current</a></dd>
+<dt><a href='features.html'>Features</a></dt>
+	<dd><a href='features.http-auth.html'>HTTP authentication with PHP</a></dd>
+	<dd><a href='features.cookies.html'>Cookies</a></dd>
+	<dd><a href='features.sessions.html'>Sessions</a></dd>
+	<dd><a href='features.xforms.html'>Dealing with XForms</a></dd>
+	<dd><a href='features.file-upload.html'>Handling file uploads</a></dd>
+	<dd><a href='features.remote-files.html'>Using remote files</a></dd>
+	<dd><a href='features.connection-handling.html'>Connection handling</a></dd>
+	<dd><a href='features.persistent-connections.html'>Persistent Database Connections</a></dd>
+	<dd><a href='features.safe-mode.html'>Safe Mode</a></dd>
+	<dd><a href='features.commandline.html'>Command line usage</a></dd>
+	<dd><a href='features.gc.html'>Garbage Collection</a></dd>
+	<dd><a href='features.dtrace.html'>DTrace Dynamic Tracing</a></dd>
+</dl>
+<dl>
+<dt><a href='funcref.html'>Function Reference</a></dt>
+	<dd><a href='refs.basic.php.html'>Affecting PHP's Behaviour</a></dd>
+	<dd><a href='refs.utilspec.audio.html'>Audio Formats Manipulation</a></dd>
+	<dd><a href='refs.remote.auth.html'>Authentication Services</a></dd>
+	<dd><a href='refs.utilspec.cmdline.html'>Command Line Specific Extensions</a></dd>
+	<dd><a href='refs.compression.html'>Compression and Archive Extensions</a></dd>
+	<dd><a href='refs.creditcard.html'>Credit Card Processing</a></dd>
+	<dd><a href='refs.crypto.html'>Cryptography Extensions</a></dd>
+	<dd><a href='refs.database.html'>Database Extensions</a></dd>
+	<dd><a href='refs.calendar.html'>Date and Time Related Extensions</a></dd>
+	<dd><a href='refs.fileprocess.file.html'>File System Related Extensions</a></dd>
+	<dd><a href='refs.international.html'>Human Language and Character Encoding Support</a></dd>
+	<dd><a href='refs.utilspec.image.html'>Image Processing and Generation</a></dd>
+	<dd><a href='refs.remote.mail.html'>Mail Related Extensions</a></dd>
+	<dd><a href='refs.math.html'>Mathematical Extensions</a></dd>
+	<dd><a href='refs.utilspec.nontext.html'>Non-Text MIME Output</a></dd>
+	<dd><a href='refs.fileprocess.process.html'>Process Control Extensions</a></dd>
+	<dd><a href='refs.basic.other.html'>Other Basic Extensions</a></dd>
+	<dd><a href='refs.remote.other.html'>Other Services</a></dd>
+	<dd><a href='refs.search.html'>Search Engine Extensions</a></dd>
+	<dd><a href='refs.utilspec.server.html'>Server Specific Extensions</a></dd>
+	<dd><a href='refs.basic.session.html'>Session Extensions</a></dd>
+	<dd><a href='refs.basic.text.html'>Text Processing</a></dd>
+	<dd><a href='refs.basic.vartype.html'>Variable and Type Related Extensions</a></dd>
+	<dd><a href='refs.webservice.html'>Web Services</a></dd>
+	<dd><a href='refs.utilspec.windows.html'>Windows Only Extensions</a></dd>
+	<dd><a href='refs.xml.html'>XML Manipulation</a></dd>
+	<dd><a href='refs.ui.html'>GUI Extensions</a></dd>
+</dl>
+<dl>
+<dt>Keyboard Shortcuts</dt><dt>?</dt>
+<dd>This help</dd>
+<dt>j</dt>
+<dd>Next menu item</dd>
+<dt>k</dt>
+<dd>Previous menu item</dd>
+<dt>g p</dt>
+<dd>Previous man page</dd>
+<dt>g n</dt>
+<dd>Next man page</dd>
+<dt>G</dt>
+<dd>Scroll to bottom</dd>
+<dt>g g</dt>
+<dd>Scroll to top</dd>
+<dt>g h</dt>
+<dd>Goto homepage</dd>
+<dt>g s</dt>
+<dd>Goto search<br>(current page)</dd>
+<dt>/</dt>
+<dd>Focus search box</dd>
+</dl></div></nav>
+<div id="goto">
+    <div class="search">
+         <div class="text"></div>
+         <div class="results"><ul></ul></div>
+   </div>
+</div>
+
+  <div id="breadcrumbs" class="clearfix">
+    <div id="breadcrumbs-inner">
+          <div class="next">
+        <a href="language.basic-syntax.phptags.html">
+          PHP tags &raquo;
+        </a>
+      </div>
+              <div class="prev">
+        <a href="langref.html">
+          &laquo; Language Reference        </a>
+      </div>
+          <ul>
+            <li><a href='index-2.html'>PHP Manual</a></li>      <li><a href='langref.html'>Language Reference</a></li>      </ul>
+    </div>
+  </div>
+
+
+
+
+<div id="layout" class="clearfix">
+  <section id="layout-content">
+  <div class="page-tools">
+    <div class="change-language">
+      <form action="http://php.net/manual/change.php" method="get" id="changelang" name="changelang">
+        <fieldset>
+          <label for="changelang-langs">Change language:</label>
+          <select onchange="document.changelang.submit()" name="page" id="changelang-langs">
+            <option value='en/language.basic-syntax.php' selected="selected">English</option>
+            <option value='pt_BR/language.basic-syntax.html'>Brazilian Portuguese</option>
+            <option value='zh/language.basic-syntax.html'>Chinese (Simplified)</option>
+            <option value='fr/language.basic-syntax.html'>French</option>
+            <option value='de/language.basic-syntax.html'>German</option>
+            <option value='ja/language.basic-syntax.html'>Japanese</option>
+            <option value='ro/language.basic-syntax.html'>Romanian</option>
+            <option value='ru/language.basic-syntax.html'>Russian</option>
+            <option value='es/language.basic-syntax.html'>Spanish</option>
+            <option value='tr/language.basic-syntax.html'>Turkish</option>
+            <option value="help-translate.html">Other</option>
+          </select>
+        </fieldset>
+      </form>
+    </div>
+    <div class="edit-bug">
+      <a href="https://edit.php.net/?project=PHP&amp;perm=en/language.basic-syntax.php">Edit</a>
+      <a href="https://bugs.php.net/report.php?bug_type=Documentation+problem&amp;manpage=language.basic-syntax">Report a Bug</a>
+    </div>
+  </div><div id="language.basic-syntax" class="chapter">
+  <h1>Basic syntax</h1>
+<h2>Table of Contents</h2><ul class="chunklist chunklist_chapter"><li><a href="language.basic-syntax.phptags.html">PHP tags</a></li><li><a href="language.basic-syntax.phpmode.html">Escaping from HTML</a></li><li><a href="language.basic-syntax.instruction-separation.html">Instruction separation</a></li><li><a href="language.basic-syntax.comments.html">Comments</a></li></ul>
+
+  
+  
+  
+  
+ </div>
+
+<section id="usernotes">
+ <div class="head">
+  <span class="action"><a href="../add-notebc2d.html?sect=language.basic-syntax&amp;redirect=http://php.net/manual/en/language.basic-syntax.php"><img src='../../images/notes-add%402x.png' alt='add a note' width='12' height='12'> <small>add a note</small></a></span>
+  <h3 class="title">User Contributed Notes <span class="count">5 notes</span></h3>
+ </div><div id="allnotes">
+  <div class="note" id="41654">  <div class="votes">
+    <div id="Vu41654">
+    <a href="../vote-note938b.html?id=41654&amp;page=language.basic-syntax&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd41654">
+    <a href="../vote-note1545.html?id=41654&amp;page=language.basic-syntax&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V41654" title="43% like this...">
+    -72
+    </div>
+  </div>
+  <a href="#41654" class="name">
+  <strong class="user"><em>mart3862 at yahoo dot com dot au</em></strong></a><a class="genanchor" href="#41654"> &para;</a><div class="date" title="2004-04-18 09:29"><strong>13 years ago</strong></div>
+  <div class="text" id="Hcom41654">
+<div class="phpcode"><code><span class="html">
+Now the ultimate truth on how you should output xml processing instructions:<br /><br />There have been several posts suggesting ways to include the text &lt;?xml version="1.0" encoding="utf-8"?&gt; in your output when short_tags is turned on, but only the following should be used:<br /><br /><span class="default">&lt;?php </span><span class="keyword">echo </span><span class="string">'&lt;?xml version="1.0" ?'</span><span class="keyword">.</span><span class="string">'&gt;' </span><span class="default">?&gt;<br /></span>or<br /><span class="default">&lt;?php </span><span class="keyword">echo </span><span class="string">"&lt;?xml version=\"1.0\"\x3F&gt;" </span><span class="default">?&gt;<br /></span><br />Using one of these methods, and not making use of short tags, means your source code will also be a valid XML document, which allows you to do many things with it such as validation, XSLT translations, etc, as well as allowing your text editor to parse your code for syntax colouring.&nbsp; Every PHP tag will simply be interpreted as an XML processing instruction (commonly referred to as PI).<br /><br />The reason why all the other suggested methods are not advisable is because they contain the characters ?&gt; inside the PHP tag, which the XML parser will interpret as the end of the processing instruction.<br /><br />A processing instruction is defined in XML as:<br /><br />PI ::= '&lt;?' PITarget (S (Char* - (Char* '?&gt;' Char*)))? '?&gt;' <br /><br />In other words, it explicitly forbids the characters ?&gt; to occur together within a processing instruction, unless they are delimiting the end of the tag.&nbsp; It also requires a PITarget (an identifier starting with a letter) immediately after the initial start delimiter, which means that all short tag formats are also invalid XML.<br /><br />Following these guidelines will result in code that is portable to servers with any configuration and allow you perform many useful tasks on your XML or XHTML source documents.&nbsp; Even if you do not intend to validate or translate your source documents, and you can ignore some incorrect syntax colouring in your text editor, it is still best to get into good habits early.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="46746">  <div class="votes">
+    <div id="Vu46746">
+    <a href="../vote-notefb1d.html?id=46746&amp;page=language.basic-syntax&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd46746">
+    <a href="../vote-note03a7.html?id=46746&amp;page=language.basic-syntax&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V46746" title="44% like this...">
+    -76
+    </div>
+  </div>
+  <a href="#46746" class="name">
+  <strong class="user"><em>mike at skew dot org</em></strong></a><a class="genanchor" href="#46746"> &para;</a><div class="date" title="2004-10-21 04:53"><strong>13 years ago</strong></div>
+  <div class="text" id="Hcom46746">
+<div class="phpcode"><code><span class="html">
+mart3862 mentions "XML processing instructions" and quotes their syntax from the spec, but is mistaken in using<br /><br />&lt;?xml version="1.0" ...?&gt;<br /><br />as an example. This little bit of markup that appears at the beginning of an XML file is in fact not a processing instruction at all; it is an "XML declaration" -- or, if it appears in an entity other than the main document, a "text declaration". All three constructs are formatted slightly differently, although they all do begin and end with the same.<br /><br />The difference between a processing instruction, an XML declaration, or a text declaration is more than just a matter of subtle differences in syntax, though. A processing instruction embodies exactly two opaque, author-defined pieces of information (a 'target' and an 'instruction') that are considered to be part of the document's logical structure and that are thus made available to an application by the XML parser. An XML or text declaration, on the other hand, contains one to three specific pieces of information (version, encoding, standalone status), each with a well-defined meaning. This info provides cues to the parser to help it know how to read the file; it is not considered part of the document's logical structure and is not made available to the application.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="59663">  <div class="votes">
+    <div id="Vu59663">
+    <a href="../vote-noteb86d.html?id=59663&amp;page=language.basic-syntax&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd59663">
+    <a href="../vote-notefd62.html?id=59663&amp;page=language.basic-syntax&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V59663" title="45% like this...">
+    -81
+    </div>
+  </div>
+  <a href="#59663" class="name">
+  <strong class="user"><em>Michael Newton (http://mike.eire.ca/)</em></strong></a><a class="genanchor" href="#59663"> &para;</a><div class="date" title="2005-12-12 03:17"><strong>12 years ago</strong></div>
+  <div class="text" id="Hcom59663">
+<div class="phpcode"><code><span class="html">
+The XML declaration does not need to be handled specially.<br /><br />You should output it via an echo statement, in case your code is ever used on a server that is (poorly) configured to use short open tags.<br /><br />But there's no need to treat the ?&gt; at the end of the string specially.&nbsp; That's because it's in a string.&nbsp; The only thing PHP ever looks for in a string is \ or $ (the latter only in double-quoted strings.)<br /><br />I have never had need for the following, as some have suggested below:<br /><br /><span class="default">&lt;?php<br />$xml</span><span class="keyword">=</span><span class="default">rawurldecode</span><span class="keyword">(</span><span class="string">'%3C%3Fxml%20version%3D%221.0%22%3F%3E'</span><span class="keyword">);<br />echo(</span><span class="default">$xml</span><span class="keyword">);<br /></span><span class="default">?&gt;<br /></span><br /><span class="default">&lt;?php </span><span class="keyword">echo </span><span class="string">'&lt;?xml version="1.0" ?'</span><span class="keyword">.</span><span class="string">'&gt;' </span><span class="default">?&gt;<br /></span><br /><span class="default">&lt;?php </span><span class="keyword">echo </span><span class="string">"&lt;?xml version=\"1.0\"\x3F&gt;" </span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="19982">  <div class="votes">
+    <div id="Vu19982">
+    <a href="../vote-notee811.html?id=19982&amp;page=language.basic-syntax&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd19982">
+    <a href="../vote-note3f46.html?id=19982&amp;page=language.basic-syntax&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V19982" title="42% like this...">
+    -69
+    </div>
+  </div>
+  <a href="#19982" class="name">
+  <strong class="user"><em>dave at [nospam] dot netready dot biz</em></strong></a><a class="genanchor" href="#19982"> &para;</a><div class="date" title="2002-03-18 04:21"><strong>15 years ago</strong></div>
+  <div class="text" id="Hcom19982">
+<div class="phpcode"><code><span class="html">
+A little "feature" of PHP I've discovered is that the <span class="default">&lt;?PHP token requires a space after it whereas after the </span><span class="keyword">&lt;? and &lt;% </span><span class="default">tokens a space is optional</span><span class="keyword">.<br /><br /></span><span class="default">The error message you get </span><span class="keyword">if </span><span class="default">you miss the space is not too helpful so be warned</span><span class="keyword">!<br /><br />(</span><span class="default">These examples only give a warning with error_reporting</span><span class="keyword">(</span><span class="default">E_ALL</span><span class="keyword">) )<br /><br />&lt;?</span><span class="default">PHP</span><span class="comment">/*&lt;Some HTML&gt;*/</span><span class="default">?&gt;</span> fails...<br />&lt;?/*&lt;Some HTML&gt;*/?&gt; works...</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="42055">  <div class="votes">
+    <div id="Vu42055">
+    <a href="../vote-note991f.html?id=42055&amp;page=language.basic-syntax&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd42055">
+    <a href="../vote-note9c7d.html?id=42055&amp;page=language.basic-syntax&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V42055" title="37% like this...">
+    -174
+    </div>
+  </div>
+  <a href="#42055" class="name">
+  <strong class="user"><em>crtrue at coastal dot edu</em></strong></a><a class="genanchor" href="#42055"> &para;</a><div class="date" title="2004-04-30 11:02"><strong>13 years ago</strong></div>
+  <div class="text" id="Hcom42055">
+<div class="phpcode"><code><span class="html">
+Although you can use the above methods to pass a document off as a valid for the W3C parser, a simpler-and-perfectly-legal method of doing so is to simple declare the document type in a meta tag. Something along these lines (mind the values in 'content' - I haven't personally used the Content-Type method in awhile):<br /><br />&lt;meta http-equiv="Content-Type" content="application/xml+xhtml; charset=UTF-8" /&gt;<br /><br />Of course if you're using just XML, and don't use such functions, then the above methods will work just as fine.</span>
+</code></div>
+  </div>
+ </div></div>
+
+ <div class="foot"><a href="../add-notebc2d.html?sect=language.basic-syntax&amp;redirect=http://php.net/manual/en/language.basic-syntax.php"><img src='../../images/notes-add%402x.png' alt='add a note' width='12' height='12'> <small>add a note</small></a></div>
+</section>    </section><!-- layout-content -->
+        <aside class='layout-menu'>
+    
+        <ul class='parent-menu-list'>
+                                    <li>
+                <a href="langref.html">Language Reference</a>
+    
+                                    <ul class='child-menu-list'>
+    
+                          
+                        <li class="current">
+                            <a href="language.basic-syntax.html" title="Basic syntax">Basic syntax</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="language.types.html" title="Types">Types</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="language.variables.html" title="Variables">Variables</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="language.constants.html" title="Constants">Constants</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="language.expressions.html" title="Expressions">Expressions</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="language.operators.html" title="Operators">Operators</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="language.control-structures.html" title="Control Structures">Control Structures</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="language.functions.html" title="Functions">Functions</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="language.oop5.html" title="Classes and Objects">Classes and Objects</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="language.namespaces.html" title="Namespaces">Namespaces</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="language.errors.html" title="Errors">Errors</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="language.exceptions.html" title="Exceptions">Exceptions</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="language.generators.html" title="Generators">Generators</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="language.references.html" title="References Explained">References Explained</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="reserved.variables.html" title="Predefined Variables">Predefined Variables</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="reserved.exceptions.html" title="Predefined Exceptions">Predefined Exceptions</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="reserved.interfaces.html" title="Predefined Interfaces and Classes">Predefined Interfaces and Classes</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="context.html" title="Context options and parameters">Context options and parameters</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="wrappers.html" title="Supported Protocols and Wrappers">Supported Protocols and Wrappers</a>
+                        </li>
+                            
+                    </ul>
+                    
+            </li>
+                        
+                    </ul>
+    </aside>
+
+
+  </div><!-- layout -->
+         
+  <footer>
+    <div class="container footer-content">
+      <div class="row-fluid">
+      <ul class="footmenu">
+        <li><a href="../../copyright.html">Copyright &copy; 2001-2017 The PHP Group</a></li>
+        <li><a href="../../my.html">My PHP.net</a></li>
+        <li><a href="../../contact.html">Contact</a></li>
+        <li><a href="../../sites.html">Other PHP.net sites</a></li>
+        <li><a href="../../mirrors.html">Mirror sites</a></li>
+        <li><a href="../../privacy.html">Privacy policy</a></li>
+      </ul>
+      </div>
+    </div>
+  </footer>
+
+    
+ <!-- External and third party libraries. -->
+ <script type="text/javascript" src="../../../ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" src="../../cachedab96.php?t=1421837618&amp;f=/js/ext/modernizr.js"></script>
+<script type="text/javascript" src="../../cached3567.php?t=1421837618&amp;f=/js/ext/hogan-2.0.0.min.js"></script>
+<script type="text/javascript" src="../../cachede4eb.php?t=1421837618&amp;f=/js/ext/typeahead.min.js"></script>
+<script type="text/javascript" src="../../cached9183.php?t=1421837618&amp;f=/js/ext/mousetrap.min.js"></script>
+<script type="text/javascript" src="../../cachedcba0.php?t=1421837618&amp;f=/js/search.js"></script>
+<script type="text/javascript" src="../../cachedb779.php?t=1500560403&amp;f=/js/common.js"></script>
+
+<a id="toTop" href="javascript:;"><span id="toTopHover"></span><img width="40" height="40" alt="To Top" src="../../images/to-top%402x.png"></a>
+
+</body>
+
+<!-- Mirrored from php.net/manual/en/language.basic-syntax.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Dec 2017 23:08:51 GMT -->
+</html>
+

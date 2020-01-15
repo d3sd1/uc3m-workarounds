@@ -1,0 +1,10 @@
+* Array + método ordenación array + método búsqueda array
+
+FINAL:
+
+preguntas de teoria y tipo test
+ejercicios 
+1. cadenas
+2. array bidimensional
+3. herencia
+4. mezcla

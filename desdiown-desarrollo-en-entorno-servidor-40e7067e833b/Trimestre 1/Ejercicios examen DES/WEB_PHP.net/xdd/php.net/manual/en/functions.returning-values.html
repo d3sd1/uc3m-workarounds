@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<!-- Mirrored from php.net/manual/en/functions.returning-values.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Dec 2017 23:18:11 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+  <title>PHP: Returning values - Manual </title>
+
+ <link rel="shortcut icon" href="http://php.net/favicon.ico">
+ <link rel="search" type="application/opensearchdescription+xml" href="http://php.net/phpnetimprovedsearch.src" title="Add PHP.net search">
+ <link rel="alternate" type="application/atom+xml" href="http://php.net/releases/feed.php" title="PHP Release feed">
+ <link rel="alternate" type="application/atom+xml" href="http://php.net/feed.atom" title="PHP: Hypertext Preprocessor">
+
+ <link rel="canonical" href="http://php.net/manual/en/functions.returning-values.php">
+ <link rel="shorturl" href="http://php.net/manual/en/functions.returning-values.php">
+ <link rel="alternate" href="http://php.net/manual/en/functions.returning-values.php" hreflang="x-default">
+
+ <link rel="contents" href="http://php.net/manual/en/index.php">
+ <link rel="index" href="http://php.net/manual/en/language.functions.php">
+ <link rel="prev" href="http://php.net/manual/en/functions.arguments.php">
+ <link rel="next" href="http://php.net/manual/en/functions.variable-functions.php">
+
+ <link rel="alternate" href="http://php.net/manual/en/functions.returning-values.php" hreflang="en">
+ <link rel="alternate" href="http://php.net/manual/pt_BR/functions.returning-values.php" hreflang="pt_BR">
+ <link rel="alternate" href="http://php.net/manual/zh/functions.returning-values.php" hreflang="zh">
+ <link rel="alternate" href="http://php.net/manual/fr/functions.returning-values.php" hreflang="fr">
+ <link rel="alternate" href="http://php.net/manual/de/functions.returning-values.php" hreflang="de">
+ <link rel="alternate" href="http://php.net/manual/ja/functions.returning-values.php" hreflang="ja">
+ <link rel="alternate" href="http://php.net/manual/ro/functions.returning-values.php" hreflang="ro">
+ <link rel="alternate" href="http://php.net/manual/ru/functions.returning-values.php" hreflang="ru">
+ <link rel="alternate" href="http://php.net/manual/es/functions.returning-values.php" hreflang="es">
+ <link rel="alternate" href="http://php.net/manual/tr/functions.returning-values.php" hreflang="tr">
+
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1421837618&amp;f=/fonts/Fira/fira.css" media="screen">
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1421837618&amp;f=/fonts/Font-Awesome/css/fontello.css" media="screen">
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1478800802&amp;f=/styles/theme-base.css" media="screen">
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1449787206&amp;f=/styles/theme-medium.css" media="screen">
+
+ <!--[if lte IE 7]>
+ <link rel="stylesheet" type="text/css" href="http://php.net/styles/workarounds.ie7.css" media="screen">
+ <![endif]-->
+
+ <!--[if lte IE 8]>
+ <script type="text/javascript">
+  window.brokenIE = true;
+ </script>
+ <![endif]-->
+
+ <!--[if lte IE 9]>
+ <link rel="stylesheet" type="text/css" href="http://php.net/styles/workarounds.ie9.css" media="screen">
+ <![endif]-->
+
+ <!--[if IE]>
+ <script type="text/javascript" src="http://php.net/js/ext/html5.js"></script>
+ <![endif]-->
+
+ <base >
+
+</head>
+<body class="docs ">
+
+<nav id="head-nav" class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <a href="http://php.net/" class="brand"><img src="http://php.net/images/logos/php-logo.svg" width="48" height="24" alt="php"></a>
+    <div id="mainmenu-toggle-overlay"></div>
+    <input type="checkbox" id="mainmenu-toggle">
+    <ul class="nav">
+      <li class=""><a href="http://php.net/downloads">Downloads</a></li>
+      <li class="active"><a href="http://php.net/docs.php">Documentation</a></li>
+      <li class=""><a href="http://php.net/get-involved" >Get Involved</a></li>
+      <li class=""><a href="http://php.net/support">Help</a></li>
+    </ul>
+    <form class="navbar-search" id="topsearch" action="http://php.net/search.php">
+      <input type="hidden" name="show" value="quickref">
+      <input type="search" name="pattern" class="search-query" placeholder="Search" accesskey="s">
+    </form>
+  </div>
+  <div id="flash-message"></div>
+</nav>
+<nav id="trick"><div><dl>
+<dt><a href='http://php.net/manual/en/getting-started.php'>Getting Started</a></dt>
+	<dd><a href='http://php.net/manual/en/introduction.php'>Introduction</a></dd>
+	<dd><a href='http://php.net/manual/en/tutorial.php'>A simple tutorial</a></dd>
+<dt><a href='http://php.net/manual/en/langref.php'>Language Reference</a></dt>
+	<dd><a href='http://php.net/manual/en/language.basic-syntax.php'>Basic syntax</a></dd>
+	<dd><a href='http://php.net/manual/en/language.types.php'>Types</a></dd>
+	<dd><a href='http://php.net/manual/en/language.variables.php'>Variables</a></dd>
+	<dd><a href='http://php.net/manual/en/language.constants.php'>Constants</a></dd>
+	<dd><a href='http://php.net/manual/en/language.expressions.php'>Expressions</a></dd>
+	<dd><a href='http://php.net/manual/en/language.operators.php'>Operators</a></dd>
+	<dd><a href='http://php.net/manual/en/language.control-structures.php'>Control Structures</a></dd>
+	<dd><a href='http://php.net/manual/en/language.functions.php'>Functions</a></dd>
+	<dd><a href='http://php.net/manual/en/language.oop5.php'>Classes and Objects</a></dd>
+	<dd><a href='http://php.net/manual/en/language.namespaces.php'>Namespaces</a></dd>
+	<dd><a href='http://php.net/manual/en/language.errors.php'>Errors</a></dd>
+	<dd><a href='http://php.net/manual/en/language.exceptions.php'>Exceptions</a></dd>
+	<dd><a href='http://php.net/manual/en/language.generators.php'>Generators</a></dd>
+	<dd><a href='http://php.net/manual/en/language.references.php'>References Explained</a></dd>
+	<dd><a href='http://php.net/manual/en/reserved.variables.php'>Predefined Variables</a></dd>
+	<dd><a href='http://php.net/manual/en/reserved.exceptions.php'>Predefined Exceptions</a></dd>
+	<dd><a href='http://php.net/manual/en/reserved.interfaces.php'>Predefined Interfaces and Classes</a></dd>
+	<dd><a href='http://php.net/manual/en/context.php'>Context options and parameters</a></dd>
+	<dd><a href='http://php.net/manual/en/wrappers.php'>Supported Protocols and Wrappers</a></dd>
+</dl>
+<dl>
+<dt><a href='http://php.net/manual/en/security.php'>Security</a></dt>
+	<dd><a href='http://php.net/manual/en/security.intro.php'>Introduction</a></dd>
+	<dd><a href='http://php.net/manual/en/security.general.php'>General considerations</a></dd>
+	<dd><a href='http://php.net/manual/en/security.cgi-bin.php'>Installed as CGI binary</a></dd>
+	<dd><a href='http://php.net/manual/en/security.apache.php'>Installed as an Apache module</a></dd>
+	<dd><a href='http://php.net/manual/en/security.sessions.php'>Session Security</a></dd>
+	<dd><a href='http://php.net/manual/en/security.filesystem.php'>Filesystem Security</a></dd>
+	<dd><a href='http://php.net/manual/en/security.database.php'>Database Security</a></dd>
+	<dd><a href='http://php.net/manual/en/security.errors.php'>Error Reporting</a></dd>
+	<dd><a href='http://php.net/manual/en/security.globals.php'>Using Register Globals</a></dd>
+	<dd><a href='http://php.net/manual/en/security.variables.php'>User Submitted Data</a></dd>
+	<dd><a href='http://php.net/manual/en/security.magicquotes.php'>Magic Quotes</a></dd>
+	<dd><a href='http://php.net/manual/en/security.hiding.php'>Hiding PHP</a></dd>
+	<dd><a href='http://php.net/manual/en/security.current.php'>Keeping Current</a></dd>
+<dt><a href='http://php.net/manual/en/features.php'>Features</a></dt>
+	<dd><a href='http://php.net/manual/en/features.http-auth.php'>HTTP authentication with PHP</a></dd>
+	<dd><a href='http://php.net/manual/en/features.cookies.php'>Cookies</a></dd>
+	<dd><a href='http://php.net/manual/en/features.sessions.php'>Sessions</a></dd>
+	<dd><a href='http://php.net/manual/en/features.xforms.php'>Dealing with XForms</a></dd>
+	<dd><a href='http://php.net/manual/en/features.file-upload.php'>Handling file uploads</a></dd>
+	<dd><a href='http://php.net/manual/en/features.remote-files.php'>Using remote files</a></dd>
+	<dd><a href='http://php.net/manual/en/features.connection-handling.php'>Connection handling</a></dd>
+	<dd><a href='http://php.net/manual/en/features.persistent-connections.php'>Persistent Database Connections</a></dd>
+	<dd><a href='http://php.net/manual/en/features.safe-mode.php'>Safe Mode</a></dd>
+	<dd><a href='http://php.net/manual/en/features.commandline.php'>Command line usage</a></dd>
+	<dd><a href='http://php.net/manual/en/features.gc.php'>Garbage Collection</a></dd>
+	<dd><a href='http://php.net/manual/en/features.dtrace.php'>DTrace Dynamic Tracing</a></dd>
+</dl>
+<dl>
+<dt><a href='http://php.net/manual/en/funcref.php'>Function Reference</a></dt>
+	<dd><a href='http://php.net/manual/en/refs.basic.php.php'>Affecting PHP's Behaviour</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.audio.php'>Audio Formats Manipulation</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.remote.auth.php'>Authentication Services</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.cmdline.php'>Command Line Specific Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.compression.php'>Compression and Archive Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.creditcard.php'>Credit Card Processing</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.crypto.php'>Cryptography Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.database.php'>Database Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.calendar.php'>Date and Time Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.fileprocess.file.php'>File System Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.international.php'>Human Language and Character Encoding Support</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.image.php'>Image Processing and Generation</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.remote.mail.php'>Mail Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.math.php'>Mathematical Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.nontext.php'>Non-Text MIME Output</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.fileprocess.process.php'>Process Control Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.other.php'>Other Basic Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.remote.other.php'>Other Services</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.search.php'>Search Engine Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.server.php'>Server Specific Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.session.php'>Session Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.text.php'>Text Processing</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.vartype.php'>Variable and Type Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.webservice.php'>Web Services</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.windows.php'>Windows Only Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.xml.php'>XML Manipulation</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.ui.php'>GUI Extensions</a></dd>
+</dl>
+<dl>
+<dt>Keyboard Shortcuts</dt><dt>?</dt>
+<dd>This help</dd>
+<dt>j</dt>
+<dd>Next menu item</dd>
+<dt>k</dt>
+<dd>Previous menu item</dd>
+<dt>g p</dt>
+<dd>Previous man page</dd>
+<dt>g n</dt>
+<dd>Next man page</dd>
+<dt>G</dt>
+<dd>Scroll to bottom</dd>
+<dt>g g</dt>
+<dd>Scroll to top</dd>
+<dt>g h</dt>
+<dd>Goto homepage</dd>
+<dt>g s</dt>
+<dd>Goto search<br>(current page)</dd>
+<dt>/</dt>
+<dd>Focus search box</dd>
+</dl></div></nav>
+<div id="goto">
+    <div class="search">
+         <div class="text"></div>
+         <div class="results"><ul></ul></div>
+   </div>
+</div>
+
+  <div id="breadcrumbs" class="clearfix">
+    <div id="breadcrumbs-inner">
+          <div class="next">
+        <a href="http://php.net/manual/en/functions.variable-functions.php">
+          Variable functions &raquo;
+        </a>
+      </div>
+              <div class="prev">
+        <a href="http://php.net/manual/en/functions.arguments.php">
+          &laquo; Function arguments        </a>
+      </div>
+          <ul>
+            <li><a href='http://php.net/manual/en/index.php'>PHP Manual</a></li>      <li><a href='http://php.net/manual/en/langref.php'>Language Reference</a></li>      <li><a href='http://php.net/manual/en/language.functions.php'>Functions</a></li>      </ul>
+    </div>
+  </div>
+
+
+
+
+<div id="layout" class="clearfix">
+  <section id="layout-content">
+  <div class="page-tools">
+    <div class="change-language">
+      <form action="http://php.net/manual/change.php" method="get" id="changelang" name="changelang">
+        <fieldset>
+          <label for="changelang-langs">Change language:</label>
+          <select onchange="document.changelang.submit()" name="page" id="changelang-langs">
+            <option value='en/functions.returning-values.php' selected="selected">English</option>
+            <option value='http://php.net/manual/en/pt_BR/functions.returning-values.php'>Brazilian Portuguese</option>
+            <option value='http://php.net/manual/en/zh/functions.returning-values.php'>Chinese (Simplified)</option>
+            <option value='http://php.net/manual/en/fr/functions.returning-values.php'>French</option>
+            <option value='http://php.net/manual/en/de/functions.returning-values.php'>German</option>
+            <option value='http://php.net/manual/en/ja/functions.returning-values.php'>Japanese</option>
+            <option value='http://php.net/manual/en/ro/functions.returning-values.php'>Romanian</option>
+            <option value='http://php.net/manual/en/ru/functions.returning-values.php'>Russian</option>
+            <option value='http://php.net/manual/en/es/functions.returning-values.php'>Spanish</option>
+            <option value='http://php.net/manual/en/tr/functions.returning-values.php'>Turkish</option>
+            <option value="http://php.net/manual/en/help-translate.php">Other</option>
+          </select>
+        </fieldset>
+      </form>
+    </div>
+    <div class="edit-bug">
+      <a href="https://edit.php.net/?project=PHP&amp;perm=en/functions.returning-values.php">Edit</a>
+      <a href="https://bugs.php.net/report.php?bug_type=Documentation+problem&amp;manpage=functions.returning-values">Report a Bug</a>
+    </div>
+  </div><div id="functions.returning-values" class="sect1">
+   <h2 class="title">Returning values</h2>
+ 
+   <p class="para">
+    Values are returned by using the optional return statement. Any
+    type may be returned, including arrays and objects. This causes the
+    function to end its execution immediately and pass control back to
+    the line from which it was called. See <span class="function"><a href="http://php.net/manual/en/function.return.php" class="function">return</a></span>
+    for more information.
+   </p>
+
+   <blockquote class="note"><p><strong class="note">Note</strong>: 
+    <p class="para">
+     If the <span class="function"><a href="http://php.net/manual/en/function.return.php" class="function">return</a></span> is omitted the value <strong><code>NULL</code></strong> will be
+     returned.
+    </p>
+   </p></blockquote>
+
+   <div class="sect2">
+    <h3 class="title">Use of return</h3>
+   <p class="para">
+    <div class="example" id="example-153">
+     <p><strong>Example #1 Use of <span class="function"><a href="http://php.net/manual/en/function.return.php" class="function">return</a></span></strong></p>
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">square</span><span style="color: #007700">(</span><span style="color: #0000BB">$num</span><span style="color: #007700">)<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">$num&nbsp;</span><span style="color: #007700">*&nbsp;</span><span style="color: #0000BB">$num</span><span style="color: #007700">;<br />}<br />echo&nbsp;</span><span style="color: #0000BB">square</span><span style="color: #007700">(</span><span style="color: #0000BB">4</span><span style="color: #007700">);&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;outputs&nbsp;'16'.<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+     </div>
+
+    </div>
+   </p>
+      
+   <p class="para">
+    A function can not return multiple values, but similar results can be
+    obtained by returning an array.
+   </p>
+   <p class="para">
+    <div class="example" id="example-154">
+     <p><strong>Example #2 Returning an array to get multiple values</strong></p>
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">small_numbers</span><span style="color: #007700">()<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;array&nbsp;(</span><span style="color: #0000BB">0</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">);<br />}<br />list&nbsp;(</span><span style="color: #0000BB">$zero</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$one</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$two</span><span style="color: #007700">)&nbsp;=&nbsp;</span><span style="color: #0000BB">small_numbers</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+     </div>
+
+    </div>
+   </p>
+   <p class="para">
+    To return a reference from a function, use the reference operator &amp; in
+    both the function declaration and when assigning the returned value to a
+    variable:
+   </p>
+   <p class="para">
+    <div class="example" id="example-155">
+     <p><strong>Example #3 Returning a reference from a function</strong></p>
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;&amp;</span><span style="color: #0000BB">returns_reference</span><span style="color: #007700">()<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">$someref</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #0000BB">$newref&nbsp;</span><span style="color: #007700">=&amp;&nbsp;</span><span style="color: #0000BB">returns_reference</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+     </div>
+
+    </div>
+   </p>
+   <p class="simpara">
+    For more information on references, please check out <a href="http://php.net/manual/en/language.references.php" class="link">References Explained</a>.
+   </p>
+  </div>   
+
+  <div class="sect2" id="functions.returning-values.type-declaration">
+   <h3 class="title">Return type declarations</h3>
+
+   <p class="para">
+    PHP 7 adds support for return type declarations. Similarly to
+    <a href="http://php.net/manual/en/functions.arguments.php#functions.arguments.type-declaration" class="link">argument type declarations</a>,
+    return type declarations specify the type of the value that will be
+    returned from a function. The same
+    <a href="http://php.net/manual/en/functions.arguments.php#functions.arguments.type-declaration.types" class="link">types</a>
+    are available for return type declarations as are available for argument
+    type declarations.
+   </p>
+
+   <p class="para">
+    <a href="http://php.net/manual/en/functions.arguments.php#functions.arguments.type-declaration.strict" class="link">Strict typing</a>
+    also has an effect on return type declarations. In the default weak mode,
+    returned values will be coerced to the correct type if they are not
+    already of that type. In strong mode, the returned value must be of the
+    correct type, otherwise a <a href="http://php.net/manual/en/class.typeerror.php" class="classname">TypeError</a> will be thrown.
+   </p>
+
+   <blockquote class="note"><p><strong class="note">Note</strong>: 
+    <p class="para">
+     When overriding a parent method, the child&#039;s method must match any return
+     type declaration on the parent. If the parent doesn&#039;t define a return
+     type, then the child method may do so.
+    </p>
+   </p></blockquote>
+
+   <div class="sect3" id="functions.returning-values.type-declaration.examples">
+    <h4 class="title">Examples</h4>
+
+    <div class="example" id="example-156">
+     <p><strong>Example #4 Basic return type declaration</strong></p>
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">sum</span><span style="color: #007700">(</span><span style="color: #0000BB">$a</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$b</span><span style="color: #007700">):&nbsp;</span><span style="color: #0000BB">float&nbsp;</span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">+&nbsp;</span><span style="color: #0000BB">$b</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #FF8000">//&nbsp;Note&nbsp;that&nbsp;a&nbsp;float&nbsp;will&nbsp;be&nbsp;returned.<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">sum</span><span style="color: #007700">(</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+      </div>
+
+      <div class="example-contents"><p>The above example will output:</p></div>
+      <div class="example-contents screen">
+<div class="cdata"><pre>
+float(3)
+</pre></div>
+      </div>
+     </div>
+
+     <div class="example" id="example-157">
+      <p><strong>Example #5 Strict mode in action</strong></p>
+      <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">declare(</span><span style="color: #0000BB">strict_types</span><span style="color: #007700">=</span><span style="color: #0000BB">1</span><span style="color: #007700">);<br /><br />function&nbsp;</span><span style="color: #0000BB">sum</span><span style="color: #007700">(</span><span style="color: #0000BB">$a</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$b</span><span style="color: #007700">):&nbsp;</span><span style="color: #0000BB">int&nbsp;</span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;</span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">+&nbsp;</span><span style="color: #0000BB">$b</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">sum</span><span style="color: #007700">(</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">sum</span><span style="color: #007700">(</span><span style="color: #0000BB">1</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">2.5</span><span style="color: #007700">));<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+      </div>
+
+      <div class="example-contents"><p>The above example will output:</p></div>
+      <div class="example-contents screen">
+<div class="cdata"><pre>
+int(3)
+
+Fatal error: Uncaught TypeError: Return value of sum() must be of the type integer, float returned in - on line 5 in -:5
+Stack trace:
+#0 -(9): sum(1, 2.5)
+#1 {main}
+  thrown in - on line 5
+</pre></div>
+      </div>
+     </div>
+
+     <div class="example" id="example-158">
+      <p><strong>Example #6 Returning an object</strong></p>
+      <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">C&nbsp;</span><span style="color: #007700">{}<br /><br />function&nbsp;</span><span style="color: #0000BB">getC</span><span style="color: #007700">():&nbsp;</span><span style="color: #0000BB">C&nbsp;</span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;new&nbsp;</span><span style="color: #0000BB">C</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #0000BB">var_dump</span><span style="color: #007700">(</span><span style="color: #0000BB">getC</span><span style="color: #007700">());<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+      </div>
+
+      <div class="example-contents"><p>The above example will output:</p></div>
+      <div class="example-contents screen">
+<div class="cdata"><pre>
+object(C)#1 (0) {
+}
+</pre></div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+<section id="usernotes">
+ <div class="head">
+  <span class="action"><a href="http://php.net/manual/add-note.php?sect=functions.returning-values&amp;redirect=http://php.net/manual/en/functions.returning-values.php"><img src='http://php.net/images/notes-add@2x.png' alt='add a note' width='12' height='12'> <small>add a note</small></a></span>
+  <h3 class="title">User Contributed Notes <span class="count">11 notes</span></h3>
+ </div><div id="allnotes">
+  <div class="note" id="120402">  <div class="votes">
+    <div id="Vu120402">
+    <a href="http://php.net/manual/vote-note.php?id=120402&amp;page=functions.returning-values&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd120402">
+    <a href="http://php.net/manual/vote-note.php?id=120402&amp;page=functions.returning-values&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V120402" title="82% like this...">
+    11
+    </div>
+  </div>
+  <a href="#120402" class="name">
+  <strong class="user"><em>ryan dot jentzsch at gmail dot com</em></strong></a><a class="genanchor" href="#120402"> &para;</a><div class="date" title="2017-01-02 06:40"><strong>11 months ago</strong></div>
+  <div class="text" id="Hcom120402">
+<div class="phpcode"><code><span class="html">
+PHP 7.1 allows for void and null return types by preceding the type declaration with a ? -- (e.g. function canReturnNullorString(): ?string) <br /><br />However resource is not allowed as a return type:<br /><br /><span class="default">&lt;?php<br /></span><span class="keyword">function </span><span class="default">fileOpen</span><span class="keyword">(</span><span class="default">string $fileName</span><span class="keyword">, </span><span class="default">string $mode</span><span class="keyword">): </span><span class="default">resource<br /></span><span class="keyword">{<br />&nbsp; &nbsp; </span><span class="default">$handle </span><span class="keyword">= </span><span class="default">fopen</span><span class="keyword">(</span><span class="default">$fileName</span><span class="keyword">, </span><span class="default">$mode</span><span class="keyword">);<br />&nbsp; &nbsp; if (</span><span class="default">$handle </span><span class="keyword">!== </span><span class="default">false</span><span class="keyword">)<br />&nbsp; &nbsp; {<br />&nbsp; &nbsp; &nbsp; &nbsp; return </span><span class="default">$handle</span><span class="keyword">;<br />&nbsp; &nbsp; }<br />}<br /><br /></span><span class="default">$resourceHandle </span><span class="keyword">= </span><span class="default">fileOpen</span><span class="keyword">(</span><span class="string">"myfile.txt"</span><span class="keyword">, </span><span class="string">"r"</span><span class="keyword">);<br /></span><span class="default">?&gt;<br /></span><br />Errors with:<br />Fatal error: Uncaught TypeError: Return value of fileOpen() must be an instance of resource, resource returned.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="99660">  <div class="votes">
+    <div id="Vu99660">
+    <a href="http://php.net/manual/vote-note.php?id=99660&amp;page=functions.returning-values&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd99660">
+    <a href="http://php.net/manual/vote-note.php?id=99660&amp;page=functions.returning-values&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V99660" title="60% like this...">
+    26
+    </div>
+  </div>
+  <a href="#99660" class="name">
+  <strong class="user"><em>rstaveley at seseit dot com</em></strong></a><a class="genanchor" href="#99660"> &para;</a><div class="date" title="2010-08-29 01:26"><strong>7 years ago</strong></div>
+  <div class="text" id="Hcom99660">
+<div class="phpcode"><code><span class="html">
+Developers with a C background may expect pass by reference semantics for arrays. It may be surprising that&nbsp; pass by value is used for arrays just like scalars. Objects are implicitly passed by reference.<br /><br /><span class="default">&lt;?php<br /><br /></span><span class="comment"># (1) Objects are always passed by reference and returned by reference<br /><br /></span><span class="keyword">class </span><span class="default">Obj </span><span class="keyword">{<br />&nbsp; &nbsp; public </span><span class="default">$x</span><span class="keyword">;<br />}<br /><br />function </span><span class="default">obj_inc_x</span><span class="keyword">(</span><span class="default">$obj</span><span class="keyword">) {<br />&nbsp; &nbsp; </span><span class="default">$obj</span><span class="keyword">-&gt;</span><span class="default">x</span><span class="keyword">++;<br />&nbsp; &nbsp; return </span><span class="default">$obj</span><span class="keyword">;<br />}<br /><br /></span><span class="default">$obj </span><span class="keyword">= new </span><span class="default">Obj</span><span class="keyword">();<br /></span><span class="default">$obj</span><span class="keyword">-&gt;</span><span class="default">x </span><span class="keyword">= </span><span class="default">1</span><span class="keyword">;<br /><br /></span><span class="default">$obj2 </span><span class="keyword">= </span><span class="default">obj_inc_x</span><span class="keyword">(</span><span class="default">$obj</span><span class="keyword">);<br /></span><span class="default">obj_inc_x</span><span class="keyword">(</span><span class="default">$obj2</span><span class="keyword">);<br /><br />print </span><span class="default">$obj</span><span class="keyword">-&gt;</span><span class="default">x </span><span class="keyword">. </span><span class="string">', ' </span><span class="keyword">. </span><span class="default">$obj2</span><span class="keyword">-&gt;</span><span class="default">x </span><span class="keyword">. </span><span class="string">"\n"</span><span class="keyword">;<br /><br /></span><span class="comment"># (2) Scalars are not passed by reference or returned as such<br /><br /></span><span class="keyword">function </span><span class="default">scalar_inc_x</span><span class="keyword">(</span><span class="default">$x</span><span class="keyword">) {<br />&nbsp; &nbsp; </span><span class="default">$x</span><span class="keyword">++;<br />&nbsp; &nbsp; return </span><span class="default">$x</span><span class="keyword">;<br />}<br /><br /></span><span class="default">$x </span><span class="keyword">= </span><span class="default">1</span><span class="keyword">;<br /><br /></span><span class="default">$x2 </span><span class="keyword">= </span><span class="default">scalar_inc_x</span><span class="keyword">(</span><span class="default">$x</span><span class="keyword">);<br /></span><span class="default">scalar_inc_x</span><span class="keyword">(</span><span class="default">$x2</span><span class="keyword">);<br /><br />print </span><span class="default">$x </span><span class="keyword">. </span><span class="string">', ' </span><span class="keyword">. </span><span class="default">$x2 </span><span class="keyword">. </span><span class="string">"\n"</span><span class="keyword">;<br /><br /></span><span class="comment"># (3) You have to force pass by reference and return by reference on scalars<br /><br /></span><span class="keyword">function &amp;</span><span class="default">scalar_ref_inc_x</span><span class="keyword">(&amp;</span><span class="default">$x</span><span class="keyword">) {<br />&nbsp; &nbsp; </span><span class="default">$x</span><span class="keyword">++;<br />&nbsp; &nbsp; return </span><span class="default">$x</span><span class="keyword">;<br />}<br /><br /></span><span class="default">$x </span><span class="keyword">= </span><span class="default">1</span><span class="keyword">;<br /><br /></span><span class="default">$x2 </span><span class="keyword">=&amp; </span><span class="default">scalar_ref_inc_x</span><span class="keyword">(</span><span class="default">$x</span><span class="keyword">);&nbsp; &nbsp; </span><span class="comment"># Need reference here as well as the function sig<br /></span><span class="default">scalar_ref_inc_x</span><span class="keyword">(</span><span class="default">$x2</span><span class="keyword">);<br /><br />print </span><span class="default">$x </span><span class="keyword">. </span><span class="string">', ' </span><span class="keyword">. </span><span class="default">$x2 </span><span class="keyword">. </span><span class="string">"\n"</span><span class="keyword">;<br /><br /></span><span class="comment"># (4) Arrays use pass by value sematics just like scalars<br /><br /></span><span class="keyword">function </span><span class="default">array_inc_x</span><span class="keyword">(</span><span class="default">$array</span><span class="keyword">) {<br />&nbsp; &nbsp; </span><span class="default">$array</span><span class="keyword">{</span><span class="string">'x'</span><span class="keyword">}++;<br />&nbsp; &nbsp; return </span><span class="default">$array</span><span class="keyword">;<br />}<br /><br /></span><span class="default">$array </span><span class="keyword">= array();<br /></span><span class="default">$array</span><span class="keyword">[</span><span class="string">'x'</span><span class="keyword">] = </span><span class="default">1</span><span class="keyword">;<br /><br /></span><span class="default">$array2 </span><span class="keyword">= </span><span class="default">array_inc_x</span><span class="keyword">(</span><span class="default">$array</span><span class="keyword">);<br /></span><span class="default">array_inc_x</span><span class="keyword">(</span><span class="default">$array2</span><span class="keyword">);<br /><br />print </span><span class="default">$array</span><span class="keyword">[</span><span class="string">'x'</span><span class="keyword">] . </span><span class="string">', ' </span><span class="keyword">. </span><span class="default">$array2</span><span class="keyword">[</span><span class="string">'x'</span><span class="keyword">] . </span><span class="string">"\n"</span><span class="keyword">;<br /><br /></span><span class="comment"># (5) You have to force pass by reference and return by reference on arrays<br /><br /></span><span class="keyword">function &amp;</span><span class="default">array_ref_inc_x</span><span class="keyword">(&amp;</span><span class="default">$array</span><span class="keyword">) {<br />&nbsp; &nbsp; </span><span class="default">$array</span><span class="keyword">{</span><span class="string">'x'</span><span class="keyword">}++;<br />&nbsp; &nbsp; return </span><span class="default">$array</span><span class="keyword">;<br />}<br /><br /></span><span class="default">$array </span><span class="keyword">= array();<br /></span><span class="default">$array</span><span class="keyword">[</span><span class="string">'x'</span><span class="keyword">] = </span><span class="default">1</span><span class="keyword">;<br /><br /></span><span class="default">$array2 </span><span class="keyword">=&amp; </span><span class="default">array_ref_inc_x</span><span class="keyword">(</span><span class="default">$array</span><span class="keyword">); </span><span class="comment"># Need reference here as well as the function sig<br /></span><span class="default">array_ref_inc_x</span><span class="keyword">(</span><span class="default">$array2</span><span class="keyword">);<br /><br />print </span><span class="default">$array</span><span class="keyword">[</span><span class="string">'x'</span><span class="keyword">] . </span><span class="string">', ' </span><span class="keyword">. </span><span class="default">$array2</span><span class="keyword">[</span><span class="string">'x'</span><span class="keyword">] . </span><span class="string">"\n"</span><span class="keyword">;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="82116">  <div class="votes">
+    <div id="Vu82116">
+    <a href="http://php.net/manual/vote-note.php?id=82116&amp;page=functions.returning-values&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd82116">
+    <a href="http://php.net/manual/vote-note.php?id=82116&amp;page=functions.returning-values&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V82116" title="58% like this...">
+    15
+    </div>
+  </div>
+  <a href="#82116" class="name">
+  <strong class="user"><em>bgalloway at citycarshare dot org</em></strong></a><a class="genanchor" href="#82116"> &para;</a><div class="date" title="2008-03-27 06:27"><strong>9 years ago</strong></div>
+  <div class="text" id="Hcom82116">
+<div class="phpcode"><code><span class="html">
+Be careful about using "do this thing or die()" logic in your return lines.&nbsp; It doesn't work as you'd expect:<br /><br /><span class="default">&lt;?php<br /></span><span class="keyword">function </span><span class="default">myfunc1</span><span class="keyword">() {<br />&nbsp; &nbsp; return(</span><span class="string">'thingy' </span><span class="keyword">or die(</span><span class="string">'otherthingy'</span><span class="keyword">));<br />}<br />function </span><span class="default">myfunc2</span><span class="keyword">() {<br />&nbsp; &nbsp; return </span><span class="string">'thingy' </span><span class="keyword">or die(</span><span class="string">'otherthingy'</span><span class="keyword">);<br />}<br />function </span><span class="default">myfunc3</span><span class="keyword">() {<br />&nbsp; &nbsp; return(</span><span class="string">'thingy'</span><span class="keyword">) or die(</span><span class="string">'otherthingy'</span><span class="keyword">);<br />}<br />function </span><span class="default">myfunc4</span><span class="keyword">() {<br />&nbsp; &nbsp; return </span><span class="string">'thingy' </span><span class="keyword">or </span><span class="string">'otherthingy'</span><span class="keyword">;<br />}<br />function </span><span class="default">myfunc5</span><span class="keyword">() {<br />&nbsp; &nbsp; </span><span class="default">$x </span><span class="keyword">= </span><span class="string">'thingy' </span><span class="keyword">or </span><span class="string">'otherthingy'</span><span class="keyword">; return </span><span class="default">$x</span><span class="keyword">;<br />}<br />echo </span><span class="default">myfunc1</span><span class="keyword">(). </span><span class="string">"\n"</span><span class="keyword">. </span><span class="default">myfunc2</span><span class="keyword">(). </span><span class="string">"\n"</span><span class="keyword">. </span><span class="default">myfunc3</span><span class="keyword">(). </span><span class="string">"\n"</span><span class="keyword">. </span><span class="default">myfunc4</span><span class="keyword">(). </span><span class="string">"\n"</span><span class="keyword">. </span><span class="default">myfunc5</span><span class="keyword">(). </span><span class="string">"\n"</span><span class="keyword">;<br /></span><span class="default">?&gt;<br /></span><br />Only myfunc5() returns 'thingy' - the rest return 1.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="117906">  <div class="votes">
+    <div id="Vu117906">
+    <a href="http://php.net/manual/vote-note.php?id=117906&amp;page=functions.returning-values&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd117906">
+    <a href="http://php.net/manual/vote-note.php?id=117906&amp;page=functions.returning-values&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V117906" title="59% like this...">
+    12
+    </div>
+  </div>
+  <a href="#117906" class="name">
+  <strong class="user"><em>ryan dot jentzsch at gmail dot com</em></strong></a><a class="genanchor" href="#117906"> &para;</a><div class="date" title="2015-08-30 06:12"><strong>2 years ago</strong></div>
+  <div class="text" id="Hcom117906">
+<div class="phpcode"><code><span class="html">
+PHP 7 return types if specified can not return a null.<br />For example:<br /><span class="default">&lt;?php<br /></span><span class="keyword">declare(</span><span class="default">strict_types</span><span class="keyword">=</span><span class="default">1</span><span class="keyword">);<br /><br />function </span><span class="default">add2ints</span><span class="keyword">(</span><span class="default">int $x</span><span class="keyword">, </span><span class="default">int $y</span><span class="keyword">):</span><span class="default">int<br /></span><span class="keyword">{<br />&nbsp; &nbsp; </span><span class="default">$z </span><span class="keyword">= </span><span class="default">$x </span><span class="keyword">+ </span><span class="default">$y</span><span class="keyword">;<br />&nbsp; &nbsp; if (</span><span class="default">$z</span><span class="keyword">===</span><span class="default">0</span><span class="keyword">)<br />&nbsp; &nbsp; {<br />&nbsp; &nbsp; &nbsp; &nbsp; return </span><span class="default">null</span><span class="keyword">;<br />&nbsp; &nbsp; }<br />&nbsp; &nbsp; return </span><span class="default">$z</span><span class="keyword">;<br />}<br /></span><span class="default">$a </span><span class="keyword">= </span><span class="default">add2ints</span><span class="keyword">(</span><span class="default">3</span><span class="keyword">, </span><span class="default">4</span><span class="keyword">);<br />echo </span><span class="default">is_null</span><span class="keyword">(</span><span class="default">$a</span><span class="keyword">) ? </span><span class="string">'Null' </span><span class="keyword">: </span><span class="default">$a</span><span class="keyword">;<br /></span><span class="default">$b </span><span class="keyword">= </span><span class="default">add2ints</span><span class="keyword">(-</span><span class="default">2</span><span class="keyword">, </span><span class="default">2</span><span class="keyword">);<br />echo </span><span class="default">is_null</span><span class="keyword">(</span><span class="default">$b</span><span class="keyword">) ? </span><span class="string">'Null' </span><span class="keyword">: </span><span class="default">$b</span><span class="keyword">;<br />exit();<br /><br /></span><span class="default">Output</span><span class="keyword">:<br /></span><span class="default">7<br />Process finished with </span><span class="keyword">exit </span><span class="default">code 139</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="34686">  <div class="votes">
+    <div id="Vu34686">
+    <a href="http://php.net/manual/vote-note.php?id=34686&amp;page=functions.returning-values&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd34686">
+    <a href="http://php.net/manual/vote-note.php?id=34686&amp;page=functions.returning-values&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V34686" title="60% like this...">
+    12
+    </div>
+  </div>
+  <a href="#34686" class="name">
+  <strong class="user"><em>nick at itomic.com</em></strong></a><a class="genanchor" href="#34686"> &para;</a><div class="date" title="2003-08-04 12:56"><strong>14 years ago</strong></div>
+  <div class="text" id="Hcom34686">
+<div class="phpcode"><code><span class="html">
+Functions which return references, may return a NULL value. This is inconsistent with the fact that function parameters passed by reference can't be passed as NULL (or in fact anything which isnt a variable).<br /><br />i.e.<br /><br /><span class="default">&lt;?php<br /><br /></span><span class="keyword">function &amp;</span><span class="default">testRet</span><span class="keyword">()<br />{<br />&nbsp; &nbsp; return </span><span class="default">NULL</span><span class="keyword">;<br />}<br /><br />if (</span><span class="default">testRet</span><span class="keyword">() === </span><span class="default">NULL</span><span class="keyword">)<br />{<br />&nbsp; &nbsp; echo </span><span class="string">"NULL"</span><span class="keyword">;<br />}<br /></span><span class="default">?&gt;<br /></span><br />parses fine and echoes NULL</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="120352">  <div class="votes">
+    <div id="Vu120352">
+    <a href="http://php.net/manual/vote-note.php?id=120352&amp;page=functions.returning-values&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd120352">
+    <a href="http://php.net/manual/vote-note.php?id=120352&amp;page=functions.returning-values&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V120352" title="55% like this...">
+    1
+    </div>
+  </div>
+  <a href="#120352" class="name">
+  <strong class="user"><em>k-gun !! mail</em></strong></a><a class="genanchor" href="#120352"> &para;</a><div class="date" title="2016-12-19 10:50"><strong>11 months ago</strong></div>
+  <div class="text" id="Hcom120352">
+<div class="phpcode"><code><span class="html">
+With 7.1, these are possible yet;<br /><br /><span class="default">&lt;?php<br /></span><span class="keyword">function </span><span class="default">ret_void</span><span class="keyword">(): </span><span class="default">void </span><span class="keyword">{<br />&nbsp; &nbsp; </span><span class="comment">// do something but no return any value<br />&nbsp; &nbsp; // if needs to break fn exec for any reason simply write return;<br />&nbsp; &nbsp; </span><span class="keyword">if (...) {<br />&nbsp; &nbsp; &nbsp; &nbsp; return; </span><span class="comment">// break<br />&nbsp; &nbsp; &nbsp; &nbsp; // return null; // even this NO!<br />&nbsp; &nbsp; </span><span class="keyword">}<br /><br />&nbsp; &nbsp; </span><span class="default">$db</span><span class="keyword">-&gt;</span><span class="default">doSomething</span><span class="keyword">();<br />&nbsp; &nbsp; </span><span class="comment">// no need return call anymore <br /></span><span class="keyword">}<br /><br />function </span><span class="default">ret_nullable</span><span class="keyword">() ?</span><span class="default">int </span><span class="keyword">{<br />&nbsp; &nbsp; if (...) {<br />&nbsp; &nbsp; &nbsp; &nbsp; return </span><span class="default">123</span><span class="keyword">;<br />&nbsp; &nbsp; } else {<br />&nbsp; &nbsp; &nbsp; &nbsp; return </span><span class="default">null</span><span class="keyword">; </span><span class="comment">// MUST!<br />&nbsp; &nbsp; </span><span class="keyword">}<br />}<br /></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="121751">  <div class="votes">
+    <div id="Vu121751">
+    <a href="http://php.net/manual/vote-note.php?id=121751&amp;page=functions.returning-values&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd121751">
+    <a href="http://php.net/manual/vote-note.php?id=121751&amp;page=functions.returning-values&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V121751" title="no votes...">
+    0
+    </div>
+  </div>
+  <a href="#121751" class="name">
+  <strong class="user"><em>Ahmed KOOLI</em></strong></a><a class="genanchor" href="#121751"> &para;</a><div class="date" title="2017-10-12 07:30"><strong>2 months ago</strong></div>
+  <div class="text" id="Hcom121751">
+<div class="phpcode"><code><span class="html">
+If a function/method parameter has a type declaration , then php compiler will check it the moment of invocation regardless if strict_types is set to 1 or 0 or not set at all.<br /><br />However, php will check parameters types on build in php functions when&nbsp; strict_types is set to 1;</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="119186">  <div class="votes">
+    <div id="Vu119186">
+    <a href="http://php.net/manual/vote-note.php?id=119186&amp;page=functions.returning-values&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd119186">
+    <a href="http://php.net/manual/vote-note.php?id=119186&amp;page=functions.returning-values&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V119186" title="50% like this...">
+    0
+    </div>
+  </div>
+  <a href="#119186" class="name">
+  <strong class="user"><em>Vidmantas Maskoliunas</em></strong></a><a class="genanchor" href="#119186"> &para;</a><div class="date" title="2016-04-17 10:58"><strong>1 year ago</strong></div>
+  <div class="text" id="Hcom119186">
+<div class="phpcode"><code><span class="html">
+Note: the function does not have "alternative syntax" as if/endif, while/endwhile, and colon (:) here is used to define returning type and not to mark where the block statement begins.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="28506">  <div class="votes">
+    <div id="Vu28506">
+    <a href="http://php.net/manual/vote-note.php?id=28506&amp;page=functions.returning-values&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd28506">
+    <a href="http://php.net/manual/vote-note.php?id=28506&amp;page=functions.returning-values&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V28506" title="45% like this...">
+    -5
+    </div>
+  </div>
+  <a href="#28506" class="name">
+  <strong class="user"><em>ian at NO_SPAM dot verteron dot net</em></strong></a><a class="genanchor" href="#28506"> &para;</a><div class="date" title="2003-01-15 04:28"><strong>14 years ago</strong></div>
+  <div class="text" id="Hcom28506">
+<div class="phpcode"><code><span class="html">
+In reference to the poster above, an additional (better?) way to return multiple values from a function is to use list(). For example:<br /><br />function fn($a, $b)<br />{<br />&nbsp;&nbsp; # complex stuff<br /><br />&nbsp;&nbsp; return array(<br />&nbsp; &nbsp; &nbsp; $a * $b,<br />&nbsp; &nbsp; &nbsp; $a + $b,<br />&nbsp;&nbsp; );<br />}<br /><br />list($product, $sum) = fn(3, 4);<br /><br />echo $product; # prints 12<br />echo $sum; # prints 7</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="118416">  <div class="votes">
+    <div id="Vu118416">
+    <a href="http://php.net/manual/vote-note.php?id=118416&amp;page=functions.returning-values&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd118416">
+    <a href="http://php.net/manual/vote-note.php?id=118416&amp;page=functions.returning-values&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V118416" title="38% like this...">
+    -3
+    </div>
+  </div>
+  <a href="#118416" class="name">
+  <strong class="user"><em>Nathan Salter</em></strong></a><a class="genanchor" href="#118416"> &para;</a><div class="date" title="2015-12-03 09:17"><strong>2 years ago</strong></div>
+  <div class="text" id="Hcom118416">
+<div class="phpcode"><code><span class="html">
+Just a quick clarification on whether variables are passed by reference or not. Variables are always passed using a pointer, and if the variable is modified, it is copied and re-assigned. For example:<br /><br /><span class="default">&lt;?php<br /><br /></span><span class="keyword">function </span><span class="default">byPointer</span><span class="keyword">(</span><span class="default">$x</span><span class="keyword">) {<br />&nbsp; &nbsp; return </span><span class="default">$x </span><span class="keyword">/ </span><span class="default">3</span><span class="keyword">; </span><span class="comment">// Does not modify or create a copy of $x<br /></span><span class="keyword">}<br /><br />function </span><span class="default">copied</span><span class="keyword">(</span><span class="default">$x</span><span class="keyword">) {<br />&nbsp; &nbsp; </span><span class="default">$x</span><span class="keyword">++; </span><span class="comment">// At this point, creates a copy of $x to be used in local scope<br />&nbsp; &nbsp; </span><span class="keyword">return </span><span class="default">$x</span><span class="keyword">;<br />}<br /><br />class </span><span class="default">Obj </span><span class="keyword">{<br />&nbsp; &nbsp; public function </span><span class="default">performAction</span><span class="keyword">() {}<br />&nbsp; &nbsp; public </span><span class="default">$y</span><span class="keyword">;<br />}<br /><br />function </span><span class="default">objPointer</span><span class="keyword">(</span><span class="default">Obj $x</span><span class="keyword">) {<br />&nbsp; &nbsp; </span><span class="default">$x</span><span class="keyword">-&gt;</span><span class="default">performAction</span><span class="keyword">(); </span><span class="comment">//works on $x<br />&nbsp; &nbsp; </span><span class="default">$x</span><span class="keyword">-&gt;</span><span class="default">y </span><span class="keyword">= </span><span class="string">'150'</span><span class="keyword">; </span><span class="comment">//works on $x<br />&nbsp; &nbsp; </span><span class="default">$x </span><span class="keyword">= new </span><span class="default">Obj</span><span class="keyword">(); </span><span class="comment">// Does not modify $x outside of function<br />&nbsp; &nbsp; </span><span class="default">$x</span><span class="keyword">-&gt;</span><span class="default">y </span><span class="keyword">= </span><span class="string">'250'</span><span class="keyword">;<br />}<br /><br />function </span><span class="default">objReference</span><span class="keyword">(</span><span class="default">Obj </span><span class="keyword">&amp;</span><span class="default">$x</span><span class="keyword">) {<br />&nbsp; &nbsp; </span><span class="default">$x</span><span class="keyword">-&gt;</span><span class="default">performAction</span><span class="keyword">(); </span><span class="comment">//works on $x<br />&nbsp; &nbsp; </span><span class="default">$x</span><span class="keyword">-&gt;</span><span class="default">y </span><span class="keyword">= </span><span class="string">'150'</span><span class="keyword">; </span><span class="comment">//works on $x<br />&nbsp; &nbsp; </span><span class="default">$x </span><span class="keyword">= new </span><span class="default">Obj</span><span class="keyword">(); </span><span class="comment">// Modifies original $x outside of function<br />&nbsp; &nbsp; </span><span class="default">$x</span><span class="keyword">-&gt;</span><span class="default">y </span><span class="keyword">= </span><span class="string">'250'</span><span class="keyword">;<br />}<br /><br /></span><span class="default">$x </span><span class="keyword">= new </span><span class="default">Obj</span><span class="keyword">();<br /></span><span class="default">$x</span><span class="keyword">-&gt;</span><span class="default">y </span><span class="keyword">= </span><span class="string">'10'</span><span class="keyword">;<br /><br /></span><span class="default">objPointer</span><span class="keyword">(</span><span class="default">$x</span><span class="keyword">);<br /><br />echo </span><span class="string">"Post Pointer: </span><span class="keyword">{</span><span class="default">$x</span><span class="keyword">-&gt;</span><span class="default">y</span><span class="keyword">}</span><span class="string">\n"</span><span class="keyword">;<br /><br /></span><span class="default">$x</span><span class="keyword">-&gt;</span><span class="default">y </span><span class="keyword">= </span><span class="string">'10'</span><span class="keyword">;<br /></span><span class="default">objReference</span><span class="keyword">(</span><span class="default">$x</span><span class="keyword">);<br /><br />echo </span><span class="string">"Post Reference: </span><span class="keyword">{</span><span class="default">$x</span><span class="keyword">-&gt;</span><span class="default">y</span><span class="keyword">}</span><span class="string">\n"</span><span class="keyword">;<br /><br /></span><span class="default">?&gt;<br /></span><br />This will output:<br />Post Pointer: 150<br />Post Reference: 250<br /><br />So make sure when writing functions that if you want to pass by reference you actually mean by reference, and not using standard PHP pointers</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="120206">  <div class="votes">
+    <div id="Vu120206">
+    <a href="http://php.net/manual/vote-note.php?id=120206&amp;page=functions.returning-values&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd120206">
+    <a href="http://php.net/manual/vote-note.php?id=120206&amp;page=functions.returning-values&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V120206" title="21% like this...">
+    -8
+    </div>
+  </div>
+  <a href="#120206" class="name">
+  <strong class="user"><em>ortreum</em></strong></a><a class="genanchor" href="#120206"> &para;</a><div class="date" title="2016-11-22 02:20"><strong>1 year ago</strong></div>
+  <div class="text" id="Hcom120206">
+<div class="phpcode"><code><span class="html">
+I like this method of concatinating methods by returning $this. It makes my code more readable. If the returned value is not an object it will fail and you find mistakes easier.<br /><br /><span class="default">&lt;?php<br /></span><span class="keyword">class </span><span class="default">Dummy </span><span class="keyword">{<br /><br />&nbsp; &nbsp; private </span><span class="default">$result</span><span class="keyword">;<br /><br />&nbsp; &nbsp; function </span><span class="default">__construct</span><span class="keyword">()<br />&nbsp; &nbsp; {<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$this</span><span class="keyword">-&gt;</span><span class="default">result </span><span class="keyword">=<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$this<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="keyword">-&gt;</span><span class="default">setStuff</span><span class="keyword">(</span><span class="string">'abc'</span><span class="keyword">)<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; -&gt;</span><span class="default">generateResult</span><span class="keyword">()<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ;<br />&nbsp; &nbsp; }<br />&nbsp; &nbsp; <br />&nbsp; &nbsp; function </span><span class="default">setStuff</span><span class="keyword">(</span><span class="default">$value</span><span class="keyword">)<br />&nbsp; &nbsp; {<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="comment">// do something<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="keyword">return </span><span class="default">$this</span><span class="keyword">;<br />&nbsp; &nbsp; }<br /><br />&nbsp; &nbsp; function </span><span class="default">generateResult</span><span class="keyword">()<br />&nbsp; &nbsp; {<br />&nbsp; &nbsp; &nbsp; &nbsp; return [</span><span class="string">'the result'</span><span class="keyword">];<br />&nbsp; &nbsp; }<br /><br />&nbsp; &nbsp; function </span><span class="default">getResult</span><span class="keyword">()<br />&nbsp; &nbsp; {<br />&nbsp; &nbsp; &nbsp; &nbsp; return </span><span class="default">$this</span><span class="keyword">-&gt;</span><span class="default">result</span><span class="keyword">;<br />&nbsp; &nbsp; }<br /><br />}<br /></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div></div>
+
+ <div class="foot"><a href="http://php.net/manual/add-note.php?sect=functions.returning-values&amp;redirect=http://php.net/manual/en/functions.returning-values.php"><img src='http://php.net/images/notes-add@2x.png' alt='add a note' width='12' height='12'> <small>add a note</small></a></div>
+</section>    </section><!-- layout-content -->
+        <aside class='layout-menu'>
+    
+        <ul class='parent-menu-list'>
+                                    <li>
+                <a href="http://php.net/manual/en/language.functions.php">Functions</a>
+    
+                                    <ul class='child-menu-list'>
+    
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/functions.user-defined.php" title="User-&#8203;defined functions">User-&#8203;defined functions</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/functions.arguments.php" title="Function arguments">Function arguments</a>
+                        </li>
+                          
+                        <li class="current">
+                            <a href="http://php.net/manual/en/functions.returning-values.php" title="Returning values">Returning values</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/functions.variable-functions.php" title="Variable functions">Variable functions</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/functions.internal.php" title="Internal (built-&#8203;in) functions">Internal (built-&#8203;in) functions</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/functions.anonymous.php" title="Anonymous functions">Anonymous functions</a>
+                        </li>
+                            
+                    </ul>
+                    
+            </li>
+                        
+                    </ul>
+    </aside>
+
+
+  </div><!-- layout -->
+         
+  <footer>
+    <div class="container footer-content">
+      <div class="row-fluid">
+      <ul class="footmenu">
+        <li><a href="http://php.net/copyright.php">Copyright &copy; 2001-2017 The PHP Group</a></li>
+        <li><a href="http://php.net/my.php">My PHP.net</a></li>
+        <li><a href="http://php.net/contact.php">Contact</a></li>
+        <li><a href="http://php.net/sites.php">Other PHP.net sites</a></li>
+        <li><a href="http://php.net/mirrors.php">Mirror sites</a></li>
+        <li><a href="http://php.net/privacy.php">Privacy policy</a></li>
+      </ul>
+      </div>
+    </div>
+  </footer>
+
+    
+ <!-- External and third party libraries. -->
+ <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/modernizr.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/hogan-2.0.0.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/typeahead.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/mousetrap.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/search.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1500560403&amp;f=/js/common.js"></script>
+
+<a id="toTop" href="javascript:;"><span id="toTopHover"></span><img width="40" height="40" alt="To Top" src="http://php.net/images/to-top@2x.png"></a>
+
+</body>
+
+<!-- Mirrored from php.net/manual/en/functions.returning-values.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Dec 2017 23:18:11 GMT -->
+</html>
+

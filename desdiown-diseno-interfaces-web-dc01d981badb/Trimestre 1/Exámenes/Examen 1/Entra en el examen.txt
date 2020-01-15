@@ -1,0 +1,16 @@
+como es url completa:
+http://www.tiernogalvan.es:80/directorio/fichero.html?var1=value1&var2=val2
+protocolo://HOST:PUERTO/DIRECTORIO/fichero.extension?var1=val1&val2=var2
+etiquetas HTML5:
+aside -> sustituto para el div de laterales
+header -> sustituto para el div de cabecera
+footer -> sustituto para el div de pie de pagina
+nav -> sustituto para el div de navegacion
+article -> sustituto para el div de articulos
+section -> sustituto para el div de secciones
+
+atributos a conocer:
+class
+id
+lang
+title

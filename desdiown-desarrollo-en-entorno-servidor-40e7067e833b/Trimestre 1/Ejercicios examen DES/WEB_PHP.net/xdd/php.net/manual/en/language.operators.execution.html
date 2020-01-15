@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<!-- Mirrored from php.net/manual/en/language.operators.execution.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Dec 2017 23:18:10 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+  <title>PHP: Execution Operators - Manual </title>
+
+ <link rel="shortcut icon" href="http://php.net/favicon.ico">
+ <link rel="search" type="application/opensearchdescription+xml" href="http://php.net/phpnetimprovedsearch.src" title="Add PHP.net search">
+ <link rel="alternate" type="application/atom+xml" href="http://php.net/releases/feed.php" title="PHP Release feed">
+ <link rel="alternate" type="application/atom+xml" href="http://php.net/feed.atom" title="PHP: Hypertext Preprocessor">
+
+ <link rel="canonical" href="http://php.net/manual/en/language.operators.execution.php">
+ <link rel="shorturl" href="http://php.net/operators.execution">
+ <link rel="alternate" href="http://php.net/operators.execution" hreflang="x-default">
+
+ <link rel="contents" href="http://php.net/manual/en/index.php">
+ <link rel="index" href="http://php.net/manual/en/language.operators.php">
+ <link rel="prev" href="http://php.net/manual/en/language.operators.errorcontrol.php">
+ <link rel="next" href="http://php.net/manual/en/language.operators.increment.php">
+
+ <link rel="alternate" href="http://php.net/manual/en/language.operators.execution.php" hreflang="en">
+ <link rel="alternate" href="http://php.net/manual/pt_BR/language.operators.execution.php" hreflang="pt_BR">
+ <link rel="alternate" href="http://php.net/manual/zh/language.operators.execution.php" hreflang="zh">
+ <link rel="alternate" href="http://php.net/manual/fr/language.operators.execution.php" hreflang="fr">
+ <link rel="alternate" href="http://php.net/manual/de/language.operators.execution.php" hreflang="de">
+ <link rel="alternate" href="http://php.net/manual/ja/language.operators.execution.php" hreflang="ja">
+ <link rel="alternate" href="http://php.net/manual/ro/language.operators.execution.php" hreflang="ro">
+ <link rel="alternate" href="http://php.net/manual/ru/language.operators.execution.php" hreflang="ru">
+ <link rel="alternate" href="http://php.net/manual/es/language.operators.execution.php" hreflang="es">
+ <link rel="alternate" href="http://php.net/manual/tr/language.operators.execution.php" hreflang="tr">
+
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1421837618&amp;f=/fonts/Fira/fira.css" media="screen">
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1421837618&amp;f=/fonts/Font-Awesome/css/fontello.css" media="screen">
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1478800802&amp;f=/styles/theme-base.css" media="screen">
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1449787206&amp;f=/styles/theme-medium.css" media="screen">
+
+ <!--[if lte IE 7]>
+ <link rel="stylesheet" type="text/css" href="http://php.net/styles/workarounds.ie7.css" media="screen">
+ <![endif]-->
+
+ <!--[if lte IE 8]>
+ <script type="text/javascript">
+  window.brokenIE = true;
+ </script>
+ <![endif]-->
+
+ <!--[if lte IE 9]>
+ <link rel="stylesheet" type="text/css" href="http://php.net/styles/workarounds.ie9.css" media="screen">
+ <![endif]-->
+
+ <!--[if IE]>
+ <script type="text/javascript" src="http://php.net/js/ext/html5.js"></script>
+ <![endif]-->
+
+ <base >
+
+</head>
+<body class="docs ">
+
+<nav id="head-nav" class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <a href="http://php.net/" class="brand"><img src="http://php.net/images/logos/php-logo.svg" width="48" height="24" alt="php"></a>
+    <div id="mainmenu-toggle-overlay"></div>
+    <input type="checkbox" id="mainmenu-toggle">
+    <ul class="nav">
+      <li class=""><a href="http://php.net/downloads">Downloads</a></li>
+      <li class="active"><a href="http://php.net/docs.php">Documentation</a></li>
+      <li class=""><a href="http://php.net/get-involved" >Get Involved</a></li>
+      <li class=""><a href="http://php.net/support">Help</a></li>
+    </ul>
+    <form class="navbar-search" id="topsearch" action="http://php.net/search.php">
+      <input type="hidden" name="show" value="quickref">
+      <input type="search" name="pattern" class="search-query" placeholder="Search" accesskey="s">
+    </form>
+  </div>
+  <div id="flash-message"></div>
+</nav>
+<nav id="trick"><div><dl>
+<dt><a href='http://php.net/manual/en/getting-started.php'>Getting Started</a></dt>
+	<dd><a href='http://php.net/manual/en/introduction.php'>Introduction</a></dd>
+	<dd><a href='http://php.net/manual/en/tutorial.php'>A simple tutorial</a></dd>
+<dt><a href='http://php.net/manual/en/langref.php'>Language Reference</a></dt>
+	<dd><a href='http://php.net/manual/en/language.basic-syntax.php'>Basic syntax</a></dd>
+	<dd><a href='http://php.net/manual/en/language.types.php'>Types</a></dd>
+	<dd><a href='http://php.net/manual/en/language.variables.php'>Variables</a></dd>
+	<dd><a href='http://php.net/manual/en/language.constants.php'>Constants</a></dd>
+	<dd><a href='http://php.net/manual/en/language.expressions.php'>Expressions</a></dd>
+	<dd><a href='http://php.net/manual/en/language.operators.php'>Operators</a></dd>
+	<dd><a href='http://php.net/manual/en/language.control-structures.php'>Control Structures</a></dd>
+	<dd><a href='http://php.net/manual/en/language.functions.php'>Functions</a></dd>
+	<dd><a href='http://php.net/manual/en/language.oop5.php'>Classes and Objects</a></dd>
+	<dd><a href='http://php.net/manual/en/language.namespaces.php'>Namespaces</a></dd>
+	<dd><a href='http://php.net/manual/en/language.errors.php'>Errors</a></dd>
+	<dd><a href='http://php.net/manual/en/language.exceptions.php'>Exceptions</a></dd>
+	<dd><a href='http://php.net/manual/en/language.generators.php'>Generators</a></dd>
+	<dd><a href='http://php.net/manual/en/language.references.php'>References Explained</a></dd>
+	<dd><a href='http://php.net/manual/en/reserved.variables.php'>Predefined Variables</a></dd>
+	<dd><a href='http://php.net/manual/en/reserved.exceptions.php'>Predefined Exceptions</a></dd>
+	<dd><a href='http://php.net/manual/en/reserved.interfaces.php'>Predefined Interfaces and Classes</a></dd>
+	<dd><a href='http://php.net/manual/en/context.php'>Context options and parameters</a></dd>
+	<dd><a href='http://php.net/manual/en/wrappers.php'>Supported Protocols and Wrappers</a></dd>
+</dl>
+<dl>
+<dt><a href='http://php.net/manual/en/security.php'>Security</a></dt>
+	<dd><a href='http://php.net/manual/en/security.intro.php'>Introduction</a></dd>
+	<dd><a href='http://php.net/manual/en/security.general.php'>General considerations</a></dd>
+	<dd><a href='http://php.net/manual/en/security.cgi-bin.php'>Installed as CGI binary</a></dd>
+	<dd><a href='http://php.net/manual/en/security.apache.php'>Installed as an Apache module</a></dd>
+	<dd><a href='http://php.net/manual/en/security.sessions.php'>Session Security</a></dd>
+	<dd><a href='http://php.net/manual/en/security.filesystem.php'>Filesystem Security</a></dd>
+	<dd><a href='http://php.net/manual/en/security.database.php'>Database Security</a></dd>
+	<dd><a href='http://php.net/manual/en/security.errors.php'>Error Reporting</a></dd>
+	<dd><a href='http://php.net/manual/en/security.globals.php'>Using Register Globals</a></dd>
+	<dd><a href='http://php.net/manual/en/security.variables.php'>User Submitted Data</a></dd>
+	<dd><a href='http://php.net/manual/en/security.magicquotes.php'>Magic Quotes</a></dd>
+	<dd><a href='http://php.net/manual/en/security.hiding.php'>Hiding PHP</a></dd>
+	<dd><a href='http://php.net/manual/en/security.current.php'>Keeping Current</a></dd>
+<dt><a href='http://php.net/manual/en/features.php'>Features</a></dt>
+	<dd><a href='http://php.net/manual/en/features.http-auth.php'>HTTP authentication with PHP</a></dd>
+	<dd><a href='http://php.net/manual/en/features.cookies.php'>Cookies</a></dd>
+	<dd><a href='http://php.net/manual/en/features.sessions.php'>Sessions</a></dd>
+	<dd><a href='http://php.net/manual/en/features.xforms.php'>Dealing with XForms</a></dd>
+	<dd><a href='http://php.net/manual/en/features.file-upload.php'>Handling file uploads</a></dd>
+	<dd><a href='http://php.net/manual/en/features.remote-files.php'>Using remote files</a></dd>
+	<dd><a href='http://php.net/manual/en/features.connection-handling.php'>Connection handling</a></dd>
+	<dd><a href='http://php.net/manual/en/features.persistent-connections.php'>Persistent Database Connections</a></dd>
+	<dd><a href='http://php.net/manual/en/features.safe-mode.php'>Safe Mode</a></dd>
+	<dd><a href='http://php.net/manual/en/features.commandline.php'>Command line usage</a></dd>
+	<dd><a href='http://php.net/manual/en/features.gc.php'>Garbage Collection</a></dd>
+	<dd><a href='http://php.net/manual/en/features.dtrace.php'>DTrace Dynamic Tracing</a></dd>
+</dl>
+<dl>
+<dt><a href='http://php.net/manual/en/funcref.php'>Function Reference</a></dt>
+	<dd><a href='http://php.net/manual/en/refs.basic.php.php'>Affecting PHP's Behaviour</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.audio.php'>Audio Formats Manipulation</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.remote.auth.php'>Authentication Services</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.cmdline.php'>Command Line Specific Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.compression.php'>Compression and Archive Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.creditcard.php'>Credit Card Processing</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.crypto.php'>Cryptography Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.database.php'>Database Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.calendar.php'>Date and Time Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.fileprocess.file.php'>File System Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.international.php'>Human Language and Character Encoding Support</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.image.php'>Image Processing and Generation</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.remote.mail.php'>Mail Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.math.php'>Mathematical Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.nontext.php'>Non-Text MIME Output</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.fileprocess.process.php'>Process Control Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.other.php'>Other Basic Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.remote.other.php'>Other Services</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.search.php'>Search Engine Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.server.php'>Server Specific Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.session.php'>Session Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.text.php'>Text Processing</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.vartype.php'>Variable and Type Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.webservice.php'>Web Services</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.windows.php'>Windows Only Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.xml.php'>XML Manipulation</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.ui.php'>GUI Extensions</a></dd>
+</dl>
+<dl>
+<dt>Keyboard Shortcuts</dt><dt>?</dt>
+<dd>This help</dd>
+<dt>j</dt>
+<dd>Next menu item</dd>
+<dt>k</dt>
+<dd>Previous menu item</dd>
+<dt>g p</dt>
+<dd>Previous man page</dd>
+<dt>g n</dt>
+<dd>Next man page</dd>
+<dt>G</dt>
+<dd>Scroll to bottom</dd>
+<dt>g g</dt>
+<dd>Scroll to top</dd>
+<dt>g h</dt>
+<dd>Goto homepage</dd>
+<dt>g s</dt>
+<dd>Goto search<br>(current page)</dd>
+<dt>/</dt>
+<dd>Focus search box</dd>
+</dl></div></nav>
+<div id="goto">
+    <div class="search">
+         <div class="text"></div>
+         <div class="results"><ul></ul></div>
+   </div>
+</div>
+
+  <div id="breadcrumbs" class="clearfix">
+    <div id="breadcrumbs-inner">
+          <div class="next">
+        <a href="http://php.net/manual/en/language.operators.increment.php">
+          Incrementing/Decrementing Operators &raquo;
+        </a>
+      </div>
+              <div class="prev">
+        <a href="http://php.net/manual/en/language.operators.errorcontrol.php">
+          &laquo; Error Control Operators        </a>
+      </div>
+          <ul>
+            <li><a href='http://php.net/manual/en/index.php'>PHP Manual</a></li>      <li><a href='http://php.net/manual/en/langref.php'>Language Reference</a></li>      <li><a href='http://php.net/manual/en/language.operators.php'>Operators</a></li>      </ul>
+    </div>
+  </div>
+
+
+
+
+<div id="layout" class="clearfix">
+  <section id="layout-content">
+  <div class="page-tools">
+    <div class="change-language">
+      <form action="http://php.net/manual/change.php" method="get" id="changelang" name="changelang">
+        <fieldset>
+          <label for="changelang-langs">Change language:</label>
+          <select onchange="document.changelang.submit()" name="page" id="changelang-langs">
+            <option value='en/language.operators.execution.php' selected="selected">English</option>
+            <option value='http://php.net/manual/en/pt_BR/language.operators.execution.php'>Brazilian Portuguese</option>
+            <option value='http://php.net/manual/en/zh/language.operators.execution.php'>Chinese (Simplified)</option>
+            <option value='http://php.net/manual/en/fr/language.operators.execution.php'>French</option>
+            <option value='http://php.net/manual/en/de/language.operators.execution.php'>German</option>
+            <option value='http://php.net/manual/en/ja/language.operators.execution.php'>Japanese</option>
+            <option value='http://php.net/manual/en/ro/language.operators.execution.php'>Romanian</option>
+            <option value='http://php.net/manual/en/ru/language.operators.execution.php'>Russian</option>
+            <option value='http://php.net/manual/en/es/language.operators.execution.php'>Spanish</option>
+            <option value='http://php.net/manual/en/tr/language.operators.execution.php'>Turkish</option>
+            <option value="http://php.net/manual/en/help-translate.php">Other</option>
+          </select>
+        </fieldset>
+      </form>
+    </div>
+    <div class="edit-bug">
+      <a href="https://edit.php.net/?project=PHP&amp;perm=en/language.operators.execution.php">Edit</a>
+      <a href="https://bugs.php.net/report.php?bug_type=Documentation+problem&amp;manpage=language.operators.execution">Report a Bug</a>
+    </div>
+  </div><div id="language.operators.execution" class="sect1">
+   <h2 class="title">Execution Operators</h2>
+   <p class="para">
+    PHP supports one execution operator: backticks (``). Note that
+    these are not single-quotes! PHP will attempt to execute the
+    contents of the backticks as a shell command; the output will be
+    returned (i.e., it won&#039;t simply be dumped to output; it can be
+    assigned to a variable).  Use of the backtick operator is identical
+    to <span class="function"><a href="http://php.net/manual/en/function.shell-exec.php" class="function">shell_exec()</a></span>.
+    <div class="informalexample">
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$output&nbsp;</span><span style="color: #007700">=&nbsp;`</span><span style="color: #DD0000">ls&nbsp;-al</span><span style="color: #007700">`;<br />echo&nbsp;</span><span style="color: #DD0000">"&lt;pre&gt;</span><span style="color: #0000BB">$output</span><span style="color: #DD0000">&lt;/pre&gt;"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+     </div>
+
+    </div>
+   </p>
+   <blockquote class="note"><p><strong class="note">Note</strong>: 
+    <p class="para">
+     The backtick operator is disabled when <a href="http://php.net/manual/en/ini.sect.safe-mode.php#ini.safe-mode" class="link">safe mode</a> is enabled
+     or <span class="function"><a href="http://php.net/manual/en/function.shell-exec.php" class="function">shell_exec()</a></span> is disabled.
+    </p>
+   </p></blockquote>
+   <blockquote class="note"><p><strong class="note">Note</strong>: 
+    <p class="para">
+     Unlike some other languages, backticks have no special meaning
+     within double-quoted strings.
+    </p>
+   </p></blockquote>
+   <p class="para">
+    See also the manual section on <a href="http://php.net/manual/en/ref.exec.php" class="link">Program
+    Execution functions</a>, <span class="function"><a href="http://php.net/manual/en/function.popen.php" class="function">popen()</a></span>
+    <span class="function"><a href="http://php.net/manual/en/function.proc-open.php" class="function">proc_open()</a></span>, and
+    <a href="http://php.net/manual/en/features.commandline.php" class="link">Using PHP from the
+    commandline</a>.
+   </p>
+  </div>
+<section id="usernotes">
+ <div class="head">
+  <span class="action"><a href="http://php.net/manual/add-note.php?sect=language.operators.execution&amp;redirect=http://php.net/manual/en/language.operators.execution.php"><img src='http://php.net/images/notes-add@2x.png' alt='add a note' width='12' height='12'> <small>add a note</small></a></span>
+  <h3 class="title">User Contributed Notes <span class="count">8 notes</span></h3>
+ </div><div id="allnotes">
+  <div class="note" id="62489">  <div class="votes">
+    <div id="Vu62489">
+    <a href="http://php.net/manual/vote-note.php?id=62489&amp;page=language.operators.execution&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd62489">
+    <a href="http://php.net/manual/vote-note.php?id=62489&amp;page=language.operators.execution&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V62489" title="76% like this...">
+    69
+    </div>
+  </div>
+  <a href="#62489" class="name">
+  <strong class="user"><em>robert</em></strong></a><a class="genanchor" href="#62489"> &para;</a><div class="date" title="2006-03-01 11:25"><strong>11 years ago</strong></div>
+  <div class="text" id="Hcom62489">
+<div class="phpcode"><code><span class="html">
+Just a general usage note.&nbsp; I had a very difficult time solving a problem with my script, when I accidentally put one of these backticks at the beginning of a line, like so:<br /><br />[lots of code]<br />`&nbsp; &nbsp; $URL = "blah...";<br />[more code]<br /><br />Since the backtick is right above the tab key, I probably just fat-fingered it while indenting the code.<br /><br />What made this so hard to find, was that PHP reported a parse error about 50 or so lines *below* the line containing the backtick.&nbsp; (There were no other backticks anywhere in my code.)&nbsp; And the error message was rather cryptic:<br /><br />Parse error: parse error, expecting `T_STRING' or `T_VARIABLE' or `T_NUM_STRING' in /blah.php on line 446<br /><br />Just something to file away in case you're pulling your hair out trying to find an error that "isn't there."</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="120273">  <div class="votes">
+    <div id="Vu120273">
+    <a href="http://php.net/manual/vote-note.php?id=120273&amp;page=language.operators.execution&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd120273">
+    <a href="http://php.net/manual/vote-note.php?id=120273&amp;page=language.operators.execution&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V120273" title="73% like this...">
+    7
+    </div>
+  </div>
+  <a href="#120273" class="name">
+  <strong class="user"><em>ohcc at 163 dot com</em></strong></a><a class="genanchor" href="#120273"> &para;</a><div class="date" title="2016-12-04 02:22"><strong>1 year ago</strong></div>
+  <div class="text" id="Hcom120273">
+<div class="phpcode"><code><span class="html">
+You can use variables within a pair of backticks (``).<br /><br /><span class="default">&lt;?php<br />&nbsp; &nbsp; $host </span><span class="keyword">= </span><span class="string">'www.wuxiancheng.cn'</span><span class="keyword">;<br />&nbsp; &nbsp; echo `</span><span class="string">ping -n 3 </span><span class="keyword">{</span><span class="default">$host</span><span class="keyword">}`;<br /></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="60212">  <div class="votes">
+    <div id="Vu60212">
+    <a href="http://php.net/manual/vote-note.php?id=60212&amp;page=language.operators.execution&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd60212">
+    <a href="http://php.net/manual/vote-note.php?id=60212&amp;page=language.operators.execution&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V60212" title="64% like this...">
+    14
+    </div>
+  </div>
+  <a href="#60212" class="name">
+  <strong class="user"><em>cs at kainaw dot com</em></strong></a><a class="genanchor" href="#60212"> &para;</a><div class="date" title="2005-12-29 02:55"><strong>11 years ago</strong></div>
+  <div class="text" id="Hcom60212">
+<div class="phpcode"><code><span class="html">
+After much trouble, I have concluded that the backtick operator (and shell_exec) have a limited buffer for the return.&nbsp; My problem was that I was grepping a file with over 500,000 lines, receiving a response with well over 100,000 lines.&nbsp; After a short pause, I was flooded with errors from grep about the pipe being closed.<br /><br />I have searched, but I cannot find the exact size of the buffer used by the backtick operator and shell_exec.&nbsp; So, to avoid this error, you must limit the output of your commands (such as using -m with grep).&nbsp; Through trial and error, you can get the command to run without error.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="111732">  <div class="votes">
+    <div id="Vu111732">
+    <a href="http://php.net/manual/vote-note.php?id=111732&amp;page=language.operators.execution&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd111732">
+    <a href="http://php.net/manual/vote-note.php?id=111732&amp;page=language.operators.execution&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V111732" title="62% like this...">
+    8
+    </div>
+  </div>
+  <a href="#111732" class="name">
+  <strong class="user"><em>Anonymous</em></strong></a><a class="genanchor" href="#111732"> &para;</a><div class="date" title="2013-03-21 11:11"><strong>4 years ago</strong></div>
+  <div class="text" id="Hcom111732">
+<div class="phpcode"><code><span class="html">
+escapeshellarg()<br /><br />if you're usimg popen, `` exec or anything else which takes a command-line<br />use escapeshellarg() on any variable parts, or risk being pwned.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="58986">  <div class="votes">
+    <div id="Vu58986">
+    <a href="http://php.net/manual/vote-note.php?id=58986&amp;page=language.operators.execution&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd58986">
+    <a href="http://php.net/manual/vote-note.php?id=58986&amp;page=language.operators.execution&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V58986" title="55% like this...">
+    4
+    </div>
+  </div>
+  <a href="#58986" class="name">
+  <strong class="user"><em>vdboor at codingdomain dot com</em></strong></a><a class="genanchor" href="#58986"> &para;</a><div class="date" title="2005-11-23 12:10"><strong>12 years ago</strong></div>
+  <div class="text" id="Hcom58986">
+<div class="phpcode"><code><span class="html">
+Note that most OS-es define two channels for file-output, the stdout and stderr (standard out and standard error). To read the data sent to stderr too, include 2&gt;&amp;1 in the backticks.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="34273">  <div class="votes">
+    <div id="Vu34273">
+    <a href="http://php.net/manual/vote-note.php?id=34273&amp;page=language.operators.execution&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd34273">
+    <a href="http://php.net/manual/vote-note.php?id=34273&amp;page=language.operators.execution&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V34273" title="52% like this...">
+    1
+    </div>
+  </div>
+  <a href="#34273" class="name">
+  <strong class="user"><em>aaron dot bentley at utoronto dot ca</em></strong></a><a class="genanchor" href="#34273"> &para;</a><div class="date" title="2003-07-20 04:45"><strong>14 years ago</strong></div>
+  <div class="text" id="Hcom34273">
+<div class="phpcode"><code><span class="html">
+waylanator's example can be dangerous, since it doesn't prevent characters with special meaning from being emitted to the commandline.&nbsp; Programming errors or untrusted data could cause serious problems.&nbsp; At the bare minimum, remove all non-alphanumeric characters before passing a string to the shell.&nbsp; escapeshellarg() is also useful in *nix environments, but usually the best approach is to bypass the shell, using exec() etc.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="19848">  <div class="votes">
+    <div id="Vu19848">
+    <a href="http://php.net/manual/vote-note.php?id=19848&amp;page=language.operators.execution&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd19848">
+    <a href="http://php.net/manual/vote-note.php?id=19848&amp;page=language.operators.execution&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V19848" title="45% like this...">
+    -2
+    </div>
+  </div>
+  <a href="#19848" class="name">
+  <strong class="user"><em>reed-NO at SPAM-zerohour dot net</em></strong></a><a class="genanchor" href="#19848"> &para;</a><div class="date" title="2002-03-13 12:45"><strong>15 years ago</strong></div>
+  <div class="text" id="Hcom19848">
+<div class="phpcode"><code><span class="html">
+When a program is run using backticks, and the user cancels page loading (if your program is taking too long!), the shell running the program (the one in the backticks) may continue indefinitely on the server. I do not know if this is a bug, or just a danger of using this feature.&nbsp; (It may depend on the way the browser "cancels" the request -- it was a problem on both IE and OmniWeb for the Mac).&nbsp; Beware!</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="29479">  <div class="votes">
+    <div id="Vu29479">
+    <a href="http://php.net/manual/vote-note.php?id=29479&amp;page=language.operators.execution&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd29479">
+    <a href="http://php.net/manual/vote-note.php?id=29479&amp;page=language.operators.execution&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V29479" title="40% like this...">
+    -7
+    </div>
+  </div>
+  <a href="#29479" class="name">
+  <strong class="user"><em>waylanator no at spam hotmail dot com</em></strong></a><a class="genanchor" href="#29479"> &para;</a><div class="date" title="2003-02-14 09:12"><strong>14 years ago</strong></div>
+  <div class="text" id="Hcom29479">
+<div class="phpcode"><code><span class="html">
+In Windows it appears you can only call an executable file that resides in the system path which is defined by Windows.&nbsp; As a workaround you can place a batch file in the system path that calls the program from it's dir. Just make sure to use short MS-DOS file and dir names.<br />For example:<br />If you were calling the file c:\program files\my program\program.exe do this:<br /><br />mybat.bat look like this:<br />_________<br />@echo off<br />c:\progra~1\myprog~1\program.exe<br />_________<br /><br />Save mybat.bat in c:\ or c:\windows or any other dir in the system path as defined by windows.<br /><br />Then in php call the batch file:<br />_________<br /><span class="default">&lt;?php<br />$test </span><span class="keyword">= `</span><span class="string">c:\mybat.bat</span><span class="keyword">`;<br />echo </span><span class="string">"&lt;pre&gt;</span><span class="default">$test</span><span class="string">&lt;/pre&gt;"</span><span class="keyword">;<br /></span><span class="default">?&gt;<br /></span>_________<br /><br />That should do it.<br />Of course this will only work for a program you can run from the MS-DOS command prompt, but (as I understant it) that goes for any executable you call with PHP anyway.<br />Tested in Win98 running Apache 1.3.27 and PHP 4.3.0</span>
+</code></div>
+  </div>
+ </div></div>
+
+ <div class="foot"><a href="http://php.net/manual/add-note.php?sect=language.operators.execution&amp;redirect=http://php.net/manual/en/language.operators.execution.php"><img src='http://php.net/images/notes-add@2x.png' alt='add a note' width='12' height='12'> <small>add a note</small></a></div>
+</section>    </section><!-- layout-content -->
+        <aside class='layout-menu'>
+    
+        <ul class='parent-menu-list'>
+                                    <li>
+                <a href="http://php.net/manual/en/language.operators.php">Operators</a>
+    
+                                    <ul class='child-menu-list'>
+    
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.operators.precedence.php" title="Operator Precedence">Operator Precedence</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.operators.arithmetic.php" title="Arithmetic Operators">Arithmetic Operators</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.operators.assignment.php" title="Assignment Operators">Assignment Operators</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.operators.bitwise.php" title="Bitwise Operators">Bitwise Operators</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.operators.comparison.php" title="Comparison Operators">Comparison Operators</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.operators.errorcontrol.php" title="Error Control Operators">Error Control Operators</a>
+                        </li>
+                          
+                        <li class="current">
+                            <a href="http://php.net/manual/en/language.operators.execution.php" title="Execution Operators">Execution Operators</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.operators.increment.php" title="Incrementing/Decrementing Operators">Incrementing/Decrementing Operators</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.operators.logical.php" title="Logical Operators">Logical Operators</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.operators.string.php" title="String Operators">String Operators</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.operators.array.php" title="Array Operators">Array Operators</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.operators.type.php" title="Type Operators">Type Operators</a>
+                        </li>
+                            
+                    </ul>
+                    
+            </li>
+                        
+                    </ul>
+    </aside>
+
+
+  </div><!-- layout -->
+         
+  <footer>
+    <div class="container footer-content">
+      <div class="row-fluid">
+      <ul class="footmenu">
+        <li><a href="http://php.net/copyright.php">Copyright &copy; 2001-2017 The PHP Group</a></li>
+        <li><a href="http://php.net/my.php">My PHP.net</a></li>
+        <li><a href="http://php.net/contact.php">Contact</a></li>
+        <li><a href="http://php.net/sites.php">Other PHP.net sites</a></li>
+        <li><a href="http://php.net/mirrors.php">Mirror sites</a></li>
+        <li><a href="http://php.net/privacy.php">Privacy policy</a></li>
+      </ul>
+      </div>
+    </div>
+  </footer>
+
+    
+ <!-- External and third party libraries. -->
+ <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/modernizr.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/hogan-2.0.0.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/typeahead.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/mousetrap.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/search.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1500560403&amp;f=/js/common.js"></script>
+
+<a id="toTop" href="javascript:;"><span id="toTopHover"></span><img width="40" height="40" alt="To Top" src="http://php.net/images/to-top@2x.png"></a>
+
+</body>
+
+<!-- Mirrored from php.net/manual/en/language.operators.execution.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Dec 2017 23:18:10 GMT -->
+</html>
+

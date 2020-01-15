@@ -1,0 +1,13 @@
+https://validator.w3.org -> validador de codigo
+http://html5test.com/ -> test de compatibilidad html5 el navegador actual
+http://gs.statcounter.com/ -> ver evolucion del pixelado de los dispositivos
+http://moqups.com
+http://gomockingbird.com
+http://pencil.evolus.vn
+http://balsamiq.com
+http://www.mockflow.com
+http://wireframe.cc
+http://www.axure.com
+http://www.google.com/websiteoptimizer
+http://www.ricardotayar.com/2012/01/15/herramientas-software-ab-testing-multivariante/
+http://www.elultimoblog.com/test-ab/

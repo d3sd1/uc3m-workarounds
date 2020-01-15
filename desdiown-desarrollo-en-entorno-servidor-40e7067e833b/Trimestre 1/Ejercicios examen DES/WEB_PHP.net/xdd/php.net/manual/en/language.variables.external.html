@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<!-- Mirrored from php.net/manual/en/language.variables.external.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Dec 2017 23:18:10 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+  <title>PHP: Variables From External Sources - Manual </title>
+
+ <link rel="shortcut icon" href="http://php.net/favicon.ico">
+ <link rel="search" type="application/opensearchdescription+xml" href="http://php.net/phpnetimprovedsearch.src" title="Add PHP.net search">
+ <link rel="alternate" type="application/atom+xml" href="http://php.net/releases/feed.php" title="PHP Release feed">
+ <link rel="alternate" type="application/atom+xml" href="http://php.net/feed.atom" title="PHP: Hypertext Preprocessor">
+
+ <link rel="canonical" href="http://php.net/manual/en/language.variables.external.php">
+ <link rel="shorturl" href="http://php.net/variables.external">
+ <link rel="alternate" href="http://php.net/variables.external" hreflang="x-default">
+
+ <link rel="contents" href="http://php.net/manual/en/index.php">
+ <link rel="index" href="http://php.net/manual/en/language.variables.php">
+ <link rel="prev" href="http://php.net/manual/en/language.variables.variable.php">
+ <link rel="next" href="http://php.net/manual/en/language.constants.php">
+
+ <link rel="alternate" href="http://php.net/manual/en/language.variables.external.php" hreflang="en">
+ <link rel="alternate" href="http://php.net/manual/pt_BR/language.variables.external.php" hreflang="pt_BR">
+ <link rel="alternate" href="http://php.net/manual/zh/language.variables.external.php" hreflang="zh">
+ <link rel="alternate" href="http://php.net/manual/fr/language.variables.external.php" hreflang="fr">
+ <link rel="alternate" href="http://php.net/manual/de/language.variables.external.php" hreflang="de">
+ <link rel="alternate" href="http://php.net/manual/ja/language.variables.external.php" hreflang="ja">
+ <link rel="alternate" href="http://php.net/manual/ro/language.variables.external.php" hreflang="ro">
+ <link rel="alternate" href="http://php.net/manual/ru/language.variables.external.php" hreflang="ru">
+ <link rel="alternate" href="http://php.net/manual/es/language.variables.external.php" hreflang="es">
+ <link rel="alternate" href="http://php.net/manual/tr/language.variables.external.php" hreflang="tr">
+
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1421837618&amp;f=/fonts/Fira/fira.css" media="screen">
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1421837618&amp;f=/fonts/Font-Awesome/css/fontello.css" media="screen">
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1478800802&amp;f=/styles/theme-base.css" media="screen">
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1449787206&amp;f=/styles/theme-medium.css" media="screen">
+
+ <!--[if lte IE 7]>
+ <link rel="stylesheet" type="text/css" href="http://php.net/styles/workarounds.ie7.css" media="screen">
+ <![endif]-->
+
+ <!--[if lte IE 8]>
+ <script type="text/javascript">
+  window.brokenIE = true;
+ </script>
+ <![endif]-->
+
+ <!--[if lte IE 9]>
+ <link rel="stylesheet" type="text/css" href="http://php.net/styles/workarounds.ie9.css" media="screen">
+ <![endif]-->
+
+ <!--[if IE]>
+ <script type="text/javascript" src="http://php.net/js/ext/html5.js"></script>
+ <![endif]-->
+
+ <base >
+
+</head>
+<body class="docs ">
+
+<nav id="head-nav" class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <a href="http://php.net/" class="brand"><img src="http://php.net/images/logos/php-logo.svg" width="48" height="24" alt="php"></a>
+    <div id="mainmenu-toggle-overlay"></div>
+    <input type="checkbox" id="mainmenu-toggle">
+    <ul class="nav">
+      <li class=""><a href="http://php.net/downloads">Downloads</a></li>
+      <li class="active"><a href="http://php.net/docs.php">Documentation</a></li>
+      <li class=""><a href="http://php.net/get-involved" >Get Involved</a></li>
+      <li class=""><a href="http://php.net/support">Help</a></li>
+    </ul>
+    <form class="navbar-search" id="topsearch" action="http://php.net/search.php">
+      <input type="hidden" name="show" value="quickref">
+      <input type="search" name="pattern" class="search-query" placeholder="Search" accesskey="s">
+    </form>
+  </div>
+  <div id="flash-message"></div>
+</nav>
+<nav id="trick"><div><dl>
+<dt><a href='http://php.net/manual/en/getting-started.php'>Getting Started</a></dt>
+	<dd><a href='http://php.net/manual/en/introduction.php'>Introduction</a></dd>
+	<dd><a href='http://php.net/manual/en/tutorial.php'>A simple tutorial</a></dd>
+<dt><a href='http://php.net/manual/en/langref.php'>Language Reference</a></dt>
+	<dd><a href='http://php.net/manual/en/language.basic-syntax.php'>Basic syntax</a></dd>
+	<dd><a href='http://php.net/manual/en/language.types.php'>Types</a></dd>
+	<dd><a href='http://php.net/manual/en/language.variables.php'>Variables</a></dd>
+	<dd><a href='http://php.net/manual/en/language.constants.php'>Constants</a></dd>
+	<dd><a href='http://php.net/manual/en/language.expressions.php'>Expressions</a></dd>
+	<dd><a href='http://php.net/manual/en/language.operators.php'>Operators</a></dd>
+	<dd><a href='http://php.net/manual/en/language.control-structures.php'>Control Structures</a></dd>
+	<dd><a href='http://php.net/manual/en/language.functions.php'>Functions</a></dd>
+	<dd><a href='http://php.net/manual/en/language.oop5.php'>Classes and Objects</a></dd>
+	<dd><a href='http://php.net/manual/en/language.namespaces.php'>Namespaces</a></dd>
+	<dd><a href='http://php.net/manual/en/language.errors.php'>Errors</a></dd>
+	<dd><a href='http://php.net/manual/en/language.exceptions.php'>Exceptions</a></dd>
+	<dd><a href='http://php.net/manual/en/language.generators.php'>Generators</a></dd>
+	<dd><a href='http://php.net/manual/en/language.references.php'>References Explained</a></dd>
+	<dd><a href='http://php.net/manual/en/reserved.variables.php'>Predefined Variables</a></dd>
+	<dd><a href='http://php.net/manual/en/reserved.exceptions.php'>Predefined Exceptions</a></dd>
+	<dd><a href='http://php.net/manual/en/reserved.interfaces.php'>Predefined Interfaces and Classes</a></dd>
+	<dd><a href='http://php.net/manual/en/context.php'>Context options and parameters</a></dd>
+	<dd><a href='http://php.net/manual/en/wrappers.php'>Supported Protocols and Wrappers</a></dd>
+</dl>
+<dl>
+<dt><a href='http://php.net/manual/en/security.php'>Security</a></dt>
+	<dd><a href='http://php.net/manual/en/security.intro.php'>Introduction</a></dd>
+	<dd><a href='http://php.net/manual/en/security.general.php'>General considerations</a></dd>
+	<dd><a href='http://php.net/manual/en/security.cgi-bin.php'>Installed as CGI binary</a></dd>
+	<dd><a href='http://php.net/manual/en/security.apache.php'>Installed as an Apache module</a></dd>
+	<dd><a href='http://php.net/manual/en/security.sessions.php'>Session Security</a></dd>
+	<dd><a href='http://php.net/manual/en/security.filesystem.php'>Filesystem Security</a></dd>
+	<dd><a href='http://php.net/manual/en/security.database.php'>Database Security</a></dd>
+	<dd><a href='http://php.net/manual/en/security.errors.php'>Error Reporting</a></dd>
+	<dd><a href='http://php.net/manual/en/security.globals.php'>Using Register Globals</a></dd>
+	<dd><a href='http://php.net/manual/en/security.variables.php'>User Submitted Data</a></dd>
+	<dd><a href='http://php.net/manual/en/security.magicquotes.php'>Magic Quotes</a></dd>
+	<dd><a href='http://php.net/manual/en/security.hiding.php'>Hiding PHP</a></dd>
+	<dd><a href='http://php.net/manual/en/security.current.php'>Keeping Current</a></dd>
+<dt><a href='http://php.net/manual/en/features.php'>Features</a></dt>
+	<dd><a href='http://php.net/manual/en/features.http-auth.php'>HTTP authentication with PHP</a></dd>
+	<dd><a href='http://php.net/manual/en/features.cookies.php'>Cookies</a></dd>
+	<dd><a href='http://php.net/manual/en/features.sessions.php'>Sessions</a></dd>
+	<dd><a href='http://php.net/manual/en/features.xforms.php'>Dealing with XForms</a></dd>
+	<dd><a href='http://php.net/manual/en/features.file-upload.php'>Handling file uploads</a></dd>
+	<dd><a href='http://php.net/manual/en/features.remote-files.php'>Using remote files</a></dd>
+	<dd><a href='http://php.net/manual/en/features.connection-handling.php'>Connection handling</a></dd>
+	<dd><a href='http://php.net/manual/en/features.persistent-connections.php'>Persistent Database Connections</a></dd>
+	<dd><a href='http://php.net/manual/en/features.safe-mode.php'>Safe Mode</a></dd>
+	<dd><a href='http://php.net/manual/en/features.commandline.php'>Command line usage</a></dd>
+	<dd><a href='http://php.net/manual/en/features.gc.php'>Garbage Collection</a></dd>
+	<dd><a href='http://php.net/manual/en/features.dtrace.php'>DTrace Dynamic Tracing</a></dd>
+</dl>
+<dl>
+<dt><a href='http://php.net/manual/en/funcref.php'>Function Reference</a></dt>
+	<dd><a href='http://php.net/manual/en/refs.basic.php.php'>Affecting PHP's Behaviour</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.audio.php'>Audio Formats Manipulation</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.remote.auth.php'>Authentication Services</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.cmdline.php'>Command Line Specific Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.compression.php'>Compression and Archive Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.creditcard.php'>Credit Card Processing</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.crypto.php'>Cryptography Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.database.php'>Database Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.calendar.php'>Date and Time Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.fileprocess.file.php'>File System Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.international.php'>Human Language and Character Encoding Support</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.image.php'>Image Processing and Generation</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.remote.mail.php'>Mail Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.math.php'>Mathematical Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.nontext.php'>Non-Text MIME Output</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.fileprocess.process.php'>Process Control Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.other.php'>Other Basic Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.remote.other.php'>Other Services</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.search.php'>Search Engine Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.server.php'>Server Specific Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.session.php'>Session Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.text.php'>Text Processing</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.vartype.php'>Variable and Type Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.webservice.php'>Web Services</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.windows.php'>Windows Only Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.xml.php'>XML Manipulation</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.ui.php'>GUI Extensions</a></dd>
+</dl>
+<dl>
+<dt>Keyboard Shortcuts</dt><dt>?</dt>
+<dd>This help</dd>
+<dt>j</dt>
+<dd>Next menu item</dd>
+<dt>k</dt>
+<dd>Previous menu item</dd>
+<dt>g p</dt>
+<dd>Previous man page</dd>
+<dt>g n</dt>
+<dd>Next man page</dd>
+<dt>G</dt>
+<dd>Scroll to bottom</dd>
+<dt>g g</dt>
+<dd>Scroll to top</dd>
+<dt>g h</dt>
+<dd>Goto homepage</dd>
+<dt>g s</dt>
+<dd>Goto search<br>(current page)</dd>
+<dt>/</dt>
+<dd>Focus search box</dd>
+</dl></div></nav>
+<div id="goto">
+    <div class="search">
+         <div class="text"></div>
+         <div class="results"><ul></ul></div>
+   </div>
+</div>
+
+  <div id="breadcrumbs" class="clearfix">
+    <div id="breadcrumbs-inner">
+          <div class="next">
+        <a href="http://php.net/manual/en/language.constants.php">
+          Constants &raquo;
+        </a>
+      </div>
+              <div class="prev">
+        <a href="http://php.net/manual/en/language.variables.variable.php">
+          &laquo; Variable variables        </a>
+      </div>
+          <ul>
+            <li><a href='http://php.net/manual/en/index.php'>PHP Manual</a></li>      <li><a href='http://php.net/manual/en/langref.php'>Language Reference</a></li>      <li><a href='http://php.net/manual/en/language.variables.php'>Variables</a></li>      </ul>
+    </div>
+  </div>
+
+
+
+
+<div id="layout" class="clearfix">
+  <section id="layout-content">
+  <div class="page-tools">
+    <div class="change-language">
+      <form action="http://php.net/manual/change.php" method="get" id="changelang" name="changelang">
+        <fieldset>
+          <label for="changelang-langs">Change language:</label>
+          <select onchange="document.changelang.submit()" name="page" id="changelang-langs">
+            <option value='en/language.variables.external.php' selected="selected">English</option>
+            <option value='http://php.net/manual/en/pt_BR/language.variables.external.php'>Brazilian Portuguese</option>
+            <option value='http://php.net/manual/en/zh/language.variables.external.php'>Chinese (Simplified)</option>
+            <option value='http://php.net/manual/en/fr/language.variables.external.php'>French</option>
+            <option value='http://php.net/manual/en/de/language.variables.external.php'>German</option>
+            <option value='http://php.net/manual/en/ja/language.variables.external.php'>Japanese</option>
+            <option value='http://php.net/manual/en/ro/language.variables.external.php'>Romanian</option>
+            <option value='http://php.net/manual/en/ru/language.variables.external.php'>Russian</option>
+            <option value='http://php.net/manual/en/es/language.variables.external.php'>Spanish</option>
+            <option value='http://php.net/manual/en/tr/language.variables.external.php'>Turkish</option>
+            <option value="http://php.net/manual/en/help-translate.php">Other</option>
+          </select>
+        </fieldset>
+      </form>
+    </div>
+    <div class="edit-bug">
+      <a href="https://edit.php.net/?project=PHP&amp;perm=en/language.variables.external.php">Edit</a>
+      <a href="https://bugs.php.net/report.php?bug_type=Documentation+problem&amp;manpage=language.variables.external">Report a Bug</a>
+    </div>
+  </div><div id="language.variables.external" class="sect1">
+   <h2 class="title">Variables From External Sources</h2>
+   
+   <div class="sect2" id="language.variables.external.form">
+    <h3 class="title">HTML Forms (GET and POST)</h3>
+
+    <p class="simpara">
+     When a form is submitted to a PHP script, the information from 
+     that form is automatically made available to the script. There 
+     are few ways to access this information, for example:
+    </p>
+
+    <p class="para">
+     <div class="example" id="example-86">
+      <p><strong>Example #1 A simple HTML form</strong></p>
+      <div class="example-contents">
+<div class="htmlcode"><pre class="htmlcode">&lt;form action=&quot;foo.php&quot; method=&quot;post&quot;&gt;
+    Name:  &lt;input type=&quot;text&quot; name=&quot;username&quot; /&gt;&lt;br /&gt;
+    Email: &lt;input type=&quot;text&quot; name=&quot;email&quot; /&gt;&lt;br /&gt;
+    &lt;input type=&quot;submit&quot; name=&quot;submit&quot; value=&quot;Submit me!&quot; /&gt;
+&lt;/form&gt;</pre>
+</div>
+      </div>
+
+     </div>
+    </p>
+
+    <p class="para">
+     As of PHP 5.4.0, there are only two ways to access data from your HTML forms.
+     Currently available methods are listed below:
+    </p>
+
+    <p class="para">
+     <div class="example" id="example-87">
+      <p><strong>Example #2 Accessing data from a simple POST HTML form</strong></p>
+      <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">$_POST</span><span style="color: #007700">[</span><span style="color: #DD0000">'username'</span><span style="color: #007700">];<br />echo&nbsp;</span><span style="color: #0000BB">$_REQUEST</span><span style="color: #007700">[</span><span style="color: #DD0000">'username'</span><span style="color: #007700">];<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+      </div>
+
+     </div>
+    </p>
+
+    <p class="para">
+     There were some other ways of accessing user input in old PHP versions. These
+     are listed below. See changelog at the bottom of the page for more details.
+     <div class="example" id="example-88">
+      <p><strong>Example #3 Old methods of accessing user input</strong></p>
+      <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #FF8000">//&nbsp;WATCH&nbsp;OUT:&nbsp;these&nbsp;methods&nbsp;ARE&nbsp;NOT&nbsp;supported&nbsp;anymore.<br />//&nbsp;Valid&nbsp;ones&nbsp;were&nbsp;described&nbsp;above.<br /><br />//&nbsp;Using&nbsp;import_request_variables()&nbsp;-&nbsp;this&nbsp;function&nbsp;has&nbsp;been&nbsp;removed&nbsp;in&nbsp;PHP&nbsp;5.4.0<br />&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">import_request_variables</span><span style="color: #007700">(</span><span style="color: #DD0000">'p'</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'p_'</span><span style="color: #007700">);<br />&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$p_username</span><span style="color: #007700">;<br /><br /></span><span style="color: #FF8000">//&nbsp;These&nbsp;long&nbsp;predefined&nbsp;variables&nbsp;were&nbsp;removed&nbsp;in&nbsp;PHP&nbsp;5.4.0<br />&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">$HTTP_POST_VARS</span><span style="color: #007700">[</span><span style="color: #DD0000">'username'</span><span style="color: #007700">];<br /><br /></span><span style="color: #FF8000">//&nbsp;Using&nbsp;register_globals.&nbsp;This&nbsp;feature&nbsp;was&nbsp;removed&nbsp;in&nbsp;PHP&nbsp;5.4.0<br />&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">echo&nbsp;</span><span style="color: #0000BB">$username</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+      </div>
+
+     </div>
+    </p>
+
+    <p class="para">
+     Using a GET form is similar except you&#039;ll use the appropriate
+     GET predefined variable instead. GET also applies to the
+     <em>QUERY_STRING</em> (the information after the &#039;?&#039; in a URL).  So,
+     for example, <em>http://www.example.com/test.php?id=3</em>
+     contains GET data which is accessible with <var class="varname"><var class="varname"><a href="http://php.net/manual/en/reserved.variables.get.php" class="classname">$_GET['id']</a></var></var>.
+     See also <var class="varname"><var class="varname"><a href="http://php.net/manual/en/reserved.variables.request.php" class="classname">$_REQUEST</a></var></var>.
+    </p>
+
+    <blockquote class="note"><p><strong class="note">Note</strong>: 
+     <p class="para">
+      Dots and spaces in variable names are converted to underscores. For
+      example <em>&lt;input name=&quot;a.b&quot; /&gt;</em> becomes
+      <em>$_REQUEST[&quot;a_b&quot;]</em>.
+     </p>
+    </p></blockquote>
+
+    <p class="simpara">
+     PHP also understands arrays in the context of form variables 
+     (see the <a href="http://php.net/manual/en/faq.html.php" class="link">related faq</a>).  You may, 
+     for example, group related variables together, or use this 
+     feature to retrieve values from a multiple select input.  For 
+     example, let&#039;s post a form to itself and upon submission display 
+     the data:
+    </p>
+
+    <p class="para">
+     <div class="example" id="example-89">
+      <p><strong>Example #4 More complex form variables</strong></p>
+      <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">if&nbsp;(</span><span style="color: #0000BB">$_POST</span><span style="color: #007700">)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'&lt;pre&gt;'</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">htmlspecialchars</span><span style="color: #007700">(</span><span style="color: #0000BB">print_r</span><span style="color: #007700">(</span><span style="color: #0000BB">$_POST</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">true</span><span style="color: #007700">));<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'&lt;/pre&gt;'</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">?&gt;<br /></span>&lt;form&nbsp;action=""&nbsp;method="post"&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;Name:&nbsp;&nbsp;&lt;input&nbsp;type="text"&nbsp;name="personal[name]"&nbsp;/&gt;&lt;br&nbsp;/&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;Email:&nbsp;&lt;input&nbsp;type="text"&nbsp;name="personal[email]"&nbsp;/&gt;&lt;br&nbsp;/&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;Beer:&nbsp;&lt;br&nbsp;/&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;select&nbsp;multiple&nbsp;name="beer[]"&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&nbsp;value="warthog"&gt;Warthog&lt;/option&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&nbsp;value="guinness"&gt;Guinness&lt;/option&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;option&nbsp;value="stuttgarter"&gt;Stuttgarter&nbsp;Schwabenbräu&lt;/option&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;/select&gt;&lt;br&nbsp;/&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;input&nbsp;type="submit"&nbsp;value="submit&nbsp;me!"&nbsp;/&gt;<br />&lt;/form&gt;</span>
+</code></div>
+      </div>
+
+     </div>
+    </p>
+
+    <div class="sect3" id="language.variables.external.form.submit">
+     <h4 class="title">IMAGE SUBMIT variable names</h4>
+
+     <p class="simpara">
+      When submitting a form, it is possible to use an image instead
+      of the standard submit button with a tag like:
+     </p>
+
+     <div class="informalexample">
+      <div class="example-contents">
+<div class="htmlcode"><pre class="htmlcode">&lt;input type=&quot;image&quot; src=&quot;image.gif&quot; name=&quot;sub&quot; /&gt;</pre>
+</div>
+      </div>
+
+     </div>
+
+     <p class="simpara">
+      When the user clicks somewhere on the image, the accompanying
+      form will be transmitted to the server with two additional
+      variables, <var class="varname"><var class="varname">sub_x</var></var> and <var class="varname"><var class="varname">sub_y</var></var>.
+      These contain the coordinates of the
+      user click within the image.  The experienced may note that the
+      actual variable names sent by the browser contains a period
+      rather than an underscore, but PHP converts the period to an
+      underscore automatically.
+     </p>
+    </div>
+
+   </div>
+
+   <div class="sect2" id="language.variables.external.cookies">
+    <h3 class="title">HTTP Cookies</h3>
+
+    <p class="simpara">
+     PHP transparently supports HTTP cookies as defined by <a href="http://www.faqs.org/rfcs/rfc6265" class="link external">&raquo;&nbsp;RFC 6265</a>.  Cookies are a
+     mechanism for storing data in the remote browser and thus
+     tracking or identifying return users.  You can set cookies using
+     the <span class="function"><a href="http://php.net/manual/en/function.setcookie.php" class="function">setcookie()</a></span> function.  Cookies are part of
+     the HTTP header, so the SetCookie function must be called before
+     any output is sent to the browser.  This is the same restriction
+     as for the <span class="function"><a href="http://php.net/manual/en/function.header.php" class="function">header()</a></span> function.  Cookie data 
+     is then available in the appropriate cookie data arrays, such 
+     as <var class="varname"><var class="varname"><a href="http://php.net/manual/en/reserved.variables.cookies.php" class="classname">$_COOKIE</a></var></var> as well as in <var class="varname"><var class="varname"><a href="http://php.net/manual/en/reserved.variables.request.php" class="classname">$_REQUEST</a></var></var>.
+     See the <span class="function"><a href="http://php.net/manual/en/function.setcookie.php" class="function">setcookie()</a></span> manual page for more details and 
+     examples.
+    </p>
+
+    <p class="simpara">
+     If you wish to assign multiple values to a single cookie variable, you 
+     may assign it as an array.  For example:
+    </p>
+
+    <div class="informalexample">
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />&nbsp;&nbsp;setcookie</span><span style="color: #007700">(</span><span style="color: #DD0000">"MyCookie[foo]"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'Testing&nbsp;1'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">time</span><span style="color: #007700">()+</span><span style="color: #0000BB">3600</span><span style="color: #007700">);<br />&nbsp;&nbsp;</span><span style="color: #0000BB">setcookie</span><span style="color: #007700">(</span><span style="color: #DD0000">"MyCookie[bar]"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">'Testing&nbsp;2'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">time</span><span style="color: #007700">()+</span><span style="color: #0000BB">3600</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+     </div>
+
+    </div>
+    
+    <p class="simpara">
+     That will create two separate cookies although <var class="varname"><var class="varname">MyCookie</var></var> will now 
+     be a single array in your script.  If you want to set just one cookie 
+     with multiple values, consider using <span class="function"><a href="http://php.net/manual/en/function.serialize.php" class="function">serialize()</a></span> or 
+     <span class="function"><a href="http://php.net/manual/en/function.explode.php" class="function">explode()</a></span> on the value first.
+    </p>
+
+    <p class="simpara">
+     Note that a cookie will replace a previous cookie by the same
+     name in your browser unless the path or domain is different.  So,
+     for a shopping cart application you may want to keep a counter
+     and pass this along.  i.e.
+    </p>
+
+    <div class="example" id="example-90">
+     <p><strong>Example #5 A <span class="function"><a href="http://php.net/manual/en/function.setcookie.php" class="function">setcookie()</a></span> example</strong></p>
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">if&nbsp;(isset(</span><span style="color: #0000BB">$_COOKIE</span><span style="color: #007700">[</span><span style="color: #DD0000">'count'</span><span style="color: #007700">]))&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$count&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">$_COOKIE</span><span style="color: #007700">[</span><span style="color: #DD0000">'count'</span><span style="color: #007700">]&nbsp;+&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">;<br />}&nbsp;else&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$count&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">setcookie</span><span style="color: #007700">(</span><span style="color: #DD0000">'count'</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$count</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">time</span><span style="color: #007700">()+</span><span style="color: #0000BB">3600</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">setcookie</span><span style="color: #007700">(</span><span style="color: #DD0000">"Cart[</span><span style="color: #0000BB">$count</span><span style="color: #DD0000">]"</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">$item</span><span style="color: #007700">,&nbsp;</span><span style="color: #0000BB">time</span><span style="color: #007700">()+</span><span style="color: #0000BB">3600</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+     </div>
+
+    </div>
+
+   </div>
+
+   <div class="sect2" id="language.variables.external.dot-in-names">
+    <h3 class="title">Dots in incoming variable names</h3>
+
+    <p class="para">
+     Typically, PHP does not alter the names of variables when they
+     are passed into a script. However, it should be noted that the
+     dot (period, full stop) is not a valid character in a PHP
+     variable name. For the reason, look at it:
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$varname</span><span style="color: #007700">.</span><span style="color: #0000BB">ext</span><span style="color: #007700">;&nbsp;&nbsp;</span><span style="color: #FF8000">/*&nbsp;invalid&nbsp;variable&nbsp;name&nbsp;*/<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+     </div>
+
+     Now, what the parser sees is a variable named
+     <var class="varname"><var class="varname">$varname</var></var>, followed by the string concatenation
+     operator, followed by the barestring (i.e. unquoted string which
+     doesn&#039;t match any known key or reserved words) &#039;ext&#039;. Obviously,
+     this doesn&#039;t have the intended result.
+    </p>
+
+    <p class="para">
+     For this reason, it is important to note that PHP will
+     automatically replace any dots in incoming variable names with
+     underscores.
+    </p>
+
+   </div>
+
+   <div class="sect2" id="language.variables.determining-type-of">
+    <h3 class="title">Determining variable types</h3>
+
+    <p class="para">
+     Because PHP determines the types of variables and converts them
+     (generally) as needed, it is not always obvious what type a given
+     variable is at any one time.  PHP includes several functions
+     which find out what type a variable is, such as:
+     <span class="function"><a href="http://php.net/manual/en/function.gettype.php" class="function">gettype()</a></span>, <span class="function"><a href="http://php.net/manual/en/function.is-array.php" class="function">is_array()</a></span>,
+     <span class="function"><a href="http://php.net/manual/en/function.is-float.php" class="function">is_float()</a></span>, <span class="function"><a href="http://php.net/manual/en/function.is-int.php" class="function">is_int()</a></span>,
+     <span class="function"><a href="http://php.net/manual/en/function.is-object.php" class="function">is_object()</a></span>, and
+     <span class="function"><a href="http://php.net/manual/en/function.is-string.php" class="function">is_string()</a></span>.  See also the chapter on 
+     <a href="http://php.net/manual/en/language.types.php" class="link">Types</a>.
+    </p>
+    <p class="para">
+     HTTP being a text protocol, most, if not all, content that comes in
+     <a href="http://php.net/manual/en/language.variables.superglobals.php" class="link">Superglobal arrays</a>, 
+     like <var class="varname"><var class="varname"><a href="http://php.net/manual/en/reserved.variables.post.php" class="classname">$_POST</a></var></var> and <var class="varname"><var class="varname"><a href="http://php.net/manual/en/reserved.variables.get.php" class="classname">$_GET</a></var></var> will remain
+     as strings. PHP will not try to convert values to a specific type.
+     In the example below, <var class="varname"><var class="varname"><a href="http://php.net/manual/en/reserved.variables.get.php" class="classname">$_GET["var1"]</a></var></var> will contain the
+     string &quot;null&quot; and <var class="varname"><var class="varname"><a href="http://php.net/manual/en/reserved.variables.get.php" class="classname">$_GET["var2"]</a></var></var>, the string &quot;123&quot;.
+     <div class="example-contents">
+<div class="cdata"><pre>
+/index.php?var1=null&amp;var2=123
+</pre></div>
+      </div>
+
+    </p>
+   </div>
+
+   <div class="sect2" id="language.variables.external.changelog">
+    <h3 class="title">Changelog</h3>
+
+    <p class="para">
+     <table class="doctable informaltable">
+      
+       <thead>
+        <tr>
+         <th>Version</th>
+         <th>Description</th>
+        </tr>
+
+       </thead>
+
+       <tbody class="tbody">
+        <tr>
+         <td>5.4.0</td>
+         <td>
+          <a href="http://php.net/manual/en/security.globals.php" class="link">Register Globals</a>, 
+          <a href="http://php.net/manual/en/security.magicquotes.php" class="link">Magic Quotes</a> and
+          <a href="http://php.net/manual/en/ini.core.php#ini.register-long-arrays" class="link">register_long_arrays</a>
+          has been removed
+         </td>
+        </tr>
+
+        <tr>
+         <td>5.3.0</td>
+         <td>
+          <a href="http://php.net/manual/en/security.globals.php" class="link">Register Globals</a>, 
+          <a href="http://php.net/manual/en/security.magicquotes.php" class="link">Magic Quotes</a> and
+          <a href="http://php.net/manual/en/ini.core.php#ini.register-long-arrays" class="link">register_long_arrays</a>
+          became deprecated
+         </td>
+        </tr>
+
+        <tr>
+         <td>4.2.0</td>
+         <td>
+          <a href="http://php.net/manual/en/ini.core.php#ini.register-globals" class="link">register_globals</a>
+          directive defaults to <em class="emphasis">off</em>.
+         </td>
+        </tr>
+
+        <tr>
+         <td>4.1.0</td>
+         <td>
+          <a href="http://php.net/manual/en/language.variables.superglobals.php" class="link">Superglobal arrays</a>, 
+          like <var class="varname"><var class="varname"><a href="http://php.net/manual/en/reserved.variables.post.php" class="classname">$_POST</a></var></var> and <var class="varname"><var class="varname"><a href="http://php.net/manual/en/reserved.variables.get.php" class="classname">$_GET</a></var></var> became 
+          available
+         </td>
+        </tr>
+
+       </tbody>
+      
+     </table>
+
+    </p>
+   </div>
+
+  </div>
+<section id="usernotes">
+ <div class="head">
+  <span class="action"><a href="http://php.net/manual/add-note.php?sect=language.variables.external&amp;redirect=http://php.net/manual/en/language.variables.external.php"><img src='http://php.net/images/notes-add@2x.png' alt='add a note' width='12' height='12'> <small>add a note</small></a></span>
+  <h3 class="title">User Contributed Notes <span class="count">28 notes</span></h3>
+ </div><div id="allnotes">
+  <div class="note" id="81080">  <div class="votes">
+    <div id="Vu81080">
+    <a href="http://php.net/manual/vote-note.php?id=81080&amp;page=language.variables.external&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd81080">
+    <a href="http://php.net/manual/vote-note.php?id=81080&amp;page=language.variables.external&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V81080" title="60% like this...">
+    23
+    </div>
+  </div>
+  <a href="#81080" class="name">
+  <strong class="user"><em>Anonymous</em></strong></a><a class="genanchor" href="#81080"> &para;</a><div class="date" title="2008-02-13 06:46"><strong>9 years ago</strong></div>
+  <div class="text" id="Hcom81080">
+<div class="phpcode"><code><span class="html">
+The full list of field-name characters that PHP converts to _ (underscore) is the following (not just dot):<br />chr(32) ( ) (space)<br />chr(46) (.) (dot)<br />chr(91) ([) (open square bracket)<br />chr(128) - chr(159) (various)<br /><br />PHP irreversibly modifies field names containing these characters in an attempt to maintain compatibility with the deprecated register_globals feature.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="114302">  <div class="votes">
+    <div id="Vu114302">
+    <a href="http://php.net/manual/vote-note.php?id=114302&amp;page=language.variables.external&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd114302">
+    <a href="http://php.net/manual/vote-note.php?id=114302&amp;page=language.variables.external&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V114302" title="58% like this...">
+    6
+    </div>
+  </div>
+  <a href="#114302" class="name">
+  <strong class="user"><em>Anonymous</em></strong></a><a class="genanchor" href="#114302"> &para;</a><div class="date" title="2014-02-05 12:42"><strong>3 years ago</strong></div>
+  <div class="text" id="Hcom114302">
+<div class="phpcode"><code><span class="html">
+From HTML 5.1 Draft:<br /><a href="http://www.w3.org/html/wg/drafts/html/master/forms.html#naming-form-controls:-the-name-attribute" rel="nofollow" target="_blank">http://www.w3.org/html/wg/drafts/html/master/forms.html#naming-form-controls:-the-name-attribute</a><br /><br />The name content attribute gives the name of the form control, as used in form submission and in the form element's elements object. If the attribute is specified, its value must not be the empty string.<br />Any non-empty value for name is allowed.<br /><br />So use the format like this &lt;select multiple name="beer[]"&gt; is still in the HTML 5 standard.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="52503">  <div class="votes">
+    <div id="Vu52503">
+    <a href="http://php.net/manual/vote-note.php?id=52503&amp;page=language.variables.external&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd52503">
+    <a href="http://php.net/manual/vote-note.php?id=52503&amp;page=language.variables.external&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V52503" title="56% like this...">
+    9
+    </div>
+  </div>
+  <a href="#52503" class="name">
+  <strong class="user"><em>krydprz at iit dot edu</em></strong></a><a class="genanchor" href="#52503"> &para;</a><div class="date" title="2005-05-03 01:14"><strong>12 years ago</strong></div>
+  <div class="text" id="Hcom52503">
+<div class="phpcode"><code><span class="html">
+This post is with regards to handling forms that have more than one submit button.<br /><br />Suppose we have an HTML form with a submit button specified like this:<br /><br />&lt;input type="submit" value="Delete" name="action_button"&gt;<br /><br />Normally the 'value' attribute of the HTML 'input' tag (in this case "Delete") that creates the submit button can be accessed in PHP after post like this:<br /><br /><span class="default">&lt;?php<br />$_POST</span><span class="keyword">[</span><span class="string">'action_button'</span><span class="keyword">];<br /></span><span class="default">?&gt;<br /></span><br />We of course use the 'name' of the button as an index into the $_POST array.<br /><br />This works fine, except when we want to pass more information with the click of this particular button.<br /><br />Imagine a scenario where you're dealing with user management in some administrative interface.&nbsp; You are presented with a list of user names queried from a database and wish to add a "Delete" and "Modify" button next to each of the names in the list.&nbsp; Naturally the 'value' of our buttons in the HTML form that we want to display will be "Delete" and "Modify" since that's what we want to appear on the buttons' faceplates.<br /><br />Both buttons (Modify and Delete) will be named "action_button" since that's what we want to index the $_POST array with.&nbsp; In other words, the 'name' of the buttons along cannot carry any uniquely identifying information if we want to process them systematically after submit. Since these buttons will exist for every user in the list, we need some further way to distinguish them, so that we know for which user one of the buttons has been pressed.<br /><br />Using arrays is the way to go.&nbsp; Assuming that we know the unique numerical identifier of each user, such as their primary key from the database, and we DON'T wish to protect that number from the public, we can make the 'action_button' into an array and use the user's unique numerical identifier as a key in this array.<br /><br />Our HTML code to display the buttons will become:<br /><br />&lt;input type="submit" value="Delete" name="action_button[0000000002]"&gt;<br />&lt;input type="submit" value="Modify" name="action_button[0000000002]"&gt;<br /><br />The 0000000002 is of course the unique numerical identifier for this particular user.<br /><br />Then when we handle this form in PHP we need to do the following to extract both the 'value' of the button ("Delete" or "Modify") and the unique numerical identifier of the user we wish to affect (0000000002 in this case). The following will print either "Modify" or "Delete", as well as the unique number of the user:<br /><br /><span class="default">&lt;?php<br />$submitted_array </span><span class="keyword">= </span><span class="default">array_keys</span><span class="keyword">(</span><span class="default">$_POST</span><span class="keyword">[</span><span class="string">'action_button'</span><span class="keyword">]);<br />echo (</span><span class="default">$_POST</span><span class="keyword">[</span><span class="string">'action_button'</span><span class="keyword">][</span><span class="default">$submitted_array</span><span class="keyword">[</span><span class="default">0</span><span class="keyword">]] . </span><span class="string">" " </span><span class="keyword">. </span><span class="default">$submitted_array</span><span class="keyword">[</span><span class="default">0</span><span class="keyword">]);<br /></span><span class="default">?&gt;<br /></span><br />$submitted_array[0] carries the 0000000002.<br />When we index that into the $_POST['action_button'], like we did above, we will extract the string that was used as 'value' in the HTML code 'input' tag that created this button.<br /><br />If we wish to protect the unique numerical identifier, we must use some other uniquely identifying attribute of each user. Possibly that attribute should be encrypted when output into the form for greater security.<br /><br />Enjoy!</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="30485">  <div class="votes">
+    <div id="Vu30485">
+    <a href="http://php.net/manual/vote-note.php?id=30485&amp;page=language.variables.external&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd30485">
+    <a href="http://php.net/manual/vote-note.php?id=30485&amp;page=language.variables.external&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V30485" title="57% like this...">
+    4
+    </div>
+  </div>
+  <a href="#30485" class="name">
+  <strong class="user"><em>vb at bertola dot eu dot org</em></strong></a><a class="genanchor" href="#30485"> &para;</a><div class="date" title="2003-03-19 09:38"><strong>14 years ago</strong></div>
+  <div class="text" id="Hcom30485">
+<div class="phpcode"><code><span class="html">
+For what I understand, since PHP 4.3 it is possible to access the content of a POST request (or other methods as well) as an input stream named php://input, example:<br /><br />readfile("php://input");&nbsp;&nbsp; <br />[to display it]<br /><br />or<br /><br />$fp = fopen("php://input", "r");&nbsp; &nbsp; <br />[to open it and then do whatever you want]<br /><br />This is very useful to access the content of POST requests which actually have a content (and not just variable-value couples, which appear in $_POST).<br /><br />This substitutes the old $HTTP_RAW_POST_DATA variable available in some of the previous 4.x versions. It is available for other upload methods different from POST too, but it is not available for POSTs with multipart/form-data content type, since the file upload handler has already taken care of the content in that case.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="30019">  <div class="votes">
+    <div id="Vu30019">
+    <a href="http://php.net/manual/vote-note.php?id=30019&amp;page=language.variables.external&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd30019">
+    <a href="http://php.net/manual/vote-note.php?id=30019&amp;page=language.variables.external&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V30019" title="57% like this...">
+    4
+    </div>
+  </div>
+  <a href="#30019" class="name"><strong class="user"><em>Anonymous</em></strong></a><a class="genanchor" href="#30019"> &para;</a><div class="date" title="2003-03-04 07:21"><strong>14 years ago</strong></div>
+  <div class="text" id="Hcom30019">
+<div class="phpcode"><code><span class="html">
+"...the dot (period, full stop) is not a valid character in a PHP variable name."<br /><br />That's not completely correct, consider this example:<br />$GLOBALS['foo.bar'] = 'baz';<br />echo ${'foo.bar'};<br />This will output baz as expected.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="51727">  <div class="votes">
+    <div id="Vu51727">
+    <a href="http://php.net/manual/vote-note.php?id=51727&amp;page=language.variables.external&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd51727">
+    <a href="http://php.net/manual/vote-note.php?id=51727&amp;page=language.variables.external&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V51727" title="56% like this...">
+    3
+    </div>
+  </div>
+  <a href="#51727" class="name">
+  <strong class="user"><em>tmk-php at infeline dot org</em></strong></a><a class="genanchor" href="#51727"> &para;</a><div class="date" title="2005-04-08 09:38"><strong>12 years ago</strong></div>
+  <div class="text" id="Hcom51727">
+<div class="phpcode"><code><span class="html">
+To handle forms with or without [] you can do something like this:<br /><br /><span class="default">&lt;?php<br />&nbsp; &nbsp; </span><span class="keyword">function </span><span class="default">repairPost</span><span class="keyword">(</span><span class="default">$data</span><span class="keyword">) {<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="comment">// combine rawpost and $_POST ($data) to rebuild broken arrays in $_POST<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$rawpost </span><span class="keyword">= </span><span class="string">"&amp;"</span><span class="keyword">.</span><span class="default">file_get_contents</span><span class="keyword">(</span><span class="string">"php://input"</span><span class="keyword">);<br />&nbsp; &nbsp; &nbsp; &nbsp; while(list(</span><span class="default">$key</span><span class="keyword">,</span><span class="default">$value</span><span class="keyword">)= </span><span class="default">each</span><span class="keyword">(</span><span class="default">$data</span><span class="keyword">)) {<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$pos </span><span class="keyword">= </span><span class="default">preg_match_all</span><span class="keyword">(</span><span class="string">"/&amp;"</span><span class="keyword">.</span><span class="default">$key</span><span class="keyword">.</span><span class="string">"=([^&amp;]*)/i"</span><span class="keyword">,</span><span class="default">$rawpost</span><span class="keyword">, </span><span class="default">$regs</span><span class="keyword">, </span><span class="default">PREG_PATTERN_ORDER</span><span class="keyword">);&nbsp; &nbsp; &nbsp; &nbsp; <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if((!</span><span class="default">is_array</span><span class="keyword">(</span><span class="default">$value</span><span class="keyword">)) &amp;&amp; (</span><span class="default">$pos </span><span class="keyword">&gt; </span><span class="default">1</span><span class="keyword">)) {<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$qform</span><span class="keyword">[</span><span class="default">$key</span><span class="keyword">] = array();<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; for(</span><span class="default">$i </span><span class="keyword">= </span><span class="default">0</span><span class="keyword">; </span><span class="default">$i </span><span class="keyword">&lt; </span><span class="default">$pos</span><span class="keyword">; </span><span class="default">$i</span><span class="keyword">++) {<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$qform</span><span class="keyword">[</span><span class="default">$key</span><span class="keyword">][</span><span class="default">$i</span><span class="keyword">] = </span><span class="default">urldecode</span><span class="keyword">(</span><span class="default">$regs</span><span class="keyword">[</span><span class="default">1</span><span class="keyword">][</span><span class="default">$i</span><span class="keyword">]);<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; } else {<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$qform</span><span class="keyword">[</span><span class="default">$key</span><span class="keyword">] = </span><span class="default">$value</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />&nbsp; &nbsp; &nbsp; &nbsp; }<br />&nbsp; &nbsp; &nbsp; &nbsp; return </span><span class="default">$qform</span><span class="keyword">;<br />&nbsp; &nbsp; }<br /><br />&nbsp; &nbsp; </span><span class="comment">// --- MAIN<br /><br />&nbsp; &nbsp; </span><span class="default">$_POST </span><span class="keyword">= </span><span class="default">repairPost</span><span class="keyword">(</span><span class="default">$_POST</span><span class="keyword">);<br /></span><span class="default">?&gt;<br /></span><br />The function will check every field in the $_POST with the raw post data and rebuild the arrays that got lost.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="43949">  <div class="votes">
+    <div id="Vu43949">
+    <a href="http://php.net/manual/vote-note.php?id=43949&amp;page=language.variables.external&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd43949">
+    <a href="http://php.net/manual/vote-note.php?id=43949&amp;page=language.variables.external&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V43949" title="53% like this...">
+    4
+    </div>
+  </div>
+  <a href="#43949" class="name">
+  <strong class="user"><em>lennynyktyk at yahoo dot com</em></strong></a><a class="genanchor" href="#43949"> &para;</a><div class="date" title="2004-07-09 02:42"><strong>13 years ago</strong></div>
+  <div class="text" id="Hcom43949">
+<div class="phpcode"><code><span class="html">
+When dealing with multiple select boxes and the name=some_name[] so that PHP will understand that is needs to interpet the input as an array an not as a single value. If you want to access this in Javascript you should assign an id attribute to the select box as well as the name attribute. Then proceed to use the id attribute in Javascript to reference the select box and the name attribute to reference the select box in PHP.<br />Example<br /><br />&lt;select multiple id="select_id" name="select_name[]"&gt;<br />....<br /><br />&lt;/select&gt;<br /><br /><span class="default">&lt;?PHP<br />&nbsp; &nbsp; </span><span class="keyword">echo </span><span class="default">$select_name</span><span class="keyword">[</span><span class="default">0</span><span class="keyword">];<br /></span><span class="default">?&gt;<br /></span><br />&lt;script language="javascript"&gt;<br />&nbsp; document.forms[0].select_id.options[0].selected = true;<br />&lt;/script&gt;<br /><br />I hope you get the idea</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="105228">  <div class="votes">
+    <div id="Vu105228">
+    <a href="http://php.net/manual/vote-note.php?id=105228&amp;page=language.variables.external&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd105228">
+    <a href="http://php.net/manual/vote-note.php?id=105228&amp;page=language.variables.external&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V105228" title="53% like this...">
+    3
+    </div>
+  </div>
+  <a href="#105228" class="name">
+  <strong class="user"><em>walf</em></strong></a><a class="genanchor" href="#105228"> &para;</a><div class="date" title="2011-08-03 06:38"><strong>6 years ago</strong></div>
+  <div class="text" id="Hcom105228">
+<div class="phpcode"><code><span class="html">
+WARNING! replacement of spaces and dots does not occur in array keys.<br /><br />E.g. If you have<br />&lt;input name="a. b[x. y]" value="foo" /&gt;<br /><br />var_dump($_POST);<br />gives<br />array(1) {<br />&nbsp; ["a__b"]=&gt;<br />&nbsp; array(1) {<br />&nbsp; &nbsp; ["x. y"]=&gt;<br />&nbsp; &nbsp; string(3) "foo"<br />&nbsp; }<br />}</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="11873">  <div class="votes">
+    <div id="Vu11873">
+    <a href="http://php.net/manual/vote-note.php?id=11873&amp;page=language.variables.external&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd11873">
+    <a href="http://php.net/manual/vote-note.php?id=11873&amp;page=language.variables.external&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V11873" title="53% like this...">
+    1
+    </div>
+  </div>
+  <a href="#11873" class="name">
+  <strong class="user"><em>yasuo_ohgaki at hotmail dot com</em></strong></a><a class="genanchor" href="#11873"> &para;</a><div class="date" title="2001-03-11 04:02"><strong>16 years ago</strong></div>
+  <div class="text" id="Hcom11873">
+<div class="phpcode"><code><span class="html">
+Important:&nbsp; Pay attention to the following security concerns when handling user submitted&nbsp; data :<br /><br /><a href="http://www.php.net/manual/en/security.registerglobals.php" rel="nofollow" target="_blank">http://www.php.net/manual/en/security.registerglobals.php</a><br /><a href="http://www.php.net/manual/en/security.variables.php" rel="nofollow" target="_blank">http://www.php.net/manual/en/security.variables.php</a></span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="121482">  <div class="votes">
+    <div id="Vu121482">
+    <a href="http://php.net/manual/vote-note.php?id=121482&amp;page=language.variables.external&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd121482">
+    <a href="http://php.net/manual/vote-note.php?id=121482&amp;page=language.variables.external&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V121482" title="50% like this...">
+    0
+    </div>
+  </div>
+  <a href="#121482" class="name">
+  <strong class="user"><em>Sadik_quake2003 at mail dot ru</em></strong></a><a class="genanchor" href="#121482"> &para;</a><div class="date" title="2017-08-05 09:51"><strong>4 months ago</strong></div>
+  <div class="text" id="Hcom121482">
+<div class="phpcode"><code><span class="html">
+&lt;form method="post"&gt;<br />&nbsp; &nbsp; &lt;select name="selecter"&gt;<br />&nbsp; &nbsp; &nbsp; &nbsp; &lt;option&gt;one&lt;/option&gt;<br />&nbsp; &nbsp; &nbsp; &nbsp; &lt;option&gt;two&lt;/option&gt;<br />&nbsp; &nbsp; &nbsp; &nbsp; &lt;option&gt;three&lt;/option&gt;<br />&nbsp; &nbsp; &lt;/select&gt;&lt;br /&gt;<br />&nbsp; &nbsp; &lt;input type="submit" value="send" /&gt;<br />&lt;/form&gt;<br /><br /><span class="default">&lt;?=$_POST</span><span class="keyword">[</span><span class="string">"selecter"</span><span class="keyword">];</span><span class="default">?&gt;<br /></span><br />If we change first option, that result will be: one (important: not null !)</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="74775">  <div class="votes">
+    <div id="Vu74775">
+    <a href="http://php.net/manual/vote-note.php?id=74775&amp;page=language.variables.external&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd74775">
+    <a href="http://php.net/manual/vote-note.php?id=74775&amp;page=language.variables.external&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V74775" title="50% like this...">
+    0
+    </div>
+  </div>
+  <a href="#74775" class="name">
+  <strong class="user"><em>t.montg AT gmail DOT com</em></strong></a><a class="genanchor" href="#74775"> &para;</a><div class="date" title="2007-04-26 05:05"><strong>10 years ago</strong></div>
+  <div class="text" id="Hcom74775">
+<div class="phpcode"><code><span class="html">
+For anyone else having trouble figuring out how to access values in a SELECT element from a POST or GET form, you can't set the "id" attribute to the same thing as your "name" attribute.&nbsp; i.e. don't do this:<br /><br /><span class="default">&lt;?php<br />&nbsp; </span><span class="comment">//Not so good<br />&nbsp; </span><span class="keyword">&lt;</span><span class="default">select multiple</span><span class="keyword">=</span><span class="string">"multiple" </span><span class="default">id</span><span class="keyword">=</span><span class="string">"selectElem" </span><span class="default">name</span><span class="keyword">=</span><span class="string">"selectElem[]"</span><span class="keyword">&gt;<br />&nbsp; &nbsp;&nbsp; &lt;</span><span class="default">option value</span><span class="keyword">=</span><span class="string">"ham"</span><span class="keyword">&gt;</span><span class="default">Ham</span><span class="keyword">&lt;/</span><span class="default">option</span><span class="keyword">&gt;<br />&nbsp; &nbsp;&nbsp; &lt;</span><span class="default">option value</span><span class="keyword">=</span><span class="string">"cheese"</span><span class="keyword">&gt;</span><span class="default">Cheese</span><span class="keyword">&lt;/</span><span class="default">option</span><span class="keyword">&gt;<br />&nbsp; &nbsp;&nbsp; &lt;</span><span class="default">option value</span><span class="keyword">=</span><span class="string">"hamcheese"</span><span class="keyword">&gt;</span><span class="default">Ham </span><span class="keyword">and </span><span class="default">Cheese</span><span class="keyword">&lt;/</span><span class="default">option</span><span class="keyword">&gt;<br />&nbsp; &lt;/</span><span class="default">select</span><span class="keyword">&gt;<br /></span><span class="default">?&gt;<br /></span><br />If you do the above, the variable $_POST['selectElem'] will not be set.&nbsp; Instead, either change the id or name attribute so that they are dissimilar.&nbsp; i.e. do this:<br /><br /><span class="default">&lt;?php<br />&nbsp; </span><span class="comment">//So good (notice the new "id" value)<br />&nbsp; </span><span class="keyword">&lt;</span><span class="default">select multiple</span><span class="keyword">=</span><span class="string">"multiple" </span><span class="default">id</span><span class="keyword">=</span><span class="string">"selectElemId" </span><span class="default">name</span><span class="keyword">=</span><span class="string">"selectElem[]"</span><span class="keyword">&gt;<br />&nbsp; &nbsp;&nbsp; &lt;</span><span class="default">option value</span><span class="keyword">=</span><span class="string">"ham"</span><span class="keyword">&gt;</span><span class="default">Ham</span><span class="keyword">&lt;/</span><span class="default">option</span><span class="keyword">&gt;<br />&nbsp; &nbsp;&nbsp; &lt;</span><span class="default">option value</span><span class="keyword">=</span><span class="string">"cheese"</span><span class="keyword">&gt;</span><span class="default">Cheese</span><span class="keyword">&lt;/</span><span class="default">option</span><span class="keyword">&gt;<br />&nbsp; &nbsp;&nbsp; &lt;</span><span class="default">option value</span><span class="keyword">=</span><span class="string">"hamcheese"</span><span class="keyword">&gt;</span><span class="default">Ham </span><span class="keyword">and </span><span class="default">Cheese</span><span class="keyword">&lt;/</span><span class="default">option</span><span class="keyword">&gt;<br />&nbsp; &lt;/</span><span class="default">select</span><span class="keyword">&gt;<br /></span><span class="default">?&gt;<br /></span><br />Then you can access the value(s) of the SELECT element through the array $_POST['selectElem'][] or $_GET['selectElem'][].&nbsp; It took me quite some time to figure out the problem.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="77344">  <div class="votes">
+    <div id="Vu77344">
+    <a href="http://php.net/manual/vote-note.php?id=77344&amp;page=language.variables.external&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd77344">
+    <a href="http://php.net/manual/vote-note.php?id=77344&amp;page=language.variables.external&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V77344" title="45% like this...">
+    -4
+    </div>
+  </div>
+  <a href="#77344" class="name">
+  <strong class="user"><em>vierubino dot r3m0oFdisB1T at gmail dot com</em></strong></a><a class="genanchor" href="#77344"> &para;</a><div class="date" title="2007-08-24 09:12"><strong>10 years ago</strong></div>
+  <div class="text" id="Hcom77344">
+<div class="phpcode"><code><span class="html">
+When you are using checkboxes to submit multiple choices, there is no need to use the complex method further down the page where you assign a unique name to each checkbox.<br /><br />Instead, just name each checkbox as the same array, e.g.:<br /><br />&lt;input type="checkbox" name="items[]" value="foo" /&gt;<br />&lt;input type="checkbox" name="items[]" value="bar" /&gt;<br />&lt;input type="checkbox" name="items[]" value="baz" /&gt;<br /><br />This way your $_POST["items"] variable will return as an array containing all and only the checkboxes that were clicked on.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="63295">  <div class="votes">
+    <div id="Vu63295">
+    <a href="http://php.net/manual/vote-note.php?id=63295&amp;page=language.variables.external&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd63295">
+    <a href="http://php.net/manual/vote-note.php?id=63295&amp;page=language.variables.external&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V63295" title="43% like this...">
+    -3
+    </div>
+  </div>
+  <a href="#63295" class="name">
+  <strong class="user"><em>ch1902uk at hotmail dot com</em></strong></a><a class="genanchor" href="#63295"> &para;</a><div class="date" title="2006-03-18 11:47"><strong>11 years ago</strong></div>
+  <div class="text" id="Hcom63295">
+<div class="phpcode"><code><span class="html">
+Regarding image input buttons, above where it says:<br /><br />"When the user clicks somewhere on the image, the accompanying form will be transmitted to the server with two *additional* variables, sub_x and sub_y. These contain the coordinates of the user click within the image." <br /><br />This is the case with Firefox (and probably other standards browsers), however my experience with Internet Explorer is that when image inputs are clicked, they only submit the location of the click on the button and *not* the name of the input.<br /><br />So if you have a form to move/delete entries like this<br /><br />entry[]&nbsp; [delete_0] [up_0] [down_0]<br />entry[]&nbsp;&nbsp; [delete_1] [up_1] [down_1]<br />entry[]&nbsp;&nbsp; [delete_2] [up_2] [down_2]<br /><br />Then submitting the form in firefox will give you post variables such as <br /><br /><span class="default">&lt;?php<br />&nbsp;&nbsp; $_POST</span><span class="keyword">[</span><span class="string">'delete_2'</span><span class="keyword">];&nbsp;&nbsp; </span><span class="comment">// "Delete" - button value<br />&nbsp;&nbsp; </span><span class="default">$_POST</span><span class="keyword">[</span><span class="string">'delete_2_x'</span><span class="keyword">];&nbsp;&nbsp; </span><span class="comment">// 23 - x coord <br />&nbsp;&nbsp; </span><span class="default">$_POST</span><span class="keyword">[</span><span class="string">'delete_2_y'</span><span class="keyword">];&nbsp;&nbsp; </span><span class="comment">// 3 - y coord <br /></span><span class="default">?&gt;<br /></span><br />In IE you only get<br /><br /><span class="default">&lt;?php<br />&nbsp;&nbsp; $_POST</span><span class="keyword">[</span><span class="string">'delete_2_x'</span><span class="keyword">];&nbsp;&nbsp; </span><span class="comment">// 23 - x coord <br />&nbsp;&nbsp; </span><span class="default">$_POST</span><span class="keyword">[</span><span class="string">'delete_2_y'</span><span class="keyword">];&nbsp;&nbsp; </span><span class="comment">// 3 - y coord <br /></span><span class="default">?&gt;<br /></span><br />So if you are checking for what button was clicked do something like this<br /><br /><span class="default">&lt;?php<br />&nbsp;&nbsp; </span><span class="keyword">for (</span><span class="default">$i </span><span class="keyword">= </span><span class="default">0</span><span class="keyword">; </span><span class="default">$i </span><span class="keyword">&lt; </span><span class="default">count</span><span class="keyword">(</span><span class="default">$_POST</span><span class="keyword">[</span><span class="string">'entry'</span><span class="keyword">]); </span><span class="default">$i</span><span class="keyword">++)<br />&nbsp;&nbsp; {<br />&nbsp; &nbsp; &nbsp; if (isset(</span><span class="default">$_POST</span><span class="keyword">[</span><span class="string">'delete_' </span><span class="keyword">. </span><span class="default">$i </span><span class="keyword">. </span><span class="string">'_x'</span><span class="keyword">]))<br />&nbsp; &nbsp; &nbsp; {<br />&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="comment">// do delete<br />&nbsp; &nbsp; &nbsp; </span><span class="keyword">}<br />&nbsp;&nbsp; }<br /></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="94607">  <div class="votes">
+    <div id="Vu94607">
+    <a href="http://php.net/manual/vote-note.php?id=94607&amp;page=language.variables.external&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd94607">
+    <a href="http://php.net/manual/vote-note.php?id=94607&amp;page=language.variables.external&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V94607" title="43% like this...">
+    -4
+    </div>
+  </div>
+  <a href="#94607" class="name">
+  <strong class="user"><em>POSTer</em></strong></a><a class="genanchor" href="#94607"> &para;</a><div class="date" title="2009-11-13 02:28"><strong>8 years ago</strong></div>
+  <div class="text" id="Hcom94607">
+<div class="phpcode"><code><span class="html">
+Here's a simple function to give you an uncorrupted version of $_POST:<br /><br /><span class="default">&lt;?php<br /></span><span class="comment">// Function to fix up PHP's messing up POST input containing dots, etc.<br /></span><span class="keyword">function </span><span class="default">getRealPOST</span><span class="keyword">() {<br />&nbsp; &nbsp; </span><span class="default">$pairs </span><span class="keyword">= </span><span class="default">explode</span><span class="keyword">(</span><span class="string">"&amp;"</span><span class="keyword">, </span><span class="default">file_get_contents</span><span class="keyword">(</span><span class="string">"php://input"</span><span class="keyword">));<br />&nbsp; &nbsp; </span><span class="default">$vars </span><span class="keyword">= array();<br />&nbsp; &nbsp; foreach (</span><span class="default">$pairs </span><span class="keyword">as </span><span class="default">$pair</span><span class="keyword">) {<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$nv </span><span class="keyword">= </span><span class="default">explode</span><span class="keyword">(</span><span class="string">"="</span><span class="keyword">, </span><span class="default">$pair</span><span class="keyword">);<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$name </span><span class="keyword">= </span><span class="default">urldecode</span><span class="keyword">(</span><span class="default">$nv</span><span class="keyword">[</span><span class="default">0</span><span class="keyword">]);<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$value </span><span class="keyword">= </span><span class="default">urldecode</span><span class="keyword">(</span><span class="default">$nv</span><span class="keyword">[</span><span class="default">1</span><span class="keyword">]);<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$vars</span><span class="keyword">[</span><span class="default">$name</span><span class="keyword">] = </span><span class="default">$value</span><span class="keyword">;<br />&nbsp; &nbsp; }<br />&nbsp; &nbsp; return </span><span class="default">$vars</span><span class="keyword">;<br />}<br /></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="52423">  <div class="votes">
+    <div id="Vu52423">
+    <a href="http://php.net/manual/vote-note.php?id=52423&amp;page=language.variables.external&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd52423">
+    <a href="http://php.net/manual/vote-note.php?id=52423&amp;page=language.variables.external&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V52423" title="42% like this...">
+    -3
+    </div>
+  </div>
+  <a href="#52423" class="name">
+  <strong class="user"><em>tim at timpauly dot com</em></strong></a><a class="genanchor" href="#52423"> &para;</a><div class="date" title="2005-04-30 06:57"><strong>12 years ago</strong></div>
+  <div class="text" id="Hcom52423">
+<div class="phpcode"><code><span class="html">
+This code module can be added to every form using require_once().<br />It will process any and all form data, prepending each variable with<br />a unique identifier (so you know which method was used to get the data).<br /><br />My coding could be neater, but this sure makes processing forms much easier!<br /><br /><span class="default">&lt;?php<br /></span><span class="comment">// -----------------------------------------------------------------<br />// Basic Data PHP module. This module captures all GET, POST<br />// and COOKIE data and processes it into variables.<br />// Coded April, 2005 by Timothy J. Pauly <br />// -----------------------------------------------------------------<br />//<br />// coo_ is prepended to each cookie variable<br />// get_ is prepended to each GET variable<br />// pos_ is prepended to each POST variable<br />// ses_ is prepended to each SESSION variable<br />// ser_ is prepended to each SERVER variable<br /><br /></span><span class="default">session_start</span><span class="keyword">(); </span><span class="comment">// initialize session data<br /></span><span class="default">$ArrayList </span><span class="keyword">= array(</span><span class="string">"_POST"</span><span class="keyword">, </span><span class="string">"_GET"</span><span class="keyword">, </span><span class="string">"_SESSION"</span><span class="keyword">, </span><span class="string">"_COOKIE"</span><span class="keyword">, </span><span class="string">"_SERVER"</span><span class="keyword">); </span><span class="comment">// create an array of the autoglobal arrays<br />// we want to process<br /><br /></span><span class="keyword">foreach(</span><span class="default">$ArrayList </span><span class="keyword">as </span><span class="default">$gblArray</span><span class="keyword">) </span><span class="comment">// process each array in the array list<br /></span><span class="keyword">{<br />&nbsp;&nbsp; </span><span class="default">$prefx </span><span class="keyword">= </span><span class="default">strtolower</span><span class="keyword">(</span><span class="default">substr</span><span class="keyword">(</span><span class="default">$gblArray</span><span class="keyword">,</span><span class="default">1</span><span class="keyword">,</span><span class="default">3</span><span class="keyword">)).</span><span class="string">"_"</span><span class="keyword">; </span><span class="comment">// derive the prepend string <br />// from the autoglobal type name<br />&nbsp;&nbsp; </span><span class="default">$tmpArray </span><span class="keyword">= $</span><span class="default">$gblArray</span><span class="keyword">;<br />&nbsp;&nbsp; </span><span class="default">$keys </span><span class="keyword">= </span><span class="default">array_keys</span><span class="keyword">(</span><span class="default">$tmpArray</span><span class="keyword">); </span><span class="comment">// extract the keys from the array being processed<br />&nbsp;&nbsp; </span><span class="keyword">foreach(</span><span class="default">$keys </span><span class="keyword">as </span><span class="default">$key</span><span class="keyword">) </span><span class="comment">// process each key<br />&nbsp; &nbsp; </span><span class="keyword">{<br />&nbsp; &nbsp; &nbsp;&nbsp; <br />&nbsp; &nbsp; </span><span class="default">$arcnt </span><span class="keyword">= </span><span class="default">count</span><span class="keyword">(</span><span class="default">$tmpArray</span><span class="keyword">[</span><span class="default">$key</span><span class="keyword">]);<br />&nbsp; &nbsp; <br />&nbsp; &nbsp; if (</span><span class="default">$arcnt </span><span class="keyword">&gt; </span><span class="default">1</span><span class="keyword">) </span><span class="comment">// Break down passed arrays and <br />// process each element seperately<br />&nbsp; &nbsp; </span><span class="keyword">{<br />&nbsp; &nbsp; &nbsp; </span><span class="default">$lcount </span><span class="keyword">= </span><span class="default">0</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; foreach (</span><span class="default">$tmpArray</span><span class="keyword">[</span><span class="default">$key</span><span class="keyword">] as </span><span class="default">$dval</span><span class="keyword">) <br />&nbsp; &nbsp; &nbsp; &nbsp; { <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="default">$prkey </span><span class="keyword">= </span><span class="default">$prefx</span><span class="keyword">.</span><span class="default">$key</span><span class="keyword">; </span><span class="comment">// create a new key string <br />// with the prepend string added<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="default">$prdata</span><span class="keyword">[</span><span class="string">'$prkey'</span><span class="keyword">] = </span><span class="default">$dval</span><span class="keyword">; </span><span class="comment">// this step could be eliminated<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="keyword">${</span><span class="default">$prkey</span><span class="keyword">}[</span><span class="default">$lcount</span><span class="keyword">] = </span><span class="default">$prdata</span><span class="keyword">[</span><span class="string">'$prkey'</span><span class="keyword">]; </span><span class="comment">//create new key and insert the data<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="default">$lcount</span><span class="keyword">++;<br />&nbsp; &nbsp; &nbsp; &nbsp; }<br />&nbsp; &nbsp; &nbsp; <br />&nbsp; &nbsp; &nbsp; &nbsp; } else { </span><span class="comment">// process passed single variables<br />&nbsp; &nbsp; &nbsp; &nbsp; <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$prkey </span><span class="keyword">= </span><span class="default">$prefx</span><span class="keyword">.</span><span class="default">$key</span><span class="keyword">; </span><span class="comment">// create a new key string <br />// with the prepend string added<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$prdata</span><span class="keyword">[</span><span class="string">'$prkey'</span><span class="keyword">] = </span><span class="default">$tmpArray</span><span class="keyword">[</span><span class="default">$key</span><span class="keyword">]; </span><span class="comment">// insert the data from <br />// the old array into the new one<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="keyword">$</span><span class="default">$prkey </span><span class="keyword">= </span><span class="default">$prdata</span><span class="keyword">[</span><span class="string">'$prkey'</span><span class="keyword">]; </span><span class="comment">// create the newly named <br />// (prepended) key pair using variable variables :-)<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; </span><span class="keyword">}<br />&nbsp; &nbsp; }<br />}<br /><br /></span><span class="comment">// -------------------------------------------------------------<br /></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="18737">  <div class="votes">
+    <div id="Vu18737">
+    <a href="http://php.net/manual/vote-note.php?id=18737&amp;page=language.variables.external&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd18737">
+    <a href="http://php.net/manual/vote-note.php?id=18737&amp;page=language.variables.external&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V18737" title="42% like this...">
+    -3
+    </div>
+  </div>
+  <a href="#18737" class="name">
+  <strong class="user"><em>a at b dot c dot de</em></strong></a><a class="genanchor" href="#18737"> &para;</a><div class="date" title="2002-02-03 04:49"><strong>15 years ago</strong></div>
+  <div class="text" id="Hcom18737">
+<div class="phpcode"><code><span class="html">
+As far as whether or not "[]" in name attributes goes, The HTML4.01 specification only requires that it be a case-insensitive CDATA token, which can quite happily include "[]". Leading and trailing whitespace may be trimmed and shouldn't be used.<br /><br />It is the id= attribute which is restricted, to a case-sensitive NAME token (not to be confused with a name= attribute).</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="18655">  <div class="votes">
+    <div id="Vu18655">
+    <a href="http://php.net/manual/vote-note.php?id=18655&amp;page=language.variables.external&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd18655">
+    <a href="http://php.net/manual/vote-note.php?id=18655&amp;page=language.variables.external&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V18655" title="41% like this...">
+    -3
+    </div>
+  </div>
+  <a href="#18655" class="name">
+  <strong class="user"><em>carl_steinhilber at NOSPAMmentor dot com</em></strong></a><a class="genanchor" href="#18655"> &para;</a><div class="date" title="2002-01-30 02:19"><strong>15 years ago</strong></div>
+  <div class="text" id="Hcom18655">
+<div class="phpcode"><code><span class="html">
+A group of identically-named checkbox form elements returning an array is a pretty standard feature of HTML forms. It would seem that, if the only way to get it to work is a non-HTML-standard-compliant workaround, it's a problem with PHP.<br /><br />Since the array is passed in the header in a post, or the URL in a get, it's the PHP interpretation of those values that's failing.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="50546">  <div class="votes">
+    <div id="Vu50546">
+    <a href="http://php.net/manual/vote-note.php?id=50546&amp;page=language.variables.external&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd50546">
+    <a href="http://php.net/manual/vote-note.php?id=50546&amp;page=language.variables.external&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V50546" title="40% like this...">
+    -5
+    </div>
+  </div>
+  <a href="#50546" class="name">
+  <strong class="user"><em>Murat TASARSU</em></strong></a><a class="genanchor" href="#50546"> &para;</a><div class="date" title="2005-03-02 04:29"><strong>12 years ago</strong></div>
+  <div class="text" id="Hcom50546">
+<div class="phpcode"><code><span class="html">
+if you want your multiple select returned variable in comma seperated form you can use this. hope that helps. regards...<br /><br />$myvariable <br />&nbsp;&nbsp; Array ( [0] =&gt; one [1] =&gt; two [2] =&gt; three ) <br />turns into<br />&nbsp;&nbsp; one,two,three<br /><br /><span class="default">&lt;?php<br />$myvariable</span><span class="keyword">=</span><span class="string">""</span><span class="keyword">;<br /></span><span class="default">$myseperator</span><span class="keyword">=</span><span class="string">""</span><span class="keyword">;<br />foreach ( </span><span class="default">$_POST</span><span class="keyword">[</span><span class="string">"myvariable"</span><span class="keyword">] as </span><span class="default">$v</span><span class="keyword">) {<br />if (!isset(</span><span class="default">$nofirstcomma</span><span class="keyword">)) </span><span class="default">$nofirstcomma</span><span class="keyword">=</span><span class="default">0</span><span class="keyword">; else </span><span class="default">$myseperator</span><span class="keyword">=</span><span class="string">","</span><span class="keyword">;<br /></span><span class="default">$myvariable </span><span class="keyword">= </span><span class="default">$myvariable</span><span class="keyword">.</span><span class="default">$myseperator</span><span class="keyword">.</span><span class="default">$v</span><span class="keyword">;<br />}<br />echo </span><span class="default">$myvariable</span><span class="keyword">;<br /></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="49574">  <div class="votes">
+    <div id="Vu49574">
+    <a href="http://php.net/manual/vote-note.php?id=49574&amp;page=language.variables.external&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd49574">
+    <a href="http://php.net/manual/vote-note.php?id=49574&amp;page=language.variables.external&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V49574" title="40% like this...">
+    -6
+    </div>
+  </div>
+  <a href="#49574" class="name">
+  <strong class="user"><em>jlratwil at yahoo dot com</em></strong></a><a class="genanchor" href="#49574"> &para;</a><div class="date" title="2005-02-01 05:35"><strong>12 years ago</strong></div>
+  <div class="text" id="Hcom49574">
+<div class="phpcode"><code><span class="html">
+To get multiple selected (with "multiple" ) lists in &lt;select&gt; tag, make sure that the "name" attribute is added to braces, like this:<br /><br />&lt;select multiple="multiple" name="users[]"&gt;<br />&nbsp; &nbsp;&nbsp; &lt;option value="foo"&gt;Foo&lt;/option&gt;<br />&nbsp; &nbsp;&nbsp; &lt;option value="bar"&gt;Bar&lt;/option&gt;<br />&lt;/select&gt;<br /><br />When submitted to PHP file (assume that you have a complete form) it will return an array of strings. Otherwise, it will just return the last element of the &lt;select&gt; tag you selected.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="34820">  <div class="votes">
+    <div id="Vu34820">
+    <a href="http://php.net/manual/vote-note.php?id=34820&amp;page=language.variables.external&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd34820">
+    <a href="http://php.net/manual/vote-note.php?id=34820&amp;page=language.variables.external&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V34820" title="40% like this...">
+    -6
+    </div>
+  </div>
+  <a href="#34820" class="name">
+  <strong class="user"><em>kevinrlat nospam dot ccs dot neu dot edu</em></strong></a><a class="genanchor" href="#34820"> &para;</a><div class="date" title="2003-08-07 10:47"><strong>14 years ago</strong></div>
+  <div class="text" id="Hcom34820">
+<div class="phpcode"><code><span class="html">
+if you use an array of checkboxes to submit info to a database or what have you, be careful of the case when no boxes are checked.&nbsp; for example:<br /><br />&lt;form method="post"&gt;<br />&lt;input type="checkbox" name="checkstuff[]" value="0"&gt;<br />&lt;input type="checkbox" name="checkstuff[]" value="1"&gt;<br />&lt;input type="checkbox" name="checkstuff[]" value="2"&gt;<br /><br />. . .<br /><br />&lt;/form&gt;<br /><br />if these are submitted and none are checked, the $_POST['checkstuff'] variable will not contain an empty array, but a NULL value.&nbsp; this bothered me when trying to implode() the values of my checkboxes to insert into a database, i got a warning saying the 2nd argument was the wrong type.&nbsp; <br /><br />hope this helps!<br />-kevin</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="30866">  <div class="votes">
+    <div id="Vu30866">
+    <a href="http://php.net/manual/vote-note.php?id=30866&amp;page=language.variables.external&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd30866">
+    <a href="http://php.net/manual/vote-note.php?id=30866&amp;page=language.variables.external&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V30866" title="38% like this...">
+    -6
+    </div>
+  </div>
+  <a href="#30866" class="name">
+  <strong class="user"><em>un shift at yahoo dot com</em></strong></a><a class="genanchor" href="#30866"> &para;</a><div class="date" title="2003-04-01 10:07"><strong>14 years ago</strong></div>
+  <div class="text" id="Hcom30866">
+<div class="phpcode"><code><span class="html">
+This function takes a recurring form item from php://input and loads it into an array - useful for javascript/dom incompatibility with form_input_item[] names for checkboxes, multiple selects, etc.&nbsp; The fread maxes out at 100k on this one.&nbsp; I guess a more portable option would be pulling in ini_get('post_max_size') and converting it to an integer.<br /><br /><span class="default">&lt;?php<br /></span><span class="keyword">function </span><span class="default">multi_post_item</span><span class="keyword">(</span><span class="default">$input_item_name</span><span class="keyword">) {<br />&nbsp; &nbsp;&nbsp; </span><span class="default">$array_output </span><span class="keyword">= array();<br />&nbsp; &nbsp;&nbsp; </span><span class="default">$in_handle </span><span class="keyword">= </span><span class="default">fopen</span><span class="keyword">(</span><span class="string">"php://input"</span><span class="keyword">, </span><span class="string">"r"</span><span class="keyword">);<br />&nbsp; &nbsp;&nbsp; </span><span class="default">$raw_input_items </span><span class="keyword">= </span><span class="default">split</span><span class="keyword">(</span><span class="string">"&amp;"</span><span class="keyword">, </span><span class="default">urldecode</span><span class="keyword">(</span><span class="default">fread</span><span class="keyword">(</span><span class="default">$in_handle</span><span class="keyword">, </span><span class="default">100000</span><span class="keyword">)));<br />&nbsp; &nbsp;&nbsp; foreach (</span><span class="default">$raw_input_items </span><span class="keyword">as </span><span class="default">$input_item</span><span class="keyword">) {<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="comment">// split this item into name/value pair<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$item </span><span class="keyword">= </span><span class="default">split</span><span class="keyword">(</span><span class="string">"="</span><span class="keyword">, </span><span class="default">$input_item</span><span class="keyword">);<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="comment">// form item name<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$item_name </span><span class="keyword">= </span><span class="default">$item</span><span class="keyword">[</span><span class="default">0</span><span class="keyword">];<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="comment">// form item value<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$item_value </span><span class="keyword">= </span><span class="default">$item</span><span class="keyword">[</span><span class="default">1</span><span class="keyword">];<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if (</span><span class="default">$item_name </span><span class="keyword">== </span><span class="default">$input_item_name</span><span class="keyword">) {<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$array_output</span><span class="keyword">[] = </span><span class="default">$item_value</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />&nbsp; &nbsp;&nbsp; }<br />&nbsp; &nbsp;&nbsp; return </span><span class="default">$array_output</span><span class="keyword">;<br />}<br /></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="21752">  <div class="votes">
+    <div id="Vu21752">
+    <a href="http://php.net/manual/vote-note.php?id=21752&amp;page=language.variables.external&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd21752">
+    <a href="http://php.net/manual/vote-note.php?id=21752&amp;page=language.variables.external&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V21752" title="35% like this...">
+    -4
+    </div>
+  </div>
+  <a href="#21752" class="name">
+  <strong class="user"><em>hjncom at hjncom dot net</em></strong></a><a class="genanchor" href="#21752"> &para;</a><div class="date" title="2002-05-25 03:34"><strong>15 years ago</strong></div>
+  <div class="text" id="Hcom21752">
+<div class="phpcode"><code><span class="html">
+I think '[' and ']' are valid characters for name attributes.<br /><br /><a href="http://www.w3.org/TR/html401/interact/forms.html#h-17.4" rel="nofollow" target="_blank">http://www.w3.org/TR/html401/interact/forms.html#h-17.4</a><br />-&gt; InputType of 'name' attribute is 'CDATA'(not 'NAME' type)<br /><br /><a href="http://www.w3.org/TR/html401/types.html#h-6.2" rel="nofollow" target="_blank">http://www.w3.org/TR/html401/types.html#h-6.2</a><br />-&gt; about CDATA('name' attribute is not 'NAME' type!)<br />...CDATA is a sequence of characters from the document character set and may include character entities...<br /><br /><a href="http://www.w3.org/TR/html401/sgml/entities.html" rel="nofollow" target="_blank">http://www.w3.org/TR/html401/sgml/entities.html</a><br />--&gt; about Character entity references in HTML 4<br />([ - &amp;#91, ] - &amp;#93)</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="47188">  <div class="votes">
+    <div id="Vu47188">
+    <a href="http://php.net/manual/vote-note.php?id=47188&amp;page=language.variables.external&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd47188">
+    <a href="http://php.net/manual/vote-note.php?id=47188&amp;page=language.variables.external&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V47188" title="33% like this...">
+    -5
+    </div>
+  </div>
+  <a href="#47188" class="name">
+  <strong class="user"><em>mattij at nitro  fi no at no dot no</em></strong></a><a class="genanchor" href="#47188"> &para;</a><div class="date" title="2004-11-05 07:39"><strong>13 years ago</strong></div>
+  <div class="text" id="Hcom47188">
+<div class="phpcode"><code><span class="html">
+If you try to refer or pass HTML-form data which has arrays with javascript remember that you should point to that array like this<br /><br />&lt;script type="text/javascript"&gt;<br />&nbsp; &nbsp; window.opener.document.forms[0]["to[where][we][point]"];<br />&lt;/script&gt;</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="29118">  <div class="votes">
+    <div id="Vu29118">
+    <a href="http://php.net/manual/vote-note.php?id=29118&amp;page=language.variables.external&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd29118">
+    <a href="http://php.net/manual/vote-note.php?id=29118&amp;page=language.variables.external&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V29118" title="30% like this...">
+    -5
+    </div>
+  </div>
+  <a href="#29118" class="name">
+  <strong class="user"><em>keli at kmdsz dot ro</em></strong></a><a class="genanchor" href="#29118"> &para;</a><div class="date" title="2003-02-03 07:37"><strong>14 years ago</strong></div>
+  <div class="text" id="Hcom29118">
+<div class="phpcode"><code><span class="html">
+image type inputs apparently return their "value" argument from Mozilla, but not from IEXplorer... :(<br /><br />example:<br /><br /> &lt;input type="image" name="sb" value="first" src="first.jpg"&gt;<br /><br />using a mozilla will give you <br />&nbsp; $sb="first" AND $sb_x, $sb_y ... whereas from IE there's just no $sb. :(<br /><br />[this in short form, as I'm still using trackvars :) ]</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="39270">  <div class="votes">
+    <div id="Vu39270">
+    <a href="http://php.net/manual/vote-note.php?id=39270&amp;page=language.variables.external&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd39270">
+    <a href="http://php.net/manual/vote-note.php?id=39270&amp;page=language.variables.external&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V39270" title="29% like this...">
+    -7
+    </div>
+  </div>
+  <a href="#39270" class="name">
+  <strong class="user"><em>jim at jamesdavis dot it</em></strong></a><a class="genanchor" href="#39270"> &para;</a><div class="date" title="2004-01-22 11:59"><strong>13 years ago</strong></div>
+  <div class="text" id="Hcom39270">
+<div class="phpcode"><code><span class="html">
+How to pass a numerically indexed array.<br />This is the part inside the form. Notice that the name is not 'english[$r]' which you would normally write, but 'english[]'. PHP adds the index when it receives the post and it starts at 0.<br /><br /><span class="default">&lt;?php<br /><br /></span><span class="keyword">for (</span><span class="default">$r</span><span class="keyword">=</span><span class="default">0</span><span class="keyword">; </span><span class="default">$r </span><span class="keyword">&lt;= </span><span class="default">count</span><span class="keyword">(</span><span class="default">$english</span><span class="keyword">)-</span><span class="default">1</span><span class="keyword">; </span><span class="default">$r</span><span class="keyword">++){<br />&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; echo </span><span class="string">"&lt;TEXTAREA NAME='english[]'&gt;"</span><span class="keyword">.</span><span class="default">$english</span><span class="keyword">[</span><span class="default">$r</span><span class="keyword">].</span><span class="string">"&lt;/TEXTAREA&gt;"</span><span class="keyword">;&nbsp; &nbsp; &nbsp; &nbsp; <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br />}<br /></span><span class="default">?&gt;<br />&lt;?php<br /><br /></span><span class="keyword">And </span><span class="default">this will get it out at the other end<br /></span><span class="keyword">function </span><span class="default">retrieve_english</span><span class="keyword">(){<br />&nbsp; &nbsp; for (</span><span class="default">$r</span><span class="keyword">=</span><span class="default">0</span><span class="keyword">; </span><span class="default">$r </span><span class="keyword">&lt;= </span><span class="default">count</span><span class="keyword">(</span><span class="default">$_POST</span><span class="keyword">[</span><span class="string">'english'</span><span class="keyword">])-</span><span class="default">1</span><span class="keyword">; </span><span class="default">$r</span><span class="keyword">++){<br />&nbsp; &nbsp; &nbsp; &nbsp; echo </span><span class="default">$_POST</span><span class="keyword">[</span><span class="string">'english'</span><span class="keyword">][</span><span class="default">$r</span><span class="keyword">].</span><span class="string">"&lt;BR&gt;"</span><span class="keyword">;<br />&nbsp; &nbsp; }<br />}<br /></span><span class="default">?&gt;<br /></span><br />Keys are useful but so are numerical indices!<br />Cheers everyone</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="37887">  <div class="votes">
+    <div id="Vu37887">
+    <a href="http://php.net/manual/vote-note.php?id=37887&amp;page=language.variables.external&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd37887">
+    <a href="http://php.net/manual/vote-note.php?id=37887&amp;page=language.variables.external&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V37887" title="26% like this...">
+    -9
+    </div>
+  </div>
+  <a href="#37887" class="name">
+  <strong class="user"><em>darren at sullivan dot net</em></strong></a><a class="genanchor" href="#37887"> &para;</a><div class="date" title="2003-12-01 08:37"><strong>14 years ago</strong></div>
+  <div class="text" id="Hcom37887">
+<div class="phpcode"><code><span class="html">
+This function is a simple solution for getting the array of selectes from a checkbox list or a dropdown list out of the Querry String. I took an example posted earlier and simplified it. <br /><br /><span class="default">&lt;?php<br /></span><span class="keyword">function </span><span class="default">multi_post_item</span><span class="keyword">(</span><span class="default">$repeatedString</span><span class="keyword">) {<br />&nbsp; &nbsp; </span><span class="comment">// Gets the specified array of multiple selects and/or <br />&nbsp; &nbsp; // checkboxes from the Query String<br />&nbsp; &nbsp; </span><span class="default">$ArrayOfItems </span><span class="keyword">= array();<br />&nbsp; &nbsp; </span><span class="default">$raw_input_items </span><span class="keyword">= </span><span class="default">split</span><span class="keyword">(</span><span class="string">"&amp;"</span><span class="keyword">, </span><span class="default">$_SERVER</span><span class="keyword">[</span><span class="string">"QUERY_STRING"</span><span class="keyword">]);<br />&nbsp; &nbsp; foreach (</span><span class="default">$raw_input_items </span><span class="keyword">as </span><span class="default">$input_item</span><span class="keyword">) {<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$itemPair </span><span class="keyword">= </span><span class="default">split</span><span class="keyword">(</span><span class="string">"="</span><span class="keyword">, </span><span class="default">$input_item</span><span class="keyword">);<br />&nbsp; &nbsp; &nbsp; &nbsp; if (</span><span class="default">$itemPair</span><span class="keyword">[</span><span class="default">0</span><span class="keyword">] == </span><span class="default">$repeatedString</span><span class="keyword">) {<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$ArrayOfItems</span><span class="keyword">[] = </span><span class="default">$itemPair</span><span class="keyword">[</span><span class="default">1</span><span class="keyword">];<br />&nbsp; &nbsp; &nbsp; &nbsp; }<br />&nbsp; &nbsp; }<br />&nbsp; &nbsp; return </span><span class="default">$ArrayOfItems</span><span class="keyword">;<br />} <br /></span><span class="default">?&gt;<br /></span><br />Use the name of the field as the agrument. Example:<br /><br /><span class="default">&lt;?php<br />$Order </span><span class="keyword">= </span><span class="default">$_GET</span><span class="keyword">[</span><span class="string">'Order'</span><span class="keyword">];<br /></span><span class="default">$Name </span><span class="keyword">= </span><span class="default">$_GET</span><span class="keyword">[</span><span class="string">'Name'</span><span class="keyword">];<br /></span><span class="default">$States </span><span class="keyword">= </span><span class="default">multi_post_item</span><span class="keyword">(</span><span class="string">'States'</span><span class="keyword">);<br /></span><span class="default">$Products </span><span class="keyword">= </span><span class="default">multi_post_item</span><span class="keyword">(</span><span class="string">'Products'</span><span class="keyword">);<br /></span><span class="default">?&gt;<br /></span><br />Be sure to check for NULL if there are no selections or boxes checked.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="41025">  <div class="votes">
+    <div id="Vu41025">
+    <a href="http://php.net/manual/vote-note.php?id=41025&amp;page=language.variables.external&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd41025">
+    <a href="http://php.net/manual/vote-note.php?id=41025&amp;page=language.variables.external&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V41025" title="27% like this...">
+    -10
+    </div>
+  </div>
+  <a href="#41025" class="name">
+  <strong class="user"><em>arjini at mac dot com</em></strong></a><a class="genanchor" href="#41025"> &para;</a><div class="date" title="2004-03-26 11:48"><strong>13 years ago</strong></div>
+  <div class="text" id="Hcom41025">
+<div class="phpcode"><code><span class="html">
+When dealing with form inputs named_like_this[5] and javascript, instead of trying to get PHP to do something fancy as mentioned below, just try this on the javascript side of things:<br /><br />&lt;form name="myForm"&gt;<br /><br />&lt;script&gt;<br />my_fancy_input_name = 'array_of_things[1]';<br />/* now just refer to it like this in the dom tree <br /><br />document[myForm][my_fancy_input_name].value<br /><br />etc*/<br />&lt;/script&gt;<br /><br />&lt;input type="text" name="array_of_things[1]" value="1"/&gt;<br />&lt;/form&gt;<br /><br />No fancy PHP, in fact, you shouldn't need to change your PHP at all.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="121481">  <div class="votes">
+    <div id="Vu121481">
+    <a href="http://php.net/manual/vote-note.php?id=121481&amp;page=language.variables.external&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd121481">
+    <a href="http://php.net/manual/vote-note.php?id=121481&amp;page=language.variables.external&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V121481" title="0% like this...">
+    -4
+    </div>
+  </div>
+  <a href="#121481" class="name">
+  <strong class="user"><em>Sadik_quake2003 at mail dot ru</em></strong></a><a class="genanchor" href="#121481"> &para;</a><div class="date" title="2017-08-05 09:51"><strong>4 months ago</strong></div>
+  <div class="text" id="Hcom121481">
+<div class="phpcode"><code><span class="html">
+&lt;form method="post"&gt;<br />&nbsp; &nbsp; &lt;select name="list"&gt;<br />&nbsp; &nbsp; &nbsp; &nbsp; &lt;option&gt;one&lt;/option&gt;<br />&nbsp; &nbsp; &nbsp; &nbsp; &lt;option&gt;two&lt;/option&gt;<br />&nbsp; &nbsp; &nbsp; &nbsp; &lt;option&gt;three&lt;/option&gt;<br />&nbsp; &nbsp; &lt;/select&gt;&lt;br /&gt;<br />&nbsp; &nbsp; &lt;input type="submit" value="send" /&gt;<br />&lt;/form&gt;<br /><br /><span class="default">&lt;?=$_POST</span><span class="keyword">[</span><span class="string">"list"</span><span class="keyword">];</span><span class="default">?&gt;<br /></span><br />If we change first option, that result will be: one (important: not null !)</span>
+</code></div>
+  </div>
+ </div></div>
+
+ <div class="foot"><a href="http://php.net/manual/add-note.php?sect=language.variables.external&amp;redirect=http://php.net/manual/en/language.variables.external.php"><img src='http://php.net/images/notes-add@2x.png' alt='add a note' width='12' height='12'> <small>add a note</small></a></div>
+</section>    </section><!-- layout-content -->
+        <aside class='layout-menu'>
+    
+        <ul class='parent-menu-list'>
+                                    <li>
+                <a href="http://php.net/manual/en/language.variables.php">Variables</a>
+    
+                                    <ul class='child-menu-list'>
+    
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.variables.basics.php" title="Basics">Basics</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.variables.predefined.php" title="Predefined Variables">Predefined Variables</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.variables.scope.php" title="Variable scope">Variable scope</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.variables.variable.php" title="Variable variables">Variable variables</a>
+                        </li>
+                          
+                        <li class="current">
+                            <a href="http://php.net/manual/en/language.variables.external.php" title="Variables From External Sources">Variables From External Sources</a>
+                        </li>
+                            
+                    </ul>
+                    
+            </li>
+                        
+                    </ul>
+    </aside>
+
+
+  </div><!-- layout -->
+         
+  <footer>
+    <div class="container footer-content">
+      <div class="row-fluid">
+      <ul class="footmenu">
+        <li><a href="http://php.net/copyright.php">Copyright &copy; 2001-2017 The PHP Group</a></li>
+        <li><a href="http://php.net/my.php">My PHP.net</a></li>
+        <li><a href="http://php.net/contact.php">Contact</a></li>
+        <li><a href="http://php.net/sites.php">Other PHP.net sites</a></li>
+        <li><a href="http://php.net/mirrors.php">Mirror sites</a></li>
+        <li><a href="http://php.net/privacy.php">Privacy policy</a></li>
+      </ul>
+      </div>
+    </div>
+  </footer>
+
+    
+ <!-- External and third party libraries. -->
+ <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/modernizr.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/hogan-2.0.0.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/typeahead.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/mousetrap.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/search.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1500560403&amp;f=/js/common.js"></script>
+
+<a id="toTop" href="javascript:;"><span id="toTopHover"></span><img width="40" height="40" alt="To Top" src="http://php.net/images/to-top@2x.png"></a>
+
+</body>
+
+<!-- Mirrored from php.net/manual/en/language.variables.external.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Dec 2017 23:18:10 GMT -->
+</html>
+

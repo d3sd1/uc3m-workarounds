@@ -1,0 +1,12 @@
+.g-signin2{
+    width: 100%;
+}
+
+.g-signin2 > div{
+    margin: 0 auto;
+    width: 100%!important
+}
+ul#chatBox { overflow: auto; height: 15em; margin: 1em 0; padding: 0 3px; list-style: none; border: 1px solid gray; }
+ul#chatBox li { margin: 0.35em 0; padding: 0; text-align: left}
+ul#chatBox li small { display: block; font-size: 0.59em; color: gray;}
+ul#chatBox li.pending { color: #aaa; }

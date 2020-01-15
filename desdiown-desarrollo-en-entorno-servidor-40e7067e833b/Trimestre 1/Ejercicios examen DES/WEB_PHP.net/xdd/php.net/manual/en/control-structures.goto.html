@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<!-- Mirrored from php.net/manual/en/control-structures.goto.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Dec 2017 23:18:11 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+  <title>PHP: goto - Manual </title>
+
+ <link rel="shortcut icon" href="http://php.net/favicon.ico">
+ <link rel="search" type="application/opensearchdescription+xml" href="http://php.net/phpnetimprovedsearch.src" title="Add PHP.net search">
+ <link rel="alternate" type="application/atom+xml" href="http://php.net/releases/feed.php" title="PHP Release feed">
+ <link rel="alternate" type="application/atom+xml" href="http://php.net/feed.atom" title="PHP: Hypertext Preprocessor">
+
+ <link rel="canonical" href="http://php.net/manual/en/control-structures.goto.php">
+ <link rel="shorturl" href="http://php.net/goto">
+ <link rel="alternate" href="http://php.net/goto" hreflang="x-default">
+
+ <link rel="contents" href="http://php.net/manual/en/index.php">
+ <link rel="index" href="http://php.net/manual/en/language.control-structures.php">
+ <link rel="prev" href="http://php.net/manual/en/function.include-once.php">
+ <link rel="next" href="http://php.net/manual/en/language.functions.php">
+
+ <link rel="alternate" href="http://php.net/manual/en/control-structures.goto.php" hreflang="en">
+ <link rel="alternate" href="http://php.net/manual/pt_BR/control-structures.goto.php" hreflang="pt_BR">
+ <link rel="alternate" href="http://php.net/manual/zh/control-structures.goto.php" hreflang="zh">
+ <link rel="alternate" href="http://php.net/manual/fr/control-structures.goto.php" hreflang="fr">
+ <link rel="alternate" href="http://php.net/manual/de/control-structures.goto.php" hreflang="de">
+ <link rel="alternate" href="http://php.net/manual/ja/control-structures.goto.php" hreflang="ja">
+ <link rel="alternate" href="http://php.net/manual/ro/control-structures.goto.php" hreflang="ro">
+ <link rel="alternate" href="http://php.net/manual/ru/control-structures.goto.php" hreflang="ru">
+ <link rel="alternate" href="http://php.net/manual/es/control-structures.goto.php" hreflang="es">
+ <link rel="alternate" href="http://php.net/manual/tr/control-structures.goto.php" hreflang="tr">
+
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1421837618&amp;f=/fonts/Fira/fira.css" media="screen">
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1421837618&amp;f=/fonts/Font-Awesome/css/fontello.css" media="screen">
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1478800802&amp;f=/styles/theme-base.css" media="screen">
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1449787206&amp;f=/styles/theme-medium.css" media="screen">
+
+ <!--[if lte IE 7]>
+ <link rel="stylesheet" type="text/css" href="http://php.net/styles/workarounds.ie7.css" media="screen">
+ <![endif]-->
+
+ <!--[if lte IE 8]>
+ <script type="text/javascript">
+  window.brokenIE = true;
+ </script>
+ <![endif]-->
+
+ <!--[if lte IE 9]>
+ <link rel="stylesheet" type="text/css" href="http://php.net/styles/workarounds.ie9.css" media="screen">
+ <![endif]-->
+
+ <!--[if IE]>
+ <script type="text/javascript" src="http://php.net/js/ext/html5.js"></script>
+ <![endif]-->
+
+ <base >
+
+</head>
+<body class="docs ">
+
+<nav id="head-nav" class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <a href="http://php.net/" class="brand"><img src="http://php.net/images/logos/php-logo.svg" width="48" height="24" alt="php"></a>
+    <div id="mainmenu-toggle-overlay"></div>
+    <input type="checkbox" id="mainmenu-toggle">
+    <ul class="nav">
+      <li class=""><a href="http://php.net/downloads">Downloads</a></li>
+      <li class="active"><a href="http://php.net/docs.php">Documentation</a></li>
+      <li class=""><a href="http://php.net/get-involved" >Get Involved</a></li>
+      <li class=""><a href="http://php.net/support">Help</a></li>
+    </ul>
+    <form class="navbar-search" id="topsearch" action="http://php.net/search.php">
+      <input type="hidden" name="show" value="quickref">
+      <input type="search" name="pattern" class="search-query" placeholder="Search" accesskey="s">
+    </form>
+  </div>
+  <div id="flash-message"></div>
+</nav>
+<nav id="trick"><div><dl>
+<dt><a href='http://php.net/manual/en/getting-started.php'>Getting Started</a></dt>
+	<dd><a href='http://php.net/manual/en/introduction.php'>Introduction</a></dd>
+	<dd><a href='http://php.net/manual/en/tutorial.php'>A simple tutorial</a></dd>
+<dt><a href='http://php.net/manual/en/langref.php'>Language Reference</a></dt>
+	<dd><a href='http://php.net/manual/en/language.basic-syntax.php'>Basic syntax</a></dd>
+	<dd><a href='http://php.net/manual/en/language.types.php'>Types</a></dd>
+	<dd><a href='http://php.net/manual/en/language.variables.php'>Variables</a></dd>
+	<dd><a href='http://php.net/manual/en/language.constants.php'>Constants</a></dd>
+	<dd><a href='http://php.net/manual/en/language.expressions.php'>Expressions</a></dd>
+	<dd><a href='http://php.net/manual/en/language.operators.php'>Operators</a></dd>
+	<dd><a href='http://php.net/manual/en/language.control-structures.php'>Control Structures</a></dd>
+	<dd><a href='http://php.net/manual/en/language.functions.php'>Functions</a></dd>
+	<dd><a href='http://php.net/manual/en/language.oop5.php'>Classes and Objects</a></dd>
+	<dd><a href='http://php.net/manual/en/language.namespaces.php'>Namespaces</a></dd>
+	<dd><a href='http://php.net/manual/en/language.errors.php'>Errors</a></dd>
+	<dd><a href='http://php.net/manual/en/language.exceptions.php'>Exceptions</a></dd>
+	<dd><a href='http://php.net/manual/en/language.generators.php'>Generators</a></dd>
+	<dd><a href='http://php.net/manual/en/language.references.php'>References Explained</a></dd>
+	<dd><a href='http://php.net/manual/en/reserved.variables.php'>Predefined Variables</a></dd>
+	<dd><a href='http://php.net/manual/en/reserved.exceptions.php'>Predefined Exceptions</a></dd>
+	<dd><a href='http://php.net/manual/en/reserved.interfaces.php'>Predefined Interfaces and Classes</a></dd>
+	<dd><a href='http://php.net/manual/en/context.php'>Context options and parameters</a></dd>
+	<dd><a href='http://php.net/manual/en/wrappers.php'>Supported Protocols and Wrappers</a></dd>
+</dl>
+<dl>
+<dt><a href='http://php.net/manual/en/security.php'>Security</a></dt>
+	<dd><a href='http://php.net/manual/en/security.intro.php'>Introduction</a></dd>
+	<dd><a href='http://php.net/manual/en/security.general.php'>General considerations</a></dd>
+	<dd><a href='http://php.net/manual/en/security.cgi-bin.php'>Installed as CGI binary</a></dd>
+	<dd><a href='http://php.net/manual/en/security.apache.php'>Installed as an Apache module</a></dd>
+	<dd><a href='http://php.net/manual/en/security.sessions.php'>Session Security</a></dd>
+	<dd><a href='http://php.net/manual/en/security.filesystem.php'>Filesystem Security</a></dd>
+	<dd><a href='http://php.net/manual/en/security.database.php'>Database Security</a></dd>
+	<dd><a href='http://php.net/manual/en/security.errors.php'>Error Reporting</a></dd>
+	<dd><a href='http://php.net/manual/en/security.globals.php'>Using Register Globals</a></dd>
+	<dd><a href='http://php.net/manual/en/security.variables.php'>User Submitted Data</a></dd>
+	<dd><a href='http://php.net/manual/en/security.magicquotes.php'>Magic Quotes</a></dd>
+	<dd><a href='http://php.net/manual/en/security.hiding.php'>Hiding PHP</a></dd>
+	<dd><a href='http://php.net/manual/en/security.current.php'>Keeping Current</a></dd>
+<dt><a href='http://php.net/manual/en/features.php'>Features</a></dt>
+	<dd><a href='http://php.net/manual/en/features.http-auth.php'>HTTP authentication with PHP</a></dd>
+	<dd><a href='http://php.net/manual/en/features.cookies.php'>Cookies</a></dd>
+	<dd><a href='http://php.net/manual/en/features.sessions.php'>Sessions</a></dd>
+	<dd><a href='http://php.net/manual/en/features.xforms.php'>Dealing with XForms</a></dd>
+	<dd><a href='http://php.net/manual/en/features.file-upload.php'>Handling file uploads</a></dd>
+	<dd><a href='http://php.net/manual/en/features.remote-files.php'>Using remote files</a></dd>
+	<dd><a href='http://php.net/manual/en/features.connection-handling.php'>Connection handling</a></dd>
+	<dd><a href='http://php.net/manual/en/features.persistent-connections.php'>Persistent Database Connections</a></dd>
+	<dd><a href='http://php.net/manual/en/features.safe-mode.php'>Safe Mode</a></dd>
+	<dd><a href='http://php.net/manual/en/features.commandline.php'>Command line usage</a></dd>
+	<dd><a href='http://php.net/manual/en/features.gc.php'>Garbage Collection</a></dd>
+	<dd><a href='http://php.net/manual/en/features.dtrace.php'>DTrace Dynamic Tracing</a></dd>
+</dl>
+<dl>
+<dt><a href='http://php.net/manual/en/funcref.php'>Function Reference</a></dt>
+	<dd><a href='http://php.net/manual/en/refs.basic.php.php'>Affecting PHP's Behaviour</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.audio.php'>Audio Formats Manipulation</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.remote.auth.php'>Authentication Services</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.cmdline.php'>Command Line Specific Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.compression.php'>Compression and Archive Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.creditcard.php'>Credit Card Processing</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.crypto.php'>Cryptography Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.database.php'>Database Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.calendar.php'>Date and Time Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.fileprocess.file.php'>File System Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.international.php'>Human Language and Character Encoding Support</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.image.php'>Image Processing and Generation</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.remote.mail.php'>Mail Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.math.php'>Mathematical Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.nontext.php'>Non-Text MIME Output</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.fileprocess.process.php'>Process Control Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.other.php'>Other Basic Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.remote.other.php'>Other Services</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.search.php'>Search Engine Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.server.php'>Server Specific Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.session.php'>Session Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.text.php'>Text Processing</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.vartype.php'>Variable and Type Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.webservice.php'>Web Services</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.windows.php'>Windows Only Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.xml.php'>XML Manipulation</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.ui.php'>GUI Extensions</a></dd>
+</dl>
+<dl>
+<dt>Keyboard Shortcuts</dt><dt>?</dt>
+<dd>This help</dd>
+<dt>j</dt>
+<dd>Next menu item</dd>
+<dt>k</dt>
+<dd>Previous menu item</dd>
+<dt>g p</dt>
+<dd>Previous man page</dd>
+<dt>g n</dt>
+<dd>Next man page</dd>
+<dt>G</dt>
+<dd>Scroll to bottom</dd>
+<dt>g g</dt>
+<dd>Scroll to top</dd>
+<dt>g h</dt>
+<dd>Goto homepage</dd>
+<dt>g s</dt>
+<dd>Goto search<br>(current page)</dd>
+<dt>/</dt>
+<dd>Focus search box</dd>
+</dl></div></nav>
+<div id="goto">
+    <div class="search">
+         <div class="text"></div>
+         <div class="results"><ul></ul></div>
+   </div>
+</div>
+
+  <div id="breadcrumbs" class="clearfix">
+    <div id="breadcrumbs-inner">
+          <div class="next">
+        <a href="http://php.net/manual/en/language.functions.php">
+          Functions &raquo;
+        </a>
+      </div>
+              <div class="prev">
+        <a href="http://php.net/manual/en/function.include-once.php">
+          &laquo; include_once        </a>
+      </div>
+          <ul>
+            <li><a href='http://php.net/manual/en/index.php'>PHP Manual</a></li>      <li><a href='http://php.net/manual/en/langref.php'>Language Reference</a></li>      <li><a href='http://php.net/manual/en/language.control-structures.php'>Control Structures</a></li>      </ul>
+    </div>
+  </div>
+
+
+
+
+<div id="layout" class="clearfix">
+  <section id="layout-content">
+  <div class="page-tools">
+    <div class="change-language">
+      <form action="http://php.net/manual/change.php" method="get" id="changelang" name="changelang">
+        <fieldset>
+          <label for="changelang-langs">Change language:</label>
+          <select onchange="document.changelang.submit()" name="page" id="changelang-langs">
+            <option value='en/control-structures.goto.php' selected="selected">English</option>
+            <option value='http://php.net/manual/en/pt_BR/control-structures.goto.php'>Brazilian Portuguese</option>
+            <option value='http://php.net/manual/en/zh/control-structures.goto.php'>Chinese (Simplified)</option>
+            <option value='http://php.net/manual/en/fr/control-structures.goto.php'>French</option>
+            <option value='http://php.net/manual/en/de/control-structures.goto.php'>German</option>
+            <option value='http://php.net/manual/en/ja/control-structures.goto.php'>Japanese</option>
+            <option value='http://php.net/manual/en/ro/control-structures.goto.php'>Romanian</option>
+            <option value='http://php.net/manual/en/ru/control-structures.goto.php'>Russian</option>
+            <option value='http://php.net/manual/en/es/control-structures.goto.php'>Spanish</option>
+            <option value='http://php.net/manual/en/tr/control-structures.goto.php'>Turkish</option>
+            <option value="http://php.net/manual/en/help-translate.php">Other</option>
+          </select>
+        </fieldset>
+      </form>
+    </div>
+    <div class="edit-bug">
+      <a href="https://edit.php.net/?project=PHP&amp;perm=en/control-structures.goto.php">Edit</a>
+      <a href="https://bugs.php.net/report.php?bug_type=Documentation+problem&amp;manpage=control-structures.goto">Report a Bug</a>
+    </div>
+  </div><div id="control-structures.goto" class="sect1">
+ <h2 class="title"><em>goto</em></h2>
+ <p class="verinfo">(PHP 5 &gt;= 5.3.0, PHP 7)</p>
+ <p class="para">
+  <div class="mediaobject">
+   
+   <div class="imageobject">
+    <img src="http://php.net/manual/en/images/0baa1b9fae6aec55bbb73037f3016001-xkcd-goto.png" alt="What's the worse thing that could happen if you use goto?" width="740" height="201" />
+   </div>
+  </div>
+  Image courtesy of <a href="http://xkcd.com/292" class="link external">&raquo;&nbsp;xkcd</a>
+ </p>
+ <p class="para">
+  The <em>goto</em> operator can be used to jump to another
+  section in the program.  The target point is specified by a label
+  followed by a colon, and the instruction is given as
+  <em>goto</em> followed by the desired target label.  This
+  is not a full unrestricted <em>goto</em>.  The target
+  label must be within the same file and context, meaning that you cannot jump
+  out of a function or method, nor can you jump into one.  You also
+  cannot jump into any sort of loop or switch structure.  You may jump
+  out of these, and a common use is to use a <em>goto</em>
+  in place of a multi-level <em>break</em>.
+ </p>
+ <p class="para">
+  <div class="example" id="example-129">
+   <p><strong>Example #1 <em>goto</em> example</strong></p>
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">goto&nbsp;</span><span style="color: #0000BB">a</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #DD0000">'Foo'</span><span style="color: #007700">;<br />&nbsp;<br /></span><span style="color: #0000BB">a</span><span style="color: #007700">:<br />echo&nbsp;</span><span style="color: #DD0000">'Bar'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+   <div class="example-contents"><p>The above example will output:</p></div>
+   <div class="example-contents screen">
+<div class="cdata"><pre>
+Bar
+</pre></div>
+   </div>
+  </div>
+ </p>
+ <p class="para">
+  <div class="example" id="example-130">
+   <p><strong>Example #2 <em>goto</em> loop example</strong></p>
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">for(</span><span style="color: #0000BB">$i</span><span style="color: #007700">=</span><span style="color: #0000BB">0</span><span style="color: #007700">,</span><span style="color: #0000BB">$j</span><span style="color: #007700">=</span><span style="color: #0000BB">50</span><span style="color: #007700">;&nbsp;</span><span style="color: #0000BB">$i</span><span style="color: #007700">&lt;</span><span style="color: #0000BB">100</span><span style="color: #007700">;&nbsp;</span><span style="color: #0000BB">$i</span><span style="color: #007700">++)&nbsp;{<br />&nbsp;&nbsp;while(</span><span style="color: #0000BB">$j</span><span style="color: #007700">--)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;if(</span><span style="color: #0000BB">$j</span><span style="color: #007700">==</span><span style="color: #0000BB">17</span><span style="color: #007700">)&nbsp;goto&nbsp;</span><span style="color: #0000BB">end</span><span style="color: #007700">;&nbsp;<br />&nbsp;&nbsp;}&nbsp;&nbsp;<br />}<br />echo&nbsp;</span><span style="color: #DD0000">"i&nbsp;=&nbsp;</span><span style="color: #0000BB">$i</span><span style="color: #DD0000">"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">end</span><span style="color: #007700">:<br />echo&nbsp;</span><span style="color: #DD0000">'j&nbsp;hit&nbsp;17'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+   <div class="example-contents"><p>The above example will output:</p></div>
+   <div class="example-contents screen">
+<div class="cdata"><pre>
+j hit 17
+</pre></div>
+   </div>
+  </div>
+ </p>
+ <p class="para">
+  <div class="example" id="example-131">
+   <p><strong>Example #3 This will not work</strong></p>
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">goto&nbsp;</span><span style="color: #0000BB">loop</span><span style="color: #007700">;<br />for(</span><span style="color: #0000BB">$i</span><span style="color: #007700">=</span><span style="color: #0000BB">0</span><span style="color: #007700">,</span><span style="color: #0000BB">$j</span><span style="color: #007700">=</span><span style="color: #0000BB">50</span><span style="color: #007700">;&nbsp;</span><span style="color: #0000BB">$i</span><span style="color: #007700">&lt;</span><span style="color: #0000BB">100</span><span style="color: #007700">;&nbsp;</span><span style="color: #0000BB">$i</span><span style="color: #007700">++)&nbsp;{<br />&nbsp;&nbsp;while(</span><span style="color: #0000BB">$j</span><span style="color: #007700">--)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">loop</span><span style="color: #007700">:<br />&nbsp;&nbsp;}<br />}<br />echo&nbsp;</span><span style="color: #DD0000">"</span><span style="color: #0000BB">$i</span><span style="color: #DD0000">&nbsp;=&nbsp;</span><span style="color: #0000BB">$i</span><span style="color: #DD0000">"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+   <div class="example-contents"><p>The above example will output:</p></div>
+   <div class="example-contents screen">
+<div class="cdata"><pre>
+Fatal error: &#039;goto&#039; into loop or switch statement is disallowed in
+script on line 2
+</pre></div>
+   </div>
+  </div>
+ </p>
+ <blockquote class="note"><p><strong class="note">Note</strong>: 
+  <p class="para">
+   The <em>goto</em> operator is available as of PHP 5.3.
+  </p>
+ </p></blockquote>
+</div>
+<section id="usernotes">
+ <div class="head">
+  <span class="action"><a href="http://php.net/manual/add-note.php?sect=control-structures.goto&amp;redirect=http://php.net/manual/en/control-structures.goto.php"><img src='http://php.net/images/notes-add@2x.png' alt='add a note' width='12' height='12'> <small>add a note</small></a></span>
+  <h3 class="title">User Contributed Notes <span class="count">11 notes</span></h3>
+ </div><div id="allnotes">
+  <div class="note" id="92763">  <div class="votes">
+    <div id="Vu92763">
+    <a href="http://php.net/manual/vote-note.php?id=92763&amp;page=control-structures.goto&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd92763">
+    <a href="http://php.net/manual/vote-note.php?id=92763&amp;page=control-structures.goto&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V92763" title="75% like this...">
+    69
+    </div>
+  </div>
+  <a href="#92763" class="name">
+  <strong class="user"><em>chrisstocktonaz at gmail dot com</em></strong></a><a class="genanchor" href="#92763"> &para;</a><div class="date" title="2009-08-07 03:03"><strong>8 years ago</strong></div>
+  <div class="text" id="Hcom92763">
+<div class="phpcode"><code><span class="html">
+Remember if you are not a fan of wild labels hanging around you are free to use braces in this construct creating a slightly cleaner look. Labels also are always executed and do not need to be called to have their associated code block ran. A purposeless example is below.<br /><br /><span class="default">&lt;?php<br /><br />$headers </span><span class="keyword">= Array(</span><span class="string">'subject'</span><span class="keyword">, </span><span class="string">'bcc'</span><span class="keyword">, </span><span class="string">'to'</span><span class="keyword">, </span><span class="string">'cc'</span><span class="keyword">, </span><span class="string">'date'</span><span class="keyword">, </span><span class="string">'sender'</span><span class="keyword">);<br /></span><span class="default">$position </span><span class="keyword">= </span><span class="default">0</span><span class="keyword">;<br /><br /></span><span class="default">hIterator</span><span class="keyword">: {<br /><br />&nbsp; &nbsp; </span><span class="default">$c </span><span class="keyword">= </span><span class="default">0</span><span class="keyword">;<br />&nbsp; &nbsp; echo </span><span class="default">$headers</span><span class="keyword">[</span><span class="default">$position</span><span class="keyword">] . </span><span class="default">PHP_EOL</span><span class="keyword">;<br /><br />&nbsp; &nbsp; </span><span class="default">cIterator</span><span class="keyword">: {<br />&nbsp; &nbsp; &nbsp; &nbsp; echo </span><span class="string">' ' </span><span class="keyword">. </span><span class="default">$headers</span><span class="keyword">[</span><span class="default">$position</span><span class="keyword">][</span><span class="default">$c</span><span class="keyword">] . </span><span class="default">PHP_EOL</span><span class="keyword">;<br /><br />&nbsp; &nbsp; &nbsp; &nbsp; if(!isset(</span><span class="default">$headers</span><span class="keyword">[</span><span class="default">$position</span><span class="keyword">][++</span><span class="default">$c</span><span class="keyword">])) {<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; goto </span><span class="default">cIteratorExit</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; &nbsp; }<br />&nbsp; &nbsp; &nbsp; &nbsp; goto </span><span class="default">cIterator</span><span class="keyword">;<br />&nbsp; &nbsp; }<br /><br />&nbsp; &nbsp; </span><span class="default">cIteratorExit</span><span class="keyword">: {<br />&nbsp; &nbsp; &nbsp; &nbsp; if(isset(</span><span class="default">$headers</span><span class="keyword">[++</span><span class="default">$position</span><span class="keyword">])) {<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; goto </span><span class="default">hIterator</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; &nbsp; }<br />&nbsp; &nbsp; }<br />}<br /></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="106323">  <div class="votes">
+    <div id="Vu106323">
+    <a href="http://php.net/manual/vote-note.php?id=106323&amp;page=control-structures.goto&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd106323">
+    <a href="http://php.net/manual/vote-note.php?id=106323&amp;page=control-structures.goto&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V106323" title="73% like this...">
+    46
+    </div>
+  </div>
+  <a href="#106323" class="name">
+  <strong class="user"><em>Ray dot Paseur at Gmail dot com</em></strong></a><a class="genanchor" href="#106323"> &para;</a><div class="date" title="2011-10-27 06:59"><strong>6 years ago</strong></div>
+  <div class="text" id="Hcom106323">
+<div class="phpcode"><code><span class="html">
+You cannot implement a Fortran-style "computed GOTO" in PHP because the label cannot be a variable. See: <a href="http://en.wikipedia.org/wiki/Considered_harmful" rel="nofollow" target="_blank">http://en.wikipedia.org/wiki/Considered_harmful</a><br /><br /><span class="default">&lt;?php </span><span class="comment">// RAY_goto.php<br /></span><span class="default">error_reporting</span><span class="keyword">(</span><span class="default">E_ALL</span><span class="keyword">);<br /><br /></span><span class="comment">// DEMONSTRATE THAT THE GOTO LABEL IS CASE-SENSITIVE<br /><br /></span><span class="keyword">goto </span><span class="default">a</span><span class="keyword">;<br />echo </span><span class="string">'Foo'</span><span class="keyword">;<br /></span><span class="default">a</span><span class="keyword">: echo </span><span class="string">'Bar'</span><span class="keyword">;<br /><br />goto </span><span class="default">A</span><span class="keyword">;<br />echo </span><span class="string">'Foo'</span><span class="keyword">;<br /></span><span class="default">A</span><span class="keyword">: echo </span><span class="string">'Baz'</span><span class="keyword">;<br /><br /></span><span class="comment">// CAN THE GOTO LABEL BE A VARIABLE?<br /><br /></span><span class="default">$a </span><span class="keyword">= </span><span class="string">'abc'</span><span class="keyword">;<br />goto </span><span class="default">$a</span><span class="keyword">; </span><span class="comment">// NOPE: PARSE ERROR<br /></span><span class="keyword">echo </span><span class="string">'Foo'</span><span class="keyword">;<br /></span><span class="default">abc</span><span class="keyword">: echo </span><span class="string">'Boom'</span><span class="keyword">;<br /></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="118235">  <div class="votes">
+    <div id="Vu118235">
+    <a href="http://php.net/manual/vote-note.php?id=118235&amp;page=control-structures.goto&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd118235">
+    <a href="http://php.net/manual/vote-note.php?id=118235&amp;page=control-structures.goto&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V118235" title="70% like this...">
+    21
+    </div>
+  </div>
+  <a href="#118235" class="name">
+  <strong class="user"><em>D. Kellner</em></strong></a><a class="genanchor" href="#118235"> &para;</a><div class="date" title="2015-10-31 02:12"><strong>2 years ago</strong></div>
+  <div class="text" id="Hcom118235">
+<div class="phpcode"><code><span class="html">
+However hated, goto is useful. When we say "useful" we don't mean "it should be used all the time" but that there are certain situations when it comes in handy.<br /><br />There are times when you need a logical structure like this:<br /><span class="default">&lt;?php<br /></span><span class="comment">// ...<br /></span><span class="keyword">do {<br /><br />&nbsp; &nbsp; </span><span class="default">$answer </span><span class="keyword">= </span><span class="default">checkFirstSource</span><span class="keyword">();<br />&nbsp; &nbsp; if(</span><span class="default">seemsGood</span><span class="keyword">(</span><span class="default">$answer</span><span class="keyword">)) break;<br /><br />&nbsp; &nbsp; </span><span class="default">$answer </span><span class="keyword">= </span><span class="default">readFromAnotherSource</span><span class="keyword">();<br />&nbsp; &nbsp; if(</span><span class="default">seemsGood</span><span class="keyword">(</span><span class="default">$answer</span><span class="keyword">)) break;<br /><br />&nbsp; &nbsp; </span><span class="comment">// ...<br /><br /></span><span class="keyword">}while(</span><span class="default">0</span><span class="keyword">);<br /></span><span class="default">$answer </span><span class="keyword">= </span><span class="default">applyFinalTouches</span><span class="keyword">(</span><span class="default">$answer</span><span class="keyword">);<br />return </span><span class="default">$answer</span><span class="keyword">;<br /></span><span class="default">?&gt;<br /></span><br />In this case, you certainly implemented a goto with a "fake loop pattern".&nbsp; It could be a lot more readable with a goto; unless, of course, you hate it.&nbsp; But the logic is clear: try everything you can to get $answer, and whenever it seems good (e.g. not empty), jump happily to the point where you format it and give it back to the caller.&nbsp; It's a proper implementation of a simple fallback mechanism.<br /><br />Basically, the fight against goto is just a side effect of a misleading article many decades ago.&nbsp; Those monsters are gone now.&nbsp; Feel free to use it when you know what you're doing.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="120659">  <div class="votes">
+    <div id="Vu120659">
+    <a href="http://php.net/manual/vote-note.php?id=120659&amp;page=control-structures.goto&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd120659">
+    <a href="http://php.net/manual/vote-note.php?id=120659&amp;page=control-structures.goto&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V120659" title="75% like this...">
+    6
+    </div>
+  </div>
+  <a href="#120659" class="name">
+  <strong class="user"><em>R. Borchmann</em></strong></a><a class="genanchor" href="#120659"> &para;</a><div class="date" title="2017-02-17 08:24"><strong>9 months ago</strong></div>
+  <div class="text" id="Hcom120659">
+<div class="phpcode"><code><span class="html">
+If you feel the urge to leave a nested loop with goto, better think again. Probably you've got a piece of your code that should be refactored into a function.<br /><br />Instead of <br /><br /><span class="default">&lt;?php<br />&nbsp;&nbsp; </span><span class="keyword">for (</span><span class="default">$i</span><span class="keyword">=</span><span class="default">0</span><span class="keyword">; </span><span class="default">$i</span><span class="keyword">&lt;</span><span class="default">10</span><span class="keyword">; </span><span class="default">$i</span><span class="keyword">++) {<br />&nbsp; &nbsp; &nbsp; for (</span><span class="default">$j</span><span class="keyword">=</span><span class="default">$i</span><span class="keyword">, </span><span class="default">$j</span><span class="keyword">&lt;</span><span class="default">11</span><span class="keyword">; </span><span class="default">$j</span><span class="keyword">++) {<br />&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; if ( </span><span class="default">$data</span><span class="keyword">[</span><span class="default">$i</span><span class="keyword">] === </span><span class="default">$data</span><span class="keyword">[</span><span class="default">$j</span><span class="keyword">] ) <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; goto </span><span class="default">foundit</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; }<br />&nbsp;&nbsp; }<br />&nbsp;&nbsp; echo </span><span class="string">"Sorry, no match"</span><span class="keyword">;<br />&nbsp;&nbsp; goto </span><span class="default">nextAction</span><span class="keyword">;<br /></span><span class="default">foundit</span><span class="keyword">:<br />&nbsp;&nbsp; echo </span><span class="string">"Duplicate at </span><span class="default">$i</span><span class="string"> and </span><span class="default">$j</span><span class="string">)"</span><span class="keyword">;<br /></span><span class="default">nextAction</span><span class="keyword">:<br /></span><span class="default">?&gt;<br /></span><br />you better write<br /><br /><span class="default">&lt;?php<br /></span><span class="keyword">list(</span><span class="default">$success</span><span class="keyword">, </span><span class="default">$i</span><span class="keyword">, </span><span class="default">$j</span><span class="keyword">) = </span><span class="default">searchForDuplicate</span><span class="keyword">( </span><span class="default">$data </span><span class="keyword">);<br /><br />if (</span><span class="default">$success</span><span class="keyword">)<br />&nbsp;&nbsp; echo </span><span class="string">"Found it at (</span><span class="default">$i</span><span class="string">, </span><span class="default">$j</span><span class="string">)"</span><span class="keyword">;<br />else<br />&nbsp;&nbsp; echo </span><span class="string">"Sorry, no match"</span><span class="keyword">;<br /><br />function </span><span class="default">searchForDuplicate</span><span class="keyword">( &amp;</span><span class="default">$data </span><span class="keyword">)<br />{<br />&nbsp;&nbsp; for (</span><span class="default">$i</span><span class="keyword">=</span><span class="default">0</span><span class="keyword">; </span><span class="default">$i</span><span class="keyword">&lt;</span><span class="default">10</span><span class="keyword">; </span><span class="default">$i</span><span class="keyword">++) {<br />&nbsp; &nbsp; &nbsp; for (</span><span class="default">$j</span><span class="keyword">=</span><span class="default">$i</span><span class="keyword">, </span><span class="default">$j</span><span class="keyword">&lt;</span><span class="default">11</span><span class="keyword">; </span><span class="default">$j</span><span class="keyword">++) {<br />&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; if ( </span><span class="default">$data</span><span class="keyword">[</span><span class="default">$i</span><span class="keyword">] === </span><span class="default">$data</span><span class="keyword">[</span><span class="default">$j</span><span class="keyword">] ) <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; return [ </span><span class="default">true</span><span class="keyword">, </span><span class="default">$i</span><span class="keyword">, </span><span class="default">$j </span><span class="keyword">];<br />&nbsp; &nbsp; &nbsp; }<br />&nbsp;&nbsp; }<br />&nbsp;&nbsp; return [</span><span class="default">false</span><span class="keyword">];<br />}<br /></span><span class="default">?&gt;<br /></span><br />or return [$i, $j] and [-1, -1] if you don't like an extra $success variable. Refactoring into a function is cleaner and gives you an auto-documentation about what the loop is doing.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="106719">  <div class="votes">
+    <div id="Vu106719">
+    <a href="http://php.net/manual/vote-note.php?id=106719&amp;page=control-structures.goto&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd106719">
+    <a href="http://php.net/manual/vote-note.php?id=106719&amp;page=control-structures.goto&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V106719" title="59% like this...">
+    13
+    </div>
+  </div>
+  <a href="#106719" class="name">
+  <strong class="user"><em>f at francislacroix dot info</em></strong></a><a class="genanchor" href="#106719"> &para;</a><div class="date" title="2011-11-30 01:11"><strong>6 years ago</strong></div>
+  <div class="text" id="Hcom106719">
+<div class="phpcode"><code><span class="html">
+The goto operator CAN be evaluated with eval, provided the label is in the eval'd code:<br /><br /><span class="default">&lt;?php<br />a</span><span class="keyword">: eval(</span><span class="string">"goto a;"</span><span class="keyword">); </span><span class="comment">// undefined label 'a'<br /></span><span class="keyword">eval(</span><span class="string">"a: goto a;"</span><span class="keyword">); </span><span class="comment">// works<br /></span><span class="default">?&gt;<br /></span><br />It's because PHP does not consider the eval'd code, containing the label, to be in the same "file" as the goto statement.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="109027">  <div class="votes">
+    <div id="Vu109027">
+    <a href="http://php.net/manual/vote-note.php?id=109027&amp;page=control-structures.goto&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd109027">
+    <a href="http://php.net/manual/vote-note.php?id=109027&amp;page=control-structures.goto&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V109027" title="58% like this...">
+    13
+    </div>
+  </div>
+  <a href="#109027" class="name">
+  <strong class="user"><em>sixoclockish at gmail dot com</em></strong></a><a class="genanchor" href="#109027"> &para;</a><div class="date" title="2012-06-14 07:58"><strong>5 years ago</strong></div>
+  <div class="text" id="Hcom109027">
+<div class="phpcode"><code><span class="html">
+You are also allowed to jump backwards with a goto statement. To run a block of goto as one block is as follows:<br />example has a prefix of iw_ to keep label groups structured and an extra underscore to do a backwards goto.<br /><br />Note the `iw_end_gt` to get out of the labels area<br /><br /><span class="default">&lt;?php<br />&nbsp; &nbsp; $link </span><span class="keyword">= </span><span class="default">true</span><span class="keyword">;<br /><br />&nbsp; &nbsp; if ( </span><span class="default">$link </span><span class="keyword">) goto </span><span class="default">iw_link_begin</span><span class="keyword">; <br />&nbsp; &nbsp; if(</span><span class="default">false</span><span class="keyword">) </span><span class="default">iw__link_begin</span><span class="keyword">:<br />&nbsp; &nbsp; <br />&nbsp; &nbsp; if ( </span><span class="default">$link </span><span class="keyword">) goto </span><span class="default">iw_link_text</span><span class="keyword">;<br />&nbsp; &nbsp; if(</span><span class="default">false</span><span class="keyword">) </span><span class="default">iw__link_text</span><span class="keyword">:<br />&nbsp; &nbsp; <br />&nbsp; &nbsp; if ( </span><span class="default">$link </span><span class="keyword">) goto </span><span class="default">iw_link_end</span><span class="keyword">;<br />&nbsp; &nbsp; if(</span><span class="default">false</span><span class="keyword">) </span><span class="default">iw__link_end</span><span class="keyword">:<br />&nbsp; &nbsp; <br />&nbsp; &nbsp; goto </span><span class="default">iw_end_gt</span><span class="keyword">;<br />&nbsp; &nbsp; <br />&nbsp; &nbsp; <br />&nbsp; &nbsp; if (</span><span class="default">false</span><span class="keyword">) </span><span class="default">iw_link_begin</span><span class="keyword">:<br />&nbsp; &nbsp; &nbsp; &nbsp; echo </span><span class="string">'&lt;a href="#"&gt;'</span><span class="keyword">;<br />&nbsp; &nbsp; goto </span><span class="default">iw__link_begin</span><span class="keyword">;<br />&nbsp; &nbsp; <br />&nbsp; &nbsp; if (</span><span class="default">false</span><span class="keyword">) </span><span class="default">iw_link_text</span><span class="keyword">:<br />&nbsp; &nbsp; &nbsp; &nbsp; echo </span><span class="string">'Sample Text'</span><span class="keyword">;<br />&nbsp; &nbsp; goto </span><span class="default">iw__link_text</span><span class="keyword">;<br />&nbsp; &nbsp; <br />&nbsp; &nbsp; if (</span><span class="default">false</span><span class="keyword">) </span><span class="default">iw_link_end</span><span class="keyword">:<br />&nbsp; &nbsp; &nbsp; &nbsp; echo </span><span class="string">'&lt;/a&gt;'</span><span class="keyword">;<br />&nbsp; &nbsp; goto </span><span class="default">iw__link_end</span><span class="keyword">;<br />&nbsp; &nbsp; <br />&nbsp; &nbsp; </span><span class="default">iw_end_gt</span><span class="keyword">:<br /></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="121605">  <div class="votes">
+    <div id="Vu121605">
+    <a href="http://php.net/manual/vote-note.php?id=121605&amp;page=control-structures.goto&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd121605">
+    <a href="http://php.net/manual/vote-note.php?id=121605&amp;page=control-structures.goto&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V121605" title="50% like this...">
+    0
+    </div>
+  </div>
+  <a href="#121605" class="name">
+  <strong class="user"><em>Mark</em></strong></a><a class="genanchor" href="#121605"> &para;</a><div class="date" title="2017-09-05 07:26"><strong>3 months ago</strong></div>
+  <div class="text" id="Hcom121605">
+<div class="phpcode"><code><span class="html">
+Here are two examples of how GOTO can simplify code and actually make it more readable and easier to understand.<br /><br />1. GOTO can be used to exit an IF block:<br /><br /><span class="default">&lt;?php<br />&nbsp; &nbsp; </span><span class="keyword">if(</span><span class="default">something</span><span class="keyword">) {<br />&nbsp; &nbsp; &nbsp; &nbsp; if(</span><span class="default">nothing</span><span class="keyword">) goto endif;<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="comment">//&nbsp; &nbsp; blah blah<br />&nbsp; &nbsp; &nbsp; &nbsp; //&nbsp; &nbsp; blah blah<br />&nbsp; &nbsp; &nbsp; &nbsp; <br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="keyword">endif:<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="comment">// Nothing here, but maybe some cleanup<br />&nbsp; &nbsp; </span><span class="keyword">}&nbsp; &nbsp; <br /></span><span class="default">?&gt;<br /></span><br />2. GOTO can be used to jump ahead to a section of code. This can be useful for trouble shooting or testing a script in small stages.<br /><br /><span class="default">&lt;?php<br />&nbsp; &nbsp; <br />&nbsp; &nbsp; </span><span class="keyword">goto </span><span class="default">block3</span><span class="keyword">;<br />&nbsp; &nbsp; <br />&nbsp; &nbsp; </span><span class="default">block1</span><span class="keyword">:<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="comment">//&nbsp; &nbsp; blah blah<br />&nbsp; &nbsp; <br />&nbsp; &nbsp; </span><span class="default">block2</span><span class="keyword">:<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="comment">//&nbsp; &nbsp; blah blah<br />&nbsp; &nbsp; &nbsp; &nbsp; <br />&nbsp; &nbsp; </span><span class="default">block3</span><span class="keyword">:<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="comment">//&nbsp; &nbsp; blah blah<br /></span><span class="default">?&gt;<br /></span><br />Note that in both cases, I have gone forward, not backward. This makes it more manageable.<br /><br />In the case of the IF block, many structures, such as a loop, a switch or a function, have an early exit, such as break or return. IF doesn’t, so this is a workable solution</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="121326">  <div class="votes">
+    <div id="Vu121326">
+    <a href="http://php.net/manual/vote-note.php?id=121326&amp;page=control-structures.goto&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd121326">
+    <a href="http://php.net/manual/vote-note.php?id=121326&amp;page=control-structures.goto&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V121326" title="50% like this...">
+    0
+    </div>
+  </div>
+  <a href="#121326" class="name">
+  <strong class="user"><em> at YearOfCodes (retrobytespr at mail dot com)</em></strong></a><a class="genanchor" href="#121326"> &para;</a><div class="date" title="2017-07-06 10:05"><strong>5 months ago</strong></div>
+  <div class="text" id="Hcom121326">
+<div class="phpcode"><code><span class="html">
+Here is an example of re-using labels in separate methods - in this example, the end: label is used in each, with the goto condition behaving like an if/else condition:<br /><br />class DateController<br />{<br />&nbsp; &nbsp; public $day, $month, $year;<br />&nbsp; &nbsp; public function __construct(){<br />&nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;day&nbsp;&nbsp; = $this-&gt;setDays();<br />&nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;month = $this-&gt;setMonths();<br />&nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;year&nbsp; = $this-&gt;setYears(1901, (int)date('Y'), 'asc');<br />&nbsp; &nbsp; }<br />&nbsp; &nbsp; <br />&nbsp; &nbsp; /**<br />&nbsp; &nbsp;&nbsp; * @param&nbsp; &nbsp; int<br />&nbsp; &nbsp;&nbsp; * @return&nbsp;&nbsp; array<br />&nbsp; &nbsp;&nbsp; */<br />&nbsp; &nbsp; protected function setDays(int $default = 0){<br />&nbsp; &nbsp; &nbsp; &nbsp; $days&nbsp; &nbsp; = array();<br />&nbsp; &nbsp; &nbsp; &nbsp; for($i = 1; $i &lt;= 31; $i++){<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $day&nbsp; &nbsp; = "{$i}";<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if($i&lt;10){<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $day&nbsp; &nbsp; = "0{$i}";<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $days[$day]&nbsp; &nbsp; = $day;<br />&nbsp; &nbsp; &nbsp; &nbsp; }<br />&nbsp; &nbsp; &nbsp; &nbsp; if($default == 0){<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; goto end;<br />&nbsp; &nbsp; &nbsp; &nbsp; }<br />&nbsp; &nbsp; &nbsp; &nbsp; $days['default']&nbsp; &nbsp; = $default;<br />&nbsp; &nbsp; &nbsp; &nbsp; <br />&nbsp; &nbsp; &nbsp; &nbsp; end:<br />&nbsp; &nbsp; &nbsp; &nbsp; return $days;<br />&nbsp; &nbsp; }<br />&nbsp; &nbsp; <br />&nbsp; &nbsp; /**<br />&nbsp; &nbsp;&nbsp; * @param&nbsp; &nbsp; string, string, string<br />&nbsp; &nbsp;&nbsp; * @return&nbsp;&nbsp; array<br />&nbsp; &nbsp;&nbsp; */<br />&nbsp; &nbsp; protected function setMonths(string $type = "full", string $keyType = "numeric", string $default = ''){<br />&nbsp; &nbsp; &nbsp; &nbsp; $keys = array(<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'numeric' =&gt; array(<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ),<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'full'&nbsp; &nbsp; =&gt; array(<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "January", "February", "March", "April", "May", "June", "July",<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "August", "September", "October", "November", "December"<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ),<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 'short'&nbsp;&nbsp; =&gt; array(<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "Jan", "Feb", "Mar", "Apr", "May", "Jun",<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; )<br />&nbsp; &nbsp; &nbsp; &nbsp; );<br />&nbsp; &nbsp; &nbsp; &nbsp; $months&nbsp;&nbsp; = array();<br />&nbsp; &nbsp; &nbsp; &nbsp; $index&nbsp;&nbsp; = 0;<br />&nbsp; &nbsp; &nbsp; &nbsp; foreach($keys[$keyType] as $primaryKey){<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $months[$primaryKey]&nbsp; = $keys[$type][$index];<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $index++;<br />&nbsp; &nbsp; &nbsp; &nbsp; }<br />&nbsp; &nbsp; &nbsp; &nbsp; if($default = ''){<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; goto end;<br />&nbsp; &nbsp; &nbsp; &nbsp; }<br />&nbsp; &nbsp; &nbsp; &nbsp; $months['default'] = $default;<br />&nbsp; &nbsp; &nbsp; &nbsp; <br />&nbsp; &nbsp; &nbsp; &nbsp; end:<br />&nbsp; &nbsp; &nbsp; &nbsp; return $months;<br />&nbsp; &nbsp; }<br />&nbsp; &nbsp; <br />&nbsp; &nbsp; /**<br />&nbsp; &nbsp;&nbsp; * @param&nbsp; &nbsp; int, int, string<br />&nbsp; &nbsp;&nbsp; * @return&nbsp;&nbsp; array<br />&nbsp; &nbsp;&nbsp; */<br />&nbsp; &nbsp; protected function setYears(int $start = 1977, int $end = 2017, $order = "asc"){<br />&nbsp; &nbsp; &nbsp; &nbsp; $years&nbsp; &nbsp; = array();<br />&nbsp; &nbsp; &nbsp; &nbsp; if($order == "asc"){<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; for($i = $start; $i &lt;= $end; $i++){<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $years["{$i}"]&nbsp; = $i;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; }<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; goto end;<br />&nbsp; &nbsp; &nbsp; &nbsp; }<br />&nbsp; &nbsp; &nbsp; &nbsp; for($i = $end; $i &gt;= $start; $i--){<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; $years["{$i}"]&nbsp; = $i;<br />&nbsp; &nbsp; &nbsp; &nbsp; }<br />&nbsp; &nbsp; &nbsp; &nbsp; <br />&nbsp; &nbsp; &nbsp; &nbsp; end:<br />&nbsp; &nbsp; &nbsp; &nbsp; return $years;<br />&nbsp; &nbsp; }<br />}</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="119505">  <div class="votes">
+    <div id="Vu119505">
+    <a href="http://php.net/manual/vote-note.php?id=119505&amp;page=control-structures.goto&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd119505">
+    <a href="http://php.net/manual/vote-note.php?id=119505&amp;page=control-structures.goto&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V119505" title="37% like this...">
+    -7
+    </div>
+  </div>
+  <a href="#119505" class="name">
+  <strong class="user"><em>kle at lekhoi dot com</em></strong></a><a class="genanchor" href="#119505"> &para;</a><div class="date" title="2016-06-24 04:37"><strong>1 year ago</strong></div>
+  <div class="text" id="Hcom119505">
+<div class="phpcode"><code><span class="html">
+Goto can also go into an infinite loop as the example below.<br /><br /><span class="default">&lt;?php<br /><br /></span><span class="keyword">goto </span><span class="default">start</span><span class="keyword">;<br /><br /></span><span class="default">start</span><span class="keyword">: echo </span><span class="string">'start'</span><span class="keyword">;<br /><br /></span><span class="default">working</span><span class="keyword">: {<br />&nbsp; &nbsp; echo </span><span class="string">'working'</span><span class="keyword">;<br />&nbsp; &nbsp; ...<br />&nbsp; &nbsp; goto </span><span class="default">start</span><span class="keyword">;<br />&nbsp; &nbsp; echo </span><span class="string">'never executed'</span><span class="keyword">;<br />}<br /></span><span class="default">?&gt;<br /></span><br />Output<br />startworkingstartworking ...</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="118188">  <div class="votes">
+    <div id="Vu118188">
+    <a href="http://php.net/manual/vote-note.php?id=118188&amp;page=control-structures.goto&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd118188">
+    <a href="http://php.net/manual/vote-note.php?id=118188&amp;page=control-structures.goto&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V118188" title="32% like this...">
+    -12
+    </div>
+  </div>
+  <a href="#118188" class="name">
+  <strong class="user"><em>ivan dot tc at gmail dot com</em></strong></a><a class="genanchor" href="#118188"> &para;</a><div class="date" title="2015-10-23 02:10"><strong>2 years ago</strong></div>
+  <div class="text" id="Hcom118188">
+<div class="phpcode"><code><span class="html">
+This works good:<br /><br /><span class="default">&lt;?php<br /></span><span class="keyword">goto </span><span class="default">start</span><span class="keyword">;<br /><br /></span><span class="default">five</span><span class="keyword">:<br />echo </span><span class="default">$i</span><span class="keyword">;<br />goto </span><span class="default">end</span><span class="keyword">;<br /><br /></span><span class="default">start</span><span class="keyword">:<br />echo </span><span class="string">'I have '</span><span class="keyword">;<br /><br />for (</span><span class="default">$i</span><span class="keyword">=</span><span class="default">0</span><span class="keyword">; </span><span class="default">$i </span><span class="keyword">&lt; </span><span class="default">10</span><span class="keyword">; </span><span class="default">$i</span><span class="keyword">++) { <br />&nbsp; if (</span><span class="default">$i </span><span class="keyword">== </span><span class="default">5</span><span class="keyword">) {<br />&nbsp; &nbsp; goto </span><span class="default">five</span><span class="keyword">;<br />&nbsp; }<br />}<br /><br /></span><span class="default">end</span><span class="keyword">:<br />echo </span><span class="string">' apples'</span><span class="keyword">;<br /></span><span class="default">?&gt;<br /></span><br />Output: I have 5 apples.<br /><br />This don't work:<br /><br /><span class="default">&lt;?php<br /></span><span class="keyword">goto </span><span class="default">start</span><span class="keyword">;<br /><br /></span><span class="default">five</span><span class="keyword">:<br />echo </span><span class="default">$i</span><span class="keyword">;<br />goto </span><span class="default">end</span><span class="keyword">;<br /><br /></span><span class="default">start</span><span class="keyword">:<br />echo </span><span class="string">'I have '</span><span class="keyword">;<br /></span><span class="default">$count</span><span class="keyword">();<br /><br /></span><span class="default">end</span><span class="keyword">:<br />echo </span><span class="string">' apples'</span><span class="keyword">;<br /><br /></span><span class="default">$count </span><span class="keyword">= function () {<br />&nbsp; for (</span><span class="default">$i</span><span class="keyword">=</span><span class="default">0</span><span class="keyword">; </span><span class="default">$i </span><span class="keyword">&lt; </span><span class="default">10</span><span class="keyword">; </span><span class="default">$i</span><span class="keyword">++) { <br />&nbsp; &nbsp; if (</span><span class="default">$i </span><span class="keyword">== </span><span class="default">5</span><span class="keyword">) {<br />&nbsp; &nbsp; &nbsp; goto </span><span class="default">five</span><span class="keyword">; </span><span class="comment">// line 18<br />&nbsp; &nbsp; </span><span class="keyword">}<br />&nbsp; }<br />}<br /></span><span class="default">?&gt;<br /></span><br />PHP Fatal error:&nbsp; 'goto' to undefined label 'five' on line 18</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="118139">  <div class="votes">
+    <div id="Vu118139">
+    <a href="http://php.net/manual/vote-note.php?id=118139&amp;page=control-structures.goto&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd118139">
+    <a href="http://php.net/manual/vote-note.php?id=118139&amp;page=control-structures.goto&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V118139" title="18% like this...">
+    -45
+    </div>
+  </div>
+  <a href="#118139" class="name">
+  <strong class="user"><em>ivan dot sammartino at gmail dot com</em></strong></a><a class="genanchor" href="#118139"> &para;</a><div class="date" title="2015-10-13 11:38"><strong>2 years ago</strong></div>
+  <div class="text" id="Hcom118139">
+<div class="phpcode"><code><span class="html">
+I found it useful for switch statements:<br /><br /><span class="default">&lt;?php<br />$action </span><span class="keyword">= </span><span class="default">$_GET</span><span class="keyword">[</span><span class="string">'action'</span><span class="keyword">];<br />switch (</span><span class="default">$action</span><span class="keyword">){<br />&nbsp; &nbsp; case(</span><span class="string">'a'</span><span class="keyword">):<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">mylabel</span><span class="keyword">: {<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">doStuff</span><span class="keyword">();<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; break;<br />&nbsp; &nbsp; &nbsp; &nbsp; }<br />&nbsp; &nbsp; case(</span><span class="string">'b'</span><span class="keyword">):<br />&nbsp; &nbsp; &nbsp; &nbsp; if (</span><span class="default">true</span><span class="keyword">){<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">doAnotherStuff</span><span class="keyword">();<br />&nbsp; &nbsp; &nbsp; &nbsp; } else {<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; goto </span><span class="default">mylabel</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; &nbsp; }<br />&nbsp; &nbsp; &nbsp; &nbsp; break;<br />}<br /></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div></div>
+
+ <div class="foot"><a href="http://php.net/manual/add-note.php?sect=control-structures.goto&amp;redirect=http://php.net/manual/en/control-structures.goto.php"><img src='http://php.net/images/notes-add@2x.png' alt='add a note' width='12' height='12'> <small>add a note</small></a></div>
+</section>    </section><!-- layout-content -->
+        <aside class='layout-menu'>
+    
+        <ul class='parent-menu-list'>
+                                    <li>
+                <a href="http://php.net/manual/en/language.control-structures.php">Control Structures</a>
+    
+                                    <ul class='child-menu-list'>
+    
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/control-structures.intro.php" title="Introduction">Introduction</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/control-structures.if.php" title="if">if</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/control-structures.else.php" title="else">else</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/control-structures.elseif.php" title="elseif/else if">elseif/else if</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/control-structures.alternative-syntax.php" title="Alternative syntax for control structures">Alternative syntax for control structures</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/control-structures.while.php" title="while">while</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/control-structures.do.while.php" title="do-&#8203;while">do-&#8203;while</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/control-structures.for.php" title="for">for</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/control-structures.foreach.php" title="foreach">foreach</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/control-structures.break.php" title="break">break</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/control-structures.continue.php" title="continue">continue</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/control-structures.switch.php" title="switch">switch</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/control-structures.declare.php" title="declare">declare</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/function.return.php" title="return">return</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/function.require.php" title="require">require</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/function.include.php" title="include">include</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/function.require-once.php" title="require_&#8203;once">require_&#8203;once</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/function.include-once.php" title="include_&#8203;once">include_&#8203;once</a>
+                        </li>
+                          
+                        <li class="current">
+                            <a href="http://php.net/manual/en/control-structures.goto.php" title="goto">goto</a>
+                        </li>
+                            
+                    </ul>
+                    
+            </li>
+                        
+                    </ul>
+    </aside>
+
+
+  </div><!-- layout -->
+         
+  <footer>
+    <div class="container footer-content">
+      <div class="row-fluid">
+      <ul class="footmenu">
+        <li><a href="http://php.net/copyright.php">Copyright &copy; 2001-2017 The PHP Group</a></li>
+        <li><a href="http://php.net/my.php">My PHP.net</a></li>
+        <li><a href="http://php.net/contact.php">Contact</a></li>
+        <li><a href="http://php.net/sites.php">Other PHP.net sites</a></li>
+        <li><a href="http://php.net/mirrors.php">Mirror sites</a></li>
+        <li><a href="http://php.net/privacy.php">Privacy policy</a></li>
+      </ul>
+      </div>
+    </div>
+  </footer>
+
+    
+ <!-- External and third party libraries. -->
+ <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/modernizr.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/hogan-2.0.0.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/typeahead.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/mousetrap.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/search.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1500560403&amp;f=/js/common.js"></script>
+
+<a id="toTop" href="javascript:;"><span id="toTopHover"></span><img width="40" height="40" alt="To Top" src="http://php.net/images/to-top@2x.png"></a>
+
+</body>
+
+<!-- Mirrored from php.net/manual/en/control-structures.goto.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Dec 2017 23:18:11 GMT -->
+</html>
+

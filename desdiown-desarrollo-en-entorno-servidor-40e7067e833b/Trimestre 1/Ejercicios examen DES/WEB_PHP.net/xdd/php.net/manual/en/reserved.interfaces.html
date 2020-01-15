@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<!-- Mirrored from php.net/manual/en/reserved.interfaces.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Dec 2017 23:11:56 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+  <title>PHP: Predefined Interfaces and Classes - Manual </title>
+
+ <link rel="shortcut icon" href="../../favicon.ico">
+ <link rel="search" type="application/opensearchdescription+xml" href="../../phpnetimprovedsearch.html" title="Add PHP.net search">
+ <link rel="alternate" type="application/atom+xml" href="../../releases/feed.php" title="PHP Release feed">
+ <link rel="alternate" type="application/atom+xml" href="../../feed.atom" title="PHP: Hypertext Preprocessor">
+
+ <link rel="canonical" href="reserved.interfaces.html">
+ <link rel="shorturl" href="reserved.interfaces.html">
+ <link rel="alternate" href="reserved.interfaces.html" hreflang="x-default">
+
+ <link rel="contents" href="index-2.html">
+ <link rel="index" href="langref.html">
+ <link rel="prev" href="class.typeerror.html">
+ <link rel="next" href="class.traversable.html">
+
+ <link rel="alternate" href="reserved.interfaces.html" hreflang="en">
+ <link rel="alternate" href="../pt_BR/reserved.interfaces.html" hreflang="pt_BR">
+ <link rel="alternate" href="../zh/reserved.interfaces.html" hreflang="zh">
+ <link rel="alternate" href="../fr/reserved.interfaces.html" hreflang="fr">
+ <link rel="alternate" href="../de/reserved.interfaces.html" hreflang="de">
+ <link rel="alternate" href="../ja/reserved.interfaces.html" hreflang="ja">
+ <link rel="alternate" href="../ro/reserved.interfaces.html" hreflang="ro">
+ <link rel="alternate" href="../ru/reserved.interfaces.html" hreflang="ru">
+ <link rel="alternate" href="../es/reserved.interfaces.html" hreflang="es">
+ <link rel="alternate" href="../tr/reserved.interfaces.html" hreflang="tr">
+
+<link rel="stylesheet" type="text/css" href="../../cached0152.css?t=1421837618&amp;f=/fonts/Fira/fira.css" media="screen">
+<link rel="stylesheet" type="text/css" href="../../cached15be.css?t=1421837618&amp;f=/fonts/Font-Awesome/css/fontello.css" media="screen">
+<link rel="stylesheet" type="text/css" href="../../cached3c70.css?t=1478800802&amp;f=/styles/theme-base.css" media="screen">
+<link rel="stylesheet" type="text/css" href="../../cached00eb.css?t=1449787206&amp;f=/styles/theme-medium.css" media="screen">
+
+ <!--[if lte IE 7]>
+ <link rel="stylesheet" type="text/css" href="http://php.net/styles/workarounds.ie7.css" media="screen">
+ <![endif]-->
+
+ <!--[if lte IE 8]>
+ <script type="text/javascript">
+  window.brokenIE = true;
+ </script>
+ <![endif]-->
+
+ <!--[if lte IE 9]>
+ <link rel="stylesheet" type="text/css" href="http://php.net/styles/workarounds.ie9.css" media="screen">
+ <![endif]-->
+
+ <!--[if IE]>
+ <script type="text/javascript" src="http://php.net/js/ext/html5.js"></script>
+ <![endif]-->
+
+ <base >
+
+</head>
+<body class="docs ">
+
+<nav id="head-nav" class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <a href="../../index.html" class="brand"><img src="../../images/logos/php-logo.svg" width="48" height="24" alt="php"></a>
+    <div id="mainmenu-toggle-overlay"></div>
+    <input type="checkbox" id="mainmenu-toggle">
+    <ul class="nav">
+      <li class=""><a href="../../downloads.html">Downloads</a></li>
+      <li class="active"><a href="../../docs.html">Documentation</a></li>
+      <li class=""><a href="../../get-involved.html" >Get Involved</a></li>
+      <li class=""><a href="../../support.html">Help</a></li>
+    </ul>
+    <form class="navbar-search" id="topsearch" action="http://php.net/search.php">
+      <input type="hidden" name="show" value="quickref">
+      <input type="search" name="pattern" class="search-query" placeholder="Search" accesskey="s">
+    </form>
+  </div>
+  <div id="flash-message"></div>
+</nav>
+<nav id="trick"><div><dl>
+<dt><a href='getting-started.html'>Getting Started</a></dt>
+	<dd><a href='introduction.html'>Introduction</a></dd>
+	<dd><a href='tutorial.html'>A simple tutorial</a></dd>
+<dt><a href='langref.html'>Language Reference</a></dt>
+	<dd><a href='language.basic-syntax.html'>Basic syntax</a></dd>
+	<dd><a href='language.types.html'>Types</a></dd>
+	<dd><a href='language.variables.html'>Variables</a></dd>
+	<dd><a href='language.constants.html'>Constants</a></dd>
+	<dd><a href='language.expressions.html'>Expressions</a></dd>
+	<dd><a href='language.operators.html'>Operators</a></dd>
+	<dd><a href='language.control-structures.html'>Control Structures</a></dd>
+	<dd><a href='language.functions.html'>Functions</a></dd>
+	<dd><a href='language.oop5.html'>Classes and Objects</a></dd>
+	<dd><a href='language.namespaces.html'>Namespaces</a></dd>
+	<dd><a href='language.errors.html'>Errors</a></dd>
+	<dd><a href='language.exceptions.html'>Exceptions</a></dd>
+	<dd><a href='language.generators.html'>Generators</a></dd>
+	<dd><a href='language.references.html'>References Explained</a></dd>
+	<dd><a href='reserved.variables.html'>Predefined Variables</a></dd>
+	<dd><a href='reserved.exceptions.html'>Predefined Exceptions</a></dd>
+	<dd><a href='reserved.interfaces.html'>Predefined Interfaces and Classes</a></dd>
+	<dd><a href='context.html'>Context options and parameters</a></dd>
+	<dd><a href='wrappers.html'>Supported Protocols and Wrappers</a></dd>
+</dl>
+<dl>
+<dt><a href='security.html'>Security</a></dt>
+	<dd><a href='security.intro.html'>Introduction</a></dd>
+	<dd><a href='security.general.html'>General considerations</a></dd>
+	<dd><a href='security.cgi-bin.html'>Installed as CGI binary</a></dd>
+	<dd><a href='security.apache.html'>Installed as an Apache module</a></dd>
+	<dd><a href='security.sessions.html'>Session Security</a></dd>
+	<dd><a href='security.filesystem.html'>Filesystem Security</a></dd>
+	<dd><a href='security.database.html'>Database Security</a></dd>
+	<dd><a href='security.errors.html'>Error Reporting</a></dd>
+	<dd><a href='security.globals.html'>Using Register Globals</a></dd>
+	<dd><a href='security.variables.html'>User Submitted Data</a></dd>
+	<dd><a href='security.magicquotes.html'>Magic Quotes</a></dd>
+	<dd><a href='security.hiding.html'>Hiding PHP</a></dd>
+	<dd><a href='security.current.html'>Keeping Current</a></dd>
+<dt><a href='features.html'>Features</a></dt>
+	<dd><a href='features.http-auth.html'>HTTP authentication with PHP</a></dd>
+	<dd><a href='features.cookies.html'>Cookies</a></dd>
+	<dd><a href='features.sessions.html'>Sessions</a></dd>
+	<dd><a href='features.xforms.html'>Dealing with XForms</a></dd>
+	<dd><a href='features.file-upload.html'>Handling file uploads</a></dd>
+	<dd><a href='features.remote-files.html'>Using remote files</a></dd>
+	<dd><a href='features.connection-handling.html'>Connection handling</a></dd>
+	<dd><a href='features.persistent-connections.html'>Persistent Database Connections</a></dd>
+	<dd><a href='features.safe-mode.html'>Safe Mode</a></dd>
+	<dd><a href='features.commandline.html'>Command line usage</a></dd>
+	<dd><a href='features.gc.html'>Garbage Collection</a></dd>
+	<dd><a href='features.dtrace.html'>DTrace Dynamic Tracing</a></dd>
+</dl>
+<dl>
+<dt><a href='funcref.html'>Function Reference</a></dt>
+	<dd><a href='refs.basic.php.html'>Affecting PHP's Behaviour</a></dd>
+	<dd><a href='refs.utilspec.audio.html'>Audio Formats Manipulation</a></dd>
+	<dd><a href='refs.remote.auth.html'>Authentication Services</a></dd>
+	<dd><a href='refs.utilspec.cmdline.html'>Command Line Specific Extensions</a></dd>
+	<dd><a href='refs.compression.html'>Compression and Archive Extensions</a></dd>
+	<dd><a href='refs.creditcard.html'>Credit Card Processing</a></dd>
+	<dd><a href='refs.crypto.html'>Cryptography Extensions</a></dd>
+	<dd><a href='refs.database.html'>Database Extensions</a></dd>
+	<dd><a href='refs.calendar.html'>Date and Time Related Extensions</a></dd>
+	<dd><a href='refs.fileprocess.file.html'>File System Related Extensions</a></dd>
+	<dd><a href='refs.international.html'>Human Language and Character Encoding Support</a></dd>
+	<dd><a href='refs.utilspec.image.html'>Image Processing and Generation</a></dd>
+	<dd><a href='refs.remote.mail.html'>Mail Related Extensions</a></dd>
+	<dd><a href='refs.math.html'>Mathematical Extensions</a></dd>
+	<dd><a href='refs.utilspec.nontext.html'>Non-Text MIME Output</a></dd>
+	<dd><a href='refs.fileprocess.process.html'>Process Control Extensions</a></dd>
+	<dd><a href='refs.basic.other.html'>Other Basic Extensions</a></dd>
+	<dd><a href='refs.remote.other.html'>Other Services</a></dd>
+	<dd><a href='refs.search.html'>Search Engine Extensions</a></dd>
+	<dd><a href='refs.utilspec.server.html'>Server Specific Extensions</a></dd>
+	<dd><a href='refs.basic.session.html'>Session Extensions</a></dd>
+	<dd><a href='refs.basic.text.html'>Text Processing</a></dd>
+	<dd><a href='refs.basic.vartype.html'>Variable and Type Related Extensions</a></dd>
+	<dd><a href='refs.webservice.html'>Web Services</a></dd>
+	<dd><a href='refs.utilspec.windows.html'>Windows Only Extensions</a></dd>
+	<dd><a href='refs.xml.html'>XML Manipulation</a></dd>
+	<dd><a href='refs.ui.html'>GUI Extensions</a></dd>
+</dl>
+<dl>
+<dt>Keyboard Shortcuts</dt><dt>?</dt>
+<dd>This help</dd>
+<dt>j</dt>
+<dd>Next menu item</dd>
+<dt>k</dt>
+<dd>Previous menu item</dd>
+<dt>g p</dt>
+<dd>Previous man page</dd>
+<dt>g n</dt>
+<dd>Next man page</dd>
+<dt>G</dt>
+<dd>Scroll to bottom</dd>
+<dt>g g</dt>
+<dd>Scroll to top</dd>
+<dt>g h</dt>
+<dd>Goto homepage</dd>
+<dt>g s</dt>
+<dd>Goto search<br>(current page)</dd>
+<dt>/</dt>
+<dd>Focus search box</dd>
+</dl></div></nav>
+<div id="goto">
+    <div class="search">
+         <div class="text"></div>
+         <div class="results"><ul></ul></div>
+   </div>
+</div>
+
+  <div id="breadcrumbs" class="clearfix">
+    <div id="breadcrumbs-inner">
+          <div class="next">
+        <a href="class.traversable.html">
+          Traversable &raquo;
+        </a>
+      </div>
+              <div class="prev">
+        <a href="class.typeerror.html">
+          &laquo; TypeError        </a>
+      </div>
+          <ul>
+            <li><a href='index-2.html'>PHP Manual</a></li>      <li><a href='langref.html'>Language Reference</a></li>      </ul>
+    </div>
+  </div>
+
+
+
+
+<div id="layout" class="clearfix">
+  <section id="layout-content">
+  <div class="page-tools">
+    <div class="change-language">
+      <form action="http://php.net/manual/change.php" method="get" id="changelang" name="changelang">
+        <fieldset>
+          <label for="changelang-langs">Change language:</label>
+          <select onchange="document.changelang.submit()" name="page" id="changelang-langs">
+            <option value='en/reserved.interfaces.php' selected="selected">English</option>
+            <option value='pt_BR/reserved.interfaces.html'>Brazilian Portuguese</option>
+            <option value='zh/reserved.interfaces.html'>Chinese (Simplified)</option>
+            <option value='fr/reserved.interfaces.html'>French</option>
+            <option value='de/reserved.interfaces.html'>German</option>
+            <option value='ja/reserved.interfaces.html'>Japanese</option>
+            <option value='ro/reserved.interfaces.html'>Romanian</option>
+            <option value='ru/reserved.interfaces.html'>Russian</option>
+            <option value='es/reserved.interfaces.html'>Spanish</option>
+            <option value='tr/reserved.interfaces.html'>Turkish</option>
+            <option value="help-translate.html">Other</option>
+          </select>
+        </fieldset>
+      </form>
+    </div>
+    <div class="edit-bug">
+      <a href="https://edit.php.net/?project=PHP&amp;perm=en/reserved.interfaces.php">Edit</a>
+      <a href="https://bugs.php.net/report.php?bug_type=Documentation+problem&amp;manpage=reserved.interfaces">Report a Bug</a>
+    </div>
+  </div><div id="reserved.interfaces" class="part">
+ <h1>Predefined Interfaces and Classes</h1>
+<h2>Table of Contents</h2><ul class="chunklist chunklist_part"><li><a href="class.traversable.html">Traversable</a></li><li><a href="class.iterator.html">Iterator</a></li><li><a href="class.iteratoraggregate.html">IteratorAggregate</a></li><li><a href="class.throwable.html">Throwable</a></li><li><a href="class.arrayaccess.html">ArrayAccess</a></li><li><a href="class.serializable.html">Serializable</a></li><li><a href="class.closure.html">Closure</a></li><li><a href="class.generator.html">Generator</a></li></ul>
+
+
+ <div class="partintro">
+  <p class="para">
+   See also the <a href="spl.interfaces.html" class="link">SPL Interfaces</a> and <a href="reserved.classes.html" class="link">reserved classes</a>.
+  </p>
+ </div>
+
+ 
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+</div>
+
+<section id="usernotes">
+ <div class="head">
+  <span class="action"><a href="../add-note646a.html?sect=reserved.interfaces&amp;redirect=http://php.net/manual/en/reserved.interfaces.php"><img src='../../images/notes-add%402x.png' alt='add a note' width='12' height='12'> <small>add a note</small></a></span>
+  <h3 class="title">User Contributed Notes <span class="count">1 note</span></h3>
+ </div><div id="allnotes">
+  <div class="note" id="117576">  <div class="votes">
+    <div id="Vu117576">
+    <a href="../vote-noteceba.html?id=117576&amp;page=reserved.interfaces&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd117576">
+    <a href="../vote-note655f.html?id=117576&amp;page=reserved.interfaces&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V117576" title="57% like this...">
+    4
+    </div>
+  </div>
+  <a href="#117576" class="name">
+  <strong class="user"><em>articice at ua dot fm</em></strong></a><a class="genanchor" href="#117576"> &para;</a><div class="date" title="2015-07-01 03:24"><strong>2 years ago</strong></div>
+  <div class="text" id="Hcom117576">
+<div class="phpcode"><code><span class="html">
+Note that PHP extensions also provide interfaces you can implement, for example JsonSerializable.<br />Here is the full list <a href="refs.basic.other.html" rel="nofollow" target="_blank">http://php.net/manual/en/refs.basic.other.php</a></span>
+</code></div>
+  </div>
+ </div></div>
+
+ <div class="foot"><a href="../add-note646a.html?sect=reserved.interfaces&amp;redirect=http://php.net/manual/en/reserved.interfaces.php"><img src='../../images/notes-add%402x.png' alt='add a note' width='12' height='12'> <small>add a note</small></a></div>
+</section>    </section><!-- layout-content -->
+        <aside class='layout-menu'>
+    
+        <ul class='parent-menu-list'>
+                                    <li>
+                <a href="langref.html">Language Reference</a>
+    
+                                    <ul class='child-menu-list'>
+    
+                          
+                        <li class="">
+                            <a href="language.basic-syntax.html" title="Basic syntax">Basic syntax</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="language.types.html" title="Types">Types</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="language.variables.html" title="Variables">Variables</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="language.constants.html" title="Constants">Constants</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="language.expressions.html" title="Expressions">Expressions</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="language.operators.html" title="Operators">Operators</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="language.control-structures.html" title="Control Structures">Control Structures</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="language.functions.html" title="Functions">Functions</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="language.oop5.html" title="Classes and Objects">Classes and Objects</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="language.namespaces.html" title="Namespaces">Namespaces</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="language.errors.html" title="Errors">Errors</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="language.exceptions.html" title="Exceptions">Exceptions</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="language.generators.html" title="Generators">Generators</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="language.references.html" title="References Explained">References Explained</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="reserved.variables.html" title="Predefined Variables">Predefined Variables</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="reserved.exceptions.html" title="Predefined Exceptions">Predefined Exceptions</a>
+                        </li>
+                          
+                        <li class="current">
+                            <a href="reserved.interfaces.html" title="Predefined Interfaces and Classes">Predefined Interfaces and Classes</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="context.html" title="Context options and parameters">Context options and parameters</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="wrappers.html" title="Supported Protocols and Wrappers">Supported Protocols and Wrappers</a>
+                        </li>
+                            
+                    </ul>
+                    
+            </li>
+                        
+                    </ul>
+    </aside>
+
+
+  </div><!-- layout -->
+         
+  <footer>
+    <div class="container footer-content">
+      <div class="row-fluid">
+      <ul class="footmenu">
+        <li><a href="../../copyright.html">Copyright &copy; 2001-2017 The PHP Group</a></li>
+        <li><a href="../../my.html">My PHP.net</a></li>
+        <li><a href="../../contact.html">Contact</a></li>
+        <li><a href="../../sites.html">Other PHP.net sites</a></li>
+        <li><a href="../../mirrors.html">Mirror sites</a></li>
+        <li><a href="../../privacy.html">Privacy policy</a></li>
+      </ul>
+      </div>
+    </div>
+  </footer>
+
+    
+ <!-- External and third party libraries. -->
+ <script type="text/javascript" src="../../../ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" src="../../cachedab96.php?t=1421837618&amp;f=/js/ext/modernizr.js"></script>
+<script type="text/javascript" src="../../cached3567.php?t=1421837618&amp;f=/js/ext/hogan-2.0.0.min.js"></script>
+<script type="text/javascript" src="../../cachede4eb.php?t=1421837618&amp;f=/js/ext/typeahead.min.js"></script>
+<script type="text/javascript" src="../../cached9183.php?t=1421837618&amp;f=/js/ext/mousetrap.min.js"></script>
+<script type="text/javascript" src="../../cachedcba0.php?t=1421837618&amp;f=/js/search.js"></script>
+<script type="text/javascript" src="../../cachedb779.php?t=1500560403&amp;f=/js/common.js"></script>
+
+<a id="toTop" href="javascript:;"><span id="toTopHover"></span><img width="40" height="40" alt="To Top" src="../../images/to-top%402x.png"></a>
+
+</body>
+
+<!-- Mirrored from php.net/manual/en/reserved.interfaces.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Dec 2017 23:12:02 GMT -->
+</html>
+

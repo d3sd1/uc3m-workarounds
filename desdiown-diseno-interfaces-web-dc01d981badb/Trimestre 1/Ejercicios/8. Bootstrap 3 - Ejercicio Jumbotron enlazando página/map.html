@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>IES Tierno Galván - ¡Pronto estaremos disponibles!</title>
+        <meta name="author" content="Andrei García Cuadra">
+        <meta name="keywords" content="IES,Enrique Tierno Galván,instituto madrid, fp, grado superior, san fermin, orcasur">
+        <meta name="description" content="Web del IES Enrique Tierno Galván, ubicado en la Avenida de los poblados (San Fermín - Orcasur), en Madrid.">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="assets/images/favicon.ico">
+        <link rel="stylesheet" href="assets/css/main.css">
+        <link rel="stylesheet" href="assets/css/preloader.css">
+        <link rel="stylesheet" href="assets/css/menu.css">
+        <link rel="stylesheet" href="assets/css/map.css">
+        <link rel="stylesheet" href="assets/css/modals.css">
+        <link rel="stylesheet" href="assets/css/breadcrumbs.css">
+        <link rel="stylesheet" href="assets/vendors/ionicons/ionicons.min.css">
+        <link rel="stylesheet" href="assets/vendors/jquery.vegas/vegas.css">
+    </head>
+    <body class="preloader">
+        <div id="preloader">
+            <div id="status">
+                <div class="sk-three-bounce">
+                    <div class="sk-child sk-bounce1"></div>
+                    <div class="sk-child sk-bounce2"></div>
+                    <div class="sk-child sk-bounce3"></div>
+                </div>
+            </div>
+        </div>
+
+        <header class="menu-container">
+            <nav class="menu">
+                <span class="logo disabletextselect"><img draggable="false" alt="Logotipo del IES Enrique Tierno Galván" src="assets/images/logo.png"/> <span class="black">IES</span> <span class="blue">ENRIQUE</span> <span class="red">tierno</span> <span class="green">GALVAN</span></span>
+                <ul>
+                    <li data-trigger="limitedaccess" data-requires="logged_in"><a href="departments.html">{{USER_NAME}}</a>
+                        <ul>
+                            <li data-trigger="limitedaccess" data-requires-rank="alumn"><a href="#">Curso académico</a>
+                                <ul>
+                                    <li><a href="grades.html"><i class="icon ion-film-marker"></i> Mis calificaciones</a></li>
+                                    <li><a href="calendar.html"><i class="icon ion-film-marker"></i> Horario</a></li>
+                                    <li><a href="tasks.html"><i class="icon ion-film-marker"></i> Tareas pendientes</a></li>
+                                    <li><a href="classrom_chat.html"><i class="icon ion-film-marker"></i> Chat de clase</a></li>
+                                </ul>
+                            </li>
+                            <li data-trigger="limitedaccess" data-requires-rank="alumn"><a href="#">Acciones</a>
+                                <ul>
+                                    <li><a href="contact_teacher.html"><i class="icon ion-film-marker"></i> Contactar con el profesor</a></li>
+                                    <li><a href="upload_task.html"><i class="icon ion-film-marker"></i> Subir trabajos</a></li>
+                                    <li><a href="pick_fct.html"><i class="icon ion-film-marker"></i> Elegir empresa FCTs</a></li>
+                                </ul>
+                            </li>
+                            <li data-trigger="limitedaccess" data-requires-rank="admin"><a href="#">Administracion</a>
+                                <ul>
+                                    <li><a href="contact_teacher.html"><i class="icon ion-ios-people"></i> Saldos</a></li>
+                                    <li><a href="upload_task.html"><i class="icon ion-ios-people"></i> Movimientos</a></li>
+                                    <li><a href="pick_fct.html"><i class="icon ion-ios-people"></i> Dietas</a></li>
+                                    <li><a href="modify_calendar.html"><i class="icon ion-ios-people"></i> Modificar horarios</a></li>
+                                    <li><a href="#"><i class="icon ion-ios-people"></i> Modificar listado empresas FCTs</a></li>
+                                    <li><a href="#"><i class="icon ion-ios-people"></i> Gestion de la biblioteca</a></li>
+                                </ul>
+                            </li>
+                            <li data-trigger="limitedaccess" data-requires-rank="teacher"><a href="#">Profesorado</a>
+                                <ul>
+                                    <li><a href="#"><i class="icon ion-university"></i> Gestion de faltas de asistencia</a></li>
+                                    <li><a href="#"><i class="icon ion-university"></i> Gestion de partes de amonestacion</a></li>
+                                    <li><a href="#"><i class="icon ion-university"></i> Calificaciones de alumnos</a></li>
+                                    <li><a href="#"><i class="icon ion-university"></i> Horario</a></li>
+                                    <li><a href="#"><i class="icon ion-university"></i> Contactos del alumnado</a></li>
+                                    <li><a href="#"><i class="icon ion-university"></i> Trabajos de alumnos</a></li>
+                                    <li><a href="#"><i class="icon ion-university"></i> Enviar circular a clase</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Mi perfil</a>
+                                <ul>
+                                    <li><a href="edit_profile.html"><i class="icon ion-ios-cloud"></i> Modificar perfil</a></li>
+                                    <li data-trigger="limitedaccess" data-requires-rank="alumn"><a href="help_alumns.html"><i class="icon ion-ios-cloud"></i> Becas y ayudas</a></li>
+                                    <li data-trigger="limitedaccess" data-requires-rank="teacher"><a href="monetization.html"><i class="icon ion-ios-cloud"></i> Honorarios</a></li>
+                                    <li><a href="javascript:userLogout();location.reload();"><i class="icon ion-log-out"></i> Desconectar</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li data-trigger="limitedaccess" data-requires="logged_out"><a href="#0">Panel de usuarios</a>
+                        <ul>
+                            <li><a class="openmodal-useractions" href="#0">Conexión</a></li>
+                            <li><a class="openmodal-register" href="#0">Registro</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="contact.html">Contacto</a>
+                        <ul>
+                            <li><a href="faqs.html">FAQ's y Ayuda</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="departments.html">Departamentos</a>
+                        <ul>
+                            <li><a href="#">ESO y Bachillerato (Científico)</a>
+                                <ul>
+                                    <li><a href="single_department.html"><i class="icon ion-ios-cloud"></i> Biología y Geología</a></li>
+                                    <li><a href="single_department.html"><i class="icon ion-erlenmeyer-flask"></i> Física y Química</a></li>
+                                    <li><a href="single_department.html"><i class="icon ion-calculator"></i> Matemáticas</a></li>
+                                    <li><a href="single_department.html"><i class="icon ion-social-usd"></i> Economía</a></li>
+                                    <li><a href="single_department.html"><i class="icon ion-ios-lightbulb"></i> Tecnología</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">ESO y Bachillerato (Letras)</a>
+                                <ul>
+                                    <li><a href="single_department.html"><i class="icon ion-paintbrush"></i> Dibujo</a></li>
+                                    <li><a href="single_department.html"><i class="icon ion-ios-folder"></i> Filosofía</a></li>
+                                    <li><a href="single_department.html"><i class="icon ion-ios-at"></i> Lengua y Literatura</a></li>
+                                    <li><a href="single_department.html"><i class="icon ion-ios-navigate"></i> Idiomas extranjeros</a></li>
+                                    <li><a href="single_department.html"><i class="icon ion-ios-bookmarks"></i> Geografía e Historia</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">ESO y Bachillerato (Comunes)</a>
+                                <ul>
+                                    <li><a href="single_department.html"><i class="icon ion-university"></i> Religión</a></li>
+                                    <li><a href="single_department.html"><i class="icon ion-ios-pulse-strong"></i> Educación Física</a></li>
+                                    <li><a href="single_department.html"><i class="icon ion-ios-pint"></i> Actividades Extraescolares</a></li>
+                                    <li><a href="single_department.html"><i class="icon ion-person-stalker"></i> Orientación</a></li>
+                                    <li><a href="single_department.html"><i class="icon ion-music-note"></i> Música</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">Formación Profesional</a>
+                                <ul>
+                                    <li><a href="single_department.html"><i class="icon ion-model-s"></i> Automoción</a></li>
+                                    <li><a href="single_department.html"><i class="icon ion-clipboard"></i> Formación y orientación laboral</a></li>
+                                    <li><a href="single_department.html"><i class="icon ion-outlet"></i> Electricidad y Electrónica</a></li>
+                                    <li><a href="single_department.html"><i class="icon ion-mouse"></i> Informática</a></li>
+                                    <li><a href="single_department.html"><i class="icon ion-thermometer"></i> Frío y Calor</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="users.html">Docentes</a>
+                        <ul>
+
+                            <li><a href="ampa.html">AMPA</a></li>
+                            <li><a href="outschool_activities.html">Actividades extraescolares</a></li>
+                            <li><a href="rules.html">Reglamento y normativa</a></li>
+                            <li><a href="single_department.html">Biblioteca</a></li>
+                        </ul>
+                    </li>
+                    <li class="selected"><a href="gallery.html">El instituto</a>
+                        <ul>
+                            <li><a href="intranet.html">Actualidad y redes sociales</a></li>
+                            <li><a href="intranet.html">Tablón de anuncios</a></li>
+                            <li><a href="https://www.educa2.madrid.org/web/daw2_07/inicio">Web pública</a></li>
+                            <li class="selected"><a href="map.html">Localización</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="gallery.html">Trabajos</a>
+                        <ul>
+                            <li><a href="Documentacion.pdf">Resumen pautas</a></li>
+                            <li><a href="jumbo/index.html">Bootstrap</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#0"><img alt="Idioma español" src="assets/images/langs/es.png"/></a>
+                        <ul class="lang-picker">
+                            <li><a href="ampa.html"><img alt="Idioma español" src="assets/images/langs/en.png"/></a></li>
+                            <li><a href="ampa.html"><img alt="Idioma español" src="assets/images/langs/de.png"/></a></li>
+                            <li><a href="ampa.html"><img alt="Idioma español" src="assets/images/langs/fr.png"/></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <aside class="row-padding center">
+            <article class="col l12">
+                <div class="container padding">
+                    <ol class="cd-breadcrumb triangle custom-icons">
+                        <li><a href="index.html"><i class="icon ion-pound"></i> Portada</a></li>
+                        <li><a href="about.html"><i class="icon ion-ios-home"></i> El instituto</a></li>
+                        <li class="current"><em><i class="icon ion-map"></i> Localización</em></li>
+                    </ol>
+                </div>
+            </article>
+        </aside>
+        <section class="row-padding center">
+            <article class="col l12">
+                <div class="card container padding">
+                    <h1>Información de acceso al instituto</h1>
+                    <section class="container col l4">
+                        <h3>Contacto</h3>
+                        <p class="text-left">
+                            <i class="icon ion-ios-telephone"></i> <em>Teléfono</em>: 91 317 00 47<br>
+                            <i class="icon ion-android-call"></i> <em>Fax</em>: 91 317 35 29<br>
+                            <i class="icon ion-ios-email"></i> <em>Email</em>: ies.tiernogalvan.madrid@educa.madrid.org
+                        </p>
+                    </section>
+                    <section class="container col l4">
+                        <h3>Dirección</h3>
+                        <p>
+                            IES Enrique Tierno Galvan<br>
+                            Avda. Andalucía Km. 6,200<br>
+                            28041 Madrid - España
+                        </p>
+                    </section>
+                    <section class="container col l4">
+                        <h3>Transporte</h3>
+                        <p>
+                            <i class="icon ion-android-subway"></i> <em>Metro</em>: Línea 3 - San Fermín-Orcasur<br>
+                            <i class="icon ion-android-bus"></i> <em>Bus</em>: Líneas 18, 22, 59, 76, 79, 85, 86<br>
+                        </p>
+                    </section>
+                    <section class="col l12">
+                        <div class="container">
+                            <div id="map"></div>
+                        </div>
+                    </section>
+                </div>
+            </article>
+        </section>
+        <footer class="card-footer margin-top container col l12">
+            <div>
+                © IES Enrique Tierno Galván. Todos los derechos reservados. <a href="sitemap.html">Mapa del sitio</a>
+            </div>
+        </footer>
+
+        <script src="assets/vendors/jquery/jquery-3.2.1.min.js"></script>
+        <script src="assets/js/preloader.js"></script>
+        <script>
+            /* Google maps api method for init the map. */
+            function initMap() {
+                var ies = {lat: 40.370012, lng: -3.695356};
+                var map = new google.maps.Map(document.getElementById('map'), {
+                    zoom: 4,
+                    center: ies,
+                    zoom: 18,
+                    mapTypeId: 'hybrid'
+                });
+                map.setTilt(45);
+                var marker = new google.maps.Marker({
+                    position: ies,
+                    map: map
+                });
+            }
+        </script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAoKZ8gdC99btdAUS4dLn_2Ub_uBGnhYMk&callback=initMap">
+        </script>
+        <script src="assets/vendors/jquery.vegas/vegas.js"></script>
+        <script src="assets/vendors/jquery.sticky/jquery.sticky.js"></script>
+        <script src="assets/js/menu.js"></script>
+        <script src="assets/js/background.js"></script>
+        <script src="assets/js/login.js"></script>
+    </body>
+</html>

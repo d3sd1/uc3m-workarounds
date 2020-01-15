@@ -1,0 +1,25 @@
+INICIO
+INT hora;
+Escribe "Escribe una hora del día (0 a 23 horas).";
+LEE hora;
+Si(hora >= 6 && hora <= 11)
+{
+	Escribe "La hora corresponde a la mañana";
+}
+Sino(hora >= 12 && hora <= 17)
+{
+	Escribe "La hora corresponde a la tarde";
+}
+Sino(hora >= 20 && hora <= 23)
+{
+	Escribe "La hora corresponde a la noche";
+}
+Sino(hora >= 0 && hora <= 5)
+{
+	Escribe "La hora corresponde a la noche";
+}
+Sino
+{
+	Escribe "No corresponde a una hora del día";
+}
+FIN

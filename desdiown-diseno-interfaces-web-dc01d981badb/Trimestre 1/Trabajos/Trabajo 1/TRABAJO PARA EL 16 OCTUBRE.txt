@@ -1,0 +1,17 @@
+- se hace trbajo.
+- se expone. (mostrar la pagina en distintos dispositivos)
+- se pueden incluir apartados / secciones
+	- portada, bibliografia, ideas obtenidas, titulo, objetivo del trabajo / de la pagina, tratamiento de imagenes (de donde se han 	descargado, si se han redimensionado, si se ha optimizado...), medidas utilizadas en el proyecto,
+	+ objetivo de la pagina: diseñar la intranet del instituto enrique tierno galvan
+	- NO TIENE QUE SER FUNCIONAL. SOLO DISEÑO.
+	+ NO UTILIZAR BOOTSTRAP
+	- se pueden incluir efectos de css
+	+ utilizar html5
+	- poner que cambie para los distints dispositivos y para cuales esta diseñada la pagina.
+	+ medidas utilizadas en el proyecto. siempre em y %.
+	- herramientas utilizadas
+	- optimizar html css
+	+ utilizar herramientas del proyecto como checkear errores html etc. (las herramientas de la carpeta de DIW).
+	- diseñar para first-mobile
+	- quedan a convenir los contenidos de la pagina.
+para el dia: 16/octubre

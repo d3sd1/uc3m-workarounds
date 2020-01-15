@@ -1,0 +1,5 @@
+securityLevel: 7
+PBKDF2Algorithm: PBKDF2WithHmacSHA256
+saltByteSize: 24
+hashByteSize: 24
+PBKDF2Iterations: 2000

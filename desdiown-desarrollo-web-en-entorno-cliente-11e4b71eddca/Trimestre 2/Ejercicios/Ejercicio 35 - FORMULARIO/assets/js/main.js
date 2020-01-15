@@ -1,0 +1,1 @@
+document.getElementById("imagenReseteadora").onclick = document.getElementById("formulariochulo").reset();

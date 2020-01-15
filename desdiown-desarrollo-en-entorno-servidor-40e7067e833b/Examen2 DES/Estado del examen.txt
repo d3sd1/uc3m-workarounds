@@ -1,0 +1,15 @@
+NOTA: esta por body y no por parametros porque lo tenia todo hecho asi y no me habria dado tiempo a cambiarlo.
+Objetos json - si
+Cabecera api-key - si
+listar usuarios - si
+añadir usuario - si (falla el jackson pero es un error interno, ya que no parsea bien el body y desde postman si)
+borrar usuario - si
+borrar a la fuerza usuario - si
+update usuario - si (falla el jackson pero es un error interno y desde postman si)
+recibir nombre/pass en cada llamada - si
+añadir caja nueva - solo servidor
+añadir cosas a caja - solo servidor
+listar cosas caja usuario - si
+añadir cantidad cosas a un usuario - solo servidor
+servlet websockets - si, pero no funciona porque da nullpointer al iniciar websocket. sin este nullpointer, funciona al 100%. se puede comprobar que se llama al ws desde
+					los servicios de usuarios y que se envia el mensaje, pero no se recibe bien por este nullpointer (realmente no le falta nada es un error de inicializacion).

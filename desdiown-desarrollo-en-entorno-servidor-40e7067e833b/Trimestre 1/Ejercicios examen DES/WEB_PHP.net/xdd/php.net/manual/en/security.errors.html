@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<!-- Mirrored from php.net/manual/en/security.errors.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Dec 2017 23:13:36 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+  <title>PHP: Error Reporting - Manual </title>
+
+ <link rel="shortcut icon" href="../../favicon.ico">
+ <link rel="search" type="application/opensearchdescription+xml" href="../../phpnetimprovedsearch.html" title="Add PHP.net search">
+ <link rel="alternate" type="application/atom+xml" href="../../releases/feed.php" title="PHP Release feed">
+ <link rel="alternate" type="application/atom+xml" href="../../feed.atom" title="PHP: Hypertext Preprocessor">
+
+ <link rel="canonical" href="security.errors.html">
+ <link rel="shorturl" href="security.errors.html">
+ <link rel="alternate" href="security.errors.html" hreflang="x-default">
+
+ <link rel="contents" href="index-2.html">
+ <link rel="index" href="security.html">
+ <link rel="prev" href="security.database.sql-injection.html">
+ <link rel="next" href="security.globals.html">
+
+ <link rel="alternate" href="security.errors.html" hreflang="en">
+ <link rel="alternate" href="../pt_BR/security.errors.html" hreflang="pt_BR">
+ <link rel="alternate" href="../zh/security.errors.html" hreflang="zh">
+ <link rel="alternate" href="../fr/security.errors.html" hreflang="fr">
+ <link rel="alternate" href="../de/security.errors.html" hreflang="de">
+ <link rel="alternate" href="../ja/security.errors.html" hreflang="ja">
+ <link rel="alternate" href="../ro/security.errors.html" hreflang="ro">
+ <link rel="alternate" href="../ru/security.errors.html" hreflang="ru">
+ <link rel="alternate" href="../es/security.errors.html" hreflang="es">
+ <link rel="alternate" href="../tr/security.errors.html" hreflang="tr">
+
+<link rel="stylesheet" type="text/css" href="../../cached0152.css?t=1421837618&amp;f=/fonts/Fira/fira.css" media="screen">
+<link rel="stylesheet" type="text/css" href="../../cached15be.css?t=1421837618&amp;f=/fonts/Font-Awesome/css/fontello.css" media="screen">
+<link rel="stylesheet" type="text/css" href="../../cached3c70.css?t=1478800802&amp;f=/styles/theme-base.css" media="screen">
+<link rel="stylesheet" type="text/css" href="../../cached00eb.css?t=1449787206&amp;f=/styles/theme-medium.css" media="screen">
+
+ <!--[if lte IE 7]>
+ <link rel="stylesheet" type="text/css" href="http://php.net/styles/workarounds.ie7.css" media="screen">
+ <![endif]-->
+
+ <!--[if lte IE 8]>
+ <script type="text/javascript">
+  window.brokenIE = true;
+ </script>
+ <![endif]-->
+
+ <!--[if lte IE 9]>
+ <link rel="stylesheet" type="text/css" href="http://php.net/styles/workarounds.ie9.css" media="screen">
+ <![endif]-->
+
+ <!--[if IE]>
+ <script type="text/javascript" src="http://php.net/js/ext/html5.js"></script>
+ <![endif]-->
+
+ <base >
+
+</head>
+<body class="docs ">
+
+<nav id="head-nav" class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <a href="../../index.html" class="brand"><img src="../../images/logos/php-logo.svg" width="48" height="24" alt="php"></a>
+    <div id="mainmenu-toggle-overlay"></div>
+    <input type="checkbox" id="mainmenu-toggle">
+    <ul class="nav">
+      <li class=""><a href="../../downloads.html">Downloads</a></li>
+      <li class="active"><a href="../../docs.html">Documentation</a></li>
+      <li class=""><a href="../../get-involved.html" >Get Involved</a></li>
+      <li class=""><a href="../../support.html">Help</a></li>
+    </ul>
+    <form class="navbar-search" id="topsearch" action="http://php.net/search.php">
+      <input type="hidden" name="show" value="quickref">
+      <input type="search" name="pattern" class="search-query" placeholder="Search" accesskey="s">
+    </form>
+  </div>
+  <div id="flash-message"></div>
+</nav>
+<nav id="trick"><div><dl>
+<dt><a href='getting-started.html'>Getting Started</a></dt>
+	<dd><a href='introduction.html'>Introduction</a></dd>
+	<dd><a href='tutorial.html'>A simple tutorial</a></dd>
+<dt><a href='langref.html'>Language Reference</a></dt>
+	<dd><a href='language.basic-syntax.html'>Basic syntax</a></dd>
+	<dd><a href='language.types.html'>Types</a></dd>
+	<dd><a href='language.variables.html'>Variables</a></dd>
+	<dd><a href='language.constants.html'>Constants</a></dd>
+	<dd><a href='language.expressions.html'>Expressions</a></dd>
+	<dd><a href='language.operators.html'>Operators</a></dd>
+	<dd><a href='language.control-structures.html'>Control Structures</a></dd>
+	<dd><a href='language.functions.html'>Functions</a></dd>
+	<dd><a href='language.oop5.html'>Classes and Objects</a></dd>
+	<dd><a href='language.namespaces.html'>Namespaces</a></dd>
+	<dd><a href='language.errors.html'>Errors</a></dd>
+	<dd><a href='language.exceptions.html'>Exceptions</a></dd>
+	<dd><a href='language.generators.html'>Generators</a></dd>
+	<dd><a href='language.references.html'>References Explained</a></dd>
+	<dd><a href='reserved.variables.html'>Predefined Variables</a></dd>
+	<dd><a href='reserved.exceptions.html'>Predefined Exceptions</a></dd>
+	<dd><a href='reserved.interfaces.html'>Predefined Interfaces and Classes</a></dd>
+	<dd><a href='context.html'>Context options and parameters</a></dd>
+	<dd><a href='wrappers.html'>Supported Protocols and Wrappers</a></dd>
+</dl>
+<dl>
+<dt><a href='security.html'>Security</a></dt>
+	<dd><a href='security.intro.html'>Introduction</a></dd>
+	<dd><a href='security.general.html'>General considerations</a></dd>
+	<dd><a href='security.cgi-bin.html'>Installed as CGI binary</a></dd>
+	<dd><a href='security.apache.html'>Installed as an Apache module</a></dd>
+	<dd><a href='security.sessions.html'>Session Security</a></dd>
+	<dd><a href='security.filesystem.html'>Filesystem Security</a></dd>
+	<dd><a href='security.database.html'>Database Security</a></dd>
+	<dd><a href='security.errors.html'>Error Reporting</a></dd>
+	<dd><a href='security.globals.html'>Using Register Globals</a></dd>
+	<dd><a href='security.variables.html'>User Submitted Data</a></dd>
+	<dd><a href='security.magicquotes.html'>Magic Quotes</a></dd>
+	<dd><a href='security.hiding.html'>Hiding PHP</a></dd>
+	<dd><a href='security.current.html'>Keeping Current</a></dd>
+<dt><a href='features.html'>Features</a></dt>
+	<dd><a href='features.http-auth.html'>HTTP authentication with PHP</a></dd>
+	<dd><a href='features.cookies.html'>Cookies</a></dd>
+	<dd><a href='features.sessions.html'>Sessions</a></dd>
+	<dd><a href='features.xforms.html'>Dealing with XForms</a></dd>
+	<dd><a href='features.file-upload.html'>Handling file uploads</a></dd>
+	<dd><a href='features.remote-files.html'>Using remote files</a></dd>
+	<dd><a href='features.connection-handling.html'>Connection handling</a></dd>
+	<dd><a href='features.persistent-connections.html'>Persistent Database Connections</a></dd>
+	<dd><a href='features.safe-mode.html'>Safe Mode</a></dd>
+	<dd><a href='features.commandline.html'>Command line usage</a></dd>
+	<dd><a href='features.gc.html'>Garbage Collection</a></dd>
+	<dd><a href='features.dtrace.html'>DTrace Dynamic Tracing</a></dd>
+</dl>
+<dl>
+<dt><a href='funcref.html'>Function Reference</a></dt>
+	<dd><a href='refs.basic.php.html'>Affecting PHP's Behaviour</a></dd>
+	<dd><a href='refs.utilspec.audio.html'>Audio Formats Manipulation</a></dd>
+	<dd><a href='refs.remote.auth.html'>Authentication Services</a></dd>
+	<dd><a href='refs.utilspec.cmdline.html'>Command Line Specific Extensions</a></dd>
+	<dd><a href='refs.compression.html'>Compression and Archive Extensions</a></dd>
+	<dd><a href='refs.creditcard.html'>Credit Card Processing</a></dd>
+	<dd><a href='refs.crypto.html'>Cryptography Extensions</a></dd>
+	<dd><a href='refs.database.html'>Database Extensions</a></dd>
+	<dd><a href='refs.calendar.html'>Date and Time Related Extensions</a></dd>
+	<dd><a href='refs.fileprocess.file.html'>File System Related Extensions</a></dd>
+	<dd><a href='refs.international.html'>Human Language and Character Encoding Support</a></dd>
+	<dd><a href='refs.utilspec.image.html'>Image Processing and Generation</a></dd>
+	<dd><a href='refs.remote.mail.html'>Mail Related Extensions</a></dd>
+	<dd><a href='refs.math.html'>Mathematical Extensions</a></dd>
+	<dd><a href='refs.utilspec.nontext.html'>Non-Text MIME Output</a></dd>
+	<dd><a href='refs.fileprocess.process.html'>Process Control Extensions</a></dd>
+	<dd><a href='refs.basic.other.html'>Other Basic Extensions</a></dd>
+	<dd><a href='refs.remote.other.html'>Other Services</a></dd>
+	<dd><a href='refs.search.html'>Search Engine Extensions</a></dd>
+	<dd><a href='refs.utilspec.server.html'>Server Specific Extensions</a></dd>
+	<dd><a href='refs.basic.session.html'>Session Extensions</a></dd>
+	<dd><a href='refs.basic.text.html'>Text Processing</a></dd>
+	<dd><a href='refs.basic.vartype.html'>Variable and Type Related Extensions</a></dd>
+	<dd><a href='refs.webservice.html'>Web Services</a></dd>
+	<dd><a href='refs.utilspec.windows.html'>Windows Only Extensions</a></dd>
+	<dd><a href='refs.xml.html'>XML Manipulation</a></dd>
+	<dd><a href='refs.ui.html'>GUI Extensions</a></dd>
+</dl>
+<dl>
+<dt>Keyboard Shortcuts</dt><dt>?</dt>
+<dd>This help</dd>
+<dt>j</dt>
+<dd>Next menu item</dd>
+<dt>k</dt>
+<dd>Previous menu item</dd>
+<dt>g p</dt>
+<dd>Previous man page</dd>
+<dt>g n</dt>
+<dd>Next man page</dd>
+<dt>G</dt>
+<dd>Scroll to bottom</dd>
+<dt>g g</dt>
+<dd>Scroll to top</dd>
+<dt>g h</dt>
+<dd>Goto homepage</dd>
+<dt>g s</dt>
+<dd>Goto search<br>(current page)</dd>
+<dt>/</dt>
+<dd>Focus search box</dd>
+</dl></div></nav>
+<div id="goto">
+    <div class="search">
+         <div class="text"></div>
+         <div class="results"><ul></ul></div>
+   </div>
+</div>
+
+  <div id="breadcrumbs" class="clearfix">
+    <div id="breadcrumbs-inner">
+          <div class="next">
+        <a href="security.globals.html">
+          Using Register Globals &raquo;
+        </a>
+      </div>
+              <div class="prev">
+        <a href="security.database.sql-injection.html">
+          &laquo; SQL Injection        </a>
+      </div>
+          <ul>
+            <li><a href='index-2.html'>PHP Manual</a></li>      <li><a href='security.html'>Security</a></li>      </ul>
+    </div>
+  </div>
+
+
+
+
+<div id="layout" class="clearfix">
+  <section id="layout-content">
+  <div class="page-tools">
+    <div class="change-language">
+      <form action="http://php.net/manual/change.php" method="get" id="changelang" name="changelang">
+        <fieldset>
+          <label for="changelang-langs">Change language:</label>
+          <select onchange="document.changelang.submit()" name="page" id="changelang-langs">
+            <option value='en/security.errors.php' selected="selected">English</option>
+            <option value='pt_BR/security.errors.html'>Brazilian Portuguese</option>
+            <option value='zh/security.errors.html'>Chinese (Simplified)</option>
+            <option value='fr/security.errors.html'>French</option>
+            <option value='de/security.errors.html'>German</option>
+            <option value='ja/security.errors.html'>Japanese</option>
+            <option value='ro/security.errors.html'>Romanian</option>
+            <option value='ru/security.errors.html'>Russian</option>
+            <option value='es/security.errors.html'>Spanish</option>
+            <option value='tr/security.errors.html'>Turkish</option>
+            <option value="help-translate.html">Other</option>
+          </select>
+        </fieldset>
+      </form>
+    </div>
+    <div class="edit-bug">
+      <a href="https://edit.php.net/?project=PHP&amp;perm=en/security.errors.php">Edit</a>
+      <a href="https://bugs.php.net/report.php?bug_type=Documentation+problem&amp;manpage=security.errors">Report a Bug</a>
+    </div>
+  </div><div id="security.errors" class="chapter">
+   <h1>Error Reporting</h1>
+
+   <p class="para">
+    With PHP security, there are two sides to error reporting. One is
+    beneficial to increasing security, the other is detrimental.
+   </p>
+   <p class="para">
+    A standard attack tactic involves profiling a system by feeding
+    it improper data, and checking for the kinds, and contexts, of the
+    errors which are returned. This allows the system cracker to probe
+    for information about the server, to determine possible weaknesses.
+    For example, if an attacker had gleaned information about a page
+    based on a prior form submission, they may attempt to override
+    variables, or modify them:
+    <div class="example" id="example-366">
+     <p><strong>Example #1 Attacking Variables with a custom HTML page</strong></p>
+     <div class="example-contents">
+<div class="htmlcode"><pre class="htmlcode">&lt;form method=&quot;post&quot; action=&quot;attacktarget?username=badfoo&amp;amp;password=badfoo&quot;&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;username&quot; value=&quot;badfoo&quot; /&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;password&quot; value=&quot;badfoo&quot; /&gt;
+&lt;/form&gt;</pre>
+</div>
+     </div>
+
+    </div>
+   </p>
+   <p class="para">
+    The PHP errors which are normally returned can be quite helpful to a
+    developer who is trying to debug a script, indicating such things
+    as the function or file that failed, the PHP file it failed in,
+    and the line number which the failure occurred in. This is all
+    information that can be exploited.  It is not uncommon for a php
+    developer to use <span class="function"><a href="function.show-source.html" class="function">show_source()</a></span>,
+    <span class="function"><a href="function.highlight-string.html" class="function">highlight_string()</a></span>, or
+    <span class="function"><a href="function.highlight-file.html" class="function">highlight_file()</a></span> as a debugging measure, but in
+    a live site, this can expose hidden variables, unchecked syntax,
+    and other dangerous information. Especially dangerous is running
+    code from known sources with built-in debugging handlers, or using
+    common debugging techniques. If the attacker can determine what
+    general technique you are using, they may try to brute-force a page,
+    by sending various common debugging strings:
+    <div class="example" id="example-367">
+     <p><strong>Example #2 Exploiting common debugging variables</strong></p>
+     <div class="example-contents">
+<div class="htmlcode"><pre class="htmlcode">&lt;form method=&quot;post&quot; action=&quot;attacktarget?errors=Y&amp;amp;showerrors=1&amp;amp;debug=1&quot;&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;errors&quot; value=&quot;Y&quot; /&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;showerrors&quot; value=&quot;1&quot; /&gt;
+&lt;input type=&quot;hidden&quot; name=&quot;debug&quot; value=&quot;1&quot; /&gt;
+&lt;/form&gt;</pre>
+</div>
+     </div>
+
+    </div>
+   </p>
+   <p class="para">
+    Regardless of the method of error handling, the ability to probe a
+    system for errors leads to providing an attacker with more
+    information.
+   </p>
+   <p class="para">
+    For example, the very style of a generic PHP error indicates a system
+    is running PHP. If the attacker was looking at an .html page, and
+    wanted to probe for the back-end (to look for known weaknesses in
+    the system), by feeding it the wrong data they may be able to
+    determine that a system was built with PHP.
+   </p>
+   <p class="para">
+    A function error can indicate whether a system may be running a
+    specific database engine, or give clues as to how a web page or
+    programmed or designed. This allows for deeper investigation into
+    open database ports, or to look for specific bugs or weaknesses
+    in a web page. By feeding different pieces of bad data, for example,
+    an attacker can determine the order of authentication in a script,
+    (from the line number errors) as well as probe for exploits that
+    may be exploited in different locations in the script.
+   </p>
+   <p class="para">
+    A filesystem or general PHP error can indicate what permissions
+    the web server has, as well as the structure and organization of
+    files on the web server. Developer written error code can aggravate
+    this problem, leading to easy exploitation of formerly &quot;hidden&quot;
+    information.
+   </p>
+   <p class="para">
+    There are three major solutions to this issue. The first is to
+    scrutinize all functions, and attempt to compensate for the bulk
+    of the errors. The second is to disable error reporting entirely
+    on the running code. The third is to use PHP&#039;s custom error
+    handling functions to create your own error handler. Depending
+    on your security policy, you may find all three to be applicable
+    to your situation.
+   </p>
+   <p class="para">
+    One way of catching this issue ahead of time is to make use of
+    PHP&#039;s own <span class="function"><a href="function.error-reporting.html" class="function">error_reporting()</a></span>, to help you
+    secure your code and find variable usage that may be dangerous.
+    By testing your code, prior to deployment, with <strong><code>E_ALL</code></strong>,
+    you can quickly find areas where your variables may be open to poisoning
+    or modification in other ways. Once you are ready for deployment,
+    you should either disable error reporting completely by setting
+    <span class="function"><a href="function.error-reporting.html" class="function">error_reporting()</a></span> to 0, or turn off the error
+    display using the <var class="filename">php.ini</var> option <em>display_errors</em>,
+    to insulate your code from probing. If you choose to do the latter,
+    you should also define the path to your log file using the
+    <em>error_log</em> ini directive, and turn
+    <em>log_errors</em> on.
+    <div class="example" id="example-368">
+     <p><strong>Example #3 Finding dangerous variables with E_ALL</strong></p>
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">if&nbsp;(</span><span style="color: #0000BB">$username</span><span style="color: #007700">)&nbsp;{&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;Not&nbsp;initialized&nbsp;or&nbsp;checked&nbsp;before&nbsp;usage<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$good_login&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">;<br />}<br />if&nbsp;(</span><span style="color: #0000BB">$good_login&nbsp;</span><span style="color: #007700">==&nbsp;</span><span style="color: #0000BB">1</span><span style="color: #007700">)&nbsp;{&nbsp;</span><span style="color: #FF8000">//&nbsp;If&nbsp;above&nbsp;test&nbsp;fails,&nbsp;not&nbsp;initialized&nbsp;or&nbsp;checked&nbsp;before&nbsp;usage<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">readfile&nbsp;</span><span style="color: #007700">(</span><span style="color: #DD0000">"/highly/sensitive/data/index.html"</span><span style="color: #007700">);<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+     </div>
+
+    </div>
+   </p>
+  </div>
+
+<section id="usernotes">
+ <div class="head">
+  <span class="action"><a href="../add-notecc9a.html?sect=security.errors&amp;redirect=http://php.net/manual/en/security.errors.php"><img src='../../images/notes-add%402x.png' alt='add a note' width='12' height='12'> <small>add a note</small></a></span>
+  <h3 class="title">User Contributed Notes <span class="count">1 note</span></h3>
+ </div><div id="allnotes">
+  <div class="note" id="88727">  <div class="votes">
+    <div id="Vu88727">
+    <a href="../vote-note8e33.html?id=88727&amp;page=security.errors&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd88727">
+    <a href="../vote-note4194.html?id=88727&amp;page=security.errors&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V88727" title="53% like this...">
+    5
+    </div>
+  </div>
+  <a href="#88727" class="name">
+  <strong class="user"><em>earlz-  -NO SPAM-- at earlz dot  biz DOT tm</em></strong></a><a class="genanchor" href="#88727"> &para;</a><div class="date" title="2009-02-04 02:11"><strong>8 years ago</strong></div>
+  <div class="text" id="Hcom88727">
+<div class="phpcode"><code><span class="html">
+Note for those of you using OpenBSD and PHP.&nbsp; The default php.ini has display_errors=off . This is contrary to the PHP default of display_errors=on . If your having trouble seeing errors on OpenBSD make sure to edit your php.ini to have display_errors=on. (I had this problem on OpenBSD 4.4)</span>
+</code></div>
+  </div>
+ </div></div>
+
+ <div class="foot"><a href="../add-notecc9a.html?sect=security.errors&amp;redirect=http://php.net/manual/en/security.errors.php"><img src='../../images/notes-add%402x.png' alt='add a note' width='12' height='12'> <small>add a note</small></a></div>
+</section>    </section><!-- layout-content -->
+        <aside class='layout-menu'>
+    
+        <ul class='parent-menu-list'>
+                                    <li>
+                <a href="security.html">Security</a>
+    
+                                    <ul class='child-menu-list'>
+    
+                          
+                        <li class="">
+                            <a href="security.intro.html" title="Introduction">Introduction</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="security.general.html" title="General considerations">General considerations</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="security.cgi-bin.html" title="Installed as CGI binary">Installed as CGI binary</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="security.apache.html" title="Installed as an Apache module">Installed as an Apache module</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="security.sessions.html" title="Session Security">Session Security</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="security.filesystem.html" title="Filesystem Security">Filesystem Security</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="security.database.html" title="Database Security">Database Security</a>
+                        </li>
+                          
+                        <li class="current">
+                            <a href="security.errors.html" title="Error Reporting">Error Reporting</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="security.globals.html" title="Using Register Globals">Using Register Globals</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="security.variables.html" title="User Submitted Data">User Submitted Data</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="security.magicquotes.html" title="Magic Quotes">Magic Quotes</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="security.hiding.html" title="Hiding PHP">Hiding PHP</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="security.current.html" title="Keeping Current">Keeping Current</a>
+                        </li>
+                            
+                    </ul>
+                    
+            </li>
+                        
+                    </ul>
+    </aside>
+
+
+  </div><!-- layout -->
+         
+  <footer>
+    <div class="container footer-content">
+      <div class="row-fluid">
+      <ul class="footmenu">
+        <li><a href="../../copyright.html">Copyright &copy; 2001-2017 The PHP Group</a></li>
+        <li><a href="../../my.html">My PHP.net</a></li>
+        <li><a href="../../contact.html">Contact</a></li>
+        <li><a href="../../sites.html">Other PHP.net sites</a></li>
+        <li><a href="../../mirrors.html">Mirror sites</a></li>
+        <li><a href="../../privacy.html">Privacy policy</a></li>
+      </ul>
+      </div>
+    </div>
+  </footer>
+
+    
+ <!-- External and third party libraries. -->
+ <script type="text/javascript" src="../../../ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" src="../../cachedab96.php?t=1421837618&amp;f=/js/ext/modernizr.js"></script>
+<script type="text/javascript" src="../../cached3567.php?t=1421837618&amp;f=/js/ext/hogan-2.0.0.min.js"></script>
+<script type="text/javascript" src="../../cachede4eb.php?t=1421837618&amp;f=/js/ext/typeahead.min.js"></script>
+<script type="text/javascript" src="../../cached9183.php?t=1421837618&amp;f=/js/ext/mousetrap.min.js"></script>
+<script type="text/javascript" src="../../cachedcba0.php?t=1421837618&amp;f=/js/search.js"></script>
+<script type="text/javascript" src="../../cachedb779.php?t=1500560403&amp;f=/js/common.js"></script>
+
+<a id="toTop" href="javascript:;"><span id="toTopHover"></span><img width="40" height="40" alt="To Top" src="../../images/to-top%402x.png"></a>
+
+</body>
+
+<!-- Mirrored from php.net/manual/en/security.errors.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Dec 2017 23:13:43 GMT -->
+</html>
+

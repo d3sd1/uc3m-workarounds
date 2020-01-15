@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<!-- Mirrored from php.net/manual/en/language.constants.predefined.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Dec 2017 23:18:10 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+  <title>PHP: Magic constants - Manual </title>
+
+ <link rel="shortcut icon" href="http://php.net/favicon.ico">
+ <link rel="search" type="application/opensearchdescription+xml" href="http://php.net/phpnetimprovedsearch.src" title="Add PHP.net search">
+ <link rel="alternate" type="application/atom+xml" href="http://php.net/releases/feed.php" title="PHP Release feed">
+ <link rel="alternate" type="application/atom+xml" href="http://php.net/feed.atom" title="PHP: Hypertext Preprocessor">
+
+ <link rel="canonical" href="http://php.net/manual/en/language.constants.predefined.php">
+ <link rel="shorturl" href="http://php.net/constants.predefined">
+ <link rel="alternate" href="http://php.net/constants.predefined" hreflang="x-default">
+
+ <link rel="contents" href="http://php.net/manual/en/index.php">
+ <link rel="index" href="http://php.net/manual/en/language.constants.php">
+ <link rel="prev" href="http://php.net/manual/en/language.constants.syntax.php">
+ <link rel="next" href="http://php.net/manual/en/language.expressions.php">
+
+ <link rel="alternate" href="http://php.net/manual/en/language.constants.predefined.php" hreflang="en">
+ <link rel="alternate" href="http://php.net/manual/pt_BR/language.constants.predefined.php" hreflang="pt_BR">
+ <link rel="alternate" href="http://php.net/manual/zh/language.constants.predefined.php" hreflang="zh">
+ <link rel="alternate" href="http://php.net/manual/fr/language.constants.predefined.php" hreflang="fr">
+ <link rel="alternate" href="http://php.net/manual/de/language.constants.predefined.php" hreflang="de">
+ <link rel="alternate" href="http://php.net/manual/ja/language.constants.predefined.php" hreflang="ja">
+ <link rel="alternate" href="http://php.net/manual/ro/language.constants.predefined.php" hreflang="ro">
+ <link rel="alternate" href="http://php.net/manual/ru/language.constants.predefined.php" hreflang="ru">
+ <link rel="alternate" href="http://php.net/manual/es/language.constants.predefined.php" hreflang="es">
+ <link rel="alternate" href="http://php.net/manual/tr/language.constants.predefined.php" hreflang="tr">
+
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1421837618&amp;f=/fonts/Fira/fira.css" media="screen">
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1421837618&amp;f=/fonts/Font-Awesome/css/fontello.css" media="screen">
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1478800802&amp;f=/styles/theme-base.css" media="screen">
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1449787206&amp;f=/styles/theme-medium.css" media="screen">
+
+ <!--[if lte IE 7]>
+ <link rel="stylesheet" type="text/css" href="http://php.net/styles/workarounds.ie7.css" media="screen">
+ <![endif]-->
+
+ <!--[if lte IE 8]>
+ <script type="text/javascript">
+  window.brokenIE = true;
+ </script>
+ <![endif]-->
+
+ <!--[if lte IE 9]>
+ <link rel="stylesheet" type="text/css" href="http://php.net/styles/workarounds.ie9.css" media="screen">
+ <![endif]-->
+
+ <!--[if IE]>
+ <script type="text/javascript" src="http://php.net/js/ext/html5.js"></script>
+ <![endif]-->
+
+ <base >
+
+</head>
+<body class="docs ">
+
+<nav id="head-nav" class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <a href="http://php.net/" class="brand"><img src="http://php.net/images/logos/php-logo.svg" width="48" height="24" alt="php"></a>
+    <div id="mainmenu-toggle-overlay"></div>
+    <input type="checkbox" id="mainmenu-toggle">
+    <ul class="nav">
+      <li class=""><a href="http://php.net/downloads">Downloads</a></li>
+      <li class="active"><a href="http://php.net/docs.php">Documentation</a></li>
+      <li class=""><a href="http://php.net/get-involved" >Get Involved</a></li>
+      <li class=""><a href="http://php.net/support">Help</a></li>
+    </ul>
+    <form class="navbar-search" id="topsearch" action="http://php.net/search.php">
+      <input type="hidden" name="show" value="quickref">
+      <input type="search" name="pattern" class="search-query" placeholder="Search" accesskey="s">
+    </form>
+  </div>
+  <div id="flash-message"></div>
+</nav>
+<nav id="trick"><div><dl>
+<dt><a href='http://php.net/manual/en/getting-started.php'>Getting Started</a></dt>
+	<dd><a href='http://php.net/manual/en/introduction.php'>Introduction</a></dd>
+	<dd><a href='http://php.net/manual/en/tutorial.php'>A simple tutorial</a></dd>
+<dt><a href='http://php.net/manual/en/langref.php'>Language Reference</a></dt>
+	<dd><a href='http://php.net/manual/en/language.basic-syntax.php'>Basic syntax</a></dd>
+	<dd><a href='http://php.net/manual/en/language.types.php'>Types</a></dd>
+	<dd><a href='http://php.net/manual/en/language.variables.php'>Variables</a></dd>
+	<dd><a href='http://php.net/manual/en/language.constants.php'>Constants</a></dd>
+	<dd><a href='http://php.net/manual/en/language.expressions.php'>Expressions</a></dd>
+	<dd><a href='http://php.net/manual/en/language.operators.php'>Operators</a></dd>
+	<dd><a href='http://php.net/manual/en/language.control-structures.php'>Control Structures</a></dd>
+	<dd><a href='http://php.net/manual/en/language.functions.php'>Functions</a></dd>
+	<dd><a href='http://php.net/manual/en/language.oop5.php'>Classes and Objects</a></dd>
+	<dd><a href='http://php.net/manual/en/language.namespaces.php'>Namespaces</a></dd>
+	<dd><a href='http://php.net/manual/en/language.errors.php'>Errors</a></dd>
+	<dd><a href='http://php.net/manual/en/language.exceptions.php'>Exceptions</a></dd>
+	<dd><a href='http://php.net/manual/en/language.generators.php'>Generators</a></dd>
+	<dd><a href='http://php.net/manual/en/language.references.php'>References Explained</a></dd>
+	<dd><a href='http://php.net/manual/en/reserved.variables.php'>Predefined Variables</a></dd>
+	<dd><a href='http://php.net/manual/en/reserved.exceptions.php'>Predefined Exceptions</a></dd>
+	<dd><a href='http://php.net/manual/en/reserved.interfaces.php'>Predefined Interfaces and Classes</a></dd>
+	<dd><a href='http://php.net/manual/en/context.php'>Context options and parameters</a></dd>
+	<dd><a href='http://php.net/manual/en/wrappers.php'>Supported Protocols and Wrappers</a></dd>
+</dl>
+<dl>
+<dt><a href='http://php.net/manual/en/security.php'>Security</a></dt>
+	<dd><a href='http://php.net/manual/en/security.intro.php'>Introduction</a></dd>
+	<dd><a href='http://php.net/manual/en/security.general.php'>General considerations</a></dd>
+	<dd><a href='http://php.net/manual/en/security.cgi-bin.php'>Installed as CGI binary</a></dd>
+	<dd><a href='http://php.net/manual/en/security.apache.php'>Installed as an Apache module</a></dd>
+	<dd><a href='http://php.net/manual/en/security.sessions.php'>Session Security</a></dd>
+	<dd><a href='http://php.net/manual/en/security.filesystem.php'>Filesystem Security</a></dd>
+	<dd><a href='http://php.net/manual/en/security.database.php'>Database Security</a></dd>
+	<dd><a href='http://php.net/manual/en/security.errors.php'>Error Reporting</a></dd>
+	<dd><a href='http://php.net/manual/en/security.globals.php'>Using Register Globals</a></dd>
+	<dd><a href='http://php.net/manual/en/security.variables.php'>User Submitted Data</a></dd>
+	<dd><a href='http://php.net/manual/en/security.magicquotes.php'>Magic Quotes</a></dd>
+	<dd><a href='http://php.net/manual/en/security.hiding.php'>Hiding PHP</a></dd>
+	<dd><a href='http://php.net/manual/en/security.current.php'>Keeping Current</a></dd>
+<dt><a href='http://php.net/manual/en/features.php'>Features</a></dt>
+	<dd><a href='http://php.net/manual/en/features.http-auth.php'>HTTP authentication with PHP</a></dd>
+	<dd><a href='http://php.net/manual/en/features.cookies.php'>Cookies</a></dd>
+	<dd><a href='http://php.net/manual/en/features.sessions.php'>Sessions</a></dd>
+	<dd><a href='http://php.net/manual/en/features.xforms.php'>Dealing with XForms</a></dd>
+	<dd><a href='http://php.net/manual/en/features.file-upload.php'>Handling file uploads</a></dd>
+	<dd><a href='http://php.net/manual/en/features.remote-files.php'>Using remote files</a></dd>
+	<dd><a href='http://php.net/manual/en/features.connection-handling.php'>Connection handling</a></dd>
+	<dd><a href='http://php.net/manual/en/features.persistent-connections.php'>Persistent Database Connections</a></dd>
+	<dd><a href='http://php.net/manual/en/features.safe-mode.php'>Safe Mode</a></dd>
+	<dd><a href='http://php.net/manual/en/features.commandline.php'>Command line usage</a></dd>
+	<dd><a href='http://php.net/manual/en/features.gc.php'>Garbage Collection</a></dd>
+	<dd><a href='http://php.net/manual/en/features.dtrace.php'>DTrace Dynamic Tracing</a></dd>
+</dl>
+<dl>
+<dt><a href='http://php.net/manual/en/funcref.php'>Function Reference</a></dt>
+	<dd><a href='http://php.net/manual/en/refs.basic.php.php'>Affecting PHP's Behaviour</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.audio.php'>Audio Formats Manipulation</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.remote.auth.php'>Authentication Services</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.cmdline.php'>Command Line Specific Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.compression.php'>Compression and Archive Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.creditcard.php'>Credit Card Processing</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.crypto.php'>Cryptography Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.database.php'>Database Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.calendar.php'>Date and Time Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.fileprocess.file.php'>File System Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.international.php'>Human Language and Character Encoding Support</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.image.php'>Image Processing and Generation</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.remote.mail.php'>Mail Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.math.php'>Mathematical Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.nontext.php'>Non-Text MIME Output</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.fileprocess.process.php'>Process Control Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.other.php'>Other Basic Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.remote.other.php'>Other Services</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.search.php'>Search Engine Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.server.php'>Server Specific Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.session.php'>Session Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.text.php'>Text Processing</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.vartype.php'>Variable and Type Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.webservice.php'>Web Services</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.windows.php'>Windows Only Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.xml.php'>XML Manipulation</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.ui.php'>GUI Extensions</a></dd>
+</dl>
+<dl>
+<dt>Keyboard Shortcuts</dt><dt>?</dt>
+<dd>This help</dd>
+<dt>j</dt>
+<dd>Next menu item</dd>
+<dt>k</dt>
+<dd>Previous menu item</dd>
+<dt>g p</dt>
+<dd>Previous man page</dd>
+<dt>g n</dt>
+<dd>Next man page</dd>
+<dt>G</dt>
+<dd>Scroll to bottom</dd>
+<dt>g g</dt>
+<dd>Scroll to top</dd>
+<dt>g h</dt>
+<dd>Goto homepage</dd>
+<dt>g s</dt>
+<dd>Goto search<br>(current page)</dd>
+<dt>/</dt>
+<dd>Focus search box</dd>
+</dl></div></nav>
+<div id="goto">
+    <div class="search">
+         <div class="text"></div>
+         <div class="results"><ul></ul></div>
+   </div>
+</div>
+
+  <div id="breadcrumbs" class="clearfix">
+    <div id="breadcrumbs-inner">
+          <div class="next">
+        <a href="http://php.net/manual/en/language.expressions.php">
+          Expressions &raquo;
+        </a>
+      </div>
+              <div class="prev">
+        <a href="http://php.net/manual/en/language.constants.syntax.php">
+          &laquo; Syntax        </a>
+      </div>
+          <ul>
+            <li><a href='http://php.net/manual/en/index.php'>PHP Manual</a></li>      <li><a href='http://php.net/manual/en/langref.php'>Language Reference</a></li>      <li><a href='http://php.net/manual/en/language.constants.php'>Constants</a></li>      </ul>
+    </div>
+  </div>
+
+
+
+
+<div id="layout" class="clearfix">
+  <section id="layout-content">
+  <div class="page-tools">
+    <div class="change-language">
+      <form action="http://php.net/manual/change.php" method="get" id="changelang" name="changelang">
+        <fieldset>
+          <label for="changelang-langs">Change language:</label>
+          <select onchange="document.changelang.submit()" name="page" id="changelang-langs">
+            <option value='en/language.constants.predefined.php' selected="selected">English</option>
+            <option value='http://php.net/manual/en/pt_BR/language.constants.predefined.php'>Brazilian Portuguese</option>
+            <option value='http://php.net/manual/en/zh/language.constants.predefined.php'>Chinese (Simplified)</option>
+            <option value='http://php.net/manual/en/fr/language.constants.predefined.php'>French</option>
+            <option value='http://php.net/manual/en/de/language.constants.predefined.php'>German</option>
+            <option value='http://php.net/manual/en/ja/language.constants.predefined.php'>Japanese</option>
+            <option value='http://php.net/manual/en/ro/language.constants.predefined.php'>Romanian</option>
+            <option value='http://php.net/manual/en/ru/language.constants.predefined.php'>Russian</option>
+            <option value='http://php.net/manual/en/es/language.constants.predefined.php'>Spanish</option>
+            <option value='http://php.net/manual/en/tr/language.constants.predefined.php'>Turkish</option>
+            <option value="http://php.net/manual/en/help-translate.php">Other</option>
+          </select>
+        </fieldset>
+      </form>
+    </div>
+    <div class="edit-bug">
+      <a href="https://edit.php.net/?project=PHP&amp;perm=en/language.constants.predefined.php">Edit</a>
+      <a href="https://bugs.php.net/report.php?bug_type=Documentation+problem&amp;manpage=language.constants.predefined">Report a Bug</a>
+    </div>
+  </div><div id="language.constants.predefined" class="sect1">
+   <h2 class="title">Magic constants</h2>
+
+   <p class="simpara">
+    PHP provides a large number of <a href="http://php.net/manual/en/reserved.constants.php" class="link">predefined constants</a> to any script
+    which it runs. Many of these constants, however, are created by
+    various extensions, and will only be present when those extensions
+    are available, either via dynamic loading or because they have
+    been compiled in.
+   </p>
+   
+   <p class="para">
+    There are nine magical constants that change depending on
+    where they are used.  For example, the value of
+    <strong><code>__LINE__</code></strong> depends on the line that it&#039;s
+    used on in your script. All these &quot;magical&quot; constants are resolved 
+    at compile time, unlike regular constants thats resolved at runtime. 
+    These special constants are case-insensitive and are as follows:
+   </p>
+   <p class="para">
+    <table class="doctable table">
+     <caption><strong>A few &quot;magical&quot; PHP constants</strong></caption>
+     
+      <thead>
+       <tr>
+        <th>Name</th>
+        <th>Description</th>
+       </tr>
+
+      </thead>
+
+      <tbody class="tbody">
+       <tr id="constant.line">
+        <td><strong><code>__LINE__</code></strong></td>
+        <td>
+         The current line number of the file.
+        </td>
+       </tr>
+
+       <tr id="constant.file">
+        <td><strong><code>__FILE__</code></strong></td>
+        <td>
+         The full path and filename of the file with symlinks resolved. If used inside an include,
+         the name of the included file is returned.
+        </td>
+       </tr>
+
+       <tr id="constant.dir">
+        <td><strong><code>__DIR__</code></strong></td>
+        <td>
+         The directory of the file.  If used inside an include,
+         the directory of the included file is returned. This is equivalent
+         to <em>dirname(__FILE__)</em>. This directory name
+         does not have a trailing slash unless it is the root directory.
+        </td>
+       </tr>
+
+       <tr id="constant.function">
+        <td><strong><code>__FUNCTION__</code></strong></td>
+        <td>
+         The function name.
+        </td>
+       </tr>
+
+       <tr id="constant.class">
+        <td><strong><code>__CLASS__</code></strong></td>
+        <td>
+         The class name. The class name includes the namespace
+         it was declared in (e.g. <em>Foo\Bar</em>).
+         Note that as of PHP 5.4 __CLASS__ works also in traits. When used
+         in a trait method, __CLASS__ is the name of the class the trait
+         is used in.
+        </td>
+       </tr>
+
+       <tr id="constant.trait">
+        <td><strong><code>__TRAIT__</code></strong></td>
+        <td>
+         The trait name. The trait name includes the namespace
+         it was declared in (e.g. <em>Foo\Bar</em>).
+        </td>
+       </tr>
+
+       <tr id="constant.method">
+        <td><strong><code>__METHOD__</code></strong></td>
+        <td>
+         The class method name.
+        </td>
+       </tr>
+
+       <tr id="constant.namespace">
+        <td><strong><code>__NAMESPACE__</code></strong></td>
+        <td>
+         The name of the current namespace.
+        </td>
+       </tr>
+
+       <tr id="constant.coloncolonclass">
+        <td><strong><code>ClassName::class</code></strong></td>
+        <td>
+         The fully qualified class name. See also 
+         <a href="http://php.net/manual/en/language.oop5.basic.php#language.oop5.basic.class.class" class="link">::class</a>.
+        </td>
+       </tr>
+
+      </tbody>
+     
+    </table>
+
+   </p>
+
+   <p class="para">
+    See also 
+    <span class="function"><a href="http://php.net/manual/en/function.get-class.php" class="function">get_class()</a></span>,
+    <span class="function"><a href="http://php.net/manual/en/function.get-object-vars.php" class="function">get_object_vars()</a></span>,
+    <span class="function"><a href="http://php.net/manual/en/function.file-exists.php" class="function">file_exists()</a></span> and
+    <span class="function"><a href="http://php.net/manual/en/function.function-exists.php" class="function">function_exists()</a></span>.
+   </p>
+   
+   <div class="sect2" id="language.constants.predefined.changelog">
+    <h3 class="title">Changelog</h3>
+
+    <p class="para">
+     <table class="doctable informaltable">
+      
+       <thead>
+        <tr>
+         <th>Version</th>
+         <th>Description</th>
+        </tr>
+
+       </thead>
+
+       <tbody class="tbody">
+        <tr>
+         <td>5.5.0</td>
+         <td>
+          Added <strong><code>::class</code></strong> magic constant
+         </td>
+        </tr>
+
+        <tr>
+         <td>5.4.0</td>
+         <td>
+          Added <strong><code>__TRAIT__</code></strong> constant
+         </td>
+        </tr>
+
+        <tr>
+         <td>5.3.0</td>
+         <td>
+          Added <strong><code>__DIR__</code></strong> and <strong><code>__NAMESPACE__</code></strong> constants
+         </td>
+        </tr>
+
+        <tr>
+         <td>5.0.0</td>
+         <td>
+          Added <strong><code>__METHOD__</code></strong> constant
+         </td>
+        </tr>
+
+        <tr>
+         <td>5.0.0</td>
+         <td>
+          Before this version values of some magic constants were always lowercased.
+          All of them are case-sensitive now (contain names as they were declared).
+         </td>
+        </tr>
+
+        <tr>
+         <td>4.3.0</td>
+         <td>
+          Added <strong><code>__FUNCTION__</code></strong> and <strong><code>__CLASS__</code></strong> constants
+         </td>
+        </tr>
+
+        <tr>
+         <td>4.0.2</td>
+         <td>
+          <strong><code>__FILE__</code></strong> always contains an absolute path with symlinks
+          resolved whereas in older versions it contained relative path
+          under some circumstances
+         </td>
+        </tr>
+
+       </tbody>
+      
+     </table>
+
+    </p>
+   </div>
+  </div>
+<section id="usernotes">
+ <div class="head">
+  <span class="action"><a href="http://php.net/manual/add-note.php?sect=language.constants.predefined&amp;redirect=http://php.net/manual/en/language.constants.predefined.php"><img src='http://php.net/images/notes-add@2x.png' alt='add a note' width='12' height='12'> <small>add a note</small></a></span>
+  <h3 class="title">User Contributed Notes <span class="count">9 notes</span></h3>
+ </div><div id="allnotes">
+  <div class="note" id="57033">  <div class="votes">
+    <div id="Vu57033">
+    <a href="http://php.net/manual/vote-note.php?id=57033&amp;page=language.constants.predefined&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd57033">
+    <a href="http://php.net/manual/vote-note.php?id=57033&amp;page=language.constants.predefined&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V57033" title="73% like this...">
+    180
+    </div>
+  </div>
+  <a href="#57033" class="name">
+  <strong class="user"><em>vijaykoul_007 at rediffmail dot com</em></strong></a><a class="genanchor" href="#57033"> &para;</a><div class="date" title="2005-09-21 09:59"><strong>12 years ago</strong></div>
+  <div class="text" id="Hcom57033">
+<div class="phpcode"><code><span class="html">
+the difference between <br />__FUNCTION__ and __METHOD__ as in PHP 5.0.4 is that<br /><br />__FUNCTION__ returns only the name of the function<br /><br />while as __METHOD__ returns the name of the class alongwith the name of the function<br /><br />class trick<br />{<br />&nbsp; &nbsp; &nbsp; function doit()<br />&nbsp; &nbsp; &nbsp; {<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; echo __FUNCTION__;<br />&nbsp; &nbsp; &nbsp; }<br />&nbsp; &nbsp; &nbsp; function doitagain()<br />&nbsp; &nbsp; &nbsp; {<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; echo __METHOD__;<br />&nbsp; &nbsp; &nbsp; }<br />}<br />$obj=new trick();<br />$obj-&gt;doit();<br />output will be ----&nbsp; doit<br />$obj-&gt;doitagain();<br />output will be ----- trick::doitagain</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="119175">  <div class="votes">
+    <div id="Vu119175">
+    <a href="http://php.net/manual/vote-note.php?id=119175&amp;page=language.constants.predefined&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd119175">
+    <a href="http://php.net/manual/vote-note.php?id=119175&amp;page=language.constants.predefined&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V119175" title="63% like this...">
+    12
+    </div>
+  </div>
+  <a href="#119175" class="name">
+  <strong class="user"><em>Sbastien Fauvel</em></strong></a><a class="genanchor" href="#119175"> &para;</a><div class="date" title="2016-04-15 01:27"><strong>1 year ago</strong></div>
+  <div class="text" id="Hcom119175">
+<div class="phpcode"><code><span class="html">
+Note a small inconsistency when using __CLASS__ and __METHOD__ in traits (stand php 7.0.4): While __CLASS__ is working as advertized and returns dynamically the name of the class the trait is being used in, __METHOD__ will actually prepend the trait name instead of the class name!</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="114723">  <div class="votes">
+    <div id="Vu114723">
+    <a href="http://php.net/manual/vote-note.php?id=114723&amp;page=language.constants.predefined&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd114723">
+    <a href="http://php.net/manual/vote-note.php?id=114723&amp;page=language.constants.predefined&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V114723" title="58% like this...">
+    7
+    </div>
+  </div>
+  <a href="#114723" class="name">
+  <strong class="user"><em>php at kenman dot net</em></strong></a><a class="genanchor" href="#114723"> &para;</a><div class="date" title="2014-03-28 06:45"><strong>3 years ago</strong></div>
+  <div class="text" id="Hcom114723">
+<div class="phpcode"><code><span class="html">
+Just learned an interesting tidbit regarding __FILE__ and the newer __DIR__ with respect to code run from a network share: the constants will return the *share* path when executed from the context of the share.<br /><br />Examples:<br /><br />// normal context<br />// called as "php -f c:\test.php"<br /> __DIR__ === 'c:\';<br />__FILE__ === 'c:\test.php';<br /><br />// network share context<br />// called as "php -f \\computerName\c$\test.php"<br /> __DIR__ === '\\computerName\c$';<br />__FILE__ === '\\computerName\c$\test.php';<br /><br />NOTE: realpath('.') always seems to return an actual filesystem path regardless of the execution context.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="71064">  <div class="votes">
+    <div id="Vu71064">
+    <a href="http://php.net/manual/vote-note.php?id=71064&amp;page=language.constants.predefined&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd71064">
+    <a href="http://php.net/manual/vote-note.php?id=71064&amp;page=language.constants.predefined&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V71064" title="58% like this...">
+    14
+    </div>
+  </div>
+  <a href="#71064" class="name">
+  <strong class="user"><em>Tomek Perlak [tomekperlak at tlen pl]</em></strong></a><a class="genanchor" href="#71064"> &para;</a><div class="date" title="2006-11-10 02:16"><strong>11 years ago</strong></div>
+  <div class="text" id="Hcom71064">
+<div class="phpcode"><code><span class="html">
+The __CLASS__ magic constant nicely complements the get_class() function.<br /><br />Sometimes you need to know both:<br />- name of the inherited class<br />- name of the class actually executed<br /><br />Here's an example that shows the possible solution:<br /><br /><span class="default">&lt;?php<br /><br /></span><span class="keyword">class </span><span class="default">base_class<br /></span><span class="keyword">{<br />&nbsp; &nbsp; function </span><span class="default">say_a</span><span class="keyword">()<br />&nbsp; &nbsp; {<br />&nbsp; &nbsp; &nbsp; &nbsp; echo </span><span class="string">"'a' - said the " </span><span class="keyword">. </span><span class="default">__CLASS__ </span><span class="keyword">. </span><span class="string">"&lt;br/&gt;"</span><span class="keyword">;<br />&nbsp; &nbsp; }<br /><br />&nbsp; &nbsp; function </span><span class="default">say_b</span><span class="keyword">()<br />&nbsp; &nbsp; {<br />&nbsp; &nbsp; &nbsp; &nbsp; echo </span><span class="string">"'b' - said the " </span><span class="keyword">. </span><span class="default">get_class</span><span class="keyword">(</span><span class="default">$this</span><span class="keyword">) . </span><span class="string">"&lt;br/&gt;"</span><span class="keyword">;<br />&nbsp; &nbsp; }<br /><br />}<br /><br />class </span><span class="default">derived_class </span><span class="keyword">extends </span><span class="default">base_class<br /></span><span class="keyword">{<br />&nbsp; &nbsp; function </span><span class="default">say_a</span><span class="keyword">()<br />&nbsp; &nbsp; {<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">parent</span><span class="keyword">::</span><span class="default">say_a</span><span class="keyword">();<br />&nbsp; &nbsp; &nbsp; &nbsp; echo </span><span class="string">"'a' - said the " </span><span class="keyword">. </span><span class="default">__CLASS__ </span><span class="keyword">. </span><span class="string">"&lt;br/&gt;"</span><span class="keyword">;<br />&nbsp; &nbsp; }<br /><br />&nbsp; &nbsp; function </span><span class="default">say_b</span><span class="keyword">()<br />&nbsp; &nbsp; {<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">parent</span><span class="keyword">::</span><span class="default">say_b</span><span class="keyword">();<br />&nbsp; &nbsp; &nbsp; &nbsp; echo </span><span class="string">"'b' - said the " </span><span class="keyword">. </span><span class="default">get_class</span><span class="keyword">(</span><span class="default">$this</span><span class="keyword">) . </span><span class="string">"&lt;br/&gt;"</span><span class="keyword">;<br />&nbsp; &nbsp; }<br />}<br /><br /></span><span class="default">$obj_b </span><span class="keyword">= new </span><span class="default">derived_class</span><span class="keyword">();<br /><br /></span><span class="default">$obj_b</span><span class="keyword">-&gt;</span><span class="default">say_a</span><span class="keyword">();<br />echo </span><span class="string">"&lt;br/&gt;"</span><span class="keyword">;<br /></span><span class="default">$obj_b</span><span class="keyword">-&gt;</span><span class="default">say_b</span><span class="keyword">();<br /><br /></span><span class="default">?&gt;<br /></span><br />The output should look roughly like this:<br /><br />'a' - said the base_class<br />'a' - said the derived_class<br /><br />'b' - said the derived_class<br />'b' - said the derived_class</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="114403">  <div class="votes">
+    <div id="Vu114403">
+    <a href="http://php.net/manual/vote-note.php?id=114403&amp;page=language.constants.predefined&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd114403">
+    <a href="http://php.net/manual/vote-note.php?id=114403&amp;page=language.constants.predefined&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V114403" title="56% like this...">
+    6
+    </div>
+  </div>
+  <a href="#114403" class="name">
+  <strong class="user"><em>meindertjan at gmail dot spamspamspam dot com</em></strong></a><a class="genanchor" href="#114403"> &para;</a><div class="date" title="2014-02-16 12:54"><strong>3 years ago</strong></div>
+  <div class="text" id="Hcom114403">
+<div class="phpcode"><code><span class="html">
+A lot of notes here concern defining the __DIR__ magic constant for PHP versions not supporting the feature. Of course you can define this magic constant for PHP versions not yet having this constant, but it will defeat its purpose as soon as you are using the constant in an included file, which may be in a different directory then the file defining the __DIR__ constant. As such, the constant has lost its *magic*, and would be rather useless unless you assure yourself to have all of your includes in the same directory.<br /><br />Concluding: eye catchup at gmail dot com's note regarding whether you can or cannot define magic constants is valid, but stating that defining __DIR__ is not useless, is not!</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="103556">  <div class="votes">
+    <div id="Vu103556">
+    <a href="http://php.net/manual/vote-note.php?id=103556&amp;page=language.constants.predefined&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd103556">
+    <a href="http://php.net/manual/vote-note.php?id=103556&amp;page=language.constants.predefined&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V103556" title="53% like this...">
+    5
+    </div>
+  </div>
+  <a href="#103556" class="name">
+  <strong class="user"><em>chris dot kistner at gmail dot com</em></strong></a><a class="genanchor" href="#103556"> &para;</a><div class="date" title="2011-04-20 05:16"><strong>6 years ago</strong></div>
+  <div class="text" id="Hcom103556">
+<div class="phpcode"><code><span class="html">
+There is no way to implement a backwards compatible __DIR__ in versions prior to 5.3.0.<br /><br />The only thing that you can do is to perform a recursive search and replace to dirname(__FILE__):<br />find . -type f -print0 | xargs -0 sed -i 's/__DIR__/dirname(__FILE__)/'</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="107002">  <div class="votes">
+    <div id="Vu107002">
+    <a href="http://php.net/manual/vote-note.php?id=107002&amp;page=language.constants.predefined&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd107002">
+    <a href="http://php.net/manual/vote-note.php?id=107002&amp;page=language.constants.predefined&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V107002" title="51% like this...">
+    1
+    </div>
+  </div>
+  <a href="#107002" class="name">
+  <strong class="user"><em>Anonymous</em></strong></a><a class="genanchor" href="#107002"> &para;</a><div class="date" title="2011-12-27 08:44"><strong>5 years ago</strong></div>
+  <div class="text" id="Hcom107002">
+<div class="phpcode"><code><span class="html">
+Further clarification on the __TRAIT__ magic constant.<br /><br /><span class="default">&lt;?php<br /></span><span class="keyword">trait </span><span class="default">PeanutButter </span><span class="keyword">{<br />&nbsp; &nbsp; function </span><span class="default">traitName</span><span class="keyword">() {echo </span><span class="default">__TRAIT__</span><span class="keyword">;}<br />}<br /><br />trait </span><span class="default">PeanutButterAndJelly </span><span class="keyword">{<br />&nbsp; &nbsp; use </span><span class="default">PeanutButter</span><span class="keyword">;<br />}<br /><br />class </span><span class="default">Test </span><span class="keyword">{<br />&nbsp; &nbsp; use </span><span class="default">PeanutButterAndJelly</span><span class="keyword">;<br />}<br /><br />(new </span><span class="default">Test</span><span class="keyword">)-&gt;</span><span class="default">traitName</span><span class="keyword">(); </span><span class="comment">//PeanutButter<br /></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="107614">  <div class="votes">
+    <div id="Vu107614">
+    <a href="http://php.net/manual/vote-note.php?id=107614&amp;page=language.constants.predefined&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd107614">
+    <a href="http://php.net/manual/vote-note.php?id=107614&amp;page=language.constants.predefined&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V107614" title="51% like this...">
+    1
+    </div>
+  </div>
+  <a href="#107614" class="name">
+  <strong class="user"><em>david at thegallagher dot net</em></strong></a><a class="genanchor" href="#107614"> &para;</a><div class="date" title="2012-02-22 01:19"><strong>5 years ago</strong></div>
+  <div class="text" id="Hcom107614">
+<div class="phpcode"><code><span class="html">
+You cannot check if a magic constant is defined. This means there is no point in checking if __DIR__ is defined then defining it. `defined('__DIR__')` always returns false. Defining __DIR__ will silently fail in PHP 5.3+. This could cause compatibility issues if your script includes other scripts.<br /><br />Here is proof:<br /><br /><span class="default">&lt;?php<br /></span><span class="keyword">echo (</span><span class="default">defined</span><span class="keyword">(</span><span class="string">'__DIR__'</span><span class="keyword">) ? </span><span class="string">'__DIR__ is defined' </span><span class="keyword">: </span><span class="string">'__DIR__ is NOT defined' </span><span class="keyword">. </span><span class="default">PHP_EOL</span><span class="keyword">);<br />echo (</span><span class="default">defined</span><span class="keyword">(</span><span class="string">'__FILE__'</span><span class="keyword">) ? </span><span class="string">'__FILE__ is defined' </span><span class="keyword">: </span><span class="string">'__FILE__ is NOT defined' </span><span class="keyword">. </span><span class="default">PHP_EOL</span><span class="keyword">);<br />echo (</span><span class="default">defined</span><span class="keyword">(</span><span class="string">'PHP_VERSION'</span><span class="keyword">) ? </span><span class="string">'PHP_VERSION is defined' </span><span class="keyword">: </span><span class="string">'PHP_VERSION is NOT defined'</span><span class="keyword">) . </span><span class="default">PHP_EOL</span><span class="keyword">;<br />echo </span><span class="string">'PHP Version: ' </span><span class="keyword">. </span><span class="default">PHP_VERSION </span><span class="keyword">. </span><span class="default">PHP_EOL</span><span class="keyword">;<br /></span><span class="default">?&gt;<br /></span><br />Output:<br />__DIR__ is NOT defined<br />__FILE__ is NOT defined<br />PHP_VERSION is defined<br />PHP Version: 5.3.6</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="99849">  <div class="votes">
+    <div id="Vu99849">
+    <a href="http://php.net/manual/vote-note.php?id=99849&amp;page=language.constants.predefined&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd99849">
+    <a href="http://php.net/manual/vote-note.php?id=99849&amp;page=language.constants.predefined&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V99849" title="42% like this...">
+    -5
+    </div>
+  </div>
+  <a href="#99849" class="name">
+  <strong class="user"><em>madboyka at yahoo dot com</em></strong></a><a class="genanchor" href="#99849"> &para;</a><div class="date" title="2010-09-10 07:37"><strong>7 years ago</strong></div>
+  <div class="text" id="Hcom99849">
+<div class="phpcode"><code><span class="html">
+Since namespace were introduced, it would be nice to have a magic constant or function (like get_class()) which would return the class name without the namespaces.<br /><br />On windows I used basename(__CLASS__). (LOL)</span>
+</code></div>
+  </div>
+ </div></div>
+
+ <div class="foot"><a href="http://php.net/manual/add-note.php?sect=language.constants.predefined&amp;redirect=http://php.net/manual/en/language.constants.predefined.php"><img src='http://php.net/images/notes-add@2x.png' alt='add a note' width='12' height='12'> <small>add a note</small></a></div>
+</section>    </section><!-- layout-content -->
+        <aside class='layout-menu'>
+    
+        <ul class='parent-menu-list'>
+                                    <li>
+                <a href="http://php.net/manual/en/language.constants.php">Constants</a>
+    
+                                    <ul class='child-menu-list'>
+    
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.constants.syntax.php" title="Syntax">Syntax</a>
+                        </li>
+                          
+                        <li class="current">
+                            <a href="http://php.net/manual/en/language.constants.predefined.php" title="Magic constants">Magic constants</a>
+                        </li>
+                            
+                    </ul>
+                    
+            </li>
+                        
+                    </ul>
+    </aside>
+
+
+  </div><!-- layout -->
+         
+  <footer>
+    <div class="container footer-content">
+      <div class="row-fluid">
+      <ul class="footmenu">
+        <li><a href="http://php.net/copyright.php">Copyright &copy; 2001-2017 The PHP Group</a></li>
+        <li><a href="http://php.net/my.php">My PHP.net</a></li>
+        <li><a href="http://php.net/contact.php">Contact</a></li>
+        <li><a href="http://php.net/sites.php">Other PHP.net sites</a></li>
+        <li><a href="http://php.net/mirrors.php">Mirror sites</a></li>
+        <li><a href="http://php.net/privacy.php">Privacy policy</a></li>
+      </ul>
+      </div>
+    </div>
+  </footer>
+
+    
+ <!-- External and third party libraries. -->
+ <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/modernizr.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/hogan-2.0.0.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/typeahead.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/mousetrap.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/search.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1500560403&amp;f=/js/common.js"></script>
+
+<a id="toTop" href="javascript:;"><span id="toTopHover"></span><img width="40" height="40" alt="To Top" src="http://php.net/images/to-top@2x.png"></a>
+
+</body>
+
+<!-- Mirrored from php.net/manual/en/language.constants.predefined.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Dec 2017 23:18:10 GMT -->
+</html>
+

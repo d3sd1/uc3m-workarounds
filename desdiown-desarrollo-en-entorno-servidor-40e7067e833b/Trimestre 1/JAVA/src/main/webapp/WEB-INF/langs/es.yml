@@ -1,0 +1,19 @@
+#Database messages
+dbDisconError: Error al cerrar la conexión a la base de datos.
+dbNoChangesError: No se ha guardado ningún cambio.
+dbSqlQueryError: Error de consulta SQL.
+dbResultSetError: No se han encontrado resultados
+dbSqlIntegrityError: Error al generar consulta... Regla de integridad referencial rota.
+dbConError: Error al conectar con la base de datos.
+#Common messages
+nullPointerError: Error de índice en vector (¿Falta algún parámetro?).
+numberFormatError: Error al formatear número (¿Falta algún parámetro?).
+parseDateError: Error al formatear fecha.
+dateFormatError: Error al formatear fecha.
+loginError: No se pudo conectar.
+userNotActiveError: El usuario está deshabilitado.
+userMailDuplicatedError: El email introducido ya está en uso.
+userActivationFailError: El código de activación no fue encontrado o la cuenta ya estaba activada.
+userActivateGenericError: Se produjo un error al verificar la cuenta.
+userActivateExpiredError: El código de verificación ha expirado. Se te ha enviado uno nuevo al correo.
+genericError: Error no clasificado.

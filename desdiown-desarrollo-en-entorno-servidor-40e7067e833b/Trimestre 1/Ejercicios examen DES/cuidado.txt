@@ -1,0 +1,16 @@
+GLOBAL
+-----
+* revisar que sean acordes al examen
+* ccuidado con los metadatos de los archivos: fechas y nombres.
+-----
+PHP
+-----
+* usar una opcion para conexion a db: mysqli, pdo, mysqli-database-class.
+* quitar (o dejar) la dependencia de composer en funcion de lo que poda.
+* la funcion de la contraseña: tiene que comparar la contraseña correctametne
+* LA CONEXION A LA BASE DE DATOS HAY QUE HACERLA CAMBIAR CON QUE METODO TIENE QUE SER.
+* EL REGISTER NO ESTA HECHO. SI LO PIDE, HACERFLO.
+* REVISAR COMENTARIOS!!!! YA QUE HAY MUCHOS MIOS DE DEBUGGING QUE DELATARIAN
+-----
+JAVA
+-----

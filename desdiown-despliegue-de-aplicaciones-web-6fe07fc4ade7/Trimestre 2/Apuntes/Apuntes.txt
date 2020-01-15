@@ -1,0 +1,49 @@
+PID: identificador de proceso
+PPID: padre del identificador del proceso.
+puerto sql: 3306
+puertos reversados/bien conocidos/reservados: 0 a 1023 inclusive. todos los inferiores a 1024. (LO LLEVA LA ICANN)
+modo activo ftp: es el servidor quien inicia la transferencia de los datos, desde su puerto 20 al puerto que se le ha sido indicado.
+modo pasivo ftp: es siempre el cliente el que inicia las conexiones con el servidor. el puerto 20 del servidor no se utiliza.
+/* FTP */
+protocolo para acceder desde navegador: ftp://
+conectarse a un ftp remoto: ftp [SERVER]
+cambiar a modo pasivo ftp: passive
+cambiar a modo activo ftp: active
+mostrar comandos disponibles ftp: ?
+ejecutar comandos en servidor: pwd
+ejecutar comandos en cliente: !pwd
+descargar fichero con ftp: get [fichero]
+subir archivo a ftp: put [fichero]
+salir de ftp: bye
+ppuerto ftp: 21.
+puerto modo activo ftp: 20
+puerto seguro ftp: 22 (SSH)
+get: descarga archivo
+mget: descarga un conjunto de archivos.
+tipos de transferencia de archiovos:
+	* ascii. se transmite byte a byte (para ficheros con texto)
+	* se transmite bit a bit (para lo demas)
+comando de ayuda: ?
+/* SSH */
+puerto: 22
+protocolo: SSH
+comando para copiar archivos por ssh: scopy
+programa para conectar via ssh: putty
+fichero configuracion servidor: /etc/ssh/sshd_config
+fichero configuracion cliente: /etc/ssh/ssh_config
+-------
+Puerto origen desde el cliente: cualquiera superior al 1023
+puerto destino desde el cliente: puerto reservado para la aplicacion (por ejemplo 21 para ftp).
+comando generar clave: ssh-keygen -t rsa
+----
+TOMCAT
+----
+Puerto: 8080, 8009, 8005
+pid: numero de identificador de proceso
+instalacion tomcat: requiere JDK de java.
+etiquetas de servlet de web.xml
+----
+mysql
+----
+entrar a mysql como root desde cmd: mysql -u root -p
+----

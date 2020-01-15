@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<!-- Mirrored from php.net/manual/en/language.basic-syntax.instruction-separation.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Dec 2017 23:18:09 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+  <title>PHP: Instruction separation - Manual </title>
+
+ <link rel="shortcut icon" href="http://php.net/favicon.ico">
+ <link rel="search" type="application/opensearchdescription+xml" href="http://php.net/phpnetimprovedsearch.src" title="Add PHP.net search">
+ <link rel="alternate" type="application/atom+xml" href="http://php.net/releases/feed.php" title="PHP Release feed">
+ <link rel="alternate" type="application/atom+xml" href="http://php.net/feed.atom" title="PHP: Hypertext Preprocessor">
+
+ <link rel="canonical" href="http://php.net/manual/en/language.basic-syntax.instruction-separation.php">
+ <link rel="shorturl" href="http://php.net/basic-syntax.instruction-separation">
+ <link rel="alternate" href="http://php.net/basic-syntax.instruction-separation" hreflang="x-default">
+
+ <link rel="contents" href="http://php.net/manual/en/index.php">
+ <link rel="index" href="http://php.net/manual/en/language.basic-syntax.php">
+ <link rel="prev" href="http://php.net/manual/en/language.basic-syntax.phpmode.php">
+ <link rel="next" href="http://php.net/manual/en/language.basic-syntax.comments.php">
+
+ <link rel="alternate" href="http://php.net/manual/en/language.basic-syntax.instruction-separation.php" hreflang="en">
+ <link rel="alternate" href="http://php.net/manual/pt_BR/language.basic-syntax.instruction-separation.php" hreflang="pt_BR">
+ <link rel="alternate" href="http://php.net/manual/zh/language.basic-syntax.instruction-separation.php" hreflang="zh">
+ <link rel="alternate" href="http://php.net/manual/fr/language.basic-syntax.instruction-separation.php" hreflang="fr">
+ <link rel="alternate" href="http://php.net/manual/de/language.basic-syntax.instruction-separation.php" hreflang="de">
+ <link rel="alternate" href="http://php.net/manual/ja/language.basic-syntax.instruction-separation.php" hreflang="ja">
+ <link rel="alternate" href="http://php.net/manual/ro/language.basic-syntax.instruction-separation.php" hreflang="ro">
+ <link rel="alternate" href="http://php.net/manual/ru/language.basic-syntax.instruction-separation.php" hreflang="ru">
+ <link rel="alternate" href="http://php.net/manual/es/language.basic-syntax.instruction-separation.php" hreflang="es">
+ <link rel="alternate" href="http://php.net/manual/tr/language.basic-syntax.instruction-separation.php" hreflang="tr">
+
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1421837618&amp;f=/fonts/Fira/fira.css" media="screen">
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1421837618&amp;f=/fonts/Font-Awesome/css/fontello.css" media="screen">
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1478800802&amp;f=/styles/theme-base.css" media="screen">
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1449787206&amp;f=/styles/theme-medium.css" media="screen">
+
+ <!--[if lte IE 7]>
+ <link rel="stylesheet" type="text/css" href="http://php.net/styles/workarounds.ie7.css" media="screen">
+ <![endif]-->
+
+ <!--[if lte IE 8]>
+ <script type="text/javascript">
+  window.brokenIE = true;
+ </script>
+ <![endif]-->
+
+ <!--[if lte IE 9]>
+ <link rel="stylesheet" type="text/css" href="http://php.net/styles/workarounds.ie9.css" media="screen">
+ <![endif]-->
+
+ <!--[if IE]>
+ <script type="text/javascript" src="http://php.net/js/ext/html5.js"></script>
+ <![endif]-->
+
+ <base >
+
+</head>
+<body class="docs ">
+
+<nav id="head-nav" class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <a href="http://php.net/" class="brand"><img src="http://php.net/images/logos/php-logo.svg" width="48" height="24" alt="php"></a>
+    <div id="mainmenu-toggle-overlay"></div>
+    <input type="checkbox" id="mainmenu-toggle">
+    <ul class="nav">
+      <li class=""><a href="http://php.net/downloads">Downloads</a></li>
+      <li class="active"><a href="http://php.net/docs.php">Documentation</a></li>
+      <li class=""><a href="http://php.net/get-involved" >Get Involved</a></li>
+      <li class=""><a href="http://php.net/support">Help</a></li>
+    </ul>
+    <form class="navbar-search" id="topsearch" action="http://php.net/search.php">
+      <input type="hidden" name="show" value="quickref">
+      <input type="search" name="pattern" class="search-query" placeholder="Search" accesskey="s">
+    </form>
+  </div>
+  <div id="flash-message"></div>
+</nav>
+<nav id="trick"><div><dl>
+<dt><a href='http://php.net/manual/en/getting-started.php'>Getting Started</a></dt>
+	<dd><a href='http://php.net/manual/en/introduction.php'>Introduction</a></dd>
+	<dd><a href='http://php.net/manual/en/tutorial.php'>A simple tutorial</a></dd>
+<dt><a href='http://php.net/manual/en/langref.php'>Language Reference</a></dt>
+	<dd><a href='http://php.net/manual/en/language.basic-syntax.php'>Basic syntax</a></dd>
+	<dd><a href='http://php.net/manual/en/language.types.php'>Types</a></dd>
+	<dd><a href='http://php.net/manual/en/language.variables.php'>Variables</a></dd>
+	<dd><a href='http://php.net/manual/en/language.constants.php'>Constants</a></dd>
+	<dd><a href='http://php.net/manual/en/language.expressions.php'>Expressions</a></dd>
+	<dd><a href='http://php.net/manual/en/language.operators.php'>Operators</a></dd>
+	<dd><a href='http://php.net/manual/en/language.control-structures.php'>Control Structures</a></dd>
+	<dd><a href='http://php.net/manual/en/language.functions.php'>Functions</a></dd>
+	<dd><a href='http://php.net/manual/en/language.oop5.php'>Classes and Objects</a></dd>
+	<dd><a href='http://php.net/manual/en/language.namespaces.php'>Namespaces</a></dd>
+	<dd><a href='http://php.net/manual/en/language.errors.php'>Errors</a></dd>
+	<dd><a href='http://php.net/manual/en/language.exceptions.php'>Exceptions</a></dd>
+	<dd><a href='http://php.net/manual/en/language.generators.php'>Generators</a></dd>
+	<dd><a href='http://php.net/manual/en/language.references.php'>References Explained</a></dd>
+	<dd><a href='http://php.net/manual/en/reserved.variables.php'>Predefined Variables</a></dd>
+	<dd><a href='http://php.net/manual/en/reserved.exceptions.php'>Predefined Exceptions</a></dd>
+	<dd><a href='http://php.net/manual/en/reserved.interfaces.php'>Predefined Interfaces and Classes</a></dd>
+	<dd><a href='http://php.net/manual/en/context.php'>Context options and parameters</a></dd>
+	<dd><a href='http://php.net/manual/en/wrappers.php'>Supported Protocols and Wrappers</a></dd>
+</dl>
+<dl>
+<dt><a href='http://php.net/manual/en/security.php'>Security</a></dt>
+	<dd><a href='http://php.net/manual/en/security.intro.php'>Introduction</a></dd>
+	<dd><a href='http://php.net/manual/en/security.general.php'>General considerations</a></dd>
+	<dd><a href='http://php.net/manual/en/security.cgi-bin.php'>Installed as CGI binary</a></dd>
+	<dd><a href='http://php.net/manual/en/security.apache.php'>Installed as an Apache module</a></dd>
+	<dd><a href='http://php.net/manual/en/security.sessions.php'>Session Security</a></dd>
+	<dd><a href='http://php.net/manual/en/security.filesystem.php'>Filesystem Security</a></dd>
+	<dd><a href='http://php.net/manual/en/security.database.php'>Database Security</a></dd>
+	<dd><a href='http://php.net/manual/en/security.errors.php'>Error Reporting</a></dd>
+	<dd><a href='http://php.net/manual/en/security.globals.php'>Using Register Globals</a></dd>
+	<dd><a href='http://php.net/manual/en/security.variables.php'>User Submitted Data</a></dd>
+	<dd><a href='http://php.net/manual/en/security.magicquotes.php'>Magic Quotes</a></dd>
+	<dd><a href='http://php.net/manual/en/security.hiding.php'>Hiding PHP</a></dd>
+	<dd><a href='http://php.net/manual/en/security.current.php'>Keeping Current</a></dd>
+<dt><a href='http://php.net/manual/en/features.php'>Features</a></dt>
+	<dd><a href='http://php.net/manual/en/features.http-auth.php'>HTTP authentication with PHP</a></dd>
+	<dd><a href='http://php.net/manual/en/features.cookies.php'>Cookies</a></dd>
+	<dd><a href='http://php.net/manual/en/features.sessions.php'>Sessions</a></dd>
+	<dd><a href='http://php.net/manual/en/features.xforms.php'>Dealing with XForms</a></dd>
+	<dd><a href='http://php.net/manual/en/features.file-upload.php'>Handling file uploads</a></dd>
+	<dd><a href='http://php.net/manual/en/features.remote-files.php'>Using remote files</a></dd>
+	<dd><a href='http://php.net/manual/en/features.connection-handling.php'>Connection handling</a></dd>
+	<dd><a href='http://php.net/manual/en/features.persistent-connections.php'>Persistent Database Connections</a></dd>
+	<dd><a href='http://php.net/manual/en/features.safe-mode.php'>Safe Mode</a></dd>
+	<dd><a href='http://php.net/manual/en/features.commandline.php'>Command line usage</a></dd>
+	<dd><a href='http://php.net/manual/en/features.gc.php'>Garbage Collection</a></dd>
+	<dd><a href='http://php.net/manual/en/features.dtrace.php'>DTrace Dynamic Tracing</a></dd>
+</dl>
+<dl>
+<dt><a href='http://php.net/manual/en/funcref.php'>Function Reference</a></dt>
+	<dd><a href='http://php.net/manual/en/refs.basic.php.php'>Affecting PHP's Behaviour</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.audio.php'>Audio Formats Manipulation</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.remote.auth.php'>Authentication Services</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.cmdline.php'>Command Line Specific Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.compression.php'>Compression and Archive Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.creditcard.php'>Credit Card Processing</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.crypto.php'>Cryptography Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.database.php'>Database Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.calendar.php'>Date and Time Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.fileprocess.file.php'>File System Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.international.php'>Human Language and Character Encoding Support</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.image.php'>Image Processing and Generation</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.remote.mail.php'>Mail Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.math.php'>Mathematical Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.nontext.php'>Non-Text MIME Output</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.fileprocess.process.php'>Process Control Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.other.php'>Other Basic Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.remote.other.php'>Other Services</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.search.php'>Search Engine Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.server.php'>Server Specific Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.session.php'>Session Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.text.php'>Text Processing</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.vartype.php'>Variable and Type Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.webservice.php'>Web Services</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.windows.php'>Windows Only Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.xml.php'>XML Manipulation</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.ui.php'>GUI Extensions</a></dd>
+</dl>
+<dl>
+<dt>Keyboard Shortcuts</dt><dt>?</dt>
+<dd>This help</dd>
+<dt>j</dt>
+<dd>Next menu item</dd>
+<dt>k</dt>
+<dd>Previous menu item</dd>
+<dt>g p</dt>
+<dd>Previous man page</dd>
+<dt>g n</dt>
+<dd>Next man page</dd>
+<dt>G</dt>
+<dd>Scroll to bottom</dd>
+<dt>g g</dt>
+<dd>Scroll to top</dd>
+<dt>g h</dt>
+<dd>Goto homepage</dd>
+<dt>g s</dt>
+<dd>Goto search<br>(current page)</dd>
+<dt>/</dt>
+<dd>Focus search box</dd>
+</dl></div></nav>
+<div id="goto">
+    <div class="search">
+         <div class="text"></div>
+         <div class="results"><ul></ul></div>
+   </div>
+</div>
+
+  <div id="breadcrumbs" class="clearfix">
+    <div id="breadcrumbs-inner">
+          <div class="next">
+        <a href="http://php.net/manual/en/language.basic-syntax.comments.php">
+          Comments &raquo;
+        </a>
+      </div>
+              <div class="prev">
+        <a href="http://php.net/manual/en/language.basic-syntax.phpmode.php">
+          &laquo; Escaping from HTML        </a>
+      </div>
+          <ul>
+            <li><a href='http://php.net/manual/en/index.php'>PHP Manual</a></li>      <li><a href='http://php.net/manual/en/langref.php'>Language Reference</a></li>      <li><a href='http://php.net/manual/en/language.basic-syntax.php'>Basic syntax</a></li>      </ul>
+    </div>
+  </div>
+
+
+
+
+<div id="layout" class="clearfix">
+  <section id="layout-content">
+  <div class="page-tools">
+    <div class="change-language">
+      <form action="http://php.net/manual/change.php" method="get" id="changelang" name="changelang">
+        <fieldset>
+          <label for="changelang-langs">Change language:</label>
+          <select onchange="document.changelang.submit()" name="page" id="changelang-langs">
+            <option value='en/language.basic-syntax.instruction-separation.php' selected="selected">English</option>
+            <option value='http://php.net/manual/en/pt_BR/language.basic-syntax.instruction-separation.php'>Brazilian Portuguese</option>
+            <option value='http://php.net/manual/en/zh/language.basic-syntax.instruction-separation.php'>Chinese (Simplified)</option>
+            <option value='http://php.net/manual/en/fr/language.basic-syntax.instruction-separation.php'>French</option>
+            <option value='http://php.net/manual/en/de/language.basic-syntax.instruction-separation.php'>German</option>
+            <option value='http://php.net/manual/en/ja/language.basic-syntax.instruction-separation.php'>Japanese</option>
+            <option value='http://php.net/manual/en/ro/language.basic-syntax.instruction-separation.php'>Romanian</option>
+            <option value='http://php.net/manual/en/ru/language.basic-syntax.instruction-separation.php'>Russian</option>
+            <option value='http://php.net/manual/en/es/language.basic-syntax.instruction-separation.php'>Spanish</option>
+            <option value='http://php.net/manual/en/tr/language.basic-syntax.instruction-separation.php'>Turkish</option>
+            <option value="http://php.net/manual/en/help-translate.php">Other</option>
+          </select>
+        </fieldset>
+      </form>
+    </div>
+    <div class="edit-bug">
+      <a href="https://edit.php.net/?project=PHP&amp;perm=en/language.basic-syntax.instruction-separation.php">Edit</a>
+      <a href="https://bugs.php.net/report.php?bug_type=Documentation+problem&amp;manpage=language.basic-syntax.instruction-separation">Report a Bug</a>
+    </div>
+  </div><div id="language.basic-syntax.instruction-separation" class="sect1">
+   <h2 class="title">Instruction separation</h2>
+   <p class="para">
+    As in C or Perl, PHP requires instructions to be terminated
+    with a semicolon at the end of each statement. The closing tag
+    of a block of PHP code automatically implies a semicolon; you
+    do not need to have a semicolon terminating the last line of a
+    PHP block. The closing tag for the block will include the immediately
+    trailing newline if one is present.
+    <div class="informalexample">
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">'This&nbsp;is&nbsp;a&nbsp;test'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;<br /></span><br /><span style="color: #0000BB">&lt;?php&nbsp;</span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">'This&nbsp;is&nbsp;a&nbsp;test'&nbsp;</span><span style="color: #0000BB">?&gt;<br /></span><br /><span style="color: #0000BB">&lt;?php&nbsp;</span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">'We&nbsp;omitted&nbsp;the&nbsp;last&nbsp;closing&nbsp;tag'</span><span style="color: #007700">;</span>
+</span>
+</code></div>
+     </div>
+
+    </div>
+    <blockquote class="note"><p><strong class="note">Note</strong>: 
+     <p class="para">
+      The closing tag of a PHP block at the end of a file is optional,
+      and in some cases omitting it is helpful when using <span class="function"><a href="http://php.net/manual/en/function.include.php" class="function">include</a></span>
+      or <span class="function"><a href="http://php.net/manual/en/function.require.php" class="function">require</a></span>, so unwanted whitespace will
+      not occur at the end of files, and you will still be able to add
+      headers to the response later. It is also handy if you use output
+      buffering, and would not like to see added unwanted whitespace
+      at the end of the parts generated by the included files.
+     </p>
+    </p></blockquote>
+   </p>
+  </div>
+<section id="usernotes">
+ <div class="head">
+  <span class="action"><a href="http://php.net/manual/add-note.php?sect=language.basic-syntax.instruction-separation&amp;redirect=http://php.net/manual/en/language.basic-syntax.instruction-separation.php"><img src='http://php.net/images/notes-add@2x.png' alt='add a note' width='12' height='12'> <small>add a note</small></a></span>
+  <h3 class="title">User Contributed Notes <span class="count">5 notes</span></h3>
+ </div><div id="allnotes">
+  <div class="note" id="68959">  <div class="votes">
+    <div id="Vu68959">
+    <a href="http://php.net/manual/vote-note.php?id=68959&amp;page=language.basic-syntax.instruction-separation&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd68959">
+    <a href="http://php.net/manual/vote-note.php?id=68959&amp;page=language.basic-syntax.instruction-separation&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V68959" title="61% like this...">
+    182
+    </div>
+  </div>
+  <a href="#68959" class="name">
+  <strong class="user"><em>Krishna Srikanth</em></strong></a><a class="genanchor" href="#68959"> &para;</a><div class="date" title="2006-08-17 04:44"><strong>11 years ago</strong></div>
+  <div class="text" id="Hcom68959">
+<div class="phpcode"><code><span class="html">
+Do not mis interpret<br /><br /><span class="default">&lt;?php </span><span class="keyword">echo </span><span class="string">'Ending tag excluded'</span><span class="keyword">; <br /><br /></span><span class="default">with<br /><br /></span><span class="keyword">&lt;?</span><span class="default">php </span><span class="keyword">echo </span><span class="string">'Ending tag excluded'</span><span class="keyword">;<br />&lt;</span><span class="default">p</span><span class="keyword">&gt;</span><span class="default">But html is still visible</span><span class="keyword">&lt;/</span><span class="default">p</span><span class="keyword">&gt;<br /><br /></span><span class="default">The second one would give error</span><span class="keyword">. </span><span class="default">Exclude ?&gt;</span> if you no more html to write after the code.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="121756">  <div class="votes">
+    <div id="Vu121756">
+    <a href="http://php.net/manual/vote-note.php?id=121756&amp;page=language.basic-syntax.instruction-separation&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd121756">
+    <a href="http://php.net/manual/vote-note.php?id=121756&amp;page=language.basic-syntax.instruction-separation&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V121756" title="71% like this...">
+    6
+    </div>
+  </div>
+  <a href="#121756" class="name">
+  <strong class="user"><em>David A. Gray, MBA</em></strong></a><a class="genanchor" href="#121756"> &para;</a><div class="date" title="2017-10-14 05:04"><strong>2 months ago</strong></div>
+  <div class="text" id="Hcom121756">
+<div class="phpcode"><code><span class="html">
+For the benefit of other beginners, it's worth noting that the brace that closes a block need not be followed by a semicolon, and, in some cases (e. g.. the closing brace of a function), it might even be a syntax error.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="115680">  <div class="votes">
+    <div id="Vu115680">
+    <a href="http://php.net/manual/vote-note.php?id=115680&amp;page=language.basic-syntax.instruction-separation&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd115680">
+    <a href="http://php.net/manual/vote-note.php?id=115680&amp;page=language.basic-syntax.instruction-separation&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V115680" title="41% like this...">
+    -59
+    </div>
+  </div>
+  <a href="#115680" class="name">
+  <strong class="user"><em>Kalimuthu</em></strong></a><a class="genanchor" href="#115680"> &para;</a><div class="date" title="2014-09-06 09:54"><strong>3 years ago</strong></div>
+  <div class="text" id="Hcom115680">
+<div class="phpcode"><code><span class="html">
+One thing to remember is, if you decide to omit the closing PHP tag, then the last line of the file should be ended with semi colon. If you add the closing tag then last line doesn't need to end with semi colon.<br /><br /><span class="default">&lt;?php<br /></span><span class="keyword">echo </span><span class="string">"First line"</span><span class="keyword">;<br />echo </span><span class="string">"Last line"<br /><br /></span><span class="default">The above code throws error </span><span class="keyword">as </span><span class="default">it neither has closing tag nor semicolon ending</span><span class="keyword">. </span><span class="default">So it should be replaced with either of the below two<br /><br /></span><span class="keyword">&lt;?</span><span class="default">php<br /></span><span class="keyword">echo </span><span class="string">"First line"</span><span class="keyword">;<br />echo </span><span class="string">"Last line"</span><span class="keyword">;<br /><br />or<br /><br />&lt;?</span><span class="default">php<br /></span><span class="keyword">echo </span><span class="string">"First line"</span><span class="keyword">;<br />echo </span><span class="string">"Last line" </span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="120672">  <div class="votes">
+    <div id="Vu120672">
+    <a href="http://php.net/manual/vote-note.php?id=120672&amp;page=language.basic-syntax.instruction-separation&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd120672">
+    <a href="http://php.net/manual/vote-note.php?id=120672&amp;page=language.basic-syntax.instruction-separation&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V120672" title="33% like this...">
+    -39
+    </div>
+  </div>
+  <a href="#120672" class="name">
+  <strong class="user"><em>zored</em></strong></a><a class="genanchor" href="#120672"> &para;</a><div class="date" title="2017-02-20 09:56"><strong>9 months ago</strong></div>
+  <div class="text" id="Hcom120672">
+<div class="phpcode"><code><span class="html">
+Semicolon examples:<br /><br /><span class="default">&lt;?php<br /></span><span class="keyword">echo </span><span class="string">'Ok' </span><span class="default">?&gt;<br /></span><br /><span class="default">&lt;?php<br /></span><span class="keyword">echo </span><span class="string">'Ok'<br /></span><span class="default">?&gt;<br /></span><br /><span class="default">&lt;?php<br /></span><span class="keyword">echo </span><span class="string">'Ok'<br /><br /></span><span class="default">?&gt;<br /></span><br /><span class="default">&lt;?php <br /></span><span class="keyword">echo </span><span class="string">'Parse error'</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="106551">  <div class="votes">
+    <div id="Vu106551">
+    <a href="http://php.net/manual/vote-note.php?id=106551&amp;page=language.basic-syntax.instruction-separation&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd106551">
+    <a href="http://php.net/manual/vote-note.php?id=106551&amp;page=language.basic-syntax.instruction-separation&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V106551" title="41% like this...">
+    -80
+    </div>
+  </div>
+  <a href="#106551" class="name">
+  <strong class="user"><em>pbarney</em></strong></a><a class="genanchor" href="#106551"> &para;</a><div class="date" title="2011-11-17 04:13"><strong>6 years ago</strong></div>
+  <div class="text" id="Hcom106551">
+<div class="phpcode"><code><span class="html">
+If you want to keep the newline after a closing tag in the output, just add a space after the closing tag, and the newline will not be ignored.</span>
+</code></div>
+  </div>
+ </div></div>
+
+ <div class="foot"><a href="http://php.net/manual/add-note.php?sect=language.basic-syntax.instruction-separation&amp;redirect=http://php.net/manual/en/language.basic-syntax.instruction-separation.php"><img src='http://php.net/images/notes-add@2x.png' alt='add a note' width='12' height='12'> <small>add a note</small></a></div>
+</section>    </section><!-- layout-content -->
+        <aside class='layout-menu'>
+    
+        <ul class='parent-menu-list'>
+                                    <li>
+                <a href="http://php.net/manual/en/language.basic-syntax.php">Basic syntax</a>
+    
+                                    <ul class='child-menu-list'>
+    
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.basic-syntax.phptags.php" title="PHP tags">PHP tags</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.basic-syntax.phpmode.php" title="Escaping from HTML">Escaping from HTML</a>
+                        </li>
+                          
+                        <li class="current">
+                            <a href="http://php.net/manual/en/language.basic-syntax.instruction-separation.php" title="Instruction separation">Instruction separation</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.basic-syntax.comments.php" title="Comments">Comments</a>
+                        </li>
+                            
+                    </ul>
+                    
+            </li>
+                        
+                    </ul>
+    </aside>
+
+
+  </div><!-- layout -->
+         
+  <footer>
+    <div class="container footer-content">
+      <div class="row-fluid">
+      <ul class="footmenu">
+        <li><a href="http://php.net/copyright.php">Copyright &copy; 2001-2017 The PHP Group</a></li>
+        <li><a href="http://php.net/my.php">My PHP.net</a></li>
+        <li><a href="http://php.net/contact.php">Contact</a></li>
+        <li><a href="http://php.net/sites.php">Other PHP.net sites</a></li>
+        <li><a href="http://php.net/mirrors.php">Mirror sites</a></li>
+        <li><a href="http://php.net/privacy.php">Privacy policy</a></li>
+      </ul>
+      </div>
+    </div>
+  </footer>
+
+    
+ <!-- External and third party libraries. -->
+ <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/modernizr.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/hogan-2.0.0.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/typeahead.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/mousetrap.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/search.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1500560403&amp;f=/js/common.js"></script>
+
+<a id="toTop" href="javascript:;"><span id="toTopHover"></span><img width="40" height="40" alt="To Top" src="http://php.net/images/to-top@2x.png"></a>
+
+</body>
+
+<!-- Mirrored from php.net/manual/en/language.basic-syntax.instruction-separation.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Dec 2017 23:18:09 GMT -->
+</html>
+

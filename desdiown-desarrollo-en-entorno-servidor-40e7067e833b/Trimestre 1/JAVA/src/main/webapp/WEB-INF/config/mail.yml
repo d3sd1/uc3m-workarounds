@@ -1,0 +1,5 @@
+mailFrom: alumno1@iesquevedo.es
+smtpServer: smtp.gmail.com
+smtpPort: 587
+mailPass: alumnodam2
+limitActivationMins: 30

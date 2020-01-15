@@ -1,0 +1,31 @@
+INICIO
+INT peso;
+Escribe "Introduce tu peso en KiloGramos.";
+LEE peso;
+INT menu_opcion;
+Escribe "Pulsa 1 para mostrar tu peso en KiloGramos. Pulsa 2 para mostrar tu peso en Gramos. Pulsa 3 para mostrar tu peso en Libras. Pulsa 4 para mostrar tu peso en Onzas.";
+LEE menu_opcion;
+Si(menu_opcion >= 1 && menu_opcion <= 4)
+{
+	Si(menu_opcion == 1)
+	{
+		Escribe "Tu peso en KiloGramos es " + peso;
+	}
+	Sino(menu_opcion == 2)
+	{
+		Escribe "Tu peso en Gramos es " + (peso * 1000);
+	}
+	Sino(menu_opcion == 3)
+	{
+		Escribe "Tu peso en Libras es " + (peso / 0.454);
+	}
+	Sino(menu_opcion == 4)
+	{
+		Escribe "Tu peso en Onzas es " + (peso / 0.028);
+	}
+}
+Sino
+{
+	Escribe "No has indicado una opción del menú válida.";
+}
+FIN

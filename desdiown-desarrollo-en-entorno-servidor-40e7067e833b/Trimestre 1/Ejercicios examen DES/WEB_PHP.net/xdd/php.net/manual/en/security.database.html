@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<!-- Mirrored from php.net/manual/en/security.database.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Dec 2017 23:13:29 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+  <title>PHP: Database Security - Manual </title>
+
+ <link rel="shortcut icon" href="../../favicon.ico">
+ <link rel="search" type="application/opensearchdescription+xml" href="../../phpnetimprovedsearch.html" title="Add PHP.net search">
+ <link rel="alternate" type="application/atom+xml" href="../../releases/feed.php" title="PHP Release feed">
+ <link rel="alternate" type="application/atom+xml" href="../../feed.atom" title="PHP: Hypertext Preprocessor">
+
+ <link rel="canonical" href="security.database.html">
+ <link rel="shorturl" href="security.database.html">
+ <link rel="alternate" href="security.database.html" hreflang="x-default">
+
+ <link rel="contents" href="index-2.html">
+ <link rel="index" href="security.html">
+ <link rel="prev" href="security.filesystem.nullbytes.html">
+ <link rel="next" href="security.database.design.html">
+
+ <link rel="alternate" href="security.database.html" hreflang="en">
+ <link rel="alternate" href="../pt_BR/security.database.html" hreflang="pt_BR">
+ <link rel="alternate" href="../zh/security.database.html" hreflang="zh">
+ <link rel="alternate" href="../fr/security.database.html" hreflang="fr">
+ <link rel="alternate" href="../de/security.database.html" hreflang="de">
+ <link rel="alternate" href="../ja/security.database.html" hreflang="ja">
+ <link rel="alternate" href="../ro/security.database.html" hreflang="ro">
+ <link rel="alternate" href="../ru/security.database.html" hreflang="ru">
+ <link rel="alternate" href="../es/security.database.html" hreflang="es">
+ <link rel="alternate" href="../tr/security.database.html" hreflang="tr">
+
+<link rel="stylesheet" type="text/css" href="../../cached0152.css?t=1421837618&amp;f=/fonts/Fira/fira.css" media="screen">
+<link rel="stylesheet" type="text/css" href="../../cached15be.css?t=1421837618&amp;f=/fonts/Font-Awesome/css/fontello.css" media="screen">
+<link rel="stylesheet" type="text/css" href="../../cached3c70.css?t=1478800802&amp;f=/styles/theme-base.css" media="screen">
+<link rel="stylesheet" type="text/css" href="../../cached00eb.css?t=1449787206&amp;f=/styles/theme-medium.css" media="screen">
+
+ <!--[if lte IE 7]>
+ <link rel="stylesheet" type="text/css" href="http://php.net/styles/workarounds.ie7.css" media="screen">
+ <![endif]-->
+
+ <!--[if lte IE 8]>
+ <script type="text/javascript">
+  window.brokenIE = true;
+ </script>
+ <![endif]-->
+
+ <!--[if lte IE 9]>
+ <link rel="stylesheet" type="text/css" href="http://php.net/styles/workarounds.ie9.css" media="screen">
+ <![endif]-->
+
+ <!--[if IE]>
+ <script type="text/javascript" src="http://php.net/js/ext/html5.js"></script>
+ <![endif]-->
+
+ <base >
+
+</head>
+<body class="docs ">
+
+<nav id="head-nav" class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <a href="../../index.html" class="brand"><img src="../../images/logos/php-logo.svg" width="48" height="24" alt="php"></a>
+    <div id="mainmenu-toggle-overlay"></div>
+    <input type="checkbox" id="mainmenu-toggle">
+    <ul class="nav">
+      <li class=""><a href="../../downloads.html">Downloads</a></li>
+      <li class="active"><a href="../../docs.html">Documentation</a></li>
+      <li class=""><a href="../../get-involved.html" >Get Involved</a></li>
+      <li class=""><a href="../../support.html">Help</a></li>
+    </ul>
+    <form class="navbar-search" id="topsearch" action="http://php.net/search.php">
+      <input type="hidden" name="show" value="quickref">
+      <input type="search" name="pattern" class="search-query" placeholder="Search" accesskey="s">
+    </form>
+  </div>
+  <div id="flash-message"></div>
+</nav>
+<nav id="trick"><div><dl>
+<dt><a href='getting-started.html'>Getting Started</a></dt>
+	<dd><a href='introduction.html'>Introduction</a></dd>
+	<dd><a href='tutorial.html'>A simple tutorial</a></dd>
+<dt><a href='langref.html'>Language Reference</a></dt>
+	<dd><a href='language.basic-syntax.html'>Basic syntax</a></dd>
+	<dd><a href='language.types.html'>Types</a></dd>
+	<dd><a href='language.variables.html'>Variables</a></dd>
+	<dd><a href='language.constants.html'>Constants</a></dd>
+	<dd><a href='language.expressions.html'>Expressions</a></dd>
+	<dd><a href='language.operators.html'>Operators</a></dd>
+	<dd><a href='language.control-structures.html'>Control Structures</a></dd>
+	<dd><a href='language.functions.html'>Functions</a></dd>
+	<dd><a href='language.oop5.html'>Classes and Objects</a></dd>
+	<dd><a href='language.namespaces.html'>Namespaces</a></dd>
+	<dd><a href='language.errors.html'>Errors</a></dd>
+	<dd><a href='language.exceptions.html'>Exceptions</a></dd>
+	<dd><a href='language.generators.html'>Generators</a></dd>
+	<dd><a href='language.references.html'>References Explained</a></dd>
+	<dd><a href='reserved.variables.html'>Predefined Variables</a></dd>
+	<dd><a href='reserved.exceptions.html'>Predefined Exceptions</a></dd>
+	<dd><a href='reserved.interfaces.html'>Predefined Interfaces and Classes</a></dd>
+	<dd><a href='context.html'>Context options and parameters</a></dd>
+	<dd><a href='wrappers.html'>Supported Protocols and Wrappers</a></dd>
+</dl>
+<dl>
+<dt><a href='security.html'>Security</a></dt>
+	<dd><a href='security.intro.html'>Introduction</a></dd>
+	<dd><a href='security.general.html'>General considerations</a></dd>
+	<dd><a href='security.cgi-bin.html'>Installed as CGI binary</a></dd>
+	<dd><a href='security.apache.html'>Installed as an Apache module</a></dd>
+	<dd><a href='security.sessions.html'>Session Security</a></dd>
+	<dd><a href='security.filesystem.html'>Filesystem Security</a></dd>
+	<dd><a href='security.database.html'>Database Security</a></dd>
+	<dd><a href='security.errors.html'>Error Reporting</a></dd>
+	<dd><a href='security.globals.html'>Using Register Globals</a></dd>
+	<dd><a href='security.variables.html'>User Submitted Data</a></dd>
+	<dd><a href='security.magicquotes.html'>Magic Quotes</a></dd>
+	<dd><a href='security.hiding.html'>Hiding PHP</a></dd>
+	<dd><a href='security.current.html'>Keeping Current</a></dd>
+<dt><a href='features.html'>Features</a></dt>
+	<dd><a href='features.http-auth.html'>HTTP authentication with PHP</a></dd>
+	<dd><a href='features.cookies.html'>Cookies</a></dd>
+	<dd><a href='features.sessions.html'>Sessions</a></dd>
+	<dd><a href='features.xforms.html'>Dealing with XForms</a></dd>
+	<dd><a href='features.file-upload.html'>Handling file uploads</a></dd>
+	<dd><a href='features.remote-files.html'>Using remote files</a></dd>
+	<dd><a href='features.connection-handling.html'>Connection handling</a></dd>
+	<dd><a href='features.persistent-connections.html'>Persistent Database Connections</a></dd>
+	<dd><a href='features.safe-mode.html'>Safe Mode</a></dd>
+	<dd><a href='features.commandline.html'>Command line usage</a></dd>
+	<dd><a href='features.gc.html'>Garbage Collection</a></dd>
+	<dd><a href='features.dtrace.html'>DTrace Dynamic Tracing</a></dd>
+</dl>
+<dl>
+<dt><a href='funcref.html'>Function Reference</a></dt>
+	<dd><a href='refs.basic.php.html'>Affecting PHP's Behaviour</a></dd>
+	<dd><a href='refs.utilspec.audio.html'>Audio Formats Manipulation</a></dd>
+	<dd><a href='refs.remote.auth.html'>Authentication Services</a></dd>
+	<dd><a href='refs.utilspec.cmdline.html'>Command Line Specific Extensions</a></dd>
+	<dd><a href='refs.compression.html'>Compression and Archive Extensions</a></dd>
+	<dd><a href='refs.creditcard.html'>Credit Card Processing</a></dd>
+	<dd><a href='refs.crypto.html'>Cryptography Extensions</a></dd>
+	<dd><a href='refs.database.html'>Database Extensions</a></dd>
+	<dd><a href='refs.calendar.html'>Date and Time Related Extensions</a></dd>
+	<dd><a href='refs.fileprocess.file.html'>File System Related Extensions</a></dd>
+	<dd><a href='refs.international.html'>Human Language and Character Encoding Support</a></dd>
+	<dd><a href='refs.utilspec.image.html'>Image Processing and Generation</a></dd>
+	<dd><a href='refs.remote.mail.html'>Mail Related Extensions</a></dd>
+	<dd><a href='refs.math.html'>Mathematical Extensions</a></dd>
+	<dd><a href='refs.utilspec.nontext.html'>Non-Text MIME Output</a></dd>
+	<dd><a href='refs.fileprocess.process.html'>Process Control Extensions</a></dd>
+	<dd><a href='refs.basic.other.html'>Other Basic Extensions</a></dd>
+	<dd><a href='refs.remote.other.html'>Other Services</a></dd>
+	<dd><a href='refs.search.html'>Search Engine Extensions</a></dd>
+	<dd><a href='refs.utilspec.server.html'>Server Specific Extensions</a></dd>
+	<dd><a href='refs.basic.session.html'>Session Extensions</a></dd>
+	<dd><a href='refs.basic.text.html'>Text Processing</a></dd>
+	<dd><a href='refs.basic.vartype.html'>Variable and Type Related Extensions</a></dd>
+	<dd><a href='refs.webservice.html'>Web Services</a></dd>
+	<dd><a href='refs.utilspec.windows.html'>Windows Only Extensions</a></dd>
+	<dd><a href='refs.xml.html'>XML Manipulation</a></dd>
+	<dd><a href='refs.ui.html'>GUI Extensions</a></dd>
+</dl>
+<dl>
+<dt>Keyboard Shortcuts</dt><dt>?</dt>
+<dd>This help</dd>
+<dt>j</dt>
+<dd>Next menu item</dd>
+<dt>k</dt>
+<dd>Previous menu item</dd>
+<dt>g p</dt>
+<dd>Previous man page</dd>
+<dt>g n</dt>
+<dd>Next man page</dd>
+<dt>G</dt>
+<dd>Scroll to bottom</dd>
+<dt>g g</dt>
+<dd>Scroll to top</dd>
+<dt>g h</dt>
+<dd>Goto homepage</dd>
+<dt>g s</dt>
+<dd>Goto search<br>(current page)</dd>
+<dt>/</dt>
+<dd>Focus search box</dd>
+</dl></div></nav>
+<div id="goto">
+    <div class="search">
+         <div class="text"></div>
+         <div class="results"><ul></ul></div>
+   </div>
+</div>
+
+  <div id="breadcrumbs" class="clearfix">
+    <div id="breadcrumbs-inner">
+          <div class="next">
+        <a href="security.database.design.html">
+          Designing Databases &raquo;
+        </a>
+      </div>
+              <div class="prev">
+        <a href="security.filesystem.nullbytes.html">
+          &laquo; Null bytes related issues        </a>
+      </div>
+          <ul>
+            <li><a href='index-2.html'>PHP Manual</a></li>      <li><a href='security.html'>Security</a></li>      </ul>
+    </div>
+  </div>
+
+
+
+
+<div id="layout" class="clearfix">
+  <section id="layout-content">
+  <div class="page-tools">
+    <div class="change-language">
+      <form action="http://php.net/manual/change.php" method="get" id="changelang" name="changelang">
+        <fieldset>
+          <label for="changelang-langs">Change language:</label>
+          <select onchange="document.changelang.submit()" name="page" id="changelang-langs">
+            <option value='en/security.database.php' selected="selected">English</option>
+            <option value='pt_BR/security.database.html'>Brazilian Portuguese</option>
+            <option value='zh/security.database.html'>Chinese (Simplified)</option>
+            <option value='fr/security.database.html'>French</option>
+            <option value='de/security.database.html'>German</option>
+            <option value='ja/security.database.html'>Japanese</option>
+            <option value='ro/security.database.html'>Romanian</option>
+            <option value='ru/security.database.html'>Russian</option>
+            <option value='es/security.database.html'>Spanish</option>
+            <option value='tr/security.database.html'>Turkish</option>
+            <option value="help-translate.html">Other</option>
+          </select>
+        </fieldset>
+      </form>
+    </div>
+    <div class="edit-bug">
+      <a href="https://edit.php.net/?project=PHP&amp;perm=en/security.database.php">Edit</a>
+      <a href="https://bugs.php.net/report.php?bug_type=Documentation+problem&amp;manpage=security.database">Report a Bug</a>
+    </div>
+  </div><div id="security.database" class="chapter">
+   <h1>Database Security</h1>
+<h2>Table of Contents</h2><ul class="chunklist chunklist_chapter"><li><a href="security.database.design.html">Designing Databases</a></li><li><a href="security.database.connection.html">Connecting to Database</a></li><li><a href="security.database.storage.html">Encrypted Storage Model</a></li><li><a href="security.database.sql-injection.html">SQL Injection</a></li></ul>
+
+
+   <p class="simpara">
+    Nowadays, databases are cardinal components of any web based application by
+    enabling websites to provide varying dynamic content. Since very sensitive
+    or secret information can be stored in a database, you should strongly
+    consider protecting your databases.
+   </p>
+   <p class="simpara">
+    To retrieve or to store any information you need to connect to the database,
+    send a legitimate query, fetch the result, and close the connection.
+    Nowadays, the commonly used query language in this interaction is the
+    Structured Query Language (SQL). See how an attacker can <a href="security.database.sql-injection.html" class="link">tamper with an SQL query</a>.
+   </p>
+   <p class="simpara">
+    As you can surmise, <acronym title="PHP: Hypertext Preprocessor">PHP</acronym> cannot protect your database by itself. The
+    following sections aim to be an introduction into the very basics of how to
+    access and manipulate databases within <acronym title="PHP: Hypertext Preprocessor">PHP</acronym> scripts.
+   </p>
+   <p class="simpara">
+    Keep in mind this simple rule: defense in depth. The more places you
+    take action to increase the protection of your database, the less
+    probability of an attacker succeeding in exposing or abusing any stored
+    information. Good design of the database schema and the application
+    deals with your greatest fears.
+   </p>
+
+   
+
+   
+
+   
+
+   
+  </div>
+
+<section id="usernotes">
+ <div class="head">
+  <span class="action"><a href="../add-note4308.html?sect=security.database&amp;redirect=http://php.net/manual/en/security.database.php"><img src='../../images/notes-add%402x.png' alt='add a note' width='12' height='12'> <small>add a note</small></a></span>
+  <h3 class="title">User Contributed Notes <span class="count">4 notes</span></h3>
+ </div><div id="allnotes">
+  <div class="note" id="77088">  <div class="votes">
+    <div id="Vu77088">
+    <a href="../vote-note8aed.html?id=77088&amp;page=security.database&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd77088">
+    <a href="../vote-note5404.html?id=77088&amp;page=security.database&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V77088" title="47% like this...">
+    -8
+    </div>
+  </div>
+  <a href="#77088" class="name">
+  <strong class="user"><em>x12code at yahoo dot com</em></strong></a><a class="genanchor" href="#77088"> &para;</a><div class="date" title="2007-08-14 09:48"><strong>10 years ago</strong></div>
+  <div class="text" id="Hcom77088">
+<div class="phpcode"><code><span class="html">
+About offloading business logic to views and queries facilitated by the database engine, I seek to avoid this as much as possible, and only do so when such would drastically improve efficiency and user response time.<br /><br />For instance, where I am there is database staff and application staff. Trying to do analysis on existent applications can easily become a snipe hunt.<br /><br />The database should be kept discreet as much as possible from the application, such that any database or database provider can easily be substituted with a minimum of cognitive effort on the part of the one setting up a new database. If functionality has been offloaded to the database, additional testing is required to make sure triggers and views were done correctly, again, and that they work right.<br /><br />Also, keeping all business logic with the application allows all functionality and documentation to be readable in one place, which is invaluable when doing subsequent analysis on an existing application. The worst thing is to have functionality scattered here and there.<br /><br />Keeping everything with the application means one group of people is responsible, as in my case, application staff. Fewer requests go back and forth. Remember, anytime someone else is brought into the picture, such as asking a DBA to create a view or trigger for you, that DBA must take responsibility over his or her work, with whatever requirements, causing more bureaucracy and administrative complexity.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="54317">  <div class="votes">
+    <div id="Vu54317">
+    <a href="../vote-notec65d.html?id=54317&amp;page=security.database&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd54317">
+    <a href="../vote-note348c.html?id=54317&amp;page=security.database&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V54317" title="43% like this...">
+    -23
+    </div>
+  </div>
+  <a href="#54317" class="name"><strong class="user"><em>Anonymous</em></strong></a><a class="genanchor" href="#54317"> &para;</a><div class="date" title="2005-06-30 03:57"><strong>12 years ago</strong></div>
+  <div class="text" id="Hcom54317">
+<div class="phpcode"><code><span class="html">
+you can also chamge CHMOD for some file containing "user names" or "passwords"</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="109558">  <div class="votes">
+    <div id="Vu109558">
+    <a href="../vote-note9895.html?id=109558&amp;page=security.database&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd109558">
+    <a href="../vote-note73e7.html?id=109558&amp;page=security.database&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V109558" title="40% like this...">
+    -25
+    </div>
+  </div>
+  <a href="#109558" class="name">
+  <strong class="user"><em>Chris Travers</em></strong></a><a class="genanchor" href="#109558"> &para;</a><div class="date" title="2012-07-28 11:45"><strong>5 years ago</strong></div>
+  <div class="text" id="Hcom109558">
+<div class="phpcode"><code><span class="html">
+Regarding where to put logic, it's really best not to be dogmatic about this.&nbsp; Putting logic in the db can have some security advantages but it has other security gotchas (for example, SQL injection inside a stored procedure may be possible in some environments).&nbsp; Similarly it can have some portability advantages and disadvantages.<br /><br />The real question is that you want to ask what you want to be portable.&nbsp; If you put it in the db, it becomes easier to integrate programs written in different development environments with a minimum of security gotchas.&nbsp; If you put it in the application, then you have to create the interfaces on that level in middleware.&nbsp; Both approaches are doable.&nbsp; On the other hand if you are writing software you want to be deployable in MS SQL shops and Oracle shops, then you have to write portable SQL (avoiding gotchas) and put the logic in the application.<br /><br />When we started rewriting the LedgerSMB codebase, we decided to move logic into the db because this would make it easier to retrofit security onto a very insecure codebase (by not trusting the application), and because we wanted to support languages other than Perl.&nbsp; A few years later this is bearing fruit and indeed I am reading the manual because I am writing integration libraries in PHP.&nbsp; I am not much of a PHP guy (I haven't programmed PHP since PHP 4.x) but I can write modules that let folks write code to interface securely with LedgerSMB's database logic.&nbsp; You can think of the stored procedures as being named queries which are shared between applications, or as API's to the database.&nbsp; But again, this approach is not universally applicable.<br /><br />If portability between db's is not a major requirement, then I think the best approach is to do as much as possible in SQL queries and put those in the database.&nbsp; A couple hundred lines of SQL can replace a couple thousand lines in Perl or PHP, and is fundamentally easier to debug.&nbsp; Of course that won't work for everyone.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="77120">  <div class="votes">
+    <div id="Vu77120">
+    <a href="../vote-note5551.html?id=77120&amp;page=security.database&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd77120">
+    <a href="../vote-note7fbd.html?id=77120&amp;page=security.database&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V77120" title="37% like this...">
+    -31
+    </div>
+  </div>
+  <a href="#77120" class="name">
+  <strong class="user"><em>Dave Martin</em></strong></a><a class="genanchor" href="#77120"> &para;</a><div class="date" title="2007-08-16 12:15"><strong>10 years ago</strong></div>
+  <div class="text" id="Hcom77120">
+<div class="phpcode"><code><span class="html">
+The posting below is at the very best extremely POV.<br /><br />There is no more reason to assume you would want to change database vendor than there is to assume you might want to port your php code to Java for example. In either case, its going to be a matter of luck where your business rules sit.<br /><br />Even if your business rules sit in your application, SQL is NOT portable. Oracle outer joins and pivot queries for example, can look completely different to those in other vendors software (particularly from 8i or lower). This fact alone means that changing your DB vendor requires work on your business rules either in the database or in the application.<br /><br />Having your rules in the database and keeping the sql in application simple, will at least keep the work in the database if you need to change DB vendor. If you have the rules in the PHP, you'll have to change both.</span>
+</code></div>
+  </div>
+ </div></div>
+
+ <div class="foot"><a href="../add-note4308.html?sect=security.database&amp;redirect=http://php.net/manual/en/security.database.php"><img src='../../images/notes-add%402x.png' alt='add a note' width='12' height='12'> <small>add a note</small></a></div>
+</section>    </section><!-- layout-content -->
+        <aside class='layout-menu'>
+    
+        <ul class='parent-menu-list'>
+                                    <li>
+                <a href="security.html">Security</a>
+    
+                                    <ul class='child-menu-list'>
+    
+                          
+                        <li class="">
+                            <a href="security.intro.html" title="Introduction">Introduction</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="security.general.html" title="General considerations">General considerations</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="security.cgi-bin.html" title="Installed as CGI binary">Installed as CGI binary</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="security.apache.html" title="Installed as an Apache module">Installed as an Apache module</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="security.sessions.html" title="Session Security">Session Security</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="security.filesystem.html" title="Filesystem Security">Filesystem Security</a>
+                        </li>
+                          
+                        <li class="current">
+                            <a href="security.database.html" title="Database Security">Database Security</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="security.errors.html" title="Error Reporting">Error Reporting</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="security.globals.html" title="Using Register Globals">Using Register Globals</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="security.variables.html" title="User Submitted Data">User Submitted Data</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="security.magicquotes.html" title="Magic Quotes">Magic Quotes</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="security.hiding.html" title="Hiding PHP">Hiding PHP</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="security.current.html" title="Keeping Current">Keeping Current</a>
+                        </li>
+                            
+                    </ul>
+                    
+            </li>
+                        
+                    </ul>
+    </aside>
+
+
+  </div><!-- layout -->
+         
+  <footer>
+    <div class="container footer-content">
+      <div class="row-fluid">
+      <ul class="footmenu">
+        <li><a href="../../copyright.html">Copyright &copy; 2001-2017 The PHP Group</a></li>
+        <li><a href="../../my.html">My PHP.net</a></li>
+        <li><a href="../../contact.html">Contact</a></li>
+        <li><a href="../../sites.html">Other PHP.net sites</a></li>
+        <li><a href="../../mirrors.html">Mirror sites</a></li>
+        <li><a href="../../privacy.html">Privacy policy</a></li>
+      </ul>
+      </div>
+    </div>
+  </footer>
+
+    
+ <!-- External and third party libraries. -->
+ <script type="text/javascript" src="../../../ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" src="../../cachedab96.php?t=1421837618&amp;f=/js/ext/modernizr.js"></script>
+<script type="text/javascript" src="../../cached3567.php?t=1421837618&amp;f=/js/ext/hogan-2.0.0.min.js"></script>
+<script type="text/javascript" src="../../cachede4eb.php?t=1421837618&amp;f=/js/ext/typeahead.min.js"></script>
+<script type="text/javascript" src="../../cached9183.php?t=1421837618&amp;f=/js/ext/mousetrap.min.js"></script>
+<script type="text/javascript" src="../../cachedcba0.php?t=1421837618&amp;f=/js/search.js"></script>
+<script type="text/javascript" src="../../cachedb779.php?t=1500560403&amp;f=/js/common.js"></script>
+
+<a id="toTop" href="javascript:;"><span id="toTopHover"></span><img width="40" height="40" alt="To Top" src="../../images/to-top%402x.png"></a>
+
+</body>
+
+<!-- Mirrored from php.net/manual/en/security.database.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Dec 2017 23:13:36 GMT -->
+</html>
+

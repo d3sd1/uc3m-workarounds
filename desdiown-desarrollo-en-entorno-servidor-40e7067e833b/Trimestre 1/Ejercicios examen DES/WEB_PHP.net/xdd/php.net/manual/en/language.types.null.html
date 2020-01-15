@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<!-- Mirrored from php.net/manual/en/language.types.null.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Dec 2017 23:18:09 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+  <title>PHP: NULL - Manual </title>
+
+ <link rel="shortcut icon" href="http://php.net/favicon.ico">
+ <link rel="search" type="application/opensearchdescription+xml" href="http://php.net/phpnetimprovedsearch.src" title="Add PHP.net search">
+ <link rel="alternate" type="application/atom+xml" href="http://php.net/releases/feed.php" title="PHP Release feed">
+ <link rel="alternate" type="application/atom+xml" href="http://php.net/feed.atom" title="PHP: Hypertext Preprocessor">
+
+ <link rel="canonical" href="http://php.net/manual/en/language.types.null.php">
+ <link rel="shorturl" href="http://php.net/types.null">
+ <link rel="alternate" href="http://php.net/types.null" hreflang="x-default">
+
+ <link rel="contents" href="http://php.net/manual/en/index.php">
+ <link rel="index" href="http://php.net/manual/en/language.types.php">
+ <link rel="prev" href="http://php.net/manual/en/language.types.resource.php">
+ <link rel="next" href="http://php.net/manual/en/language.types.callable.php">
+
+ <link rel="alternate" href="http://php.net/manual/en/language.types.null.php" hreflang="en">
+ <link rel="alternate" href="http://php.net/manual/pt_BR/language.types.null.php" hreflang="pt_BR">
+ <link rel="alternate" href="http://php.net/manual/zh/language.types.null.php" hreflang="zh">
+ <link rel="alternate" href="http://php.net/manual/fr/language.types.null.php" hreflang="fr">
+ <link rel="alternate" href="http://php.net/manual/de/language.types.null.php" hreflang="de">
+ <link rel="alternate" href="http://php.net/manual/ja/language.types.null.php" hreflang="ja">
+ <link rel="alternate" href="http://php.net/manual/ro/language.types.null.php" hreflang="ro">
+ <link rel="alternate" href="http://php.net/manual/ru/language.types.null.php" hreflang="ru">
+ <link rel="alternate" href="http://php.net/manual/es/language.types.null.php" hreflang="es">
+ <link rel="alternate" href="http://php.net/manual/tr/language.types.null.php" hreflang="tr">
+
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1421837618&amp;f=/fonts/Fira/fira.css" media="screen">
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1421837618&amp;f=/fonts/Font-Awesome/css/fontello.css" media="screen">
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1478800802&amp;f=/styles/theme-base.css" media="screen">
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1449787206&amp;f=/styles/theme-medium.css" media="screen">
+
+ <!--[if lte IE 7]>
+ <link rel="stylesheet" type="text/css" href="http://php.net/styles/workarounds.ie7.css" media="screen">
+ <![endif]-->
+
+ <!--[if lte IE 8]>
+ <script type="text/javascript">
+  window.brokenIE = true;
+ </script>
+ <![endif]-->
+
+ <!--[if lte IE 9]>
+ <link rel="stylesheet" type="text/css" href="http://php.net/styles/workarounds.ie9.css" media="screen">
+ <![endif]-->
+
+ <!--[if IE]>
+ <script type="text/javascript" src="http://php.net/js/ext/html5.js"></script>
+ <![endif]-->
+
+ <base >
+
+</head>
+<body class="docs ">
+
+<nav id="head-nav" class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <a href="http://php.net/" class="brand"><img src="http://php.net/images/logos/php-logo.svg" width="48" height="24" alt="php"></a>
+    <div id="mainmenu-toggle-overlay"></div>
+    <input type="checkbox" id="mainmenu-toggle">
+    <ul class="nav">
+      <li class=""><a href="http://php.net/downloads">Downloads</a></li>
+      <li class="active"><a href="http://php.net/docs.php">Documentation</a></li>
+      <li class=""><a href="http://php.net/get-involved" >Get Involved</a></li>
+      <li class=""><a href="http://php.net/support">Help</a></li>
+    </ul>
+    <form class="navbar-search" id="topsearch" action="http://php.net/search.php">
+      <input type="hidden" name="show" value="quickref">
+      <input type="search" name="pattern" class="search-query" placeholder="Search" accesskey="s">
+    </form>
+  </div>
+  <div id="flash-message"></div>
+</nav>
+<nav id="trick"><div><dl>
+<dt><a href='http://php.net/manual/en/getting-started.php'>Getting Started</a></dt>
+	<dd><a href='http://php.net/manual/en/introduction.php'>Introduction</a></dd>
+	<dd><a href='http://php.net/manual/en/tutorial.php'>A simple tutorial</a></dd>
+<dt><a href='http://php.net/manual/en/langref.php'>Language Reference</a></dt>
+	<dd><a href='http://php.net/manual/en/language.basic-syntax.php'>Basic syntax</a></dd>
+	<dd><a href='http://php.net/manual/en/language.types.php'>Types</a></dd>
+	<dd><a href='http://php.net/manual/en/language.variables.php'>Variables</a></dd>
+	<dd><a href='http://php.net/manual/en/language.constants.php'>Constants</a></dd>
+	<dd><a href='http://php.net/manual/en/language.expressions.php'>Expressions</a></dd>
+	<dd><a href='http://php.net/manual/en/language.operators.php'>Operators</a></dd>
+	<dd><a href='http://php.net/manual/en/language.control-structures.php'>Control Structures</a></dd>
+	<dd><a href='http://php.net/manual/en/language.functions.php'>Functions</a></dd>
+	<dd><a href='http://php.net/manual/en/language.oop5.php'>Classes and Objects</a></dd>
+	<dd><a href='http://php.net/manual/en/language.namespaces.php'>Namespaces</a></dd>
+	<dd><a href='http://php.net/manual/en/language.errors.php'>Errors</a></dd>
+	<dd><a href='http://php.net/manual/en/language.exceptions.php'>Exceptions</a></dd>
+	<dd><a href='http://php.net/manual/en/language.generators.php'>Generators</a></dd>
+	<dd><a href='http://php.net/manual/en/language.references.php'>References Explained</a></dd>
+	<dd><a href='http://php.net/manual/en/reserved.variables.php'>Predefined Variables</a></dd>
+	<dd><a href='http://php.net/manual/en/reserved.exceptions.php'>Predefined Exceptions</a></dd>
+	<dd><a href='http://php.net/manual/en/reserved.interfaces.php'>Predefined Interfaces and Classes</a></dd>
+	<dd><a href='http://php.net/manual/en/context.php'>Context options and parameters</a></dd>
+	<dd><a href='http://php.net/manual/en/wrappers.php'>Supported Protocols and Wrappers</a></dd>
+</dl>
+<dl>
+<dt><a href='http://php.net/manual/en/security.php'>Security</a></dt>
+	<dd><a href='http://php.net/manual/en/security.intro.php'>Introduction</a></dd>
+	<dd><a href='http://php.net/manual/en/security.general.php'>General considerations</a></dd>
+	<dd><a href='http://php.net/manual/en/security.cgi-bin.php'>Installed as CGI binary</a></dd>
+	<dd><a href='http://php.net/manual/en/security.apache.php'>Installed as an Apache module</a></dd>
+	<dd><a href='http://php.net/manual/en/security.sessions.php'>Session Security</a></dd>
+	<dd><a href='http://php.net/manual/en/security.filesystem.php'>Filesystem Security</a></dd>
+	<dd><a href='http://php.net/manual/en/security.database.php'>Database Security</a></dd>
+	<dd><a href='http://php.net/manual/en/security.errors.php'>Error Reporting</a></dd>
+	<dd><a href='http://php.net/manual/en/security.globals.php'>Using Register Globals</a></dd>
+	<dd><a href='http://php.net/manual/en/security.variables.php'>User Submitted Data</a></dd>
+	<dd><a href='http://php.net/manual/en/security.magicquotes.php'>Magic Quotes</a></dd>
+	<dd><a href='http://php.net/manual/en/security.hiding.php'>Hiding PHP</a></dd>
+	<dd><a href='http://php.net/manual/en/security.current.php'>Keeping Current</a></dd>
+<dt><a href='http://php.net/manual/en/features.php'>Features</a></dt>
+	<dd><a href='http://php.net/manual/en/features.http-auth.php'>HTTP authentication with PHP</a></dd>
+	<dd><a href='http://php.net/manual/en/features.cookies.php'>Cookies</a></dd>
+	<dd><a href='http://php.net/manual/en/features.sessions.php'>Sessions</a></dd>
+	<dd><a href='http://php.net/manual/en/features.xforms.php'>Dealing with XForms</a></dd>
+	<dd><a href='http://php.net/manual/en/features.file-upload.php'>Handling file uploads</a></dd>
+	<dd><a href='http://php.net/manual/en/features.remote-files.php'>Using remote files</a></dd>
+	<dd><a href='http://php.net/manual/en/features.connection-handling.php'>Connection handling</a></dd>
+	<dd><a href='http://php.net/manual/en/features.persistent-connections.php'>Persistent Database Connections</a></dd>
+	<dd><a href='http://php.net/manual/en/features.safe-mode.php'>Safe Mode</a></dd>
+	<dd><a href='http://php.net/manual/en/features.commandline.php'>Command line usage</a></dd>
+	<dd><a href='http://php.net/manual/en/features.gc.php'>Garbage Collection</a></dd>
+	<dd><a href='http://php.net/manual/en/features.dtrace.php'>DTrace Dynamic Tracing</a></dd>
+</dl>
+<dl>
+<dt><a href='http://php.net/manual/en/funcref.php'>Function Reference</a></dt>
+	<dd><a href='http://php.net/manual/en/refs.basic.php.php'>Affecting PHP's Behaviour</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.audio.php'>Audio Formats Manipulation</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.remote.auth.php'>Authentication Services</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.cmdline.php'>Command Line Specific Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.compression.php'>Compression and Archive Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.creditcard.php'>Credit Card Processing</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.crypto.php'>Cryptography Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.database.php'>Database Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.calendar.php'>Date and Time Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.fileprocess.file.php'>File System Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.international.php'>Human Language and Character Encoding Support</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.image.php'>Image Processing and Generation</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.remote.mail.php'>Mail Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.math.php'>Mathematical Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.nontext.php'>Non-Text MIME Output</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.fileprocess.process.php'>Process Control Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.other.php'>Other Basic Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.remote.other.php'>Other Services</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.search.php'>Search Engine Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.server.php'>Server Specific Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.session.php'>Session Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.text.php'>Text Processing</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.vartype.php'>Variable and Type Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.webservice.php'>Web Services</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.windows.php'>Windows Only Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.xml.php'>XML Manipulation</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.ui.php'>GUI Extensions</a></dd>
+</dl>
+<dl>
+<dt>Keyboard Shortcuts</dt><dt>?</dt>
+<dd>This help</dd>
+<dt>j</dt>
+<dd>Next menu item</dd>
+<dt>k</dt>
+<dd>Previous menu item</dd>
+<dt>g p</dt>
+<dd>Previous man page</dd>
+<dt>g n</dt>
+<dd>Next man page</dd>
+<dt>G</dt>
+<dd>Scroll to bottom</dd>
+<dt>g g</dt>
+<dd>Scroll to top</dd>
+<dt>g h</dt>
+<dd>Goto homepage</dd>
+<dt>g s</dt>
+<dd>Goto search<br>(current page)</dd>
+<dt>/</dt>
+<dd>Focus search box</dd>
+</dl></div></nav>
+<div id="goto">
+    <div class="search">
+         <div class="text"></div>
+         <div class="results"><ul></ul></div>
+   </div>
+</div>
+
+  <div id="breadcrumbs" class="clearfix">
+    <div id="breadcrumbs-inner">
+          <div class="next">
+        <a href="http://php.net/manual/en/language.types.callable.php">
+          Callbacks / Callables &raquo;
+        </a>
+      </div>
+              <div class="prev">
+        <a href="http://php.net/manual/en/language.types.resource.php">
+          &laquo; Resources        </a>
+      </div>
+          <ul>
+            <li><a href='http://php.net/manual/en/index.php'>PHP Manual</a></li>      <li><a href='http://php.net/manual/en/langref.php'>Language Reference</a></li>      <li><a href='http://php.net/manual/en/language.types.php'>Types</a></li>      </ul>
+    </div>
+  </div>
+
+
+
+
+<div id="layout" class="clearfix">
+  <section id="layout-content">
+  <div class="page-tools">
+    <div class="change-language">
+      <form action="http://php.net/manual/change.php" method="get" id="changelang" name="changelang">
+        <fieldset>
+          <label for="changelang-langs">Change language:</label>
+          <select onchange="document.changelang.submit()" name="page" id="changelang-langs">
+            <option value='en/language.types.null.php' selected="selected">English</option>
+            <option value='http://php.net/manual/en/pt_BR/language.types.null.php'>Brazilian Portuguese</option>
+            <option value='http://php.net/manual/en/zh/language.types.null.php'>Chinese (Simplified)</option>
+            <option value='http://php.net/manual/en/fr/language.types.null.php'>French</option>
+            <option value='http://php.net/manual/en/de/language.types.null.php'>German</option>
+            <option value='http://php.net/manual/en/ja/language.types.null.php'>Japanese</option>
+            <option value='http://php.net/manual/en/ro/language.types.null.php'>Romanian</option>
+            <option value='http://php.net/manual/en/ru/language.types.null.php'>Russian</option>
+            <option value='http://php.net/manual/en/es/language.types.null.php'>Spanish</option>
+            <option value='http://php.net/manual/en/tr/language.types.null.php'>Turkish</option>
+            <option value="http://php.net/manual/en/help-translate.php">Other</option>
+          </select>
+        </fieldset>
+      </form>
+    </div>
+    <div class="edit-bug">
+      <a href="https://edit.php.net/?project=PHP&amp;perm=en/language.types.null.php">Edit</a>
+      <a href="https://bugs.php.net/report.php?bug_type=Documentation+problem&amp;manpage=language.types.null">Report a Bug</a>
+    </div>
+  </div><div id="language.types.null" class="sect1">
+ <h2 class="title">NULL</h2>
+  
+ <p class="para">
+  The special <strong><code>NULL</code></strong> value represents a variable with no value. <strong><code>NULL</code></strong> is the
+  only possible value of type <span class="type"><a href="http://php.net/manual/en/language.types.null.php" class="type null">null</a></span>.
+ </p>
+
+ <p class="para">
+  A variable is considered to be <span class="type"><a href="http://php.net/manual/en/language.types.null.php" class="type null">null</a></span> if:
+ </p>
+
+ <ul class="itemizedlist">
+  <li class="listitem">
+   <p class="para">
+    it has been assigned the constant <strong><code>NULL</code></strong>.
+   </p>
+  </li>
+  <li class="listitem">
+   <p class="para">
+    it has not been set to any value yet.
+   </p>
+  </li>
+  <li class="listitem">
+   <p class="para">
+    it has been <span class="function"><a href="http://php.net/manual/en/function.unset.php" class="function">unset()</a></span>.
+   </p>
+  </li>
+ </ul>
+  
+ <div class="sect2" id="language.types.null.syntax">
+  <h3 class="title">Syntax</h3>
+
+  <p class="para">
+   There is only one value of type <span class="type"><a href="http://php.net/manual/en/language.types.null.php" class="type null">null</a></span>, and that is the
+   case-insensitive constant <strong><code>NULL</code></strong>.
+  </p>
+
+  <div class="informalexample">
+   <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br />$var&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">NULL</span><span style="color: #007700">;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+   </div>
+
+  </div>
+
+  <p class="para">
+   See also the functions <span class="function"><a href="http://php.net/manual/en/function.is-null.php" class="function">is_null()</a></span> and
+   <span class="function"><a href="http://php.net/manual/en/function.unset.php" class="function">unset()</a></span>.
+  </p>
+
+ </div>
+ 
+ <div class="sect2" id="language.types.null.casting">
+  <h3 class="title">Casting to <strong><code>NULL</code></strong></h3>
+
+  <p class="para">
+   <div class="warning"><strong class="warning">Warning</strong><p class="simpara">This feature has been
+<em class="emphasis">DEPRECATED</em> as of PHP 7.2.0. Relying on this feature
+is highly discouraged.</p></div>
+  </p>
+
+  <p class="para">
+   Casting a variable to <span class="type"><a href="http://php.net/manual/en/language.types.null.php" class="type null">null</a></span> using <em>(unset) $var</em>
+   will <em class="emphasis">not</em> remove the variable or unset its value.
+   It will only return a <strong><code>NULL</code></strong> value.
+  </p>
+
+ </div>
+
+</div>
+<section id="usernotes">
+ <div class="head">
+  <span class="action"><a href="http://php.net/manual/add-note.php?sect=language.types.null&amp;redirect=http://php.net/manual/en/language.types.null.php"><img src='http://php.net/images/notes-add@2x.png' alt='add a note' width='12' height='12'> <small>add a note</small></a></span>
+  <h3 class="title">User Contributed Notes <span class="count">9 notes</span></h3>
+ </div><div id="allnotes">
+  <div class="note" id="103620">  <div class="votes">
+    <div id="Vu103620">
+    <a href="http://php.net/manual/vote-note.php?id=103620&amp;page=language.types.null&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd103620">
+    <a href="http://php.net/manual/vote-note.php?id=103620&amp;page=language.types.null&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V103620" title="58% like this...">
+    49
+    </div>
+  </div>
+  <a href="#103620" class="name">
+  <strong class="user"><em>quickpick</em></strong></a><a class="genanchor" href="#103620"> &para;</a><div class="date" title="2011-04-22 03:36"><strong>6 years ago</strong></div>
+  <div class="text" id="Hcom103620">
+<div class="phpcode"><code><span class="html">
+Note: empty array is converted to null by non-strict equal '==' comparison. Use is_null() or '===' if there is possible of getting empty array.<br /><br />$a = array();<br /><br />$a == null&nbsp; &lt;== return true<br />$a === null &lt; == return false<br />is_null($a) &lt;== return false</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="121995">  <div class="votes">
+    <div id="Vu121995">
+    <a href="http://php.net/manual/vote-note.php?id=121995&amp;page=language.types.null&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd121995">
+    <a href="http://php.net/manual/vote-note.php?id=121995&amp;page=language.types.null&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V121995" title="100% like this...">
+    1
+    </div>
+  </div>
+  <a href="#121995" class="name">
+  <strong class="user"><em>Hayley Watson</em></strong></a><a class="genanchor" href="#121995"> &para;</a><div class="date" title="2017-12-07 11:07"><strong>7 days ago</strong></div>
+  <div class="text" id="Hcom121995">
+<div class="phpcode"><code><span class="html">
+NULL is supposed to indicate the absence of a value, rather than being thought of as a value itself. It's the empty slot, it's the missing information, it's the unanswered question. It's not a jumped-up zero or empty set.<br /><br />This is why a variable containing a NULL is considered to be unset: it doesn't have a value. Setting a variable to NULL is telling it to forget its value without providing a replacement value to remember instead. The variable remains so that you can give it a proper value to remember later; this is especially important when the variable is an array element or object property.<br /><br />It's a bit of semantic awkwardness to speak of a "null value", but if a variable can exist without having a value, the language and implementation have to have something to represent that situation. Because someone will ask. If only to see if the slot has been filled.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="76290">  <div class="votes">
+    <div id="Vu76290">
+    <a href="http://php.net/manual/vote-note.php?id=76290&amp;page=language.types.null&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd76290">
+    <a href="http://php.net/manual/vote-note.php?id=76290&amp;page=language.types.null&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V76290" title="49% like this...">
+    -1
+    </div>
+  </div>
+  <a href="#76290" class="name">
+  <strong class="user"><em>nl-x at bita dot nl</em></strong></a><a class="genanchor" href="#76290"> &para;</a><div class="date" title="2007-07-09 10:33"><strong>10 years ago</strong></div>
+  <div class="text" id="Hcom76290">
+<div class="phpcode"><code><span class="html">
+Watch out. You can define a new constant with the name NULL with define("NULL","FOO");. But you must use the function constant("NULL"); to get it's value. NULL without the function call to the constant() function will still retrieve the special type NULL value.<br />Within a class there is no problem, as const NULL="Foo"; will be accessible as myClass::NULL.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="114699">  <div class="votes">
+    <div id="Vu114699">
+    <a href="http://php.net/manual/vote-note.php?id=114699&amp;page=language.types.null&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd114699">
+    <a href="http://php.net/manual/vote-note.php?id=114699&amp;page=language.types.null&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V114699" title="47% like this...">
+    -6
+    </div>
+  </div>
+  <a href="#114699" class="name">
+  <strong class="user"><em>kuzawinski dot marcin at NOSPAM dot gmail dot com</em></strong></a><a class="genanchor" href="#114699"> &para;</a><div class="date" title="2014-03-26 12:10"><strong>3 years ago</strong></div>
+  <div class="text" id="Hcom114699">
+<div class="phpcode"><code><span class="html">
+Funny. It looks like, that there is one, and only one possible value for variable $a that will pass this test:<br /><br />($a != NULL) &amp;&amp; ((bool)$a == NULL)<br /><br />It's "0" and it works because casting string "0" to boolean gives FALSE (and it's the only non empty string, that works this way). So remember that casting is not "transitive".</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="112293">  <div class="votes">
+    <div id="Vu112293">
+    <a href="http://php.net/manual/vote-note.php?id=112293&amp;page=language.types.null&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd112293">
+    <a href="http://php.net/manual/vote-note.php?id=112293&amp;page=language.types.null&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V112293" title="41% like this...">
+    -21
+    </div>
+  </div>
+  <a href="#112293" class="name">
+  <strong class="user"><em>Toycat</em></strong></a><a class="genanchor" href="#112293"> &para;</a><div class="date" title="2013-05-29 09:11"><strong>4 years ago</strong></div>
+  <div class="text" id="Hcom112293">
+<div class="phpcode"><code><span class="html">
+Be careful using NULL together with namespaces. If a NULL constant is redefined in a namespace other than global, you will get unexpected results when comparing to NULL inside the namespace. Instead always use \NULL, \FALSE, and \TRUE when comparing. Otherwise it may lead to application failures and potential security issues where certain checks could be effectively disabled.<br /><br />A simple example to demonstrate the behavior:<br /><br /><span class="default">&lt;?php<br /></span><span class="keyword">namespace </span><span class="default">RedefinedConstants </span><span class="keyword">{<br /><br />&nbsp; &nbsp; </span><span class="comment">// redefining global namespace constants has no effect<br />&nbsp; &nbsp; </span><span class="default">define</span><span class="keyword">(</span><span class="string">'NULL'</span><span class="keyword">, </span><span class="string">'I am not global NULL!'</span><span class="keyword">);<br />&nbsp; &nbsp; </span><span class="default">define</span><span class="keyword">(</span><span class="string">'TRUE'</span><span class="keyword">, </span><span class="string">'I am not global TRUE!'</span><span class="keyword">);<br />&nbsp; &nbsp; </span><span class="default">define</span><span class="keyword">(</span><span class="string">'FALSE'</span><span class="keyword">, </span><span class="string">'I am not global FALSE!'</span><span class="keyword">);<br /><br />&nbsp; &nbsp; </span><span class="comment">// redefining local namespace constants will work<br />&nbsp; &nbsp; </span><span class="default">define</span><span class="keyword">(</span><span class="string">'RedefinedConstants\NULL'</span><span class="keyword">, </span><span class="string">'I am not NULL!'</span><span class="keyword">, \</span><span class="default">TRUE</span><span class="keyword">);<br />&nbsp; &nbsp; </span><span class="default">define</span><span class="keyword">(</span><span class="string">'RedefinedConstants\FALSE'</span><span class="keyword">, </span><span class="string">'I am not FALSE!'</span><span class="keyword">, \</span><span class="default">TRUE</span><span class="keyword">);<br />&nbsp; &nbsp; </span><span class="default">define</span><span class="keyword">(</span><span class="string">'RedefinedConstants\TRUE'</span><span class="keyword">, </span><span class="string">'I am not TRUE!'</span><span class="keyword">, \</span><span class="default">TRUE</span><span class="keyword">);<br /><br />&nbsp; &nbsp; </span><span class="default">var_dump</span><span class="keyword">(<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">NULL</span><span class="keyword">, \</span><span class="default">NULL</span><span class="keyword">, </span><span class="default">null</span><span class="keyword">, \</span><span class="default">null</span><span class="keyword">, </span><span class="default">Null</span><span class="keyword">, \</span><span class="default">Null</span><span class="keyword">,<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">FALSE</span><span class="keyword">, \</span><span class="default">FALSE</span><span class="keyword">, </span><span class="default">false</span><span class="keyword">, \</span><span class="default">false</span><span class="keyword">, </span><span class="default">False</span><span class="keyword">, \</span><span class="default">False</span><span class="keyword">,<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">TRUE</span><span class="keyword">, \</span><span class="default">TRUE</span><span class="keyword">, </span><span class="default">true</span><span class="keyword">, \</span><span class="default">true</span><span class="keyword">, </span><span class="default">True</span><span class="keyword">, \</span><span class="default">True<br />&nbsp; &nbsp; </span><span class="keyword">);<br /><br />}<br /></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="118410">  <div class="votes">
+    <div id="Vu118410">
+    <a href="http://php.net/manual/vote-note.php?id=118410&amp;page=language.types.null&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd118410">
+    <a href="http://php.net/manual/vote-note.php?id=118410&amp;page=language.types.null&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V118410" title="35% like this...">
+    -12
+    </div>
+  </div>
+  <a href="#118410" class="name">
+  <strong class="user"><em>sebastian dot goendoer at NOSPAM dot telekom dot de</em></strong></a><a class="genanchor" href="#118410"> &para;</a><div class="date" title="2015-12-02 03:39"><strong>2 years ago</strong></div>
+  <div class="text" id="Hcom118410">
+<div class="phpcode"><code><span class="html">
+Valiable values of (almost) all types that can be juggled to something "like" NULL will eval to NULL:<br /><br /><span class="default">&lt;?php<br />$test</span><span class="keyword">[</span><span class="string">'_string'</span><span class="keyword">] = </span><span class="string">""</span><span class="keyword">;<br /></span><span class="default">$test</span><span class="keyword">[</span><span class="string">'_int'</span><span class="keyword">] = </span><span class="default">0</span><span class="keyword">;<br /></span><span class="default">$test</span><span class="keyword">[</span><span class="string">'_float'</span><span class="keyword">] = </span><span class="default">0.0</span><span class="keyword">;<br /></span><span class="default">$test</span><span class="keyword">[</span><span class="string">'_null'</span><span class="keyword">] = </span><span class="default">null</span><span class="keyword">;<br /></span><span class="default">$test</span><span class="keyword">[</span><span class="string">'_arr'</span><span class="keyword">] = array();<br /></span><span class="default">$test</span><span class="keyword">[</span><span class="string">'_obj'</span><span class="keyword">] = new \</span><span class="default">stdClass</span><span class="keyword">();<br /><br />foreach(</span><span class="default">$test </span><span class="keyword">as </span><span class="default">$key </span><span class="keyword">=&gt; </span><span class="default">$value</span><span class="keyword">)<br />{<br />&nbsp; &nbsp; echo </span><span class="default">$key</span><span class="keyword">.</span><span class="string">": "</span><span class="keyword">;<br />&nbsp; &nbsp; if(</span><span class="default">$value </span><span class="keyword">== </span><span class="default">null</span><span class="keyword">)<br />&nbsp; &nbsp; &nbsp; &nbsp; echo </span><span class="string">"is null\n"</span><span class="keyword">;<br />&nbsp; &nbsp; else<br />&nbsp; &nbsp; &nbsp; &nbsp; echo </span><span class="string">"is not null\n"</span><span class="keyword">;<br />}die();<br /></span><span class="default">?&gt;<br /></span><br />will give you<br /><br />_string: is null<br />_int: is null<br />_float: is null<br />_null: is null<br />_arr: is null<br />_obj: is not null</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="16766">  <div class="votes">
+    <div id="Vu16766">
+    <a href="http://php.net/manual/vote-note.php?id=16766&amp;page=language.types.null&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd16766">
+    <a href="http://php.net/manual/vote-note.php?id=16766&amp;page=language.types.null&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V16766" title="35% like this...">
+    -31
+    </div>
+  </div>
+  <a href="#16766" class="name">
+  <strong class="user"><em>dward at maidencreek dot com</em></strong></a><a class="genanchor" href="#16766"> &para;</a><div class="date" title="2001-11-12 03:52"><strong>16 years ago</strong></div>
+  <div class="text" id="Hcom16766">
+<div class="phpcode"><code><span class="html">
+Nulls are almost the same as unset variables and it is hard to tell the difference without creating errors from the interpreter:<br /><br /><span class="default">&lt;?php<br />$var </span><span class="keyword">= </span><span class="default">NULL</span><span class="keyword">;<br /></span><span class="default">?&gt;<br /></span><br />isset($var) is FALSE<br />empty($var) is TRUE<br />is_null($var) is TRUE<br /><br />isset($novar) is FALSE<br />empty($novar) is TRUE<br />is_null($novar) gives an Undefined variable error<br /><br />$var IS in the symbol table (from get_defined_vars())<br />$var CAN be used as an argument or an expression.<br /><br />So, in most cases I found that we needed to use !isset($var) intead of is_null($var) and then set $var = NULL if the variable needs to be used later to guarantee that $var is a valid variable with a NULL value instead of being undefined.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="109599">  <div class="votes">
+    <div id="Vu109599">
+    <a href="http://php.net/manual/vote-note.php?id=109599&amp;page=language.types.null&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd109599">
+    <a href="http://php.net/manual/vote-note.php?id=109599&amp;page=language.types.null&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V109599" title="34% like this...">
+    -38
+    </div>
+  </div>
+  <a href="#109599" class="name">
+  <strong class="user"><em>foxdie_cs at hotmail dot com</em></strong></a><a class="genanchor" href="#109599"> &para;</a><div class="date" title="2012-08-01 06:00"><strong>5 years ago</strong></div>
+  <div class="text" id="Hcom109599">
+<div class="phpcode"><code><span class="html">
+a quick note about the magic function __get() :<br /><br /><span class="default">&lt;?php<br /></span><span class="keyword">class </span><span class="default">Foo</span><span class="keyword">{<br />&nbsp; &nbsp; <br />&nbsp; &nbsp; protected </span><span class="default">$bar</span><span class="keyword">;<br />&nbsp; &nbsp; <br />&nbsp; &nbsp; public function </span><span class="default">__construct</span><span class="keyword">(){ <br />&nbsp; &nbsp; &nbsp; &nbsp; <br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$this</span><span class="keyword">-&gt;</span><span class="default">bar </span><span class="keyword">= </span><span class="default">NULL</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">var_dump</span><span class="keyword">( </span><span class="default">$this</span><span class="keyword">-&gt;</span><span class="default">bar </span><span class="keyword">); </span><span class="comment">//prit 'NULL' but won't call the magic method __get()<br />&nbsp; &nbsp; &nbsp; &nbsp; <br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="keyword">unset( </span><span class="default">$this</span><span class="keyword">-&gt;</span><span class="default">bar </span><span class="keyword">);<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">var_dump</span><span class="keyword">( </span><span class="default">$this</span><span class="keyword">-&gt;</span><span class="default">bar </span><span class="keyword">); </span><span class="comment">//print 'GET bar' and 'NULL'<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br />&nbsp; &nbsp; </span><span class="keyword">}<br />&nbsp; &nbsp; <br />&nbsp; &nbsp; public function </span><span class="default">__get</span><span class="keyword">( </span><span class="default">$var </span><span class="keyword">){ echo </span><span class="string">"GET " </span><span class="keyword">. </span><span class="default">$var</span><span class="keyword">; }<br />&nbsp; &nbsp; &nbsp; &nbsp; <br />}<br /><br />new </span><span class="default">Foo</span><span class="keyword">();<br /></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="60417">  <div class="votes">
+    <div id="Vu60417">
+    <a href="http://php.net/manual/vote-note.php?id=60417&amp;page=language.types.null&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd60417">
+    <a href="http://php.net/manual/vote-note.php?id=60417&amp;page=language.types.null&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V60417" title="33% like this...">
+    -47
+    </div>
+  </div>
+  <a href="#60417" class="name"><strong class="user"><em>Anonymous</em></strong></a><a class="genanchor" href="#60417"> &para;</a><div class="date" title="2006-01-06 01:51"><strong>11 years ago</strong></div>
+  <div class="text" id="Hcom60417">
+<div class="phpcode"><code><span class="html">
+// Difference between "unset($a);" and "$a = NULL;" :<br /><span class="default">&lt;?php<br /></span><span class="comment">// unset($a)<br /></span><span class="default">$a </span><span class="keyword">= </span><span class="default">5</span><span class="keyword">;<br /></span><span class="default">$b </span><span class="keyword">= &amp; </span><span class="default">$a</span><span class="keyword">;<br />unset(</span><span class="default">$a</span><span class="keyword">);<br />print </span><span class="string">"b </span><span class="default">$b</span><span class="string"> "</span><span class="keyword">; </span><span class="comment">// b 5 <br /><br />// $a = NULL; (better I think)<br /></span><span class="default">$a </span><span class="keyword">= </span><span class="default">5</span><span class="keyword">;<br /></span><span class="default">$b </span><span class="keyword">= &amp; </span><span class="default">$a</span><span class="keyword">;<br /></span><span class="default">$a </span><span class="keyword">= </span><span class="default">NULL</span><span class="keyword">;<br />print </span><span class="string">"b </span><span class="default">$b</span><span class="string"> "</span><span class="keyword">; </span><span class="comment">// b <br /></span><span class="keyword">print(! isset(</span><span class="default">$b</span><span class="keyword">)); </span><span class="comment">// 1 <br /></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div></div>
+
+ <div class="foot"><a href="http://php.net/manual/add-note.php?sect=language.types.null&amp;redirect=http://php.net/manual/en/language.types.null.php"><img src='http://php.net/images/notes-add@2x.png' alt='add a note' width='12' height='12'> <small>add a note</small></a></div>
+</section>    </section><!-- layout-content -->
+        <aside class='layout-menu'>
+    
+        <ul class='parent-menu-list'>
+                                    <li>
+                <a href="http://php.net/manual/en/language.types.php">Types</a>
+    
+                                    <ul class='child-menu-list'>
+    
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.types.intro.php" title="Introduction">Introduction</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.types.boolean.php" title="Booleans">Booleans</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.types.integer.php" title="Integers">Integers</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.types.float.php" title="Floating point numbers">Floating point numbers</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.types.string.php" title="Strings">Strings</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.types.array.php" title="Arrays">Arrays</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.types.iterable.php" title="Iterables">Iterables</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.types.object.php" title="Objects">Objects</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.types.resource.php" title="Resources">Resources</a>
+                        </li>
+                          
+                        <li class="current">
+                            <a href="http://php.net/manual/en/language.types.null.php" title="NULL">NULL</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.types.callable.php" title="Callbacks / Callables">Callbacks / Callables</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.pseudo-types.php" title="Pseudo-&#8203;types and variables used in this documentation">Pseudo-&#8203;types and variables used in this documentation</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.types.type-juggling.php" title="Type Juggling">Type Juggling</a>
+                        </li>
+                            
+                    </ul>
+                    
+            </li>
+                        
+                    </ul>
+    </aside>
+
+
+  </div><!-- layout -->
+         
+  <footer>
+    <div class="container footer-content">
+      <div class="row-fluid">
+      <ul class="footmenu">
+        <li><a href="http://php.net/copyright.php">Copyright &copy; 2001-2017 The PHP Group</a></li>
+        <li><a href="http://php.net/my.php">My PHP.net</a></li>
+        <li><a href="http://php.net/contact.php">Contact</a></li>
+        <li><a href="http://php.net/sites.php">Other PHP.net sites</a></li>
+        <li><a href="http://php.net/mirrors.php">Mirror sites</a></li>
+        <li><a href="http://php.net/privacy.php">Privacy policy</a></li>
+      </ul>
+      </div>
+    </div>
+  </footer>
+
+    
+ <!-- External and third party libraries. -->
+ <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/modernizr.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/hogan-2.0.0.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/typeahead.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/mousetrap.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/search.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1500560403&amp;f=/js/common.js"></script>
+
+<a id="toTop" href="javascript:;"><span id="toTopHover"></span><img width="40" height="40" alt="To Top" src="http://php.net/images/to-top@2x.png"></a>
+
+</body>
+
+<!-- Mirrored from php.net/manual/en/language.types.null.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Dec 2017 23:18:09 GMT -->
+</html>
+

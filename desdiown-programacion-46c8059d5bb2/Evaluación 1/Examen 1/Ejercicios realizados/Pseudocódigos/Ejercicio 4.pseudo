@@ -1,0 +1,11 @@
+INICIO
+INT num_introducido;
+Escribe "Introduce un número";
+LEE num_introducido;
+mientras(num_introducido < 3 || num_introducido > 500 || (num_introducido % 2) != 0)
+{
+	
+	Escribe "Introduce un número comprendido entre 3 y 500.";
+	LEE num_introducido;
+}
+FIN

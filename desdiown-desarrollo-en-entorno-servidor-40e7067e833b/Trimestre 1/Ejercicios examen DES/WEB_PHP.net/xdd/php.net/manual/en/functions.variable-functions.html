@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<!-- Mirrored from php.net/manual/en/functions.variable-functions.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Dec 2017 23:18:11 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+  <title>PHP: Variable functions - Manual </title>
+
+ <link rel="shortcut icon" href="http://php.net/favicon.ico">
+ <link rel="search" type="application/opensearchdescription+xml" href="http://php.net/phpnetimprovedsearch.src" title="Add PHP.net search">
+ <link rel="alternate" type="application/atom+xml" href="http://php.net/releases/feed.php" title="PHP Release feed">
+ <link rel="alternate" type="application/atom+xml" href="http://php.net/feed.atom" title="PHP: Hypertext Preprocessor">
+
+ <link rel="canonical" href="http://php.net/manual/en/functions.variable-functions.php">
+ <link rel="shorturl" href="http://php.net/manual/en/functions.variable-functions.php">
+ <link rel="alternate" href="http://php.net/manual/en/functions.variable-functions.php" hreflang="x-default">
+
+ <link rel="contents" href="http://php.net/manual/en/index.php">
+ <link rel="index" href="http://php.net/manual/en/language.functions.php">
+ <link rel="prev" href="http://php.net/manual/en/functions.returning-values.php">
+ <link rel="next" href="http://php.net/manual/en/functions.internal.php">
+
+ <link rel="alternate" href="http://php.net/manual/en/functions.variable-functions.php" hreflang="en">
+ <link rel="alternate" href="http://php.net/manual/pt_BR/functions.variable-functions.php" hreflang="pt_BR">
+ <link rel="alternate" href="http://php.net/manual/zh/functions.variable-functions.php" hreflang="zh">
+ <link rel="alternate" href="http://php.net/manual/fr/functions.variable-functions.php" hreflang="fr">
+ <link rel="alternate" href="http://php.net/manual/de/functions.variable-functions.php" hreflang="de">
+ <link rel="alternate" href="http://php.net/manual/ja/functions.variable-functions.php" hreflang="ja">
+ <link rel="alternate" href="http://php.net/manual/ro/functions.variable-functions.php" hreflang="ro">
+ <link rel="alternate" href="http://php.net/manual/ru/functions.variable-functions.php" hreflang="ru">
+ <link rel="alternate" href="http://php.net/manual/es/functions.variable-functions.php" hreflang="es">
+ <link rel="alternate" href="http://php.net/manual/tr/functions.variable-functions.php" hreflang="tr">
+
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1421837618&amp;f=/fonts/Fira/fira.css" media="screen">
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1421837618&amp;f=/fonts/Font-Awesome/css/fontello.css" media="screen">
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1478800802&amp;f=/styles/theme-base.css" media="screen">
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1449787206&amp;f=/styles/theme-medium.css" media="screen">
+
+ <!--[if lte IE 7]>
+ <link rel="stylesheet" type="text/css" href="http://php.net/styles/workarounds.ie7.css" media="screen">
+ <![endif]-->
+
+ <!--[if lte IE 8]>
+ <script type="text/javascript">
+  window.brokenIE = true;
+ </script>
+ <![endif]-->
+
+ <!--[if lte IE 9]>
+ <link rel="stylesheet" type="text/css" href="http://php.net/styles/workarounds.ie9.css" media="screen">
+ <![endif]-->
+
+ <!--[if IE]>
+ <script type="text/javascript" src="http://php.net/js/ext/html5.js"></script>
+ <![endif]-->
+
+ <base >
+
+</head>
+<body class="docs ">
+
+<nav id="head-nav" class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <a href="http://php.net/" class="brand"><img src="http://php.net/images/logos/php-logo.svg" width="48" height="24" alt="php"></a>
+    <div id="mainmenu-toggle-overlay"></div>
+    <input type="checkbox" id="mainmenu-toggle">
+    <ul class="nav">
+      <li class=""><a href="http://php.net/downloads">Downloads</a></li>
+      <li class="active"><a href="http://php.net/docs.php">Documentation</a></li>
+      <li class=""><a href="http://php.net/get-involved" >Get Involved</a></li>
+      <li class=""><a href="http://php.net/support">Help</a></li>
+    </ul>
+    <form class="navbar-search" id="topsearch" action="http://php.net/search.php">
+      <input type="hidden" name="show" value="quickref">
+      <input type="search" name="pattern" class="search-query" placeholder="Search" accesskey="s">
+    </form>
+  </div>
+  <div id="flash-message"></div>
+</nav>
+<nav id="trick"><div><dl>
+<dt><a href='http://php.net/manual/en/getting-started.php'>Getting Started</a></dt>
+	<dd><a href='http://php.net/manual/en/introduction.php'>Introduction</a></dd>
+	<dd><a href='http://php.net/manual/en/tutorial.php'>A simple tutorial</a></dd>
+<dt><a href='http://php.net/manual/en/langref.php'>Language Reference</a></dt>
+	<dd><a href='http://php.net/manual/en/language.basic-syntax.php'>Basic syntax</a></dd>
+	<dd><a href='http://php.net/manual/en/language.types.php'>Types</a></dd>
+	<dd><a href='http://php.net/manual/en/language.variables.php'>Variables</a></dd>
+	<dd><a href='http://php.net/manual/en/language.constants.php'>Constants</a></dd>
+	<dd><a href='http://php.net/manual/en/language.expressions.php'>Expressions</a></dd>
+	<dd><a href='http://php.net/manual/en/language.operators.php'>Operators</a></dd>
+	<dd><a href='http://php.net/manual/en/language.control-structures.php'>Control Structures</a></dd>
+	<dd><a href='http://php.net/manual/en/language.functions.php'>Functions</a></dd>
+	<dd><a href='http://php.net/manual/en/language.oop5.php'>Classes and Objects</a></dd>
+	<dd><a href='http://php.net/manual/en/language.namespaces.php'>Namespaces</a></dd>
+	<dd><a href='http://php.net/manual/en/language.errors.php'>Errors</a></dd>
+	<dd><a href='http://php.net/manual/en/language.exceptions.php'>Exceptions</a></dd>
+	<dd><a href='http://php.net/manual/en/language.generators.php'>Generators</a></dd>
+	<dd><a href='http://php.net/manual/en/language.references.php'>References Explained</a></dd>
+	<dd><a href='http://php.net/manual/en/reserved.variables.php'>Predefined Variables</a></dd>
+	<dd><a href='http://php.net/manual/en/reserved.exceptions.php'>Predefined Exceptions</a></dd>
+	<dd><a href='http://php.net/manual/en/reserved.interfaces.php'>Predefined Interfaces and Classes</a></dd>
+	<dd><a href='http://php.net/manual/en/context.php'>Context options and parameters</a></dd>
+	<dd><a href='http://php.net/manual/en/wrappers.php'>Supported Protocols and Wrappers</a></dd>
+</dl>
+<dl>
+<dt><a href='http://php.net/manual/en/security.php'>Security</a></dt>
+	<dd><a href='http://php.net/manual/en/security.intro.php'>Introduction</a></dd>
+	<dd><a href='http://php.net/manual/en/security.general.php'>General considerations</a></dd>
+	<dd><a href='http://php.net/manual/en/security.cgi-bin.php'>Installed as CGI binary</a></dd>
+	<dd><a href='http://php.net/manual/en/security.apache.php'>Installed as an Apache module</a></dd>
+	<dd><a href='http://php.net/manual/en/security.sessions.php'>Session Security</a></dd>
+	<dd><a href='http://php.net/manual/en/security.filesystem.php'>Filesystem Security</a></dd>
+	<dd><a href='http://php.net/manual/en/security.database.php'>Database Security</a></dd>
+	<dd><a href='http://php.net/manual/en/security.errors.php'>Error Reporting</a></dd>
+	<dd><a href='http://php.net/manual/en/security.globals.php'>Using Register Globals</a></dd>
+	<dd><a href='http://php.net/manual/en/security.variables.php'>User Submitted Data</a></dd>
+	<dd><a href='http://php.net/manual/en/security.magicquotes.php'>Magic Quotes</a></dd>
+	<dd><a href='http://php.net/manual/en/security.hiding.php'>Hiding PHP</a></dd>
+	<dd><a href='http://php.net/manual/en/security.current.php'>Keeping Current</a></dd>
+<dt><a href='http://php.net/manual/en/features.php'>Features</a></dt>
+	<dd><a href='http://php.net/manual/en/features.http-auth.php'>HTTP authentication with PHP</a></dd>
+	<dd><a href='http://php.net/manual/en/features.cookies.php'>Cookies</a></dd>
+	<dd><a href='http://php.net/manual/en/features.sessions.php'>Sessions</a></dd>
+	<dd><a href='http://php.net/manual/en/features.xforms.php'>Dealing with XForms</a></dd>
+	<dd><a href='http://php.net/manual/en/features.file-upload.php'>Handling file uploads</a></dd>
+	<dd><a href='http://php.net/manual/en/features.remote-files.php'>Using remote files</a></dd>
+	<dd><a href='http://php.net/manual/en/features.connection-handling.php'>Connection handling</a></dd>
+	<dd><a href='http://php.net/manual/en/features.persistent-connections.php'>Persistent Database Connections</a></dd>
+	<dd><a href='http://php.net/manual/en/features.safe-mode.php'>Safe Mode</a></dd>
+	<dd><a href='http://php.net/manual/en/features.commandline.php'>Command line usage</a></dd>
+	<dd><a href='http://php.net/manual/en/features.gc.php'>Garbage Collection</a></dd>
+	<dd><a href='http://php.net/manual/en/features.dtrace.php'>DTrace Dynamic Tracing</a></dd>
+</dl>
+<dl>
+<dt><a href='http://php.net/manual/en/funcref.php'>Function Reference</a></dt>
+	<dd><a href='http://php.net/manual/en/refs.basic.php.php'>Affecting PHP's Behaviour</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.audio.php'>Audio Formats Manipulation</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.remote.auth.php'>Authentication Services</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.cmdline.php'>Command Line Specific Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.compression.php'>Compression and Archive Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.creditcard.php'>Credit Card Processing</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.crypto.php'>Cryptography Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.database.php'>Database Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.calendar.php'>Date and Time Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.fileprocess.file.php'>File System Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.international.php'>Human Language and Character Encoding Support</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.image.php'>Image Processing and Generation</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.remote.mail.php'>Mail Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.math.php'>Mathematical Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.nontext.php'>Non-Text MIME Output</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.fileprocess.process.php'>Process Control Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.other.php'>Other Basic Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.remote.other.php'>Other Services</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.search.php'>Search Engine Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.server.php'>Server Specific Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.session.php'>Session Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.text.php'>Text Processing</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.vartype.php'>Variable and Type Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.webservice.php'>Web Services</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.windows.php'>Windows Only Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.xml.php'>XML Manipulation</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.ui.php'>GUI Extensions</a></dd>
+</dl>
+<dl>
+<dt>Keyboard Shortcuts</dt><dt>?</dt>
+<dd>This help</dd>
+<dt>j</dt>
+<dd>Next menu item</dd>
+<dt>k</dt>
+<dd>Previous menu item</dd>
+<dt>g p</dt>
+<dd>Previous man page</dd>
+<dt>g n</dt>
+<dd>Next man page</dd>
+<dt>G</dt>
+<dd>Scroll to bottom</dd>
+<dt>g g</dt>
+<dd>Scroll to top</dd>
+<dt>g h</dt>
+<dd>Goto homepage</dd>
+<dt>g s</dt>
+<dd>Goto search<br>(current page)</dd>
+<dt>/</dt>
+<dd>Focus search box</dd>
+</dl></div></nav>
+<div id="goto">
+    <div class="search">
+         <div class="text"></div>
+         <div class="results"><ul></ul></div>
+   </div>
+</div>
+
+  <div id="breadcrumbs" class="clearfix">
+    <div id="breadcrumbs-inner">
+          <div class="next">
+        <a href="http://php.net/manual/en/functions.internal.php">
+          Internal (built-in) functions &raquo;
+        </a>
+      </div>
+              <div class="prev">
+        <a href="http://php.net/manual/en/functions.returning-values.php">
+          &laquo; Returning values        </a>
+      </div>
+          <ul>
+            <li><a href='http://php.net/manual/en/index.php'>PHP Manual</a></li>      <li><a href='http://php.net/manual/en/langref.php'>Language Reference</a></li>      <li><a href='http://php.net/manual/en/language.functions.php'>Functions</a></li>      </ul>
+    </div>
+  </div>
+
+
+
+
+<div id="layout" class="clearfix">
+  <section id="layout-content">
+  <div class="page-tools">
+    <div class="change-language">
+      <form action="http://php.net/manual/change.php" method="get" id="changelang" name="changelang">
+        <fieldset>
+          <label for="changelang-langs">Change language:</label>
+          <select onchange="document.changelang.submit()" name="page" id="changelang-langs">
+            <option value='en/functions.variable-functions.php' selected="selected">English</option>
+            <option value='http://php.net/manual/en/pt_BR/functions.variable-functions.php'>Brazilian Portuguese</option>
+            <option value='http://php.net/manual/en/zh/functions.variable-functions.php'>Chinese (Simplified)</option>
+            <option value='http://php.net/manual/en/fr/functions.variable-functions.php'>French</option>
+            <option value='http://php.net/manual/en/de/functions.variable-functions.php'>German</option>
+            <option value='http://php.net/manual/en/ja/functions.variable-functions.php'>Japanese</option>
+            <option value='http://php.net/manual/en/ro/functions.variable-functions.php'>Romanian</option>
+            <option value='http://php.net/manual/en/ru/functions.variable-functions.php'>Russian</option>
+            <option value='http://php.net/manual/en/es/functions.variable-functions.php'>Spanish</option>
+            <option value='http://php.net/manual/en/tr/functions.variable-functions.php'>Turkish</option>
+            <option value="http://php.net/manual/en/help-translate.php">Other</option>
+          </select>
+        </fieldset>
+      </form>
+    </div>
+    <div class="edit-bug">
+      <a href="https://edit.php.net/?project=PHP&amp;perm=en/functions.variable-functions.php">Edit</a>
+      <a href="https://bugs.php.net/report.php?bug_type=Documentation+problem&amp;manpage=functions.variable-functions">Report a Bug</a>
+    </div>
+  </div><div id="functions.variable-functions" class="sect1">
+   <h2 class="title">Variable functions</h2>
+
+   <p class="para">
+    PHP supports the concept of variable functions. This means that if
+    a variable name has parentheses appended to it, PHP will look for
+    a function with the same name as whatever the variable evaluates
+    to, and will attempt to execute it. Among other things, this can
+    be used to implement callbacks, function tables, and so forth.
+   </p>
+   <p class="para">
+    Variable functions won&#039;t work with language constructs such 
+    as <span class="function"><a href="http://php.net/manual/en/function.echo.php" class="function">echo</a></span>, <span class="function"><a href="http://php.net/manual/en/function.print.php" class="function">print</a></span>,
+    <span class="function"><a href="http://php.net/manual/en/function.unset.php" class="function">unset()</a></span>, <span class="function"><a href="http://php.net/manual/en/function.isset.php" class="function">isset()</a></span>,
+    <span class="function"><a href="http://php.net/manual/en/function.empty.php" class="function">empty()</a></span>, <span class="function"><a href="http://php.net/manual/en/function.include.php" class="function">include</a></span>,
+    <span class="function"><a href="http://php.net/manual/en/function.require.php" class="function">require</a></span> and the like. Utilize wrapper functions to make
+    use of any of these constructs as variable functions.
+   </p>
+   <p class="para">
+    <div class="example" id="example-159">
+     <p><strong>Example #1 Variable function example</strong></p>
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">foo</span><span style="color: #007700">()&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"In&nbsp;foo()&lt;br&nbsp;/&gt;\n"</span><span style="color: #007700">;<br />}<br /><br />function&nbsp;</span><span style="color: #0000BB">bar</span><span style="color: #007700">(</span><span style="color: #0000BB">$arg&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">''</span><span style="color: #007700">)<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"In&nbsp;bar();&nbsp;argument&nbsp;was&nbsp;'</span><span style="color: #0000BB">$arg</span><span style="color: #DD0000">'.&lt;br&nbsp;/&gt;\n"</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #FF8000">//&nbsp;This&nbsp;is&nbsp;a&nbsp;wrapper&nbsp;function&nbsp;around&nbsp;echo<br /></span><span style="color: #007700">function&nbsp;</span><span style="color: #0000BB">echoit</span><span style="color: #007700">(</span><span style="color: #0000BB">$string</span><span style="color: #007700">)<br />{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #0000BB">$string</span><span style="color: #007700">;<br />}<br /><br /></span><span style="color: #0000BB">$func&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'foo'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$func</span><span style="color: #007700">();&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;This&nbsp;calls&nbsp;foo()<br /><br /></span><span style="color: #0000BB">$func&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'bar'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$func</span><span style="color: #007700">(</span><span style="color: #DD0000">'test'</span><span style="color: #007700">);&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;This&nbsp;calls&nbsp;bar()<br /><br /></span><span style="color: #0000BB">$func&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'echoit'</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$func</span><span style="color: #007700">(</span><span style="color: #DD0000">'test'</span><span style="color: #007700">);&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;This&nbsp;calls&nbsp;echoit()<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+     </div>
+
+    </div>
+   </p>
+   <p class="para">
+    Object methods can also be called with the variable functions syntax.
+    <div class="example" id="example-160">
+     <p><strong>Example #2 Variable method example</strong></p>
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">Foo<br /></span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;function&nbsp;</span><span style="color: #0000BB">Variable</span><span style="color: #007700">()<br />&nbsp;&nbsp;&nbsp;&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$name&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'Bar'</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #0000BB">$this</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">$name</span><span style="color: #007700">();&nbsp;</span><span style="color: #FF8000">//&nbsp;This&nbsp;calls&nbsp;the&nbsp;Bar()&nbsp;method<br />&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color: #007700">}<br />&nbsp;&nbsp;&nbsp;&nbsp;<br />&nbsp;&nbsp;&nbsp;&nbsp;function&nbsp;</span><span style="color: #0000BB">Bar</span><span style="color: #007700">()<br />&nbsp;&nbsp;&nbsp;&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"This&nbsp;is&nbsp;Bar"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /><br /></span><span style="color: #0000BB">$foo&nbsp;</span><span style="color: #007700">=&nbsp;new&nbsp;</span><span style="color: #0000BB">Foo</span><span style="color: #007700">();<br /></span><span style="color: #0000BB">$funcname&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"Variable"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$foo</span><span style="color: #007700">-&gt;</span><span style="color: #0000BB">$funcname</span><span style="color: #007700">();&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;This&nbsp;calls&nbsp;$foo-&gt;Variable()<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+     </div>
+
+    </div>
+   </p>
+   <p class="para">
+    When calling static methods, the function call is stronger than the static property operator:
+    <div class="example" id="example-161">
+     <p><strong>Example #3 Variable method example with static properties</strong></p>
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">Foo<br /></span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;static&nbsp;</span><span style="color: #0000BB">$variable&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'static&nbsp;property'</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;static&nbsp;function&nbsp;</span><span style="color: #0000BB">Variable</span><span style="color: #007700">()<br />&nbsp;&nbsp;&nbsp;&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">'Method&nbsp;Variable&nbsp;called'</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /><br />echo&nbsp;</span><span style="color: #0000BB">Foo</span><span style="color: #007700">::</span><span style="color: #0000BB">$variable</span><span style="color: #007700">;&nbsp;</span><span style="color: #FF8000">//&nbsp;This&nbsp;prints&nbsp;'static&nbsp;property'.&nbsp;It&nbsp;does&nbsp;need&nbsp;a&nbsp;$variable&nbsp;in&nbsp;this&nbsp;scope.<br /></span><span style="color: #0000BB">$variable&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"Variable"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">Foo</span><span style="color: #007700">::</span><span style="color: #0000BB">$variable</span><span style="color: #007700">();&nbsp;&nbsp;</span><span style="color: #FF8000">//&nbsp;This&nbsp;calls&nbsp;$foo-&gt;Variable()&nbsp;reading&nbsp;$variable&nbsp;in&nbsp;this&nbsp;scope.<br /><br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+     </div>
+
+    </div>
+   </p>
+   <p class="para">
+     As of PHP 5.4.0, you can call any <span class="type"><a href="http://php.net/manual/en/language.types.callable.php" class="type callable">callable</a></span> stored in a variable.
+    <div class="example" id="example-162">
+     <p><strong>Example #4 Complex callables</strong></p>
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">class&nbsp;</span><span style="color: #0000BB">Foo<br /></span><span style="color: #007700">{<br />&nbsp;&nbsp;&nbsp;&nbsp;static&nbsp;function&nbsp;</span><span style="color: #0000BB">bar</span><span style="color: #007700">()<br />&nbsp;&nbsp;&nbsp;&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"bar\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />&nbsp;&nbsp;&nbsp;&nbsp;function&nbsp;</span><span style="color: #0000BB">baz</span><span style="color: #007700">()<br />&nbsp;&nbsp;&nbsp;&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;</span><span style="color: #DD0000">"baz\n"</span><span style="color: #007700">;<br />&nbsp;&nbsp;&nbsp;&nbsp;}<br />}<br /><br /></span><span style="color: #0000BB">$func&nbsp;</span><span style="color: #007700">=&nbsp;array(</span><span style="color: #DD0000">"Foo"</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"bar"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$func</span><span style="color: #007700">();&nbsp;</span><span style="color: #FF8000">//&nbsp;prints&nbsp;"bar"<br /></span><span style="color: #0000BB">$func&nbsp;</span><span style="color: #007700">=&nbsp;array(new&nbsp;</span><span style="color: #0000BB">Foo</span><span style="color: #007700">,&nbsp;</span><span style="color: #DD0000">"baz"</span><span style="color: #007700">);<br /></span><span style="color: #0000BB">$func</span><span style="color: #007700">();&nbsp;</span><span style="color: #FF8000">//&nbsp;prints&nbsp;"baz"<br /></span><span style="color: #0000BB">$func&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">"Foo::bar"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$func</span><span style="color: #007700">();&nbsp;</span><span style="color: #FF8000">//&nbsp;prints&nbsp;"bar"&nbsp;as&nbsp;of&nbsp;PHP&nbsp;7.0.0;&nbsp;prior,&nbsp;it&nbsp;raised&nbsp;a&nbsp;fatal&nbsp;error<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+     </div>
+
+    </div>
+   </p>
+      
+   <p class="para">
+    See also <span class="function"><a href="http://php.net/manual/en/function.is-callable.php" class="function">is_callable()</a></span>, <span class="function"><a href="http://php.net/manual/en/function.call-user-func.php" class="function">call_user_func()</a></span>,
+    <a href="http://php.net/manual/en/language.variables.variable.php" class="link">
+    variable variables</a> and <span class="function"><a href="http://php.net/manual/en/function.function-exists.php" class="function">function_exists()</a></span>.
+   </p>
+   
+   <div class="sect2">
+    <h3 class="title">Changelog</h3>
+    <p class="para">
+     <table class="doctable informaltable">
+      
+       <thead>
+        <tr>
+         <th>Version</th>
+         <th>Description</th>
+        </tr>
+
+       </thead>
+
+       <tbody class="tbody">
+        <tr>
+         <td>7.0.0</td>
+         <td>
+          &#039;ClassName::methodName&#039; is allowed as variable function.
+         </td>
+        </tr>
+
+        <tr>
+         <td>5.4.0</td>
+         <td>
+          Arrays, which are valid callables, are allowed as variable functions.
+         </td>
+        </tr>
+
+       </tbody>
+      
+     </table>
+
+    </p>
+   </div>
+  </div>
+<section id="usernotes">
+ <div class="head">
+  <span class="action"><a href="http://php.net/manual/add-note.php?sect=functions.variable-functions&amp;redirect=http://php.net/manual/en/functions.variable-functions.php"><img src='http://php.net/images/notes-add@2x.png' alt='add a note' width='12' height='12'> <small>add a note</small></a></span>
+  <h3 class="title">User Contributed Notes <span class="count">12 notes</span></h3>
+ </div><div id="allnotes">
+  <div class="note" id="118064">  <div class="votes">
+    <div id="Vu118064">
+    <a href="http://php.net/manual/vote-note.php?id=118064&amp;page=functions.variable-functions&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd118064">
+    <a href="http://php.net/manual/vote-note.php?id=118064&amp;page=functions.variable-functions&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V118064" title="63% like this...">
+    31
+    </div>
+  </div>
+  <a href="#118064" class="name">
+  <strong class="user"><em>Anonymous</em></strong></a><a class="genanchor" href="#118064"> &para;</a><div class="date" title="2015-09-28 11:18"><strong>2 years ago</strong></div>
+  <div class="text" id="Hcom118064">
+<div class="phpcode"><code><span class="html">
+i'm not sure, but simple mistake in this place ($f instead $func):<br /><span class="default">&lt;?php<br />$func </span><span class="keyword">= array(</span><span class="string">"Foo"</span><span class="keyword">, </span><span class="string">"bar"</span><span class="keyword">);<br /></span><span class="default">$func</span><span class="keyword">(); </span><span class="comment">// prints "bar"<br /></span><span class="default">$f </span><span class="keyword">= array(new </span><span class="default">Foo</span><span class="keyword">, </span><span class="string">"baz"</span><span class="keyword">);<br /></span><span class="default">$func</span><span class="keyword">(); </span><span class="comment">// prints "baz"<br /></span><span class="default">$f </span><span class="keyword">= </span><span class="string">"Foo::bar"</span><span class="keyword">;<br /></span><span class="default">$func</span><span class="keyword">(); </span><span class="comment">// prints "bar" as of PHP 7.0.0; prior, it raised a fatal error<br /></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="104641">  <div class="votes">
+    <div id="Vu104641">
+    <a href="http://php.net/manual/vote-note.php?id=104641&amp;page=functions.variable-functions&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd104641">
+    <a href="http://php.net/manual/vote-note.php?id=104641&amp;page=functions.variable-functions&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V104641" title="52% like this...">
+    6
+    </div>
+  </div>
+  <a href="#104641" class="name">
+  <strong class="user"><em>Anonymous</em></strong></a><a class="genanchor" href="#104641"> &para;</a><div class="date" title="2011-06-27 11:20"><strong>6 years ago</strong></div>
+  <div class="text" id="Hcom104641">
+<div class="phpcode"><code><span class="html">
+$ wget <a href="http://www.php.net/get/php_manual_en.tar.gz/from/a/mirror" rel="nofollow" target="_blank">http://www.php.net/get/php_manual_en.tar.gz/from/a/mirror</a><br />$ grep -l "\$\.\.\." php-chunked-xhtml/function.*.html<br /><br />List of functions that accept variable arguments.<br /><span class="default">&lt;?php<br />array_diff_assoc</span><span class="keyword">()<br /></span><span class="default">array_diff_key</span><span class="keyword">()<br /></span><span class="default">array_diff_uassoc</span><span class="keyword">()<br />array()<br /></span><span class="default">array_intersect_ukey</span><span class="keyword">()<br /></span><span class="default">array_map</span><span class="keyword">()<br /></span><span class="default">array_merge</span><span class="keyword">()<br /></span><span class="default">array_merge_recursive</span><span class="keyword">()<br /></span><span class="default">array_multisort</span><span class="keyword">()<br /></span><span class="default">array_push</span><span class="keyword">()<br /></span><span class="default">array_replace</span><span class="keyword">()<br /></span><span class="default">array_replace_recursive</span><span class="keyword">()<br /></span><span class="default">array_unshift</span><span class="keyword">()<br /></span><span class="default">call_user_func</span><span class="keyword">()<br /></span><span class="default">call_user_method</span><span class="keyword">()<br /></span><span class="default">compact</span><span class="keyword">()<br /></span><span class="default">dba_open</span><span class="keyword">()<br /></span><span class="default">dba_popen</span><span class="keyword">()<br />echo()<br /></span><span class="default">forward_static_call</span><span class="keyword">()<br /></span><span class="default">fprintf</span><span class="keyword">()<br /></span><span class="default">fscanf</span><span class="keyword">()<br /></span><span class="default">httprequestpool_construct</span><span class="keyword">()<br /></span><span class="default">ibase_execute</span><span class="keyword">()<br /></span><span class="default">ibase_set_event_handler</span><span class="keyword">()<br /></span><span class="default">ibase_wait_event</span><span class="keyword">()<br />isset()<br />list()<br /></span><span class="default">maxdb_stmt_bind_param</span><span class="keyword">()<br /></span><span class="default">maxdb_stmt_bind_result</span><span class="keyword">()<br /></span><span class="default">mb_convert_variables</span><span class="keyword">()<br /></span><span class="default">newt_checkbox_tree_add_item</span><span class="keyword">()<br /></span><span class="default">newt_grid_h_close_stacked</span><span class="keyword">()<br /></span><span class="default">newt_grid_h_stacked</span><span class="keyword">()<br /></span><span class="default">newt_grid_v_close_stacked</span><span class="keyword">()<br /></span><span class="default">newt_grid_v_stacked</span><span class="keyword">()<br /></span><span class="default">newt_win_choice</span><span class="keyword">()<br /></span><span class="default">newt_win_entries</span><span class="keyword">()<br /></span><span class="default">newt_win_menu</span><span class="keyword">()<br /></span><span class="default">newt_win_message</span><span class="keyword">()<br /></span><span class="default">newt_win_ternary</span><span class="keyword">()<br /></span><span class="default">pack</span><span class="keyword">()<br /></span><span class="default">printf</span><span class="keyword">()<br /></span><span class="default">register_shutdown_function</span><span class="keyword">()<br /></span><span class="default">register_tick_function</span><span class="keyword">()<br /></span><span class="default">session_register</span><span class="keyword">()<br /></span><span class="default">setlocale</span><span class="keyword">()<br /></span><span class="default">sprintf</span><span class="keyword">()<br /></span><span class="default">sscanf</span><span class="keyword">()<br />unset()<br /></span><span class="default">var_dump</span><span class="keyword">()<br /></span><span class="default">w32api_deftype</span><span class="keyword">()<br /></span><span class="default">w32api_init_dtype</span><span class="keyword">()<br /></span><span class="default">w32api_invoke_function</span><span class="keyword">()<br /></span><span class="default">wddx_add_vars</span><span class="keyword">()<br /></span><span class="default">wddx_serialize_vars</span><span class="keyword">()<br /></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="119723">  <div class="votes">
+    <div id="Vu119723">
+    <a href="http://php.net/manual/vote-note.php?id=119723&amp;page=functions.variable-functions&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd119723">
+    <a href="http://php.net/manual/vote-note.php?id=119723&amp;page=functions.variable-functions&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V119723" title="41% like this...">
+    -6
+    </div>
+  </div>
+  <a href="#119723" class="name">
+  <strong class="user"><em>Lenix</em></strong></a><a class="genanchor" href="#119723"> &para;</a><div class="date" title="2016-08-11 03:17"><strong>1 year ago</strong></div>
+  <div class="text" id="Hcom119723">
+<div class="phpcode"><code><span class="html">
+A Variable method example:<br /><br /><span class="default">&lt;?php<br /></span><span class="keyword">class </span><span class="default">hello<br /></span><span class="keyword">{<br />&nbsp; &nbsp; private </span><span class="default">$funcname</span><span class="keyword">=</span><span class="string">'myfunc'</span><span class="keyword">;<br />&nbsp; &nbsp; public function </span><span class="default">run</span><span class="keyword">() <br />&nbsp; &nbsp; {<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$var</span><span class="keyword">=</span><span class="default">$this</span><span class="keyword">-&gt;</span><span class="default">funcname</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$this</span><span class="keyword">-&gt;</span><span class="default">$var</span><span class="keyword">();<br />&nbsp; &nbsp; }<br /><br />&nbsp; &nbsp; public function </span><span class="default">myfunc</span><span class="keyword">()<br />&nbsp; &nbsp; {<br />&nbsp; &nbsp; &nbsp; &nbsp; echo </span><span class="string">"Hello World！"</span><span class="keyword">;<br />&nbsp; &nbsp; }<br />}<br /><br /></span><span class="default">$run</span><span class="keyword">=new </span><span class="default">hello</span><span class="keyword">();<br /></span><span class="default">$run</span><span class="keyword">-&gt;</span><span class="default">run</span><span class="keyword">();<br /></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="60984">  <div class="votes">
+    <div id="Vu60984">
+    <a href="http://php.net/manual/vote-note.php?id=60984&amp;page=functions.variable-functions&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd60984">
+    <a href="http://php.net/manual/vote-note.php?id=60984&amp;page=functions.variable-functions&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V60984" title="42% like this...">
+    -9
+    </div>
+  </div>
+  <a href="#60984" class="name">
+  <strong class="user"><em>boards at gmail dot com</em></strong></a><a class="genanchor" href="#60984"> &para;</a><div class="date" title="2006-01-22 10:07"><strong>11 years ago</strong></div>
+  <div class="text" id="Hcom60984">
+<div class="phpcode"><code><span class="html">
+If you want to call a static function (PHP5) in a variable method:<br /><br />Make an array of two entries where the 0th entry is the name of the class to be invoked ('self' and 'parent' work as well) and the 1st entry is the name of the function.&nbsp; Basically, a 'callback' variable is either a string (the name of the function) or an array (0 =&gt; 'className', 1 =&gt; 'functionName').<br /><br />Then, to call that function, you can use either call_user_func() or call_user_func_array().&nbsp; Examples:<br /><br /><span class="default">&lt;?php<br /></span><span class="keyword">class </span><span class="default">A </span><span class="keyword">{<br /><br />&nbsp; protected </span><span class="default">$a</span><span class="keyword">;<br />&nbsp; protected </span><span class="default">$c</span><span class="keyword">;<br /><br />&nbsp; function </span><span class="default">__construct</span><span class="keyword">() {<br />&nbsp; &nbsp; </span><span class="default">$this</span><span class="keyword">-&gt;</span><span class="default">a </span><span class="keyword">= array(</span><span class="string">'self'</span><span class="keyword">, </span><span class="string">'a'</span><span class="keyword">);<br />&nbsp; &nbsp; </span><span class="default">$this</span><span class="keyword">-&gt;</span><span class="default">c </span><span class="keyword">= array(</span><span class="string">'self'</span><span class="keyword">, </span><span class="string">'c'</span><span class="keyword">);<br />&nbsp; }<br /><br />&nbsp; static function </span><span class="default">a</span><span class="keyword">(</span><span class="default">$name</span><span class="keyword">, &amp;</span><span class="default">$value</span><span class="keyword">) {<br />&nbsp; &nbsp; echo </span><span class="default">$name</span><span class="keyword">,</span><span class="string">' =&gt; '</span><span class="keyword">,</span><span class="default">$value</span><span class="keyword">++,</span><span class="string">"\n"</span><span class="keyword">;<br />&nbsp; }<br /><br />&nbsp; function </span><span class="default">b</span><span class="keyword">(</span><span class="default">$name</span><span class="keyword">, &amp;</span><span class="default">$value</span><span class="keyword">) {<br />&nbsp; &nbsp; </span><span class="default">call_user_func_array</span><span class="keyword">(</span><span class="default">$this</span><span class="keyword">-&gt;</span><span class="default">a</span><span class="keyword">, array(</span><span class="default">$name</span><span class="keyword">, &amp;</span><span class="default">$value</span><span class="keyword">));<br />&nbsp; }<br /><br />&nbsp; static function </span><span class="default">c</span><span class="keyword">(</span><span class="default">$str</span><span class="keyword">) {<br />&nbsp; &nbsp; echo </span><span class="default">$str</span><span class="keyword">,</span><span class="string">"\n"</span><span class="keyword">;<br />&nbsp; }<br /><br />&nbsp; function </span><span class="default">d</span><span class="keyword">() {<br />&nbsp; &nbsp; </span><span class="default">call_user_func_array</span><span class="keyword">(</span><span class="default">$this</span><span class="keyword">-&gt;</span><span class="default">c</span><span class="keyword">, </span><span class="default">func_get_args</span><span class="keyword">());<br />&nbsp; }<br /><br />&nbsp; function </span><span class="default">e</span><span class="keyword">() {<br />&nbsp; &nbsp; </span><span class="default">call_user_func</span><span class="keyword">(</span><span class="default">$this</span><span class="keyword">-&gt;</span><span class="default">c</span><span class="keyword">, </span><span class="default">func_get_arg</span><span class="keyword">(</span><span class="default">0</span><span class="keyword">));<br />&nbsp; }<br /><br />}<br /><br />class </span><span class="default">B </span><span class="keyword">extends </span><span class="default">A </span><span class="keyword">{<br /><br />&nbsp; function </span><span class="default">__construct</span><span class="keyword">() {<br />&nbsp; &nbsp; </span><span class="default">$this</span><span class="keyword">-&gt;</span><span class="default">a </span><span class="keyword">= array(</span><span class="string">'parent'</span><span class="keyword">, </span><span class="string">'a'</span><span class="keyword">);<br />&nbsp; &nbsp; </span><span class="default">$this</span><span class="keyword">-&gt;</span><span class="default">c </span><span class="keyword">= array(</span><span class="string">'self'</span><span class="keyword">, </span><span class="string">'c'</span><span class="keyword">);<br />&nbsp; }<br /><br />&nbsp; static function </span><span class="default">c</span><span class="keyword">() {<br />&nbsp; &nbsp; </span><span class="default">print_r</span><span class="keyword">(</span><span class="default">func_get_args</span><span class="keyword">());<br />&nbsp; }<br /><br />&nbsp; function </span><span class="default">d</span><span class="keyword">() {<br />&nbsp; &nbsp; </span><span class="default">call_user_func_array</span><span class="keyword">(</span><span class="default">$this</span><span class="keyword">-&gt;</span><span class="default">c</span><span class="keyword">, </span><span class="default">func_get_args</span><span class="keyword">());<br />&nbsp; }<br /><br />&nbsp; function </span><span class="default">e</span><span class="keyword">() {<br />&nbsp; &nbsp; </span><span class="default">call_user_func</span><span class="keyword">(</span><span class="default">$this</span><span class="keyword">-&gt;</span><span class="default">c</span><span class="keyword">, </span><span class="default">func_get_args</span><span class="keyword">());<br />&nbsp; }<br /><br />}<br /><br /></span><span class="default">$a </span><span class="keyword">=&amp; new </span><span class="default">A</span><span class="keyword">;<br /></span><span class="default">$b </span><span class="keyword">=&amp; new </span><span class="default">B</span><span class="keyword">;<br /></span><span class="default">$i </span><span class="keyword">= </span><span class="default">0</span><span class="keyword">;<br /><br /></span><span class="default">A</span><span class="keyword">::</span><span class="default">a</span><span class="keyword">(</span><span class="string">'index'</span><span class="keyword">, </span><span class="default">$i</span><span class="keyword">);<br /></span><span class="default">$a</span><span class="keyword">-&gt;</span><span class="default">b</span><span class="keyword">(</span><span class="string">'index'</span><span class="keyword">, </span><span class="default">$i</span><span class="keyword">);<br /><br /></span><span class="default">$a</span><span class="keyword">-&gt;</span><span class="default">c</span><span class="keyword">(</span><span class="string">'string'</span><span class="keyword">);<br /></span><span class="default">$a</span><span class="keyword">-&gt;</span><span class="default">d</span><span class="keyword">(</span><span class="string">'string'</span><span class="keyword">);<br /></span><span class="default">$a</span><span class="keyword">-&gt;</span><span class="default">e</span><span class="keyword">(</span><span class="string">'string'</span><span class="keyword">);<br /><br /></span><span class="comment"># etc.<br /></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="27839">  <div class="votes">
+    <div id="Vu27839">
+    <a href="http://php.net/manual/vote-note.php?id=27839&amp;page=functions.variable-functions&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd27839">
+    <a href="http://php.net/manual/vote-note.php?id=27839&amp;page=functions.variable-functions&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V27839" title="43% like this...">
+    -10
+    </div>
+  </div>
+  <a href="#27839" class="name">
+  <strong class="user"><em>ian at NO_SPAM dot verteron dot net</em></strong></a><a class="genanchor" href="#27839"> &para;</a><div class="date" title="2002-12-20 07:33"><strong>14 years ago</strong></div>
+  <div class="text" id="Hcom27839">
+<div class="phpcode"><code><span class="html">
+A good method to pass around variables containing function names within some class is to use the same method as the developers use in preg_replace_callback - with arrays containing an instance of the class and the function name itself.<br /><br />function call_within_an_object($fun)<br />{<br />&nbsp; if(is_array($fun))<br />&nbsp; {<br />&nbsp; &nbsp; /* call a function within an object */<br />&nbsp; &nbsp; $fun[0]-&gt;{$fun[1]}();<br />&nbsp; }<br />&nbsp; else<br />&nbsp; {<br />&nbsp; &nbsp; /* call some other function */<br />&nbsp; &nbsp; $fun();<br />&nbsp; }<br />}<br /><br />function some_other_fun()<br />{<br />&nbsp; /* code */<br />}<br /><br />class x<br />{<br />&nbsp; function fun($value)<br />&nbsp; {<br />&nbsp; &nbsp; /* some code */<br />&nbsp; }<br />}<br /><br />$x = new x();<br /><br />/* the following line calls $x-&gt;fun() */<br />call_within_an_object(Array($x, 'fun'));<br /><br />/* the following line calls some_other_fun() */<br />call_within_an_object('some_other_fun');</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="119222">  <div class="votes">
+    <div id="Vu119222">
+    <a href="http://php.net/manual/vote-note.php?id=119222&amp;page=functions.variable-functions&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd119222">
+    <a href="http://php.net/manual/vote-note.php?id=119222&amp;page=functions.variable-functions&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V119222" title="35% like this...">
+    -4
+    </div>
+  </div>
+  <a href="#119222" class="name">
+  <strong class="user"><em>josh at joshstroup dot xyz</em></strong></a><a class="genanchor" href="#119222"> &para;</a><div class="date" title="2016-04-21 05:58"><strong>1 year ago</strong></div>
+  <div class="text" id="Hcom119222">
+<div class="phpcode"><code><span class="html">
+A small, but helpful note. If you are trying to call a static function from a different namespace, you must use the fully qualified namespace, even if they have the same top level namespace(s). For example if you have the following class to call:<br /><br /><span class="default">&lt;?php<br /></span><span class="keyword">namespace </span><span class="default">Project</span><span class="keyword">\</span><span class="default">TestClass</span><span class="keyword">;<br />class </span><span class="default">Test </span><span class="keyword">{<br />&nbsp; &nbsp; static function </span><span class="default">funcToCall</span><span class="keyword">() {<br />&nbsp; &nbsp; &nbsp; &nbsp; return </span><span class="string">"test"</span><span class="keyword">;<br />&nbsp; &nbsp; }<br />}<br /></span><span class="default">?&gt;<br /></span>You must call it as:<br /><span class="default">&lt;?php<br /></span><span class="keyword">namespace </span><span class="default">Project</span><span class="keyword">\</span><span class="default">OtherTestClass</span><span class="keyword">;<br />class </span><span class="default">OtherTest </span><span class="keyword">{<br />&nbsp; &nbsp; static function </span><span class="default">callOtherFunc</span><span class="keyword">() {<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$func </span><span class="keyword">= </span><span class="string">'\Project\TestClass::funcToCall'</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$func</span><span class="keyword">();<br />&nbsp; &nbsp; }<br />}<br /></span><span class="default">?&gt;<br /></span>and not:<br /><span class="default">&lt;?php<br /></span><span class="keyword">class </span><span class="default">OtherTest </span><span class="keyword">{<br />&nbsp; &nbsp; static function </span><span class="default">callOtherFunc</span><span class="keyword">() {<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$func </span><span class="keyword">= </span><span class="string">'TestClass::funcToCall'</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$func</span><span class="keyword">();<br />&nbsp; &nbsp; }<br />}<br /></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="24931">  <div class="votes">
+    <div id="Vu24931">
+    <a href="http://php.net/manual/vote-note.php?id=24931&amp;page=functions.variable-functions&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd24931">
+    <a href="http://php.net/manual/vote-note.php?id=24931&amp;page=functions.variable-functions&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V24931" title="37% like this...">
+    -11
+    </div>
+  </div>
+  <a href="#24931" class="name">
+  <strong class="user"><em>madeinlisboa at yahoo dot com</em></strong></a><a class="genanchor" href="#24931"> &para;</a><div class="date" title="2002-09-05 05:14"><strong>15 years ago</strong></div>
+  <div class="text" id="Hcom24931">
+<div class="phpcode"><code><span class="html">
+Finally, a very easy way to call a variable method in a class:<br /><br />Example of a class:<br /><br />class Print() {<br />&nbsp; &nbsp; var $mPrintFunction;<br /><br />&nbsp; &nbsp; function Print($where_to) {<br />&nbsp; &nbsp; &nbsp; &nbsp; $this-&gt;mPrintFunction = "PrintTo$where_to";<br />&nbsp; &nbsp; }<br /><br />&nbsp; &nbsp; function PrintToScreen($content) {<br />&nbsp; &nbsp; &nbsp; &nbsp; echo $content;<br />&nbsp; &nbsp; }<br /><br />&nbsp; &nbsp; function PrintToFile($content) {<br />&nbsp; &nbsp; &nbsp; &nbsp; fputs ($file, $contents);<br />&nbsp; &nbsp; }<br /><br />.. .. ..<br /><br />&nbsp; &nbsp; // first, function name is parsed, then function is called<br />&nbsp; &nbsp; $this-&gt;{$this-&gt;mPrintFunction}("something to print");<br />}</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="21199">  <div class="votes">
+    <div id="Vu21199">
+    <a href="http://php.net/manual/vote-note.php?id=21199&amp;page=functions.variable-functions&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd21199">
+    <a href="http://php.net/manual/vote-note.php?id=21199&amp;page=functions.variable-functions&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V21199" title="34% like this...">
+    -11
+    </div>
+  </div>
+  <a href="#21199" class="name">
+  <strong class="user"><em>msmith at pmcc dot com</em></strong></a><a class="genanchor" href="#21199"> &para;</a><div class="date" title="2002-05-02 04:49"><strong>15 years ago</strong></div>
+  <div class="text" id="Hcom21199">
+<div class="phpcode"><code><span class="html">
+Try the call_user_func() function.&nbsp; I find it's a bit simpler to implement, and at very least makes your code a bit more readable... much more readable and simpler to research for someone who isn't familiar with this construct.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="52491">  <div class="votes">
+    <div id="Vu52491">
+    <a href="http://php.net/manual/vote-note.php?id=52491&amp;page=functions.variable-functions&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd52491">
+    <a href="http://php.net/manual/vote-note.php?id=52491&amp;page=functions.variable-functions&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V52491" title="30% like this...">
+    -18
+    </div>
+  </div>
+  <a href="#52491" class="name">
+  <strong class="user"><em>Storm</em></strong></a><a class="genanchor" href="#52491"> &para;</a><div class="date" title="2005-05-03 08:34"><strong>12 years ago</strong></div>
+  <div class="text" id="Hcom52491">
+<div class="phpcode"><code><span class="html">
+This can quite useful for a dynamic database class:<br /><br />(Note: This just a simplified section)<br /><br /><span class="default">&lt;?php<br /></span><span class="keyword">class </span><span class="default">db </span><span class="keyword">{<br /><br />&nbsp; &nbsp; private </span><span class="default">$host </span><span class="keyword">= </span><span class="string">'localhost'</span><span class="keyword">;<br />&nbsp; &nbsp; private </span><span class="default">$user </span><span class="keyword">= </span><span class="string">'username'</span><span class="keyword">;<br />&nbsp; &nbsp; private </span><span class="default">$pass </span><span class="keyword">= </span><span class="string">'password'</span><span class="keyword">;<br />&nbsp; &nbsp; private </span><span class="default">$type </span><span class="keyword">= </span><span class="string">'mysqli'</span><span class="keyword">;<br />&nbsp; &nbsp; <br />&nbsp; &nbsp; public </span><span class="default">$lid </span><span class="keyword">= </span><span class="default">0</span><span class="keyword">;<br /><br />&nbsp; &nbsp; </span><span class="comment">// Connection function<br />&nbsp; &nbsp; </span><span class="keyword">function </span><span class="default">connect</span><span class="keyword">() {<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$connect </span><span class="keyword">= </span><span class="default">$this</span><span class="keyword">-&gt;</span><span class="default">type</span><span class="keyword">.</span><span class="string">'_connect'</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <br />&nbsp; &nbsp; &nbsp; &nbsp; if (!</span><span class="default">$this</span><span class="keyword">-&gt;</span><span class="default">lid </span><span class="keyword">= </span><span class="default">$connect</span><span class="keyword">(</span><span class="default">$this</span><span class="keyword">-&gt;</span><span class="default">host</span><span class="keyword">, </span><span class="default">$this</span><span class="keyword">-&gt;</span><span class="default">user</span><span class="keyword">, </span><span class="default">$this</span><span class="keyword">-&gt;</span><span class="default">pass</span><span class="keyword">)) {<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; die(</span><span class="string">'Unable to connect.'</span><span class="keyword">);<br />&nbsp; &nbsp; &nbsp; &nbsp; }<br /> }<br />}<br /></span><span class="default">$db&nbsp; </span><span class="keyword">= new </span><span class="default">db</span><span class="keyword">;<br /></span><span class="default">$db</span><span class="keyword">-&gt;</span><span class="default">connect</span><span class="keyword">();<br /></span><span class="default">?&gt;<br /></span><br />Much easier than having multiple database classes or even extending a base class.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="120932">  <div class="votes">
+    <div id="Vu120932">
+    <a href="http://php.net/manual/vote-note.php?id=120932&amp;page=functions.variable-functions&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd120932">
+    <a href="http://php.net/manual/vote-note.php?id=120932&amp;page=functions.variable-functions&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V120932" title="18% like this...">
+    -7
+    </div>
+  </div>
+  <a href="#120932" class="name">
+  <strong class="user"><em>lyubingo at qq dot com</em></strong></a><a class="genanchor" href="#120932"> &para;</a><div class="date" title="2017-04-05 08:49"><strong>8 months ago</strong></div>
+  <div class="text" id="Hcom120932">
+<div class="phpcode"><code><span class="html">
+I test it like this in PHP Version 5.6.8<br />$func = array("Foo", "bar");<br />$func(); // prints "bar"<br />$f = array(new Foo, "baz");<br />$func(); // prints "bar"<br />$f = "Foo::bar";<br />$func(); // prints "bar"</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="97694">  <div class="votes">
+    <div id="Vu97694">
+    <a href="http://php.net/manual/vote-note.php?id=97694&amp;page=functions.variable-functions&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd97694">
+    <a href="http://php.net/manual/vote-note.php?id=97694&amp;page=functions.variable-functions&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V97694" title="25% like this...">
+    -20
+    </div>
+  </div>
+  <a href="#97694" class="name">
+  <strong class="user"><em>AnonymousPoster at disposeamail dot com</em></strong></a><a class="genanchor" href="#97694"> &para;</a><div class="date" title="2010-05-03 02:20"><strong>7 years ago</strong></div>
+  <div class="text" id="Hcom97694">
+<div class="phpcode"><code><span class="html">
+Variable functions allows higher-order programming.<br /><br />Here is the classical map example.<br /><br /><span class="default">&lt;?php<br /></span><span class="comment">/*<br /> * Map function. At each $element of the $list, calls $fun([$arg1,[$arg2,[...,]],$element,$accumulator),<br /> *&nbsp; &nbsp; &nbsp; stores the return value into $accumulator for the next loop. Returns the last return value of the function,<br /> *<br /> * Notes : uses call_user_func_array() so passing parameters doesn't depend on $fun signature<br /> *&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; It also returns FALSE upon error.<br /> *&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Please check the php documentation for more information<br /> */<br /></span><span class="keyword">function </span><span class="default">map</span><span class="keyword">(</span><span class="default">$fun</span><span class="keyword">, </span><span class="default">$list</span><span class="keyword">,</span><span class="default">$params</span><span class="keyword">=array()){<br />&nbsp; &nbsp; </span><span class="default">$acc</span><span class="keyword">=</span><span class="default">NULL</span><span class="keyword">;<br />&nbsp; &nbsp; </span><span class="default">$last</span><span class="keyword">=</span><span class="default">array_push</span><span class="keyword">(</span><span class="default">$params</span><span class="keyword">, </span><span class="default">NULL</span><span class="keyword">,</span><span class="default">$acc</span><span class="keyword">)-</span><span class="default">1</span><span class="keyword">; </span><span class="comment">// alloc $element and $acc at the end<br />&nbsp; &nbsp; </span><span class="keyword">foreach(</span><span class="default">$list </span><span class="keyword">as </span><span class="default">$params</span><span class="keyword">[</span><span class="default">$last</span><span class="keyword">-</span><span class="default">1</span><span class="keyword">]){<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$params</span><span class="keyword">[</span><span class="default">$last</span><span class="keyword">]=</span><span class="default">call_user_func_array</span><span class="keyword">(</span><span class="default">$fun </span><span class="keyword">, </span><span class="default">$params&nbsp; </span><span class="keyword">);<br />&nbsp; &nbsp; }<br />&nbsp; &nbsp; </span><span class="default">$acc</span><span class="keyword">=</span><span class="default">array_pop</span><span class="keyword">(</span><span class="default">$params</span><span class="keyword">);<br />&nbsp; &nbsp; return </span><span class="default">$acc</span><span class="keyword">;<br />}<br /><br />function </span><span class="default">add</span><span class="keyword">(</span><span class="default">$element</span><span class="keyword">,</span><span class="default">$acc</span><span class="keyword">){ </span><span class="comment">// maybe only with multi-length function<br />&nbsp; &nbsp; </span><span class="keyword">if (</span><span class="default">$acc </span><span class="keyword">== </span><span class="default">NULL</span><span class="keyword">);<br />&nbsp; &nbsp; return </span><span class="default">$acc</span><span class="keyword">=</span><span class="default">$element</span><span class="keyword">+</span><span class="default">$acc</span><span class="keyword">;<br />}<br /><br /></span><span class="default">$result</span><span class="keyword">=</span><span class="default">0</span><span class="keyword">;<br /></span><span class="default">$result</span><span class="keyword">=</span><span class="default">addTo</span><span class="keyword">(</span><span class="default">$result</span><span class="keyword">,</span><span class="default">1</span><span class="keyword">);<br /></span><span class="default">$result</span><span class="keyword">=</span><span class="default">addTo</span><span class="keyword">(</span><span class="default">$result</span><span class="keyword">,</span><span class="default">2</span><span class="keyword">);<br /></span><span class="default">$result</span><span class="keyword">=</span><span class="default">addTo</span><span class="keyword">(</span><span class="default">$result</span><span class="keyword">,</span><span class="default">3</span><span class="keyword">);<br />echo </span><span class="string">"result = </span><span class="default">$result</span><span class="string">\n"</span><span class="keyword">;<br /><br /></span><span class="default">$result</span><span class="keyword">=</span><span class="default">0</span><span class="keyword">;<br /></span><span class="default">$result</span><span class="keyword">=</span><span class="default">map</span><span class="keyword">(</span><span class="string">'addTo'</span><span class="keyword">,array(</span><span class="default">1</span><span class="keyword">,</span><span class="default">2</span><span class="keyword">,</span><span class="default">3</span><span class="keyword">));<br />echo </span><span class="string">"result= </span><span class="default">$result</span><span class="string">\n"</span><span class="keyword">;<br /></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="103749">  <div class="votes">
+    <div id="Vu103749">
+    <a href="http://php.net/manual/vote-note.php?id=103749&amp;page=functions.variable-functions&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd103749">
+    <a href="http://php.net/manual/vote-note.php?id=103749&amp;page=functions.variable-functions&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V103749" title="18% like this...">
+    -40
+    </div>
+  </div>
+  <a href="#103749" class="name">
+  <strong class="user"><em>imurnane at internode on net</em></strong></a><a class="genanchor" href="#103749"> &para;</a><div class="date" title="2011-05-02 03:05"><strong>6 years ago</strong></div>
+  <div class="text" id="Hcom103749">
+<div class="phpcode"><code><span class="html">
+Create and call a dynamically named function<br /><br /><span class="default">&lt;?php<br />$tmp </span><span class="keyword">= </span><span class="string">"foo"</span><span class="keyword">;<br />$</span><span class="default">$tmp </span><span class="keyword">= function() {<br />&nbsp; &nbsp; global </span><span class="default">$tmp</span><span class="keyword">;<br />&nbsp; &nbsp; echo </span><span class="default">$tmp</span><span class="keyword">;<br />}; <br /><br />$</span><span class="default">$tmp</span><span class="keyword">();<br /></span><span class="default">?&gt;<br /></span><br />Outputs "foo"</span>
+</code></div>
+  </div>
+ </div></div>
+
+ <div class="foot"><a href="http://php.net/manual/add-note.php?sect=functions.variable-functions&amp;redirect=http://php.net/manual/en/functions.variable-functions.php"><img src='http://php.net/images/notes-add@2x.png' alt='add a note' width='12' height='12'> <small>add a note</small></a></div>
+</section>    </section><!-- layout-content -->
+        <aside class='layout-menu'>
+    
+        <ul class='parent-menu-list'>
+                                    <li>
+                <a href="http://php.net/manual/en/language.functions.php">Functions</a>
+    
+                                    <ul class='child-menu-list'>
+    
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/functions.user-defined.php" title="User-&#8203;defined functions">User-&#8203;defined functions</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/functions.arguments.php" title="Function arguments">Function arguments</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/functions.returning-values.php" title="Returning values">Returning values</a>
+                        </li>
+                          
+                        <li class="current">
+                            <a href="http://php.net/manual/en/functions.variable-functions.php" title="Variable functions">Variable functions</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/functions.internal.php" title="Internal (built-&#8203;in) functions">Internal (built-&#8203;in) functions</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/functions.anonymous.php" title="Anonymous functions">Anonymous functions</a>
+                        </li>
+                            
+                    </ul>
+                    
+            </li>
+                        
+                    </ul>
+    </aside>
+
+
+  </div><!-- layout -->
+         
+  <footer>
+    <div class="container footer-content">
+      <div class="row-fluid">
+      <ul class="footmenu">
+        <li><a href="http://php.net/copyright.php">Copyright &copy; 2001-2017 The PHP Group</a></li>
+        <li><a href="http://php.net/my.php">My PHP.net</a></li>
+        <li><a href="http://php.net/contact.php">Contact</a></li>
+        <li><a href="http://php.net/sites.php">Other PHP.net sites</a></li>
+        <li><a href="http://php.net/mirrors.php">Mirror sites</a></li>
+        <li><a href="http://php.net/privacy.php">Privacy policy</a></li>
+      </ul>
+      </div>
+    </div>
+  </footer>
+
+    
+ <!-- External and third party libraries. -->
+ <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/modernizr.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/hogan-2.0.0.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/typeahead.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/mousetrap.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/search.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1500560403&amp;f=/js/common.js"></script>
+
+<a id="toTop" href="javascript:;"><span id="toTopHover"></span><img width="40" height="40" alt="To Top" src="http://php.net/images/to-top@2x.png"></a>
+
+</body>
+
+<!-- Mirrored from php.net/manual/en/functions.variable-functions.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Dec 2017 23:18:11 GMT -->
+</html>
+

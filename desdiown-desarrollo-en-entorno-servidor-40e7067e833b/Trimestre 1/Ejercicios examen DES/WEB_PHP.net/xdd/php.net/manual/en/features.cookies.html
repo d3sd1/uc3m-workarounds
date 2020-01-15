@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<!-- Mirrored from php.net/manual/en/features.cookies.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Dec 2017 23:15:28 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+  <title>PHP: Cookies - Manual </title>
+
+ <link rel="shortcut icon" href="../../favicon.ico">
+ <link rel="search" type="application/opensearchdescription+xml" href="../../phpnetimprovedsearch.html" title="Add PHP.net search">
+ <link rel="alternate" type="application/atom+xml" href="../../releases/feed.php" title="PHP Release feed">
+ <link rel="alternate" type="application/atom+xml" href="../../feed.atom" title="PHP: Hypertext Preprocessor">
+
+ <link rel="canonical" href="features.cookies.html">
+ <link rel="shorturl" href="../../cookies.html">
+ <link rel="alternate" href="../../cookies.html" hreflang="x-default">
+
+ <link rel="contents" href="index-2.html">
+ <link rel="index" href="features.html">
+ <link rel="prev" href="features.http-auth.html">
+ <link rel="next" href="features.sessions.html">
+
+ <link rel="alternate" href="features.cookies.html" hreflang="en">
+ <link rel="alternate" href="../pt_BR/features.cookies.html" hreflang="pt_BR">
+ <link rel="alternate" href="../zh/features.cookies.html" hreflang="zh">
+ <link rel="alternate" href="../fr/features.cookies.html" hreflang="fr">
+ <link rel="alternate" href="../de/features.cookies.html" hreflang="de">
+ <link rel="alternate" href="../ja/features.cookies.html" hreflang="ja">
+ <link rel="alternate" href="../ro/features.cookies.html" hreflang="ro">
+ <link rel="alternate" href="../ru/features.cookies.html" hreflang="ru">
+ <link rel="alternate" href="../es/features.cookies.html" hreflang="es">
+ <link rel="alternate" href="../tr/features.cookies.html" hreflang="tr">
+
+<link rel="stylesheet" type="text/css" href="../../cached0152.css?t=1421837618&amp;f=/fonts/Fira/fira.css" media="screen">
+<link rel="stylesheet" type="text/css" href="../../cached15be.css?t=1421837618&amp;f=/fonts/Font-Awesome/css/fontello.css" media="screen">
+<link rel="stylesheet" type="text/css" href="../../cached3c70.css?t=1478800802&amp;f=/styles/theme-base.css" media="screen">
+<link rel="stylesheet" type="text/css" href="../../cached00eb.css?t=1449787206&amp;f=/styles/theme-medium.css" media="screen">
+
+ <!--[if lte IE 7]>
+ <link rel="stylesheet" type="text/css" href="http://php.net/styles/workarounds.ie7.css" media="screen">
+ <![endif]-->
+
+ <!--[if lte IE 8]>
+ <script type="text/javascript">
+  window.brokenIE = true;
+ </script>
+ <![endif]-->
+
+ <!--[if lte IE 9]>
+ <link rel="stylesheet" type="text/css" href="http://php.net/styles/workarounds.ie9.css" media="screen">
+ <![endif]-->
+
+ <!--[if IE]>
+ <script type="text/javascript" src="http://php.net/js/ext/html5.js"></script>
+ <![endif]-->
+
+ <base >
+
+</head>
+<body class="docs ">
+
+<nav id="head-nav" class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <a href="../../index.html" class="brand"><img src="../../images/logos/php-logo.svg" width="48" height="24" alt="php"></a>
+    <div id="mainmenu-toggle-overlay"></div>
+    <input type="checkbox" id="mainmenu-toggle">
+    <ul class="nav">
+      <li class=""><a href="../../downloads.html">Downloads</a></li>
+      <li class="active"><a href="../../docs.html">Documentation</a></li>
+      <li class=""><a href="../../get-involved.html" >Get Involved</a></li>
+      <li class=""><a href="../../support.html">Help</a></li>
+    </ul>
+    <form class="navbar-search" id="topsearch" action="http://php.net/search.php">
+      <input type="hidden" name="show" value="quickref">
+      <input type="search" name="pattern" class="search-query" placeholder="Search" accesskey="s">
+    </form>
+  </div>
+  <div id="flash-message"></div>
+</nav>
+<nav id="trick"><div><dl>
+<dt><a href='getting-started.html'>Getting Started</a></dt>
+	<dd><a href='introduction.html'>Introduction</a></dd>
+	<dd><a href='tutorial.html'>A simple tutorial</a></dd>
+<dt><a href='langref.html'>Language Reference</a></dt>
+	<dd><a href='language.basic-syntax.html'>Basic syntax</a></dd>
+	<dd><a href='language.types.html'>Types</a></dd>
+	<dd><a href='language.variables.html'>Variables</a></dd>
+	<dd><a href='language.constants.html'>Constants</a></dd>
+	<dd><a href='language.expressions.html'>Expressions</a></dd>
+	<dd><a href='language.operators.html'>Operators</a></dd>
+	<dd><a href='language.control-structures.html'>Control Structures</a></dd>
+	<dd><a href='language.functions.html'>Functions</a></dd>
+	<dd><a href='language.oop5.html'>Classes and Objects</a></dd>
+	<dd><a href='language.namespaces.html'>Namespaces</a></dd>
+	<dd><a href='language.errors.html'>Errors</a></dd>
+	<dd><a href='language.exceptions.html'>Exceptions</a></dd>
+	<dd><a href='language.generators.html'>Generators</a></dd>
+	<dd><a href='language.references.html'>References Explained</a></dd>
+	<dd><a href='reserved.variables.html'>Predefined Variables</a></dd>
+	<dd><a href='reserved.exceptions.html'>Predefined Exceptions</a></dd>
+	<dd><a href='reserved.interfaces.html'>Predefined Interfaces and Classes</a></dd>
+	<dd><a href='context.html'>Context options and parameters</a></dd>
+	<dd><a href='wrappers.html'>Supported Protocols and Wrappers</a></dd>
+</dl>
+<dl>
+<dt><a href='security.html'>Security</a></dt>
+	<dd><a href='security.intro.html'>Introduction</a></dd>
+	<dd><a href='security.general.html'>General considerations</a></dd>
+	<dd><a href='security.cgi-bin.html'>Installed as CGI binary</a></dd>
+	<dd><a href='security.apache.html'>Installed as an Apache module</a></dd>
+	<dd><a href='security.sessions.html'>Session Security</a></dd>
+	<dd><a href='security.filesystem.html'>Filesystem Security</a></dd>
+	<dd><a href='security.database.html'>Database Security</a></dd>
+	<dd><a href='security.errors.html'>Error Reporting</a></dd>
+	<dd><a href='security.globals.html'>Using Register Globals</a></dd>
+	<dd><a href='security.variables.html'>User Submitted Data</a></dd>
+	<dd><a href='security.magicquotes.html'>Magic Quotes</a></dd>
+	<dd><a href='security.hiding.html'>Hiding PHP</a></dd>
+	<dd><a href='security.current.html'>Keeping Current</a></dd>
+<dt><a href='features.html'>Features</a></dt>
+	<dd><a href='features.http-auth.html'>HTTP authentication with PHP</a></dd>
+	<dd><a href='features.cookies.html'>Cookies</a></dd>
+	<dd><a href='features.sessions.html'>Sessions</a></dd>
+	<dd><a href='features.xforms.html'>Dealing with XForms</a></dd>
+	<dd><a href='features.file-upload.html'>Handling file uploads</a></dd>
+	<dd><a href='features.remote-files.html'>Using remote files</a></dd>
+	<dd><a href='features.connection-handling.html'>Connection handling</a></dd>
+	<dd><a href='features.persistent-connections.html'>Persistent Database Connections</a></dd>
+	<dd><a href='features.safe-mode.html'>Safe Mode</a></dd>
+	<dd><a href='features.commandline.html'>Command line usage</a></dd>
+	<dd><a href='features.gc.html'>Garbage Collection</a></dd>
+	<dd><a href='features.dtrace.html'>DTrace Dynamic Tracing</a></dd>
+</dl>
+<dl>
+<dt><a href='funcref.html'>Function Reference</a></dt>
+	<dd><a href='refs.basic.php.html'>Affecting PHP's Behaviour</a></dd>
+	<dd><a href='refs.utilspec.audio.html'>Audio Formats Manipulation</a></dd>
+	<dd><a href='refs.remote.auth.html'>Authentication Services</a></dd>
+	<dd><a href='refs.utilspec.cmdline.html'>Command Line Specific Extensions</a></dd>
+	<dd><a href='refs.compression.html'>Compression and Archive Extensions</a></dd>
+	<dd><a href='refs.creditcard.html'>Credit Card Processing</a></dd>
+	<dd><a href='refs.crypto.html'>Cryptography Extensions</a></dd>
+	<dd><a href='refs.database.html'>Database Extensions</a></dd>
+	<dd><a href='refs.calendar.html'>Date and Time Related Extensions</a></dd>
+	<dd><a href='refs.fileprocess.file.html'>File System Related Extensions</a></dd>
+	<dd><a href='refs.international.html'>Human Language and Character Encoding Support</a></dd>
+	<dd><a href='refs.utilspec.image.html'>Image Processing and Generation</a></dd>
+	<dd><a href='refs.remote.mail.html'>Mail Related Extensions</a></dd>
+	<dd><a href='refs.math.html'>Mathematical Extensions</a></dd>
+	<dd><a href='refs.utilspec.nontext.html'>Non-Text MIME Output</a></dd>
+	<dd><a href='refs.fileprocess.process.html'>Process Control Extensions</a></dd>
+	<dd><a href='refs.basic.other.html'>Other Basic Extensions</a></dd>
+	<dd><a href='refs.remote.other.html'>Other Services</a></dd>
+	<dd><a href='refs.search.html'>Search Engine Extensions</a></dd>
+	<dd><a href='refs.utilspec.server.html'>Server Specific Extensions</a></dd>
+	<dd><a href='refs.basic.session.html'>Session Extensions</a></dd>
+	<dd><a href='refs.basic.text.html'>Text Processing</a></dd>
+	<dd><a href='refs.basic.vartype.html'>Variable and Type Related Extensions</a></dd>
+	<dd><a href='refs.webservice.html'>Web Services</a></dd>
+	<dd><a href='refs.utilspec.windows.html'>Windows Only Extensions</a></dd>
+	<dd><a href='refs.xml.html'>XML Manipulation</a></dd>
+	<dd><a href='refs.ui.html'>GUI Extensions</a></dd>
+</dl>
+<dl>
+<dt>Keyboard Shortcuts</dt><dt>?</dt>
+<dd>This help</dd>
+<dt>j</dt>
+<dd>Next menu item</dd>
+<dt>k</dt>
+<dd>Previous menu item</dd>
+<dt>g p</dt>
+<dd>Previous man page</dd>
+<dt>g n</dt>
+<dd>Next man page</dd>
+<dt>G</dt>
+<dd>Scroll to bottom</dd>
+<dt>g g</dt>
+<dd>Scroll to top</dd>
+<dt>g h</dt>
+<dd>Goto homepage</dd>
+<dt>g s</dt>
+<dd>Goto search<br>(current page)</dd>
+<dt>/</dt>
+<dd>Focus search box</dd>
+</dl></div></nav>
+<div id="goto">
+    <div class="search">
+         <div class="text"></div>
+         <div class="results"><ul></ul></div>
+   </div>
+</div>
+
+  <div id="breadcrumbs" class="clearfix">
+    <div id="breadcrumbs-inner">
+          <div class="next">
+        <a href="features.sessions.html">
+          Sessions &raquo;
+        </a>
+      </div>
+              <div class="prev">
+        <a href="features.http-auth.html">
+          &laquo; HTTP authentication with PHP        </a>
+      </div>
+          <ul>
+            <li><a href='index-2.html'>PHP Manual</a></li>      <li><a href='features.html'>Features</a></li>      </ul>
+    </div>
+  </div>
+
+
+
+
+<div id="layout" class="clearfix">
+  <section id="layout-content">
+  <div class="page-tools">
+    <div class="change-language">
+      <form action="http://php.net/manual/change.php" method="get" id="changelang" name="changelang">
+        <fieldset>
+          <label for="changelang-langs">Change language:</label>
+          <select onchange="document.changelang.submit()" name="page" id="changelang-langs">
+            <option value='en/features.cookies.php' selected="selected">English</option>
+            <option value='pt_BR/features.cookies.html'>Brazilian Portuguese</option>
+            <option value='zh/features.cookies.html'>Chinese (Simplified)</option>
+            <option value='fr/features.cookies.html'>French</option>
+            <option value='de/features.cookies.html'>German</option>
+            <option value='ja/features.cookies.html'>Japanese</option>
+            <option value='ro/features.cookies.html'>Romanian</option>
+            <option value='ru/features.cookies.html'>Russian</option>
+            <option value='es/features.cookies.html'>Spanish</option>
+            <option value='tr/features.cookies.html'>Turkish</option>
+            <option value="help-translate.html">Other</option>
+          </select>
+        </fieldset>
+      </form>
+    </div>
+    <div class="edit-bug">
+      <a href="https://edit.php.net/?project=PHP&amp;perm=en/features.cookies.php">Edit</a>
+      <a href="https://bugs.php.net/report.php?bug_type=Documentation+problem&amp;manpage=features.cookies">Report a Bug</a>
+    </div>
+  </div><div id="features.cookies" class="chapter">
+  <h1>Cookies</h1>
+
+
+  <p class="para">
+   PHP transparently supports <acronym title="Hypertext Transfer Protocol">HTTP</acronym> cookies.  Cookies are a mechanism for
+   storing data in the remote browser and thus tracking or identifying return
+   users.  You can set cookies using the <span class="function"><a href="function.setcookie.html" class="function">setcookie()</a></span> or
+   <span class="function"><a href="function.setrawcookie.html" class="function">setrawcookie()</a></span>
+   function.  Cookies are part of the <acronym title="Hypertext Transfer Protocol">HTTP</acronym> header, so
+   <span class="function"><a href="function.setcookie.html" class="function">setcookie()</a></span> must be called before any output is sent to
+   the browser.  This is the same limitation that <span class="function"><a href="function.header.html" class="function">header()</a></span>
+   has. You can use the <a href="ref.outcontrol.html" class="link">output buffering
+   functions</a> to delay the script output until you have decided whether
+   or not to set any cookies or send any headers.
+  </p>
+
+  <p class="para">
+   Any cookies sent to server from the client will automatically be included into
+   a <var class="varname"><var class="varname"><a href="reserved.variables.cookies.html" class="classname">$_COOKIE</a></var></var> auto-global
+   array if <a href="ini.core.html#ini.variables-order" class="link">variables_order</a>
+   contains &quot;C&quot;. If you wish to assign multiple values to a single
+   cookie, just add <em>[]</em> to the cookie name.
+  </p>
+
+  <p class="para">
+   Depending on <a href="ini.core.html#ini.register-globals" class="link">register_globals</a>,
+   regular PHP variables can be created from cookies. However it&#039;s not
+   recommended to rely on them as this feature is often turned off for the
+   sake of security.
+  </p>
+
+  <p class="para">
+   For more details, including notes on browser bugs, see the
+   <span class="function"><a href="function.setcookie.html" class="function">setcookie()</a></span> and <span class="function"><a href="function.setrawcookie.html" class="function">setrawcookie()</a></span>
+   function.
+  </p>
+
+ </div>
+
+<section id="usernotes">
+ <div class="head">
+  <span class="action"><a href="../add-note5cb8.html?sect=features.cookies&amp;redirect=http://php.net/manual/en/features.cookies.php"><img src='../../images/notes-add%402x.png' alt='add a note' width='12' height='12'> <small>add a note</small></a></span>
+  <h3 class="title">User Contributed Notes <span class="count">7 notes</span></h3>
+ </div><div id="allnotes">
+  <div class="note" id="116837">  <div class="votes">
+    <div id="Vu116837">
+    <a href="../vote-note94d5.html?id=116837&amp;page=features.cookies&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd116837">
+    <a href="../vote-note1f74.html?id=116837&amp;page=features.cookies&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V116837" title="61% like this...">
+    140
+    </div>
+  </div>
+  <a href="#116837" class="name">
+  <strong class="user"><em>Tugrul</em></strong></a><a class="genanchor" href="#116837"> &para;</a><div class="date" title="2015-03-08 03:17"><strong>2 years ago</strong></div>
+  <div class="text" id="Hcom116837">
+<div class="phpcode"><code><span class="html">
+Setting new cookie<br />=============================<br /><span class="default">&lt;?php <br />setcookie</span><span class="keyword">(</span><span class="string">"name"</span><span class="keyword">,</span><span class="string">"value"</span><span class="keyword">,</span><span class="default">time</span><span class="keyword">()+</span><span class="default">$int</span><span class="keyword">);<br /></span><span class="comment">/*name is your cookie's name<br />value is cookie's value<br />$int is time of cookie expires*/<br /></span><span class="default">?&gt;<br /></span><br />Getting Cookie<br />=============================<br /><span class="default">&lt;?php <br /></span><span class="keyword">echo </span><span class="default">$_COOKIE</span><span class="keyword">[</span><span class="string">"your cookie name"</span><span class="keyword">];<br /></span><span class="default">?&gt;<br /></span><br />Updating Cookie<br />=============================<br /><span class="default">&lt;?php <br />setcookie</span><span class="keyword">(</span><span class="string">"color"</span><span class="keyword">,</span><span class="string">"red"</span><span class="keyword">);<br />echo </span><span class="default">$_COOKIE</span><span class="keyword">[</span><span class="string">"color"</span><span class="keyword">];<br /></span><span class="comment">/*color is red*/<br />/* your codes and functions*/<br /></span><span class="default">setcookie</span><span class="keyword">(</span><span class="string">"color"</span><span class="keyword">,</span><span class="string">"blue"</span><span class="keyword">);<br />echo </span><span class="default">$_COOKIE</span><span class="keyword">[</span><span class="string">"color"</span><span class="keyword">];<br /></span><span class="comment">/*new color is blue*/<br /></span><span class="default">?&gt;<br /></span><br />Deleting Cookie<br />==============================<br /><span class="default">&lt;?php <br /></span><span class="keyword">unset(</span><span class="default">$_COOKIE</span><span class="keyword">[</span><span class="string">"yourcookie"</span><span class="keyword">]);<br /></span><span class="comment">/*Or*/<br /></span><span class="default">setcookie</span><span class="keyword">(</span><span class="string">"yourcookie"</span><span class="keyword">,</span><span class="string">"yourvalue"</span><span class="keyword">,</span><span class="default">time</span><span class="keyword">()-</span><span class="default">1</span><span class="keyword">);<br /></span><span class="comment">/*it expired so it's deleted*/<br /></span><span class="default">?&gt;<br /></span><br />Reference: <a href="http://gencbilgin.net/php-cookie-kullanimi.html" rel="nofollow" target="_blank">http://gencbilgin.net/php-cookie-kullanimi.html</a></span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="36058">  <div class="votes">
+    <div id="Vu36058">
+    <a href="../vote-note22e7.html?id=36058&amp;page=features.cookies&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd36058">
+    <a href="../vote-noteca4f.html?id=36058&amp;page=features.cookies&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V36058" title="51% like this...">
+    7
+    </div>
+  </div>
+  <a href="#36058" class="name">
+  <strong class="user"><em>myfirstname at braincell dot cx</em></strong></a><a class="genanchor" href="#36058"> &para;</a><div class="date" title="2003-09-24 08:47"><strong>14 years ago</strong></div>
+  <div class="text" id="Hcom36058">
+<div class="phpcode"><code><span class="html">
+[Editor's note: Wilson's comment has been deleted since it didn't contain much useful information, but this note is preserved although its reference is lost]<br /><br />Just a general comment on Wilton's code snippet: It's generally considered very bad practice to store usernames and/or passwords in cookies, whether or not they're obsfucated.&nbsp; Many spyware programs make a point of stealing cookie contents.<br /><br />A much better solution would be to either use the PHP built in session handler or create something similar using your own cookie-based session ID.&nbsp; This session ID could be tied to the source IP address or can be timed out as required but since the ID can be expired separately from the authentication criteria the authentication itself is not compromised.<br /><br />Stuart Livings</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="57560">  <div class="votes">
+    <div id="Vu57560">
+    <a href="../vote-noteffe4.html?id=57560&amp;page=features.cookies&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd57560">
+    <a href="../vote-notee761.html?id=57560&amp;page=features.cookies&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V57560" title="44% like this...">
+    -15
+    </div>
+  </div>
+  <a href="#57560" class="name">
+  <strong class="user"><em>bmorency at jbmlogic dot com</em></strong></a><a class="genanchor" href="#57560"> &para;</a><div class="date" title="2005-10-07 05:14"><strong>12 years ago</strong></div>
+  <div class="text" id="Hcom57560">
+<div class="phpcode"><code><span class="html">
+In response to the solution posted in the comment below, there are some practical issues with this solution that must be kept in mind and handled by your code. I developed an application using a similar "use-it-once" key to manage sessions and it worked great but we got some complaints about legitimate users getting logged out without reasons. Turns out the problem was not tentative highjacking, it was&nbsp; either:<br /><br />A- Users double click on links or make 2 clicks very fast. The same key is sent for the 2 clicks because the new key from the first click didn't get to the browser on time for the second one but the session on the server did trash the key for the new one. Thus, the second click causes a termination of the session. (install the LiveHttpHeaders extension on firefox and look at the headers sent when you click twice very fast, you'll see the same cookie sent on both and the new cookie getting back from the server too late).<br /><br />B- For any given reason, the server experiences a slow down and the response with the new key (which has replaced the old one on the server) is not returned to the browser fast enough. The user gets tired of waiting and clicks somewhere else. He gets logged out because this second click send the old key which won't match the one you have on your server.<br /><br />Our solution was to set up a grace period where the old key was still valid (the current key and the previous key were both kept at all times, we used 15 seconds as a grace period where the old key could still be used). This has the drawback of increasing the window of time for a person to highjack the session but if you tie the validity of the old key to an IP address and/or user agent string, you still get pretty good session security with very very few undesired session termination.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="71256">  <div class="votes">
+    <div id="Vu71256">
+    <a href="../vote-note6ebc.html?id=71256&amp;page=features.cookies&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd71256">
+    <a href="../vote-notebda1.html?id=71256&amp;page=features.cookies&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V71256" title="44% like this...">
+    -28
+    </div>
+  </div>
+  <a href="#71256" class="name">
+  <strong class="user"><em>ingen at stocken.ws</em></strong></a><a class="genanchor" href="#71256"> &para;</a><div class="date" title="2006-11-19 12:26"><strong>11 years ago</strong></div>
+  <div class="text" id="Hcom71256">
+<div class="phpcode"><code><span class="html">
+If you want a secured session not tied to the client IP you can use the valid-for-one-query method below, but to safeguard against a scenario where the legitimate user clicks twice, you can use a shutdown function (register_shutdown_function)*.<br /><br />It will check to see if the script terminated prematurely (connection_aborted), and reset the valid session ID. That way, it's still valid when the user makes the second request. If the script ends properly, the new session ID will be used instead.<br /><br />Now, since you can't set a cookie from the shutdown function (after output has been sent), the cookie should contain both the previous valid session ID and the new one. Then the server script will determine (on the next request) which one to use.<br /><br />:: Pseudo example:<br />:: <br />:: [Start of script:]<br />:: <br />:: 1. Get the session ID(s) from cookie<br />:: 2. If one of the session ID's is still valid (that is, if there's a storage associated with it - in DB, file or whatever)<br />::&nbsp; ____2.1. Open the session<br />:: 3. Generate a new session ID<br />:: 4. Save the new session ID with the one just used in cookie<br />:: 5. Register shutdown function<br />:: <br />:: [End of script (shutdown function):]<br />:: <br />:: 1. If script ended prematurely<br />:: ____1.1. Save session data using the old Session ID<br />:: 2. Else<br />:: ____2.1. Save session data using the new Session ID<br />:: ____2.2. Make sure the old session ID is added to a list of ID's (used for the purpose described below)<br />:: ____2.3. Trash the old session storage<br /><br />There's still the possibility of some deviant network sniffer catching the session cookie as it's sent to the client, and using it before the client gets the chance to. Thus, successfully hijacking the session. <br /><br />If an old session ID is used, we must assume the session has been hijacked. Then the client could be asked to input his/her password before data is sent back. Now, since we have to assume that only the legitimate user has the password we won't send back any data until a password is sent from one request.<br /><br />And finally, (as a sidenote) we could obscure the login details (if the client has support for javascript) by catching the form as it is sent, take the current timestamp and add it to the form in a dynamically generated hidden form object, replace the password field with a new password that is the MD5 (or similar) of the timestamp and the real password. On the serverside, the script will take the timestamp, look at the user's real password and make the proper MD5. If they match, good, if not, got him! (This will of course only work when we have a user with a session that's previously logged in, since we know what password (s)he's supposed to have.) If the user credentials are saved as md5(username+password), simply ask for both the username and password, md5 them and then md5 the timestamp and the user cred. <br /><br />---<br /><br />If you need a javascript for md5: <a href="http://pajhome.org.uk/crypt/md5/md5src.html" rel="nofollow" target="_blank">http://pajhome.org.uk/crypt/md5/md5src.html</a><br /><br />---<br /><br />* You could use session_set_save_handler and make sure the session ID is generated in the open function. I haven't done that so I can't make any comments on it yet.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="90764">  <div class="votes">
+    <div id="Vu90764">
+    <a href="../vote-notee692.html?id=90764&amp;page=features.cookies&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd90764">
+    <a href="../vote-notecb3e.html?id=90764&amp;page=features.cookies&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V90764" title="43% like this...">
+    -32
+    </div>
+  </div>
+  <a href="#90764" class="name">
+  <strong class="user"><em>Henry</em></strong></a><a class="genanchor" href="#90764"> &para;</a><div class="date" title="2009-05-08 07:15"><strong>8 years ago</strong></div>
+  <div class="text" id="Hcom90764">
+<div class="phpcode"><code><span class="html">
+It is better to note not to attach your cookies to and IP and block the IP if it is different as some people use Portable Browsers which will remember the cookies.&nbsp; It is better to show a login screen instead if the IP does not correspond to the session cookie's IP.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="61454">  <div class="votes">
+    <div id="Vu61454">
+    <a href="../vote-note3d5b.html?id=61454&amp;page=features.cookies&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd61454">
+    <a href="../vote-noteea71.html?id=61454&amp;page=features.cookies&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V61454" title="38% like this...">
+    -38
+    </div>
+  </div>
+  <a href="#61454" class="name">
+  <strong class="user"><em>kalla_durga at gmail dot com</em></strong></a><a class="genanchor" href="#61454"> &para;</a><div class="date" title="2006-02-03 12:10"><strong>11 years ago</strong></div>
+  <div class="text" id="Hcom61454">
+<div class="phpcode"><code><span class="html">
+In response to the solution posted in the comment below, there are some practical issues with this solution that must be kept in mind and handled by your code. I developed an application using a similar "use-it-once" key to manage sessions and it worked great but we got some complaints about legitimate users getting logged out without reasons. Turns out the problem was not tentative highjacking, it was&nbsp; either:<br /><br />A- Users double click on links or make 2 clicks very fast. The same key is sent for the 2 clicks because the new key from the first click didn't get to the browser on time for the second one but the session on the server did trash the key for the new one. Thus, the second click causes a termination of the session. (install the LiveHttpHeaders extension on firefox and look at the headers sent when you click twice very fast, you'll see the same cookie sent on both and the new cookie getting back from the server too late).<br /><br />B- For any given reason, the server experiences a slow down and the response with the new key (which has replaced the old one on the server) is not returned to the browser fast enough. The user gets tired of waiting and clicks somewhere else. He gets logged out because this second click send the old key which won't match the one you have on your server.<br /><br />Our solution was to set up a grace period where the old key was still valid (the current key and the previous key were both kept at all times, we used 15 seconds as a grace period where the old key could still be used). This has the drawback of increasing the window of time for a person to highjack the session but if you tie the validity of the old key to an IP address and/or user agent string, you still get pretty good session security with very very few undesired session termination.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="50288">  <div class="votes">
+    <div id="Vu50288">
+    <a href="../vote-notebf1e.html?id=50288&amp;page=features.cookies&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd50288">
+    <a href="../vote-note1d44.html?id=50288&amp;page=features.cookies&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V50288" title="33% like this...">
+    -50
+    </div>
+  </div>
+  <a href="#50288" class="name">
+  <strong class="user"><em>mega-squall at caramail dot com</em></strong></a><a class="genanchor" href="#50288"> &para;</a><div class="date" title="2005-02-23 01:04"><strong>12 years ago</strong></div>
+  <div class="text" id="Hcom50288">
+<div class="phpcode"><code><span class="html">
+I found a solution for protecting session ID without tying them to client's IP. Each session ID gives access for only ONE querry. On the next querry, another session ID is generated and stored. If somebody hacks the cookie (or the session ID), the first one of the user and the pirate that will use the cookie will get the second disconnected, because the session ID has been used.<br /><br />If the user gets disconnected, he will reconnect : as my policy is not to have more than one session ID for each user (sessions entries have a UNIQUE key on the collomn in which is stored user login), every entries for that user gets wiped, a new session ID is generated and stored on users dirve : the pirate gets disconnected. This lets the pirate usually just a few seconds to act. The slower visitors are browsing, the longer is the time pirates get for hacking. Also, if users forget to explicitly end their sessions .... some of my users set timeout longer than 20 minutes !<br /><br />IMPORTANT NOTE : This disables the ability of using the back button if you send the session ID via POST or GET.</span>
+</code></div>
+  </div>
+ </div></div>
+
+ <div class="foot"><a href="../add-note5cb8.html?sect=features.cookies&amp;redirect=http://php.net/manual/en/features.cookies.php"><img src='../../images/notes-add%402x.png' alt='add a note' width='12' height='12'> <small>add a note</small></a></div>
+</section>    </section><!-- layout-content -->
+        <aside class='layout-menu'>
+    
+        <ul class='parent-menu-list'>
+                                    <li>
+                <a href="features.html">Features</a>
+    
+                                    <ul class='child-menu-list'>
+    
+                          
+                        <li class="">
+                            <a href="features.http-auth.html" title="HTTP authentication with PHP">HTTP authentication with PHP</a>
+                        </li>
+                          
+                        <li class="current">
+                            <a href="features.cookies.html" title="Cookies">Cookies</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="features.sessions.html" title="Sessions">Sessions</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="features.xforms.html" title="Dealing with XForms">Dealing with XForms</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="features.file-upload.html" title="Handling file uploads">Handling file uploads</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="features.remote-files.html" title="Using remote files">Using remote files</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="features.connection-handling.html" title="Connection handling">Connection handling</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="features.persistent-connections.html" title="Persistent Database Connections">Persistent Database Connections</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="features.safe-mode.html" title="Safe Mode">Safe Mode</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="features.commandline.html" title="Command line usage">Command line usage</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="features.gc.html" title="Garbage Collection">Garbage Collection</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="features.dtrace.html" title="DTrace Dynamic Tracing">DTrace Dynamic Tracing</a>
+                        </li>
+                            
+                    </ul>
+                    
+            </li>
+                        
+                    </ul>
+    </aside>
+
+
+  </div><!-- layout -->
+         
+  <footer>
+    <div class="container footer-content">
+      <div class="row-fluid">
+      <ul class="footmenu">
+        <li><a href="../../copyright.html">Copyright &copy; 2001-2017 The PHP Group</a></li>
+        <li><a href="../../my.html">My PHP.net</a></li>
+        <li><a href="../../contact.html">Contact</a></li>
+        <li><a href="../../sites.html">Other PHP.net sites</a></li>
+        <li><a href="../../mirrors.html">Mirror sites</a></li>
+        <li><a href="../../privacy.html">Privacy policy</a></li>
+      </ul>
+      </div>
+    </div>
+  </footer>
+
+    
+ <!-- External and third party libraries. -->
+ <script type="text/javascript" src="../../../ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" src="../../cachedab96.php?t=1421837618&amp;f=/js/ext/modernizr.js"></script>
+<script type="text/javascript" src="../../cached3567.php?t=1421837618&amp;f=/js/ext/hogan-2.0.0.min.js"></script>
+<script type="text/javascript" src="../../cachede4eb.php?t=1421837618&amp;f=/js/ext/typeahead.min.js"></script>
+<script type="text/javascript" src="../../cached9183.php?t=1421837618&amp;f=/js/ext/mousetrap.min.js"></script>
+<script type="text/javascript" src="../../cachedcba0.php?t=1421837618&amp;f=/js/search.js"></script>
+<script type="text/javascript" src="../../cachedb779.php?t=1500560403&amp;f=/js/common.js"></script>
+
+<a id="toTop" href="javascript:;"><span id="toTopHover"></span><img width="40" height="40" alt="To Top" src="../../images/to-top%402x.png"></a>
+
+</body>
+
+<!-- Mirrored from php.net/manual/en/features.cookies.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Dec 2017 23:15:38 GMT -->
+</html>
+

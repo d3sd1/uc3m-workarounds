@@ -1,0 +1,20 @@
+Nivel fácil
+-----
+npm
+explicacion de que es el ES5, ES6, y el proximo ES7
+minimizacion de archivos
+-----
+Nivel medio
+-----
+trucos de javascript (use strict, funciones anidadas, simulacion de clases, creacion de objetos complejos)
+sass
+-----
+Nivel difícil
+-----
+websockets
+typescript
+funciones super avanzadas (modificar ECMA, agregar/modificar funciones nativas de javascript...)
+-----
+Nivel hardcore
+-----
+angular2/4/5 -> SELECCIONADO -> word seguro, powerpoint elegir

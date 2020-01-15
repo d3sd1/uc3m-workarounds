@@ -1,0 +1,34 @@
+INICIO
+INT num1,num2;
+Escribe "Introduce un número";
+LEE num1;
+Escribe "Introduce otro número";
+LEE num2;
+STRING num_primos;
+STRING es_perfecto;
+for(num1; num >= num1 && num <= num2; num++)
+{
+	//Número primo
+	for(i=2;i<=num;i++)
+	{
+		if(num%i==0)
+		{
+			num_primos .= ", " + num;
+		}
+	}
+	//Número perfecto
+	suma = 0;
+ 
+    for(i = 1; i < num; i++){ 
+        if(num%i == 0){ 
+			suma += i;
+        }
+    }
+	if(suma == num){ 
+        es_perfecto = 'Si'; 
+    }else{ 
+        es_perfecto = 'No'; 
+    } 
+}
+Escribe "Los números primos comprendidos entre " + num1 + " y " + num2 + " son: " + num_primos ". ¿Es un número perfecto?: " + es_perfecto";
+FIN

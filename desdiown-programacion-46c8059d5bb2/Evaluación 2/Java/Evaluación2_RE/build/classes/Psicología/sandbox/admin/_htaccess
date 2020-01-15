@@ -1,0 +1,35 @@
+DirectoryIndex index.php
+#ONLY SANDBOX
+AuthType Basic
+AuthName "SANDBOX"
+AuthUserFile /var/www/html/sandbox/.htpasswd
+Require user tester
+Satisfy All
+RewriteEngine On
+RewriteCond %{SERVER_PORT} 80 
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+RewriteCond %{HTTP_HOST} !^admin.sandbox\.
+RewriteRule ^(.*)$ https://admin.sandbox.%{HTTP_HOST}/$1 [R=301,L]
+#ALL SUBDOMAINS
+Rewriterule ^nojs nojs.php
+Rewriterule ^sendlogin sendlogin.php
+Rewriterule ^sendforgot sendforgot.php
+Rewriterule ^users users.php
+Rewriterule ^login login.php
+Rewriterule ^start index.php
+Rewriterule ^logout logout.php
+Rewriterule ^langsMgr/(.*)/(.*)/(.*) langs.php?type=$1&langkey=$2&deleteReg=$3
+Rewriterule ^langsMgr/(.*)/(.*) langs.php?type=$1&langkey=$2
+Rewriterule ^frontpage/colors frontpagecolors.php
+Rewriterule ^locked locked.php
+Rewriterule ^getusers getUsers.php
+Rewriterule ^config webConfig.php
+Rewriterule ^frontpage/video frontpagevideo.php
+Rewriterule ^sendlocked sendlocked.php
+Rewriterule ^syslogs syslogs.php
+Rewriterule ^profile profile.php
+php_flag display_startup_errors on
+php_flag display_errors on
+php_flag html_errors on
+php_flag  log_errors on
+php_value error_log  /var/www/sandbox_phpErrors.log

@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<!-- Mirrored from php.net/manual/en/language.operators.increment.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Dec 2017 23:18:10 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+  <title>PHP: Incrementing/Decrementing Operators - Manual </title>
+
+ <link rel="shortcut icon" href="http://php.net/favicon.ico">
+ <link rel="search" type="application/opensearchdescription+xml" href="http://php.net/phpnetimprovedsearch.src" title="Add PHP.net search">
+ <link rel="alternate" type="application/atom+xml" href="http://php.net/releases/feed.php" title="PHP Release feed">
+ <link rel="alternate" type="application/atom+xml" href="http://php.net/feed.atom" title="PHP: Hypertext Preprocessor">
+
+ <link rel="canonical" href="http://php.net/manual/en/language.operators.increment.php">
+ <link rel="shorturl" href="http://php.net/operators.increment">
+ <link rel="alternate" href="http://php.net/operators.increment" hreflang="x-default">
+
+ <link rel="contents" href="http://php.net/manual/en/index.php">
+ <link rel="index" href="http://php.net/manual/en/language.operators.php">
+ <link rel="prev" href="http://php.net/manual/en/language.operators.execution.php">
+ <link rel="next" href="http://php.net/manual/en/language.operators.logical.php">
+
+ <link rel="alternate" href="http://php.net/manual/en/language.operators.increment.php" hreflang="en">
+ <link rel="alternate" href="http://php.net/manual/pt_BR/language.operators.increment.php" hreflang="pt_BR">
+ <link rel="alternate" href="http://php.net/manual/zh/language.operators.increment.php" hreflang="zh">
+ <link rel="alternate" href="http://php.net/manual/fr/language.operators.increment.php" hreflang="fr">
+ <link rel="alternate" href="http://php.net/manual/de/language.operators.increment.php" hreflang="de">
+ <link rel="alternate" href="http://php.net/manual/ja/language.operators.increment.php" hreflang="ja">
+ <link rel="alternate" href="http://php.net/manual/ro/language.operators.increment.php" hreflang="ro">
+ <link rel="alternate" href="http://php.net/manual/ru/language.operators.increment.php" hreflang="ru">
+ <link rel="alternate" href="http://php.net/manual/es/language.operators.increment.php" hreflang="es">
+ <link rel="alternate" href="http://php.net/manual/tr/language.operators.increment.php" hreflang="tr">
+
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1421837618&amp;f=/fonts/Fira/fira.css" media="screen">
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1421837618&amp;f=/fonts/Font-Awesome/css/fontello.css" media="screen">
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1478800802&amp;f=/styles/theme-base.css" media="screen">
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1449787206&amp;f=/styles/theme-medium.css" media="screen">
+
+ <!--[if lte IE 7]>
+ <link rel="stylesheet" type="text/css" href="http://php.net/styles/workarounds.ie7.css" media="screen">
+ <![endif]-->
+
+ <!--[if lte IE 8]>
+ <script type="text/javascript">
+  window.brokenIE = true;
+ </script>
+ <![endif]-->
+
+ <!--[if lte IE 9]>
+ <link rel="stylesheet" type="text/css" href="http://php.net/styles/workarounds.ie9.css" media="screen">
+ <![endif]-->
+
+ <!--[if IE]>
+ <script type="text/javascript" src="http://php.net/js/ext/html5.js"></script>
+ <![endif]-->
+
+ <base >
+
+</head>
+<body class="docs ">
+
+<nav id="head-nav" class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <a href="http://php.net/" class="brand"><img src="http://php.net/images/logos/php-logo.svg" width="48" height="24" alt="php"></a>
+    <div id="mainmenu-toggle-overlay"></div>
+    <input type="checkbox" id="mainmenu-toggle">
+    <ul class="nav">
+      <li class=""><a href="http://php.net/downloads">Downloads</a></li>
+      <li class="active"><a href="http://php.net/docs.php">Documentation</a></li>
+      <li class=""><a href="http://php.net/get-involved" >Get Involved</a></li>
+      <li class=""><a href="http://php.net/support">Help</a></li>
+    </ul>
+    <form class="navbar-search" id="topsearch" action="http://php.net/search.php">
+      <input type="hidden" name="show" value="quickref">
+      <input type="search" name="pattern" class="search-query" placeholder="Search" accesskey="s">
+    </form>
+  </div>
+  <div id="flash-message"></div>
+</nav>
+<nav id="trick"><div><dl>
+<dt><a href='http://php.net/manual/en/getting-started.php'>Getting Started</a></dt>
+	<dd><a href='http://php.net/manual/en/introduction.php'>Introduction</a></dd>
+	<dd><a href='http://php.net/manual/en/tutorial.php'>A simple tutorial</a></dd>
+<dt><a href='http://php.net/manual/en/langref.php'>Language Reference</a></dt>
+	<dd><a href='http://php.net/manual/en/language.basic-syntax.php'>Basic syntax</a></dd>
+	<dd><a href='http://php.net/manual/en/language.types.php'>Types</a></dd>
+	<dd><a href='http://php.net/manual/en/language.variables.php'>Variables</a></dd>
+	<dd><a href='http://php.net/manual/en/language.constants.php'>Constants</a></dd>
+	<dd><a href='http://php.net/manual/en/language.expressions.php'>Expressions</a></dd>
+	<dd><a href='http://php.net/manual/en/language.operators.php'>Operators</a></dd>
+	<dd><a href='http://php.net/manual/en/language.control-structures.php'>Control Structures</a></dd>
+	<dd><a href='http://php.net/manual/en/language.functions.php'>Functions</a></dd>
+	<dd><a href='http://php.net/manual/en/language.oop5.php'>Classes and Objects</a></dd>
+	<dd><a href='http://php.net/manual/en/language.namespaces.php'>Namespaces</a></dd>
+	<dd><a href='http://php.net/manual/en/language.errors.php'>Errors</a></dd>
+	<dd><a href='http://php.net/manual/en/language.exceptions.php'>Exceptions</a></dd>
+	<dd><a href='http://php.net/manual/en/language.generators.php'>Generators</a></dd>
+	<dd><a href='http://php.net/manual/en/language.references.php'>References Explained</a></dd>
+	<dd><a href='http://php.net/manual/en/reserved.variables.php'>Predefined Variables</a></dd>
+	<dd><a href='http://php.net/manual/en/reserved.exceptions.php'>Predefined Exceptions</a></dd>
+	<dd><a href='http://php.net/manual/en/reserved.interfaces.php'>Predefined Interfaces and Classes</a></dd>
+	<dd><a href='http://php.net/manual/en/context.php'>Context options and parameters</a></dd>
+	<dd><a href='http://php.net/manual/en/wrappers.php'>Supported Protocols and Wrappers</a></dd>
+</dl>
+<dl>
+<dt><a href='http://php.net/manual/en/security.php'>Security</a></dt>
+	<dd><a href='http://php.net/manual/en/security.intro.php'>Introduction</a></dd>
+	<dd><a href='http://php.net/manual/en/security.general.php'>General considerations</a></dd>
+	<dd><a href='http://php.net/manual/en/security.cgi-bin.php'>Installed as CGI binary</a></dd>
+	<dd><a href='http://php.net/manual/en/security.apache.php'>Installed as an Apache module</a></dd>
+	<dd><a href='http://php.net/manual/en/security.sessions.php'>Session Security</a></dd>
+	<dd><a href='http://php.net/manual/en/security.filesystem.php'>Filesystem Security</a></dd>
+	<dd><a href='http://php.net/manual/en/security.database.php'>Database Security</a></dd>
+	<dd><a href='http://php.net/manual/en/security.errors.php'>Error Reporting</a></dd>
+	<dd><a href='http://php.net/manual/en/security.globals.php'>Using Register Globals</a></dd>
+	<dd><a href='http://php.net/manual/en/security.variables.php'>User Submitted Data</a></dd>
+	<dd><a href='http://php.net/manual/en/security.magicquotes.php'>Magic Quotes</a></dd>
+	<dd><a href='http://php.net/manual/en/security.hiding.php'>Hiding PHP</a></dd>
+	<dd><a href='http://php.net/manual/en/security.current.php'>Keeping Current</a></dd>
+<dt><a href='http://php.net/manual/en/features.php'>Features</a></dt>
+	<dd><a href='http://php.net/manual/en/features.http-auth.php'>HTTP authentication with PHP</a></dd>
+	<dd><a href='http://php.net/manual/en/features.cookies.php'>Cookies</a></dd>
+	<dd><a href='http://php.net/manual/en/features.sessions.php'>Sessions</a></dd>
+	<dd><a href='http://php.net/manual/en/features.xforms.php'>Dealing with XForms</a></dd>
+	<dd><a href='http://php.net/manual/en/features.file-upload.php'>Handling file uploads</a></dd>
+	<dd><a href='http://php.net/manual/en/features.remote-files.php'>Using remote files</a></dd>
+	<dd><a href='http://php.net/manual/en/features.connection-handling.php'>Connection handling</a></dd>
+	<dd><a href='http://php.net/manual/en/features.persistent-connections.php'>Persistent Database Connections</a></dd>
+	<dd><a href='http://php.net/manual/en/features.safe-mode.php'>Safe Mode</a></dd>
+	<dd><a href='http://php.net/manual/en/features.commandline.php'>Command line usage</a></dd>
+	<dd><a href='http://php.net/manual/en/features.gc.php'>Garbage Collection</a></dd>
+	<dd><a href='http://php.net/manual/en/features.dtrace.php'>DTrace Dynamic Tracing</a></dd>
+</dl>
+<dl>
+<dt><a href='http://php.net/manual/en/funcref.php'>Function Reference</a></dt>
+	<dd><a href='http://php.net/manual/en/refs.basic.php.php'>Affecting PHP's Behaviour</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.audio.php'>Audio Formats Manipulation</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.remote.auth.php'>Authentication Services</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.cmdline.php'>Command Line Specific Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.compression.php'>Compression and Archive Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.creditcard.php'>Credit Card Processing</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.crypto.php'>Cryptography Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.database.php'>Database Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.calendar.php'>Date and Time Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.fileprocess.file.php'>File System Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.international.php'>Human Language and Character Encoding Support</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.image.php'>Image Processing and Generation</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.remote.mail.php'>Mail Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.math.php'>Mathematical Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.nontext.php'>Non-Text MIME Output</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.fileprocess.process.php'>Process Control Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.other.php'>Other Basic Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.remote.other.php'>Other Services</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.search.php'>Search Engine Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.server.php'>Server Specific Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.session.php'>Session Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.text.php'>Text Processing</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.vartype.php'>Variable and Type Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.webservice.php'>Web Services</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.windows.php'>Windows Only Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.xml.php'>XML Manipulation</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.ui.php'>GUI Extensions</a></dd>
+</dl>
+<dl>
+<dt>Keyboard Shortcuts</dt><dt>?</dt>
+<dd>This help</dd>
+<dt>j</dt>
+<dd>Next menu item</dd>
+<dt>k</dt>
+<dd>Previous menu item</dd>
+<dt>g p</dt>
+<dd>Previous man page</dd>
+<dt>g n</dt>
+<dd>Next man page</dd>
+<dt>G</dt>
+<dd>Scroll to bottom</dd>
+<dt>g g</dt>
+<dd>Scroll to top</dd>
+<dt>g h</dt>
+<dd>Goto homepage</dd>
+<dt>g s</dt>
+<dd>Goto search<br>(current page)</dd>
+<dt>/</dt>
+<dd>Focus search box</dd>
+</dl></div></nav>
+<div id="goto">
+    <div class="search">
+         <div class="text"></div>
+         <div class="results"><ul></ul></div>
+   </div>
+</div>
+
+  <div id="breadcrumbs" class="clearfix">
+    <div id="breadcrumbs-inner">
+          <div class="next">
+        <a href="http://php.net/manual/en/language.operators.logical.php">
+          Logical Operators &raquo;
+        </a>
+      </div>
+              <div class="prev">
+        <a href="http://php.net/manual/en/language.operators.execution.php">
+          &laquo; Execution Operators        </a>
+      </div>
+          <ul>
+            <li><a href='http://php.net/manual/en/index.php'>PHP Manual</a></li>      <li><a href='http://php.net/manual/en/langref.php'>Language Reference</a></li>      <li><a href='http://php.net/manual/en/language.operators.php'>Operators</a></li>      </ul>
+    </div>
+  </div>
+
+
+
+
+<div id="layout" class="clearfix">
+  <section id="layout-content">
+  <div class="page-tools">
+    <div class="change-language">
+      <form action="http://php.net/manual/change.php" method="get" id="changelang" name="changelang">
+        <fieldset>
+          <label for="changelang-langs">Change language:</label>
+          <select onchange="document.changelang.submit()" name="page" id="changelang-langs">
+            <option value='en/language.operators.increment.php' selected="selected">English</option>
+            <option value='http://php.net/manual/en/pt_BR/language.operators.increment.php'>Brazilian Portuguese</option>
+            <option value='http://php.net/manual/en/zh/language.operators.increment.php'>Chinese (Simplified)</option>
+            <option value='http://php.net/manual/en/fr/language.operators.increment.php'>French</option>
+            <option value='http://php.net/manual/en/de/language.operators.increment.php'>German</option>
+            <option value='http://php.net/manual/en/ja/language.operators.increment.php'>Japanese</option>
+            <option value='http://php.net/manual/en/ro/language.operators.increment.php'>Romanian</option>
+            <option value='http://php.net/manual/en/ru/language.operators.increment.php'>Russian</option>
+            <option value='http://php.net/manual/en/es/language.operators.increment.php'>Spanish</option>
+            <option value='http://php.net/manual/en/tr/language.operators.increment.php'>Turkish</option>
+            <option value="http://php.net/manual/en/help-translate.php">Other</option>
+          </select>
+        </fieldset>
+      </form>
+    </div>
+    <div class="edit-bug">
+      <a href="https://edit.php.net/?project=PHP&amp;perm=en/language.operators.increment.php">Edit</a>
+      <a href="https://bugs.php.net/report.php?bug_type=Documentation+problem&amp;manpage=language.operators.increment">Report a Bug</a>
+    </div>
+  </div><div id="language.operators.increment" class="sect1">
+   <h2 class="title">Incrementing/Decrementing Operators</h2>
+   <p class="para">
+    PHP supports C-style pre- and post-increment and decrement
+    operators.
+   </p>
+   <blockquote class="note"><p><strong class="note">Note</strong>: 
+    <span class="simpara">
+     The increment/decrement operators only affect numbers and strings.
+     Arrays, objects and resources are not affected.
+     Decrementing <strong><code>NULL</code></strong> values has no effect too, but incrementing them
+     results in <em>1</em>.
+    </span>
+   </p></blockquote>
+   <table class="doctable table">
+    <caption><strong>Increment/decrement Operators</strong></caption>
+    
+     <thead>
+      <tr>
+       <th>Example</th>
+       <th>Name</th>
+       <th>Effect</th>
+      </tr>
+
+     </thead>
+
+     <tbody class="tbody">
+      <tr>
+       <td>++$a</td>
+       <td>Pre-increment</td>
+       <td>Increments <var class="varname"><var class="varname">$a</var></var> by one, then returns <var class="varname"><var class="varname">$a</var></var>.</td>
+      </tr>
+
+      <tr>
+       <td>$a++</td>
+       <td>Post-increment</td>
+       <td>Returns <var class="varname"><var class="varname">$a</var></var>, then increments <var class="varname"><var class="varname">$a</var></var> by one.</td>
+      </tr>
+
+      <tr>
+       <td>--$a</td>
+       <td>Pre-decrement</td>
+       <td>Decrements <var class="varname"><var class="varname">$a</var></var> by one, then returns <var class="varname"><var class="varname">$a</var></var>.</td>
+      </tr>
+
+      <tr>
+       <td>$a--</td>
+       <td>Post-decrement</td>
+       <td>Returns <var class="varname"><var class="varname">$a</var></var>, then decrements <var class="varname"><var class="varname">$a</var></var> by one.</td>
+      </tr>
+
+     </tbody>
+    
+   </table>
+
+   <p class="para">
+    Here&#039;s a simple example script:
+    <div class="informalexample">
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">"&lt;h3&gt;Postincrement&lt;/h3&gt;"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">5</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #DD0000">"Should&nbsp;be&nbsp;5:&nbsp;"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$a</span><span style="color: #007700">++&nbsp;.&nbsp;</span><span style="color: #DD0000">"&lt;br&nbsp;/&gt;\n"</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #DD0000">"Should&nbsp;be&nbsp;6:&nbsp;"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">"&lt;br&nbsp;/&gt;\n"</span><span style="color: #007700">;<br /><br />echo&nbsp;</span><span style="color: #DD0000">"&lt;h3&gt;Preincrement&lt;/h3&gt;"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">5</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #DD0000">"Should&nbsp;be&nbsp;6:&nbsp;"&nbsp;</span><span style="color: #007700">.&nbsp;++</span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">"&lt;br&nbsp;/&gt;\n"</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #DD0000">"Should&nbsp;be&nbsp;6:&nbsp;"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">"&lt;br&nbsp;/&gt;\n"</span><span style="color: #007700">;<br /><br />echo&nbsp;</span><span style="color: #DD0000">"&lt;h3&gt;Postdecrement&lt;/h3&gt;"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">5</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #DD0000">"Should&nbsp;be&nbsp;5:&nbsp;"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$a</span><span style="color: #007700">--&nbsp;.&nbsp;</span><span style="color: #DD0000">"&lt;br&nbsp;/&gt;\n"</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #DD0000">"Should&nbsp;be&nbsp;4:&nbsp;"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">"&lt;br&nbsp;/&gt;\n"</span><span style="color: #007700">;<br /><br />echo&nbsp;</span><span style="color: #DD0000">"&lt;h3&gt;Predecrement&lt;/h3&gt;"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #0000BB">5</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #DD0000">"Should&nbsp;be&nbsp;4:&nbsp;"&nbsp;</span><span style="color: #007700">.&nbsp;--</span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">"&lt;br&nbsp;/&gt;\n"</span><span style="color: #007700">;<br />echo&nbsp;</span><span style="color: #DD0000">"Should&nbsp;be&nbsp;4:&nbsp;"&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">$a&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #DD0000">"&lt;br&nbsp;/&gt;\n"</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+     </div>
+
+    </div>
+   </p>
+   <p class="para">
+    PHP follows Perl&#039;s convention when dealing with arithmetic operations
+    on character variables and not C&#039;s.  For example, in PHP and Perl
+    <em>$a = &#039;Z&#039;; $a++;</em> turns <em>$a</em> into <em>&#039;AA&#039;</em>, while in C
+    <em>a = &#039;Z&#039;; a++;</em> turns <em>a</em> into <em>&#039;[&#039;</em>
+    (ASCII value of <em>&#039;Z&#039;</em> is 90, ASCII value of <em>&#039;[&#039;</em> is 91).
+    Note that character variables can be incremented but not decremented and
+    even so only plain ASCII alphabets and digits (a-z, A-Z and 0-9) are supported.
+    Incrementing/decrementing other character variables has no effect, the
+    original string is unchanged.
+    <div class="example" id="example-107">
+     <p><strong>Example #1 Arithmetic Operations on Character Variables</strong></p>
+     <div class="example-contents">
+<div class="phpcode"><code><span style="color: #000000">
+<span style="color: #0000BB">&lt;?php<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">'==&nbsp;Alphabets&nbsp;=='&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$s&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'W'</span><span style="color: #007700">;<br />for&nbsp;(</span><span style="color: #0000BB">$n</span><span style="color: #007700">=</span><span style="color: #0000BB">0</span><span style="color: #007700">;&nbsp;</span><span style="color: #0000BB">$n</span><span style="color: #007700">&lt;</span><span style="color: #0000BB">6</span><span style="color: #007700">;&nbsp;</span><span style="color: #0000BB">$n</span><span style="color: #007700">++)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;++</span><span style="color: #0000BB">$s&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;<br />}<br /></span><span style="color: #FF8000">//&nbsp;Digit&nbsp;characters&nbsp;behave&nbsp;differently<br /></span><span style="color: #007700">echo&nbsp;</span><span style="color: #DD0000">'==&nbsp;Digits&nbsp;=='&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;<br /></span><span style="color: #0000BB">$d&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'A8'</span><span style="color: #007700">;<br />for&nbsp;(</span><span style="color: #0000BB">$n</span><span style="color: #007700">=</span><span style="color: #0000BB">0</span><span style="color: #007700">;&nbsp;</span><span style="color: #0000BB">$n</span><span style="color: #007700">&lt;</span><span style="color: #0000BB">6</span><span style="color: #007700">;&nbsp;</span><span style="color: #0000BB">$n</span><span style="color: #007700">++)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;++</span><span style="color: #0000BB">$d&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">$d&nbsp;</span><span style="color: #007700">=&nbsp;</span><span style="color: #DD0000">'A08'</span><span style="color: #007700">;<br />for&nbsp;(</span><span style="color: #0000BB">$n</span><span style="color: #007700">=</span><span style="color: #0000BB">0</span><span style="color: #007700">;&nbsp;</span><span style="color: #0000BB">$n</span><span style="color: #007700">&lt;</span><span style="color: #0000BB">6</span><span style="color: #007700">;&nbsp;</span><span style="color: #0000BB">$n</span><span style="color: #007700">++)&nbsp;{<br />&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;++</span><span style="color: #0000BB">$d&nbsp;</span><span style="color: #007700">.&nbsp;</span><span style="color: #0000BB">PHP_EOL</span><span style="color: #007700">;<br />}<br /></span><span style="color: #0000BB">?&gt;</span>
+</span>
+</code></div>
+     </div>
+
+     <div class="example-contents"><p>The above example will output:</p></div>
+     <div class="example-contents screen">
+<div class="cdata"><pre>
+== Characters ==
+X
+Y
+Z
+AA
+AB
+AC
+== Digits ==
+A9
+B0
+B1
+B2
+B3
+B4
+A09
+A10
+A11
+A12
+A13
+A14
+</pre></div>
+     </div>
+    </div>
+   </p>
+   <p class="para">
+    Incrementing or decrementing booleans has no effect.
+   </p>
+  </div>
+<section id="usernotes">
+ <div class="head">
+  <span class="action"><a href="http://php.net/manual/add-note.php?sect=language.operators.increment&amp;redirect=http://php.net/manual/en/language.operators.increment.php"><img src='http://php.net/images/notes-add@2x.png' alt='add a note' width='12' height='12'> <small>add a note</small></a></span>
+  <h3 class="title">User Contributed Notes <span class="count">11 notes</span></h3>
+ </div><div id="allnotes">
+  <div class="note" id="109621">  <div class="votes">
+    <div id="Vu109621">
+    <a href="http://php.net/manual/vote-note.php?id=109621&amp;page=language.operators.increment&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd109621">
+    <a href="http://php.net/manual/vote-note.php?id=109621&amp;page=language.operators.increment&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V109621" title="76% like this...">
+    46
+    </div>
+  </div>
+  <a href="#109621" class="name">
+  <strong class="user"><em>hartmut at php dot net</em></strong></a><a class="genanchor" href="#109621"> &para;</a><div class="date" title="2012-08-02 03:28"><strong>5 years ago</strong></div>
+  <div class="text" id="Hcom109621">
+<div class="phpcode"><code><span class="html">
+Note that <br /><br />$a="9D9"; var_dump(++$a);&nbsp;&nbsp; =&gt; string(3) "9E0"<br /><br />but counting onwards from there <br /><br />$a="9E0"; var_dump(++$a);&nbsp;&nbsp; =&gt; float(10)<br /><br />this is due to "9E0" being interpreted as a string representation of the float constant 9E0 (or 9e0), and thus evalutes to 9 * 10^0 = 9 (in a float context)</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="119098">  <div class="votes">
+    <div id="Vu119098">
+    <a href="http://php.net/manual/vote-note.php?id=119098&amp;page=language.operators.increment&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd119098">
+    <a href="http://php.net/manual/vote-note.php?id=119098&amp;page=language.operators.increment&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V119098" title="60% like this...">
+    1
+    </div>
+  </div>
+  <a href="#119098" class="name">
+  <strong class="user"><em>ayyappan dot ashok at gmail dot com</em></strong></a><a class="genanchor" href="#119098"> &para;</a><div class="date" title="2016-04-01 01:16"><strong>1 year ago</strong></div>
+  <div class="text" id="Hcom119098">
+<div class="phpcode"><code><span class="html">
+Rule for Increment and decrement:<br /><br />At some moment we could be confused with increment and decrement in various cases. To avoid such cases, let us follow certain logical rule behind to get successful results with out mess.<br /><br /><span class="default">&lt;?php<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; $n </span><span class="keyword">= </span><span class="default">3</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; echo </span><span class="default">$n</span><span class="keyword">-- + --</span><span class="default">$n</span><span class="keyword">; <br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; echo </span><span class="string">"&lt;br/&gt;"</span><span class="keyword">;<br />&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; echo </span><span class="default">$n</span><span class="keyword">;<br /></span><span class="default">?&gt;<br /></span><br />1. Postfix form of ++,-- operator follows the rule&nbsp; [ use-then-change ],<br /><br />2. Prefix form (++x,--x) follows the rule [ change-then-use ].<br /><br />Solution based on the rule:<br /><br />Step 1:&nbsp; <br />use then change&nbsp;&nbsp; $n--&nbsp; use is 3 and change is 2<br /><br />Step 2.&nbsp; <br />change then use&nbsp;&nbsp; --$n&nbsp; change is 2 and use is 1<br /><br />Step 3.<br />use + use = (3 + 1) = 4<br /><br />Courtesy : stackoverflow : Sunil Dhillon : 4686665</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="93271">  <div class="votes">
+    <div id="Vu93271">
+    <a href="http://php.net/manual/vote-note.php?id=93271&amp;page=language.operators.increment&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd93271">
+    <a href="http://php.net/manual/vote-note.php?id=93271&amp;page=language.operators.increment&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V93271" title="55% like this...">
+    7
+    </div>
+  </div>
+  <a href="#93271" class="name">
+  <strong class="user"><em>dsbeam at gmail dot com</em></strong></a><a class="genanchor" href="#93271"> &para;</a><div class="date" title="2009-08-31 03:35"><strong>8 years ago</strong></div>
+  <div class="text" id="Hcom93271">
+<div class="phpcode"><code><span class="html">
+When using the ++ operator by itself on a variable, ++$var is faster than $var++ and uses slightly less memory (in my experiments).&nbsp; It would seem like this could be optimized in the language during runtime (if $var++ is the only thing in the whole statement, it could be treated as ++$var).<br /><br />I conducted many tests (I believe to be fair), and here's one of the results:<br /><br />$i++ took 8.47515535355 seconds and 2360 bytes<br />++$i took 7.80081486702 seconds and 2160 bytes<br /><br />Here's my code.&nbsp; If anyone sees a bias in it, tell me.&nbsp; I conducted it many times, each time going through a loop one million iterations and doing each test 10 - 15 times (10 - 15 million uses of the ++ operator).<br /><br /><span class="default">&lt;?php<br /><br />ini_set</span><span class="keyword">( </span><span class="string">'MAX_EXEC_TIME'</span><span class="keyword">, </span><span class="default">120 </span><span class="keyword">);<br /></span><span class="default">ob_start</span><span class="keyword">( );<br /><br /></span><span class="default">$num_tests </span><span class="keyword">= </span><span class="default">10</span><span class="keyword">;<br /></span><span class="default">$startFirst </span><span class="keyword">= </span><span class="default">$startSecond </span><span class="keyword">= </span><span class="default">$endFirst </span><span class="keyword">= </span><span class="default">$endSecond </span><span class="keyword">= </span><span class="default">$startFirstMemory </span><span class="keyword">= </span><span class="default">$endFirstMemory </span><span class="keyword">= </span><span class="default">$startSecondMemory </span><span class="keyword">= </span><span class="default">$endSecondMemory </span><span class="keyword">= </span><span class="default">$someVal </span><span class="keyword">= </span><span class="default">0</span><span class="keyword">;<br /></span><span class="default">$times </span><span class="keyword">= array( </span><span class="string">'$i++' </span><span class="keyword">=&gt; array( </span><span class="string">'time' </span><span class="keyword">=&gt; </span><span class="default">0</span><span class="keyword">, </span><span class="string">'memory' </span><span class="keyword">=&gt; </span><span class="default">0 </span><span class="keyword">), </span><span class="string">'++$i' </span><span class="keyword">=&gt; array( </span><span class="string">'total' </span><span class="keyword">=&gt; </span><span class="default">0</span><span class="keyword">, </span><span class="string">'memory' </span><span class="keyword">=&gt; </span><span class="default">0 </span><span class="keyword">) );<br /><br />for( </span><span class="default">$j </span><span class="keyword">= </span><span class="default">0</span><span class="keyword">; </span><span class="default">$j </span><span class="keyword">&lt; </span><span class="default">$num_tests</span><span class="keyword">; ++</span><span class="default">$j </span><span class="keyword">)<br />{<br />&nbsp; &nbsp; &nbsp; &nbsp; for( </span><span class="default">$i </span><span class="keyword">= </span><span class="default">0</span><span class="keyword">, </span><span class="default">$startFirstMemory </span><span class="keyword">= </span><span class="default">memory_get_usage</span><span class="keyword">( ), </span><span class="default">$startFirst </span><span class="keyword">= </span><span class="default">microtime</span><span class="keyword">( </span><span class="default">true </span><span class="keyword">); </span><span class="default">$i </span><span class="keyword">&lt; </span><span class="default">10000000</span><span class="keyword">; </span><span class="default">$i</span><span class="keyword">++ ){ </span><span class="default">$someval </span><span class="keyword">= </span><span class="default">2</span><span class="keyword">; }<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$endFirstMemory </span><span class="keyword">= </span><span class="default">memory_get_usage</span><span class="keyword">( );<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$endFirst </span><span class="keyword">= </span><span class="default">microtime</span><span class="keyword">( </span><span class="default">true </span><span class="keyword">);<br /><br />&nbsp; &nbsp; &nbsp; &nbsp; for( </span><span class="default">$i </span><span class="keyword">= </span><span class="default">0</span><span class="keyword">, </span><span class="default">$startSecondMemory </span><span class="keyword">= </span><span class="default">memory_get_usage</span><span class="keyword">( ), </span><span class="default">$startSecond </span><span class="keyword">= </span><span class="default">microtime</span><span class="keyword">( </span><span class="default">true </span><span class="keyword">); </span><span class="default">$i </span><span class="keyword">&lt; </span><span class="default">10000000</span><span class="keyword">; ++</span><span class="default">$i </span><span class="keyword">){ </span><span class="default">$someval </span><span class="keyword">= </span><span class="default">2</span><span class="keyword">; }<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$endSecondMemory </span><span class="keyword">= </span><span class="default">memory_get_usage</span><span class="keyword">( );<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$endSecond </span><span class="keyword">= </span><span class="default">microtime</span><span class="keyword">( </span><span class="default">true </span><span class="keyword">);<br /><br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$times</span><span class="keyword">[ </span><span class="string">'$i++' </span><span class="keyword">][ </span><span class="default">$j </span><span class="keyword">] = array( </span><span class="string">'startTime' </span><span class="keyword">=&gt; </span><span class="default">$startFirst</span><span class="keyword">, </span><span class="string">'endTime' </span><span class="keyword">=&gt; </span><span class="default">$endFirst</span><span class="keyword">, </span><span class="string">'startMemory' </span><span class="keyword">=&gt; </span><span class="default">$startFirstMemory</span><span class="keyword">, </span><span class="string">'endMemory' </span><span class="keyword">=&gt; </span><span class="default">$endFirstMemory </span><span class="keyword">);<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$times</span><span class="keyword">[ </span><span class="string">'++$i' </span><span class="keyword">][ </span><span class="default">$j </span><span class="keyword">] = array( </span><span class="string">'startTime' </span><span class="keyword">=&gt; </span><span class="default">$startSecond</span><span class="keyword">, </span><span class="string">'endTime' </span><span class="keyword">=&gt; </span><span class="default">$endSecond</span><span class="keyword">, </span><span class="string">'startMemory' </span><span class="keyword">=&gt; </span><span class="default">$startSecondMemory</span><span class="keyword">, </span><span class="string">'endMemory' </span><span class="keyword">=&gt; </span><span class="default">$endSecondMemory </span><span class="keyword">);<br />}<br /><br />for( </span><span class="default">$i </span><span class="keyword">= </span><span class="default">0</span><span class="keyword">; </span><span class="default">$i </span><span class="keyword">&lt; </span><span class="default">$num_tests</span><span class="keyword">; ++</span><span class="default">$i </span><span class="keyword">)<br />{<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$times</span><span class="keyword">[ </span><span class="string">'$i++' </span><span class="keyword">][ </span><span class="string">'time' </span><span class="keyword">] += ( </span><span class="default">$times</span><span class="keyword">[ </span><span class="string">'$i++' </span><span class="keyword">][ </span><span class="default">$i </span><span class="keyword">][ </span><span class="string">'endTime' </span><span class="keyword">] - </span><span class="default">$times</span><span class="keyword">[ </span><span class="string">'$i++' </span><span class="keyword">][ </span><span class="default">$i </span><span class="keyword">][ </span><span class="string">'startTime' </span><span class="keyword">] );<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$times</span><span class="keyword">[ </span><span class="string">'++$i' </span><span class="keyword">][ </span><span class="string">'time' </span><span class="keyword">] += ( </span><span class="default">$times</span><span class="keyword">[ </span><span class="string">'++$i' </span><span class="keyword">][ </span><span class="default">$i </span><span class="keyword">][ </span><span class="string">'endTime' </span><span class="keyword">] - </span><span class="default">$times</span><span class="keyword">[ </span><span class="string">'++$i' </span><span class="keyword">][ </span><span class="default">$i </span><span class="keyword">][ </span><span class="string">'startTime' </span><span class="keyword">] );<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$times</span><span class="keyword">[ </span><span class="string">'$i++' </span><span class="keyword">][ </span><span class="string">'memory' </span><span class="keyword">] += ( </span><span class="default">$times</span><span class="keyword">[ </span><span class="string">'$i++' </span><span class="keyword">][ </span><span class="default">$i </span><span class="keyword">][ </span><span class="string">'endMemory' </span><span class="keyword">] - </span><span class="default">$times</span><span class="keyword">[ </span><span class="string">'$i++' </span><span class="keyword">][ </span><span class="default">$i </span><span class="keyword">][ </span><span class="string">'startMemory' </span><span class="keyword">] );<br />&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="default">$times</span><span class="keyword">[ </span><span class="string">'++$i' </span><span class="keyword">][ </span><span class="string">'memory' </span><span class="keyword">] += ( </span><span class="default">$times</span><span class="keyword">[ </span><span class="string">'++$i' </span><span class="keyword">][ </span><span class="default">$i </span><span class="keyword">][ </span><span class="string">'endMemory' </span><span class="keyword">] - </span><span class="default">$times</span><span class="keyword">[ </span><span class="string">'++$i' </span><span class="keyword">][ </span><span class="default">$i </span><span class="keyword">][ </span><span class="string">'startMemory' </span><span class="keyword">] );<br />}<br /><br />echo </span><span class="string">'There were ' </span><span class="keyword">. </span><span class="default">$num_tests </span><span class="keyword">. </span><span class="string">' tests conducted, here\'s the totals&lt;br /&gt;&lt;br /&gt;<br />$i++ took ' </span><span class="keyword">. </span><span class="default">$times</span><span class="keyword">[ </span><span class="string">'$i++' </span><span class="keyword">][ </span><span class="string">'time' </span><span class="keyword">] . </span><span class="string">' seconds and ' </span><span class="keyword">. </span><span class="default">$times</span><span class="keyword">[ </span><span class="string">'$i++' </span><span class="keyword">][ </span><span class="string">'memory' </span><span class="keyword">] . </span><span class="string">' bytes&lt;br /&gt;<br />++$i took ' </span><span class="keyword">. </span><span class="default">$times</span><span class="keyword">[ </span><span class="string">'++$i' </span><span class="keyword">][ </span><span class="string">'time' </span><span class="keyword">] . </span><span class="string">' seconds and ' </span><span class="keyword">. </span><span class="default">$times</span><span class="keyword">[ </span><span class="string">'++$i' </span><span class="keyword">][ </span><span class="string">'memory' </span><span class="keyword">] . </span><span class="string">' bytes'</span><span class="keyword">;<br /><br /></span><span class="default">ob_end_flush</span><span class="keyword">( );<br /><br /></span><span class="default">?&gt;<br /></span><br />Try it yourself, ;)</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="115889">  <div class="votes">
+    <div id="Vu115889">
+    <a href="http://php.net/manual/vote-note.php?id=115889&amp;page=language.operators.increment&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd115889">
+    <a href="http://php.net/manual/vote-note.php?id=115889&amp;page=language.operators.increment&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V115889" title="52% like this...">
+    1
+    </div>
+  </div>
+  <a href="#115889" class="name">
+  <strong class="user"><em>aluciffer at hotmail dot com</em></strong></a><a class="genanchor" href="#115889"> &para;</a><div class="date" title="2014-10-10 09:27"><strong>3 years ago</strong></div>
+  <div class="text" id="Hcom115889">
+<div class="phpcode"><code><span class="html">
+Regarding character incrementing and PHP following Perl's convention with character operations.<br />Actually i found that there is a difference, and incrementing and decrementing unfortunately does not yield the reverse, expected results.<br />For example, the following piece of code:<br /><span class="default">&lt;?php<br /></span><span class="keyword">echo </span><span class="string">'== Alphabets ==' </span><span class="keyword">. </span><span class="default">PHP_EOL</span><span class="keyword">;<br /></span><span class="default">$s </span><span class="keyword">= </span><span class="string">'W'</span><span class="keyword">;<br />for (</span><span class="default">$n</span><span class="keyword">=</span><span class="default">0</span><span class="keyword">; </span><span class="default">$n</span><span class="keyword">&lt;</span><span class="default">10</span><span class="keyword">; </span><span class="default">$n</span><span class="keyword">++) {<br />&nbsp; &nbsp; echo ++</span><span class="default">$s </span><span class="keyword">. </span><span class="string">' '</span><span class="keyword">;<br />}<br />echo </span><span class="default">PHP_EOL</span><span class="keyword">;<br /><br />for (</span><span class="default">$n</span><span class="keyword">=</span><span class="default">10</span><span class="keyword">; </span><span class="default">$n</span><span class="keyword">&gt;</span><span class="default">0</span><span class="keyword">; </span><span class="default">$n</span><span class="keyword">--) {<br />&nbsp; &nbsp; echo (--</span><span class="default">$s</span><span class="keyword">) . </span><span class="string">' '</span><span class="keyword">;<br />}<br /></span><span class="default">?&gt;<br /></span>Will output:<br />== Alphabets ==<br />X Y Z AA AB AC AD AE AF AG <br />AG AG AG AG AG AG AG AG AG AG <br /><br />Please note that the decrement operator has no effect on the character or string.<br /><br />On the other hand, in Perl, the similar script:<br /><br />#!/usr/bin/perl<br /><br />my $s = 'W';<br /><br />foreach (1 .. 10) {<br />print&nbsp; ++$s . " ";<br />}&nbsp; <br /><br />print "\n";<br /><br />foreach (1 .. 10) {<br />print --$s . " ";<br />}<br /><br />Will output:<br /><br />X Y Z AA AB AC AD AE AF AG <br />-1 -2 -3 -4 -5 -6 -7 -8 -9 -10</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="100793">  <div class="votes">
+    <div id="Vu100793">
+    <a href="http://php.net/manual/vote-note.php?id=100793&amp;page=language.operators.increment&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd100793">
+    <a href="http://php.net/manual/vote-note.php?id=100793&amp;page=language.operators.increment&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V100793" title="51% like this...">
+    2
+    </div>
+  </div>
+  <a href="#100793" class="name">
+  <strong class="user"><em>Brad Proctor</em></strong></a><a class="genanchor" href="#100793"> &para;</a><div class="date" title="2010-11-06 08:51"><strong>7 years ago</strong></div>
+  <div class="text" id="Hcom100793">
+<div class="phpcode"><code><span class="html">
+I ran some tests (on PHP 5.3.3) of my own and was surprised to find $i += 1 to be the fastest method of incrementing.&nbsp; Here are the methods fastest to slowest:<br /><br />$i += 1;<br />++$i;<br />$i++;<br />$i = $i + 1;</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="16149">  <div class="votes">
+    <div id="Vu16149">
+    <a href="http://php.net/manual/vote-note.php?id=16149&amp;page=language.operators.increment&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd16149">
+    <a href="http://php.net/manual/vote-note.php?id=16149&amp;page=language.operators.increment&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V16149" title="53% like this...">
+    2
+    </div>
+  </div>
+  <a href="#16149" class="name">
+  <strong class="user"><em>cleong at letstalk dot com</em></strong></a><a class="genanchor" href="#16149"> &para;</a><div class="date" title="2001-10-17 07:52"><strong>16 years ago</strong></div>
+  <div class="text" id="Hcom16149">
+<div class="phpcode"><code><span class="html">
+Note that the ++ and -- don't convert a boolean to an int. The following code will loop forever.<br /><br />function a($start_index) {<br />for($i = $start_index; $i &lt; 10; $i++) echo "\$i = $i\n";<br />}<br /><br />a(false);<br /><br />This behavior is, of course, very different from that in C. Had me pulling out my hair for a while.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="119074">  <div class="votes">
+    <div id="Vu119074">
+    <a href="http://php.net/manual/vote-note.php?id=119074&amp;page=language.operators.increment&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd119074">
+    <a href="http://php.net/manual/vote-note.php?id=119074&amp;page=language.operators.increment&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V119074" title="50% like this...">
+    0
+    </div>
+  </div>
+  <a href="#119074" class="name">
+  <strong class="user"><em>ayyappan dot ashok at gmail dot com</em></strong></a><a class="genanchor" href="#119074"> &para;</a><div class="date" title="2016-03-29 09:51"><strong>1 year ago</strong></div>
+  <div class="text" id="Hcom119074">
+<div class="phpcode"><code><span class="html">
+Rule Incrementing or decrementing booleans has no effect.<br /><br />It has an effort on Incrementing or decrementing booleans.<br /><br />Please look over the code.<br /><br />$var = true;<br />echo ++$var;&nbsp;&nbsp; //Results 1<br /><br />Similarly <br /><br />$var = true;<br />echo ++$var;&nbsp;&nbsp; //Results 1<br /><br />$var = (int)false;<br />echo ++$var;&nbsp;&nbsp; //Results 1<br /><br />$var = (int)false;<br />echo $var++;&nbsp;&nbsp; //Results 0;&nbsp; &nbsp; <br /><br />Note : Tested on PHP Version 5.5.32</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="14134">  <div class="votes">
+    <div id="Vu14134">
+    <a href="http://php.net/manual/vote-note.php?id=14134&amp;page=language.operators.increment&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd14134">
+    <a href="http://php.net/manual/vote-note.php?id=14134&amp;page=language.operators.increment&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V14134" title="52% like this...">
+    2
+    </div>
+  </div>
+  <a href="#14134" class="name">
+  <strong class="user"><em>fred at surleau dot com</em></strong></a><a class="genanchor" href="#14134"> &para;</a><div class="date" title="2001-07-18 12:02"><strong>16 years ago</strong></div>
+  <div class="text" id="Hcom14134">
+<div class="phpcode"><code><span class="html">
+Other samples :<br />$l="A";&nbsp; &nbsp; &nbsp; $l++; -&gt; $l="B"<br />$l="A0";&nbsp; &nbsp;&nbsp; $l++; -&gt; $l="A1"<br />$l="A9";&nbsp; &nbsp;&nbsp; $l++; -&gt; $l="B0"<br />$l="Z99";&nbsp; &nbsp; $l++; -&gt; $l="AA00"<br />$l="5Z9";&nbsp; &nbsp; $l++; -&gt; $l="6A0"<br />$l="9Z9";&nbsp; &nbsp; $l++; -&gt; $l="10A0"<br />$l="9z9";&nbsp; &nbsp; $l++; -&gt; $l="10a0"<br />$l="J85410"; $l++; -&gt; $l="J85411"<br />$l="J99999"; $l++; -&gt; $l="K00000"<br />$l="K00000"; $l++; -&gt; $l="K00001"</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="92765">  <div class="votes">
+    <div id="Vu92765">
+    <a href="http://php.net/manual/vote-note.php?id=92765&amp;page=language.operators.increment&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd92765">
+    <a href="http://php.net/manual/vote-note.php?id=92765&amp;page=language.operators.increment&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V92765" title="48% like this...">
+    -1
+    </div>
+  </div>
+  <a href="#92765" class="name">
+  <strong class="user"><em>sneskid at hotmail dot com</em></strong></a><a class="genanchor" href="#92765"> &para;</a><div class="date" title="2009-08-07 03:49"><strong>8 years ago</strong></div>
+  <div class="text" id="Hcom92765">
+<div class="phpcode"><code><span class="html">
+(related to what "Are Pedersen" wrote)<br />With arrays it can lead to much confusion if your index variable is altered on the right side of the = sign, either with ++|-- or even when passed to a function by reference..<br />Consider these (PHP 5):<br /><span class="default">&lt;?php<br />$A</span><span class="keyword">[</span><span class="default">$a</span><span class="keyword">] = ++</span><span class="default">$a</span><span class="keyword">; </span><span class="comment">// [1]=1<br /></span><span class="default">$B</span><span class="keyword">[++</span><span class="default">$b</span><span class="keyword">] = ++</span><span class="default">$b</span><span class="keyword">; </span><span class="comment">// [1]=2<br /></span><span class="default">$C</span><span class="keyword">[</span><span class="default">$c</span><span class="keyword">+=</span><span class="default">0</span><span class="keyword">] = ++</span><span class="default">$c</span><span class="keyword">; </span><span class="comment">// [0]=1<br /></span><span class="default">?&gt;<br /></span>In 'A' you have to be aware that PHP evaluates $A[$a] last.<br />Yet in 'B' and 'C' PHP evaluates the index and saves it in a temporary variable.<br /><br />You can always force PHP to evaluate a variable without explicitly storing it as a named variable first, with a simple "+=0" like in example 'C'.<br /><br />Compared to 'A', 'C' gives the more logically expected result, when we expect evaluation occurs left to right.<br />PHP does evaluate left to right BUT it will attempt to cut down on temporary variables, which can lead to confusing results.<br /><br />So just be aware and use either behavior to your advantage for the desired functionality.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="109819">  <div class="votes">
+    <div id="Vu109819">
+    <a href="http://php.net/manual/vote-note.php?id=109819&amp;page=language.operators.increment&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd109819">
+    <a href="http://php.net/manual/vote-note.php?id=109819&amp;page=language.operators.increment&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V109819" title="45% like this...">
+    -2
+    </div>
+  </div>
+  <a href="#109819" class="name">
+  <strong class="user"><em>michiel ed thalent circle nl</em></strong></a><a class="genanchor" href="#109819"> &para;</a><div class="date" title="2012-08-24 07:39"><strong>5 years ago</strong></div>
+  <div class="text" id="Hcom109819">
+<div class="phpcode"><code><span class="html">
+BEWARE:<br /><br />If incrementing an uninitialized variable you will not get an E_NOTICE error. This may caused you to not find issue's like the visibility of a property.<br /><br /><span class="default">&lt;?php<br /></span><span class="keyword">class </span><span class="default">a </span><span class="keyword">{<br />&nbsp; &nbsp; private </span><span class="default">$foo </span><span class="keyword">= </span><span class="default">1</span><span class="keyword">;<br />}<br /><br />class </span><span class="default">b </span><span class="keyword">extends </span><span class="default">a </span><span class="keyword">{<br />&nbsp; &nbsp; public function </span><span class="default">inc</span><span class="keyword">() {<br />&nbsp; &nbsp; &nbsp; &nbsp; echo ++</span><span class="default">$this</span><span class="keyword">-&gt;</span><span class="default">foo</span><span class="keyword">;<br />&nbsp; &nbsp; }<br />}<br /><br /></span><span class="default">$b </span><span class="keyword">= new </span><span class="default">b</span><span class="keyword">;<br /></span><span class="default">$b</span><span class="keyword">-&gt;</span><span class="default">inc</span><span class="keyword">();<br /></span><span class="default">?&gt;<br /></span><br />Will output 1 and not 2 (if $foo was accessible).<br />Also no notices are given.</span>
+</code></div>
+  </div>
+ </div>
+  <div class="note" id="106615">  <div class="votes">
+    <div id="Vu106615">
+    <a href="http://php.net/manual/vote-note.php?id=106615&amp;page=language.operators.increment&amp;vote=up" title="Vote up!" class="usernotes-voteu">up</a>
+    </div>
+    <div id="Vd106615">
+    <a href="http://php.net/manual/vote-note.php?id=106615&amp;page=language.operators.increment&amp;vote=down" title="Vote down!" class="usernotes-voted">down</a>
+    </div>
+    <div class="tally" id="V106615" title="24% like this...">
+    -25
+    </div>
+  </div>
+  <a href="#106615" class="name">
+  <strong class="user"><em>johnnythan at nospam dot gmx dot com</em></strong></a><a class="genanchor" href="#106615"> &para;</a><div class="date" title="2011-11-22 04:05"><strong>6 years ago</strong></div>
+  <div class="text" id="Hcom106615">
+<div class="phpcode"><code><span class="html">
+If you have a trailing zero and use the increment, the trailing zero will not remain. Was at least unexpected for me at first, although it's logical if you think about it.<br /><br /><span class="default">&lt;?php <br />$start </span><span class="keyword">= </span><span class="string">'01'</span><span class="keyword">;<br /></span><span class="default">$start</span><span class="keyword">++;<br />print </span><span class="default">$start</span><span class="keyword">; </span><span class="comment">//Outputs '2' not '02'<br /></span><span class="default">?&gt;</span>
+</span>
+</code></div>
+  </div>
+ </div></div>
+
+ <div class="foot"><a href="http://php.net/manual/add-note.php?sect=language.operators.increment&amp;redirect=http://php.net/manual/en/language.operators.increment.php"><img src='http://php.net/images/notes-add@2x.png' alt='add a note' width='12' height='12'> <small>add a note</small></a></div>
+</section>    </section><!-- layout-content -->
+        <aside class='layout-menu'>
+    
+        <ul class='parent-menu-list'>
+                                    <li>
+                <a href="http://php.net/manual/en/language.operators.php">Operators</a>
+    
+                                    <ul class='child-menu-list'>
+    
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.operators.precedence.php" title="Operator Precedence">Operator Precedence</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.operators.arithmetic.php" title="Arithmetic Operators">Arithmetic Operators</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.operators.assignment.php" title="Assignment Operators">Assignment Operators</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.operators.bitwise.php" title="Bitwise Operators">Bitwise Operators</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.operators.comparison.php" title="Comparison Operators">Comparison Operators</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.operators.errorcontrol.php" title="Error Control Operators">Error Control Operators</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.operators.execution.php" title="Execution Operators">Execution Operators</a>
+                        </li>
+                          
+                        <li class="current">
+                            <a href="http://php.net/manual/en/language.operators.increment.php" title="Incrementing/Decrementing Operators">Incrementing/Decrementing Operators</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.operators.logical.php" title="Logical Operators">Logical Operators</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.operators.string.php" title="String Operators">String Operators</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.operators.array.php" title="Array Operators">Array Operators</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/language.operators.type.php" title="Type Operators">Type Operators</a>
+                        </li>
+                            
+                    </ul>
+                    
+            </li>
+                        
+                    </ul>
+    </aside>
+
+
+  </div><!-- layout -->
+         
+  <footer>
+    <div class="container footer-content">
+      <div class="row-fluid">
+      <ul class="footmenu">
+        <li><a href="http://php.net/copyright.php">Copyright &copy; 2001-2017 The PHP Group</a></li>
+        <li><a href="http://php.net/my.php">My PHP.net</a></li>
+        <li><a href="http://php.net/contact.php">Contact</a></li>
+        <li><a href="http://php.net/sites.php">Other PHP.net sites</a></li>
+        <li><a href="http://php.net/mirrors.php">Mirror sites</a></li>
+        <li><a href="http://php.net/privacy.php">Privacy policy</a></li>
+      </ul>
+      </div>
+    </div>
+  </footer>
+
+    
+ <!-- External and third party libraries. -->
+ <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/modernizr.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/hogan-2.0.0.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/typeahead.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/mousetrap.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/search.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1500560403&amp;f=/js/common.js"></script>
+
+<a id="toTop" href="javascript:;"><span id="toTopHover"></span><img width="40" height="40" alt="To Top" src="http://php.net/images/to-top@2x.png"></a>
+
+</body>
+
+<!-- Mirrored from php.net/manual/en/language.operators.increment.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Dec 2017 23:18:10 GMT -->
+</html>
+

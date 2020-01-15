@@ -1,0 +1,2 @@
+Ordenamiento de arrays: Función propia
+Recorre número a número comparando el primero con el segundo en el recorrido del array.

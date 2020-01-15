@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja">
+
+<!-- Mirrored from php.net/manual/ja/langref.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Dec 2017 23:18:09 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+  <title>PHP: 言語リファレンス - Manual </title>
+
+ <link rel="shortcut icon" href="http://php.net/favicon.ico">
+ <link rel="search" type="application/opensearchdescription+xml" href="http://php.net/phpnetimprovedsearch.src" title="Add PHP.net search">
+ <link rel="alternate" type="application/atom+xml" href="http://php.net/releases/feed.php" title="PHP Release feed">
+ <link rel="alternate" type="application/atom+xml" href="http://php.net/feed.atom" title="PHP: Hypertext Preprocessor">
+
+ <link rel="canonical" href="http://php.net/manual/ja/langref.php">
+ <link rel="shorturl" href="http://php.net/manual/ja/langref.php">
+ <link rel="alternate" href="http://php.net/manual/ja/langref.php" hreflang="x-default">
+
+ <link rel="contents" href="http://php.net/manual/ja/index.php">
+ <link rel="index" href="http://php.net/manual/ja/index.php">
+ <link rel="prev" href="http://php.net/manual/ja/configuration.changes.php">
+ <link rel="next" href="http://php.net/manual/ja/language.basic-syntax.php">
+
+ <link rel="alternate" href="http://php.net/manual/en/langref.php" hreflang="en">
+ <link rel="alternate" href="http://php.net/manual/pt_BR/langref.php" hreflang="pt_BR">
+ <link rel="alternate" href="http://php.net/manual/zh/langref.php" hreflang="zh">
+ <link rel="alternate" href="http://php.net/manual/fr/langref.php" hreflang="fr">
+ <link rel="alternate" href="http://php.net/manual/de/langref.php" hreflang="de">
+ <link rel="alternate" href="http://php.net/manual/ja/langref.php" hreflang="ja">
+ <link rel="alternate" href="http://php.net/manual/ro/langref.php" hreflang="ro">
+ <link rel="alternate" href="http://php.net/manual/ru/langref.php" hreflang="ru">
+ <link rel="alternate" href="http://php.net/manual/es/langref.php" hreflang="es">
+ <link rel="alternate" href="http://php.net/manual/tr/langref.php" hreflang="tr">
+
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1421837618&amp;f=/fonts/Fira/fira.css" media="screen">
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1421837618&amp;f=/fonts/Font-Awesome/css/fontello.css" media="screen">
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1478800802&amp;f=/styles/theme-base.css" media="screen">
+<link rel="stylesheet" type="text/css" href="http://php.net/cached.php?t=1449787206&amp;f=/styles/theme-medium.css" media="screen">
+
+ <!--[if lte IE 7]>
+ <link rel="stylesheet" type="text/css" href="http://php.net/styles/workarounds.ie7.css" media="screen">
+ <![endif]-->
+
+ <!--[if lte IE 8]>
+ <script type="text/javascript">
+  window.brokenIE = true;
+ </script>
+ <![endif]-->
+
+ <!--[if lte IE 9]>
+ <link rel="stylesheet" type="text/css" href="http://php.net/styles/workarounds.ie9.css" media="screen">
+ <![endif]-->
+
+ <!--[if IE]>
+ <script type="text/javascript" src="http://php.net/js/ext/html5.js"></script>
+ <![endif]-->
+
+ <base >
+
+</head>
+<body class="docs ">
+
+<nav id="head-nav" class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <a href="http://php.net/" class="brand"><img src="http://php.net/images/logos/php-logo.svg" width="48" height="24" alt="php"></a>
+    <div id="mainmenu-toggle-overlay"></div>
+    <input type="checkbox" id="mainmenu-toggle">
+    <ul class="nav">
+      <li class=""><a href="http://php.net/downloads">Downloads</a></li>
+      <li class="active"><a href="http://php.net/docs.php">Documentation</a></li>
+      <li class=""><a href="http://php.net/get-involved" >Get Involved</a></li>
+      <li class=""><a href="http://php.net/support">Help</a></li>
+    </ul>
+    <form class="navbar-search" id="topsearch" action="http://php.net/search.php">
+      <input type="hidden" name="show" value="quickref">
+      <input type="search" name="pattern" class="search-query" placeholder="Search" accesskey="s">
+    </form>
+  </div>
+  <div id="flash-message"></div>
+</nav>
+<nav id="trick"><div><dl>
+<dt><a href='http://php.net/manual/en/getting-started.php'>Getting Started</a></dt>
+	<dd><a href='http://php.net/manual/en/introduction.php'>Introduction</a></dd>
+	<dd><a href='http://php.net/manual/en/tutorial.php'>A simple tutorial</a></dd>
+<dt><a href='http://php.net/manual/en/langref.php'>Language Reference</a></dt>
+	<dd><a href='http://php.net/manual/en/language.basic-syntax.php'>Basic syntax</a></dd>
+	<dd><a href='http://php.net/manual/en/language.types.php'>Types</a></dd>
+	<dd><a href='http://php.net/manual/en/language.variables.php'>Variables</a></dd>
+	<dd><a href='http://php.net/manual/en/language.constants.php'>Constants</a></dd>
+	<dd><a href='http://php.net/manual/en/language.expressions.php'>Expressions</a></dd>
+	<dd><a href='http://php.net/manual/en/language.operators.php'>Operators</a></dd>
+	<dd><a href='http://php.net/manual/en/language.control-structures.php'>Control Structures</a></dd>
+	<dd><a href='http://php.net/manual/en/language.functions.php'>Functions</a></dd>
+	<dd><a href='http://php.net/manual/en/language.oop5.php'>Classes and Objects</a></dd>
+	<dd><a href='http://php.net/manual/en/language.namespaces.php'>Namespaces</a></dd>
+	<dd><a href='http://php.net/manual/en/language.errors.php'>Errors</a></dd>
+	<dd><a href='http://php.net/manual/en/language.exceptions.php'>Exceptions</a></dd>
+	<dd><a href='http://php.net/manual/en/language.generators.php'>Generators</a></dd>
+	<dd><a href='http://php.net/manual/en/language.references.php'>References Explained</a></dd>
+	<dd><a href='http://php.net/manual/en/reserved.variables.php'>Predefined Variables</a></dd>
+	<dd><a href='http://php.net/manual/en/reserved.exceptions.php'>Predefined Exceptions</a></dd>
+	<dd><a href='http://php.net/manual/en/reserved.interfaces.php'>Predefined Interfaces and Classes</a></dd>
+	<dd><a href='http://php.net/manual/en/context.php'>Context options and parameters</a></dd>
+	<dd><a href='http://php.net/manual/en/wrappers.php'>Supported Protocols and Wrappers</a></dd>
+</dl>
+<dl>
+<dt><a href='http://php.net/manual/en/security.php'>Security</a></dt>
+	<dd><a href='http://php.net/manual/en/security.intro.php'>Introduction</a></dd>
+	<dd><a href='http://php.net/manual/en/security.general.php'>General considerations</a></dd>
+	<dd><a href='http://php.net/manual/en/security.cgi-bin.php'>Installed as CGI binary</a></dd>
+	<dd><a href='http://php.net/manual/en/security.apache.php'>Installed as an Apache module</a></dd>
+	<dd><a href='http://php.net/manual/en/security.sessions.php'>Session Security</a></dd>
+	<dd><a href='http://php.net/manual/en/security.filesystem.php'>Filesystem Security</a></dd>
+	<dd><a href='http://php.net/manual/en/security.database.php'>Database Security</a></dd>
+	<dd><a href='http://php.net/manual/en/security.errors.php'>Error Reporting</a></dd>
+	<dd><a href='http://php.net/manual/en/security.globals.php'>Using Register Globals</a></dd>
+	<dd><a href='http://php.net/manual/en/security.variables.php'>User Submitted Data</a></dd>
+	<dd><a href='http://php.net/manual/en/security.magicquotes.php'>Magic Quotes</a></dd>
+	<dd><a href='http://php.net/manual/en/security.hiding.php'>Hiding PHP</a></dd>
+	<dd><a href='http://php.net/manual/en/security.current.php'>Keeping Current</a></dd>
+<dt><a href='http://php.net/manual/en/features.php'>Features</a></dt>
+	<dd><a href='http://php.net/manual/en/features.http-auth.php'>HTTP authentication with PHP</a></dd>
+	<dd><a href='http://php.net/manual/en/features.cookies.php'>Cookies</a></dd>
+	<dd><a href='http://php.net/manual/en/features.sessions.php'>Sessions</a></dd>
+	<dd><a href='http://php.net/manual/en/features.xforms.php'>Dealing with XForms</a></dd>
+	<dd><a href='http://php.net/manual/en/features.file-upload.php'>Handling file uploads</a></dd>
+	<dd><a href='http://php.net/manual/en/features.remote-files.php'>Using remote files</a></dd>
+	<dd><a href='http://php.net/manual/en/features.connection-handling.php'>Connection handling</a></dd>
+	<dd><a href='http://php.net/manual/en/features.persistent-connections.php'>Persistent Database Connections</a></dd>
+	<dd><a href='http://php.net/manual/en/features.safe-mode.php'>Safe Mode</a></dd>
+	<dd><a href='http://php.net/manual/en/features.commandline.php'>Command line usage</a></dd>
+	<dd><a href='http://php.net/manual/en/features.gc.php'>Garbage Collection</a></dd>
+	<dd><a href='http://php.net/manual/en/features.dtrace.php'>DTrace Dynamic Tracing</a></dd>
+</dl>
+<dl>
+<dt><a href='http://php.net/manual/en/funcref.php'>Function Reference</a></dt>
+	<dd><a href='http://php.net/manual/en/refs.basic.php.php'>Affecting PHP's Behaviour</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.audio.php'>Audio Formats Manipulation</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.remote.auth.php'>Authentication Services</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.cmdline.php'>Command Line Specific Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.compression.php'>Compression and Archive Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.creditcard.php'>Credit Card Processing</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.crypto.php'>Cryptography Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.database.php'>Database Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.calendar.php'>Date and Time Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.fileprocess.file.php'>File System Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.international.php'>Human Language and Character Encoding Support</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.image.php'>Image Processing and Generation</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.remote.mail.php'>Mail Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.math.php'>Mathematical Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.nontext.php'>Non-Text MIME Output</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.fileprocess.process.php'>Process Control Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.other.php'>Other Basic Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.remote.other.php'>Other Services</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.search.php'>Search Engine Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.server.php'>Server Specific Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.session.php'>Session Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.text.php'>Text Processing</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.basic.vartype.php'>Variable and Type Related Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.webservice.php'>Web Services</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.utilspec.windows.php'>Windows Only Extensions</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.xml.php'>XML Manipulation</a></dd>
+	<dd><a href='http://php.net/manual/en/refs.ui.php'>GUI Extensions</a></dd>
+</dl>
+<dl>
+<dt>Keyboard Shortcuts</dt><dt>?</dt>
+<dd>This help</dd>
+<dt>j</dt>
+<dd>Next menu item</dd>
+<dt>k</dt>
+<dd>Previous menu item</dd>
+<dt>g p</dt>
+<dd>Previous man page</dd>
+<dt>g n</dt>
+<dd>Next man page</dd>
+<dt>G</dt>
+<dd>Scroll to bottom</dd>
+<dt>g g</dt>
+<dd>Scroll to top</dd>
+<dt>g h</dt>
+<dd>Goto homepage</dd>
+<dt>g s</dt>
+<dd>Goto search<br>(current page)</dd>
+<dt>/</dt>
+<dd>Focus search box</dd>
+</dl></div></nav>
+<div id="goto">
+    <div class="search">
+         <div class="text"></div>
+         <div class="results"><ul></ul></div>
+   </div>
+</div>
+
+  <div id="breadcrumbs" class="clearfix">
+    <div id="breadcrumbs-inner">
+          <div class="next">
+        <a href="http://php.net/manual/ja/language.basic-syntax.php">
+          基本的な構文 &raquo;
+        </a>
+      </div>
+              <div class="prev">
+        <a href="http://php.net/manual/ja/configuration.changes.php">
+          &laquo; 設定を変更するには        </a>
+      </div>
+          <ul>
+            <li><a href='http://php.net/manual/ja/index.php'>PHP マニュアル</a></li>      </ul>
+    </div>
+  </div>
+
+
+
+
+<div id="layout" class="clearfix">
+  <section id="layout-content">
+  <div class="page-tools">
+    <div class="change-language">
+      <form action="http://php.net/manual/change.php" method="get" id="changelang" name="changelang">
+        <fieldset>
+          <label for="changelang-langs">Change language:</label>
+          <select onchange="document.changelang.submit()" name="page" id="changelang-langs">
+            <option value='http://php.net/manual/ja/en/langref.php'>English</option>
+            <option value='http://php.net/manual/ja/pt_BR/langref.php'>Brazilian Portuguese</option>
+            <option value='http://php.net/manual/ja/zh/langref.php'>Chinese (Simplified)</option>
+            <option value='http://php.net/manual/ja/fr/langref.php'>French</option>
+            <option value='http://php.net/manual/ja/de/langref.php'>German</option>
+            <option value='ja/langref.php' selected="selected">Japanese</option>
+            <option value='http://php.net/manual/ja/ro/langref.php'>Romanian</option>
+            <option value='http://php.net/manual/ja/ru/langref.php'>Russian</option>
+            <option value='http://php.net/manual/ja/es/langref.php'>Spanish</option>
+            <option value='http://php.net/manual/ja/tr/langref.php'>Turkish</option>
+            <option value="http://php.net/manual/ja/help-translate.php">Other</option>
+          </select>
+        </fieldset>
+      </form>
+    </div>
+    <div class="edit-bug">
+      <a href="https://edit.php.net/?project=PHP&amp;perm=ja/langref.php">Edit</a>
+      <a href="https://bugs.php.net/report.php?bug_type=Documentation+problem&amp;manpage=langref">Report a Bug</a>
+    </div>
+  </div><div id="langref" class="book">
+  <h1 class="title">言語リファレンス</h1>
+  
+
+
+
+
+ 
+
+
+
+  
+
+
+
+
+ 
+
+
+  
+
+
+
+ 
+ 
+
+
+  
+
+
+
+
+ 
+ 
+
+
+  
+
+
+
+ 
+ 
+ 
+
+  
+
+
+
+ 
+ 
+
+
+  
+
+
+
+
+
+ 
+
+  
+
+
+
+ 
+ 
+
+
+  
+
+
+
+ 
+ 
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+ 
+
+
+  
+
+
+
+
+
+ 
+
+
+  
+
+
+
+ 
+
+
+  
+
+
+
+ 
+
+
+
+  
+
+
+
+
+ 
+
+ 
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+
+
+
+ 
+
+
+
+  
+
+
+
+
+
+
+
+ <ul class="chunklist chunklist_book"><li><a href="http://php.net/manual/ja/language.basic-syntax.php">基本的な構文</a><ul class="chunklist chunklist_book chunklist_children"><li><a href="http://php.net/manual/ja/language.basic-syntax.phptags.php">PHP タグ</a></li><li><a href="http://php.net/manual/ja/language.basic-syntax.phpmode.php">HTML からの脱出</a></li><li><a href="http://php.net/manual/ja/language.basic-syntax.instruction-separation.php">命令の分離</a></li><li><a href="http://php.net/manual/ja/language.basic-syntax.comments.php">コメント</a></li></ul></li><li><a href="http://php.net/manual/ja/language.types.php">型</a><ul class="chunklist chunklist_book chunklist_children"><li><a href="http://php.net/manual/ja/language.types.intro.php">はじめに</a></li><li><a href="http://php.net/manual/ja/language.types.boolean.php">論理型 (boolean)</a></li><li><a href="http://php.net/manual/ja/language.types.integer.php">整数</a></li><li><a href="http://php.net/manual/ja/language.types.float.php">浮動小数点数</a></li><li><a href="http://php.net/manual/ja/language.types.string.php">文字列</a></li><li><a href="http://php.net/manual/ja/language.types.array.php">配列</a></li><li><a href="http://php.net/manual/ja/language.types.iterable.php">Iterables</a></li><li><a href="http://php.net/manual/ja/language.types.object.php">オブジェクト</a></li><li><a href="http://php.net/manual/ja/language.types.resource.php">リソース</a></li><li><a href="http://php.net/manual/ja/language.types.null.php">NULL</a></li><li><a href="http://php.net/manual/ja/language.types.callable.php">コールバック / Callable</a></li><li><a href="http://php.net/manual/ja/language.pseudo-types.php">本ドキュメントにおける疑似的な型および変数</a></li><li><a href="http://php.net/manual/ja/language.types.type-juggling.php">型の相互変換</a></li></ul></li><li><a href="http://php.net/manual/ja/language.variables.php">変数</a><ul class="chunklist chunklist_book chunklist_children"><li><a href="http://php.net/manual/ja/language.variables.basics.php">基本的な事</a></li><li><a href="http://php.net/manual/ja/language.variables.predefined.php">定義済みの変数</a></li><li><a href="http://php.net/manual/ja/language.variables.scope.php">変数のスコープ</a></li><li><a href="http://php.net/manual/ja/language.variables.variable.php">可変変数</a></li><li><a href="http://php.net/manual/ja/language.variables.external.php">外部から来る変数</a></li></ul></li><li><a href="http://php.net/manual/ja/language.constants.php">定数</a><ul class="chunklist chunklist_book chunklist_children"><li><a href="http://php.net/manual/ja/language.constants.syntax.php">構文</a></li><li><a href="http://php.net/manual/ja/language.constants.predefined.php">自動的に定義される定数</a></li></ul></li><li><a href="http://php.net/manual/ja/language.expressions.php">式</a></li><li><a href="http://php.net/manual/ja/language.operators.php">演算子</a><ul class="chunklist chunklist_book chunklist_children"><li><a href="http://php.net/manual/ja/language.operators.precedence.php">演算子の優先順位</a></li><li><a href="http://php.net/manual/ja/language.operators.arithmetic.php">代数演算子</a></li><li><a href="http://php.net/manual/ja/language.operators.assignment.php">代入演算子</a></li><li><a href="http://php.net/manual/ja/language.operators.bitwise.php">ビット演算子</a></li><li><a href="http://php.net/manual/ja/language.operators.comparison.php">比較演算子</a></li><li><a href="http://php.net/manual/ja/language.operators.errorcontrol.php">エラー制御演算子</a></li><li><a href="http://php.net/manual/ja/language.operators.execution.php">実行演算子</a></li><li><a href="http://php.net/manual/ja/language.operators.increment.php">加算子/減算子</a></li><li><a href="http://php.net/manual/ja/language.operators.logical.php">論理演算子</a></li><li><a href="http://php.net/manual/ja/language.operators.string.php">文字列演算子</a></li><li><a href="http://php.net/manual/ja/language.operators.array.php">配列演算子</a></li><li><a href="http://php.net/manual/ja/language.operators.type.php">型演算子</a></li></ul></li><li><a href="http://php.net/manual/ja/language.control-structures.php">制御構造</a><ul class="chunklist chunklist_book chunklist_children"><li><a href="http://php.net/manual/ja/control-structures.intro.php">はじめに</a></li><li><a href="http://php.net/manual/ja/control-structures.if.php">if</a></li><li><a href="http://php.net/manual/ja/control-structures.else.php">else</a></li><li><a href="http://php.net/manual/ja/control-structures.elseif.php">elseif/else if</a></li><li><a href="http://php.net/manual/ja/control-structures.alternative-syntax.php">制御構造に関する別の構文</a></li><li><a href="http://php.net/manual/ja/control-structures.while.php">while</a></li><li><a href="http://php.net/manual/ja/control-structures.do.while.php">do-while</a></li><li><a href="http://php.net/manual/ja/control-structures.for.php">for</a></li><li><a href="http://php.net/manual/ja/control-structures.foreach.php">foreach</a></li><li><a href="http://php.net/manual/ja/control-structures.break.php">break</a></li><li><a href="http://php.net/manual/ja/control-structures.continue.php">continue</a></li><li><a href="http://php.net/manual/ja/control-structures.switch.php">switch</a></li><li><a href="http://php.net/manual/ja/control-structures.declare.php">declare</a></li><li><a href="http://php.net/manual/ja/function.return.php">return</a></li><li><a href="http://php.net/manual/ja/function.require.php">require</a></li><li><a href="http://php.net/manual/ja/function.include.php">include</a></li><li><a href="http://php.net/manual/ja/function.require-once.php">require_once</a></li><li><a href="http://php.net/manual/ja/function.include-once.php">include_once</a></li><li><a href="http://php.net/manual/ja/control-structures.goto.php">goto</a></li></ul></li><li><a href="http://php.net/manual/ja/language.functions.php">関数</a><ul class="chunklist chunklist_book chunklist_children"><li><a href="http://php.net/manual/ja/functions.user-defined.php">ユーザー定義関数</a></li><li><a href="http://php.net/manual/ja/functions.arguments.php">関数の引数</a></li><li><a href="http://php.net/manual/ja/functions.returning-values.php">返り値</a></li><li><a href="http://php.net/manual/ja/functions.variable-functions.php">可変関数</a></li><li><a href="http://php.net/manual/ja/functions.internal.php">内部（ビルトイン）関数</a></li><li><a href="http://php.net/manual/ja/functions.anonymous.php">無名関数</a></li></ul></li><li><a href="http://php.net/manual/ja/language.oop5.php">クラスとオブジェクト</a><ul class="chunklist chunklist_book chunklist_children"><li><a href="http://php.net/manual/ja/oop5.intro.php">はじめに</a></li><li><a href="http://php.net/manual/ja/language.oop5.basic.php">クラスの基礎</a></li><li><a href="http://php.net/manual/ja/language.oop5.properties.php">プロパティ</a></li><li><a href="http://php.net/manual/ja/language.oop5.constants.php">オブジェクト定数</a></li><li><a href="http://php.net/manual/ja/language.oop5.autoload.php">クラスのオートローディング</a></li><li><a href="http://php.net/manual/ja/language.oop5.decon.php">コンストラクタとデストラクタ</a></li><li><a href="http://php.net/manual/ja/language.oop5.visibility.php">アクセス権</a></li><li><a href="http://php.net/manual/ja/language.oop5.inheritance.php">オブジェクトの継承</a></li><li><a href="http://php.net/manual/ja/language.oop5.paamayim-nekudotayim.php">スコープ定義演算子 (::)</a></li><li><a href="http://php.net/manual/ja/language.oop5.static.php">static キーワード</a></li><li><a href="http://php.net/manual/ja/language.oop5.abstract.php">クラスの抽象化</a></li><li><a href="http://php.net/manual/ja/language.oop5.interfaces.php">オブジェクト インターフェイス</a></li><li><a href="http://php.net/manual/ja/language.oop5.traits.php">トレイト</a></li><li><a href="http://php.net/manual/ja/language.oop5.anonymous.php">無名クラス</a></li><li><a href="http://php.net/manual/ja/language.oop5.overloading.php">オーバーロード</a></li><li><a href="http://php.net/manual/ja/language.oop5.iterations.php">オブジェクトの反復処理</a></li><li><a href="http://php.net/manual/ja/language.oop5.magic.php">マジックメソッド</a></li><li><a href="http://php.net/manual/ja/language.oop5.final.php">finalキーワード</a></li><li><a href="http://php.net/manual/ja/language.oop5.cloning.php">オブジェクトのクローン作成</a></li><li><a href="http://php.net/manual/ja/language.oop5.object-comparison.php">オブジェクトの比較</a></li><li><a href="http://php.net/manual/ja/language.oop5.typehinting.php">タイプヒンティング</a></li><li><a href="http://php.net/manual/ja/language.oop5.late-static-bindings.php">遅延静的束縛 (Late Static Bindings)</a></li><li><a href="http://php.net/manual/ja/language.oop5.references.php">オブジェクトと参照</a></li><li><a href="http://php.net/manual/ja/language.oop5.serialization.php">オブジェクトのシリアライズ</a></li><li><a href="http://php.net/manual/ja/language.oop5.changelog.php">変更履歴</a></li></ul></li><li><a href="http://php.net/manual/ja/language.namespaces.php">名前空間</a><ul class="chunklist chunklist_book chunklist_children"><li><a href="http://php.net/manual/ja/language.namespaces.rationale.php">名前空間の概要</a></li><li><a href="http://php.net/manual/ja/language.namespaces.definition.php">名前空間の定義</a></li><li><a href="http://php.net/manual/ja/language.namespaces.nested.php">サブ名前空間の宣言</a></li><li><a href="http://php.net/manual/ja/language.namespaces.definitionmultiple.php">同一ファイル内での複数の名前空間の定義</a></li><li><a href="http://php.net/manual/ja/language.namespaces.basics.php">名前空間の使用法: 基本編</a></li><li><a href="http://php.net/manual/ja/language.namespaces.dynamic.php">名前空間と動的言語機能</a></li><li><a href="http://php.net/manual/ja/language.namespaces.nsconstants.php">namespace キーワードおよび __NAMESPACE__ 定数</a></li><li><a href="http://php.net/manual/ja/language.namespaces.importing.php">名前空間の使用法: エイリアス/インポート</a></li><li><a href="http://php.net/manual/ja/language.namespaces.global.php">グローバル空間</a></li><li><a href="http://php.net/manual/ja/language.namespaces.fallback.php">名前空間の使用法: グローバル関数/定数への移行</a></li><li><a href="http://php.net/manual/ja/language.namespaces.rules.php">名前解決のルール</a></li><li><a href="http://php.net/manual/ja/language.namespaces.faq.php">FAQ: 名前空間について知っておくべきこと</a></li></ul></li><li><a href="http://php.net/manual/ja/language.errors.php">エラー</a><ul class="chunklist chunklist_book chunklist_children"><li><a href="http://php.net/manual/ja/language.errors.basics.php">基本</a></li><li><a href="http://php.net/manual/ja/language.errors.php7.php">PHP 7 でのエラー</a></li></ul></li><li><a href="http://php.net/manual/ja/language.exceptions.php">例外(exceptions)</a><ul class="chunklist chunklist_book chunklist_children"><li><a href="http://php.net/manual/ja/language.exceptions.extending.php">例外を拡張する</a></li></ul></li><li><a href="http://php.net/manual/ja/language.generators.php">ジェネレータ</a><ul class="chunklist chunklist_book chunklist_children"><li><a href="http://php.net/manual/ja/language.generators.overview.php">ジェネレータとは</a></li><li><a href="http://php.net/manual/ja/language.generators.syntax.php">ジェネレータの構文</a></li><li><a href="http://php.net/manual/ja/language.generators.comparison.php">ジェネレータと Iterator オブジェクトとの比較</a></li></ul></li><li><a href="http://php.net/manual/ja/language.references.php">リファレンスの説明</a><ul class="chunklist chunklist_book chunklist_children"><li><a href="http://php.net/manual/ja/language.references.whatare.php">リファレンスとは?</a></li><li><a href="http://php.net/manual/ja/language.references.whatdo.php">リファレンスが行うことは何ですか?</a></li><li><a href="http://php.net/manual/ja/language.references.arent.php">リファレンスが行わないこと</a></li><li><a href="http://php.net/manual/ja/language.references.pass.php">リファレンス渡し</a></li><li><a href="http://php.net/manual/ja/language.references.return.php">リファレンスを返す</a></li><li><a href="http://php.net/manual/ja/language.references.unset.php">リファレンスの解除</a></li><li><a href="http://php.net/manual/ja/language.references.spot.php">リファレンスの適用範囲</a></li></ul></li><li><a href="http://php.net/manual/ja/reserved.variables.php">定義済の変数</a><ul class="chunklist chunklist_book chunklist_children"><li><a href="http://php.net/manual/ja/language.variables.superglobals.php">スーパーグローバル</a> — すべてのスコープで使用できる組み込みの変数</li><li><a href="http://php.net/manual/ja/reserved.variables.globals.php">$GLOBALS</a> — グローバルスコープで使用可能なすべての変数への参照</li><li><a href="http://php.net/manual/ja/reserved.variables.server.php">$_SERVER</a> — サーバー情報および実行時の環境情報</li><li><a href="http://php.net/manual/ja/reserved.variables.get.php">$_GET</a> — HTTP GET 変数</li><li><a href="http://php.net/manual/ja/reserved.variables.post.php">$_POST</a> — HTTP POST 変数</li><li><a href="http://php.net/manual/ja/reserved.variables.files.php">$_FILES</a> — HTTP ファイルアップロード変数</li><li><a href="http://php.net/manual/ja/reserved.variables.request.php">$_REQUEST</a> — HTTP リクエスト変数</li><li><a href="http://php.net/manual/ja/reserved.variables.session.php">$_SESSION</a> — セッション変数</li><li><a href="http://php.net/manual/ja/reserved.variables.environment.php">$_ENV</a> — 環境変数</li><li><a href="http://php.net/manual/ja/reserved.variables.cookies.php">$_COOKIE</a> — HTTP クッキー</li><li><a href="http://php.net/manual/ja/reserved.variables.phperrormsg.php">$php_errormsg</a> — 直近のエラーメッセージ</li><li><a href="http://php.net/manual/ja/reserved.variables.httprawpostdata.php">$HTTP_RAW_POST_DATA</a> — 生の POST データ</li><li><a href="http://php.net/manual/ja/reserved.variables.httpresponseheader.php">$http_response_header</a> — HTTP レスポンスヘッダ</li><li><a href="http://php.net/manual/ja/reserved.variables.argc.php">$argc</a> — スクリプトに渡された引数の数</li><li><a href="http://php.net/manual/ja/reserved.variables.argv.php">$argv</a> — スクリプトに渡された引数の配列</li></ul></li><li><a href="http://php.net/manual/ja/reserved.exceptions.php">定義済みの例外</a><ul class="chunklist chunklist_book chunklist_children"><li><a href="http://php.net/manual/ja/class.exception.php">Exception</a></li><li><a href="http://php.net/manual/ja/class.errorexception.php">ErrorException</a></li><li><a href="http://php.net/manual/ja/class.error.php">Error</a></li><li><a href="http://php.net/manual/ja/class.argumentcounterror.php">ArgumentCountError</a></li><li><a href="http://php.net/manual/ja/class.arithmeticerror.php">ArithmeticError</a></li><li><a href="http://php.net/manual/ja/class.assertionerror.php">AssertionError</a></li><li><a href="http://php.net/manual/ja/class.divisionbyzeroerror.php">DivisionByZeroError</a></li><li><a href="http://php.net/manual/ja/class.parseerror.php">ParseError</a></li><li><a href="http://php.net/manual/ja/class.typeerror.php">TypeError</a></li></ul></li><li><a href="http://php.net/manual/ja/reserved.interfaces.php">定義済みのインターフェイスとクラス</a><ul class="chunklist chunklist_book chunklist_children"><li><a href="http://php.net/manual/ja/class.traversable.php">Traversable</a> — Traversable インターフェイス</li><li><a href="http://php.net/manual/ja/class.iterator.php">Iterator</a> — Iterator インターフェイス</li><li><a href="http://php.net/manual/ja/class.iteratoraggregate.php">IteratorAggregate</a> — IteratorAggregate インターフェイス</li><li><a href="http://php.net/manual/ja/class.throwable.php">Throwable</a></li><li><a href="http://php.net/manual/ja/class.arrayaccess.php">ArrayAccess</a> — ArrayAccess インターフェイス</li><li><a href="http://php.net/manual/ja/class.serializable.php">Serializable</a> — Serializable インターフェイス</li><li><a href="http://php.net/manual/ja/class.closure.php">Closure</a> — Closure クラス</li><li><a href="http://php.net/manual/ja/class.generator.php">Generator</a> — Generator クラス</li></ul></li><li><a href="http://php.net/manual/ja/context.php">コンテキストオプションとパラメータ</a><ul class="chunklist chunklist_book chunklist_children"><li><a href="http://php.net/manual/ja/context.socket.php">ソケットコンテキストオプション</a> — ソケットコンテキストオプション一覧</li><li><a href="http://php.net/manual/ja/context.http.php">HTTP コンテキストオプション</a> — HTTP コンテキストオプションの一覧</li><li><a href="http://php.net/manual/ja/context.ftp.php">FTP コンテキストオプション</a> — FTP コンテキストオプションの一覧</li><li><a href="http://php.net/manual/ja/context.ssl.php">SSL コンテキストオプション</a> — SSL コンテキストオプションの一覧</li><li><a href="http://php.net/manual/ja/context.curl.php">CURL コンテキストオプション</a> — CURL コンテキストオプションの一覧</li><li><a href="http://php.net/manual/ja/context.phar.php">Phar コンテキストオプション</a> — Phar コンテキストオプション一覧</li><li><a href="http://php.net/manual/ja/context.mongodb.php">MongoDB コンテキストオプション</a> — MongoDB コンテキストオプション一覧</li><li><a href="http://php.net/manual/ja/context.params.php">コンテキストパラメータ</a> — コンテキストパラメータの一覧</li><li><a href="http://php.net/manual/ja/context.zip.php">Zip コンテキストオプション</a> — Zip コンテキストオプション一覧</li></ul></li><li><a href="http://php.net/manual/ja/wrappers.php">サポートするプロトコル/ラッパー</a><ul class="chunklist chunklist_book chunklist_children"><li><a href="http://php.net/manual/ja/wrappers.file.php">file://</a> — ローカルファイルシステムへのアクセス</li><li><a href="http://php.net/manual/ja/wrappers.http.php">http://</a> — HTTP(s) URL へのアクセス</li><li><a href="http://php.net/manual/ja/wrappers.ftp.php">ftp://</a> — FTP(s) URL へのアクセス</li><li><a href="http://php.net/manual/ja/wrappers.php.php">php://</a> — さまざまな入出力ストリームへのアクセス</li><li><a href="http://php.net/manual/ja/wrappers.compression.php">zlib://</a> — 圧縮ストリーム</li><li><a href="http://php.net/manual/ja/wrappers.data.php">data://</a> — データ (RFC 2397)</li><li><a href="http://php.net/manual/ja/wrappers.glob.php">glob://</a> — パターンにマッチするパス名の検索</li><li><a href="http://php.net/manual/ja/wrappers.phar.php">phar://</a> — PHP アーカイブ</li><li><a href="http://php.net/manual/ja/wrappers.ssh2.php">ssh2://</a> — Secure Shell 2</li><li><a href="http://php.net/manual/ja/wrappers.rar.php">rar://</a> — RAR</li><li><a href="http://php.net/manual/ja/wrappers.audio.php">ogg://</a> — オーディオストリーム</li><li><a href="http://php.net/manual/ja/wrappers.expect.php">expect://</a> — 対話的プロセスストリーム</li></ul></li></ul></div>
+<section id="usernotes">
+ <div class="head">
+  <span class="action"><a href="http://php.net/manual/add-note.php?sect=langref&amp;redirect=http://php.net/manual/ja/langref.php"><img src='http://php.net/images/notes-add@2x.png' alt='add a note' width='12' height='12'> <small>add a note</small></a></span>
+  <h3 class="title">User Contributed Notes </h3>
+ </div>
+ <div class="note">There are no user contributed notes for this page.</div></section>    </section><!-- layout-content -->
+        <aside class='layout-menu'>
+    
+        <ul class='parent-menu-list'>
+                                    <li>
+                <a href="http://php.net/manual/ja/index.php">PHP マニュアル</a>
+    
+                                    <ul class='child-menu-list'>
+    
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/ja/copyright.php" title="著作権">著作権</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/ja/manual.php" title="PHP マニュアル">PHP マニュアル</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/ja/getting-started.php" title="はじめに">はじめに</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/ja/install.php" title="インストールと設定">インストールと設定</a>
+                        </li>
+                          
+                        <li class="current">
+                            <a href="http://php.net/manual/ja/langref.php" title="言語リファレンス">言語リファレンス</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/ja/security.php" title="セキュリティ">セキュリティ</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/ja/features.php" title="機能">機能</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/ja/funcref.php" title="関数リファレンス">関数リファレンス</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/ja/internals2.php" title="PHP のコア: ハッカーの手引き">PHP のコア: ハッカーの手引き</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/ja/faq.php" title="FAQ">FAQ</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/ja/appendices.php" title="付録">付録</a>
+                        </li>
+                            
+                    </ul>
+                    
+            </li>
+                        
+                    </ul>
+    </aside>
+
+
+  </div><!-- layout -->
+         
+  <footer>
+    <div class="container footer-content">
+      <div class="row-fluid">
+      <ul class="footmenu">
+        <li><a href="http://php.net/copyright.php">Copyright &copy; 2001-2017 The PHP Group</a></li>
+        <li><a href="http://php.net/my.php">My PHP.net</a></li>
+        <li><a href="http://php.net/contact.php">Contact</a></li>
+        <li><a href="http://php.net/sites.php">Other PHP.net sites</a></li>
+        <li><a href="http://php.net/mirrors.php">Mirror sites</a></li>
+        <li><a href="http://php.net/privacy.php">Privacy policy</a></li>
+      </ul>
+      </div>
+    </div>
+  </footer>
+
+    
+ <!-- External and third party libraries. -->
+ <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/modernizr.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/hogan-2.0.0.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/typeahead.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/mousetrap.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/search.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1500560403&amp;f=/js/common.js"></script>
+
+<a id="toTop" href="javascript:;"><span id="toTopHover"></span><img width="40" height="40" alt="To Top" src="http://php.net/images/to-top@2x.png"></a>
+
+</body>
+
+<!-- Mirrored from php.net/manual/ja/langref.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Dec 2017 23:18:09 GMT -->
+</html>
+

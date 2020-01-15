@@ -1,0 +1,5 @@
+1024 ordenadores
+IP's: 192.168.0.x -> 192.168.5.x (Ya que si pusiéramos 4 no cabrían todos por los pelos).
+Máscara: 255.255.250.0
+Número de ordenadores totales posibles (con 192.168.5.x): 255*5=1275 direcciones IP. 1273 útiles.
+Número de ordenadores totales posibles (con 192.168.4.x): 255*4=1020 direcciones IP. 1118 útiles.

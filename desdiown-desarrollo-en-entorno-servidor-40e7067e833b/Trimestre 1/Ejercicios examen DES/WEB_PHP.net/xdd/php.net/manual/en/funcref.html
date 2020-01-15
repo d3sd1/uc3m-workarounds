@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<!-- Mirrored from php.net/manual/en/funcref.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Dec 2017 23:17:47 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+  <title>PHP: Function Reference - Manual </title>
+
+ <link rel="shortcut icon" href="../../favicon.ico">
+ <link rel="search" type="application/opensearchdescription+xml" href="../../phpnetimprovedsearch.html" title="Add PHP.net search">
+ <link rel="alternate" type="application/atom+xml" href="../../releases/feed.php" title="PHP Release feed">
+ <link rel="alternate" type="application/atom+xml" href="../../feed.atom" title="PHP: Hypertext Preprocessor">
+
+ <link rel="canonical" href="funcref.html">
+ <link rel="shorturl" href="funcref.html">
+ <link rel="alternate" href="funcref.html" hreflang="x-default">
+
+ <link rel="contents" href="index-2.html">
+ <link rel="index" href="index-2.html">
+ <link rel="prev" href="features.dtrace.systemtap.html">
+ <link rel="next" href="refs.basic.php.html">
+
+ <link rel="alternate" href="funcref.html" hreflang="en">
+ <link rel="alternate" href="../pt_BR/funcref.html" hreflang="pt_BR">
+ <link rel="alternate" href="../zh/funcref.html" hreflang="zh">
+ <link rel="alternate" href="../fr/funcref.html" hreflang="fr">
+ <link rel="alternate" href="../de/funcref.html" hreflang="de">
+ <link rel="alternate" href="../ja/funcref.html" hreflang="ja">
+ <link rel="alternate" href="../ro/funcref.html" hreflang="ro">
+ <link rel="alternate" href="../ru/funcref.html" hreflang="ru">
+ <link rel="alternate" href="../es/funcref.html" hreflang="es">
+ <link rel="alternate" href="../tr/funcref.html" hreflang="tr">
+
+<link rel="stylesheet" type="text/css" href="../../cached0152.css?t=1421837618&amp;f=/fonts/Fira/fira.css" media="screen">
+<link rel="stylesheet" type="text/css" href="../../cached15be.css?t=1421837618&amp;f=/fonts/Font-Awesome/css/fontello.css" media="screen">
+<link rel="stylesheet" type="text/css" href="../../cached3c70.css?t=1478800802&amp;f=/styles/theme-base.css" media="screen">
+<link rel="stylesheet" type="text/css" href="../../cached00eb.css?t=1449787206&amp;f=/styles/theme-medium.css" media="screen">
+
+ <!--[if lte IE 7]>
+ <link rel="stylesheet" type="text/css" href="http://php.net/styles/workarounds.ie7.css" media="screen">
+ <![endif]-->
+
+ <!--[if lte IE 8]>
+ <script type="text/javascript">
+  window.brokenIE = true;
+ </script>
+ <![endif]-->
+
+ <!--[if lte IE 9]>
+ <link rel="stylesheet" type="text/css" href="http://php.net/styles/workarounds.ie9.css" media="screen">
+ <![endif]-->
+
+ <!--[if IE]>
+ <script type="text/javascript" src="http://php.net/js/ext/html5.js"></script>
+ <![endif]-->
+
+ <base >
+
+</head>
+<body class="docs ">
+
+<nav id="head-nav" class="navbar navbar-fixed-top">
+  <div class="navbar-inner clearfix">
+    <a href="../../index.html" class="brand"><img src="../../images/logos/php-logo.svg" width="48" height="24" alt="php"></a>
+    <div id="mainmenu-toggle-overlay"></div>
+    <input type="checkbox" id="mainmenu-toggle">
+    <ul class="nav">
+      <li class=""><a href="../../downloads.html">Downloads</a></li>
+      <li class="active"><a href="../../docs.html">Documentation</a></li>
+      <li class=""><a href="../../get-involved.html" >Get Involved</a></li>
+      <li class=""><a href="../../support.html">Help</a></li>
+    </ul>
+    <form class="navbar-search" id="topsearch" action="http://php.net/search.php">
+      <input type="hidden" name="show" value="quickref">
+      <input type="search" name="pattern" class="search-query" placeholder="Search" accesskey="s">
+    </form>
+  </div>
+  <div id="flash-message"></div>
+</nav>
+<nav id="trick"><div><dl>
+<dt><a href='getting-started.html'>Getting Started</a></dt>
+	<dd><a href='introduction.html'>Introduction</a></dd>
+	<dd><a href='tutorial.html'>A simple tutorial</a></dd>
+<dt><a href='langref.html'>Language Reference</a></dt>
+	<dd><a href='language.basic-syntax.html'>Basic syntax</a></dd>
+	<dd><a href='language.types.html'>Types</a></dd>
+	<dd><a href='language.variables.html'>Variables</a></dd>
+	<dd><a href='language.constants.html'>Constants</a></dd>
+	<dd><a href='language.expressions.html'>Expressions</a></dd>
+	<dd><a href='language.operators.html'>Operators</a></dd>
+	<dd><a href='language.control-structures.html'>Control Structures</a></dd>
+	<dd><a href='language.functions.html'>Functions</a></dd>
+	<dd><a href='language.oop5.html'>Classes and Objects</a></dd>
+	<dd><a href='language.namespaces.html'>Namespaces</a></dd>
+	<dd><a href='language.errors.html'>Errors</a></dd>
+	<dd><a href='language.exceptions.html'>Exceptions</a></dd>
+	<dd><a href='language.generators.html'>Generators</a></dd>
+	<dd><a href='language.references.html'>References Explained</a></dd>
+	<dd><a href='reserved.variables.html'>Predefined Variables</a></dd>
+	<dd><a href='reserved.exceptions.html'>Predefined Exceptions</a></dd>
+	<dd><a href='reserved.interfaces.html'>Predefined Interfaces and Classes</a></dd>
+	<dd><a href='context.html'>Context options and parameters</a></dd>
+	<dd><a href='wrappers.html'>Supported Protocols and Wrappers</a></dd>
+</dl>
+<dl>
+<dt><a href='security.html'>Security</a></dt>
+	<dd><a href='security.intro.html'>Introduction</a></dd>
+	<dd><a href='security.general.html'>General considerations</a></dd>
+	<dd><a href='security.cgi-bin.html'>Installed as CGI binary</a></dd>
+	<dd><a href='security.apache.html'>Installed as an Apache module</a></dd>
+	<dd><a href='security.sessions.html'>Session Security</a></dd>
+	<dd><a href='security.filesystem.html'>Filesystem Security</a></dd>
+	<dd><a href='security.database.html'>Database Security</a></dd>
+	<dd><a href='security.errors.html'>Error Reporting</a></dd>
+	<dd><a href='security.globals.html'>Using Register Globals</a></dd>
+	<dd><a href='security.variables.html'>User Submitted Data</a></dd>
+	<dd><a href='security.magicquotes.html'>Magic Quotes</a></dd>
+	<dd><a href='security.hiding.html'>Hiding PHP</a></dd>
+	<dd><a href='security.current.html'>Keeping Current</a></dd>
+<dt><a href='features.html'>Features</a></dt>
+	<dd><a href='features.http-auth.html'>HTTP authentication with PHP</a></dd>
+	<dd><a href='features.cookies.html'>Cookies</a></dd>
+	<dd><a href='features.sessions.html'>Sessions</a></dd>
+	<dd><a href='features.xforms.html'>Dealing with XForms</a></dd>
+	<dd><a href='features.file-upload.html'>Handling file uploads</a></dd>
+	<dd><a href='features.remote-files.html'>Using remote files</a></dd>
+	<dd><a href='features.connection-handling.html'>Connection handling</a></dd>
+	<dd><a href='features.persistent-connections.html'>Persistent Database Connections</a></dd>
+	<dd><a href='features.safe-mode.html'>Safe Mode</a></dd>
+	<dd><a href='features.commandline.html'>Command line usage</a></dd>
+	<dd><a href='features.gc.html'>Garbage Collection</a></dd>
+	<dd><a href='features.dtrace.html'>DTrace Dynamic Tracing</a></dd>
+</dl>
+<dl>
+<dt><a href='funcref.html'>Function Reference</a></dt>
+	<dd><a href='refs.basic.php.html'>Affecting PHP's Behaviour</a></dd>
+	<dd><a href='refs.utilspec.audio.html'>Audio Formats Manipulation</a></dd>
+	<dd><a href='refs.remote.auth.html'>Authentication Services</a></dd>
+	<dd><a href='refs.utilspec.cmdline.html'>Command Line Specific Extensions</a></dd>
+	<dd><a href='refs.compression.html'>Compression and Archive Extensions</a></dd>
+	<dd><a href='refs.creditcard.html'>Credit Card Processing</a></dd>
+	<dd><a href='refs.crypto.html'>Cryptography Extensions</a></dd>
+	<dd><a href='refs.database.html'>Database Extensions</a></dd>
+	<dd><a href='refs.calendar.html'>Date and Time Related Extensions</a></dd>
+	<dd><a href='refs.fileprocess.file.html'>File System Related Extensions</a></dd>
+	<dd><a href='refs.international.html'>Human Language and Character Encoding Support</a></dd>
+	<dd><a href='refs.utilspec.image.html'>Image Processing and Generation</a></dd>
+	<dd><a href='refs.remote.mail.html'>Mail Related Extensions</a></dd>
+	<dd><a href='refs.math.html'>Mathematical Extensions</a></dd>
+	<dd><a href='refs.utilspec.nontext.html'>Non-Text MIME Output</a></dd>
+	<dd><a href='refs.fileprocess.process.html'>Process Control Extensions</a></dd>
+	<dd><a href='refs.basic.other.html'>Other Basic Extensions</a></dd>
+	<dd><a href='refs.remote.other.html'>Other Services</a></dd>
+	<dd><a href='refs.search.html'>Search Engine Extensions</a></dd>
+	<dd><a href='refs.utilspec.server.html'>Server Specific Extensions</a></dd>
+	<dd><a href='refs.basic.session.html'>Session Extensions</a></dd>
+	<dd><a href='refs.basic.text.html'>Text Processing</a></dd>
+	<dd><a href='refs.basic.vartype.html'>Variable and Type Related Extensions</a></dd>
+	<dd><a href='refs.webservice.html'>Web Services</a></dd>
+	<dd><a href='refs.utilspec.windows.html'>Windows Only Extensions</a></dd>
+	<dd><a href='refs.xml.html'>XML Manipulation</a></dd>
+	<dd><a href='refs.ui.html'>GUI Extensions</a></dd>
+</dl>
+<dl>
+<dt>Keyboard Shortcuts</dt><dt>?</dt>
+<dd>This help</dd>
+<dt>j</dt>
+<dd>Next menu item</dd>
+<dt>k</dt>
+<dd>Previous menu item</dd>
+<dt>g p</dt>
+<dd>Previous man page</dd>
+<dt>g n</dt>
+<dd>Next man page</dd>
+<dt>G</dt>
+<dd>Scroll to bottom</dd>
+<dt>g g</dt>
+<dd>Scroll to top</dd>
+<dt>g h</dt>
+<dd>Goto homepage</dd>
+<dt>g s</dt>
+<dd>Goto search<br>(current page)</dd>
+<dt>/</dt>
+<dd>Focus search box</dd>
+</dl></div></nav>
+<div id="goto">
+    <div class="search">
+         <div class="text"></div>
+         <div class="results"><ul></ul></div>
+   </div>
+</div>
+
+  <div id="breadcrumbs" class="clearfix">
+    <div id="breadcrumbs-inner">
+          <div class="next">
+        <a href="refs.basic.php.html">
+          Affecting PHP's Behaviour &raquo;
+        </a>
+      </div>
+              <div class="prev">
+        <a href="features.dtrace.systemtap.html">
+          &laquo; Using SystemTap with PHP DTrace Static Probes        </a>
+      </div>
+          <ul>
+            <li><a href='index-2.html'>PHP Manual</a></li>      </ul>
+    </div>
+  </div>
+
+
+
+
+<div id="layout" class="clearfix">
+  <section id="layout-content">
+  <div class="page-tools">
+    <div class="change-language">
+      <form action="http://php.net/manual/change.php" method="get" id="changelang" name="changelang">
+        <fieldset>
+          <label for="changelang-langs">Change language:</label>
+          <select onchange="document.changelang.submit()" name="page" id="changelang-langs">
+            <option value='en/funcref.php' selected="selected">English</option>
+            <option value='pt_BR/funcref.html'>Brazilian Portuguese</option>
+            <option value='zh/funcref.html'>Chinese (Simplified)</option>
+            <option value='fr/funcref.html'>French</option>
+            <option value='de/funcref.html'>German</option>
+            <option value='ja/funcref.html'>Japanese</option>
+            <option value='ro/funcref.html'>Romanian</option>
+            <option value='ru/funcref.html'>Russian</option>
+            <option value='es/funcref.html'>Spanish</option>
+            <option value='tr/funcref.html'>Turkish</option>
+            <option value="help-translate.html">Other</option>
+          </select>
+        </fieldset>
+      </form>
+    </div>
+    <div class="edit-bug">
+      <a href="https://edit.php.net/?project=PHP&amp;perm=en/funcref.php">Edit</a>
+      <a href="https://bugs.php.net/report.php?bug_type=Documentation+problem&amp;manpage=funcref">Report a Bug</a>
+    </div>
+  </div><div id="funcref" class="set">
+  <h1 class="title">Function Reference</h1>
+  <div class="info">
+   <div class="abstract">
+    <p class="para">
+     <div class="tip"><strong class="tip">Tip</strong>
+      <p class="simpara">
+       See also <a href="extensions.html" class="xref">Extension List/Categorization</a>.
+      </p>
+     </div>
+    </p>
+   </div>
+  </div>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+ <ul class="chunklist chunklist_set"><li><a href="refs.basic.php.html">Affecting PHP's Behaviour</a><ul class="chunklist chunklist_set chunklist_children"><li><a href="book.apc.html">APC</a> — Alternative PHP Cache</li><li><a href="book.apcu.html">APCu</a> — APC User Cache</li><li><a href="book.apd.html">APD</a> — Advanced PHP debugger</li><li><a href="book.bcompiler.html">bcompiler</a> — PHP bytecode Compiler</li><li><a href="book.blenc.html">BLENC</a> — Blenc - BLowfish ENCoder for PHP source scripts</li><li><a href="book.errorfunc.html">Error Handling</a> — Error Handling and Logging</li><li><a href="book.htscanner.html">htscanner</a> — htaccess-like support for all SAPIs</li><li><a href="book.inclued.html">inclued</a> — Inclusion hierarchy viewer</li><li><a href="book.memtrack.html">Memtrack</a></li><li><a href="book.opcache.html">OPcache</a></li><li><a href="book.outcontrol.html">Output Control</a> — Output Buffering Control</li><li><a href="book.info.html">PHP Options/Info</a> — PHP Options and Information</li><li><a href="book.runkit.html">runkit</a></li><li><a href="book.scream.html">scream</a> — Break the silence operator</li><li><a href="book.uopz.html">uopz</a></li><li><a href="book.weakref.html">Weakref</a> — Weak References</li><li><a href="book.wincache.html">WinCache</a> — Windows Cache for PHP</li><li><a href="book.xhprof.html">Xhprof</a> — Hierarchical Profiler</li></ul></li><li><a href="refs.utilspec.audio.html">Audio Formats Manipulation</a><ul class="chunklist chunklist_set chunklist_children"><li><a href="book.id3.html">ID3</a> — ID3 Tags</li><li><a href="book.ktaglib.html">KTaglib</a></li><li><a href="book.oggvorbis.html">oggvorbis</a> — OGG/Vorbis</li><li><a href="book.openal.html">OpenAL</a> — OpenAL Audio Bindings</li></ul></li><li><a href="refs.remote.auth.html">Authentication Services</a><ul class="chunklist chunklist_set chunklist_children"><li><a href="book.kadm5.html">KADM5</a> — Kerberos V</li><li><a href="book.radius.html">Radius</a></li></ul></li><li><a href="refs.utilspec.cmdline.html">Command Line Specific Extensions</a><ul class="chunklist chunklist_set chunklist_children"><li><a href="book.ncurses.html">Ncurses</a> — Ncurses Terminal Screen Control</li><li><a href="book.newt.html">Newt</a></li><li><a href="book.readline.html">Readline</a> — GNU Readline</li></ul></li><li><a href="refs.compression.html">Compression and Archive Extensions</a><ul class="chunklist chunklist_set chunklist_children"><li><a href="book.bzip2.html">Bzip2</a></li><li><a href="book.lzf.html">LZF</a></li><li><a href="book.phar.html">Phar</a></li><li><a href="book.rar.html">Rar</a> — Rar Archiving</li><li><a href="book.zip.html">Zip</a></li><li><a href="book.zlib.html">Zlib</a> — Zlib Compression</li></ul></li><li><a href="refs.creditcard.html">Credit Card Processing</a><ul class="chunklist chunklist_set chunklist_children"><li><a href="book.mcve.html">MCVE</a> — MCVE (Monetra) Payment</li></ul></li><li><a href="refs.crypto.html">Cryptography Extensions</a><ul class="chunklist chunklist_set chunklist_children"><li><a href="book.crack.html">Crack</a> — Cracklib</li><li><a href="book.csprng.html">CSPRNG</a></li><li><a href="book.hash.html">Hash</a> — HASH Message Digest Framework</li><li><a href="book.mcrypt.html">Mcrypt</a></li><li><a href="book.mhash.html">Mhash</a></li><li><a href="book.openssl.html">OpenSSL</a></li><li><a href="book.password.html">Password Hashing</a></li><li><a href="book.sodium.html">Sodium</a></li></ul></li><li><a href="refs.database.html">Database Extensions</a><ul class="chunklist chunklist_set chunklist_children"><li><a href="refs.database.abstract.html">Abstraction Layers</a></li><li><a href="refs.database.vendors.html">Vendor Specific Database Extensions</a></li></ul></li><li><a href="refs.calendar.html">Date and Time Related Extensions</a><ul class="chunklist chunklist_set chunklist_children"><li><a href="book.calendar.html">Calendar</a></li><li><a href="book.datetime.html">Date/Time</a> — Date and Time</li><li><a href="book.hrtime.html">HRTime</a> — High resolution timing</li></ul></li><li><a href="refs.fileprocess.file.html">File System Related Extensions</a><ul class="chunklist chunklist_set chunklist_children"><li><a href="book.dio.html">Direct IO</a></li><li><a href="book.dir.html">Directories</a></li><li><a href="book.fileinfo.html">Fileinfo</a> — File Information</li><li><a href="book.filesystem.html">Filesystem</a></li><li><a href="book.inotify.html">Inotify</a></li><li><a href="book.mime-magic.html">Mimetype</a></li><li><a href="book.proctitle.html">Proctitle</a></li><li><a href="book.xattr.html">xattr</a></li><li><a href="book.xdiff.html">xdiff</a></li></ul></li><li><a href="refs.international.html">Human Language and Character Encoding Support</a><ul class="chunklist chunklist_set chunklist_children"><li><a href="book.enchant.html">Enchant</a> — Enchant spelling library</li><li><a href="book.fribidi.html">FriBiDi</a></li><li><a href="book.gender.html">Gender</a> — Determine gender of firstnames</li><li><a href="book.gettext.html">Gettext</a></li><li><a href="book.iconv.html">iconv</a></li><li><a href="book.intl.html">intl</a> — Internationalization Functions</li><li><a href="book.mbstring.html">Multibyte String</a></li><li><a href="book.pspell.html">Pspell</a></li><li><a href="book.recode.html">Recode</a> — GNU Recode</li></ul></li><li><a href="refs.utilspec.image.html">Image Processing and Generation</a><ul class="chunklist chunklist_set chunklist_children"><li><a href="book.cairo.html">Cairo</a></li><li><a href="book.exif.html">Exif</a> — Exchangeable image information</li><li><a href="http://php.net/manual/en/book.image.php">GD</a> — Image Processing and GD</li><li><a href="http://php.net/manual/en/book.gmagick.php">Gmagick</a></li><li><a href="http://php.net/manual/en/book.imagick.php">ImageMagick</a> — Image Processing (ImageMagick)</li></ul></li><li><a href="http://php.net/manual/en/refs.remote.mail.php">Mail Related Extensions</a><ul class="chunklist chunklist_set chunklist_children"><li><a href="http://php.net/manual/en/book.cyrus.php">Cyrus</a> — Cyrus IMAP administration</li><li><a href="http://php.net/manual/en/book.imap.php">IMAP</a> — IMAP, POP3 and NNTP</li><li><a href="http://php.net/manual/en/book.mail.php">Mail</a></li><li><a href="http://php.net/manual/en/book.mailparse.php">Mailparse</a></li><li><a href="http://php.net/manual/en/book.vpopmail.php">vpopmail</a></li></ul></li><li><a href="http://php.net/manual/en/refs.math.php">Mathematical Extensions</a><ul class="chunklist chunklist_set chunklist_children"><li><a href="http://php.net/manual/en/book.bc.php">BC Math</a> — BCMath Arbitrary Precision Mathematics</li><li><a href="http://php.net/manual/en/book.gmp.php">GMP</a> — GNU Multiple Precision</li><li><a href="http://php.net/manual/en/book.lapack.php">Lapack</a></li><li><a href="http://php.net/manual/en/book.math.php">Math</a> — Mathematical Functions</li><li><a href="http://php.net/manual/en/book.stats.php">Statistics</a></li><li><a href="http://php.net/manual/en/book.trader.php">Trader</a> — Technical Analysis for Traders</li></ul></li><li><a href="http://php.net/manual/en/refs.utilspec.nontext.php">Non-Text MIME Output</a><ul class="chunklist chunklist_set chunklist_children"><li><a href="http://php.net/manual/en/book.fdf.php">FDF</a> — Forms Data Format</li><li><a href="http://php.net/manual/en/book.gnupg.php">GnuPG</a> — GNU Privacy Guard</li><li><a href="http://php.net/manual/en/book.haru.php">haru</a> — Haru PDF</li><li><a href="http://php.net/manual/en/book.ming.php">Ming</a> — Ming (flash)</li><li><a href="http://php.net/manual/en/book.pdf.php">PDF</a></li><li><a href="http://php.net/manual/en/book.wkhtmltox.php">wkhtmltox</a></li><li><a href="http://php.net/manual/en/book.ps.php">PS</a> — PostScript document creation</li><li><a href="http://php.net/manual/en/book.rpmreader.php">RPM Reader</a> — RPM Header Reading</li></ul></li><li><a href="http://php.net/manual/en/refs.fileprocess.process.php">Process Control Extensions</a><ul class="chunklist chunklist_set chunklist_children"><li><a href="http://php.net/manual/en/book.eio.php">Eio</a></li><li><a href="http://php.net/manual/en/book.ev.php">Ev</a></li><li><a href="http://php.net/manual/en/book.expect.php">Expect</a></li><li><a href="http://php.net/manual/en/book.libevent.php">Libevent</a></li><li><a href="http://php.net/manual/en/book.pcntl.php">PCNTL</a> — Process Control</li><li><a href="http://php.net/manual/en/book.posix.php">POSIX</a></li><li><a href="http://php.net/manual/en/book.exec.php">Program execution</a> — System program execution</li><li><a href="http://php.net/manual/en/book.pthreads.php">pthreads</a></li><li><a href="http://php.net/manual/en/book.sem.php">Semaphore</a> — Semaphore, Shared Memory and IPC</li><li><a href="http://php.net/manual/en/book.shmop.php">Shared Memory</a></li><li><a href="http://php.net/manual/en/book.sync.php">Sync</a></li></ul></li><li><a href="http://php.net/manual/en/refs.basic.other.php">Other Basic Extensions</a><ul class="chunklist chunklist_set chunklist_children"><li><a href="http://php.net/manual/en/book.geoip.php">GeoIP</a> — Geo IP Location</li><li><a href="http://php.net/manual/en/book.fann.php">FANN</a> — FANN (Fast Artificial Neural Network)</li><li><a href="http://php.net/manual/en/book.json.php">JSON</a> — JavaScript Object Notation</li><li><a href="http://php.net/manual/en/book.judy.php">Judy</a> — Judy Arrays</li><li><a href="http://php.net/manual/en/book.lua.php">Lua</a></li><li><a href="http://php.net/manual/en/book.misc.php">Misc.</a> — Miscellaneous Functions</li><li><a href="http://php.net/manual/en/book.parsekit.php">Parsekit</a></li><li><a href="http://php.net/manual/en/book.spl.php">SPL</a> — Standard PHP Library (SPL)</li><li><a href="http://php.net/manual/en/book.spl-types.php">SPL Types</a> — SPL Type Handling</li><li><a href="http://php.net/manual/en/book.stream.php">Streams</a></li><li><a href="http://php.net/manual/en/book.swoole.php">Swoole</a></li><li><a href="http://php.net/manual/en/book.tidy.php">Tidy</a></li><li><a href="http://php.net/manual/en/book.tokenizer.php">Tokenizer</a></li><li><a href="http://php.net/manual/en/book.url.php">URLs</a></li><li><a href="http://php.net/manual/en/book.v8js.php">V8js</a> — V8 Javascript Engine Integration</li><li><a href="http://php.net/manual/en/book.yaml.php">Yaml</a> — YAML Data Serialization</li><li><a href="http://php.net/manual/en/book.yaf.php">Yaf</a> — Yet Another Framework</li><li><a href="http://php.net/manual/en/book.taint.php">Taint</a></li><li><a href="http://php.net/manual/en/book.ds.php">Data Structures</a></li></ul></li><li><a href="http://php.net/manual/en/refs.remote.other.php">Other Services</a><ul class="chunklist chunklist_set chunklist_children"><li><a href="http://php.net/manual/en/book.chdb.php">chdb</a> — Constant hash database</li><li><a href="http://php.net/manual/en/book.curl.php">cURL</a> — Client URL Library</li><li><a href="http://php.net/manual/en/book.event.php">Event</a></li><li><a href="http://php.net/manual/en/book.fam.php">FAM</a> — File Alteration Monitor</li><li><a href="http://php.net/manual/en/book.ftp.php">FTP</a></li><li><a href="http://php.net/manual/en/book.gearman.php">Gearman</a></li><li><a href="http://php.net/manual/en/book.net-gopher.php">Gopher</a> — Net Gopher</li><li><a href="http://php.net/manual/en/book.gupnp.php">Gupnp</a></li><li><a href="http://php.net/manual/en/book.hwapi.php">Hyperwave API</a></li><li><a href="http://php.net/manual/en/book.ldap.php">LDAP</a> — Lightweight Directory Access Protocol</li><li><a href="http://php.net/manual/en/book.memcache.php">Memcache</a></li><li><a href="http://php.net/manual/en/book.memcached.php">Memcached</a></li><li><a href="http://php.net/manual/en/book.mqseries.php">mqseries</a></li><li><a href="http://php.net/manual/en/book.network.php">Network</a></li><li><a href="http://php.net/manual/en/book.rrd.php">RRD</a> — RRDtool</li><li><a href="http://php.net/manual/en/book.sam.php">SAM</a> — Simple Asynchronous Messaging</li><li><a href="http://php.net/manual/en/book.snmp.php">SNMP</a></li><li><a href="http://php.net/manual/en/book.sockets.php">Sockets</a></li><li><a href="http://php.net/manual/en/book.ssh2.php">SSH2</a> — Secure Shell2</li><li><a href="http://php.net/manual/en/book.stomp.php">Stomp</a> — Stomp Client</li><li><a href="http://php.net/manual/en/book.svm.php">SVM</a> — Support Vector Machine</li><li><a href="http://php.net/manual/en/book.svn.php">SVN</a> — Subversion</li><li><a href="http://php.net/manual/en/book.tcpwrap.php">TCP</a> — TCP Wrappers</li><li><a href="http://php.net/manual/en/book.varnish.php">Varnish</a></li><li><a href="http://php.net/manual/en/book.yaz.php">YAZ</a></li><li><a href="http://php.net/manual/en/book.nis.php">YP/NIS</a></li><li><a href="http://php.net/manual/en/book.zmq.php">0MQ messaging</a> — ZMQ</li><li><a href="http://php.net/manual/en/book.zookeeper.php">ZooKeeper</a></li></ul></li><li><a href="http://php.net/manual/en/refs.search.php">Search Engine Extensions</a><ul class="chunklist chunklist_set chunklist_children"><li><a href="http://php.net/manual/en/book.mnogosearch.php">mnoGoSearch</a></li><li><a href="http://php.net/manual/en/book.solr.php">Solr</a> — Apache Solr</li><li><a href="http://php.net/manual/en/book.sphinx.php">Sphinx</a> — Sphinx Client</li><li><a href="http://php.net/manual/en/book.swish.php">Swish</a> — Swish Indexing</li></ul></li><li><a href="http://php.net/manual/en/refs.utilspec.server.php">Server Specific Extensions</a><ul class="chunklist chunklist_set chunklist_children"><li><a href="http://php.net/manual/en/book.apache.php">Apache</a></li><li><a href="http://php.net/manual/en/book.fpm.php">FastCGI Process Manager</a></li><li><a href="http://php.net/manual/en/book.iisfunc.php">IIS</a> — IIS Administration</li><li><a href="http://php.net/manual/en/book.nsapi.php">NSAPI</a></li></ul></li><li><a href="http://php.net/manual/en/refs.basic.session.php">Session Extensions</a><ul class="chunklist chunklist_set chunklist_children"><li><a href="http://php.net/manual/en/book.msession.php">Msession</a> — Mohawk Software Session Handler Functions</li><li><a href="http://php.net/manual/en/book.session.php">Sessions</a> — Session Handling</li><li><a href="http://php.net/manual/en/book.session-pgsql.php">Session PgSQL</a> — PostgreSQL Session Save Handler</li></ul></li><li><a href="http://php.net/manual/en/refs.basic.text.php">Text Processing</a><ul class="chunklist chunklist_set chunklist_children"><li><a href="http://php.net/manual/en/book.bbcode.php">BBCode</a> — Bulletin Board Code</li><li><a href="http://php.net/manual/en/book.parle.php">Parle</a> — Parsing and lexing</li><li><a href="http://php.net/manual/en/book.pcre.php">PCRE</a> — Regular Expressions (Perl-Compatible)</li><li><a href="http://php.net/manual/en/book.regex.php">POSIX Regex</a> — Regular Expression (POSIX Extended)</li><li><a href="http://php.net/manual/en/book.ssdeep.php">ssdeep</a> — ssdeep Fuzzy Hashing</li><li><a href="http://php.net/manual/en/book.strings.php">Strings</a></li></ul></li><li><a href="http://php.net/manual/en/refs.basic.vartype.php">Variable and Type Related Extensions</a><ul class="chunklist chunklist_set chunklist_children"><li><a href="http://php.net/manual/en/book.array.php">Arrays</a></li><li><a href="http://php.net/manual/en/book.classobj.php">Classes/Objects</a> — Class/Object Information</li><li><a href="http://php.net/manual/en/book.classkit.php">Classkit</a></li><li><a href="http://php.net/manual/en/book.ctype.php">Ctype</a> — Character type checking</li><li><a href="http://php.net/manual/en/book.filter.php">Filter</a> — Data Filtering</li><li><a href="http://php.net/manual/en/book.funchand.php">Function Handling</a></li><li><a href="http://php.net/manual/en/book.quickhash.php">Quickhash</a></li><li><a href="http://php.net/manual/en/book.reflection.php">Reflection</a></li><li><a href="http://php.net/manual/en/book.var.php">Variable handling</a></li></ul></li><li><a href="http://php.net/manual/en/refs.webservice.php">Web Services</a><ul class="chunklist chunklist_set chunklist_children"><li><a href="http://php.net/manual/en/book.oauth.php">OAuth</a></li><li><a href="http://php.net/manual/en/book.sca.php">SCA</a></li><li><a href="http://php.net/manual/en/book.soap.php">SOAP</a></li><li><a href="http://php.net/manual/en/book.yar.php">Yar</a> — Yet Another RPC Framework</li><li><a href="http://php.net/manual/en/book.xmlrpc.php">XML-RPC</a></li></ul></li><li><a href="http://php.net/manual/en/refs.utilspec.windows.php">Windows Only Extensions</a><ul class="chunklist chunklist_set chunklist_children"><li><a href="http://php.net/manual/en/book.com.php">COM</a> — COM and .Net (Windows)</li><li><a href="http://php.net/manual/en/book.win32ps.php">win32ps</a></li><li><a href="http://php.net/manual/en/book.win32service.php">win32service</a></li></ul></li><li><a href="http://php.net/manual/en/refs.xml.php">XML Manipulation</a><ul class="chunklist chunklist_set chunklist_children"><li><a href="http://php.net/manual/en/book.dom.php">DOM</a> — Document Object Model</li><li><a href="http://php.net/manual/en/book.libxml.php">libxml</a></li><li><a href="http://php.net/manual/en/book.sdo.php">SDO</a> — Service Data Objects</li><li><a href="http://php.net/manual/en/book.sdodasrel.php">SDO-DAS-Relational</a> — SDO Relational Data Access Service</li><li><a href="http://php.net/manual/en/book.sdo-das-xml.php">SDO DAS XML</a> — SDO XML Data Access Service</li><li><a href="http://php.net/manual/en/book.simplexml.php">SimpleXML</a></li><li><a href="http://php.net/manual/en/book.wddx.php">WDDX</a></li><li><a href="http://php.net/manual/en/book.xmldiff.php">XMLDiff</a> — XML diff and merge</li><li><a href="http://php.net/manual/en/book.xml.php">XML Parser</a></li><li><a href="http://php.net/manual/en/book.xmlreader.php">XMLReader</a></li><li><a href="http://php.net/manual/en/book.xmlwriter.php">XMLWriter</a></li><li><a href="http://php.net/manual/en/book.xsl.php">XSL</a></li></ul></li><li><a href="http://php.net/manual/en/refs.ui.php">GUI Extensions</a><ul class="chunklist chunklist_set chunklist_children"><li><a href="http://php.net/manual/en/book.ui.php">UI</a></li></ul></li></ul></div>
+<section id="usernotes">
+ <div class="head">
+  <span class="action"><a href="http://php.net/manual/add-note.php?sect=funcref&amp;redirect=http://php.net/manual/en/funcref.php"><img src='http://php.net/images/notes-add@2x.png' alt='add a note' width='12' height='12'> <small>add a note</small></a></span>
+  <h3 class="title">User Contributed Notes </h3>
+ </div>
+ <div class="note">There are no user contributed notes for this page.</div></section>    </section><!-- layout-content -->
+        <aside class='layout-menu'>
+    
+        <ul class='parent-menu-list'>
+                                    <li>
+                <a href="http://php.net/manual/en/index.php">PHP Manual</a>
+    
+                                    <ul class='child-menu-list'>
+    
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/copyright.php" title="Copyright">Copyright</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/manual.php" title="PHP Manual">PHP Manual</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/getting-started.php" title="Getting Started">Getting Started</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/install.php" title="Installation and Configuration">Installation and Configuration</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/langref.php" title="Language Reference">Language Reference</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/security.php" title="Security">Security</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/features.php" title="Features">Features</a>
+                        </li>
+                          
+                        <li class="current">
+                            <a href="http://php.net/manual/en/funcref.php" title="Function Reference">Function Reference</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/internals2.php" title="PHP at the Core: A Hacker's Guide">PHP at the Core: A Hacker's Guide</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/faq.php" title="FAQ">FAQ</a>
+                        </li>
+                          
+                        <li class="">
+                            <a href="http://php.net/manual/en/appendices.php" title="Appendices">Appendices</a>
+                        </li>
+                            
+                    </ul>
+                    
+            </li>
+                        
+                    </ul>
+    </aside>
+
+
+  </div><!-- layout -->
+         
+  <footer>
+    <div class="container footer-content">
+      <div class="row-fluid">
+      <ul class="footmenu">
+        <li><a href="http://php.net/copyright.php">Copyright &copy; 2001-2017 The PHP Group</a></li>
+        <li><a href="http://php.net/my.php">My PHP.net</a></li>
+        <li><a href="http://php.net/contact.php">Contact</a></li>
+        <li><a href="http://php.net/sites.php">Other PHP.net sites</a></li>
+        <li><a href="http://php.net/mirrors.php">Mirror sites</a></li>
+        <li><a href="http://php.net/privacy.php">Privacy policy</a></li>
+      </ul>
+      </div>
+    </div>
+  </footer>
+
+    
+ <!-- External and third party libraries. -->
+ <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/modernizr.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/hogan-2.0.0.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/typeahead.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/ext/mousetrap.min.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1421837618&amp;f=/js/search.js"></script>
+<script type="text/javascript" src="http://php.net/cached.php?t=1500560403&amp;f=/js/common.js"></script>
+
+<a id="toTop" href="javascript:;"><span id="toTopHover"></span><img width="40" height="40" alt="To Top" src="http://php.net/images/to-top@2x.png"></a>
+
+</body>
+
+<!-- Mirrored from php.net/manual/en/funcref.php by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 14 Dec 2017 23:18:07 GMT -->
+</html>
+

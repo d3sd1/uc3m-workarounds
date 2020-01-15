@@ -1,0 +1,7 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+.php.net	TRUE	/	FALSE	1999999999	LAST_NEWS	1513292649
+.php.net	TRUE	/	FALSE	1999999999	MYPHPNET	%2C%2CNONE%2C0%2C
+.php.net	TRUE	/	FALSE	1999999999	LAST_LANG	en
+.php.net	TRUE	/	FALSE	1999999999	COUNTRY	NA%2C37.11.108.51
+

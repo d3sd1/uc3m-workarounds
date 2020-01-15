@@ -1,0 +1,17 @@
+INICIO
+INT num, factorial;
+Escribe "Calcular factorial del numero " + num;
+for(i = num; i>=1; i--){
+	factorial*=i;
+	Escribe i;
+	Si(i==1)
+	{
+		Escribe "=";
+	}
+	Sino
+	{
+		Escribe "x";
+	}
+}
+Escribe "El resultado es " + factorial;
+FIN

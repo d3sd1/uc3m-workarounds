@@ -1,0 +1,9 @@
+INICIO
+INT num_base, num_exponente;
+Escribe "Introduce el número base";
+Lee num_base;
+Escribe "Introduce el número exponente";
+Lee num_exponente;
+
+Escribe "El número resultante es " + num_base^num_exponente;
+FIN
